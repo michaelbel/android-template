@@ -5,9 +5,17 @@ A simple Github template that lets you create a modern Android app
 ## Features
 * Kotlin
 * Kotlin Parcelize
-* Hilt Dependency Injection
+* Kotlin Coroutines
+* View Binding
+* Hilt
+* Jetpack Compose
+* AppCompat
 * Material
 * ConstraintLayout
-* Paging Library
-* Room Persistence Library
+* Paging 3
+* Room
+* Retrofit
+* Gson
+* Picasso
+* Gander
 * Timber
