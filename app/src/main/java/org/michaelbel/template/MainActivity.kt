@@ -1,19 +1,21 @@
 package org.michaelbel.template
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.michaelbel.template.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commitNow
+import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.template.movie.ui.MovieFragment
 
-class MainActivity: AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity: AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
+            supportFragmentManager.commitNow {
+                replace(R.id.container, MovieFragment.newInstance())
+            }
         }
     }
 }

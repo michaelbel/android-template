@@ -1,16 +1,30 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext {
+        compileSdkVersion = 30
+        minSdkVersion = 21
+        targetSdkVersion = 30
+        buildToolsVersion = "30.0.3"
+    }
+
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0-alpha12"
+        classpath "com.android.tools.build:gradle:7.0.0-alpha13"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.33-beta"
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
