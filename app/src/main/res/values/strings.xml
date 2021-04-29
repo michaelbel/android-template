@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">android-app-template</string>
+    <!--Review-->
+    <string name="title_review">In-App Review</string>
+    <string name="button_start_review">Start Review</string>
+    <string name="error_while_review">При запросе произошла ошибка</string>
 </resources>
