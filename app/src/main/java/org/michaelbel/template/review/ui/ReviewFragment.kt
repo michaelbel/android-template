@@ -3,7 +3,6 @@ package org.michaelbel.template.review.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.R
@@ -20,18 +19,26 @@ class ReviewFragment: Fragment(R.layout.fragment_review) {
         _binding = FragmentReviewBinding.bind(view)
 
         binding.reviewButton.setOnClickListener {
-            val reviewManager = ReviewManagerFactory.create(requireContext())
-            val requestReviewFlow = reviewManager.requestReviewFlow()
+            val reviewManagerFactory = ReviewManagerFactory.create(requireContext())
+            val requestReviewFlow = reviewManagerFactory.requestReviewFlow()
             requestReviewFlow.addOnCompleteListener { request ->
+                val message: String = String.format(
+                    getString(R.string.message_review_status),
+                    request.exception,
+                    request.result,
+                    request.isSuccessful,
+                    request.isComplete
+                )
+
                 if (request.isSuccessful) {
                     val reviewInfo = request.result
-                    val flow = reviewManager.launchReviewFlow(requireActivity(), reviewInfo)
+                    val flow = reviewManagerFactory.launchReviewFlow(requireActivity(), reviewInfo)
                     flow.addOnCompleteListener {
-                        // Обрабатываем завершение сценария оценки
+                        // Обрабатываем завершение сценария оценки.
                     }
-                } else {
-                    Snackbar.make(view, R.string.error_while_review, Snackbar.LENGTH_SHORT).show()
                 }
+
+                binding.reviewStatusTextView.text = message
             }
         }
     }

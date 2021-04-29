@@ -6,7 +6,7 @@ import android.telephony.TelephonyManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commitNow
 import dagger.hilt.android.AndroidEntryPoint
-import org.michaelbel.template.movie.ui.MovieFragment
+import org.michaelbel.template.main.ui.MainFragment
 import java.lang.ref.WeakReference
 
 @AndroidEntryPoint
@@ -27,7 +27,7 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
 
         if (savedInstanceState == null) {
             supportFragmentManager.commitNow {
-                replace(R.id.container, MovieFragment.newInstance())
+                replace(R.id.container, MainFragment())
             }
         }
     }

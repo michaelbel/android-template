@@ -3,5 +3,26 @@
     <!--Review-->
     <string name="title_review">In-App Review</string>
     <string name="button_start_review">Start Review</string>
-    <string name="error_while_review">При запросе произошла ошибка</string>
+    <string name="message_review_status">
+        Review Status:\n\n
+        Exception: %s\n
+        Result: %s\n
+        isSuccessful: %s\n
+        isComplete: %s</string>
+    <!--Update-->
+    <string name="title_update">In-App Update</string>
+    <string name="button_start_update">Start Update</string>
+    <string name="message_update_status">
+        Update Status:\n\n
+        PackageName: %s\n
+        availableVersionCode: %s\n
+        updateAvailability: %s\n
+        installStatus: %s\n
+        clientVersionStalenessDays: %s\n
+        updatePriority: %s\n
+        bytesDownloaded: %s\n
+        totalBytesToDownload: %s\n
+        isUpdateTypeAllowed Immediate: %s\n
+        isUpdateTypeAllowed Flexible: %s\n
+    </string>
 </resources>
