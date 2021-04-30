@@ -21,17 +21,17 @@ class ReviewFragment: Fragment(R.layout.fragment_review) {
         binding.reviewButton.setOnClickListener {
             val reviewManagerFactory = ReviewManagerFactory.create(requireContext())
             val requestReviewFlow = reviewManagerFactory.requestReviewFlow()
-            requestReviewFlow.addOnCompleteListener { request ->
+            requestReviewFlow.addOnCompleteListener { task ->
                 val message: String = String.format(
                     getString(R.string.message_review_status),
-                    request.exception,
-                    request.result,
-                    request.isSuccessful,
-                    request.isComplete
+                    task.exception,
+                    task.result,
+                    task.isSuccessful,
+                    task.isComplete
                 )
 
-                if (request.isSuccessful) {
-                    val reviewInfo = request.result
+                if (task.isSuccessful) {
+                    val reviewInfo = task.result
                     val flow = reviewManagerFactory.launchReviewFlow(requireActivity(), reviewInfo)
                     flow.addOnCompleteListener {
                         // Обрабатываем завершение сценария оценки.
