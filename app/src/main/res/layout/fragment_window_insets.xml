@@ -19,58 +19,48 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            app:title="@string/app_name"/>
+            app:title="WindowInsets"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/inAppReviewButton"
+        android:id="@+id/showKeyboardButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="In-App Review"
+        android:text="Show Keyboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showStatusBarButton"
+        app:layout_constraintEnd_toStartOf="@id/hideKeyboardButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hideKeyboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide Keyboard"
+        app:layout_constraintStart_toEndOf="@id/showKeyboardButton"
+        app:layout_constraintTop_toBottomOf="@id/hideStatusBarButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/showStatusBarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Show StatusBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/inAppUpdateButton"/>
+        app:layout_constraintEnd_toStartOf="@id/hideKeyboardButton"
+        app:layout_constraintBottom_toTopOf="@id/showKeyboardButton"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/inAppUpdateButton"
+        android:id="@+id/hideStatusBarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="In-App Update"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inAppReviewButton"
+        android:layout_marginTop="32dp"
+        android:text="Hide StatusBar"
+        app:layout_constraintStart_toEndOf="@id/showKeyboardButton"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/savedStateButton"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/savedStateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ViewModel Saved State"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inAppUpdateButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/toastButton"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/toastButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toast"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/savedStateButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/keyboardButton"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/keyboardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Window Insets"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toastButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/hideKeyboardButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import org.michaelbel.template.review.ui.ReviewFragment
 import org.michaelbel.template.savedstate.SavedStateFragment
 import org.michaelbel.template.toast.ToastFragment
 import org.michaelbel.template.update.ui.UpdateFragment
+import org.michaelbel.template.windowinsets.WindowInsetsFragment
 
 @AndroidEntryPoint
 class MainFragment: Fragment(R.layout.fragment_main) {
@@ -44,6 +45,12 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             parentFragmentManager.commit(allowStateLoss = true) {
                 replace(R.id.container, ToastFragment(), ToastFragment::class.java.canonicalName)
                 addToBackStack(ToastFragment::class.java.canonicalName)
+            }
+        }
+        binding.keyboardButton.setOnClickListener {
+            parentFragmentManager.commit(allowStateLoss = true) {
+                replace(R.id.container, WindowInsetsFragment(), WindowInsetsFragment::class.java.canonicalName)
+                addToBackStack(WindowInsetsFragment::class.java.canonicalName)
             }
         }
     }

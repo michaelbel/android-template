@@ -6,19 +6,19 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentSavedstateBinding
+import org.michaelbel.template.databinding.FragmentSavedStateBinding
 
 @AndroidEntryPoint
-class SavedStateFragment: Fragment(R.layout.fragment_savedstate) {
+class SavedStateFragment: Fragment(R.layout.fragment_saved_state) {
 
     private val viewModel: SavedStateViewModel by viewModels()
 
-    private var _binding: FragmentSavedstateBinding? = null
+    private var _binding: FragmentSavedStateBinding? = null
     private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentSavedstateBinding.bind(view)
+        _binding = FragmentSavedStateBinding.bind(view)
     }
 
     override fun onDestroyView() {
