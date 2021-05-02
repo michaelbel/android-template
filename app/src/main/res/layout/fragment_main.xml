@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.ui.MainFragment">
+    tools:context=".main.ui.MainFragment"
+    tools:ignore="HardcodedText">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -27,7 +28,7 @@
         android:id="@+id/inAppReviewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_review"
+        android:text="In-App Review"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,9 +38,29 @@
         android:id="@+id/inAppUpdateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_update"
+        android:text="In-App Update"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inAppReviewButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/savedStateButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/savedStateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewModel Saved State"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inAppUpdateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/toastButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/toastButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savedStateButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

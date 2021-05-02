@@ -56,12 +56,11 @@ android {
 
     buildFeatures {
         viewBinding true
-        compose true
+        //compose true
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
     implementation "com.google.android.material:material:1.3.0"
@@ -73,7 +72,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.3'
     implementation 'com.google.android.play:core-ktx:1.8.1'
     implementation "androidx.activity:activity-ktx:1.2.2"
-    implementation "androidx.activity:activity-compose:1.3.0-alpha07"
+    //implementation "androidx.activity:activity-compose:1.3.0-alpha07"
     implementation "androidx.annotation:annotation:1.2.0"
     implementation "androidx.annotation:annotation-experimental:1.1.0"
     implementation "androidx.appcompat:appcompat:1.2.0"
@@ -82,18 +81,18 @@ dependencies {
     implementation "androidx.browser:browser:1.3.0"
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.collection:collection-ktx:1.1.0"
-    implementation "androidx.compose.animation:animation:1.0.0-beta05"
-    implementation "androidx.compose.compiler:compiler:1.0.0-beta05"
-    implementation 'androidx.compose.foundation:foundation:1.0.0-beta05'
-    implementation 'androidx.compose.material:material:1.0.0-beta05'
-    implementation 'androidx.compose.material:material-icons-core:1.0.0-beta05'
-    implementation 'androidx.compose.material:material-icons-extended:1.0.0-beta05'
-    implementation "androidx.compose.runtime:runtime:1.0.0-beta05"
-    implementation 'androidx.compose.runtime:runtime-livedata:1.0.0-beta05'
-    implementation 'androidx.compose.ui:ui:1.0.0-beta05'
-    implementation 'androidx.compose.ui:ui-tooling:1.0.0-beta05'
+    //implementation "androidx.compose.animation:animation:1.0.0-beta05"
+    //implementation "androidx.compose.compiler:compiler:1.0.0-beta05"
+    //implementation 'androidx.compose.foundation:foundation:1.0.0-beta05'
+    //implementation 'androidx.compose.material:material:1.0.0-beta05'
+    //implementation 'androidx.compose.material:material-icons-core:1.0.0-beta05'
+    //implementation 'androidx.compose.material:material-icons-extended:1.0.0-beta05'
+    //implementation "androidx.compose.runtime:runtime:1.0.0-beta05"
+    //implementation 'androidx.compose.runtime:runtime-livedata:1.0.0-beta05'
+    //implementation 'androidx.compose.ui:ui:1.0.0-beta05'
+    //implementation 'androidx.compose.ui:ui-tooling:1.0.0-beta05'
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
-    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha05"
+    //implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha05"
     implementation "androidx.core:core-ktx:1.3.2"
     implementation "androidx.core:core-role:1.0.0"
     implementation "androidx.core:core-animation:1.0.0-alpha02"
@@ -103,17 +102,17 @@ dependencies {
     implementation "androidx.hilt:hilt-navigation-fragment:1.0.0-beta01"
     implementation 'androidx.hilt:hilt-work:1.0.0-beta01'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha04'
+    //implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha04'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
               kapt "androidx.lifecycle:lifecycle-common-java8:2.3.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01"
-    implementation "androidx.navigation:navigation-compose:1.0.0-alpha10"
+    //implementation "androidx.navigation:navigation-compose:1.0.0-alpha10"
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
     implementation "androidx.paging:paging-runtime-ktx:3.0.0-rc01"
-    implementation "androidx.paging:paging-compose:1.0.0-alpha08"
+    //implementation "androidx.paging:paging-compose:1.0.0-alpha08"
     implementation "androidx.recyclerview:recyclerview:1.2.0"
     implementation "androidx.room:room-runtime:2.3.0"
               kapt "androidx.room:room-compiler:2.3.0"
@@ -130,7 +129,7 @@ dependencies {
     implementation "com.ashokvarma.android:gander-imdb:3.1.0"
     implementation "com.jakewharton.timber:timber:4.7.1"
 
-    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.0-beta05'
+    //androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.0-beta05'
     androidTestImplementation "androidx.core:core-animation-testing:1.0.0-alpha02"
     androidTestImplementation "androidx.navigation:navigation-testing:2.3.5"
     androidTestImplementation "androidx.test.ext:junit:1.1.2"
