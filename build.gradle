@@ -4,7 +4,21 @@ buildscript {
         compileSdkVersion = 30
         minSdkVersion = 21
         targetSdkVersion = 30
-        buildToolsVersion = "30.0.3"
+        buildToolsVersion = '30.0.3'
+
+        gradleVersion = '4.2.2'
+        kotlinVersion = '1.5.21'
+        daggerVersion = '2.36'
+        coroutinesVersion = '1.5.0'
+        appcompatVersion = '1.3.0'
+        coreVersion = '1.6.0'
+        materialVersion = '1.4.0'
+        junitVersion = '4.13.2'
+        testVersion = '1.1.3'
+        espressoVersion = '3.4.0'
+        exoplayerVersion = '2.14.1'
+        playcoreVersion = '1.8.1'
+        activityVersion = '1.2.3'
     }
 
     repositories {
@@ -13,8 +27,9 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0-alpha15"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.35"
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$daggerVersion"
     }
 }
 

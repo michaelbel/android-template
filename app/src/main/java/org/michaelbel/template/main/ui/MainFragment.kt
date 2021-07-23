@@ -7,6 +7,7 @@ import androidx.fragment.app.commit
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentMainBinding
+import org.michaelbel.template.paging.ui.SearchReposFragment
 import org.michaelbel.template.review.ui.ReviewFragment
 import org.michaelbel.template.savedstate.SavedStateFragment
 import org.michaelbel.template.toast.ToastFragment
@@ -51,6 +52,12 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             parentFragmentManager.commit(allowStateLoss = true) {
                 replace(R.id.container, WindowInsetsFragment(), WindowInsetsFragment::class.java.canonicalName)
                 addToBackStack(WindowInsetsFragment::class.java.canonicalName)
+            }
+        }
+        binding.pagingButton.setOnClickListener {
+            parentFragmentManager.commit(allowStateLoss = true) {
+                replace(R.id.container, SearchReposFragment(), SearchReposFragment::class.java.canonicalName)
+                addToBackStack(SearchReposFragment::class.java.canonicalName)
             }
         }
     }
