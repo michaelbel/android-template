@@ -10,9 +10,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentWindowInsetsBinding
 
-/**
- * Внедрить после релиза androidx.code 1.5.0
- */
 @AndroidEntryPoint
 class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {
 
@@ -27,36 +24,20 @@ class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {
             view.doOnLayout {
                 WindowInsetsControllerCompat(requireActivity().window, view)
                     .show(WindowInsetsCompat.Type.statusBars())
-
-                /*if (Build.VERSION.SDK_INT >= 30) {
-                    view.windowInsetsController?.show(WindowInsets.Type.statusBars())
-                }*/
             }
         }
         binding.hideStatusBarButton.setOnClickListener {
             WindowInsetsControllerCompat(requireActivity().window, view)
                 .hide(WindowInsetsCompat.Type.statusBars())
-
-            /*if (Build.VERSION.SDK_INT >= 30) {
-                view.windowInsetsController?.hide(WindowInsets.Type.statusBars())
-            }*/
         }
 
         binding.showKeyboardButton.setOnClickListener {
             WindowInsetsControllerCompat(requireActivity().window, binding.root)
                 .show(WindowInsetsCompat.Type.ime())
-
-            /*if (Build.VERSION.SDK_INT >= 30) {
-                view.windowInsetsController?.show(WindowInsets.Type.ime())
-            }*/
         }
         binding.hideKeyboardButton.setOnClickListener {
             WindowInsetsControllerCompat(requireActivity().window, binding.root)
                 .hide(WindowInsetsCompat.Type.ime())
-
-            /*if (Build.VERSION.SDK_INT >= 30) {
-                view.windowInsetsController?.hide(WindowInsets.Type.ime())
-            }*/
         }
     }
 
