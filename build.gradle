@@ -19,6 +19,7 @@ buildscript {
         exoplayerVersion = '2.14.1'
         playcoreVersion = '1.8.1'
         activityVersion = '1.2.3'
+        navigationVersion = '2.3.5'
     }
 
     repositories {

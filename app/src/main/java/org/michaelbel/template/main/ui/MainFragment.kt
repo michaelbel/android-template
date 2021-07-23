@@ -3,16 +3,10 @@ package org.michaelbel.template.main.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentMainBinding
-import org.michaelbel.template.paging.ui.SearchReposFragment
-import org.michaelbel.template.review.ui.ReviewFragment
-import org.michaelbel.template.savedstate.SavedStateFragment
-import org.michaelbel.template.toast.ToastFragment
-import org.michaelbel.template.update.ui.UpdateFragment
-import org.michaelbel.template.windowinsets.WindowInsetsFragment
 
 @AndroidEntryPoint
 class MainFragment: Fragment(R.layout.fragment_main) {
@@ -25,40 +19,22 @@ class MainFragment: Fragment(R.layout.fragment_main) {
         _binding = FragmentMainBinding.bind(view)
 
         binding.inAppReviewButton.setOnClickListener {
-            parentFragmentManager.commit(allowStateLoss = true) {
-                replace(R.id.container, ReviewFragment(), ReviewFragment::class.java.canonicalName)
-                addToBackStack(ReviewFragment::class.java.canonicalName)
-            }
+            findNavController().navigate(R.id.action_mainFragment_to_reviewFragment)
         }
         binding.inAppUpdateButton.setOnClickListener {
-            parentFragmentManager.commit(allowStateLoss = true) {
-                replace(R.id.container, UpdateFragment(), UpdateFragment::class.java.canonicalName)
-                addToBackStack(UpdateFragment::class.java.canonicalName)
-            }
+            findNavController().navigate(R.id.action_mainFragment_to_updateFragment)
         }
         binding.savedStateButton.setOnClickListener {
-            parentFragmentManager.commit(allowStateLoss = true) {
-                replace(R.id.container, SavedStateFragment(), SavedStateFragment::class.java.canonicalName)
-                addToBackStack(SavedStateFragment::class.java.canonicalName)
-            }
+            findNavController().navigate(R.id.action_mainFragment_to_savedStateFragment)
         }
         binding.toastButton.setOnClickListener {
-            parentFragmentManager.commit(allowStateLoss = true) {
-                replace(R.id.container, ToastFragment(), ToastFragment::class.java.canonicalName)
-                addToBackStack(ToastFragment::class.java.canonicalName)
-            }
+            findNavController().navigate(R.id.action_mainFragment_to_toastFragment)
         }
         binding.keyboardButton.setOnClickListener {
-            parentFragmentManager.commit(allowStateLoss = true) {
-                replace(R.id.container, WindowInsetsFragment(), WindowInsetsFragment::class.java.canonicalName)
-                addToBackStack(WindowInsetsFragment::class.java.canonicalName)
-            }
+            findNavController().navigate(R.id.action_mainFragment_to_insetsFragment)
         }
         binding.pagingButton.setOnClickListener {
-            parentFragmentManager.commit(allowStateLoss = true) {
-                replace(R.id.container, SearchReposFragment(), SearchReposFragment::class.java.canonicalName)
-                addToBackStack(SearchReposFragment::class.java.canonicalName)
-            }
+            findNavController().navigate(R.id.action_mainFragment_to_pagingFragment)
         }
     }
 

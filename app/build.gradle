@@ -59,6 +59,8 @@ dependencies {
     implementation project(':core')
 
     implementation "androidx.activity:activity-ktx:$activityVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
     implementation "com.google.dagger:hilt-android:$daggerVersion"
               kapt "com.google.dagger:hilt-compiler:$daggerVersion"
@@ -103,8 +105,6 @@ dependencies {
               kapt "androidx.lifecycle:lifecycle-common-java8:2.3.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01"
     //implementation "androidx.navigation:navigation-compose:1.0.0-alpha10"
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
     implementation "androidx.paging:paging-runtime-ktx:3.0.0-beta01"
     //implementation "androidx.paging:paging-compose:1.0.0-alpha08"
     implementation "androidx.recyclerview:recyclerview:1.2.1"

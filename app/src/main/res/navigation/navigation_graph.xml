@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="org.michaelbel.template.main.ui.MainFragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_updateFragment"
+            app:destination="@id/updateFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_savedStateFragment"
+            app:destination="@id/savedStateFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_toastFragment"
+            app:destination="@id/toastFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_insetsFragment"
+            app:destination="@id/insetsFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_pagingFragment"
+            app:destination="@id/pagingFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="org.michaelbel.template.review.ui.ReviewFragment"
+        tools:layout="@layout/fragment_review"/>
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="org.michaelbel.template.update.ui.UpdateFragment"
+        tools:layout="@layout/fragment_update"/>
+
+    <fragment
+        android:id="@+id/savedStateFragment"
+        android:name="org.michaelbel.template.savedstate.SavedStateFragment"
+        tools:layout="@layout/fragment_saved_state"/>
+
+    <fragment
+        android:id="@+id/toastFragment"
+        android:name="org.michaelbel.template.toast.ToastFragment"
+        tools:layout="@layout/fragment_toast"/>
+
+    <fragment
+        android:id="@+id/insetsFragment"
+        android:name="org.michaelbel.template.windowinsets.WindowInsetsFragment"
+        tools:layout="@layout/fragment_window_insets"/>
+
+    <fragment
+        android:id="@+id/pagingFragment"
+        android:name="org.michaelbel.template.paging.ui.SearchReposFragment"
+        tools:layout="@layout/fragment_search_repositories"/>
+
+</navigation>
