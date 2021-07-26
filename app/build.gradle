@@ -16,10 +16,10 @@ def keystorePropertiesFile = rootProject.file("config/keystore.properties")
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 } else {
-    keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS
-    keystoreProperties['keyPassword'] = System.envKEYSTORE_KEY_PASSWORD
-    keystoreProperties['storePassword'] = System.envKEYSTORE_STORE_PASSWORD
-    keystoreProperties['storeFile'] = '../config/keystore.jks'
+    keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS ?: ''
+    keystoreProperties['keyPassword'] = System.env.KEYSTORE_KEY_PASSWORD ?: ''
+    keystoreProperties['storePassword'] = System.env.KEYSTORE_STORE_PASSWORD ?: ''
+    keystoreProperties['storeFile'] = '../config/keystore.jks' ?: ''
 }
 
 android {
