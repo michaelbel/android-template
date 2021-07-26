@@ -26,7 +26,7 @@ jobs:
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
-          arguments: assembleDebug assembleRelease
+          arguments: assembleDebug
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2.2.0
