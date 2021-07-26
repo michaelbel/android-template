@@ -19,7 +19,7 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS ?: ''
     keystoreProperties['keyPassword'] = System.env.KEYSTORE_KEY_PASSWORD ?: ''
     keystoreProperties['storePassword'] = System.env.KEYSTORE_STORE_PASSWORD ?: ''
-    keystoreProperties['storeFile'] = '../config/keystore.jks' ?: ''
+    keystoreProperties['storeFile'] = '../config/keystore.jks'
 }
 
 android {
