@@ -24,6 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      # Execute unit tests
+      - name: Unit Test
+        run: ./gradlew testDebugUnitTest
+        
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
