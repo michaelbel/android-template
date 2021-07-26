@@ -1,5 +1,7 @@
 name: CI
 
+# Управление запуском рабочего процесса. 
+# Триггерится по запросам push и pull в ветку master.
 on:
 #  push:
 #    branches: [ master ]
@@ -24,7 +26,8 @@ jobs:
         uses: timheuer/base64-to-file@v1
         with:
           fileName: 'config/keystore.jks'
-          encodedString: ${{ secrets.KEYSTORE_FILE }}
+          encodedString: KEYSTORE_FILE
+#          encodedString: ${{ secrets.KEYSTORE_FILE }}
       
       - uses: actions/checkout@v2
       
@@ -33,15 +36,19 @@ jobs:
         with:
           java-version: 1.8
           
-      - name: Make Gradlew executable
+      - name: Make Gradlew Executable
         run: chmod +x ./gradlew
         
+      - name: Run Unit Tests
+        run: ./gradlew test
+        
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
-        env:
-          KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
-          KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
-          KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
+        run: ./gradlew app:assembleDebug
+#        run: ./gradlew assembleDebug
+#        env:
+#          KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
+#          KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
+#          KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
           
       - name: Upload Debug APK to Outputs
         uses: actions/upload-artifact@v2
