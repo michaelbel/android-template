@@ -27,7 +27,6 @@ jobs:
         with:
           fileName: 'config/keystore.jks'
           encodedString: KEYSTORE_FILE
-#          encodedString: ${{ secrets.KEYSTORE_FILE }}
       
       - uses: actions/checkout@v2
       
@@ -44,11 +43,6 @@ jobs:
         
       - name: Build Debug APK
         run: ./gradlew app:assembleDebug
-#        run: ./gradlew assembleDebug
-#        env:
-#          KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
-#          KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
-#          KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
           
       - name: Upload Debug APK to Outputs
         uses: actions/upload-artifact@v2
