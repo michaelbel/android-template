@@ -7,9 +7,20 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
-def keystorePropertiesFile = rootProject.file("config/keystore.properties")
+// Для локальных сборок берем ключи из локального хранилища keystore.properties.
+// Для удаленных сборок на GitHub Actions берем ключи из Actions Secrets.
+// Каталог ../config отсутствует в удаленном репозитории.
+
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+def keystorePropertiesFile = rootProject.file("config/keystore.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS
+    keystoreProperties['keyPassword'] = System.envKEYSTORE_KEY_PASSWORD
+    keystoreProperties['storePassword'] = System.envKEYSTORE_STORE_PASSWORD
+    keystoreProperties['storeFile'] = '../config/keystore.jks'
+}
 
 android {
     compileSdk rootProject.compileSdkVersion
@@ -26,9 +37,9 @@ android {
 
     signingConfigs {
         release {
+            storeFile file(keystoreProperties['storeFile'])
             keyAlias keystoreProperties['keyAlias']
             keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
             storePassword keystoreProperties['storePassword']
         }
     }
