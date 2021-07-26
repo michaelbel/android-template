@@ -35,6 +35,10 @@
             android:id="@+id/action_mainFragment_to_pagingFragment"
             app:destination="@id/pagingFragment"/>
 
+        <action
+                android:id="@+id/action_mainFragment_to_adsFragment"
+                app:destination="@id/adsFragment"/>
+
     </fragment>
 
     <fragment
@@ -66,5 +70,10 @@
         android:id="@+id/pagingFragment"
         android:name="org.michaelbel.template.paging.ui.SearchReposFragment"
         tools:layout="@layout/fragment_search_repositories"/>
+
+    <fragment
+            android:id="@+id/adsFragment"
+            android:name="org.michaelbel.template.ads.AdsFragment"
+            tools:layout="@layout/fragment_ads"/>
 
 </navigation>

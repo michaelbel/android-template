@@ -5,6 +5,9 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.firebase.appdistribution'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
 }
 
 // Для локальных сборок берем ключи из локального хранилища keystore.properties.
@@ -50,6 +53,15 @@ android {
             minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            firebaseAppDistribution {
+                artifactType="APK"
+                groups="testers"
+                testers="michaelbel24865@gmail.com"
+                releaseNotes="Release Build"
+                //releaseNotesFile="/path/to/releasenotes.txt"
+                serviceCredentialsFile="$rootDir/app/config/firebase-app-distribution.json"
+            }
         }
     }
 
@@ -87,6 +99,10 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-dash:$exoplayerVersion"
     implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion"
     implementation "com.google.android.play:core-ktx:$playcoreVersion"
+    implementation "com.google.android.gms:play-services-ads:$adsVersion"
+    implementation "com.google.firebase:firebase-analytics:$firebaseAnalytics"
+    implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
+    implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
 
     //implementation "androidx.activity:activity-compose:1.3.0-alpha07"
     implementation "androidx.annotation:annotation:1.2.0"

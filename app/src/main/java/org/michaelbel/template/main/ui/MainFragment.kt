@@ -36,6 +36,9 @@ class MainFragment: Fragment(R.layout.fragment_main) {
         binding.pagingButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_pagingFragment)
         }
+        binding.adsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_adsFragment)
+        }
     }
 
     override fun onDestroyView() {

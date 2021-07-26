@@ -77,4 +77,27 @@
         app:layout_constraintTop_toBottomOf="@id/keyboardButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/adsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ads"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pagingButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:constraint_referenced_ids="inAppReviewButton,inAppUpdateButton,savedStateButton,toastButton,keyboardButton,pagingButton,adsButton"
+        app:flow_horizontalGap="8dp"
+        app:flow_verticalGap="0dp"
+        app:flow_horizontalStyle="packed"
+        app:flow_verticalStyle="packed"
+        app:flow_wrapMode="chain"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
