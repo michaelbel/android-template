@@ -48,7 +48,7 @@ jobs:
          expose-version-code: 'true'
          
       - name: BUILD DEBUG APK
-        run: ./gradlew app:assembleDebug
+        run: ./gradlew app:assembleDebug app:assembleRelease app:bundleRelease
         
       - name: UPLOAD APKS TO OUTPUTS
         uses: actions/upload-artifact@v2
@@ -65,28 +65,9 @@ jobs:
           tag_name: ${{ env.ANDROID_VERSION_NAME }}
           draft: false
           prerelease: false
-          files: app/build/outputs/apk/**/*.apk
-          
-#      - name: CREATE GITHUB RELEASE
-#        id: create_release
-#        uses: actions/create-release@v1
-#        with:
-#          tag_name: ${{ env.ANDROID_VERSION_NAME }}
-#          release_name: ${{ env.ANDROID_VERSION_NAME }}
-#          draft: false
-#          prerelease: false
-          
-#      - name: CREATE GITHUB RELEASE
-#        uses: marvinpinto/action-automatic-releases@latest
-#        with:
-#          repo_token: GITHUB_TOKEN
-#          title: env.ANDROID_VERSION_NAME
-#          automatic_release_tag: env.ANDROID_VERSION_NAME — не работает
-#          draft: false
-#          prerelease: false
-#          files: |
-#            *.apk
-#            *.aab
+          files: |
+           app/build/outputs/apk/**/*.apk
+           app/build/outputs/bundle/**/*.aab
           
 #      - uses: eskatos/gradle-command-action@v1
 #        with:
