@@ -48,15 +48,18 @@ jobs:
       path: app/build.gradle
       expose-version-name: 'true'
       expose-version-code: 'true'
-        
+      
    - name: Build Artifacts
-     uses: eskatos/gradle-command-action@v1
-     with:
-      gradle-version: 6.7.1
-      wrapper-cache-enabled: true
-      dependencies-cache-enabled: true
-      configuration-cache-enabled: true
-      arguments: assembleDebug assembleRelease bundleRelease
+     run: ./gradlew assembleDebug assembleRelease bundleRelease
+        
+#   - name: Build Artifacts
+#     uses: eskatos/gradle-command-action@v1
+#     with:
+#      gradle-version: 6.7.1
+#      wrapper-cache-enabled: true
+#      dependencies-cache-enabled: true
+#      configuration-cache-enabled: true
+#      arguments: assembleDebug assembleRelease bundleRelease
         
    - name: Upload APKs to Outputs
      uses: actions/upload-artifact@v2
