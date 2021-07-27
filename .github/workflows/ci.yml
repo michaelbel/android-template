@@ -11,10 +11,11 @@ on:
   workflow_dispatch:
   
 env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   KEYSTORE_FILE: $ {{ secrets.KEYSTORE_FILE }}
   KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
   KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
-  KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}  
+  KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
 
 jobs:
   build:
@@ -49,28 +50,35 @@ jobs:
 #      - name: Run Unit Tests
 #        run: ./gradlew test
         
-      - name: Build Debug APK
-        run: ./gradlew app:assembleDebug
+#      - name: Build Debug APK
+#        run: ./gradlew app:assembleDebug
           
-      - name: Upload Debug APK to Outputs
-        uses: actions/upload-artifact@v2
-        with:
-          name: Build Artifacts
-          path: |
-            app/build/outputs/apk
-            app/build/outputs/bundle
+#      - name: Upload Debug APK to Outputs
+#        uses: actions/upload-artifact@v2
+#        with:
+#         name: Build Artifacts
+#          path: |
+#            app/build/outputs/apk
+#            app/build/outputs/bundle
           
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Create Release
+#        id: create_release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{ github.ref }}
+#          release_name: ${{ env.RELEASE_NAME }}
+#          body: |
+#            What is new :
+#              - First Change
+#              - Second Change
+#          draft: false
+#          prerelease: false
+          
+      - name: Push Notification Message In Telegram
+        uses: appleboy/telegram-action@master
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ env.RELEASE_NAME }}
-          body: |
-            What is new :
-              - First Change
-              - Second Change
-          draft: false
-          prerelease: false
+          to: ${{ secrets.TELEGRAM_BOT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: The ${{ github.event_name }} event triggered first step.
