@@ -58,6 +58,17 @@ jobs:
           app/build/outputs/apk
           app/build/outputs/bundle
           
+      - name: CREATE GITHUB RELEASE
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.ANDROID_VERSION_NAME }}
+          tag_name: ${{ env.ANDROID_VERSION_NAME }}
+          draft: false
+          prerelease: false
+          files: |
+           *.apk
+           *.aab
+          
 #      - name: CREATE GITHUB RELEASE
 #        id: create_release
 #        uses: actions/create-release@v1
@@ -67,17 +78,17 @@ jobs:
 #          draft: false
 #          prerelease: false
           
-      - name: CREATE GITHUB RELEASE 2
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: GITHUB_TOKEN
-          title: env.ANDROID_VERSION_NAME
-          automatic_release_tag: env.ANDROID_VERSION_NAME
-          draft: false
-          prerelease: false
-          files: |
-            *.apk
-            *.aab
+#      - name: CREATE GITHUB RELEASE
+#        uses: marvinpinto/action-automatic-releases@latest
+#        with:
+#          repo_token: GITHUB_TOKEN
+#          title: env.ANDROID_VERSION_NAME
+#          automatic_release_tag: env.ANDROID_VERSION_NAME — не работает
+#          draft: false
+#          prerelease: false
+#          files: |
+#            *.apk
+#            *.aab
           
 #      - uses: eskatos/gradle-command-action@v1
 #        with:
