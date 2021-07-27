@@ -26,7 +26,7 @@ jobs:
      id: decode_keystore
      uses: timheuer/base64-to-file@v1
      with:
-      fileName: 'config/keystore.jks'
+      fileName: config/keystore.jks
       encodedString: KEYSTORE_FILE
       
    - uses: actions/checkout@v2
@@ -50,7 +50,7 @@ jobs:
       expose-version-code: 'true'
       
    - name: Build Artifacts
-     run: ./gradlew assembleDebug assembleRelease bundleRelease
+     run: bash ./gradlew assembleRelease --stacktrace
         
 #   - name: Build Artifacts
 #     uses: eskatos/gradle-command-action@v1
