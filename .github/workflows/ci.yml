@@ -37,10 +37,11 @@ jobs:
           
       - uses: eskatos/gradle-command-action@v1
         with:
-          arguments: runOnGitHub
+          gradle-version: 6.7.1
           wrapper-cache-enabled: true
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
+#          arguments: assembleRelease appDistributionUploadTemplateRelease
           
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
@@ -55,7 +56,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Build Artifacts
-          path: app/build/outputs/
+          path: |
+            app/build/outputs/apk
+            app/build/outputs/bundle
           
       - name: Set release name
         run: echo ::set-env name=RELEASE_NAME::$(echo ${GITHUB_REF:11})   
