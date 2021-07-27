@@ -65,9 +65,7 @@ jobs:
           tag_name: ${{ env.ANDROID_VERSION_NAME }}
           draft: false
           prerelease: false
-          files: |
-           *.apk
-           *.aab
+          files: 'app/build/outputs/apk/*.apk'
           
 #      - name: CREATE GITHUB RELEASE
 #        id: create_release
