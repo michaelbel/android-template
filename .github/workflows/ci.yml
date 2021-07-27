@@ -6,7 +6,7 @@ on:
 #  push:
 #    branches: [ master ]
 #  pull_request:
-#    branches: [ master ]
+#    branches: [ master, develop ]
 
   workflow_dispatch:
   
@@ -35,6 +35,13 @@ jobs:
         with:
           java-version: 1.8
           
+      - uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: runOnGitHub
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+          
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
         
@@ -49,33 +56,21 @@ jobs:
         with:
           name: Build Artifacts
           path: app/build/outputs/
-
-      - name: Create Draft Release
+          
+      - name: Set release name
+        run: echo ::set-env name=RELEASE_NAME::$(echo ${GITHUB_REF:11})   
+          
+      - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-#          body: |
-#            Changes in this Release
-#            - First Change
-#            - Second Change
-          draft: true
+          release_name: ${{ env.RELEASE_NAME }}
+          body: |
+            What is new :
+              - First Change
+              - Second Change
+          draft: false
           prerelease: false
-      - name: Upload release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./path/to/asset.zip
-          asset_name: asset.zip
-          asset_content_type: application/zip
-      - name: Publish release
-        uses: StuYarrow/publish-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          id: ${{ steps.create_release.outputs.id }}
