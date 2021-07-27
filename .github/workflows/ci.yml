@@ -46,8 +46,8 @@ jobs:
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
         
-      - name: Run Unit Tests
-        run: ./gradlew test
+#      - name: Run Unit Tests
+#        run: ./gradlew test
         
       - name: Build Debug APK
         run: ./gradlew app:assembleDebug
@@ -59,9 +59,6 @@ jobs:
           path: |
             app/build/outputs/apk
             app/build/outputs/bundle
-          
-      - name: Set release name
-        run: echo ::set-env name=RELEASE_NAME::$(echo ${GITHUB_REF:11})   
           
       - name: Create Release
         id: create_release
