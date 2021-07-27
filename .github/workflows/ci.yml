@@ -69,7 +69,9 @@ jobs:
           expose-version-code: 'true'
           
       - name: Print Version
-      - run: echo VersionName ${{ env.ANDROID_VERSION_NAME }} and VersionCode ${{ env.ANDROID_VERSION_CODE }}
+      - run: |
+         echo VersionName ${{ env.ANDROID_VERSION_NAME }},
+         echo VersionCode ${{ env.ANDROID_VERSION_CODE }}.
           
 #      - name: Create Release
 #        id: create_release
