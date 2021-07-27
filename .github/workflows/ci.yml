@@ -35,6 +35,43 @@ jobs:
         uses: actions/setup-java@v1
         with:
          java-version: 1.8
+         
+      - name: Make Gradlew Executable
+        run: chmod +x ./gradlew
+        
+      # VersionName = env.ANDROID_VERSION_NAME, VersionCode = env.ANDROID_VERSION_CODE
+      - name: Expose Version Name
+        uses: michpohl/android-expose-version-name-action@v1.0.0
+        with:
+         path: app/build.gradle
+         expose-version-name: 'true'
+         expose-version-code: 'true'
+         
+      - name: Build Debug APK
+        run: ./gradlew app:assembleDebug
+        
+      - name: Upload APKs to Outputs
+        uses: actions/upload-artifact@v2
+        with:
+         name: Build Artifacts
+         path: |
+          app/build/outputs/apk
+          app/build/outputs/bundle
+          
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.ANDROID_VERSION_NAME }}
+          release_name: ${{ env.ANDROID_VERSION_NAME }}
+#          body: |
+#            What is new :
+#              - First Change
+#              - Second Change
+          draft: false
+          prerelease: false
           
 #      - uses: eskatos/gradle-command-action@v1
 #        with:
@@ -43,50 +80,9 @@ jobs:
 #         dependencies-cache-enabled: true
 #         configuration-cache-enabled: true
 #         arguments: assembleRelease appDistributionUploadTemplateRelease
-          
-      - name: Make Gradlew Executable
-        run: chmod +x ./gradlew
         
 #      - name: Run Unit Tests
 #        run: ./gradlew test
-        
-#      - name: Build Debug APK
-#        run: ./gradlew app:assembleDebug
-          
-#      - name: Upload Debug APK to Outputs
-#        uses: actions/upload-artifact@v2
-#        with:
-#         name: Build Artifacts
-#          path: |
-#            app/build/outputs/apk
-#            app/build/outputs/bundle
-
-      - name: Expose version name
-        uses: michpohl/android-expose-version-name-action@v1.0.0
-        with:
-         path: app/build.gradle
-         expose-version-name: 'true'
-         expose-version-code: 'true'
-          
-#      - name: Print Version
-#      - run: |
-#         echo VersionName ${{ env.ANDROID_VERSION_NAME }},
-#         echo VersionCode ${{ env.ANDROID_VERSION_CODE }}.
-          
-#      - name: Create Release
-#        id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          tag_name: ${{ github.ref }}
-#          release_name: ${{ env.RELEASE_NAME }}
-#          body: |
-#            What is new :
-#              - First Change
-#              - Second Change
-#          draft: false
-#          prerelease: false
           
 #      - name: Push Notification Message In Telegram
 #        uses: appleboy/telegram-action@master
