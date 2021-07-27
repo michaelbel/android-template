@@ -60,6 +60,16 @@ jobs:
 #          path: |
 #            app/build/outputs/apk
 #            app/build/outputs/bundle
+
+      - name: Expose version name
+        uses: michpohl/android-expose-version-name-action@v1.0.0
+        with:
+          path: app/build.gradle
+          expose-version-name: 'true'
+          expose-version-code: 'true'
+          
+      - name: Print Version
+      - run: echo VersionName ${{ env.ANDROID_VERSION_NAME }} and VersionCode ${{ env.ANDROID_VERSION_CODE }}
           
 #      - name: Create Release
 #        id: create_release
@@ -76,9 +86,9 @@ jobs:
 #          draft: false
 #          prerelease: false
           
-      - name: Push Notification Message In Telegram
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_BOT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: The ${{ github.event_name }} event triggered first step.
+#      - name: Push Notification Message In Telegram
+#        uses: appleboy/telegram-action@master
+#        with:
+#          to: ${{ secrets.TELEGRAM_BOT_ID }}
+#         token: ${{ secrets.TELEGRAM_TOKEN }}
+#          args: The ${{ github.event_name }} event triggered first step.
