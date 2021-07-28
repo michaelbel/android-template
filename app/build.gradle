@@ -25,7 +25,6 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS ?: ''
     keystoreProperties['keyPassword'] = System.env.KEYSTORE_KEY_PASSWORD ?: ''
     keystoreProperties['storePassword'] = System.env.KEYSTORE_STORE_PASSWORD ?: ''
-    keystoreProperties['storeFile'] = 'config/keystore.jks'
 }
 
 android {
@@ -44,7 +43,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file(keystoreProperties['storeFile'])
+            storeFile file('../config/keystore.jks')
             keyAlias keystoreProperties['keyAlias']
             keyPassword keystoreProperties['keyPassword']
             storePassword keystoreProperties['storePassword']
