@@ -41,7 +41,7 @@ jobs:
       encodedString: ${{ secrets.KEYSTORE_FILE }}
       
    - name: Set File Location as Environment
-     run: echo ${{ steps.write_file.outputs.filePath }} >> $KEYSTORE_FILE_LOCATION
+     run: echo "${{ steps.write_file.outputs.filePath }}" >> $KEYSTORE_FILE_LOCATION
      
    - name: Print New Variable
      run: echo $KEYSTORE_FILE_LOCATION
