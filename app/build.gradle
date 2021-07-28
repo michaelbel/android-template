@@ -20,7 +20,7 @@ def keystorePropertiesFile = rootProject.file("config/keystore.properties")
 if (keystorePropertiesFile.exists()) {
     println "Start extract release keystore config from keystore.properties"
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-    //keystoreProperties['storeFile'] = '../config/keystore_release.jks'
+    keystoreProperties['storeFile'] = '../config/keystore_release.jks'
 } else {
     println "Start extract release keystore config from global vars"
     keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS ?: ''
