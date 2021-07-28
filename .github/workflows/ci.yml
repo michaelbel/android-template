@@ -26,7 +26,7 @@ jobs:
      id: decode_keystore_file
      uses: timheuer/base64-to-file@v1
      with:
-      fileName: config/keystore.jks
+      fileName: 'config/keystore.jks'
       encodedString: ${{ secrets.KEYSTORE_FILE }}
       
    - uses: actions/checkout@v2
