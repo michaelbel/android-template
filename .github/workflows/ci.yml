@@ -22,21 +22,8 @@ jobs:
   runs-on: ubuntu-latest
     
   steps:
-   - name: Decode Keystore File
-     id: decode_keystore_file
-     uses: timheuer/base64-to-file@v1
-     with:
-      fileName: 'config/keystore_release.jks'
-      encodedString: ${{ secrets.KEYSTORE_FILE }}
-      
-#   - name: Decode Keystore File
-#     uses: RollyPeres/base64-to-path@v1
-#     with:
-#      filePath: ${{ github.workspace }}/keystore.jks
-#      encodedString: ${{ secrets.KEYSTORE_FILE }}
-      
    - uses: actions/checkout@v2
-      
+   
    - name: Set up JDK 1.8
      uses: actions/setup-java@v1
      with:
@@ -44,6 +31,25 @@ jobs:
          
    - name: Make Gradlew Executable
      run: chmod +x ./gradlew
+   
+   - name: Decode Keystore File
+     id: decode_keystore_file
+     uses: timheuer/base64-to-file@v1
+     with:
+      fileName: 'keystore_release.jks'
+      encodedString: ${{ secrets.KEYSTORE_FILE }}
+      
+   - name: Set File Location as Environment
+     run: echo ${{ steps.write_file.outputs.filePath }} >> $KEYSTORE_FILE_LOCATION
+     
+   - name: Print New Variable
+   - run: echo $KEYSTORE_FILE_LOCATION
+      
+#   - name: Decode Keystore File
+#     uses: RollyPeres/base64-to-path@v1
+#     with:
+#      filePath: ${{ github.workspace }}/keystore.jks
+#      encodedString: ${{ secrets.KEYSTORE_FILE }}
      
 #  - name: Run Unit Tests
 #    run: ./gradlew test
