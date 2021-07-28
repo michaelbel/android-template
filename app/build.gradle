@@ -20,11 +20,13 @@ def keystorePropertiesFile = rootProject.file("config/keystore.properties")
 if (keystorePropertiesFile.exists()) {
     println "Start extract release keystore config from keystore.properties"
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    keystoreProperties['storeFile'] = '../config/keystore_release.jks'
 } else {
     println "Start extract release keystore config from global vars"
     keystoreProperties['keyAlias'] = System.env.KEYSTORE_KEY_ALIAS ?: ''
     keystoreProperties['keyPassword'] = System.env.KEYSTORE_KEY_PASSWORD ?: ''
     keystoreProperties['storePassword'] = System.env.KEYSTORE_STORE_PASSWORD ?: ''
+    keystoreProperties['storeFile'] = System.env.KEYSTORE_FILE_LOCATION ?: ''
 }
 
 android {
@@ -35,6 +37,7 @@ android {
         applicationId "org.michaelbel.template"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
+        ndkVersion '21.2.6472646'
         versionCode 2
         versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -43,7 +46,8 @@ android {
 
     signingConfigs {
         release {
-            storeFile = file('../config/keystore_release.jks')
+            //storeFile = file('../config/keystore_release.jks')
+            storeFile file(keystoreProperties['storeFile'])
             keyAlias keystoreProperties['keyAlias']
             keyPassword keystoreProperties['keyPassword']
             storePassword keystoreProperties['storePassword']
