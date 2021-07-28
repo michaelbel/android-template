@@ -22,18 +22,18 @@ jobs:
   runs-on: ubuntu-latest
     
   steps:
-   - name: Decode Keystore File
-     id: decode_keystore_file
-     uses: timheuer/base64-to-file@v1
-     with:
-      fileName: 'keystore.jks'
-      encodedString: ${{ secrets.KEYSTORE_FILE }}
-      
 #   - name: Decode Keystore File
-#     uses: RollyPeres/base64-to-path@v1
+#     id: decode_keystore_file
+#     uses: timheuer/base64-to-file@v1
 #     with:
-#      filePath: ${{ github.workspace }}/config/keystore.jks
+#      fileName: 'keystore.jks'
 #      encodedString: ${{ secrets.KEYSTORE_FILE }}
+      
+   - name: Decode Keystore File
+     uses: RollyPeres/base64-to-path@v1
+     with:
+      filePath: ${{ github.workspace }}/keystore.jks
+      encodedString: ${{ secrets.KEYSTORE_FILE }}
       
    - uses: actions/checkout@v2
       
