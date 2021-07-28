@@ -18,8 +18,11 @@ buildscript {
         espressoVersion = '3.4.0'
         exoplayerVersion = '2.14.1'
         playcoreVersion = '1.8.1'
-        activityVersion = '1.2.3'
+        activityVersion = '1.2.4'
         navigationVersion = '2.3.5'
+
+        testJunitVersion = '1.1.3'
+        testRulesVersion = '1.4.0'
     }
 
     repositories {
