@@ -38,8 +38,7 @@ jobs:
      uses: timheuer/base64-to-file@v1
      with:
       fileName: 'keystore_release.jks'
-      encodedString: KEYSTORE_FILE
-#      encodedString: ${{ secrets.KEYSTORE_FILE }}
+      encodedString: ${{ secrets.KEYSTORE_FILE }}
       
    - name: Set Decoded File Location as Environment
      run: echo "KEYSTORE_FILE_LOCATION=${{steps.decode_keystore_file.outputs.filePath}}" >> $GITHUB_ENV
