@@ -44,7 +44,9 @@ jobs:
      run: echo "KEYSTORE_FILE_LOCATION = ${{ steps.write_file.outputs.filePath }}" >> $GITHUB_ENV
      
    - name: Print New Variable
-     run: ${{ env.KEYSTORE_FILE_LOCATION }}
+     run: |
+      echo "$KEYSTORE_FILE_LOCATION"
+      echo "${{ env.KEYSTORE_FILE_LOCATION }}"
       
 #   - name: Decode Keystore File
 #     uses: RollyPeres/base64-to-path@v1
@@ -55,15 +57,15 @@ jobs:
 #  - name: Run Unit Tests
 #    run: ./gradlew test
         
-   - name: Expose Version Name
-     uses: michpohl/android-expose-version-name-action@v1.0.0
-     with:
-      path: app/build.gradle
-      expose-version-name: 'true'
-      expose-version-code: 'true'
+#   - name: Expose Version Name
+#     uses: michpohl/android-expose-version-name-action@v1.0.0
+#    with:
+#      path: app/build.gradle
+#      expose-version-name: 'true'
+#      expose-version-code: 'true'
       
-   - name: Build Artifacts
-     run: bash ./gradlew assembleRelease --stacktrace
+#   - name: Build Artifacts
+#     run: bash ./gradlew assembleRelease --stacktrace
         
 #   - name: Build Artifacts
 #     uses: eskatos/gradle-command-action@v1
@@ -74,24 +76,24 @@ jobs:
 #      configuration-cache-enabled: true
 #      arguments: assembleDebug assembleRelease bundleRelease
         
-   - name: Upload APKs to Outputs
-     uses: actions/upload-artifact@v2
-     with:
-      name: Build Artifacts
-      path: |
-       app/build/outputs/apk
-       app/build/outputs/bundle
+#   - name: Upload APKs to Outputs
+#     uses: actions/upload-artifact@v2
+#     with:
+#      name: Build Artifacts
+#      path: |
+#       app/build/outputs/apk
+#       app/build/outputs/bundle
           
-   - name: Create GitHub Release
-     uses: softprops/action-gh-release@v1
-     with:
-      name: ${{ env.ANDROID_VERSION_NAME }}
-      tag_name: ${{ env.ANDROID_VERSION_NAME }}
-      draft: false
-      prerelease: false
-      files: |
-       app/build/outputs/apk/**/*.apk
-       app/build/outputs/bundle/**/*.aab
+#   - name: Create GitHub Release
+#     uses: softprops/action-gh-release@v1
+#     with:
+#      name: ${{ env.ANDROID_VERSION_NAME }}
+#      tag_name: ${{ env.ANDROID_VERSION_NAME }}
+#      draft: false
+#      prerelease: false
+#      files: |
+#       app/build/outputs/apk/**/*.apk
+#       app/build/outputs/bundle/**/*.aab
           
 #  - name: Push Notification Message In Telegram
 #    uses: appleboy/telegram-action@master
