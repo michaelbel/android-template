@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.addRepeatingJob
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentMoviesBinding
 
@@ -34,9 +31,9 @@ class MovieFragment: Fragment(R.layout.fragment_movies) {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         }
 
-        viewLifecycleOwner.addRepeatingJob(Lifecycle.State.STARTED) {
+        /*viewLifecycleOwner.addRepeatingJob(Lifecycle.State.STARTED) {
             viewModel.items.collectLatest { moviesAdapter.submitData(it) }
-        }
+        }*/
     }
 
     override fun onDestroyView() {
