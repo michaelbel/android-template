@@ -84,7 +84,7 @@ android {
     }
 
     buildFeatures {
-        //compose true
+        compose true
         viewBinding true
 
         // Disable unused AGP features
@@ -100,6 +100,7 @@ dependencies {
     implementation project(':core')
 
     implementation "androidx.activity:activity-ktx:$activityVersion"
+    implementation "androidx.activity:activity-compose:$activityVersion"
     implementation "androidx.annotation:annotation:$annotationVersion"
     implementation "androidx.annotation:annotation-experimental:$annotationExperimentalVersion"
     implementation "androidx.asynclayoutinflater:asynclayoutinflater:$asynclayoutinflaterVersion"
@@ -109,10 +110,13 @@ dependencies {
     implementation "androidx.compose.animation:animation:$composeVersion"
     implementation "androidx.compose.compiler:compiler:$composeVersion"
     implementation "androidx.compose.foundation:foundation:$composeVersion"
+    implementation "androidx.compose.foundation:foundation-layout:$composeVersion"
     implementation "androidx.compose.material:material:$composeVersion"
     implementation "androidx.compose.runtime:runtime:$composeVersion"
     implementation "androidx.compose.runtime:runtime-livedata:$composeVersion"
     implementation "androidx.compose.ui:ui:$composeVersion"
+    implementation "androidx.compose.ui:ui-viewbinding:$composeVersion"
+    implementation "androidx.compose.ui:ui-tooling:$composeVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
     implementation "androidx.core:core-role:$coreroleVersion"
     implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
@@ -137,6 +141,25 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
     implementation "androidx.work:work-runtime-ktx:$workVersion"
 
+    implementation "com.google.accompanist:accompanist-appcompat-theme:0.16.0"
+    implementation "com.google.accompanist:accompanist-coil:0.15.0"
+    implementation "com.google.accompanist:accompanist-drawablepainter:0.16.0"
+    implementation "com.google.accompanist:accompanist-imageloading-core:0.15.0"
+    implementation "com.google.accompanist:accompanist-insets:0.16.0"
+    implementation "com.google.accompanist:accompanist-insets-ui:0.16.0"
+    implementation "com.google.accompanist:accompanist-glide:0.15.0"
+    implementation "com.google.accompanist:accompanist-flowlayout:0.16.0"
+    implementation "com.google.accompanist:accompanist-navigation-animation:0.16.0"
+    implementation "com.google.accompanist:accompanist-navigation-material:0.16.0"
+    implementation "com.google.accompanist:accompanist-pager:0.16.0"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.16.0"
+    implementation "com.google.accompanist:accompanist-permissions:0.16.0"
+    implementation "com.google.accompanist:accompanist-picasso:0.6.2"
+    implementation "com.google.accompanist:accompanist-placeholder:0.16.0"
+    implementation "com.google.accompanist:accompanist-placeholder-material:0.16.0"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.16.0"
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.16.0"
+
     implementation "com.google.dagger:hilt-android:$daggerVersion"
               kapt "com.google.dagger:hilt-compiler:$daggerVersion"
     implementation "com.google.android.exoplayer:exoplayer:$exoplayerVersion"
@@ -145,6 +168,7 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion"
     implementation "com.google.android.play:core-ktx:$playcoreVersion"
     implementation "com.google.android.gms:play-services-ads:$adsVersion"
+    implementation "com.google.android.material:compose-theme-adapter:$composeVersion"
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalytics"
     implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
     implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
@@ -157,14 +181,20 @@ dependencies {
     implementation "com.ashokvarma.android:gander-persistence:$ganderVersion"
     implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
 
-    testImplementation "junit:junit:$junitVersion"
-    testImplementation "androidx.room:room-testing:$roomVersion"
-
     debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
 
+    androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$composeVersion"
     androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
     androidTestImplementation "androidx.test.ext:junit-ktx:$testJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$testEspressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$testEspressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$testEspressoVersion"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:$testUianimatorVersion"
     androidTestImplementation "androidx.test:rules:$testRulesVersion"
     androidTestImplementation "androidx.work:work-testing:$workVersion"
+    androidTestImplementation "com.google.truth:truth:$truthVersion"
+
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "androidx.room:room-testing:$roomVersion"
 }
