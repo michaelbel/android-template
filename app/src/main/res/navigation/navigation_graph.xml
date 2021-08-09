@@ -36,8 +36,12 @@
             app:destination="@id/pagingFragment"/>
 
         <action
-                android:id="@+id/action_mainFragment_to_adsFragment"
-                app:destination="@id/adsFragment"/>
+            android:id="@+id/action_mainFragment_to_adsFragment"
+            app:destination="@id/adsFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_navArgsFragment"
+            app:destination="@id/navArgsFragment"/>
 
     </fragment>
 
@@ -58,8 +62,7 @@
 
     <fragment
         android:id="@+id/toastFragment"
-        android:name="org.michaelbel.template.toast.ToastFragment"
-        tools:layout="@layout/fragment_toast"/>
+        android:name="org.michaelbel.template.features.toast.ToastFragment"/>
 
     <fragment
         android:id="@+id/insetsFragment"
@@ -72,8 +75,24 @@
         tools:layout="@layout/fragment_search_repositories"/>
 
     <fragment
-            android:id="@+id/adsFragment"
-            android:name="org.michaelbel.template.ads.AdsFragment"
-            tools:layout="@layout/fragment_ads"/>
+        android:id="@+id/adsFragment"
+        android:name="org.michaelbel.template.ads.AdsFragment"
+        tools:layout="@layout/fragment_ads"/>
+
+    <fragment
+        android:id="@+id/navArgsFragment"
+        android:name="org.michaelbel.template.features.navagrs.NavArgsFragment">
+
+        <argument
+            android:name="firstText"
+            app:argType="string"
+            app:nullable="true"/>
+
+        <argument
+            android:name="secondNumber"
+            android:defaultValue="0"
+            app:argType="integer"/>
+
+    </fragment>
 
 </navigation>

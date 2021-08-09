@@ -2,6 +2,7 @@ package org.michaelbel.template.main.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +39,12 @@ class MainFragment: Fragment(R.layout.fragment_main) {
         }
         binding.adsButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_adsFragment)
+        }
+        binding.navArgsButton.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_mainFragment_to_navArgsFragment,
+                bundleOf("firstText" to "Some Text", "secondNumber" to 100)
+            )
         }
     }
 
