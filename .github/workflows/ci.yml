@@ -22,7 +22,12 @@ jobs:
   runs-on: ubuntu-latest
     
   steps:
-   - name: Checkout
+   - name: Cancel previous runs
+     uses: styfle/cancel-workflow-action@0.9.1
+     with:
+      access_token: ${{ github.token }}
+  
+   - name: Checkout repository
      uses: actions/checkout@v2  
 
    - name: Set up JDK 1.8
