@@ -1,11 +1,8 @@
 version: 2
 updates:
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "12:13"
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "15:30"
+  open-pull-requests-limit: 10
