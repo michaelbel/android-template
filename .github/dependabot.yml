@@ -9,7 +9,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "15:47"
+      time: "16:11"
     open-pull-requests-limit: 1000
     reviewers:
       - "michaelbel"
