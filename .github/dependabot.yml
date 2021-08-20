@@ -13,7 +13,7 @@ updates:
     open-pull-requests-limit: 1000
     reviewers:
       - "michaelbel"
-    assigners:
+    assignees:
       - "michaelbel"
       
 #  ignore:
