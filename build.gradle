@@ -51,7 +51,7 @@ buildscript {
         // Google
         adsVersion = '20.2.0'
         crashlyticsVersion = '2.7.1'
-        daggerVersion = '2.37'
+        daggerVersion = '2.38.1'
         exoplayerVersion = '2.14.2'
         googleServicesVersion = '4.3.8'
         firebaseAppDistribution = '2.1.3'
