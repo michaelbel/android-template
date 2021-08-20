@@ -59,12 +59,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             firebaseAppDistribution {
+                appId = "1:33042426453:android:f766db4a18b6b79e9102dc" // google-services.json mobilesdk_app_id
                 artifactType="APK"
-                groups="testers"
                 testers="michaelbel24865@gmail.com"
                 releaseNotes="Release Build"
+                serviceCredentialsFile = "$rootDir/config/firebase-app-distribution.json"
+                //groups="testers"
                 //releaseNotesFile="/path/to/releasenotes.txt"
-                //serviceCredentialsFile="$rootDir/app/config/firebase-app-distribution.json"
             }
         }
     }
