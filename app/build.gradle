@@ -177,6 +177,7 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$timberVersion"
     implementation "com.ashokvarma.android:gander-persistence:$ganderVersion"
     implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
+    implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
 
     debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
 
