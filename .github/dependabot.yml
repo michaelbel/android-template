@@ -9,13 +9,12 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "15:45"
+      time: "15:47"
     open-pull-requests-limit: 1000
     reviewers:
       - "michaelbel"
-
-#    assignees:
-#      - "michaelbel"
+    assignees:
+      - "michaelbel"
       
 #  ignore:
 #  - dependency-name: com.squareup.okhttp3:logging-interceptor
