@@ -64,7 +64,7 @@ android {
                 testers="michaelbel24865@gmail.com"
                 releaseNotes="Release Build"
                 //releaseNotesFile="/path/to/releasenotes.txt"
-                serviceCredentialsFile="$rootDir/app/config/firebase-app-distribution.json"
+                //serviceCredentialsFile="$rootDir/app/config/firebase-app-distribution.json"
             }
         }
     }
