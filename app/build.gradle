@@ -153,7 +153,7 @@ dependencies {
     implementation "com.google.accompanist:accompanist-navigation-material:0.17.0"
     implementation "com.google.accompanist:accompanist-pager:0.16.0"
     implementation "com.google.accompanist:accompanist-pager-indicators:0.16.0"
-    implementation "com.google.accompanist:accompanist-permissions:0.16.0"
+    implementation "com.google.accompanist:accompanist-permissions:0.17.0"
     implementation "com.google.accompanist:accompanist-picasso:0.6.2"
     implementation "com.google.accompanist:accompanist-placeholder:0.16.0"
     implementation "com.google.accompanist:accompanist-placeholder-material:0.16.0"
