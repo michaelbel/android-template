@@ -3,6 +3,12 @@ updates:
 - package-ecosystem: gradle
   directory: "/"
   schedule:
-    interval: daily
-    time: "15:30"
+    interval: "daily"
+    time: "15:34"
   open-pull-requests-limit: 10
+  reviewers:
+  - "michaelbel"
+  
+#  ignore:
+#  - dependency-name: com.squareup.okhttp3:logging-interceptor
+#    versions: "> 3.12.10"
