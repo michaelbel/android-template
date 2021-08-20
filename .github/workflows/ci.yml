@@ -22,7 +22,12 @@ jobs:
   runs-on: ubuntu-latest
     
   steps:
-   - name: Checkout
+   - name: Cancel previous runs
+     uses: styfle/cancel-workflow-action@0.9.1
+     with:
+      access_token: ${{ github.token }}
+  
+   - name: Checkout repository
      uses: actions/checkout@v2  
 
    - name: Set up JDK 1.8
@@ -54,7 +59,7 @@ jobs:
 #    run: ./gradlew test
       
    - name: Build Artifacts
-     run: bash ./gradlew app:assembleDebug app:assembleRelease app:bundleRelease --stacktrace
+     run: bash ./gradlew app:assembleDebug app:assembleRelease app:bundleRelease appDistributionUploadRelease --stacktrace
         
 #   - name: Build Artifacts
 #     uses: eskatos/gradle-command-action@v1
