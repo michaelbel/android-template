@@ -43,8 +43,12 @@
             app:destination="@id/navArgsFragment"/>
 
         <action
-                android:id="@+id/action_mainFragment_to_configFragment"
-                app:destination="@id/configFragment"/>
+            android:id="@+id/action_mainFragment_to_configFragment"
+            app:destination="@id/configFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_materialYouColorsFragment"
+            app:destination="@id/materialYouColorsFragment"/>
 
     </fragment>
 
@@ -101,5 +105,9 @@
     <fragment
         android:id="@+id/configFragment"
         android:name="org.michaelbel.template.features.config.RemoteConfigFragment"/>
+
+    <fragment
+        android:id="@+id/materialYouColorsFragment"
+        android:name="org.michaelbel.template.features.materialyoucolors.MaterialYouColorsFragment"/>
 
 </navigation>

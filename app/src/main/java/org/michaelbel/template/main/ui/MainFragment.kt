@@ -171,6 +171,17 @@ class MainFragment: Fragment() {
                                     Text(text = "Remote Config")
                                 }
                             }
+                            item {
+                                Button(
+                                    onClick = {
+                                        findNavController().navigate(
+                                            R.id.action_mainFragment_to_materialYouColorsFragment
+                                        )
+                                    }
+                                ) {
+                                    Text(text = "Material You Colors")
+                                }
+                            }
                         }
                     }
                 }
