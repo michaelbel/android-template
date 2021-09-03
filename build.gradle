@@ -5,7 +5,7 @@ buildscript {
         minSdkVersion = 21
         targetSdkVersion = 30
         buildToolsVersion = '31.0.0'
-        gradleVersion = '7.0.1'
+        gradleVersion = '7.0.2'
         detektVersion = '1.18.1'
 
         // Kotlin
