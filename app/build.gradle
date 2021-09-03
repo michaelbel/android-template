@@ -166,17 +166,15 @@ dependencies {
     implementation "com.google.android.play:core-ktx:$playcoreVersion"
     implementation "com.google.android.gms:play-services-ads:$adsVersion"
     implementation "com.google.android.material:compose-theme-adapter:$composeVersion"
-    implementation "com.google.firebase:firebase-analytics:$firebaseAnalytics"
-    implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
-    implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptorVersion"
     implementation "com.squareup.picasso:picasso:$picassoVersion"
-    implementation "com.jakewharton.timber:timber:$timberVersion"
     implementation "com.ashokvarma.android:gander-persistence:$ganderVersion"
     implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
+    implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
+    implementation "io.coil-kt:coil:$coilVersion"
 
     debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
 

@@ -1,28 +1,16 @@
 package org.michaelbel.template
 
-import android.os.Bundle
-import android.os.PersistableBundle
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
-import com.google.firebase.analytics.FirebaseAnalytics
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
 
 @AndroidEntryPoint
 class MainActivity: AppCompatActivity(R.layout.activity_main) {
 
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
-
     private var telephonyManager: TelephonyManager? = null
     private var phoneStateListener: PhoneListener? = null
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundleOf("screen" to "main"))
-    }
 
     override fun onStart() {
         super.onStart()

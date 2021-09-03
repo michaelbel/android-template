@@ -1,9 +1,10 @@
-package org.michaelbel.template.features.navagrs
+package org.michaelbel.template.features.config
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
@@ -15,28 +16,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.navArgs
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
+import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
-import org.michaelbel.core.analytics.Analytics
-import javax.inject.Inject
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 /**
- * Navigation Arguments.
+ * Firebase Remote Config.
  */
 @AndroidEntryPoint
-class NavArgsFragment: Fragment() {
+class RemoteConfigFragment: Fragment() {
 
-    @Inject lateinit var analytics: Analytics
-
-    private val args: NavArgsFragmentArgs by navArgs()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(NavArgsFragment::class.simpleName)
-    }
+    private val viewModel: RemoteConfigViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,10 +48,10 @@ class NavArgsFragment: Fragment() {
 
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                MaterialTheme {
+                MdcTheme {
                     Box(modifier = Modifier.fillMaxSize()) {
                         TopAppBar(
-                            title = { Text(text = "Navigation Arguments") },
+                            title = { Text(text = "Remote Config") },
                             modifier = Modifier.align(Alignment.TopCenter),
                             navigationIcon = {
                                 IconButton(onClick = { findNavController().popBackStack() }) {
@@ -67,12 +63,24 @@ class NavArgsFragment: Fragment() {
                             },
                             elevation = 2.dp
                         )
-                        Text(
-                            text = "Arguments: ${args.firstText}, ${args.secondNumber}",
+                        Button(
+                            onClick = {},
                             modifier = Modifier.align(Alignment.Center)
-                        )
+                        ) {
+                            Text(text = "Remote Config")
+                        }
                     }
                 }
+            }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.remoteColor.collect {
+                Toast.makeText(requireContext(), "Remote Color = $it", Toast.LENGTH_SHORT).show()
             }
         }
     }

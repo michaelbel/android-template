@@ -22,10 +22,19 @@ import androidx.navigation.fragment.findNavController
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment: Fragment() {
+
+    @Inject lateinit var analytics: Analytics
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        analytics.trackScreen(MainFragment::class.simpleName)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -149,6 +158,17 @@ class MainFragment: Fragment() {
                                     }
                                 ) {
                                     Text(text = "Nav Args")
+                                }
+                            }
+                            item {
+                                Button(
+                                    onClick = {
+                                        findNavController().navigate(
+                                            R.id.action_mainFragment_to_configFragment
+                                        )
+                                    }
+                                ) {
+                                    Text(text = "Remote Config")
                                 }
                             }
                         }

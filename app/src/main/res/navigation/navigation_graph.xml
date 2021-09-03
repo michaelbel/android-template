@@ -42,6 +42,10 @@
             android:id="@+id/action_mainFragment_to_navArgsFragment"
             app:destination="@id/navArgsFragment"/>
 
+        <action
+                android:id="@+id/action_mainFragment_to_configFragment"
+                app:destination="@id/configFragment"/>
+
     </fragment>
 
     <fragment
@@ -93,5 +97,9 @@
             app:argType="integer"/>
 
     </fragment>
+
+    <fragment
+        android:id="@+id/configFragment"
+        android:name="org.michaelbel.template.features.config.RemoteConfigFragment"/>
 
 </navigation>

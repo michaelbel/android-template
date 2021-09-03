@@ -5,24 +5,32 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionManager
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentUpdateBinding
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class UpdateFragment: Fragment(R.layout.fragment_update) {
 
-    private var _binding: FragmentUpdateBinding? = null
-    private val binding get() = _binding!!
+    @Inject lateinit var analytics: Analytics
+
+    private val binding: FragmentUpdateBinding by viewBinding()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        analytics.trackScreen(UpdateFragment::class.simpleName)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentUpdateBinding.bind(view)
 
         val appUpdateManagerFactory = AppUpdateManagerFactory.create(requireContext())
         val appUpdateInfo = appUpdateManagerFactory.appUpdateInfo
@@ -79,10 +87,5 @@ class UpdateFragment: Fragment(R.layout.fragment_update) {
             InstallStatus.UNKNOWN -> "UNKNOWN"
             else -> throw Exception("Unknown Install Status Name")
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
