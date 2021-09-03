@@ -9,7 +9,7 @@ buildscript {
         detektVersion = '1.18.1'
 
         // Kotlin
-        kotlinVersion = '1.5.10'
+        kotlinVersion = '1.5.30'
         coroutinesVersion = '1.5.2'
         kotlinCompilerVersion = '1.5.10'
         kotlinCompilerExtensionVersion = '1.0.0'
