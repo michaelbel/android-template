@@ -4,19 +4,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentAdsBinding
 import java.util.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class AdsFragment: Fragment(R.layout.fragment_ads) {
 
-    private var _binding: FragmentAdsBinding? = null
-    private val binding get() = _binding!!
+    @Inject lateinit var analytics: Analytics
+
+    private val binding: FragmentAdsBinding by viewBinding()
 
     private var interstitialAd: InterstitialAd? = null
 
@@ -56,9 +60,13 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
         override fun onAdShowedFullScreenContent() {}
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        analytics.trackScreen(AdsFragment::class.simpleName)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentAdsBinding.bind(view)
 
         MobileAds.initialize(requireContext()) {}
         loadInterstitialAd()
@@ -73,11 +81,6 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun loadInterstitialAd() {

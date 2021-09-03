@@ -3,6 +3,7 @@ package org.michaelbel.template.savedstate
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import org.michaelbel.core.analytics.Analytics
 import javax.inject.Inject
 
 /**
@@ -10,8 +11,13 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SavedStateViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle,
+    private val analytics: Analytics
 ): ViewModel() {
+
+    init {
+        analytics.trackScreen(SavedStateFragment::class.simpleName)
+    }
 
     fun saveId(userId: Int) {
         savedStateHandle.set("userId", userId)

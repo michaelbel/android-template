@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentMoviesBinding
@@ -14,9 +15,7 @@ import org.michaelbel.template.databinding.FragmentMoviesBinding
 class MovieFragment: Fragment(R.layout.fragment_movies) {
 
     private val viewModel: MovieViewModel by viewModels()
-
-    private var _binding: FragmentMoviesBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentMoviesBinding by viewBinding()
 
     private val moviesAdapter: MoviesAdapter by lazy {
         MoviesAdapter()
@@ -24,7 +23,6 @@ class MovieFragment: Fragment(R.layout.fragment_movies) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentMoviesBinding.bind(view)
 
         binding.recyclerView.apply {
             adapter = moviesAdapter
@@ -34,14 +32,5 @@ class MovieFragment: Fragment(R.layout.fragment_movies) {
         /*viewLifecycleOwner.addRepeatingJob(Lifecycle.State.STARTED) {
             viewModel.items.collectLatest { moviesAdapter.submitData(it) }
         }*/
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    companion object {
-        fun newInstance() = MovieFragment()
     }
 }

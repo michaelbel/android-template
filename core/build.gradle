@@ -31,9 +31,15 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation "androidx.core:core-ktx:$coreVersion"
 
-    implementation "com.google.android.material:material:$materialVersion"
-    implementation "com.google.dagger:hilt-android:$daggerVersion"
-              kapt "com.google.dagger:hilt-compiler:$daggerVersion"
+    api "com.google.android.material:material:$materialVersion"
+    api "com.google.dagger:hilt-android:$daggerVersion"
+    kapt "com.google.dagger:hilt-compiler:$daggerVersion"
+    api "com.google.firebase:firebase-analytics-ktx:$firebaseAnalytics"
+    api "com.google.firebase:firebase-core:$firebaseCoreVersion"
+    api "com.google.firebase:firebase-crashlytics-ktx:$firebaseCrashlyticsVersion"
+    api "com.google.firebase:firebase-config-ktx:$firebaseConfigVersion"
+
+    api "com.jakewharton.timber:timber:$timberVersion"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$testJunitVersion"

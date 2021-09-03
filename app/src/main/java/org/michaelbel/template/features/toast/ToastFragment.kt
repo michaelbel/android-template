@@ -23,13 +23,22 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.core.analytics.Analytics
 import timber.log.Timber
+import javax.inject.Inject
 
 /**
  * Android 11 Toast Updates: add callback.
  */
 @AndroidEntryPoint
 class ToastFragment: Fragment() {
+
+    @Inject lateinit var analytics: Analytics
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        analytics.trackScreen(ToastFragment::class.simpleName)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

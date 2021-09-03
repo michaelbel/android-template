@@ -3,20 +3,28 @@ package org.michaelbel.template.review.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentReviewBinding
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ReviewFragment: Fragment(R.layout.fragment_review) {
 
-    private var _binding: FragmentReviewBinding? = null
-    private val binding get() = _binding!!
+    @Inject lateinit var analytics: Analytics
+
+    private val binding: FragmentReviewBinding by viewBinding()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        analytics.trackScreen(ReviewFragment::class.simpleName)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentReviewBinding.bind(view)
 
         binding.reviewButton.setOnClickListener {
             val reviewManagerFactory = ReviewManagerFactory.create(requireContext())
@@ -41,10 +49,5 @@ class ReviewFragment: Fragment(R.layout.fragment_review) {
                 binding.reviewStatusTextView.text = message
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

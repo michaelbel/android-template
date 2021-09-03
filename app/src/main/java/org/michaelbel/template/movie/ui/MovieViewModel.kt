@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.Constants
 import org.michaelbel.template.app.data.AppDatabase
 import org.michaelbel.template.app.data.entity.MovieDb
@@ -19,13 +20,15 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieViewModel @Inject constructor(
     private val database: AppDatabase,
-    private val movieRepository: MovieRepository
+    private val movieRepository: MovieRepository,
+    private val analytics: Analytics
 ): ViewModel() {
 
     val items: Flow<List<MovieDb>> = database.movieDao.getAll()
 
     init {
         loadingMovies()
+        analytics.trackScreen(MovieFragment::class.simpleName)
     }
 
     private fun loadingMovies() = viewModelScope.launch {
