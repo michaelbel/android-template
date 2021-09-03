@@ -35,6 +35,7 @@ dependencies {
     api "com.google.android.material:material:$materialVersion"
     api "com.google.dagger:hilt-android:$daggerVersion"
     kapt "com.google.dagger:hilt-compiler:$daggerVersion"
+    api "com.google.firebase:firebase-abt:$firebaseAbtVersion"
     api "com.google.firebase:firebase-analytics-ktx:$firebaseAnalytics"
     api "com.google.firebase:firebase-core:$firebaseCoreVersion"
     api "com.google.firebase:firebase-crashlytics-ktx:$firebaseCrashlyticsVersion"

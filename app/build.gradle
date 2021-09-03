@@ -176,7 +176,7 @@ dependencies {
     implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
     implementation "io.coil-kt:coil:$coilVersion"
 
-    debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
+    //debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion" — not uses exported in manifest
 
     androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$composeVersion"

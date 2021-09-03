@@ -18,18 +18,18 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
         override fun onSplashScreenExit(splashScreenViewProvider: SplashScreenViewProvider) {}
     }
 
-    override fun onStart() {
+    /*override fun onStart() {
         super.onStart()
         telephonyManager = getSystemService(TELEPHONY_SERVICE) as TelephonyManager
         phoneStateListener = PhoneListener(this)
         telephonyManager?.listen(phoneStateListener, PhoneStateListener.LISTEN_CALL_STATE)
-    }
+    }*/
 
-    override fun onStop() {
+    /*override fun onStop() {
         super.onStop()
         telephonyManager?.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE)
         phoneStateListener = null
-    }
+    }*/
 
     /*override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
