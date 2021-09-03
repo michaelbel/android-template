@@ -3,6 +3,8 @@ package org.michaelbel.template
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen
+import androidx.core.splashscreen.SplashScreenViewProvider
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
 
@@ -11,6 +13,10 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
 
     private var telephonyManager: TelephonyManager? = null
     private var phoneStateListener: PhoneListener? = null
+
+    private val onExitAnimationListener = object: SplashScreen.OnExitAnimationListener {
+        override fun onSplashScreenExit(splashScreenViewProvider: SplashScreenViewProvider) {}
+    }
 
     override fun onStart() {
         super.onStart()
@@ -24,6 +30,13 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
         telephonyManager?.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE)
         phoneStateListener = null
     }
+
+    /*override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        val splashScreen: SplashScreen = installSplashScreen()
+        splashScreen.setOnExitAnimationListener(onExitAnimationListener)
+        setContentView(R.layout.activity_main)
+    }*/
 
     private class PhoneListener(activity: MainActivity): PhoneStateListener() {
 

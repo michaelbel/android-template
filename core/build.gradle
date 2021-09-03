@@ -30,6 +30,7 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
     implementation "androidx.core:core-ktx:$coreVersion"
+    api "androidx.core:core-splashscreen:$coreSplashScreenVersion"
 
     api "com.google.android.material:material:$materialVersion"
     api "com.google.dagger:hilt-android:$daggerVersion"

@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Theme.AndroidAppTemplate" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -12,5 +13,13 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="23">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <!-- SplashScreen theme. -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!--<item name="windowSplashScreenBackground">@android:color/white</item>-->
+        <!--<item name="windowSplashScreenAnimatedIcon">@drawable/ic_eye</item>-->
+        <!--<item name="windowSplashScreenAnimationDuration">200</item>-->
+        <item name="postSplashScreenTheme">@style/Theme.AndroidAppTemplate</item>
     </style>
 </resources>
