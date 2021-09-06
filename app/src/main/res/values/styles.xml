@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Text">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:gravity">bottom|end</item>
-        <item name="android:padding">4dp</item>
-        <item name="android:textColor">@color/neutral_1_600</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:textStyle">bold</item>
+    <style name="TextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="TextAppearance.Regular">
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="TextAppearance.Regular.18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Regular.18.PrimaryColor">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.18.SecondaryColor">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.18.AccentColor">
+        <item name="android:textColor">?android:colorAccent</item>
+    </style>
+
+    <style name="TextAppearance.Italic">
+        <item name="android:fontFamily">@font/open_sans_italic</item>
+    </style>
+
+    <style name="TextAppearance.Italic.18">
+        <item name="android:textSize">18sp</item>
     </style>
 
 </resources>
