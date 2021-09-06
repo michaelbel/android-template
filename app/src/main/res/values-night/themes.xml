@@ -8,8 +8,6 @@
         <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
         <item name="colorOnPrimary">@color/secondaryVariantColor</item>
 
-        <item name="colorSurface">@color/accent_1_800</item>
-
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryColor</item>

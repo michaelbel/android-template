@@ -50,6 +50,10 @@
             android:id="@+id/action_mainFragment_to_materialYouColorsFragment"
             app:destination="@id/materialYouColorsFragment"/>
 
+        <action
+            android:id="@+id/action_mainFragment_to_fontsFragment"
+            app:destination="@id/fontsFragment"/>
+
     </fragment>
 
     <fragment
@@ -109,5 +113,9 @@
     <fragment
         android:id="@+id/materialYouColorsFragment"
         android:name="org.michaelbel.template.features.materialyoucolors.MaterialYouColorsFragment"/>
+
+    <fragment
+        android:id="@+id/fontsFragment"
+        android:name="org.michaelbel.template.features.fonts.FontsFragment"/>
 
 </navigation>

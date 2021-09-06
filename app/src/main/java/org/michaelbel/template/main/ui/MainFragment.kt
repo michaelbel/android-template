@@ -182,6 +182,17 @@ class MainFragment: Fragment() {
                                     Text(text = "Material You Colors")
                                 }
                             }
+                            item {
+                                Button(
+                                    onClick = {
+                                        findNavController().navigate(
+                                            R.id.action_mainFragment_to_fontsFragment
+                                        )
+                                    }
+                                ) {
+                                    Text(text = "Fonts")
+                                }
+                            }
                         }
                     }
                 }

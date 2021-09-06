@@ -32,12 +32,13 @@
         android:layout_marginEnd="16dp"
         android:textSize="14sp"
         android:gravity="start"
+        android:fontFamily="@font/open_sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="@string/message_review_status"/>
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/reviewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
