@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">android-app-template</string>
+    <string name="app_name">Template</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
     <!--Review-->
     <string name="message_review_status">

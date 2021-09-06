@@ -1,4 +1,4 @@
-package org.michaelbel.template.main.ui
+package org.michaelbel.template.features.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

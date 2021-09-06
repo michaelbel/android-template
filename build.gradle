@@ -54,7 +54,7 @@ buildscript {
         firebaseCoreVersion = '19.0.1'
         firebaseCrashlyticsVersion = '18.2.1'
         firebaseConfigVersion = '21.0.1'
-        materialVersion = '1.4.0'
+        materialVersion = '1.5.0-alpha03'
         playcoreVersion = '1.8.1'
 
         // Other
