@@ -43,6 +43,17 @@ buildscript {
         workVersion = '2.6.0'
 
         // Google
+        accompanistAppcompatThemeVersion = '0.18.0'      // https://google.github.io/accompanist/appcompat-theme
+        accompanistDrawablepainterVersion = '0.18.0'     // https://google.github.io/accompanist/drawablepainter
+        accompanistInsetsVersion = '0.18.0'              // https://google.github.io/accompanist/insets
+        accompanistFlowlayoutVersion = '0.18.0'          // https://google.github.io/accompanist/flowlayout
+        accompanistNavigationAnimationVersion = '0.18.0' // https://google.github.io/accompanist/navigation-animation
+        accompanistNavigationMaterialVersion = '0.18.0'  // https://google.github.io/accompanist/navigation-material
+        accompanistPagerVersion = '0.18.0'               // https://google.github.io/accompanist/pager
+        accompanistPermissionsVersion = '0.18.0'         // https://google.github.io/accompanist/permissions
+        accompanistPlaceholderVersion = '0.18.0'         // https://google.github.io/accompanist/placeholder
+        accompanistSystemuicontrollerVersion = '0.18.0'  // https://google.github.io/accompanist/systemuicontroller
+        accompanistSwiperefreshVersion = '0.18.0'        // https://google.github.io/accompanist/swiperefresh
         adsVersion = '20.3.0'
         crashlyticsVersion = '2.7.1'
         daggerVersion = '2.38.1'
