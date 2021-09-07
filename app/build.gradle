@@ -138,7 +138,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
     implementation "androidx.work:work-runtime-ktx:$workVersion"
 
-    implementation "com.google.accompanist:accompanist-appcompat-theme:0.17.0"
+    implementation "com.google.accompanist:accompanist-appcompat-theme:0.18.0"
     implementation "com.google.accompanist:accompanist-coil:0.15.0"
     implementation "com.google.accompanist:accompanist-drawablepainter:0.17.0"
     implementation "com.google.accompanist:accompanist-imageloading-core:0.15.0"
