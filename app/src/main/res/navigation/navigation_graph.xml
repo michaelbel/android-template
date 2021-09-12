@@ -8,91 +8,54 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="org.michaelbel.template.features.main.MainFragment">
-
-        <action
-            android:id="@+id/action_mainFragment_to_reviewFragment"
-            app:destination="@id/reviewFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_updateFragment"
-            app:destination="@id/updateFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_savedStateFragment"
-            app:destination="@id/savedStateFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_toastFragment"
-            app:destination="@id/toastFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_insetsFragment"
-            app:destination="@id/insetsFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_pagingFragment"
-            app:destination="@id/pagingFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_adsFragment"
-            app:destination="@id/adsFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_navArgsFragment"
-            app:destination="@id/navArgsFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_configFragment"
-            app:destination="@id/configFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_materialYouColorsFragment"
-            app:destination="@id/materialYouColorsFragment"/>
-
-        <action
-            android:id="@+id/action_mainFragment_to_fontsFragment"
-            app:destination="@id/fontsFragment"/>
-
-    </fragment>
+        android:name="org.michaelbel.template.features.main.MainFragment"
+        android:label="Main"/>
 
     <fragment
         android:id="@+id/reviewFragment"
         android:name="org.michaelbel.template.review.ui.ReviewFragment"
+        android:label="InAppReview"
         tools:layout="@layout/fragment_review"/>
 
     <fragment
         android:id="@+id/updateFragment"
         android:name="org.michaelbel.template.update.ui.UpdateFragment"
+        android:label="InAppUpdate"
         tools:layout="@layout/fragment_update"/>
 
     <fragment
         android:id="@+id/savedStateFragment"
         android:name="org.michaelbel.template.savedstate.SavedStateFragment"
+        android:label="SavedState"
         tools:layout="@layout/fragment_saved_state"/>
 
     <fragment
         android:id="@+id/toastFragment"
-        android:name="org.michaelbel.template.features.toast.ToastFragment"/>
+        android:name="org.michaelbel.template.features.toast.ToastFragment"
+        android:label="Toast"/>
 
     <fragment
         android:id="@+id/insetsFragment"
         android:name="org.michaelbel.template.windowinsets.WindowInsetsFragment"
+        android:label="Insets"
         tools:layout="@layout/fragment_window_insets"/>
 
     <fragment
         android:id="@+id/pagingFragment"
         android:name="org.michaelbel.template.paging.ui.SearchReposFragment"
+        android:label="Paging"
         tools:layout="@layout/fragment_search_repositories"/>
 
     <fragment
         android:id="@+id/adsFragment"
         android:name="org.michaelbel.template.ads.AdsFragment"
+        android:label="Ads"
         tools:layout="@layout/fragment_ads"/>
 
     <fragment
         android:id="@+id/navArgsFragment"
-        android:name="org.michaelbel.template.features.navagrs.NavArgsFragment">
+        android:name="org.michaelbel.template.features.navagrs.NavArgsFragment"
+        android:label="NavArgs">
 
         <argument
             android:name="firstText"
@@ -108,14 +71,17 @@
 
     <fragment
         android:id="@+id/configFragment"
-        android:name="org.michaelbel.template.features.config.RemoteConfigFragment"/>
+        android:name="org.michaelbel.template.features.config.RemoteConfigFragment"
+        android:label="Config"/>
 
     <fragment
         android:id="@+id/materialYouColorsFragment"
-        android:name="org.michaelbel.template.features.materialyoucolors.MaterialYouColorsFragment"/>
+        android:name="org.michaelbel.template.features.materialyoucolors.MaterialYouColorsFragment"
+        android:label="MaterialYou"/>
 
     <fragment
         android:id="@+id/fontsFragment"
-        android:name="org.michaelbel.template.features.fonts.FontsFragment"/>
+        android:name="org.michaelbel.template.features.fonts.FontsFragment"
+        android:label="Fonts"/>
 
 </navigation>

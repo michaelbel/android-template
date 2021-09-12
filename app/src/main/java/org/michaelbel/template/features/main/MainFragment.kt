@@ -18,12 +18,12 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.core.analytics.Analytics
-import org.michaelbel.template.R
+import org.michaelbel.template.Screen
+import org.michaelbel.template.navigate
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -70,77 +70,49 @@ class MainFragment: Fragment() {
                         ) {
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_reviewFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.InAppReview, Screen.Main) }
                                 ) {
                                     Text(text = "In-App Review")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_updateFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.InAppUpdate, Screen.Main) }
                                 ) {
                                     Text(text = "In-App Update")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_savedStateFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.SavedState, Screen.Main) }
                                 ) {
                                     Text(text = "ViewModel Saved State")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_toastFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.Toast, Screen.Main) }
                                 ) {
                                     Text(text = "Toast")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_insetsFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.Insets, Screen.Main) }
                                 ) {
                                     Text(text = "Window Insets")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_pagingFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.Paging, Screen.Main) }
                                 ) {
                                     Text(text = "Paging")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_adsFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.Ads, Screen.Main) }
                                 ) {
                                     Text(text = "Ads")
                                 }
@@ -148,8 +120,9 @@ class MainFragment: Fragment() {
                             item {
                                 Button(
                                     onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_navArgsFragment,
+                                        navigate(
+                                            Screen.NavArgs,
+                                            Screen.Main,
                                             bundleOf(
                                                 "firstText" to "Some Text",
                                                 "secondNumber" to 100
@@ -162,33 +135,21 @@ class MainFragment: Fragment() {
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_configFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.Config, Screen.Main) }
                                 ) {
                                     Text(text = "Remote Config")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_materialYouColorsFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.MaterialYou, Screen.Main) }
                                 ) {
                                     Text(text = "Material You Colors")
                                 }
                             }
                             item {
                                 Button(
-                                    onClick = {
-                                        findNavController().navigate(
-                                            R.id.action_mainFragment_to_fontsFragment
-                                        )
-                                    }
+                                    onClick = { navigate(Screen.Fonts, Screen.Main) }
                                 ) {
                                     Text(text = "Fonts")
                                 }
