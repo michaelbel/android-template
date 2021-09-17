@@ -58,6 +58,10 @@
     <!--Fonts-->
     <string name="title_fonts">Fonts</string>
 
+    <!--Search-->
+    <string name="title_search">Search</string>
+    <string name="searchbar_hint">Search</string>
+
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>
     <string name="search_hint">GitHub Repository</string>

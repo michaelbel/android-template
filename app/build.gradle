@@ -91,6 +91,10 @@ android {
         resValues false
         shaders false
     }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
@@ -170,6 +174,7 @@ dependencies {
     implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
     implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
     implementation "io.coil-kt:coil:$coilVersion"
+    implementation "io.github.lapism:search:1.0.0"
 
     //debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion" — not uses exported in manifest
 

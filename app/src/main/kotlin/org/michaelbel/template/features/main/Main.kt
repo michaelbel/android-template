@@ -102,6 +102,11 @@ fun Main(
                         Text(text = stringResource(R.string.title_fonts))
                     }
                 }
+                item {
+                    Button(onClick = { onButtonClick(Screen.Search, bundleOf()) }) {
+                        Text(text = stringResource(R.string.title_search))
+                    }
+                }
             }
         }
     }

@@ -84,4 +84,9 @@
         android:name="org.michaelbel.template.features.fonts.FontsFragment"
         android:label="Fonts"/>
 
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="org.michaelbel.template.features.search.SearchFragment"
+        android:label="Search"/>
+
 </navigation>

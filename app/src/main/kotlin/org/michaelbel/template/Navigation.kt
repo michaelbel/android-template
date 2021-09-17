@@ -18,7 +18,8 @@ enum class Screen {
     NavArgs,
     Config,
     MaterialYou,
-    Fonts
+    Fonts,
+    Search
 }
 
 val screensMap: Map<Screen, Int> = mapOf(
@@ -33,7 +34,8 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.NavArgs to R.id.navArgsFragment,
     Screen.Config to R.id.configFragment,
     Screen.MaterialYou to R.id.materialYouColorsFragment,
-    Screen.Fonts to R.id.fontsFragment
+    Screen.Fonts to R.id.fontsFragment,
+    Screen.Search to R.id.searchFragment
 )
 
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {
