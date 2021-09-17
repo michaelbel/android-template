@@ -21,23 +21,25 @@ enum class Screen {
     Fonts
 }
 
+val screensMap: Map<Screen, Int> = mapOf(
+    Screen.Main to R.id.mainFragment,
+    Screen.InAppReview to R.id.reviewFragment,
+    Screen.InAppUpdate to R.id.updateFragment,
+    Screen.SavedState to R.id.savedStateFragment,
+    Screen.Toast to R.id.toastFragment,
+    Screen.Insets to R.id.insetsFragment,
+    Screen.Paging to R.id.pagingFragment,
+    Screen.Ads to R.id.adsFragment,
+    Screen.NavArgs to R.id.navArgsFragment,
+    Screen.Config to R.id.configFragment,
+    Screen.MaterialYou to R.id.materialYouColorsFragment,
+    Screen.Fonts to R.id.fontsFragment
+)
+
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {
     if (to == from) {
         throw InvalidParameterException("Can't navigate to $to")
     }
 
-    when (to) {
-        Screen.Main -> findNavController().navigate(R.id.mainFragment, args)
-        Screen.InAppReview -> findNavController().navigate(R.id.reviewFragment, args)
-        Screen.InAppUpdate -> findNavController().navigate(R.id.updateFragment, args)
-        Screen.SavedState -> findNavController().navigate(R.id.savedStateFragment, args)
-        Screen.Toast -> findNavController().navigate(R.id.toastFragment, args)
-        Screen.Insets -> findNavController().navigate(R.id.insetsFragment, args)
-        Screen.Paging -> findNavController().navigate(R.id.pagingFragment, args)
-        Screen.Ads -> findNavController().navigate(R.id.adsFragment, args)
-        Screen.NavArgs -> findNavController().navigate(R.id.navArgsFragment, args)
-        Screen.Config -> findNavController().navigate(R.id.configFragment, args)
-        Screen.MaterialYou -> findNavController().navigate(R.id.materialYouColorsFragment, args)
-        Screen.Fonts -> findNavController().navigate(R.id.fontsFragment, args)
-    }
+    screensMap[to]?.let { destination -> findNavController().navigate(destination, args) }
 }

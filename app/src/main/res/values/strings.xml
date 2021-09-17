@@ -1,14 +1,22 @@
 <resources>
+    <!--App-->
     <string name="app_name">Template</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
-    <!--Review-->
+
+    <!--Main-->
+    <string name="content_description_menu_main">Main menu</string>
+
+    <!--In-App Review-->
+    <string name="title_in_app_review">In-App Review</string>
     <string name="message_review_status">
         Review Status:\n\n
         Exception: %s\n
         Result: %s\n
         isSuccessful: %s\n
         isComplete: %s</string>
-    <!--Update-->
+
+    <!--In-App Update-->
+    <string name="title_in_app_update">In-App Update</string>
     <string name="message_update_status">
         Update Status:\n\n
         PackageName: %s\n
@@ -22,6 +30,33 @@
         isUpdateTypeAllowed Immediate: %s\n
         isUpdateTypeAllowed Flexible: %s\n
     </string>
+
+    <!--Saved State-->
+    <string name="title_saved_state">Saved State</string>
+
+    <!--Toast-->
+    <string name="title_toast">Toast</string>
+
+    <!--Window Insets-->
+    <string name="title_window_insets">Window Insets</string>
+
+    <!--Paging-->
+    <string name="title_paging">Paging</string>
+
+    <!--Ads-->
+    <string name="title_ads">Ads</string>
+
+    <!--Nav Args-->
+    <string name="title_nav_args">Nav Args</string>
+
+    <!--Remote Config-->
+    <string name="title_remote_config">Remote Config</string>
+
+    <!--MaterialYou Colors-->
+    <string name="title_material_you_colors">MaterialYou Colors</string>
+
+    <!--Fonts-->
+    <string name="title_fonts">Fonts</string>
 
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>

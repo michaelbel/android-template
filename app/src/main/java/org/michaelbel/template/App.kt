@@ -17,10 +17,14 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        initAppTheme()
         initFirebaseCrashlytics()
         initTimber()
         initFirebaseRemoteConfig()
+    }
+
+    private fun initAppTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
     }
 
     private fun initFirebaseCrashlytics() {
