@@ -12,6 +12,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="splashScreenBackground">#FF000000</color>
+
     <color name="accent_1_0">@android:color/system_accent1_0</color>
     <color name="accent_1_10">@android:color/system_accent1_10</color>
     <color name="accent_1_50">@android:color/system_accent1_50</color>

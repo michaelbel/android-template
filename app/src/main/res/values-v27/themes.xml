@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Night Theme
+    Day Theme
 
-    Android 6 (API level 23)
-    Android 7 (API level 24)
-    Android 7.1 (API level 25)
-    Android 8 (API level 26)
+    Android 8.1 (API level 27)
+    Android 9 (API level 28)
+    Android 10 (API level 29)
+    Android 11 (API level 30)
 
     Added:
-    windowLightStatusBar
+    windowLightNavigationBar
+    navigationBarDividerColor
 -->
 
 <resources>

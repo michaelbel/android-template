@@ -24,12 +24,13 @@ typealias OnNavigationIconClick = () -> Unit
 
 @Composable
 fun Main(
+    onNavigationIconClick: OnNavigationIconClick,
     onButtonClick: OnButtonClick
 ) {
     MaterialTheme {
         Box(modifier = Modifier.fillMaxSize()) {
             MainTopBar(
-                onNavigationIconClick = {},
+                onNavigationIconClick = onNavigationIconClick,
                 modifier = Modifier.align(Alignment.TopCenter)
             )
             LazyColumn(
@@ -136,5 +137,5 @@ fun MainTopBar(
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun MainPreview() {
-    Main(onButtonClick = { _: Screen, _: Bundle -> })
+    Main(onButtonClick = { _: Screen, _: Bundle -> }, onNavigationIconClick = {})
 }

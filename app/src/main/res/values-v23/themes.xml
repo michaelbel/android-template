@@ -1,6 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Day Theme
+
+    Android 6 (API level 23)
+    Android 7 (API level 24)
+    Android 7.1 (API level 25)
+    Android 8 (API level 26)
+
+    Added:
+    windowLightStatusBar
+-->
+
 <resources>
 
-    <style name="Theme.AndroidAppTemplate" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorAccent">@color/primaryColor</item>
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
@@ -11,11 +25,4 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
-    <!-- SplashScreen theme. -->
-    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <!--<item name="windowSplashScreenBackground">@android:color/white</item>-->
-        <!--<item name="windowSplashScreenAnimatedIcon">@drawable/ic_eye</item>-->
-        <!--<item name="windowSplashScreenAnimationDuration">200</item>-->
-        <item name="postSplashScreenTheme">@style/Theme.AndroidAppTemplate</item>
-    </style>
 </resources>

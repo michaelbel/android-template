@@ -1,6 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Day Theme
+
+    Android 5 (API level 21)
+    Android 5.1 (API level 22)
+-->
+
 <resources>
 
-    <style name="Theme.AndroidAppTemplate" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorAccent">@color/primaryColor</item>
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
@@ -10,11 +19,11 @@
         <item name="colorOnSecondary">@color/secondaryVariantColor</item>
     </style>
 
-    <!-- SplashScreen theme. -->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <!--<item name="windowSplashScreenBackground">@android:color/white</item>-->
-        <!--<item name="windowSplashScreenAnimatedIcon">@drawable/ic_eye</item>-->
-        <!--<item name="windowSplashScreenAnimationDuration">200</item>-->
-        <item name="postSplashScreenTheme">@style/Theme.AndroidAppTemplate</item>
+        <item name="windowSplashScreenBackground">@color/splashScreenBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen_icon</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="postSplashScreenTheme">@style/Theme.App</item>
     </style>
+
 </resources>
