@@ -53,7 +53,7 @@ buildscript {
         accompanistPermissionsVersion = '0.19.0'         // https://google.github.io/accompanist/permissions
         accompanistPlaceholderVersion = '0.18.0'         // https://google.github.io/accompanist/placeholder
         accompanistSystemuicontrollerVersion = '0.19.0'  // https://google.github.io/accompanist/systemuicontroller
-        accompanistSwiperefreshVersion = '0.18.0'        // https://google.github.io/accompanist/swiperefresh
+        accompanistSwiperefreshVersion = '0.19.0'        // https://google.github.io/accompanist/swiperefresh
         adsVersion = '20.3.0'
         crashlyticsVersion = '2.7.1'
         daggerVersion = '2.39.1'
