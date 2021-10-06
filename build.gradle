@@ -43,7 +43,7 @@ buildscript {
         workVersion = '2.6.0'
 
         // Google
-        accompanistAppcompatThemeVersion = '0.18.0'      // https://google.github.io/accompanist/appcompat-theme
+        accompanistAppcompatThemeVersion = '0.19.0'      // https://google.github.io/accompanist/appcompat-theme
         accompanistDrawablepainterVersion = '0.19.0'     // https://google.github.io/accompanist/drawablepainter
         accompanistInsetsVersion = '0.19.0'              // https://google.github.io/accompanist/insets
         accompanistFlowlayoutVersion = '0.19.0'          // https://google.github.io/accompanist/flowlayout
