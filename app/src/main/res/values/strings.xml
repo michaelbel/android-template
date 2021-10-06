@@ -4,7 +4,10 @@
     <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <!--Main-->
-    <string name="content_description_menu_main">Main menu</string>
+    <string name="cd_menu">Menu</string>
+    <string name="cd_account">Account</string>
+    <string name="message_in_app_update_new_version_available">New version is available</string>
+    <string name="action_update">Update</string>
 
     <!--In-App Review-->
     <string name="title_in_app_review">In-App Review</string>
@@ -61,6 +64,16 @@
     <!--Search-->
     <string name="title_search">Search</string>
     <string name="searchbar_hint">Search</string>
+
+    <!--Social-->
+    <string name="title_social">Social</string>
+
+    <!--Notifications-->
+    <string name="title_notifications">Notifications</string>
+    <string name="notifications_enabled">Notifications Enabled</string>
+    <string name="notifications_disabled">Notifications Disabled</string>
+    <string name="cd_notifications_enabled">Notifications Enabled</string>
+    <string name="cd_notifications_disabled">Notifications Disabled</string>
 
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>

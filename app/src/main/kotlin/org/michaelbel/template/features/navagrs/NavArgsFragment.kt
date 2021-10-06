@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.CompositionLocalProvider
@@ -21,6 +24,7 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.template.ui.AppTheme
 import javax.inject.Inject
 
 /**
@@ -52,7 +56,7 @@ class NavArgsFragment: Fragment() {
 
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                MaterialTheme {
+                AppTheme {
                     Box(modifier = Modifier.fillMaxSize()) {
                         TopAppBar(
                             title = { Text(text = "Navigation Arguments") },

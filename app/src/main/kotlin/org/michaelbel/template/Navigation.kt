@@ -19,7 +19,9 @@ enum class Screen {
     Config,
     MaterialYou,
     Fonts,
-    Search
+    Search,
+    Social,
+    Notifications
 }
 
 val screensMap: Map<Screen, Int> = mapOf(
@@ -35,13 +37,14 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.Config to R.id.configFragment,
     Screen.MaterialYou to R.id.materialYouColorsFragment,
     Screen.Fonts to R.id.fontsFragment,
-    Screen.Search to R.id.searchFragment
+    Screen.Search to R.id.searchFragment,
+    Screen.Social to R.id.socialFragment,
+    Screen.Notifications to R.id.notificationsFragment
 )
 
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {
     if (to == from) {
         throw InvalidParameterException("Can't navigate to $to")
     }
-
     screensMap[to]?.let { destination -> findNavController().navigate(destination, args) }
 }

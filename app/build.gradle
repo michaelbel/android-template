@@ -36,9 +36,9 @@ android {
         applicationId "org.michaelbel.template"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
-        ndkVersion '21.2.6472646'
-        versionCode 2
-        versionName "1.0.1"
+        ndkVersion rootProject.ndkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "app" + "-v" + versionName + "(" + versionCode + ")")
     }
@@ -71,8 +71,8 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion rootProject.kotlinCompilerVersion
-        kotlinCompilerExtensionVersion rootProject.kotlinCompilerExtensionVersion
+        kotlinCompilerVersion rootProject.kotlinVersion
+        kotlinCompilerExtensionVersion rootProject.composeVersion
     }
 
     testOptions {
@@ -183,6 +183,7 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$composeVersion"
     androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
     androidTestImplementation "androidx.test.ext:junit-ktx:$testJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-accessibility:$testEspressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$testEspressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$testEspressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-intents:$testEspressoVersion"
@@ -190,6 +191,7 @@ dependencies {
     androidTestImplementation "androidx.test:rules:$testRulesVersion"
     androidTestImplementation "androidx.work:work-testing:$workVersion"
     androidTestImplementation "com.google.truth:truth:$truthVersion"
+
 
     testImplementation "junit:junit:$junitVersion"
     testImplementation "androidx.room:room-testing:$roomVersion"

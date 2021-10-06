@@ -28,6 +28,7 @@
             android:inputType="textNoSuggestions"
             android:selectAllOnFocus="true"
             tools:text="Android"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView

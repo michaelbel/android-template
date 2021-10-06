@@ -22,7 +22,7 @@
             android:text="ACCENT 1"
             android:textColor="@color/accent_1_400"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"

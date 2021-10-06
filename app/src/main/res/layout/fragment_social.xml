@@ -19,33 +19,40 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            app:title="@string/title_in_app_review"/>
+            app:title="@string/title_social"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/reviewStatusTextView"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textSize="14sp"
-        android:gravity="start"
-        android:fontFamily="@font/open_sans"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="@string/message_review_status"/>
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/reviewButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Review"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/googleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:fontFamily="@font/open_sans"
+                android:text="Google Sign In"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

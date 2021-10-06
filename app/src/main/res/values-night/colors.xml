@@ -7,9 +7,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="splashScreenBackground">#FFFFFFFF</color>
 
-    <color name="errorColor">#B00020</color>
-    <color name="successColor">#4CAF50</color>
-    <color name="textColorPrimary">#FF000000</color>
+    <color name="errorColor">#EF9A9A</color>
+    <color name="successColor">#A5D6A7</color>
+    <color name="textColorPrimary">#FFFFFFFF</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
