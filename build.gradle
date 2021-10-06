@@ -60,7 +60,7 @@ buildscript {
         exoplayerVersion = '2.15.0'
         googleServicesVersion = '4.3.10'
         firebaseAbtVersion = '21.0.0'
-        firebaseAppDistribution = '2.1.3'
+        firebaseAppDistribution = '2.2.0'
         firebaseAnalytics = '19.0.1'
         firebaseCoreVersion = '19.0.1'
         firebaseCrashlyticsVersion = '18.2.1'
