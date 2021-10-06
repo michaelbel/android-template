@@ -192,7 +192,8 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$workVersion"
     androidTestImplementation "com.google.truth:truth:$truthVersion"
 
-
     testImplementation "junit:junit:$junitVersion"
     testImplementation "androidx.room:room-testing:$roomVersion"
+
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$composeVersion"
 }
