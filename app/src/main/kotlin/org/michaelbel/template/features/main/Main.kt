@@ -205,6 +205,15 @@ fun Main(
                             Text(text = stringResource(R.string.title_notifications))
                         }
                     }
+                    item {
+                        Row(
+                            modifier = Modifier
+                                .clickable { onButtonClick(Screen.Constraints, bundleOf()) }
+                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
+                        ) {
+                            Text(text = stringResource(R.string.title_constraints))
+                        }
+                    }
                 }
             }
         }

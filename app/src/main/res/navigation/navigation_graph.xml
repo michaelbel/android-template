@@ -99,4 +99,9 @@
         android:name="org.michaelbel.template.features.notifications.NotificationsFragment"
         android:label="Notifications"/>
 
+    <fragment
+        android:id="@+id/constraintsFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsFragment"
+        android:label="Constrains"/>
+
 </navigation>
