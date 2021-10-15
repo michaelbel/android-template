@@ -8,12 +8,12 @@ buildscript {
         minSdkVersion = 21
         targetSdkVersion = 31
         buildToolsVersion = '31.0.0'
-        gradleVersion = '7.0.2'
+        gradleVersion = '7.0.3'
         detektVersion = '1.18.1'
         ndkVersion = '21.2.6472646'
 
         // Kotlin
-        kotlinVersion = '1.5.30'
+        kotlinVersion = '1.5.31'
         coroutinesVersion = '1.5.2'
 
         // AndroidX
@@ -26,7 +26,7 @@ buildscript {
         cardviewVersion = '1.0.0'
         collectionVersion = '1.1.0'
         constraintlayoutVersion = '2.1.1'
-        composeVersion = '1.0.3'
+        composeVersion = '1.0.4'
         coreVersion = '1.6.0'
         coreroleVersion = '1.0.0'
         coreSplashScreenVersion = '1.0.0-alpha02'
@@ -42,7 +42,7 @@ buildscript {
         sharetargetVersion = '1.2.0-beta01'
         swiperefreshlayoutVersion = '1.1.0'
         viewpager2Version = '1.0.0'
-        workVersion = '2.6.0'
+        workVersion = '2.7.0'
 
         // Google
         accompanistAppcompatThemeVersion = '0.19.0'      // https://google.github.io/accompanist/appcompat-theme
@@ -79,6 +79,7 @@ buildscript {
         ganderVersion = '3.1.0'
         viewBindingPropertyDelegateVersion = '1.4.7'
         coilVersion = '1.4.0'
+        vkVersion = '3.3.0'                             // http://github.com/VKCOM/vk-android-sdk
 
         // Test
         coreTestingVersion = '2.1.0'
