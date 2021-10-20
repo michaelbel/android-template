@@ -3,9 +3,7 @@ package org.michaelbel.template.features.main
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -72,147 +70,117 @@ fun Main(
                         .padding(top = 56.dp)
                 ) {
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.InAppReview, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.InAppReview, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_in_app_review))
-                        }
+                                .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_in_app_review)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.SavedState, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.InAppUpdate, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_in_app_update))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_saved_state)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Toast, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.SavedState, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_saved_state))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_toast)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Insets, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Toast, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_toast))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_window_insets)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Paging, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Insets, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_window_insets))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_paging)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Ads, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Paging, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_paging))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_ads)) }
                     }
                     item {
-                        Row(
-                            modifier = Modifier
-                                .clickable { onButtonClick(Screen.Ads, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_ads))
-                        }
-                    }
-                    item {
-                        Row(
-                            modifier = Modifier
-                                .clickable {
-                                    onButtonClick(
-                                        Screen.NavArgs,
-                                        bundleOf(
-                                            "firstText" to "Some Text",
-                                            "secondNumber" to 100
-                                        )
+                        OutlinedButton(
+                            onClick = {
+                                onButtonClick(
+                                    Screen.NavArgs,
+                                    bundleOf(
+                                        "firstText" to "Some Text",
+                                        "secondNumber" to 100
                                     )
-                                }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_nav_args))
-                        }
+                                )
+                            },
+                            modifier = Modifier
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_nav_args)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Config, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Config, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_remote_config))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_remote_config)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.MaterialYou, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.MaterialYou, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_material_you_colors))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_material_you_colors)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Fonts, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Fonts, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_fonts))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_fonts)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Search, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Search, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_search))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_search)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Social, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Social, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_social))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_social)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Notifications, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Notifications, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_notifications))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_notifications)) }
                     }
                     item {
-                        Row(
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Constraints, bundleOf()) },
                             modifier = Modifier
-                                .clickable { onButtonClick(Screen.Constraints, bundleOf()) }
-                                .padding(start = 16.dp, top = 12.dp, end = 16.dp, bottom = 12.dp)
-                        ) {
-                            Text(text = stringResource(R.string.title_constraints))
-                        }
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_constraints)) }
+                    }
+                    item {
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.SettingsPanel, bundleOf()) },
+                            modifier = Modifier
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 16.dp)
+                        ) { Text(text = stringResource(R.string.title_settings_panel)) }
                     }
                 }
             }

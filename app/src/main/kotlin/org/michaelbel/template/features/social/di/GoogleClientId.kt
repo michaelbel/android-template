@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.search.di
+package org.michaelbel.template.features.social.di
 
 import javax.inject.Qualifier
 

@@ -18,12 +18,6 @@
         tools:layout="@layout/fragment_review"/>
 
     <fragment
-        android:id="@+id/updateFragment"
-        android:name="org.michaelbel.template.update.ui.UpdateFragment"
-        android:label="InAppUpdate"
-        tools:layout="@layout/fragment_update"/>
-
-    <fragment
         android:id="@+id/savedStateFragment"
         android:name="org.michaelbel.template.savedstate.SavedStateFragment"
         android:label="SavedState"
@@ -103,5 +97,10 @@
         android:id="@+id/constraintsFragment"
         android:name="org.michaelbel.template.features.constraints.ConstrainsFragment"
         android:label="Constrains"/>
+
+    <fragment
+        android:id="@+id/settingsPanelFragment"
+        android:name="org.michaelbel.template.features.settingspanel.SettingsPanelFragment"
+        android:label="SettingsPanel"/>
 
 </navigation>

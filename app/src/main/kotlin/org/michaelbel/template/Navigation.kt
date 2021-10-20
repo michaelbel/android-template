@@ -9,7 +9,6 @@ import java.security.InvalidParameterException
 enum class Screen {
     Main,
     InAppReview,
-    InAppUpdate,
     SavedState,
     Toast,
     Insets,
@@ -22,13 +21,13 @@ enum class Screen {
     Search,
     Social,
     Notifications,
-    Constraints
+    Constraints,
+    SettingsPanel
 }
 
 val screensMap: Map<Screen, Int> = mapOf(
     Screen.Main to R.id.mainFragment,
     Screen.InAppReview to R.id.reviewFragment,
-    Screen.InAppUpdate to R.id.updateFragment,
     Screen.SavedState to R.id.savedStateFragment,
     Screen.Toast to R.id.toastFragment,
     Screen.Insets to R.id.insetsFragment,
@@ -41,7 +40,8 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.Search to R.id.searchFragment,
     Screen.Social to R.id.socialFragment,
     Screen.Notifications to R.id.notificationsFragment,
-    Screen.Constraints to R.id.constraintsFragment
+    Screen.Constraints to R.id.constraintsFragment,
+    Screen.SettingsPanel to R.id.settingsPanelFragment
 )
 
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {
