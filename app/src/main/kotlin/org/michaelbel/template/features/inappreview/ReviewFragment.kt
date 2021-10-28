@@ -1,4 +1,4 @@
-package org.michaelbel.template.review.ui
+package org.michaelbel.template.features.inappreview
 
 import android.os.Bundle
 import android.view.View

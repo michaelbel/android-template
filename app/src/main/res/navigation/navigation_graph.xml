@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/reviewFragment"
-        android:name="org.michaelbel.template.review.ui.ReviewFragment"
+        android:name="org.michaelbel.template.features.inappreview.ReviewFragment"
         android:label="InAppReview"
         tools:layout="@layout/fragment_review"/>
 
