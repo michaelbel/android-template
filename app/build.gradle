@@ -70,6 +70,15 @@ android {
         }
     }
 
+    kotlinOptions {
+        freeCompilerArgs += [
+            "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xuse-experimental=kotlinx.coroutines.ObsoleteCoroutinesApi",
+            "-Xuse-experimental=androidx.paging.ExperimentalPagingApi",
+            "-Xopt-in=kotlinx.coroutines.FlowPreview"
+        ]
+    }
+
     composeOptions {
         kotlinCompilerVersion rootProject.kotlinVersion
         kotlinCompilerExtensionVersion rootProject.composeVersion

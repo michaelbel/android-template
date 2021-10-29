@@ -72,6 +72,21 @@
     <string name="settings_panel_volume">Volume</string>
     <string name="settings_panel_wifi">Wi-Fi</string>
 
+    <!--System Services-->
+    <string name="title_system_services">System Services</string>
+    <string name="button_vibrate">Vibrate</string>
+    <string name="play_services_available">Google Play Services Available</string>
+    <string name="play_services_not_available">Google Play Services Not Available</string>
+    <string name="internet_connected">Internet is Connected</string>
+    <string name="internet_not_connected">Internet is Not Connected</string>
+    <string name="wifi_connected">Wi-Fi is Connected</string>
+    <string name="wifi_not_connected">Wi-Fi is Not Connected</string>
+    <string name="bluetooth_enabled">Bluetooth is Enabled</string>
+    <string name="bluetooth_disabled">Bluetooth is Disabled</string>
+    <string name="battery_charging">Battery is Charging</string>
+    <string name="battery_not_charging">Battery is Not Charging</string>
+    <string name="battery_level">Battery Level: %d</string>
+
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>
     <string name="search_hint">GitHub Repository</string>

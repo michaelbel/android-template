@@ -103,4 +103,9 @@
         android:name="org.michaelbel.template.features.settingspanel.SettingsPanelFragment"
         android:label="SettingsPanel"/>
 
+    <fragment
+        android:id="@+id/systemServicesFragment"
+        android:name="org.michaelbel.template.features.systemservices.SystemServicesFragment"
+        android:label="SystemServices"/>
+
 </navigation>
