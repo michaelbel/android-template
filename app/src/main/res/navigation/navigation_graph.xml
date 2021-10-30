@@ -93,9 +93,19 @@
         android:label="Notifications"/>
 
     <fragment
-        android:id="@+id/constraintsFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsFragment"
-        android:label="Constrains"/>
+        android:id="@+id/constraintsChainStyleFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsChainStyleFragment"
+        android:label="ConstrainsChainStyle"/>
+
+    <fragment
+        android:id="@+id/constraintsGuidelineFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsGuidelineFragment"
+        android:label="ConstrainsGuideline"/>
+
+    <fragment
+        android:id="@+id/constraintsConstrainedWidthFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsConstrainedWidthFragment"
+        android:label="ConstrainsConstrainedWidth"/>
 
     <fragment
         android:id="@+id/settingsPanelFragment"

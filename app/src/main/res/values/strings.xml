@@ -56,8 +56,12 @@
     <string name="cd_notifications_disabled">Notifications Disabled</string>
 
     <!--Constraints-->
-    <string name="title_constraints">Constraints</string>
-    <string name="constraints_screen_info">Пример позиционирования элементов цепочкой по центру без использования Guideline.</string>
+    <string name="title_constraints_chain_style">Constraints Chain Style</string>
+    <string name="title_constraints_guideline">Constraints Guideline</string>
+    <string name="title_constraints_constrained_width">Constraints Constrained Width</string>
+    <string name="constraints_chain_style">Пример позиционирования элементов цепочкой по центру без использования Guideline.</string>
+    <string name="constraints_guideline">Пример позиционирования элементов относительно невидимой линии Guideline</string>
+    <string name="constraints_constrained_width">Пример ограниченной длины view в зависимости от размера контента.</string>
 
     <!--Settings Panel-->
     <string name="title_settings_panel">Settings Panel</string>

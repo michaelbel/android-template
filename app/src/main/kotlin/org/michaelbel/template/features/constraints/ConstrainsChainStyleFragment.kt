@@ -8,19 +8,19 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsBinding
+import org.michaelbel.template.databinding.FragmentConstraintsChainStyleBinding
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ConstrainsFragment: Fragment(R.layout.fragment_constraints) {
+class ConstrainsChainStyleFragment: Fragment(R.layout.fragment_constraints_chain_style) {
 
     @Inject lateinit var analytics: Analytics
 
-    private val binding: FragmentConstraintsBinding by viewBinding()
+    private val binding: FragmentConstraintsChainStyleBinding by viewBinding()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsFragment::class.simpleName)
+        analytics.trackScreen(ConstrainsChainStyleFragment::class.simpleName)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
