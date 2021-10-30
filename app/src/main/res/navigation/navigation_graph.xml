@@ -14,8 +14,7 @@
     <fragment
         android:id="@+id/reviewFragment"
         android:name="org.michaelbel.template.features.inappreview.ReviewFragment"
-        android:label="InAppReview"
-        tools:layout="@layout/fragment_review"/>
+        android:label="InAppReview"/>
 
     <fragment
         android:id="@+id/savedStateFragment"

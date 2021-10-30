@@ -8,6 +8,10 @@ import android.os.Build
 import android.os.Vibrator
 import android.os.VibratorManager
 import com.google.android.gms.common.GoogleApiAvailability
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -57,6 +61,18 @@ object AppModule {
     @Singleton
     fun provideGoogleApiAvailability(): GoogleApiAvailability {
         return GoogleApiAvailability.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppUpdateManager(@ApplicationContext context: Context): AppUpdateManager {
+        return AppUpdateManagerFactory.create(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideReviewManager(@ApplicationContext context: Context): ReviewManager {
+        return ReviewManagerFactory.create(context)
     }
 
     @Provides

@@ -7,6 +7,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.template.app.InAppUpdate
 import javax.inject.Inject
 
 @HiltViewModel

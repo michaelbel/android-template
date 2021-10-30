@@ -11,12 +11,6 @@
 
     <!--In-App Review-->
     <string name="title_in_app_review">In-App Review</string>
-    <string name="message_review_status">
-        Review Status:\n\n
-        Exception: %s\n
-        Result: %s\n
-        isSuccessful: %s\n
-        isComplete: %s</string>
 
     <!--Saved State-->
     <string name="title_saved_state">Saved State</string>

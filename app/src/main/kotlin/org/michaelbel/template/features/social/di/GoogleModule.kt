@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.search.di
+package org.michaelbel.template.features.social.di
 
 import android.content.Context
 import com.google.android.gms.auth.api.signin.GoogleSignIn

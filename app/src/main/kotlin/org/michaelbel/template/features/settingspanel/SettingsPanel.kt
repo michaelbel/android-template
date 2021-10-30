@@ -55,28 +55,28 @@ fun SettingsPanelBox(
                 OutlinedButton(
                     onClick = { onButtonClick(Settings.Panel.ACTION_INTERNET_CONNECTIVITY) },
                     modifier = Modifier
-                        .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp)
+                        .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
                 ) { Text(text = stringResource(R.string.settings_panel_connectivity)) }
             }
             item {
                 OutlinedButton(
                     onClick = { onButtonClick(Settings.Panel.ACTION_NFC) },
                     modifier = Modifier
-                        .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 8.dp)
+                        .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
                 ) { Text(text = stringResource(R.string.settings_panel_nfc)) }
             }
             item {
                 OutlinedButton(
                     onClick = { onButtonClick(Settings.Panel.ACTION_VOLUME) },
                     modifier = Modifier
-                        .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 8.dp)
+                        .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
                 ) { Text(text = stringResource(R.string.settings_panel_volume)) }
             }
             item {
                 OutlinedButton(
                     onClick = { onButtonClick(Settings.Panel.ACTION_WIFI) },
                     modifier = Modifier
-                        .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 8.dp)
+                        .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
                 ) { Text(text = stringResource(R.string.settings_panel_wifi)) }
             }
         }

@@ -1,53 +1,49 @@
 package org.michaelbel.template.features.inappreview
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.accompanist.insets.LocalWindowInsets
+import com.google.accompanist.insets.ViewWindowInsetObserver
+import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.core.analytics.Analytics
-import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentReviewBinding
+import org.michaelbel.template.app.InAppReview
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ReviewFragment: Fragment(R.layout.fragment_review) {
+class ReviewFragment: Fragment() {
 
     @Inject lateinit var analytics: Analytics
-
-    private val binding: FragmentReviewBinding by viewBinding()
+    @Inject lateinit var inAppReview: InAppReview
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         analytics.trackScreen(ReviewFragment::class.simpleName)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.reviewButton.setOnClickListener {
-            val reviewManagerFactory = ReviewManagerFactory.create(requireContext())
-            val requestReviewFlow = reviewManagerFactory.requestReviewFlow()
-            requestReviewFlow.addOnCompleteListener { task ->
-                val message: String = String.format(
-                    getString(R.string.message_review_status),
-                    task.exception,
-                    task.result,
-                    task.isSuccessful,
-                    task.isComplete
-                )
-
-                if (task.isSuccessful) {
-                    val reviewInfo = task.result
-                    val flow = reviewManagerFactory.launchReviewFlow(requireActivity(), reviewInfo)
-                    flow.addOnCompleteListener {
-                        // Обрабатываем завершение сценария оценки.
-                    }
-                }
-
-                binding.reviewStatusTextView.text = message
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View = ComposeView(inflater.context).apply {
+        layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+        val windowInsets: WindowInsets = ViewWindowInsetObserver(this).start()
+        setContent {
+            CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
+                Review(::startReviewFlow)
             }
         }
+    }
+
+    private fun startReviewFlow() {
+        inAppReview.startReviewFlow(requireActivity())
     }
 }
