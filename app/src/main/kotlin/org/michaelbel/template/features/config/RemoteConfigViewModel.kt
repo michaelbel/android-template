@@ -1,6 +1,5 @@
 package org.michaelbel.template.features.config
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -8,30 +7,44 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class RemoteConfigViewModel @Inject constructor(
-    analytics: Analytics
+    analytics: Analytics,
+    private val firebaseRemoteConfig: FirebaseRemoteConfig
 ): ViewModel() {
 
-    val remoteColor = MutableSharedFlow<String>()
+    val customRemoteParam = MutableSharedFlow<Any>()
 
     init {
         analytics.trackScreen(RemoteConfigFragment::class.simpleName)
-        initConfig()
+        fetchRemoteConfig()
     }
 
-    private fun initConfig() = viewModelScope.launch {
-        val defaults = mapOf("color" to "#FF5252")
+    private fun fetchRemoteConfig() {
+        firebaseRemoteConfig.fetchAndActivate().addOnFailureListener(Timber::e)
+    }
 
-        val remoteConfig = FirebaseRemoteConfig.getInstance()
-        remoteConfig.setDefaultsAsync(defaults)
-        remoteConfig.fetch().addOnSuccessListener {
-            Log.e("2580", "addOnSuccessListener $it")
-        }
+    fun takeBooleanParam() = viewModelScope.launch {
+        val customParam: Boolean = firebaseRemoteConfig.getBoolean(REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM)
+        customRemoteParam.emit(customParam)
+    }
 
-        val color = remoteConfig.getString("color")
-        remoteColor.emit(color)
+    fun takeStringParam() = viewModelScope.launch {
+        val customParam: String = firebaseRemoteConfig.getString(REMOTE_CONFIG_CUSTOM_STRING_PARAM)
+        customRemoteParam.emit(customParam)
+    }
+
+    fun takeNumberParam() = viewModelScope.launch {
+        val customParam: Number = firebaseRemoteConfig.getLong(REMOTE_CONFIG_CUSTOM_NUMBER_PARAM)
+        customRemoteParam.emit(customParam)
+    }
+
+    private companion object {
+        private const val REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM = "custom_boolean_param"
+        private const val REMOTE_CONFIG_CUSTOM_STRING_PARAM = "custom_string_param"
+        private const val REMOTE_CONFIG_CUSTOM_NUMBER_PARAM = "custom_number_param"
     }
 }

@@ -12,6 +12,10 @@ import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -73,6 +77,18 @@ object AppModule {
     @Singleton
     fun provideReviewManager(@ApplicationContext context: Context): ReviewManager {
         return ReviewManagerFactory.create(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseRemoteConfig(): FirebaseRemoteConfig {
+        return FirebaseRemoteConfig.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseAnalytics(): FirebaseAnalytics {
+        return Firebase.analytics
     }
 
     @Provides

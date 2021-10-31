@@ -6,6 +6,7 @@
     <!--Main-->
     <string name="cd_menu">Menu</string>
     <string name="cd_account">Account</string>
+    <string name="cd_back">Back</string>
     <string name="message_in_app_update_new_version_available">New version is available</string>
     <string name="action_update">Update</string>
 
@@ -32,6 +33,9 @@
 
     <!--Remote Config-->
     <string name="title_remote_config">Remote Config</string>
+    <string name="button_fetch_boolean">Fetch Boolean Value</string>
+    <string name="button_fetch_string">Fetch String Value</string>
+    <string name="button_fetch_number">Fetch Number Value</string>
 
     <!--MaterialYou Colors-->
     <string name="title_material_you_colors">MaterialYou Colors</string>
