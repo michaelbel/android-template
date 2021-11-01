@@ -58,7 +58,7 @@ buildscript {
         accompanistSwiperefreshVersion = '0.20.0'        // https://google.github.io/accompanist/swiperefresh
         adsVersion = '20.4.0'
         authVersion = '19.2.0'
-        crashlyticsVersion = '2.7.1'
+        crashlyticsVersion = '2.8.0'
         daggerVersion = '2.40'
         exoplayerVersion = '2.15.1'
         googleServicesVersion = '4.3.10'
