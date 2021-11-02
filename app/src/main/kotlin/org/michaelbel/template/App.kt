@@ -4,10 +4,7 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfig
-import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
+import com.vk.api.sdk.VK
 import dagger.hilt.android.HiltAndroidApp
 import org.michaelbel.core.crashlytics.CrashlyticsTree
 import timber.log.Timber
@@ -20,7 +17,7 @@ class App: Application() {
         initAppTheme()
         initFirebaseCrashlytics()
         initTimber()
-        initFirebaseRemoteConfig()
+        initVK()
     }
 
     private fun initAppTheme() {
@@ -36,11 +33,7 @@ class App: Application() {
         Timber.plant(CrashlyticsTree())
     }
 
-    private fun initFirebaseRemoteConfig() {
-        val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
-        val remoteConfigSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 3600
-        }
-        remoteConfig.setConfigSettingsAsync(remoteConfigSettings)
+    private fun initVK() {
+        VK.initialize(this)
     }
 }

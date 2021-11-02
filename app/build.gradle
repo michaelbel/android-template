@@ -129,6 +129,8 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling:$composeVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
     implementation "androidx.core:core-role:$coreroleVersion"
+    implementation "androidx.datastore:datastore-core:$datastoreVersion"
+    implementation "androidx.datastore:datastore-preferences-core:$datastoreVersion"
     implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
     implementation "androidx.hilt:hilt-navigation-fragment:$hiltNavigationFragmentVersion"
     implementation "androidx.hilt:hilt-work:$hiltWorkVersion"
@@ -186,6 +188,7 @@ dependencies {
     implementation "io.coil-kt:coil:$coilVersion"
     implementation "io.github.lapism:search:1.0.0"
     implementation "com.vk:android-sdk-core:$vkVersion"
+    implementation "com.vk:android-sdk-api:$vkVersion"
 
     //debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion" — not uses exported in manifest
 
