@@ -54,7 +54,7 @@ buildscript {
         accompanistPagerVersion = '0.20.0'               // https://google.github.io/accompanist/pager
         accompanistPermissionsVersion = '0.20.0'         // https://google.github.io/accompanist/permissions
         accompanistPlaceholderVersion = '0.20.0'         // https://google.github.io/accompanist/placeholder
-        accompanistSystemuicontrollerVersion = '0.20.0'  // https://google.github.io/accompanist/systemuicontroller
+        accompanistSystemuicontrollerVersion = '0.20.1'  // https://google.github.io/accompanist/systemuicontroller
         accompanistSwiperefreshVersion = '0.20.0'        // https://google.github.io/accompanist/swiperefresh
         adsVersion = '20.4.0'
         authVersion = '19.2.0'
