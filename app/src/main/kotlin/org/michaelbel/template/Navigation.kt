@@ -21,9 +21,11 @@ enum class Screen {
     Search,
     Social,
     Notifications,
-    ConstraintsChainStyle,
+    ConstraintsChains,
     ConstraintsGuideline,
     ConstraintsConstrainedWidth,
+    ConstraintsCircular,
+    ConstraintsGoneMargins,
     SettingsPanel,
     SystemServices
 }
@@ -43,9 +45,11 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.Search to R.id.searchFragment,
     Screen.Social to R.id.socialFragment,
     Screen.Notifications to R.id.notificationsFragment,
-    Screen.ConstraintsChainStyle to R.id.constraintsChainStyleFragment,
+    Screen.ConstraintsChains to R.id.constraintsChainStyleFragment,
     Screen.ConstraintsGuideline to R.id.constraintsGuidelineFragment,
     Screen.ConstraintsConstrainedWidth to R.id.constraintsConstrainedWidthFragment,
+    Screen.ConstraintsCircular to R.id.constraintsCircularFragment,
+    Screen.ConstraintsGoneMargins to R.id.constraintsGoneMarginFragment,
     Screen.SettingsPanel to R.id.settingsPanelFragment,
     Screen.SystemServices to R.id.systemServicesFragment
 )

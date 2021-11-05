@@ -170,10 +170,10 @@ fun Main(
                     }
                     item {
                         OutlinedButton(
-                            onClick = { onButtonClick(Screen.ConstraintsChainStyle, bundleOf()) },
+                            onClick = { onButtonClick(Screen.ConstraintsChains, bundleOf()) },
                             modifier = Modifier
                                 .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-                        ) { Text(text = stringResource(R.string.title_constraints_chain_style)) }
+                        ) { Text(text = stringResource(R.string.title_constraints_chains)) }
                     }
                     item {
                         OutlinedButton(
@@ -188,6 +188,20 @@ fun Main(
                             modifier = Modifier
                                 .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
                         ) { Text(text = stringResource(R.string.title_constraints_constrained_width)) }
+                    }
+                    item {
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.ConstraintsCircular, bundleOf()) },
+                            modifier = Modifier
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_constraints_circular)) }
+                    }
+                    item {
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.ConstraintsGoneMargins, bundleOf()) },
+                            modifier = Modifier
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                        ) { Text(text = stringResource(R.string.title_constraints_gone_margins)) }
                     }
                     item {
                         OutlinedButton(

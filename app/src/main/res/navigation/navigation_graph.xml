@@ -108,6 +108,16 @@
         android:label="ConstrainsConstrainedWidth"/>
 
     <fragment
+        android:id="@+id/constraintsCircularFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsCircularFragment"
+        android:label="ConstrainsCircular"/>
+
+    <fragment
+        android:id="@+id/constraintsGoneMarginFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsGoneMarginsFragment"
+        android:label="ConstrainsGoneMargin"/>
+
+    <fragment
         android:id="@+id/settingsPanelFragment"
         android:name="org.michaelbel.template.features.settingspanel.SettingsPanelFragment"
         android:label="SettingsPanel"/>
