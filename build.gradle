@@ -49,7 +49,7 @@ buildscript {
         accompanistDrawablepainterVersion = '0.20.1'     // https://google.github.io/accompanist/drawablepainter
         accompanistInsetsVersion = '0.20.0'              // https://google.github.io/accompanist/insets
         accompanistFlowlayoutVersion = '0.20.0'          // https://google.github.io/accompanist/flowlayout
-        accompanistNavigationAnimationVersion = '0.20.0' // https://google.github.io/accompanist/navigation-animation
+        accompanistNavigationAnimationVersion = '0.20.1' // https://google.github.io/accompanist/navigation-animation
         accompanistNavigationMaterialVersion = '0.20.0'  // https://google.github.io/accompanist/navigation-material
         accompanistPagerVersion = '0.20.1'               // https://google.github.io/accompanist/pager
         accompanistPermissionsVersion = '0.20.0'         // https://google.github.io/accompanist/permissions
