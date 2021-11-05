@@ -186,7 +186,6 @@ dependencies {
     implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
     implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
     implementation "io.coil-kt:coil:$coilVersion"
-    implementation "io.github.lapism:search:1.0.0"
     implementation "com.vk:android-sdk-core:$vkVersion"
     implementation "com.vk:android-sdk-api:$vkVersion"
 

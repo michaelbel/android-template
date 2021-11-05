@@ -149,13 +149,6 @@ fun Main(
                     }
                     item {
                         OutlinedButton(
-                            onClick = { onButtonClick(Screen.Search, bundleOf()) },
-                            modifier = Modifier
-                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-                        ) { Text(text = stringResource(R.string.title_search)) }
-                    }
-                    item {
-                        OutlinedButton(
                             onClick = { onButtonClick(Screen.Social, bundleOf()) },
                             modifier = Modifier
                                 .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)

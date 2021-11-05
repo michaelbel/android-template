@@ -43,10 +43,6 @@
     <!--Fonts-->
     <string name="title_fonts">Fonts</string>
 
-    <!--Search-->
-    <string name="title_search">Search</string>
-    <string name="searchbar_hint">Search</string>
-
     <!--Social-->
     <string name="title_social">Social</string>
     <string name="sign_in_google">Sign In with Google</string>
