@@ -214,8 +214,15 @@ fun Main(
                         OutlinedButton(
                             onClick = { onButtonClick(Screen.SystemServices, bundleOf()) },
                             modifier = Modifier
-                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 16.dp)
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
                         ) { Text(text = stringResource(R.string.title_system_services)) }
+                    }
+                    item {
+                        OutlinedButton(
+                            onClick = { onButtonClick(Screen.Dialogs, bundleOf()) },
+                            modifier = Modifier
+                                .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 16.dp)
+                        ) { Text(text = stringResource(R.string.title_dialogs)) }
                     }
                 }
             }

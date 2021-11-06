@@ -98,6 +98,12 @@
     <string name="battery_not_charging">Battery is Not Charging</string>
     <string name="battery_level">Battery Level: %d</string>
 
+    <!--Dialogs-->
+    <string name="title_dialogs">Dialogs</string>
+    <string name="bottom_sheet">BottomSheet</string>
+    <string name="date_picker">Date Picker</string>
+    <string name="time_picker">Time Picker</string>
+
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>
     <string name="search_hint">GitHub Repository</string>

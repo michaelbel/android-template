@@ -127,4 +127,9 @@
         android:name="org.michaelbel.template.features.systemservices.SystemServicesFragment"
         android:label="SystemServices"/>
 
+    <fragment
+        android:id="@+id/dialogsFragment"
+        android:name="org.michaelbel.template.features.dialog.DialogsFragment"
+        android:label="Dialogs"/>
+
 </navigation>
