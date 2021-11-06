@@ -118,6 +118,11 @@
         android:label="SettingsPanel"/>
 
     <fragment
+        android:id="@+id/intentsFragment"
+        android:name="org.michaelbel.template.features.intent.IntentsFragment"
+        android:label="Intents"/>
+
+    <fragment
         android:id="@+id/systemServicesFragment"
         android:name="org.michaelbel.template.features.systemservices.SystemServicesFragment"
         android:label="SystemServices"/>

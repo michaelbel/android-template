@@ -25,6 +25,7 @@ enum class Screen {
     ConstraintsConstrainedWidth,
     ConstraintsCircular,
     ConstraintsGoneMargins,
+    Intents,
     SettingsPanel,
     SystemServices
 }
@@ -48,6 +49,7 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.ConstraintsConstrainedWidth to R.id.constraintsConstrainedWidthFragment,
     Screen.ConstraintsCircular to R.id.constraintsCircularFragment,
     Screen.ConstraintsGoneMargins to R.id.constraintsGoneMarginFragment,
+    Screen.Intents to R.id.intentsFragment,
     Screen.SettingsPanel to R.id.settingsPanelFragment,
     Screen.SystemServices to R.id.systemServicesFragment
 )

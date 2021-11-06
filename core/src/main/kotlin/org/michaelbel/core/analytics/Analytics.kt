@@ -12,4 +12,8 @@ class Analytics @Inject constructor(
         val bundle = bundleOf(FirebaseAnalytics.Event.SELECT_ITEM to screenName)
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle)
     }
+
+    fun logEvent(event: String) {
+        firebaseAnalytics.logEvent(event, null)
+    }
 }
