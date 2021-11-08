@@ -154,7 +154,7 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:$workVersion"
 
     implementation "com.google.accompanist:accompanist-appcompat-theme:$accompanistAppcompatThemeVersion"
-    implementation "com.google.accompanist:accompanist-drawablepainter:$accompanistDrawablepainterVersion"
+    implementation "com.google.accompanist:accompanist-drawablepainter:$accompanistDrawablePainterVersion"
     implementation "com.google.accompanist:accompanist-insets:$accompanistInsetsVersion"
     implementation "com.google.accompanist:accompanist-insets-ui:$accompanistInsetsVersion"
     implementation "com.google.accompanist:accompanist-flowlayout:$accompanistFlowlayoutVersion"
