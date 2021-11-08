@@ -53,7 +53,7 @@ buildscript {
         accompanistNavigationMaterialVersion = '0.20.2'  // https://google.github.io/accompanist/navigation-material
         accompanistPagerVersion = '0.20.1'               // https://google.github.io/accompanist/pager
         accompanistPermissionsVersion = '0.20.2'         // https://google.github.io/accompanist/permissions
-        accompanistPlaceholderVersion = '0.20.1'         // https://google.github.io/accompanist/placeholder
+        accompanistPlaceholderVersion = '0.20.2'         // https://google.github.io/accompanist/placeholder
         accompanistSystemuicontrollerVersion = '0.20.2'  // https://google.github.io/accompanist/systemuicontroller
         accompanistSwiperefreshVersion = '0.20.1'        // https://google.github.io/accompanist/swiperefresh
         adsVersion = '20.4.0'
