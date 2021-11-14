@@ -11,7 +11,8 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class InAppUpdate @Inject constructor(
-    private val appUpdateManager: AppUpdateManager
+    private val appUpdateManager: AppUpdateManager,
+    googleApi: GoogleApi
 ) {
 
     var onUpdateAvailableListener: (Boolean) -> Unit = {}
@@ -20,8 +21,10 @@ class InAppUpdate @Inject constructor(
     private val appUpdateType: Int = AppUpdateType.IMMEDIATE
 
     init {
-        appUpdateInfo.addOnSuccessListener(::onSuccessAppUpdate)
-        appUpdateInfo.addOnFailureListener(Timber::e)
+        if (googleApi.isAppFromGooglePlay) {
+            appUpdateInfo.addOnSuccessListener(::onSuccessAppUpdate)
+            appUpdateInfo.addOnFailureListener(Timber::e)
+        }
     }
 
     fun startUpdateFlow(activity: Activity) {

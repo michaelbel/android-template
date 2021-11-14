@@ -1,6 +1,7 @@
 package org.michaelbel.template.app
 
 import android.content.Context
+import android.os.Build
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -15,5 +16,20 @@ class GoogleApi @Inject constructor(
         get() {
             val status = googleApiAvailability.isGooglePlayServicesAvailable(context)
             return status == ConnectionResult.SUCCESS
+        }
+
+    @Suppress("Deprecation")
+    val isAppFromGooglePlay: Boolean
+        get() {
+            val validInstallers: List<String> = listOf(
+                "com.android.vending",
+                "com.google.android.feedback"
+            )
+            val installer: String = if (Build.VERSION.SDK_INT >= 30) {
+                context.packageManager.getInstallSourceInfo(context.packageName).originatingPackageName
+            } else {
+                context.packageManager.getInstallerPackageName(context.packageName)
+            }.orEmpty()
+            return validInstallers.contains(installer)
         }
 }
