@@ -80,7 +80,7 @@ buildscript {
         ganderVersion = '3.1.0'
         viewBindingPropertyDelegateVersion = '1.4.7'
         coilVersion = '1.4.0'
-        vkVersion = '3.4.0'                             // http://github.com/VKCOM/vk-android-sdk
+        vkVersion = '3.4.1'                             // http://github.com/VKCOM/vk-android-sdk
 
         // Test
         coreTestingVersion = '2.1.0'
