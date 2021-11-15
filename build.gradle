@@ -13,7 +13,7 @@ buildscript {
         ndkVersion = '21.2.6472646'
 
         // Kotlin
-        kotlinVersion = '1.5.31'
+        kotlinVersion = '1.6.0'
         coroutinesVersion = '1.5.2'
 
         // AndroidX
