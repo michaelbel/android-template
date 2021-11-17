@@ -2,6 +2,7 @@ package org.michaelbel.template
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.google.android.material.color.DynamicColors
 import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.vk.api.sdk.VK
@@ -22,6 +23,7 @@ class App: Application() {
 
     private fun initAppTheme() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        DynamicColors.applyToActivitiesIfAvailable(this)
     }
 
     private fun initFirebaseCrashlytics() {

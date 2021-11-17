@@ -14,7 +14,7 @@
 
 <resources>
 
-    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorAccent">@color/primaryColor</item>
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
@@ -23,6 +23,16 @@
         <item name="colorSecondaryVariant">@color/secondaryColor</item>
         <item name="colorOnSecondary">@color/secondaryVariantColor</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splashScreenBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen_icon</item>
+        <item name="windowSplashScreenAnimationDuration">500</item>
+        <item name="postSplashScreenTheme">@style/Theme.App</item>
+        <item name="android:statusBarColor">@color/splashScreenBackground</item>
+        <item name="android:navigationBarColor">@color/splashScreenBackground</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
 </resources>

@@ -5,7 +5,7 @@
     <color name="secondaryColor">#FF03DAC5</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="splashScreenBackground">#FFFFFFFF</color>
+    <color name="splashScreenBackground">#FF000000</color>
 
     <color name="errorColor">#EF9A9A</color>
     <color name="successColor">#A5D6A7</color>
