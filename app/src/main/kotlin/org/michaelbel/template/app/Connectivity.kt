@@ -2,13 +2,17 @@ package org.michaelbel.template.app
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
-import android.net.*
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkInfo
+import android.net.NetworkRequest
 import android.os.BatteryManager
 import android.os.Build
+import javax.inject.Inject
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import javax.inject.Inject
 
 class Connectivity @Inject constructor(
     private val connectivityManager: ConnectivityManager,

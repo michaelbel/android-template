@@ -21,11 +21,11 @@ import com.vk.api.sdk.auth.VKAuthCallback
 import com.vk.api.sdk.auth.VKScope
 import com.vk.api.sdk.exceptions.VKAuthException
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentSocialBinding
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SocialFragment: Fragment(R.layout.fragment_social) {
@@ -35,7 +35,9 @@ class SocialFragment: Fragment(R.layout.fragment_social) {
     private val viewModel: SocialViewModel by viewModels()
     private val binding: FragmentSocialBinding by viewBinding()
 
-    private val googleSignInContract = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    private val googleSignInContract = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
         val task = GoogleSignIn.getSignedInAccountFromIntent(result?.data)
         try {
             val account: GoogleSignInAccount = task.getResult(ApiException::class.java)
@@ -96,7 +98,7 @@ class SocialFragment: Fragment(R.layout.fragment_social) {
     }
 
     private fun googleAuthFailure(e: ApiException) {
-        Snackbar.make(binding.root, "Google Sign In Failure", Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(binding.root, "Google Sign In Failure $e", Snackbar.LENGTH_SHORT).show()
     }
 
     private fun vkAuthSuccess(token: VKAccessToken) {
@@ -104,6 +106,6 @@ class SocialFragment: Fragment(R.layout.fragment_social) {
     }
 
     private fun vkAuthFailure(authException: VKAuthException) {
-        Snackbar.make(binding.root, "VK Auth Failure", Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(binding.root, "VK Auth Failure $authException", Snackbar.LENGTH_SHORT).show()
     }
 }

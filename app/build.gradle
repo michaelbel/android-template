@@ -9,6 +9,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
     id 'com.google.firebase.crashlytics'
+    id 'io.gitlab.arturbosch.detekt'
 }
 
 // Для локальных сборок берем ключи из локального хранилища keystore.properties.

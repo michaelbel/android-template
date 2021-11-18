@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.CompositionLocalProvider
@@ -23,9 +27,9 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import timber.log.Timber
-import javax.inject.Inject
 
 /**
  * Android 11 Toast Updates: add callback.

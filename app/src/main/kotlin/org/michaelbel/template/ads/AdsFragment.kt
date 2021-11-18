@@ -5,15 +5,19 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.gms.ads.*
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
+import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentAdsBinding
-import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class AdsFragment: Fragment(R.layout.fragment_ads) {
@@ -57,7 +61,9 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
             interstitialAd = null
         }
 
-        override fun onAdShowedFullScreenContent() {}
+        override fun onAdShowedFullScreenContent() {
+            /* do nothing */
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

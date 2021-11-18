@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import java.util.*
 import org.michaelbel.template.Constants
 import org.michaelbel.template.app.data.entity.MovieDb
 import org.michaelbel.template.databinding.ItemMovieBinding
-import java.util.*
 
 class MoviesAdapter: RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
 
@@ -34,10 +34,14 @@ class MoviesAdapter: RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
         //notifyItemRangeInserted(0, movies.size)
     }
 
-    class MovieViewHolder(private val binding: ItemMovieBinding): RecyclerView.ViewHolder(binding.root) {
+    class MovieViewHolder(
+        private val binding: ItemMovieBinding
+    ): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: MovieDb) {
-            Picasso.get().load(String.format(Locale.US, Constants.TMDB_IMAGE, "w342", movie.posterPath)).into(binding.posterImageView)
+            Picasso.get()
+                .load(String.format(Locale.US, Constants.TMDB_IMAGE, "w342", movie.posterPath))
+                .into(binding.posterImageView)
             binding.titleTextView.text = movie.title
         }
     }

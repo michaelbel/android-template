@@ -5,13 +5,13 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
+import java.io.IOException
 import org.michaelbel.template.paging.api.GithubService
 import org.michaelbel.template.paging.api.IN_QUALIFIER
 import org.michaelbel.template.paging.db.RemoteKeys
 import org.michaelbel.template.paging.db.RepoDatabase
 import org.michaelbel.template.paging.model.Repo
 import retrofit2.HttpException
-import java.io.IOException
 
 // GitHub page API is 1 based: https://developer.github.com/v3/#pagination
 private const val GITHUB_STARTING_PAGE_INDEX = 1
@@ -33,7 +33,7 @@ class GithubRemoteMediator(
 
     override suspend fun load(loadType: LoadType, state: PagingState<Int, Repo>): MediatorResult {
 
-        val page = when (loadType) {
+        val page: Int = when (loadType) {
             LoadType.REFRESH -> {
                 val remoteKeys = getRemoteKeyClosestToCurrentPosition(state)
                 remoteKeys?.nextKey?.minus(1) ?: GITHUB_STARTING_PAGE_INDEX
@@ -46,9 +46,7 @@ class GithubRemoteMediator(
                 // If remoteKeys is NOT NULL but its prevKey is null, that means we've reached
                 // the end of pagination for prepend.
                 val prevKey = remoteKeys?.prevKey
-                if (prevKey == null) {
-                    return MediatorResult.Success(endOfPaginationReached = remoteKeys != null)
-                }
+                    ?: return MediatorResult.Success(endOfPaginationReached = remoteKeys != null)
                 prevKey
             }
             LoadType.APPEND -> {
@@ -59,16 +57,14 @@ class GithubRemoteMediator(
                 // If remoteKeys is NOT NULL but its prevKey is null, that means we've reached
                 // the end of pagination for append.
                 val nextKey = remoteKeys?.nextKey
-                if (nextKey == null) {
-                    return MediatorResult.Success(endOfPaginationReached = remoteKeys != null)
-                }
+                    ?: return MediatorResult.Success(endOfPaginationReached = remoteKeys != null)
                 nextKey
             }
         }
 
         val apiQuery = query + IN_QUALIFIER
 
-        try {
+        return try {
             val apiResponse = service.searchRepos(apiQuery, page, state.config.pageSize)
 
             val repos = apiResponse.items
@@ -87,11 +83,11 @@ class GithubRemoteMediator(
                 repoDatabase.remoteKeysDao().insertAll(keys)
                 repoDatabase.reposDao().insertAll(repos)
             }
-            return MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
+            MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)
         } catch (exception: IOException) {
-            return MediatorResult.Error(exception)
+            MediatorResult.Error(exception)
         } catch (exception: HttpException) {
-            return MediatorResult.Error(exception)
+            MediatorResult.Error(exception)
         }
     }
 

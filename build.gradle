@@ -112,6 +112,11 @@ plugins {
     id 'io.gitlab.arturbosch.detekt' version "$detektVersion"
 }
 
+// Detekt Rules Set: https://detekt.github.io/detekt/style.html
+detekt {
+    config = files("$rootDir/config/detekt/detekt.yml")
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

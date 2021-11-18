@@ -15,10 +15,10 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.analytics.Event
 import org.michaelbel.template.R
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class IntentsFragment: Fragment() {
