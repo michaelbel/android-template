@@ -17,8 +17,13 @@
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryColor</item>
         <item name="colorOnSecondary">@color/secondaryVariantColor</item>
-        <!--Status bar color-->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorAccent">@color/accentColor</item>
+
+        <!--SystemBars color-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
 
         <item name="colorAccent">@color/primaryColor</item>
     </style>

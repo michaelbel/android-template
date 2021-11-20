@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingDefaultResource">
 
-    <color name="primaryColor">@color/accent_1_400</color>
     <color name="primaryVariantColor">@color/accent_1_800</color>
     <color name="secondaryColor">@color/accent_2_500</color>
     <color name="secondaryVariantColor">@color/accent_2_700</color>
