@@ -1,4 +1,4 @@
-package org.michaelbel.template.windowinsets
+package org.michaelbel.template.features.windowinsets
 
 import android.os.Bundle
 import android.view.View
@@ -8,10 +8,10 @@ import androidx.core.view.doOnLayout
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentWindowInsetsBinding
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {

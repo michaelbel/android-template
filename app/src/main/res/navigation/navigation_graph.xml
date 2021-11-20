@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/insetsFragment"
-        android:name="org.michaelbel.template.windowinsets.WindowInsetsFragment"
+        android:name="org.michaelbel.template.features.windowinsets.WindowInsetsFragment"
         android:label="Insets"
         tools:layout="@layout/fragment_window_insets"/>
 

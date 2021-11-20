@@ -26,6 +26,10 @@
 
     <!--Window Insets-->
     <string name="title_window_insets">Window Insets</string>
+    <string name="show_keyboard">Show Keyboard</string>
+    <string name="hide_keyboard">Hide Keyboard</string>
+    <string name="show_status_bar">Show StatusBar</string>
+    <string name="hide_status_bar">Hide StatusBar</string>
 
     <!--Paging-->
     <string name="title_paging">Paging</string>
