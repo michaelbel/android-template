@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.ui
+package org.michaelbel.template.features.paging.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import org.michaelbel.template.R
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.model.Repo
 
 /**
  * View Holder for a [Repo] RecyclerView list item.

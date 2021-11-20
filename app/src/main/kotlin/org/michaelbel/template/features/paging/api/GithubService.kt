@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.api
+package org.michaelbel.template.features.paging.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

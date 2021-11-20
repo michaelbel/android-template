@@ -1,4 +1,4 @@
-package org.michaelbel.template.ads
+package org.michaelbel.template.features.ads
 
 import android.os.Bundle
 import android.view.View

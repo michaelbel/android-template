@@ -1,10 +1,10 @@
-package org.michaelbel.template.paging.db
+package org.michaelbel.template.features.paging.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.model.Repo
 
 @Database(
     entities = [Repo::class, RemoteKeys::class],

@@ -1,8 +1,8 @@
-package org.michaelbel.template.paging.ui
+package org.michaelbel.template.features.paging.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import org.michaelbel.template.paging.data.GithubRepository
+import org.michaelbel.template.features.paging.data.GithubRepository
 
 /**
  * Factory for ViewModels

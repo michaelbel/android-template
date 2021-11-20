@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.model
+package org.michaelbel.template.features.paging.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.ui
+package org.michaelbel.template.features.paging.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,8 +8,8 @@ import androidx.paging.insertSeparators
 import androidx.paging.map
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import org.michaelbel.template.paging.data.GithubRepository
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.data.GithubRepository
+import org.michaelbel.template.features.paging.model.Repo
 
 /**
  * ViewModel for the [SearchReposFragment] screen.

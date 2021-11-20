@@ -21,11 +21,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/adsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Ad"
+        android:text="@string/show_ad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"

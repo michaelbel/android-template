@@ -35,13 +35,13 @@
 
     <fragment
         android:id="@+id/pagingFragment"
-        android:name="org.michaelbel.template.paging.ui.SearchReposFragment"
+        android:name="org.michaelbel.template.features.paging.ui.SearchReposFragment"
         android:label="Paging"
         tools:layout="@layout/fragment_search_repositories"/>
 
     <fragment
         android:id="@+id/adsFragment"
-        android:name="org.michaelbel.template.ads.AdsFragment"
+        android:name="org.michaelbel.template.features.ads.AdsFragment"
         android:label="Ads"
         tools:layout="@layout/fragment_ads"/>
 

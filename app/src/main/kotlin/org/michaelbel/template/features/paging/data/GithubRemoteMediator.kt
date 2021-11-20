@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.data
+package org.michaelbel.template.features.paging.data
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
@@ -6,11 +6,11 @@ import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import java.io.IOException
-import org.michaelbel.template.paging.api.GithubService
-import org.michaelbel.template.paging.api.IN_QUALIFIER
-import org.michaelbel.template.paging.db.RemoteKeys
-import org.michaelbel.template.paging.db.RepoDatabase
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.api.GithubService
+import org.michaelbel.template.features.paging.api.IN_QUALIFIER
+import org.michaelbel.template.features.paging.db.RemoteKeys
+import org.michaelbel.template.features.paging.db.RepoDatabase
+import org.michaelbel.template.features.paging.model.Repo
 import retrofit2.HttpException
 
 // GitHub page API is 1 based: https://developer.github.com/v3/#pagination

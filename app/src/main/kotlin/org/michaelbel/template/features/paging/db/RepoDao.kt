@@ -1,11 +1,11 @@
-package org.michaelbel.template.paging.db
+package org.michaelbel.template.features.paging.db
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.model.Repo
 
 @Dao
 interface RepoDao {

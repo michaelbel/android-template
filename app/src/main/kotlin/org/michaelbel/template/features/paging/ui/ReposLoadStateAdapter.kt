@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.ui
+package org.michaelbel.template.features.paging.ui
 
 import android.view.ViewGroup
 import androidx.paging.LoadState

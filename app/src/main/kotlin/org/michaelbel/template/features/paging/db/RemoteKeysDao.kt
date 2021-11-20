@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.db
+package org.michaelbel.template.features.paging.db
 
 import androidx.room.Dao
 import androidx.room.Insert

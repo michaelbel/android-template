@@ -38,7 +38,7 @@ class RemoteConfigFragment: Fragment() {
         val windowInsets: WindowInsets = ViewWindowInsetObserver(this).start()
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                RemoteConfig(::onNavigationIconClick)
+                RemoteConfigScreen(::onNavigationIconClick)
             }
         }
     }

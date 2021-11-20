@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.ui
+package org.michaelbel.template.features.paging.ui
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -18,8 +18,8 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentSearchRepositoriesBinding
-import org.michaelbel.template.paging.Injection
-import org.michaelbel.template.windowinsets.WindowInsetsFragment
+import org.michaelbel.template.features.paging.Injection
+import org.michaelbel.template.features.windowinsets.WindowInsetsFragment
 
 @AndroidEntryPoint
 class SearchReposFragment: Fragment(R.layout.fragment_search_repositories) {

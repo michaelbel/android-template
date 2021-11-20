@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.data
+package org.michaelbel.template.features.paging.data
 
 import android.util.Log
 import androidx.paging.ExperimentalPagingApi
@@ -6,9 +6,9 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import kotlinx.coroutines.flow.Flow
-import org.michaelbel.template.paging.api.GithubService
-import org.michaelbel.template.paging.db.RepoDatabase
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.api.GithubService
+import org.michaelbel.template.features.paging.db.RepoDatabase
+import org.michaelbel.template.features.paging.model.Repo
 
 /**
  * Repository class that works with local and remote data sources.

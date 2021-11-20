@@ -6,12 +6,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -19,16 +19,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.insets.ui.TopAppBar
+import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.AppTheme
 
-typealias OnNavigationIconClick = () -> Unit
-
 @Composable
-fun RemoteConfig(onNavigationIconClick: OnNavigationIconClick) {
+fun RemoteConfigScreen(onNavigationBackClick: OnNavigationBackClick) {
     AppTheme {
         Column {
-            RemoteConfigTopBar(onNavigationIconClick = onNavigationIconClick)
+            RemoteConfigTopBar(onNavigationBackClick = onNavigationBackClick)
             RemoteConfigBox()
         }
     }
@@ -37,12 +36,12 @@ fun RemoteConfig(onNavigationIconClick: OnNavigationIconClick) {
 @Composable
 fun RemoteConfigTopBar(
     modifier: Modifier = Modifier,
-    onNavigationIconClick: OnNavigationIconClick
+    onNavigationBackClick: OnNavigationBackClick
 ) {
     TopAppBar(
         title = { Text(text = stringResource(R.string.title_remote_config)) },
         navigationIcon = {
-            IconButton(onClick = onNavigationIconClick) {
+            IconButton(onClick = onNavigationBackClick) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -90,6 +89,6 @@ fun RemoteConfigBox(
 @Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun RemoteConfigPreview() {
-    RemoteConfig {}
+fun RemoteConfigScreenPreview() {
+    RemoteConfigScreen {}
 }

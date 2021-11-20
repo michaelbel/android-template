@@ -1,11 +1,11 @@
-package org.michaelbel.template.paging
+package org.michaelbel.template.features.paging
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
-import org.michaelbel.template.paging.api.GithubService
-import org.michaelbel.template.paging.data.GithubRepository
-import org.michaelbel.template.paging.db.RepoDatabase
-import org.michaelbel.template.paging.ui.ViewModelFactory
+import org.michaelbel.template.features.paging.api.GithubService
+import org.michaelbel.template.features.paging.data.GithubRepository
+import org.michaelbel.template.features.paging.db.RepoDatabase
+import org.michaelbel.template.features.paging.ui.ViewModelFactory
 
 /**
  * Class that handles object creation.

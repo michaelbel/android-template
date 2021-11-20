@@ -1,4 +1,4 @@
-package org.michaelbel.template.paging.model
+package org.michaelbel.template.features.paging.model
 
 /**
  * RepoSearchResult from a search, which contains List<Repo> holding query data,

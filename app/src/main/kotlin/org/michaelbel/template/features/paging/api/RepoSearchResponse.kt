@@ -1,6 +1,6 @@
-package org.michaelbel.template.paging.api
+package org.michaelbel.template.features.paging.api
 
-import org.michaelbel.template.paging.model.Repo
+import org.michaelbel.template.features.paging.model.Repo
 import com.google.gson.annotations.SerializedName
 
 /**
