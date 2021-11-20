@@ -5,8 +5,12 @@
 
     <!--Main-->
     <string name="cd_menu">Menu</string>
+    <string name="cd_search">Search</string>
     <string name="cd_account">Account</string>
+    <string name="cd_clear">Clear</string>
     <string name="cd_back">Back</string>
+    <string name="cd_close">Close</string>
+    <string name="cd_settings">Settings</string>
     <string name="message_in_app_update_new_version_available">New version is available</string>
     <string name="action_update">Update</string>
 

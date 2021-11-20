@@ -33,8 +33,7 @@ class MainFragment: Fragment() {
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
                 Main(
-                    ::onAppUpdateClick,
-                    onNavigationIconClick = {},
+                    onUpdateAppClicked = { onAppUpdateClick() },
                     onButtonClick = { to: Screen, args: Bundle -> navigate(to, Screen.Main, args) }
                 )
             }
