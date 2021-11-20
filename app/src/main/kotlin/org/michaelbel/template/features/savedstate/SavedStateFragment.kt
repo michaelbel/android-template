@@ -1,4 +1,4 @@
-package org.michaelbel.template.savedstate
+package org.michaelbel.template.features.savedstate
 
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint

@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import java.security.InvalidParameterException
 
+typealias OnNavigationBackClick = () -> Unit
+
 enum class Screen {
     Main,
     InAppReview,

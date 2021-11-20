@@ -22,6 +22,7 @@
 
     <!--Toast-->
     <string name="title_toast">Toast</string>
+    <string name="show_toast">Show Toast</string>
 
     <!--Window Insets-->
     <string name="title_window_insets">Window Insets</string>

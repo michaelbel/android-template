@@ -1,18 +1,16 @@
-package org.michaelbel.template.features.inappreview
+package org.michaelbel.template.features.toast
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,25 +23,30 @@ import org.michaelbel.template.ui.AppTheme
 typealias OnButtonClick = () -> Unit
 
 @Composable
-fun ReviewScreen(
-    onButtonClick: OnButtonClick,
-    onNavigationBackClick: OnNavigationBackClick
+fun ToastScreen(
+    onNavigationBackClick: OnNavigationBackClick,
+    onButtonClick: OnButtonClick
 ) {
     AppTheme {
-        Column {
-            ReviewTopBar(onNavigationBackClick = onNavigationBackClick)
-            ReviewBox(onButtonClick = onButtonClick)
+        Box(modifier = Modifier.fillMaxSize()) {
+            ToastTopBar(onNavigationBackClick = onNavigationBackClick)
+            Button(
+                onClick = { onButtonClick() },
+                modifier = Modifier.align(Alignment.Center)
+            ) {
+                Text(text = stringResource(R.string.show_toast))
+            }
         }
     }
 }
 
 @Composable
-fun ReviewTopBar(
+fun ToastTopBar(
     modifier: Modifier = Modifier,
     onNavigationBackClick: OnNavigationBackClick
 ) {
     TopAppBar(
-        title = { Text(text = stringResource(R.string.title_in_app_review)) },
+        title = { Text(text = stringResource(R.string.title_toast)) },
         modifier = modifier,
         navigationIcon = {
             IconButton(onClick = { onNavigationBackClick() }) {
@@ -57,29 +60,11 @@ fun ReviewTopBar(
     )
 }
 
-@Composable
-fun ReviewBox(
-    modifier: Modifier = Modifier,
-    onButtonClick: OnButtonClick
-) {
-    Box(modifier = modifier.fillMaxSize()) {
-        LazyColumn {
-            item {
-                OutlinedButton(
-                    onClick = { onButtonClick() },
-                    modifier = Modifier
-                        .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 4.dp)
-                ) { Text(text = stringResource(R.string.title_in_app_review)) }
-            }
-        }
-    }
-}
-
 @Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun ReviewScreenPreview() {
-    ReviewScreen(
+fun ToastScreenPreview() {
+    ToastScreen(
         onButtonClick = {},
         onNavigationBackClick = {}
     )
