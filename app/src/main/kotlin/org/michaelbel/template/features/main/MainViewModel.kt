@@ -80,7 +80,8 @@ class MainViewModel @Inject constructor(
                 ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
                 ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
                 ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
-                ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs)
+                ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs),
+                ScreenData(Screen.Clipboard, bundleOf(), R.string.title_clipboard)
             )
         }
     }

@@ -132,4 +132,9 @@
         android:name="org.michaelbel.template.features.dialog.DialogsFragment"
         android:label="Dialogs"/>
 
+    <fragment
+        android:id="@+id/clipboardFragment"
+        android:name="org.michaelbel.template.features.clipboard.ClipboardFragment"
+        android:label="Clipboard"/>
+
 </navigation>

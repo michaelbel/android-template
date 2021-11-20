@@ -115,6 +115,12 @@
     <string name="date_picker">Date Picker</string>
     <string name="time_picker">Time Picker</string>
 
+    <!--Clipboard-->
+    <string name="title_clipboard">Clipboard</string>
+    <string name="copy_to_clipboard">Copy to Clipboard</string>
+    <string name="paste_from_clipboard">Paste from Clipboard</string>
+    <string name="clear_clipboard">Clear Clipboard</string>
+
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>
     <string name="search_hint">GitHub Repository</string>

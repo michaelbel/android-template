@@ -30,7 +30,8 @@ enum class Screen {
     Intents,
     SettingsPanel,
     SystemServices,
-    Dialogs
+    Dialogs,
+    Clipboard
 }
 
 val screensMap: Map<Screen, Int> = mapOf(
@@ -55,7 +56,8 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.Intents to R.id.intentsFragment,
     Screen.SettingsPanel to R.id.settingsPanelFragment,
     Screen.SystemServices to R.id.systemServicesFragment,
-    Screen.Dialogs to R.id.dialogsFragment
+    Screen.Dialogs to R.id.dialogsFragment,
+    Screen.Clipboard to R.id.clipboardFragment
 )
 
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {
