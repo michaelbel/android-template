@@ -78,6 +78,7 @@ android {
             "-Xuse-experimental=androidx.paging.ExperimentalPagingApi",
             "-Xuse-experimental=androidx.compose.ui.ExperimentalComposeUiApi",
             "-Xuse-experimental=androidx.compose.material.ExperimentalMaterialApi",
+            "-Xuse-experimental=androidx.compose.material3.ExperimentalMaterial3Api",
             "-Xopt-in=kotlinx.coroutines.FlowPreview"
         ]
     }
