@@ -97,6 +97,11 @@ class MainViewModel @Inject constructor(
                     bundleOf(),
                     R.string.title_constraints_gone_margins
                 ),
+                ScreenData(
+                    Screen.ConstraintsBaseline,
+                    bundleOf(),
+                    R.string.title_constraints_baseline
+                ),
                 ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
                 ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
                 ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),

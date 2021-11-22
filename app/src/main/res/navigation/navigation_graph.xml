@@ -113,6 +113,11 @@
         android:label="ConstrainsGoneMargin"/>
 
     <fragment
+        android:id="@+id/constraintsBaselineFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsBaselineFragment"
+        android:label="ConstrainsBaseline"/>
+
+    <fragment
         android:id="@+id/settingsPanelFragment"
         android:name="org.michaelbel.template.features.settingspanel.SettingsPanelFragment"
         android:label="SettingsPanel"/>
