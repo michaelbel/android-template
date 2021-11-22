@@ -16,6 +16,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -23,9 +24,10 @@ import androidx.navigation.fragment.navArgs
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import dagger.hilt.android.AndroidEntryPoint
-import org.michaelbel.core.analytics.Analytics
-import org.michaelbel.template.ui.AppTheme
 import javax.inject.Inject
+import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.template.R
+import org.michaelbel.template.ui.AppTheme
 
 /**
  * Navigation Arguments.
@@ -59,13 +61,13 @@ class NavArgsFragment: Fragment() {
                 AppTheme {
                     Box(modifier = Modifier.fillMaxSize()) {
                         TopAppBar(
-                            title = { Text(text = "Navigation Arguments") },
+                            title = { Text(text = stringResource(R.string.title_nav_args)) },
                             modifier = Modifier.align(Alignment.TopCenter),
                             navigationIcon = {
                                 IconButton(onClick = { findNavController().popBackStack() }) {
                                     Icon(
                                         imageVector = Icons.Filled.ArrowBack,
-                                        contentDescription = "Arrow Back"
+                                        contentDescription = stringResource(R.string.cd_back)
                                     )
                                 }
                             },

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
@@ -13,7 +14,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Locale
+import java.util.*
 import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
@@ -76,6 +77,8 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
 
         MobileAds.initialize(requireContext()) {}
         loadInterstitialAd()
+
+        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
         binding.adsButton.setOnClickListener {
             if (interstitialAd != null) {

@@ -61,7 +61,7 @@ fun AppTheme(
 
     MaterialTheme(
         colors = colors,
-        typography = AppTypography,
+        //typography = AppTypography,
         shapes = AppShapes
     ) {
         CompositionLocalProvider(

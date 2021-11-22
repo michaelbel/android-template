@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.features.dialog.bottomsheet.CustomBottomSheetDialog
+import org.michaelbel.template.features.dialog.model.DialogItem
 
 @AndroidEntryPoint
 class DialogsFragment: Fragment() {
@@ -28,9 +30,13 @@ class DialogsFragment: Fragment() {
         val windowInsets: WindowInsets = ViewWindowInsetObserver(this).start()
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                DialogsScreen(::showDialog)
+                DialogsScreen(::onNavigationBackClick, ::showDialog)
             }
         }
+    }
+
+    private fun onNavigationBackClick() {
+        findNavController().popBackStack()
     }
 
     private fun showDialog(dialog: DialogItem) {

@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.dialog
+package org.michaelbel.template.features.dialog.model
 
 enum class DialogItem {
     BottomSheet,

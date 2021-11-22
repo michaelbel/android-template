@@ -11,6 +11,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ComposeView
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
@@ -37,9 +38,13 @@ class IntentsFragment: Fragment() {
         val windowInsets: WindowInsets = ViewWindowInsetObserver(this).start()
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                IntentsScreen(::resolveIntent)
+                IntentsScreen(::onNavigationBackClick, ::resolveIntent)
             }
         }
+    }
+
+    private fun onNavigationBackClick() {
+        findNavController().popBackStack()
     }
 
     private fun resolveIntent(intent: IntentItem) {

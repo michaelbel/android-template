@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.load
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -63,6 +64,8 @@ class SocialFragment: Fragment(R.layout.fragment_social) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.googleData.collect(::fetchGoogleData)

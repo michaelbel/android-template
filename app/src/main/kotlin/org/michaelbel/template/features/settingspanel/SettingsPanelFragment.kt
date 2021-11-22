@@ -9,6 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
@@ -34,9 +35,13 @@ class SettingsPanelFragment: Fragment() {
         val windowInsets: WindowInsets = ViewWindowInsetObserver(this).start()
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                SettingsPanel(::openSettingsPanel)
+                SettingsPanel(::onNavigationBackClick, ::openSettingsPanel)
             }
         }
+    }
+
+    private fun onNavigationBackClick() {
+        findNavController().popBackStack()
     }
 
     private fun openSettingsPanel(panel: String) {

@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScaffoldState
+import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberScaffoldState
 import androidx.compose.runtime.Composable
@@ -21,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.components.InsetAwareTopAppBar
 
 typealias OnButtonClick = () -> Unit
 
@@ -34,7 +34,7 @@ fun ReviewScreen(
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {
-            InsetAwareTopAppBar(
+            SmallTopAppBar(
                 title = { Text(stringResource(id = R.string.title_in_app_review)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigationBackClick) {

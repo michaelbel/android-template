@@ -3,7 +3,7 @@
     <color name="primaryColor">#FFBB86FC</color>
     <color name="accentColor">#FFBB86FC</color>
 
-    <color name="primaryVariantColor">#FF3700B3</color>
+    <color name="primaryVariantColor">#FFFFFFFF</color>
     <color name="secondaryColor">#FF03DAC5</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

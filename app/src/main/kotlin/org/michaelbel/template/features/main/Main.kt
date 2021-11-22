@@ -3,6 +3,7 @@ package org.michaelbel.template.features.main
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,8 +17,12 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.SnackbarResult
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -41,6 +46,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
+import org.michaelbel.template.features.main.ui.MainBottomBar
 import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.Dimens
 import org.michaelbel.template.ui.components.HomeBottomSheet
@@ -59,7 +65,7 @@ fun Main(
     onSettingsClicked: () -> Unit = {},
     onSearch: (String) -> Unit = {}
 ) {
-    val viewModel = viewModel(MainViewModel::class.java)
+    val viewModel: MainViewModel = viewModel(MainViewModel::class.java)
     val coroutineScope: CoroutineScope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
     val context: Context = LocalContext.current
@@ -88,7 +94,32 @@ fun Main(
         Scaffold(
             modifier = Modifier
                 .fillMaxSize(),
-            scaffoldState = scaffoldState
+            scaffoldState = scaffoldState,
+            topBar = {
+                SearchBar(
+                    focusManager = focusManager,
+                    onSearch = {
+                        onSearch(it)
+                    },
+                    onDismissSearchClicked = {
+                        onSearch("")
+                    },
+                    onOptionsClicked = {
+                        coroutineScope.launch {
+                            sheetState.show()
+                        }
+                    },
+                    modifier = Modifier.padding(
+                        vertical = Dimens.SmallPadding.size
+                    )
+                )
+            },
+            bottomBar = { MainBottomBar() },
+            floatingActionButton = {
+                Column(horizontalAlignment = Alignment.End) {
+                    Fab()
+                }
+            },
         ) {
             ModalBottomSheetLayout(
                 sheetContent = {
@@ -113,7 +144,7 @@ fun Main(
                 ) {
                     item {
                         Spacer(modifier = Modifier.statusBarsPadding())
-                        SearchBar(
+                        /*SearchBar(
                             focusManager = focusManager,
                             onSearch = {
                                 onSearch(it)
@@ -129,7 +160,7 @@ fun Main(
                             modifier = Modifier.padding(
                                 vertical = Dimens.SmallPadding.size
                             )
-                        )
+                        )*/
                     }
                     items(mainState.list) { (screen, args, titleRes) ->
                         OutlinedButton(
@@ -151,6 +182,15 @@ fun Main(
             context.getString(R.string.message_in_app_update_new_version_available),
             context.getString(R.string.action_update)
         )
+    }
+}
+
+@Composable
+fun Fab() {
+    FloatingActionButton(
+        onClick = { /* do something */ },
+    ) {
+        Icon(Icons.Filled.Add, "Localized description")
     }
 }
 
@@ -185,7 +225,13 @@ fun MainTopBar(
     )
 }*/
 
-@Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO, device = Devices.PIXEL_4)
+@Preview(
+    name = "default",
+    showSystemUi = true,
+    showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    device = Devices.PIXEL_4
+)
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES, device = Devices.PIXEL_4)
 @Composable
 fun MainPreview() {
