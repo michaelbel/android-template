@@ -12,6 +12,8 @@ plugins {
     id 'io.gitlab.arturbosch.detekt'
 }
 
+apply from: "$project.rootDir/spotless.gradle"
+
 // Для локальных сборок берем ключи из локального хранилища keystore.properties.
 // Для удаленных сборок на GitHub Actions берем ключи из Actions Secrets.
 // Каталог ../config отсутствует в удаленном репозитории.

@@ -66,17 +66,37 @@ class MainViewModel @Inject constructor(
                 ScreenData(Screen.Insets, bundleOf(), R.string.title_window_insets),
                 ScreenData(Screen.Paging, bundleOf(), R.string.title_paging),
                 ScreenData(Screen.Ads, bundleOf(), R.string.title_ads),
-                ScreenData(Screen.NavArgs, bundleOf("firstText" to "Some Text", "secondNumber" to 100), R.string.title_nav_args),
+                ScreenData(
+                    Screen.NavArgs,
+                    bundleOf("firstText" to "Some Text", "secondNumber" to 100),
+                    R.string.title_nav_args
+                ),
                 ScreenData(Screen.Config, bundleOf(), R.string.title_remote_config),
                 ScreenData(Screen.MaterialYou, bundleOf(), R.string.title_material_you_colors),
                 ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
                 ScreenData(Screen.Social, bundleOf(), R.string.title_social),
                 ScreenData(Screen.Notifications, bundleOf(), R.string.title_notifications),
                 ScreenData(Screen.ConstraintsChains, bundleOf(), R.string.title_constraints_chains),
-                ScreenData(Screen.ConstraintsGuideline, bundleOf(), R.string.title_constraints_guideline),
-                ScreenData(Screen.ConstraintsConstrainedWidth, bundleOf(), R.string.title_constraints_constrained_width),
-                ScreenData(Screen.ConstraintsCircular, bundleOf(), R.string.title_constraints_circular),
-                ScreenData(Screen.ConstraintsGoneMargins, bundleOf(), R.string.title_constraints_gone_margins),
+                ScreenData(
+                    Screen.ConstraintsGuideline,
+                    bundleOf(),
+                    R.string.title_constraints_guideline
+                ),
+                ScreenData(
+                    Screen.ConstraintsConstrainedWidth,
+                    bundleOf(),
+                    R.string.title_constraints_constrained_width
+                ),
+                ScreenData(
+                    Screen.ConstraintsCircular,
+                    bundleOf(),
+                    R.string.title_constraints_circular
+                ),
+                ScreenData(
+                    Screen.ConstraintsGoneMargins,
+                    bundleOf(),
+                    R.string.title_constraints_gone_margins
+                ),
                 ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
                 ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
                 ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),

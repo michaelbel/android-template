@@ -6,6 +6,8 @@ plugins {
     id 'io.gitlab.arturbosch.detekt'
 }
 
+apply from: "$project.rootDir/spotless.gradle"
+
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
