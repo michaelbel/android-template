@@ -25,7 +25,10 @@ class MainActivity: AppCompatActivity() {
     }
 
     private fun resolveIntent() {
-        when (intent?.action) {
+        val action: String? = intent?.action
+        val data: Uri? = intent?.data
+
+        when (action) {
             Intent.ACTION_MAIN -> {}
             Intent.ACTION_SEND -> {
                 when {
@@ -41,6 +44,9 @@ class MainActivity: AppCompatActivity() {
                 if (intent.type?.startsWith("image/") == true) {
                     handleSendMultipleImages(intent)
                 }
+            }
+            Intent.ACTION_VIEW -> {
+
             }
             else -> {
                 // Handle other intents, such as being started from the home screen
