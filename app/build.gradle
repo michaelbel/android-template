@@ -121,7 +121,6 @@ android {
 dependencies {
     implementation project(':core')
 
-    implementation "androidx.activity:activity-ktx:$activityVersion"
     implementation "androidx.activity:activity-compose:$activityVersion"
     implementation "androidx.annotation:annotation:$annotationVersion"
     implementation "androidx.annotation:annotation-experimental:$annotationExperimentalVersion"
@@ -148,18 +147,14 @@ dependencies {
     implementation "androidx.datastore:datastore-core:$datastoreVersion"
     implementation "androidx.datastore:datastore-preferences:$datastoreVersion"
     implementation "androidx.datastore:datastore-preferences-core:$datastoreVersion"
-    implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
     implementation "androidx.hilt:hilt-navigation-fragment:$hiltNavigationFragmentVersion"
     implementation "androidx.hilt:hilt-work:$hiltWorkVersion"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
               kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
-    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
     implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
               kapt "androidx.room:room-compiler:$roomVersion"

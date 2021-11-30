@@ -35,9 +35,14 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
+    api "androidx.activity:activity-ktx:$activityVersion"
     api "androidx.appcompat:appcompat:$appcompatVersion"
     api "androidx.core:core-ktx:$coreVersion"
     api "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    api "androidx.fragment:fragment-ktx:$fragmentVersion"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    api "androidx.paging:paging-runtime-ktx:$pagingVersion"
 
     api "com.google.android.material:material:$materialVersion"
     api "com.google.dagger:hilt-android:$daggerVersion"
