@@ -4,6 +4,7 @@ package org.michaelbel.core.ktx
 
 import android.content.Context
 import android.graphics.Point
+import android.util.TypedValue
 import android.view.Display
 import android.view.WindowManager
 
@@ -35,4 +36,12 @@ inline val Context.navigationBarHeight: Int
     get() {
         val resId = resources.getIdentifier("navigation_bar_height", "dimen", "android")
         return if (resId > 0) resources.getDimensionPixelSize(resId) else 0
+    }
+
+inline val Context.actionBarHeight: Int
+    get() {
+        val typedValue = TypedValue()
+        return if (theme.resolveAttribute(android.R.attr.actionBarSize, typedValue, true)) {
+            TypedValue.complexToDimensionPixelSize(typedValue.data, resources.displayMetrics)
+        } else 0
     }
