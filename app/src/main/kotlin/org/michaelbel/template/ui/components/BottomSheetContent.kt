@@ -54,11 +54,11 @@ import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.AppTheme
-import org.michaelbel.template.ui.BottomSheetShape
-import org.michaelbel.template.ui.Dimens
-import org.michaelbel.template.ui.Red800
-import org.michaelbel.template.ui.large
+import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.template.ui.theme.BottomSheetShape
+import org.michaelbel.template.ui.theme.Dimens
+import org.michaelbel.template.ui.theme.Red800
+import org.michaelbel.template.ui.theme.large
 
 @Composable
 fun HomeBottomSheet(

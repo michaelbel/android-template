@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.ui.theme.AppTheme
 
 @Composable
 fun RemoteConfigScreen(onNavigationBackClick: OnNavigationBackClick) {

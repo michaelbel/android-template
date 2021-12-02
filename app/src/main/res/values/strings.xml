@@ -118,12 +118,16 @@
     <string name="bottom_sheet">BottomSheet</string>
     <string name="date_picker">Date Picker</string>
     <string name="time_picker">Time Picker</string>
+    <string name="alert_dialog">Alert Dialog</string>
 
     <!--Clipboard-->
     <string name="title_clipboard">Clipboard</string>
     <string name="copy_to_clipboard">Copy to Clipboard</string>
     <string name="paste_from_clipboard">Paste from Clipboard</string>
     <string name="clear_clipboard">Clear Clipboard</string>
+
+    <!--Network Image-->
+    <string name="title_network_image">Network Image</string>
 
     <string name="loading">Loading</string>
     <string name="language">Language: %s</string>

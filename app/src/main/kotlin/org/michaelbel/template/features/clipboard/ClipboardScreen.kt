@@ -21,7 +21,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.insets.ui.TopAppBar
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.ui.theme.AppTheme
 
 @Composable
 fun ClipboardScreen(

@@ -8,13 +8,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -27,7 +27,7 @@ typealias OnButtonClick = (String) -> Unit
 
 @RequiresApi(29)
 @Composable
-fun SettingsPanel(
+fun SettingsPanelScreen(
     onNavigationBackClick: OnNavigationBackClick,
     onButtonClick: OnButtonClick
 ) {
@@ -41,7 +41,7 @@ fun SettingsPanel(
 fun SettingsPanelTopBar(
     onNavigationBackClick: OnNavigationBackClick
 ) {
-    SmallTopAppBar(
+    TopAppBar(
         title = { Text(text = stringResource(R.string.title_settings_panel)) },
         navigationIcon = {
             IconButton(onClick = onNavigationBackClick) {
@@ -99,7 +99,7 @@ fun SettingsPanelBox(
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun SettingsPanelPreview() {
-    SettingsPanel(
+    SettingsPanelScreen(
         {},
         {}
     )

@@ -3,6 +3,8 @@ package org.michaelbel.template.features.toast
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
@@ -15,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.ui.theme.AppTheme
 
 typealias OnButtonClick = () -> Unit
 
@@ -29,8 +31,8 @@ fun ToastScreen(
             SmallTopAppBar(
                 title = { Text(stringResource(id = R.string.title_toast)) },
                 navigationIcon = {
-                    androidx.compose.material.IconButton(onClick = onNavigationBackClick) {
-                        androidx.compose.material.Icon(
+                    IconButton(onClick = onNavigationBackClick) {
+                        Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.cd_back)
                         )

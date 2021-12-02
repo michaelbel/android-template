@@ -46,7 +46,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.Dimens
+import org.michaelbel.template.ui.theme.Dimens
 
 @Composable
 fun SearchBar(

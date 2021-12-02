@@ -27,7 +27,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.AppTheme
 
 /**
  * Navigation Arguments.
@@ -58,26 +57,24 @@ class NavArgsFragment: Fragment() {
 
         setContent {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
-                AppTheme {
-                    Box(modifier = Modifier.fillMaxSize()) {
-                        TopAppBar(
-                            title = { Text(text = stringResource(R.string.title_nav_args)) },
-                            modifier = Modifier.align(Alignment.TopCenter),
-                            navigationIcon = {
-                                IconButton(onClick = { findNavController().popBackStack() }) {
-                                    Icon(
-                                        imageVector = Icons.Filled.ArrowBack,
-                                        contentDescription = stringResource(R.string.cd_back)
-                                    )
-                                }
-                            },
-                            elevation = 2.dp
-                        )
-                        Text(
-                            text = "Arguments: ${args.firstText}, ${args.secondNumber}",
-                            modifier = Modifier.align(Alignment.Center)
-                        )
-                    }
+                Box(modifier = Modifier.fillMaxSize()) {
+                    TopAppBar(
+                        title = { Text(text = stringResource(R.string.title_nav_args)) },
+                        modifier = Modifier.align(Alignment.TopCenter),
+                        navigationIcon = {
+                            IconButton(onClick = { findNavController().popBackStack() }) {
+                                Icon(
+                                    imageVector = Icons.Filled.ArrowBack,
+                                    contentDescription = stringResource(R.string.cd_back)
+                                )
+                            }
+                        },
+                        elevation = 2.dp
+                    )
+                    Text(
+                        text = "Arguments: ${args.firstText}, ${args.secondNumber}",
+                        modifier = Modifier.align(Alignment.Center)
+                    )
                 }
             }
         }

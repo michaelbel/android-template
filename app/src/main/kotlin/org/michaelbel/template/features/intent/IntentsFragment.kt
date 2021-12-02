@@ -20,6 +20,7 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.analytics.Event
 import org.michaelbel.template.R
+import org.michaelbel.template.features.intent.model.IntentItem
 
 @AndroidEntryPoint
 class IntentsFragment: Fragment() {

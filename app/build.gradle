@@ -87,6 +87,7 @@ android {
             "-Xuse-experimental=androidx.compose.ui.ExperimentalComposeUiApi",
             "-Xuse-experimental=androidx.compose.material.ExperimentalMaterialApi",
             "-Xuse-experimental=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-Xuse-experimental=coil.annotation.ExperimentalCoilApi",
             "-Xopt-in=kotlinx.coroutines.FlowPreview"
         ]
     }
@@ -198,6 +199,7 @@ dependencies {
     implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
     implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
     implementation "io.coil-kt:coil:$coilVersion"
+    implementation "io.coil-kt:coil-compose:$coilVersion"
     implementation "com.vk:android-sdk-core:$vkVersion"
     implementation "com.vk:android-sdk-api:$vkVersion"
 

@@ -1,4 +1,4 @@
-package org.michaelbel.template.ui
+package org.michaelbel.template.ui.theme
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp

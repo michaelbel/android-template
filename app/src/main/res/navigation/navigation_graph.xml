@@ -142,4 +142,9 @@
         android:name="org.michaelbel.template.features.clipboard.ClipboardFragment"
         android:label="Clipboard"/>
 
+    <fragment
+        android:id="@+id/networkImageFragment"
+        android:name="org.michaelbel.template.features.networkimage.NetworkImageFragment"
+        android:label="NetworkImage"/>
+
 </navigation>

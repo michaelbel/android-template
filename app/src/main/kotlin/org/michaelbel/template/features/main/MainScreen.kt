@@ -5,7 +5,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -16,14 +16,12 @@ import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.SnackbarResult
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -35,7 +33,6 @@ import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -47,23 +44,24 @@ import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
 import org.michaelbel.template.features.main.ui.MainBottomBar
-import org.michaelbel.template.ui.AppTheme
-import org.michaelbel.template.ui.Dimens
+import org.michaelbel.template.features.main.ui.MainListItem
 import org.michaelbel.template.ui.components.HomeBottomSheet
 import org.michaelbel.template.ui.components.SearchBar
+import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.template.ui.theme.Dimens
 
 typealias OnButtonClick = (Screen, Bundle) -> Unit
 
 @Composable
 fun Main(
-    modifier: Modifier = Modifier,
     listState: LazyListState = rememberLazyListState(),
     onUpdateAppClicked: () -> Unit,
     onButtonClick: OnButtonClick,
     onSortOptionClicked: (Int) -> Unit = {},
     currentSortOption: Int = 0,
     onSettingsClicked: () -> Unit = {},
-    onSearch: (String) -> Unit = {}
+    onSearch: (String) -> Unit = {},
+    onFabClick: () -> Unit
 ) {
     val viewModel: MainViewModel = viewModel(MainViewModel::class.java)
     val coroutineScope: CoroutineScope = rememberCoroutineScope()
@@ -92,18 +90,12 @@ fun Main(
 
     AppTheme {
         Scaffold(
-            modifier = Modifier
-                .fillMaxSize(),
             scaffoldState = scaffoldState,
             topBar = {
                 SearchBar(
                     focusManager = focusManager,
-                    onSearch = {
-                        onSearch(it)
-                    },
-                    onDismissSearchClicked = {
-                        onSearch("")
-                    },
+                    onSearch = { onSearch(it) },
+                    onDismissSearchClicked = { onSearch("") },
                     onOptionsClicked = {
                         coroutineScope.launch {
                             sheetState.show()
@@ -117,7 +109,7 @@ fun Main(
             bottomBar = { MainBottomBar() },
             floatingActionButton = {
                 Column(horizontalAlignment = Alignment.End) {
-                    Fab()
+                    Fab(onFabClick)
                 }
             },
         ) {
@@ -139,35 +131,17 @@ fun Main(
             ) {
                 LazyColumn(
                     state = listState,
-                    modifier = modifier,
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     item {
                         Spacer(modifier = Modifier.statusBarsPadding())
-                        /*SearchBar(
-                            focusManager = focusManager,
-                            onSearch = {
-                                onSearch(it)
-                            },
-                            onDismissSearchClicked = {
-                                onSearch("")
-                            },
-                            onOptionsClicked = {
-                                coroutineScope.launch {
-                                    sheetState.show()
-                                }
-                            },
-                            modifier = Modifier.padding(
-                                vertical = Dimens.SmallPadding.size
-                            )
-                        )*/
                     }
-                    items(mainState.list) { (screen, args, titleRes) ->
-                        OutlinedButton(
-                            onClick = { onButtonClick(screen, args) },
-                            modifier = Modifier
-                                .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 4.dp)
-                        ) { Text(text = stringResource(titleRes)) }
+                    items(mainState.list) { screenData ->
+                        MainListItem(
+                            screenData = screenData,
+                            onClick = { (screen, args) -> onButtonClick(screen, args) }
+                        )
                     }
                     item {
                         Spacer(modifier = Modifier.navigationBarsPadding())
@@ -186,9 +160,9 @@ fun Main(
 }
 
 @Composable
-fun Fab() {
+fun Fab(onClick: () -> Unit) {
     FloatingActionButton(
-        onClick = { /* do something */ },
+        onClick = onClick,
     ) {
         Icon(Icons.Filled.Add, "Localized description")
     }

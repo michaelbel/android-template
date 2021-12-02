@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.features.intent.model.IntentItem
 
 typealias OnButtonClick = (IntentItem) -> Unit
 
@@ -29,11 +29,9 @@ fun IntentsScreen(
     onNavigationBackClick: OnNavigationBackClick,
     onButtonClick: OnButtonClick
 ) {
-    AppTheme {
-        Column {
-            IntentsScreenTopBar(onNavigationBackClick = onNavigationBackClick)
-            IntentsScreenBox(onButtonClick = onButtonClick)
-        }
+    Column {
+        IntentsScreenTopBar(onNavigationBackClick = onNavigationBackClick)
+        IntentsScreenBox(onButtonClick = onButtonClick)
     }
 }
 
@@ -100,7 +98,7 @@ fun IntentsScreenBox(
 @Composable
 fun IntentScreenPreview() {
     IntentsScreen(
-        {},
-        {}
+        onNavigationBackClick = {},
+        onButtonClick = {}
     )
 }

@@ -1,5 +1,6 @@
 package org.michaelbel.template.features.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.template.ComposeActivity
 import org.michaelbel.template.Screen
 import org.michaelbel.template.navigate
 
@@ -34,7 +36,8 @@ class MainFragment: Fragment() {
             CompositionLocalProvider(LocalWindowInsets provides windowInsets) {
                 Main(
                     onUpdateAppClicked = { onAppUpdateClick() },
-                    onButtonClick = { to: Screen, args: Bundle -> navigate(to, Screen.Main, args) }
+                    onButtonClick = { to: Screen, args: Bundle -> navigate(to, Screen.Main, args) },
+                    onFabClick = { startComposeActivity() }
                 )
             }
         }
@@ -42,5 +45,9 @@ class MainFragment: Fragment() {
 
     private fun onAppUpdateClick() {
         viewModel.startUpdateFlow(requireActivity())
+    }
+
+    private fun startComposeActivity() {
+        startActivity(Intent(requireActivity(), ComposeActivity::class.java))
     }
 }
