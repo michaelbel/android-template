@@ -12,6 +12,7 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.template.features.networkimage.ui.NetworkImageScreen
 
 @AndroidEntryPoint
 class NetworkImageFragment: Fragment() {

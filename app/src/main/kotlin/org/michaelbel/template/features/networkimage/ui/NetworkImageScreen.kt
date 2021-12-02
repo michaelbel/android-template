@@ -1,23 +1,24 @@
-package org.michaelbel.template.features.networkimage
+package org.michaelbel.template.features.networkimage.ui
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.insets.ui.TopAppBar
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.utils.NetworkImage
@@ -26,20 +27,15 @@ import org.michaelbel.template.ui.utils.NetworkImage
 fun NetworkImageScreen(
     onNavigationBackClick: OnNavigationBackClick
 ) {
-    Column {
-        NetworkImageTopBar(onNavigationBackClick = onNavigationBackClick)
-        NetworkImageBox()
-    }
+    Scaffold(
+        topBar = { Toolbar(onNavigationBackClick) }
+    ) { Content() }
 }
 
 @Composable
-fun NetworkImageTopBar(
-    modifier: Modifier = Modifier,
-    onNavigationBackClick: OnNavigationBackClick
-) {
-    TopAppBar(
+private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
+    SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_network_image)) },
-        modifier = modifier,
         navigationIcon = {
             IconButton(onClick = { onNavigationBackClick() }) {
                 Icon(
@@ -47,13 +43,12 @@ fun NetworkImageTopBar(
                     contentDescription = stringResource(R.string.cd_back)
                 )
             }
-        },
-        elevation = 0.dp
+        }
     )
 }
 
 @Composable
-fun NetworkImageBox(
+fun Content(
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier.fillMaxSize()) {
@@ -61,6 +56,7 @@ fun NetworkImageBox(
             url = "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
             contentDescription = null,
             modifier = Modifier
+                .align(Alignment.Center)
                 .size(280.dp)
                 .clip(CircleShape)
         )
@@ -70,6 +66,6 @@ fun NetworkImageBox(
 @Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun ClipboardScreenPreview() {
+private fun ClipboardScreenPreview() {
     NetworkImageScreen(onNavigationBackClick = {})
 }

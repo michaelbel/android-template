@@ -14,6 +14,7 @@ import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.features.dialog.bottomsheet.CustomBottomSheetDialog
 import org.michaelbel.template.features.dialog.model.DialogItem
+import org.michaelbel.template.features.dialog.ui.DialogsScreen
 
 @AndroidEntryPoint
 class DialogsFragment: Fragment() {

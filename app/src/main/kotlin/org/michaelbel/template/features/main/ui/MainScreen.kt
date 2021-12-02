@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.main
+package org.michaelbel.template.features.main.ui
 
 import android.content.Context
 import android.content.res.Configuration
@@ -43,8 +43,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
-import org.michaelbel.template.features.main.ui.MainBottomBar
-import org.michaelbel.template.features.main.ui.MainListItem
+import org.michaelbel.template.features.main.MainScreenState
+import org.michaelbel.template.features.main.MainViewModel
 import org.michaelbel.template.ui.components.HomeBottomSheet
 import org.michaelbel.template.ui.components.SearchBar
 import org.michaelbel.template.ui.theme.AppTheme
@@ -131,7 +131,7 @@ fun Main(
             ) {
                 LazyColumn(
                     state = listState,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 80.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     item {

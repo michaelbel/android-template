@@ -15,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.app.InAppReview
+import org.michaelbel.template.features.inappreview.ui.ReviewScreen
 
 @AndroidEntryPoint
 class ReviewFragment: Fragment() {

@@ -15,6 +15,7 @@ import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.ComposeActivity
 import org.michaelbel.template.Screen
+import org.michaelbel.template.features.main.ui.Main
 import org.michaelbel.template.navigate
 
 @AndroidEntryPoint

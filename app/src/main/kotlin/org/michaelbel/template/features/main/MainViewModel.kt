@@ -60,27 +60,19 @@ class MainViewModel @Inject constructor(
     private fun setData() {
         viewModelScope.launch {
             screensList.value = listOf(
-                ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
-                ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
-                ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
-                ScreenData(Screen.Insets, bundleOf(), R.string.title_window_insets),
-                ScreenData(Screen.Paging, bundleOf(), R.string.title_paging),
                 ScreenData(Screen.Ads, bundleOf(), R.string.title_ads),
-                ScreenData(
-                    Screen.NavArgs,
-                    bundleOf("firstText" to "Some Text", "secondNumber" to 100),
-                    R.string.title_nav_args
-                ),
+                ScreenData(Screen.Clipboard, bundleOf(), R.string.title_clipboard),
                 ScreenData(Screen.Config, bundleOf(), R.string.title_remote_config),
-                ScreenData(Screen.MaterialYou, bundleOf(), R.string.title_material_you_colors),
-                ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
-                ScreenData(Screen.Social, bundleOf(), R.string.title_social),
-                ScreenData(Screen.Notifications, bundleOf(), R.string.title_notifications),
+                ScreenData(
+                    Screen.ConstraintsBaseline,
+                    bundleOf(),
+                    R.string.title_constraints_baseline
+                ),
                 ScreenData(Screen.ConstraintsChains, bundleOf(), R.string.title_constraints_chains),
                 ScreenData(
-                    Screen.ConstraintsGuideline,
+                    Screen.ConstraintsCircular,
                     bundleOf(),
-                    R.string.title_constraints_guideline
+                    R.string.title_constraints_circular
                 ),
                 ScreenData(
                     Screen.ConstraintsConstrainedWidth,
@@ -88,26 +80,34 @@ class MainViewModel @Inject constructor(
                     R.string.title_constraints_constrained_width
                 ),
                 ScreenData(
-                    Screen.ConstraintsCircular,
-                    bundleOf(),
-                    R.string.title_constraints_circular
-                ),
-                ScreenData(
                     Screen.ConstraintsGoneMargins,
                     bundleOf(),
                     R.string.title_constraints_gone_margins
                 ),
                 ScreenData(
-                    Screen.ConstraintsBaseline,
+                    Screen.ConstraintsGuideline,
                     bundleOf(),
-                    R.string.title_constraints_baseline
+                    R.string.title_constraints_guideline
                 ),
-                ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
-                ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
-                ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
-                ScreenData(Screen.NetworkImage, bundleOf(), R.string.title_network_image),
                 ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs),
-                ScreenData(Screen.Clipboard, bundleOf(), R.string.title_clipboard)
+                ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
+                ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
+                ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
+                ScreenData(Screen.MaterialYou, bundleOf(), R.string.title_material_you_colors),
+                ScreenData(
+                    Screen.NavArgs,
+                    bundleOf("firstText" to "Some Text", "secondNumber" to 100),
+                    R.string.title_nav_args
+                ),
+                ScreenData(Screen.NetworkImage, bundleOf(), R.string.title_network_image),
+                ScreenData(Screen.Notifications, bundleOf(), R.string.title_notifications),
+                ScreenData(Screen.Paging, bundleOf(), R.string.title_paging),
+                ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
+                ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
+                ScreenData(Screen.Social, bundleOf(), R.string.title_social),
+                ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
+                ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
+                ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
             )
         }
     }

@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.inappreview
+package org.michaelbel.template.features.inappreview.ui
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
@@ -33,26 +33,27 @@ fun ReviewScreen(
 ) {
     Scaffold(
         scaffoldState = scaffoldState,
-        topBar = {
-            SmallTopAppBar(
-                title = { Text(stringResource(id = R.string.title_in_app_review)) },
-                navigationIcon = {
-                    IconButton(onClick = onNavigationBackClick) {
-                        Icon(
-                            imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.cd_back)
-                        )
-                    }
-                }
-            )
-        }
-    ) {
-        ReviewBox(onButtonClick = onButtonClick)
-    }
+        topBar = { Toolbar(onNavigationBackClick) }
+    ) { Content(onButtonClick = onButtonClick) }
 }
 
 @Composable
-fun ReviewBox(
+private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
+    SmallTopAppBar(
+        title = { Text(stringResource(id = R.string.title_in_app_review)) },
+        navigationIcon = {
+            IconButton(onClick = onNavigationBackClick) {
+                Icon(
+                    imageVector = Icons.Filled.ArrowBack,
+                    contentDescription = stringResource(R.string.cd_back)
+                )
+            }
+        }
+    )
+}
+
+@Composable
+private fun Content(
     modifier: Modifier = Modifier,
     onButtonClick: OnButtonClick
 ) {
@@ -72,7 +73,7 @@ fun ReviewBox(
 @Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun ReviewScreenPreview() {
+private fun ReviewScreenPreview() {
     ReviewScreen(
         onButtonClick = {},
         onNavigationBackClick = {}

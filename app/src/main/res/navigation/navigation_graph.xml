@@ -89,7 +89,7 @@
 
     <fragment
         android:id="@+id/constraintsChainStyleFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsChainStyleFragment"
+        android:name="org.michaelbel.template.features.constraints.ConstrainsChainsFragment"
         android:label="ConstrainsChainStyle"/>
 
     <fragment
@@ -124,7 +124,7 @@
 
     <fragment
         android:id="@+id/intentsFragment"
-        android:name="org.michaelbel.template.features.intent.IntentsFragment"
+        android:name="org.michaelbel.template.features.intents.IntentsFragment"
         android:label="Intents"/>
 
     <fragment

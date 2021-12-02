@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.intent
+package org.michaelbel.template.features.intents
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -20,7 +20,8 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.analytics.Event
 import org.michaelbel.template.R
-import org.michaelbel.template.features.intent.model.IntentItem
+import org.michaelbel.template.features.intents.model.IntentItem
+import org.michaelbel.template.features.intents.ui.IntentsScreen
 
 @AndroidEntryPoint
 class IntentsFragment: Fragment() {

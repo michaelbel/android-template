@@ -14,6 +14,7 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ViewWindowInsetObserver
 import com.google.accompanist.insets.WindowInsets
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.template.features.settingspanel.ui.SettingsPanelScreen
 
 /**
  * Settings.Global.getString(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON)

@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import org.michaelbel.template.features.config.ui.RemoteConfigScreen
 
 /**
  * Firebase Remote Config.

@@ -12,7 +12,7 @@ import org.michaelbel.template.databinding.FragmentConstraintsChainsBinding
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ConstrainsChainStyleFragment: Fragment(R.layout.fragment_constraints_chains) {
+class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
 
     @Inject lateinit var analytics: Analytics
 
@@ -20,7 +20,7 @@ class ConstrainsChainStyleFragment: Fragment(R.layout.fragment_constraints_chain
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsChainStyleFragment::class.simpleName)
+        analytics.trackScreen(ConstrainsChainsFragment::class.simpleName)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

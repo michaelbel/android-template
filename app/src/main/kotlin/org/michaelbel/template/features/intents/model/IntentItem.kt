@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.intent.model
+package org.michaelbel.template.features.intents.model
 
 enum class IntentItem {
     Share,
