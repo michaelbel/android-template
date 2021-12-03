@@ -10,7 +10,7 @@ buildscript {
         buildToolsVersion = '31.0.0'
         gradleVersion = '7.0.3'
         detektVersion = '1.19.0'
-        spotlessVersion = '6.0.0'
+        spotlessVersion = '6.0.1'   // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
         ndkVersion = '21.2.6472646'
 
         // Kotlin
@@ -61,7 +61,7 @@ buildscript {
         adsVersion = '20.5.0'
         authVersion = '19.2.0'
         crashlyticsVersion = '2.8.1'
-        daggerVersion = '2.40.3'
+        daggerVersion = '2.40.4'                         // https://github.com/google/dagger/releases
         exoplayerVersion = '2.16.1'
         googleServicesVersion = '4.3.10'
         firebaseAbtVersion = '21.0.0'
