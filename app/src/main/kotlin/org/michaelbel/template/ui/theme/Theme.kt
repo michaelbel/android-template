@@ -1,19 +1,14 @@
 package org.michaelbel.template.ui.theme
 
+import android.content.Context
 import android.os.Build
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.Colors
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Shapes
-import androidx.compose.material.Typography
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
-import androidx.compose.material.ripple.LocalRippleTheme
-import androidx.compose.material.ripple.RippleAlpha
-import androidx.compose.material.ripple.RippleTheme
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
@@ -21,16 +16,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import org.michaelbel.template.R
 
-private val YellowLightThemeColors = lightColors(
+private val YellowLightThemeColorScheme = lightColorScheme(
     primary = yellow500,
-    primaryVariant = yellow400,
     onPrimary = Color.Black,
     secondary = blue700,
-    secondaryVariant = blue800,
     onSecondary = Color.White
 )
 
-private val YellowDarkThemeColors = darkColors(
+private val YellowDarkThemeColorScheme = darkColorScheme(
     primary = yellow200,
     secondary = blue200,
     onSecondary = Color.Black,
@@ -42,22 +35,21 @@ fun YellowTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        YellowDarkThemeColors
+    val colorScheme: ColorScheme = if (darkTheme) {
+        YellowDarkThemeColorScheme
     } else {
-        YellowLightThemeColors
+        YellowLightThemeColorScheme
     }
-    AppTheme(darkTheme, colors, content)
+    AppTheme(darkTheme, colorScheme, content)
 }
 
-private val BlueLightThemeColors = lightColors(
+private val BlueLightThemeColorScheme = lightColorScheme(
     primary = blue700,
     onPrimary = Color.White,
-    primaryVariant = blue800,
     secondary = yellow500
 )
 
-private val BlueDarkThemeColors = darkColors(
+private val BlueDarkThemeColorScheme = darkColorScheme(
     primary = blue200,
     secondary = yellow200,
     surface = blueDarkPrimary
@@ -68,23 +60,22 @@ fun BlueTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        BlueDarkThemeColors
+    val colorScheme: ColorScheme = if (darkTheme) {
+        BlueDarkThemeColorScheme
     } else {
-        BlueLightThemeColors
+        BlueLightThemeColorScheme
     }
-    AppTheme(darkTheme, colors, content)
+    AppTheme(darkTheme, colorScheme, content)
 }
 
-private val PinkLightThemeColors = lightColors(
+private val PinkLightThemeColorScheme = lightColorScheme(
     primary = pink500,
     secondary = pink500,
-    primaryVariant = pink600,
     onPrimary = Color.Black,
     onSecondary = Color.Black
 )
 
-private val PinkDarkThemeColors = darkColors(
+private val PinkDarkThemeColorScheme = darkColorScheme(
     primary = pink200,
     secondary = pink200,
     surface = pinkDarkPrimary
@@ -95,58 +86,54 @@ fun PinkTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        PinkDarkThemeColors
+    val colorScheme: ColorScheme = if (darkTheme) {
+        PinkDarkThemeColorScheme
     } else {
-        PinkLightThemeColors
+        PinkLightThemeColorScheme
     }
-    AppTheme(darkTheme, colors, content)
+    AppTheme(darkTheme, colorScheme, content)
 }
 
-private object AppRippleTheme: RippleTheme {
+/*private object AppRippleTheme: RippleTheme {
 
     @Composable
-    override fun defaultColor(): Color = MaterialTheme.colors.primary
+    override fun defaultColor(): Color = MaterialTheme.colorScheme.primary
 
     @Composable
     override fun rippleAlpha(): RippleAlpha = RippleTheme.defaultRippleAlpha(
         Color.Black,
         lightTheme = !isSystemInDarkTheme()
     )
-}
+}*/
 
 @Composable
 fun AppTheme(
-    theme: Int = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM,
     content: @Composable () -> Unit
 ) {
-    val autoColors = if (isSystemInDarkTheme()) YellowDarkThemeColors else YellowLightThemeColors
+    val context: Context = LocalContext.current
 
-    val dynamicColors: Colors = if (Build.VERSION.SDK_INT >= 31) {
-        val context = LocalContext.current
-        if (isSystemInDarkTheme()) dynamicDarkColorScheme(context) else dynamicLightColorScheme(
-            context
-        )
-        autoColors
-    } else autoColors
+    val dynamicColorScheme: ColorScheme = if (isSystemInDarkTheme()) {
+        dynamicDarkColorScheme(context)
+    } else {
+        dynamicLightColorScheme(context)
+    }
 
-    val colors = when (theme) {
-        AppCompatDelegate.MODE_NIGHT_NO -> YellowLightThemeColors
-        AppCompatDelegate.MODE_NIGHT_YES -> YellowDarkThemeColors
-        AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM -> autoColors
-        else -> dynamicColors
+    val autoColorScheme: ColorScheme = if (isSystemInDarkTheme()) {
+        YellowDarkThemeColorScheme
+    } else {
+        YellowLightThemeColorScheme
+    }
+
+    val appColorScheme: ColorScheme = if (Build.VERSION.SDK_INT >= 31) {
+        dynamicColorScheme
+    } else {
+        autoColorScheme
     }
 
     MaterialTheme(
-        colors = colors,
-        //typography = AppTypography,
-        shapes = AppShapes
-    ) {
-        CompositionLocalProvider(
-            LocalRippleTheme provides AppRippleTheme,
-            content = content
-        )
-    }
+        colorScheme = appColorScheme,
+        content = content
+    )
 }
 
 private val LightElevation = Elevations()
@@ -158,7 +145,7 @@ private val DarkImages = Images(lockupLogo = R.drawable.ic_outline_error_24)
 @Composable
 fun AppTheme(
     darkTheme: Boolean,
-    colors: Colors,
+    colorScheme: ColorScheme,
     content: @Composable () -> Unit
 ) {
     val elevation = if (darkTheme) DarkElevation else LightElevation
@@ -168,52 +155,8 @@ fun AppTheme(
         LocalImages provides images
     ) {
         MaterialTheme(
-            colors = colors,
-            typography = AppTypography,
-            shapes = AppShapes,
+            colorScheme = colorScheme,
             content = content
         )
     }
-}
-
-/**
- * Alternate to [MaterialTheme] allowing us to add our own theme systems (e.g. [Elevations]) or to
- * extend [MaterialTheme]'s types e.g. return our own [Colors] extension
- */
-object AppTheme {
-
-    /**
-     * Proxy to [MaterialTheme]
-     */
-    val colors: Colors
-        @Composable
-        get() = MaterialTheme.colors
-
-    /**
-     * Proxy to [MaterialTheme]
-     */
-    val typography: Typography
-        @Composable
-        get() = MaterialTheme.typography
-
-    /**
-     * Proxy to [MaterialTheme]
-     */
-    val shapes: Shapes
-        @Composable
-        get() = MaterialTheme.shapes
-
-    /**
-     * Retrieves the current [Elevations] at the call site's position in the hierarchy.
-     */
-    val elevations: Elevations
-        @Composable
-        get() = LocalElevations.current
-
-    /**
-     * Retrieves the current [Images] at the call site's position in the hierarchy.
-     */
-    val images: Images
-        @Composable
-        get() = LocalImages.current
 }

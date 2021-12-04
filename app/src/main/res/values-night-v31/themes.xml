@@ -4,11 +4,14 @@
     Day Theme
 
     Android 12 (API level 31)
+
+    Added:
+    windowSplashScreenBrandingImage
 -->
 
 <resources>
 
-    <style name="Theme.App" parent="Theme.Material3.DynamicColors.DayNight">
+    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
         <!--Primary brand color-->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
