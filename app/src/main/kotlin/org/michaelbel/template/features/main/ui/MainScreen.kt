@@ -1,7 +1,6 @@
 package org.michaelbel.template.features.main.ui
 
 import android.content.Context
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -32,10 +31,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
@@ -44,6 +43,7 @@ import org.michaelbel.template.features.main.MainScreenState
 import org.michaelbel.template.features.main.MainViewModel
 import org.michaelbel.template.launchComposeActivity
 import org.michaelbel.template.ui.components.HomeBottomSheet
+import org.michaelbel.template.ui.theme.AppTheme
 
 typealias OnButtonClick = (Screen, Bundle) -> Unit
 
@@ -83,6 +83,7 @@ fun MainScreen(
         scaffoldState = scaffoldState,
         topBar = {
             MainTopBar(
+                modifier = Modifier.statusBarsPadding(),
                 scrollBehavior = scrollBehavior,
                 onNavigationBackClick = { scope.launch { scaffoldState.drawerState.open() } },
                 onMenuClick = { scope.launch { sheetState.show() } }
@@ -175,18 +176,24 @@ fun MainTopBar(
     )
 }*/
 
-@Preview(
-    name = "default",
-    showSystemUi = true,
-    showBackground = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
-    device = Devices.PIXEL_4
-)
-@Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES, device = Devices.PIXEL_4)
+@Preview
 @Composable
 private fun MainScreenPreview() {
-    MainScreen(
-        onUpdateAppClicked = {},
-        onButtonClick = { _: Screen, _: Bundle -> }
-    )
+    AppTheme {
+        MainScreen(
+            onUpdateAppClicked = {},
+            onButtonClick = { _: Screen, _: Bundle -> }
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun MainScreenPreviewDark() {
+    AppTheme(isDarkTheme = true) {
+        MainScreen(
+            onUpdateAppClicked = {},
+            onButtonClick = { _: Screen, _: Bundle -> }
+        )
+    }
 }

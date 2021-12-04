@@ -1,11 +1,11 @@
-package org.michaelbel.template.app
+package org.michaelbel.template.features.inappreview
 
 import android.app.Activity
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.tasks.Task
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 class InAppReview @Inject constructor(
     private val reviewManager: ReviewManager

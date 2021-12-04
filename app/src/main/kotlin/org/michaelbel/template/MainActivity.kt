@@ -5,10 +5,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 import android.widget.Toast
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
+import org.michaelbel.template.databinding.ActivityMainBinding
 
 @AndroidEntryPoint
 class MainActivity: AppCompatActivity() {
@@ -16,8 +21,19 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
+        // Turn off the decor fitting system windows, which allows us to handle insets,
+        // including IME animations
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        setContentView(R.layout.activity_main)
+
+        setContent {
+            ProvideWindowInsets(consumeWindowInsets = false) {
+                CompositionLocalProvider(
+                    LocalBackPressedDispatcher provides this.onBackPressedDispatcher
+                ) { AndroidViewBinding(ActivityMainBinding::inflate) }
+            }
+        }
+
         resolveIntent()
     }
 

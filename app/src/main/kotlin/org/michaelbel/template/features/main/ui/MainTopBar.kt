@@ -14,19 +14,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 
 @Composable
 fun MainTopBar(
+    modifier: Modifier = Modifier,
     scrollBehavior: TopAppBarScrollBehavior?,
     onNavigationBackClick: OnNavigationBackClick,
     onMenuClick: () -> Unit
 ) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.app_name)) },
-        modifier = Modifier.statusBarsPadding(),
+        modifier = modifier,
         navigationIcon = {
             IconButton(onClick = { onNavigationBackClick() }) {
                 Icon(

@@ -5,21 +5,20 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.BottomAppBar
 import androidx.compose.material.FabPosition
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -71,11 +70,10 @@ fun ClipboardScreen(
             }
         },
         floatingActionButtonPosition = FabPosition.End,
-        isFloatingActionButtonDocked = true,
+        isFloatingActionButtonDocked = false,
         bottomBar = {
             BottomAppBar(
-                modifier = Modifier.navigationBarsPadding(),
-                cutoutShape = MaterialTheme.shapes.small.copy(CornerSize(percent = 50))
+                modifier = Modifier.navigationBarsPadding()
             ) {}
         }
     ) { Content(viewModel = viewModel) }
@@ -83,7 +81,9 @@ fun ClipboardScreen(
 
 @Composable
 private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
-    SmallTopAppBar(
+    TopAppBar(
+        backgroundColor = MaterialTheme.colorScheme.error,
+
         title = { Text(text = stringResource(R.string.title_clipboard)) },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {

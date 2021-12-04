@@ -27,6 +27,17 @@ class MainViewModel @Inject constructor(
     private val inAppUpdate: InAppUpdate
 ): ViewModel() {
 
+    private val _drawerShouldBeOpened = MutableStateFlow(false)
+    val drawerShouldBeOpened: StateFlow<Boolean> = _drawerShouldBeOpened
+
+    fun openDrawer() {
+        _drawerShouldBeOpened.value = true
+    }
+
+    fun resetOpenDrawerAction() {
+        _drawerShouldBeOpened.value = false
+    }
+
     private val screensList = MutableStateFlow<List<ScreenData>>(listOf())
     private val networkLoading = MutableStateFlow(false)
 

@@ -16,7 +16,6 @@ import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
 import org.michaelbel.template.app.Connectivity
-import org.michaelbel.template.app.GoogleApi
 import org.michaelbel.template.databinding.FragmentSystemServicesBinding
 
 // todo добавить flow для состояния интернета

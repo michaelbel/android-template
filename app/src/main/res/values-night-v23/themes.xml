@@ -43,6 +43,8 @@
         <item name="colorTertiaryContainer">@color/TertiaryContainer</item>
 
         <item name="android:background">@color/Background</item>
+        <item name="android:colorPrimary">@color/Primary</item>
+        <item name="android:colorAccent">@color/Primary</item>
 
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
