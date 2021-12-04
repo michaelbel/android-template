@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.utils.NetworkImage
@@ -36,6 +37,7 @@ fun NetworkImageScreen(
 private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_network_image)) },
+        modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = { onNavigationBackClick() }) {
                 Icon(

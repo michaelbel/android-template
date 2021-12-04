@@ -2,7 +2,7 @@ package org.michaelbel.template.features.toast.ui
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
@@ -16,6 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 
@@ -35,6 +37,7 @@ fun ToastScreen(
 private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
     SmallTopAppBar(
         title = { Text(stringResource(id = R.string.title_toast)) },
+        modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = onNavigationBackClick) {
                 Icon(
@@ -48,10 +51,10 @@ private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
 
 @Composable
 private fun Content(onButtonClick: OnButtonClick) {
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box {
         Button(
             onClick = { onButtonClick() },
-            modifier = Modifier.align(Alignment.Center)
+            modifier = Modifier.align(Alignment.Center).padding(start = 16.dp)
         ) {
             Text(text = stringResource(R.string.show_toast))
         }

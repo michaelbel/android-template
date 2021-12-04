@@ -23,6 +23,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.areNotificationsEnabled
@@ -38,6 +39,7 @@ fun NotificationsScreen(onNavigationBackClick: OnNavigationBackClick) {
 private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_notifications)) },
+        modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = onNavigationBackClick) {
                 Icon(
@@ -85,9 +87,9 @@ private fun Content(modifier: Modifier = Modifier) {
                 .padding(end = 16.dp),
             tint = colorResource(
                 if (areNotificationsEnabled) {
-                    R.color.successColor
+                    R.color.Primary
                 } else {
-                    R.color.errorColor
+                    R.color.Error
                 }
             )
         )

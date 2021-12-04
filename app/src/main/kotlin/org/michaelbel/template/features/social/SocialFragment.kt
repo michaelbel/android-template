@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -25,6 +26,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import org.michaelbel.core.ktx.doOnApplyWindowInsets
+import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentSocialBinding
 
@@ -65,6 +68,11 @@ class SocialFragment: Fragment(R.layout.fragment_social) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.appBarLayout.doOnApplyWindowInsets { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.topPadding = systemBars.top
+            WindowInsetsCompat.CONSUMED
+        }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
         viewLifecycleOwner.lifecycleScope.launch {

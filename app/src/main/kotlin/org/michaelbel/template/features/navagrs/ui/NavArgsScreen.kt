@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.features.navagrs.NavArgsFragmentArgs
@@ -33,6 +34,7 @@ fun NavArgsScreen(
 private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_nav_args)) },
+        modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = { onNavigationBackClick() }) {
                 Icon(
