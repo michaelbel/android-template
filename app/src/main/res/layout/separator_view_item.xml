@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/separatorBackground">
+    android:background="@color/Background">
 
     <TextView
         android:id="@+id/separator_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="@dimen/row_item_margin_horizontal"
-        android:textColor="@color/separatorText"
+        android:textColor="@color/Primary"
         android:textSize="@dimen/repo_name_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

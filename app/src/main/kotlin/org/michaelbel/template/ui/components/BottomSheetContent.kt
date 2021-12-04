@@ -1,9 +1,5 @@
 package org.michaelbel.template.ui.components
 
-import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.LinearOutSlowInEasing
-import androidx.compose.animation.core.tween
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,9 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ModalBottomSheetState
 import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.Surface
@@ -34,12 +28,10 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -57,7 +49,6 @@ import org.michaelbel.template.R
 import org.michaelbel.template.ui.theme.AppTheme
 import org.michaelbel.template.ui.theme.BottomSheetShape
 import org.michaelbel.template.ui.theme.Dimens
-import org.michaelbel.template.ui.theme.Red800
 import org.michaelbel.template.ui.theme.large
 
 @Composable
@@ -65,14 +56,12 @@ fun HomeBottomSheet(
     modifier: Modifier = Modifier,
     sheetState: ModalBottomSheetState,
     scope: CoroutineScope,
-    currentSortOption: Int,
     onSettingsClicked: () -> Unit = {},
     onSortOptionClicked: (Int) -> Unit = {},
 ) {
 
     Surface(
         shape = BottomSheetShape,
-        color = MaterialTheme.colors.surface,
         modifier = modifier
             .fillMaxSize()
             .statusBarsPadding()
@@ -83,8 +72,7 @@ fun HomeBottomSheet(
                 .navigationBarsPadding()
         ) {
             TopSheetSection(
-                modifier = Modifier
-                    .padding(Dimens.SmallPadding.size),
+                modifier = Modifier.padding(Dimens.SmallPadding.size),
                 onCloseClicked = { scope.launch { sheetState.hide() } },
                 onSettingsClicked = {
                     scope.launch {
@@ -96,49 +84,21 @@ fun HomeBottomSheet(
 
             LazyColumn(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .fillMaxWidth()
+                modifier = Modifier.fillMaxWidth()
             ) {
 
                 items(Sort.values()) { item ->
-                    val selectedColor by animateColorAsState(
-                        targetValue = if (currentSortOption == item.sortValue) {
-                            MaterialTheme.colors.primary
-                                .copy(alpha = .6f)
-                        } else Color.Transparent,
-                        animationSpec = tween(
-                            durationMillis = 500,
-                            easing = LinearOutSlowInEasing
-                        )
-                    )
-                    val contentColor by animateColorAsState(
-                        targetValue = if (currentSortOption == item.sortValue) {
-                            Red800
-                                .copy(alpha = .9f)
-                        } else MaterialTheme.colors.onBackground,
-                        animationSpec = tween(
-                            durationMillis = 500,
-                            easing = LinearOutSlowInEasing
-                        )
-                    )
-
                     SheetOption(
-                        modifier = Modifier
-                            .fillMaxWidth(),
+                        modifier = Modifier.fillMaxWidth(),
                         sortOptionName = item.type,
                         icon = item.icon,
-                        onOptionClicked = {
-                            onSortOptionClicked(item.sortValue)
-                        },
-                        selectedSortColor = selectedColor,
-                        contentColor = contentColor
+                        onOptionClicked = { onSortOptionClicked(item.sortValue) }
                     )
                 }
 
                 item {
                     DonateAndAbout(
-                        modifier = Modifier
-                            .padding(Dimens.MediumPadding.size),
+                        modifier = Modifier.padding(Dimens.MediumPadding.size),
                         onAboutClicked = { scope.launch { sheetState.hide() } },
                         onDonateClicked = { scope.launch { sheetState.hide() } }
                     )
@@ -151,41 +111,29 @@ fun HomeBottomSheet(
 @Composable
 fun TopSheetSection(
     modifier: Modifier = Modifier,
-    onCloseClicked: () -> Unit = { },
-    onSettingsClicked: () -> Unit = { },
+    onCloseClicked: () -> Unit = {},
+    onSettingsClicked: () -> Unit = {},
     settingsButtonVisible: Boolean = true
 ) {
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            modifier = Modifier
-                .size(height = 5.dp, width = 32.dp)
-                .background(
-                    color = MaterialTheme.colors.onBackground.copy(alpha = .1f),
-                    shape = CircleShape
-                )
-        )
-
+        Box(modifier = Modifier.size(height = 5.dp, width = 32.dp))
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .fillMaxWidth()
+            modifier = Modifier.fillMaxWidth()
         ) {
             IconButton(onClick = onCloseClicked) {
                 Icon(
                     imageVector = Icons.Outlined.Close,
-                    contentDescription = stringResource(id = R.string.cd_close),
-                    tint = MaterialTheme.colors.secondary
+                    contentDescription = stringResource(id = R.string.cd_close)
                 )
             }
 
             Text(
                 text = stringResource(R.string.bottom_sheet_dialog),
-                style = MaterialTheme.typography.h5,
-                color = MaterialTheme.colors.onBackground,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -197,8 +145,7 @@ fun TopSheetSection(
                 if (settingsButtonVisible) {
                     Icon(
                         imageVector = Icons.Outlined.Settings,
-                        contentDescription = stringResource(id = R.string.cd_settings),
-                        tint = MaterialTheme.colors.onBackground
+                        contentDescription = stringResource(R.string.cd_settings)
                     )
                 }
             }
@@ -217,18 +164,12 @@ fun SheetOption(
     maxLines: Int = 1,
     iconDescription: String? = null,
     icon: ImageVector,
-    contentColor: Color = MaterialTheme.colors.onBackground,
-    onOptionClicked: () -> Unit = { },
-    selectedSortColor: Color = Color.Transparent
+    onOptionClicked: () -> Unit = { }
 ) {
 
     Box(
         modifier = modifier
             .clip(large)
-            .background(
-                color = selectedSortColor,
-                shape = large
-            )
             .clickable { onOptionClicked() }
     ) {
         Row(
@@ -240,14 +181,12 @@ fun SheetOption(
         ) {
             Icon(
                 imageVector = icon,
-                contentDescription = iconDescription,
-                tint = contentColor,
+                contentDescription = iconDescription
             )
             Spacer(modifier = Modifier.width(Dimens.MediumPadding.size))
             Text(
                 text = sortOptionName,
                 style = style,
-                color = contentColor,
                 maxLines = maxLines,
                 overflow = TextOverflow.Ellipsis
             )
@@ -258,8 +197,8 @@ fun SheetOption(
 @Composable
 private fun DonateAndAbout(
     modifier: Modifier = Modifier,
-    onDonateClicked: () -> Unit = { },
-    onAboutClicked: () -> Unit = { }
+    onDonateClicked: () -> Unit = {},
+    onAboutClicked: () -> Unit = {}
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -278,8 +217,7 @@ private fun DonateAndAbout(
         ) {
             Icon(
                 imageVector = Icons.Outlined.AccountCircle,
-                contentDescription = null,
-                tint = MaterialTheme.colors.onPrimary
+                contentDescription = null
             )
             Spacer(modifier = Modifier.width(4.dp))
             Text(
@@ -311,8 +249,7 @@ private fun DonateAndAbout(
         ) {
             Icon(
                 imageVector = Icons.Outlined.Info,
-                contentDescription = null,
-                tint = MaterialTheme.colors.onPrimary
+                contentDescription = null
             )
             Spacer(modifier = Modifier.width(4.dp))
             Text(
@@ -334,22 +271,20 @@ private fun DonateAndAbout(
     }
 }
 
-@ExperimentalMaterialApi
 @Preview
 @Composable
-fun BottomSheetPreview() {
+private fun BottomSheetPreview() {
     AppTheme {
         HomeBottomSheet(
             scope = rememberCoroutineScope(),
-            sheetState = ModalBottomSheetState(ModalBottomSheetValue.Hidden),
-            currentSortOption = 1
+            sheetState = ModalBottomSheetState(ModalBottomSheetValue.Hidden)
         )
     }
 }
 
 @Preview
 @Composable
-fun SortOptionPreview() {
+private fun SortOptionPreview() {
     AppTheme {
         SheetOption(sortOptionName = "Alphabetical", icon = Icons.Outlined.AccountCircle)
     }

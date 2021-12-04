@@ -15,6 +15,9 @@
     <string name="message_in_app_update_new_version_available">New version is available</string>
     <string name="action_update">Update</string>
     <string name="bottom_sheet_dialog">Bottom Sheet Dialog</string>
+    <string name="bottom_item_compose">Compose</string>
+    <string name="bottom_item_android">Android</string>
+    <string name="bottom_item_other">Other</string>
 
     <!--In-App Review-->
     <string name="title_in_app_review">In-App Review</string>
@@ -48,9 +51,6 @@
     <string name="button_fetch_boolean">Fetch Boolean Value</string>
     <string name="button_fetch_string">Fetch String Value</string>
     <string name="button_fetch_number">Fetch Number Value</string>
-
-    <!--MaterialYou Colors-->
-    <string name="title_material_you_colors">MaterialYou Colors</string>
 
     <!--Fonts-->
     <string name="title_fonts">Fonts</string>

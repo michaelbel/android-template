@@ -37,8 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="24dp"
-            android:paddingBottom="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textview.MaterialTextView
@@ -46,7 +46,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
                 android:textSize="16sp"
                 android:gravity="start"
                 android:fontFamily="@font/open_sans"

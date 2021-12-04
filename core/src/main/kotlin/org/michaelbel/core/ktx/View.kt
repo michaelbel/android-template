@@ -12,6 +12,22 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
 
+var View.startPadding: Int
+    inline get() = paddingLeft
+    set(value) = setPadding(value, paddingTop, paddingRight, paddingBottom)
+
+var View.topPadding: Int
+    inline get() = paddingTop
+    set(value) = setPadding(paddingLeft, value, paddingRight, paddingBottom)
+
+var View.endPadding: Int
+    inline get() = paddingRight
+    set(value) = setPadding(paddingLeft, paddingTop, value, paddingBottom)
+
+var View.bottomPadding: Int
+    inline get() = paddingBottom
+    set(value) = setPadding(paddingLeft, paddingTop, paddingRight, value)
+
 fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat) -> WindowInsetsCompat) {
     ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets -> block(v, insets) }
 }

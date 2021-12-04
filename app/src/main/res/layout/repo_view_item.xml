@@ -12,7 +12,7 @@
         android:id="@+id/repo_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/titleColor"
+        android:textColor="@color/Primary"
         android:textSize="@dimen/repo_name_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,7 @@
 package org.michaelbel.template
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -52,6 +54,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import org.michaelbel.template.ui.theme.AppTheme
+
+fun launchComposeActivity(context: Context) {
+    val intent = Intent(context, ComposeActivity::class.java)
+    context.startActivity(intent)
+}
 
 class ComposeActivity: ComponentActivity() {
 

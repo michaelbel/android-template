@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:background="@color/black"/>
+        tools:background="@android:color/black"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/titleTextView"
