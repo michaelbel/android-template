@@ -24,7 +24,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/vibrateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +32,16 @@
         android:layout_marginTop="8dp"
         android:text="@string/button_vibrate"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/voiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_voice"
+        app:layout_constraintStart_toEndOf="@id/vibrateButton"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"/>
 
     <com.google.android.material.textview.MaterialTextView

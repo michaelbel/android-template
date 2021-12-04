@@ -102,6 +102,7 @@
     <!--System Services-->
     <string name="title_system_services">System Services</string>
     <string name="button_vibrate">Vibrate</string>
+    <string name="button_voice">Voice Input</string>
     <string name="play_services_available">Google Play Services Available</string>
     <string name="play_services_not_available">Google Play Services Not Available</string>
     <string name="internet_connected">Internet is Connected</string>

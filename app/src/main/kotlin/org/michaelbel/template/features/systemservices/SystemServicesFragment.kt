@@ -1,10 +1,14 @@
 package org.michaelbel.template.features.systemservices
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.speech.RecognizerIntent
 import android.view.View
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -32,6 +36,17 @@ class SystemServicesFragment: Fragment(R.layout.fragment_system_services) {
     @Inject lateinit var googleApi: GoogleApi
     @Inject lateinit var connectivity: Connectivity
 
+    private val speechRecognizeContract = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { activityResult ->
+        val data: Intent? = activityResult.data
+        val spokenText: String? =
+            data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.let { results ->
+                results[0]
+            }
+        Toast.makeText(requireContext(), spokenText, Toast.LENGTH_SHORT).show()
+    }
+
     private val binding: FragmentSystemServicesBinding by viewBinding()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +72,17 @@ class SystemServicesFragment: Fragment(R.layout.fragment_system_services) {
                 vibrator.vibrate(150L)
             }
         }
+
+        binding.voiceButton.setOnClickListener {
+            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                putExtra(
+                    RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                )
+            }
+            speechRecognizeContract.launch(intent)
+        }
+
         binding.playServicesTextView.setText(
             if (googleApi.isPlayServicesAvailable) {
                 R.string.play_services_available
