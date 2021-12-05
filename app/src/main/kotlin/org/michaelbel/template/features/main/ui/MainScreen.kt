@@ -2,6 +2,7 @@ package org.michaelbel.template.features.main.ui
 
 import android.content.Context
 import android.os.Bundle
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -9,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.ListItem
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.Scaffold
@@ -20,6 +22,7 @@ import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -31,6 +34,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -119,9 +123,11 @@ fun MainScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 items(mainState.list) { screenData ->
-                    MainListItem(
-                        screenData = screenData,
-                        onClick = { (screen, args) -> onButtonClick(screen, args) }
+                    ListItem(
+                        text = { Text(text = stringResource(screenData.titleRes)) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onButtonClick(screenData.screen, screenData.args) }
                     )
                 }
             }
@@ -190,7 +196,7 @@ private fun MainScreenPreview() {
 @Preview
 @Composable
 private fun MainScreenPreviewDark() {
-    AppTheme(isDarkTheme = true) {
+    AppTheme(darkTheme = true) {
         MainScreen(
             onUpdateAppClicked = {},
             onButtonClick = { _: Screen, _: Bundle -> }
