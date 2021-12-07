@@ -10,6 +10,7 @@ typealias OnNavigationBackClick = () -> Unit
 
 enum class Screen {
     Ads,
+    Browser,
     Clipboard,
     Config,
     ConstraintsBaseline,
@@ -37,6 +38,7 @@ enum class Screen {
 
 val screensMap: Map<Screen, Int> = mapOf(
     Screen.Ads to R.id.adsFragment,
+    Screen.Browser to R.id.browserFragment,
     Screen.Clipboard to R.id.clipboardFragment,
     Screen.Config to R.id.configFragment,
     Screen.ConstraintsBaseline to R.id.constraintsBaselineFragment,
