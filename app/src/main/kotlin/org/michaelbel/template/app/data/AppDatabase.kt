@@ -4,11 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import org.michaelbel.template.app.data.AppDatabase.Companion.DATABASE_VERSION
+import org.michaelbel.template.app.data.converters.CalendarConverter
+import org.michaelbel.template.app.data.converters.ListStringConverter
+import org.michaelbel.template.app.data.converters.SizeConverter
 import org.michaelbel.template.app.data.dao.MovieDao
 import org.michaelbel.template.app.data.entity.MovieDb
 
 @Database(entities = [MovieDb::class], exportSchema = false, version = DATABASE_VERSION)
+@TypeConverters(CalendarConverter::class, ListStringConverter::class, SizeConverter::class)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract val movieDao: MovieDao
