@@ -9,13 +9,12 @@ buildscript {
         targetSdkVersion = 31
         buildToolsVersion = '31.0.0'
         gradleVersion = '7.0.3'
-        detektVersion = '1.19.0'
-        spotlessVersion = '6.0.1'   // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
-        ndkVersion = '21.2.6472646'
+        detektVersion = '1.19.0'    // https://github.com/detekt/detekt/releases
+        spotlessVersion = '6.0.4'   // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
 
         // Kotlin
-        kotlinVersion = '1.5.31'
-        coroutinesVersion = '1.5.2'
+        kotlinVersion = '1.5.31'    // https://github.com/JetBrains/kotlin/releases
+        coroutinesVersion = '1.5.2' // https://github.com/Kotlin/kotlinx.coroutines/releases
 
         // AndroidX
         activityVersion = '1.4.0'
@@ -61,26 +60,26 @@ buildscript {
         adsVersion = '20.5.0'
         authVersion = '19.2.0'
         crashlyticsVersion = '2.8.1'
-        daggerVersion = '2.40.4'                         // https://github.com/google/dagger/releases
-        exoplayerVersion = '2.16.1'
+        daggerVersion = '2.40.5'                         // https://github.com/google/dagger/releases
+        exoplayerVersion = '2.16.1'                      // https://github.com/google/ExoPlayer/releases
         googleServicesVersion = '4.3.10'
         firebaseAbtVersion = '21.0.0'
         firebaseAppDistribution = '2.2.0'
         firebaseAnalytics = '20.0.0'
         firebaseCoreVersion = '20.0.0'
-        firebaseCrashlyticsVersion = '18.2.4'
+        firebaseCrashlyticsVersion = '18.2.5'
         firebaseConfigVersion = '21.0.1'
         materialVersion = '1.6.0-alpha01'
         playcoreVersion = '1.8.1'                       // https://d.android.com/reference/com/google/android/play/core/release-notes
 
         // Other
-        retrofitVersion = '2.9.0'
-        okhttpLoggingInterceptorVersion = '4.9.3'
-        picassoVersion = '2.71828'
-        timberVersion = '5.0.1'
-        ganderVersion = '3.1.0'
-        viewBindingPropertyDelegateVersion = '1.5.3'
-        coilVersion = '1.4.0'
+        retrofitVersion = '2.9.0'                       // https://github.com/square/retrofit
+        okhttpLoggingInterceptorVersion = '4.9.3'       // https://github.com/square/okhttp
+        picassoVersion = '2.71828'                      // https://github.com/square/picasso
+        timberVersion = '5.0.1'                         // https://github.com/JakeWharton/timber/releases
+        ganderVersion = '3.1.0'                         // https://github.com/Ashok-Varma/Gander/releases
+        viewBindingPropertyDelegateVersion = '1.5.3'    // https://github.com/androidbroadcast/ViewBindingPropertyDelegate/releases
+        coilVersion = '1.4.0'                           // https://github.com/coil-kt/coil/releases
         vkVersion = '3.4.1'                             // http://github.com/VKCOM/vk-android-sdk
 
         // Test

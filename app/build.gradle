@@ -39,7 +39,6 @@ android {
         applicationId "org.michaelbel.template"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
-        ndkVersion rootProject.ndkVersion
         versionCode rootProject.versionCode
         versionName rootProject.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

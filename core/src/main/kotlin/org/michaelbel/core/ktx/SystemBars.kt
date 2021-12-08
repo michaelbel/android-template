@@ -2,28 +2,45 @@
 
 package org.michaelbel.core.ktx
 
+import android.app.Activity
 import android.content.Context
-import android.graphics.Point
+import android.graphics.Insets
+import android.os.Build
+import android.util.DisplayMetrics
 import android.util.TypedValue
-import android.view.Display
-import android.view.WindowManager
+import android.view.WindowInsets
+import android.view.WindowMetrics
 
-inline val Context.deviceWidth: Int
+@Suppress("Deprecation")
+inline val Activity.deviceWidth: Int
     get() {
-        val windowManager: WindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val display: Display = windowManager.defaultDisplay
-        val point = Point()
-        display.getSize(point)
-        return point.x
+        return if (Build.VERSION.SDK_INT >= 30) {
+            val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
+            val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(
+                WindowInsets.Type.systemBars()
+            )
+            windowMetrics.bounds.width() - insets.left - insets.right
+        } else {
+            val displayMetrics = DisplayMetrics()
+            windowManager.defaultDisplay.getMetrics(displayMetrics)
+            displayMetrics.widthPixels
+        }
     }
 
-inline val Context.deviceHeight: Int
+@Suppress("Deprecation")
+inline val Activity.deviceHeight: Int
     get() {
-        val windowManager: WindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val display: Display = windowManager.defaultDisplay
-        val point = Point()
-        display.getSize(point)
-        return point.y
+        return if (Build.VERSION.SDK_INT >= 30) {
+            val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
+            val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(
+                WindowInsets.Type.systemBars()
+            )
+            windowMetrics.bounds.height() - insets.top - insets.bottom
+        } else {
+            val displayMetrics = DisplayMetrics()
+            windowManager.defaultDisplay.getMetrics(displayMetrics)
+            displayMetrics.heightPixels
+        }
     }
 
 inline val Context.statusBarHeight: Int
