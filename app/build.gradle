@@ -97,6 +97,7 @@ android {
     }
 
     testOptions {
+        unitTests.includeAndroidResources = true
         unitTests.returnDefaultValues = true
         reportDir = "$rootDir/test-reports"
         resultsDir = "$rootDir/test-results"
@@ -189,7 +190,7 @@ dependencies {
     implementation "com.google.android.play:core-ktx:$playcoreVersion"
     implementation "com.google.android.gms:play-services-ads:$adsVersion"
     implementation "com.google.android.gms:play-services-auth:$authVersion"
-    implementation "com.google.android.material:compose-theme-adapter:1.1.0"
+    implementation "com.google.android.material:compose-theme-adapter:$materialComposeThemeAdapterVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
@@ -218,11 +219,13 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$workVersion"
     androidTestImplementation "com.google.truth:truth:$truthVersion"
 
-    testImplementation "junit:junit:$junitVersion"
+    testImplementation "androidx.test:core:$androidxTestCore"
     testImplementation "androidx.room:room-testing:$roomVersion"
-    testImplementation "org.mockito:mockito-core:4.1.0"
-    testImplementation "io.mockk:mockk:1.12.0"
-    testImplementation "org.robolectric:robolectric:4.7.3"
+
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "io.mockk:mockk:$mockkVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
 
     debugImplementation "androidx.compose.ui:ui-test-manifest:$composeVersion"
 }
