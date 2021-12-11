@@ -16,13 +16,7 @@ import org.michaelbel.template.features.inappreview.ui.ReviewScreen
 @AndroidEntryPoint
 class ReviewFragment: Fragment() {
 
-    @Inject lateinit var analytics: Analytics
     @Inject lateinit var inAppReview: InAppReview
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(ReviewFragment::class.simpleName)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +28,11 @@ class ReviewFragment: Fragment() {
                 ReviewScreen(::startReviewFlow, ::onNavigationBackClick)
             }
         }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ReviewFragment::class.simpleName)
     }
 
     private fun startReviewFlow() {

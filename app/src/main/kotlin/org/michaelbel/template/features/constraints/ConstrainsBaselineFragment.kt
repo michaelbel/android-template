@@ -17,12 +17,10 @@ import org.michaelbel.template.databinding.FragmentConstraintsBaselineBinding
 @AndroidEntryPoint
 class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baseline) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentConstraintsBaselineBinding by viewBinding()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(ConstrainsBaselineFragment::class.simpleName)
     }
 

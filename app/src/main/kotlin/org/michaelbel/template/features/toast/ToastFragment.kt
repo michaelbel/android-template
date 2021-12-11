@@ -23,10 +23,8 @@ import timber.log.Timber
 @AndroidEntryPoint
 class ToastFragment: Fragment() {
 
-    @Inject lateinit var analytics: Analytics
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(ToastFragment::class.simpleName)
     }
 

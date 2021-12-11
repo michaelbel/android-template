@@ -17,14 +17,7 @@ import org.michaelbel.template.databinding.FragmentConstraintsChainsBinding
 @AndroidEntryPoint
 class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentConstraintsChainsBinding by viewBinding()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsChainsFragment::class.simpleName)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,5 +27,10 @@ class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsChainsFragment::class.simpleName)
     }
 }

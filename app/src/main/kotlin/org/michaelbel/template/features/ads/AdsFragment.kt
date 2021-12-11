@@ -26,8 +26,6 @@ import org.michaelbel.template.databinding.FragmentAdsBinding
 @AndroidEntryPoint
 class AdsFragment: Fragment(R.layout.fragment_ads) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentAdsBinding by viewBinding()
 
     private var interstitialAd: InterstitialAd? = null
@@ -70,8 +68,8 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(AdsFragment::class.simpleName)
     }
 

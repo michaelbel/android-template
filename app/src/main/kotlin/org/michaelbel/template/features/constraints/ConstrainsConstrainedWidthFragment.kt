@@ -17,14 +17,7 @@ import org.michaelbel.template.databinding.FragmentConstraintsConstrainedWidthBi
 @AndroidEntryPoint
 class ConstrainsConstrainedWidthFragment: Fragment(R.layout.fragment_constraints_constrained_width) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentConstraintsConstrainedWidthBinding by viewBinding()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsConstrainedWidthFragment::class.simpleName)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,5 +27,10 @@ class ConstrainsConstrainedWidthFragment: Fragment(R.layout.fragment_constraints
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsConstrainedWidthFragment::class.simpleName)
     }
 }

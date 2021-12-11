@@ -17,14 +17,7 @@ import org.michaelbel.template.databinding.FragmentConstraintsGoneMarginsBinding
 @AndroidEntryPoint
 class ConstrainsGoneMarginsFragment: Fragment(R.layout.fragment_constraints_gone_margins) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentConstraintsGoneMarginsBinding by viewBinding()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsGoneMarginsFragment::class.simpleName)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,5 +27,10 @@ class ConstrainsGoneMarginsFragment: Fragment(R.layout.fragment_constraints_gone
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsGoneMarginsFragment::class.simpleName)
     }
 }

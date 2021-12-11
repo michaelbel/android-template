@@ -17,14 +17,7 @@ import org.michaelbel.template.databinding.FragmentConstraintsGuidelineBinding
 @AndroidEntryPoint
 class ConstrainsGuidelineFragment: Fragment(R.layout.fragment_constraints_guideline) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentConstraintsGuidelineBinding by viewBinding()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsGuidelineFragment::class.simpleName)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,5 +27,10 @@ class ConstrainsGuidelineFragment: Fragment(R.layout.fragment_constraints_guidel
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsGuidelineFragment::class.simpleName)
     }
 }

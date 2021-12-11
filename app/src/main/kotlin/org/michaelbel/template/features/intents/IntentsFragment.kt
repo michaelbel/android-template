@@ -25,6 +25,11 @@ class IntentsFragment: Fragment() {
 
     @Inject lateinit var analytics: Analytics
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        analytics.trackScreen(IntentsFragment::class.simpleName)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

@@ -17,14 +17,7 @@ import org.michaelbel.template.databinding.FragmentConstraintsCircularBinding
 @AndroidEntryPoint
 class ConstrainsCircularFragment: Fragment(R.layout.fragment_constraints_circular) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentConstraintsCircularBinding by viewBinding()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(ConstrainsCircularFragment::class.simpleName)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,5 +27,10 @@ class ConstrainsCircularFragment: Fragment(R.layout.fragment_constraints_circula
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsCircularFragment::class.simpleName)
     }
 }

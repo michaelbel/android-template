@@ -16,13 +16,13 @@ import org.michaelbel.core.analytics.Analytics
 
 @HiltViewModel
 class ClipboardViewModel @Inject constructor(
-    analytics: Analytics,
     private val clipboard: ClipboardManager
 ): ViewModel() {
 
     var clipText: CharSequence by mutableStateOf("")
 
-    init {
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(ClipboardFragment::class.simpleName)
     }
 

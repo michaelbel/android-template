@@ -20,14 +20,7 @@ import org.michaelbel.template.features.navagrs.ui.NavArgsScreen
 @AndroidEntryPoint
 class NavArgsFragment: Fragment() {
 
-    @Inject lateinit var analytics: Analytics
-
     private val args: NavArgsFragmentArgs by navArgs()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        analytics.trackScreen(NavArgsFragment::class.simpleName)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +32,11 @@ class NavArgsFragment: Fragment() {
                 NavArgsScreen(args, ::onNavigationBackClick)
             }
         }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(NavArgsFragment::class.simpleName)
     }
 
     private fun onNavigationBackClick() {

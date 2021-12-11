@@ -19,12 +19,10 @@ import org.michaelbel.template.databinding.FragmentWindowInsetsBinding
 @AndroidEntryPoint
 class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentWindowInsetsBinding by viewBinding()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(WindowInsetsFragment::class.simpleName)
     }
 

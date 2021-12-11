@@ -17,12 +17,10 @@ import org.michaelbel.template.databinding.FragmentFontsBinding
 @AndroidEntryPoint
 class FontsFragment: Fragment(R.layout.fragment_fonts) {
 
-    @Inject lateinit var analytics: Analytics
-
     private val binding: FragmentFontsBinding by viewBinding()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(FontsFragment::class.simpleName)
     }
 
