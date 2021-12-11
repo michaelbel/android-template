@@ -8,7 +8,7 @@ buildscript {
         minSdkVersion = 21
         targetSdkVersion = 31
         buildToolsVersion = '31.0.0'
-        gradleVersion = '7.0.3'
+        gradleVersion = '7.0.4'
         detektVersion = '1.19.0'
         spotlessVersion = '6.0.4'   // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
         ndkVersion = '21.2.6472646'
