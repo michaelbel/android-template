@@ -27,6 +27,7 @@ buildscript {
         cardviewVersion = '1.0.0'
         collectionVersion = '1.2.0'
         constraintlayoutVersion = '2.1.2'
+        constraintlayoutComposeVersion = '1.0.0-rc02'
         composeVersion = '1.0.5'
         coreVersion = '1.7.0'
         coreroleVersion = '1.0.0'
@@ -36,6 +37,8 @@ buildscript {
         hiltNavigationFragmentVersion = '1.0.0'
         hiltWorkVersion = '1.0.0'
         lifecycleVersion = '2.4.0'
+        material3Version = '1.0.0-SNAPSHOT'
+        materialIconsVersion = '1.1.0-SNAPSHOT'
         navigationVersion = '2.3.5'
         recyclerviewVersion = '1.2.1'
         roomVersion = '2.3.0'
@@ -47,17 +50,17 @@ buildscript {
         workVersion = '2.7.1'
 
         // Google
-        accompanistAppcompatThemeVersion = '0.20.2'      // https://google.github.io/accompanist/appcompat-theme
-        accompanistDrawablePainterVersion = '0.20.2'     // https://google.github.io/accompanist/drawablepainter
-        accompanistInsetsVersion = '0.20.2'              // https://google.github.io/accompanist/insets
-        accompanistFlowlayoutVersion = '0.20.2'          // https://google.github.io/accompanist/flowlayout
-        accompanistNavigationAnimationVersion = '0.20.2' // https://google.github.io/accompanist/navigation-animation
-        accompanistNavigationMaterialVersion = '0.20.2'  // https://google.github.io/accompanist/navigation-material
-        accompanistPagerVersion = '0.20.2'               // https://google.github.io/accompanist/pager
-        accompanistPermissionsVersion = '0.20.2'         // https://google.github.io/accompanist/permissions
-        accompanistPlaceholderVersion = '0.20.2'         // https://google.github.io/accompanist/placeholder
-        accompanistSystemuicontrollerVersion = '0.20.2'  // https://google.github.io/accompanist/systemuicontroller
-        accompanistSwiperefreshVersion = '0.20.2'        // https://google.github.io/accompanist/swiperefresh
+        accompanistAppcompatThemeVersion = '0.20.3'      // https://google.github.io/accompanist/appcompat-theme
+        accompanistDrawablePainterVersion = '0.20.3'     // https://google.github.io/accompanist/drawablepainter
+        accompanistInsetsVersion = '0.20.3'              // https://google.github.io/accompanist/insets
+        accompanistFlowlayoutVersion = '0.20.3'          // https://google.github.io/accompanist/flowlayout
+        accompanistNavigationAnimationVersion = '0.20.3' // https://google.github.io/accompanist/navigation-animation
+        accompanistNavigationMaterialVersion = '0.20.3'  // https://google.github.io/accompanist/navigation-material
+        accompanistPagerVersion = '0.20.3'               // https://google.github.io/accompanist/pager
+        accompanistPermissionsVersion = '0.20.3'         // https://google.github.io/accompanist/permissions
+        accompanistPlaceholderVersion = '0.20.3'         // https://google.github.io/accompanist/placeholder
+        accompanistSystemuicontrollerVersion = '0.20.3'  // https://google.github.io/accompanist/systemuicontroller
+        accompanistSwiperefreshVersion = '0.20.3'        // https://google.github.io/accompanist/swiperefresh
         adsVersion = '20.5.0'
         authVersion = '19.2.0'
         crashlyticsVersion = '2.8.1'
