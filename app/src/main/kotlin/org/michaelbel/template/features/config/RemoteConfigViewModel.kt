@@ -4,23 +4,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
 import timber.log.Timber
-import javax.inject.Inject
 
 @HiltViewModel
 class RemoteConfigViewModel @Inject constructor(
-    analytics: Analytics,
     private val firebaseRemoteConfig: FirebaseRemoteConfig
 ): ViewModel() {
 
     val customRemoteParam = MutableSharedFlow<Any>()
 
     init {
-        analytics.trackScreen(RemoteConfigFragment::class.simpleName)
         fetchRemoteConfig()
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(RemoteConfigFragment::class.simpleName)
     }
 
     private fun fetchRemoteConfig() {

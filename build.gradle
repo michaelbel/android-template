@@ -15,6 +15,7 @@ buildscript {
         // Kotlin
         kotlinVersion = '1.5.31'    // https://github.com/JetBrains/kotlin/releases
         coroutinesVersion = '1.5.2' // https://github.com/Kotlin/kotlinx.coroutines/releases
+        serializationVersion = '1.3.0'
 
         // AndroidX
         activityVersion = '1.4.0'
@@ -75,6 +76,7 @@ buildscript {
 
         // Other
         retrofitVersion = '2.9.0'                       // https://github.com/square/retrofit
+        serializationConverterVersion = '0.8.0'         // https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
         okhttpLoggingInterceptorVersion = '4.9.3'       // https://github.com/square/okhttp
         picassoVersion = '2.71828'                      // https://github.com/square/picasso
         timberVersion = '5.0.1'                         // https://github.com/JakeWharton/timber/releases
@@ -105,6 +107,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion"
         classpath "com.google.gms:google-services:$googleServicesVersion"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$daggerVersion"
         classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsVersion"

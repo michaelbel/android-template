@@ -34,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="@string/constraints_chain_style"
+            android:text="@string/constraints_chains"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:textSize="14sp"

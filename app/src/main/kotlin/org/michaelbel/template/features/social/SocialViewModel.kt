@@ -9,17 +9,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.io.IOException
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
-import java.io.IOException
-import javax.inject.Inject
 
 @HiltViewModel
 class SocialViewModel @Inject constructor(
-    analytics: Analytics,
     private val dataStore: DataStore<Preferences>
 ): ViewModel() {
 
@@ -34,7 +33,8 @@ class SocialViewModel @Inject constructor(
             mapGoogleData(preferences)
         }
 
-    init {
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(SocialFragment::class.simpleName)
     }
 

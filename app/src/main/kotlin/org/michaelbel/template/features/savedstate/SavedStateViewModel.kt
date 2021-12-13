@@ -12,10 +12,10 @@ import org.michaelbel.core.analytics.Analytics
 @HiltViewModel
 class SavedStateViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    private val analytics: Analytics
 ): ViewModel() {
 
-    init {
+    @Inject
+    fun trackScreen(analytics: Analytics) {
         analytics.trackScreen(SavedStateFragment::class.simpleName)
     }
 

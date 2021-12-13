@@ -110,12 +110,6 @@
         android:label="Notifications"/>
 
     <fragment
-        android:id="@+id/pagingFragment"
-        android:name="org.michaelbel.template.features.paging.ui.SearchReposFragment"
-        android:label="Paging"
-        tools:layout="@layout/fragment_search_repositories"/>
-
-    <fragment
         android:id="@+id/savedStateFragment"
         android:name="org.michaelbel.template.features.savedstate.SavedStateFragment"
         android:label="SavedState"
@@ -146,5 +140,17 @@
         android:name="org.michaelbel.template.features.windowinsets.WindowInsetsFragment"
         android:label="Insets"
         tools:layout="@layout/fragment_window_insets"/>
+
+    <fragment
+        android:id="@+id/gitHubApiFragment"
+        android:name="org.michaelbel.template.features.github_api.ui.SearchReposFragment"
+        android:label="GitHubApi"
+        tools:layout="@layout/fragment_search_repositories"/>
+
+    <fragment
+        android:id="@+id/tmdbApiFragment"
+        android:name="org.michaelbel.template.features.tmdb_api.ui.MovieFragment"
+        android:label="TmdbApi"
+        tools:layout="@layout/fragment_movies"/>
 
 </navigation>

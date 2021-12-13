@@ -27,6 +27,7 @@
             android:imeOptions="actionSearch"
             android:inputType="textNoSuggestions"
             android:selectAllOnFocus="true"
+            android:autofillHints="name"
             tools:text="Android"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +66,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <TextView android:id="@+id/emptyList"
+    <TextView
+        android:id="@+id/emptyList"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"

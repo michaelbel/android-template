@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'kotlinx-serialization'
     id 'androidx.navigation.safeargs'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
@@ -87,6 +88,7 @@ android {
             "-Xuse-experimental=androidx.compose.material.ExperimentalMaterialApi",
             "-Xuse-experimental=androidx.compose.material3.ExperimentalMaterial3Api",
             "-Xuse-experimental=coil.annotation.ExperimentalCoilApi",
+            "-Xuse-experimental=kotlinx.serialization.ExperimentalSerializationApi",
             "-Xopt-in=kotlinx.coroutines.FlowPreview"
         ]
     }
@@ -117,6 +119,14 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    kapt {
+        arguments {
+            arg('dagger.formatGeneratedSource', 'enabled') // Форматирование сгенерированного кода dagger
+            arg('dagger.fastInit', 'enabled') // Оптимизация сгенерированного кода для ускорения инициализации
+            arg('dagger.fullBindingGraphValidation', "WARNING") // or ERROR, полная валидация графа
+        }
     }
 }
 

@@ -23,7 +23,6 @@ import org.michaelbel.template.features.main.model.ScreenData
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    analytics: Analytics,
     private val inAppUpdate: InAppUpdate
 ): ViewModel() {
 
@@ -57,11 +56,15 @@ class MainViewModel @Inject constructor(
     var updateAvailableMessage: Boolean by mutableStateOf(false)
 
     init {
-        analytics.trackScreen(MainFragment::class.simpleName)
         inAppUpdate.onUpdateAvailableListener = { updateAvailable ->
             updateAvailableMessage = updateAvailable
         }
         setData()
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(MainFragment::class.simpleName)
     }
 
     fun startUpdateFlow(activity: Activity) {
@@ -112,13 +115,15 @@ class MainViewModel @Inject constructor(
                 ),
                 ScreenData(Screen.NetworkImage, bundleOf(), R.string.title_network_image),
                 ScreenData(Screen.Notifications, bundleOf(), R.string.title_notifications),
-                ScreenData(Screen.Paging, bundleOf(), R.string.title_paging),
                 ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
                 ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
                 ScreenData(Screen.Social, bundleOf(), R.string.title_social),
                 ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
                 ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
                 ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
+
+                ScreenData(Screen.GitHubApi, bundleOf(), R.string.title_github),
+                ScreenData(Screen.TmdbApi, bundleOf(), R.string.title_tmdb)
             )
         }
     }

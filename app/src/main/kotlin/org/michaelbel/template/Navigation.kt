@@ -27,13 +27,15 @@ enum class Screen {
     NavArgs,
     NetworkImage,
     Notifications,
-    Paging,
     SavedState,
     SettingsPanel,
     Social,
     SystemServices,
     Toast,
-    WindowInsets
+    WindowInsets,
+
+    GitHubApi,
+    TmdbApi
 }
 
 val screensMap: Map<Screen, Int> = mapOf(
@@ -55,13 +57,15 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.NavArgs to R.id.navArgsFragment,
     Screen.NetworkImage to R.id.networkImageFragment,
     Screen.Notifications to R.id.notificationsFragment,
-    Screen.Paging to R.id.pagingFragment,
     Screen.SavedState to R.id.savedStateFragment,
     Screen.SettingsPanel to R.id.settingsPanelFragment,
     Screen.Social to R.id.socialFragment,
     Screen.SystemServices to R.id.systemServicesFragment,
     Screen.Toast to R.id.toastFragment,
     Screen.WindowInsets to R.id.insetsFragment,
+
+    Screen.GitHubApi to R.id.gitHubApiFragment,
+    Screen.TmdbApi to R.id.tmdbApiFragment
 )
 
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {
