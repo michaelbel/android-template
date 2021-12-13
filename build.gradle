@@ -48,7 +48,7 @@ buildscript {
 
         // Google
         accompanistAppcompatThemeVersion = '0.20.2'      // https://google.github.io/accompanist/appcompat-theme
-        accompanistDrawablePainterVersion = '0.20.2'     // https://google.github.io/accompanist/drawablepainter
+        accompanistDrawablePainterVersion = '0.20.3'     // https://google.github.io/accompanist/drawablepainter
         accompanistInsetsVersion = '0.20.2'              // https://google.github.io/accompanist/insets
         accompanistFlowlayoutVersion = '0.20.2'          // https://google.github.io/accompanist/flowlayout
         accompanistNavigationAnimationVersion = '0.20.2' // https://google.github.io/accompanist/navigation-animation
