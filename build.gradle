@@ -52,7 +52,7 @@ buildscript {
         accompanistInsetsVersion = '0.20.2'              // https://google.github.io/accompanist/insets
         accompanistFlowlayoutVersion = '0.20.2'          // https://google.github.io/accompanist/flowlayout
         accompanistNavigationAnimationVersion = '0.20.2' // https://google.github.io/accompanist/navigation-animation
-        accompanistNavigationMaterialVersion = '0.20.2'  // https://google.github.io/accompanist/navigation-material
+        accompanistNavigationMaterialVersion = '0.20.3'  // https://google.github.io/accompanist/navigation-material
         accompanistPagerVersion = '0.20.2'               // https://google.github.io/accompanist/pager
         accompanistPermissionsVersion = '0.20.2'         // https://google.github.io/accompanist/permissions
         accompanistPlaceholderVersion = '0.20.2'         // https://google.github.io/accompanist/placeholder
