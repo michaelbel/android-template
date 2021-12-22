@@ -15,7 +15,7 @@ buildscript {
 
         // Kotlin
         kotlinVersion = '1.5.31'
-        coroutinesVersion = '1.5.2'
+        coroutinesVersion = '1.6.0'
 
         // AndroidX
         activityVersion = '1.4.0'
