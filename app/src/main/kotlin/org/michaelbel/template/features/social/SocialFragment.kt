@@ -7,7 +7,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.load
@@ -24,8 +23,6 @@ import com.vk.api.sdk.auth.VKScope
 import com.vk.api.sdk.exceptions.VKAuthException
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
@@ -75,9 +72,9 @@ class SocialFragment: Fragment(R.layout.fragment_social) {
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
-        viewLifecycleOwner.lifecycleScope.launch {
+        /*viewLifecycleOwner.lifecycleScope.launch {
             viewModel.googleData.collect(::fetchGoogleData)
-        }
+        }*/
 
         binding.googleCard.setOnClickListener {
             googleSignInContract.launch(googleSignInClient.signInIntent)

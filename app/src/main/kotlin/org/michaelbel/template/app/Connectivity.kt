@@ -54,15 +54,15 @@ class Connectivity @Inject constructor(
     val status: Flow<NetworkStatus> = callbackFlow {
         val networkCallback = object: ConnectivityManager.NetworkCallback() {
             override fun onAvailable(network: Network) {
-                offer(NetworkStatus.Available)
+                trySend(NetworkStatus.Available)
             }
 
             override fun onLost(network: Network) {
-                offer(NetworkStatus.Unavailable)
+                trySend(NetworkStatus.Unavailable)
             }
 
             override fun onUnavailable() {
-                offer(NetworkStatus.Unavailable)
+                trySend(NetworkStatus.Unavailable)
             }
         }
 

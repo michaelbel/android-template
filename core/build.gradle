@@ -59,6 +59,7 @@ dependencies {
     api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     api "androidx.paging:paging-runtime-ktx:$pagingVersion"
+    api "androidx.room:room-paging:$roomVersion"
 
     api "com.google.android.material:material:$materialVersion"
     api "com.google.dagger:hilt-android:$daggerVersion"
