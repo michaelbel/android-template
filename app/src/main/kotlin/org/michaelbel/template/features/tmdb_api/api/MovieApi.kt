@@ -1,18 +1,17 @@
 package org.michaelbel.template.features.tmdb_api.api
 
-import org.michaelbel.template.app.model.Result
-import org.michaelbel.template.features.tmdb_api.model.Movie
+import org.michaelbel.template.features.tmdb_api.model.moshi.Movie2
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MovieApi {
 
-    @GET("movie/{list}")
-    suspend fun movies(
-        @Path("list") list: String,
+    @GET("movie/{movie_id}")
+    suspend fun movie(
+        @Path("movie_id") id: Long,
         @Query("api_key") apiKey: String,
-        @Query("language") lang: String,
-        @Query("page") page: Int
-    ): Result<Movie>
+        @Query("language") language: String,
+        @Query("append_to_response") appendToResponse: String
+    ): Movie2
 }

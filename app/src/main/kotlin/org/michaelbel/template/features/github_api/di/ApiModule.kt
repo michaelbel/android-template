@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.michaelbel.core.di.qualifiers.ConverterFactoryGson
 import org.michaelbel.template.features.github_api.api.GithubService
 import retrofit2.Converter
 import retrofit2.Retrofit
@@ -35,7 +36,7 @@ object ApiModule {
     @GitHubRetrofit
     fun provideRetrofit(
         @GitHubBaseUrl baseUrl: String,
-        @GitHubConverterFactory converterFactory: Converter.Factory,
+        @ConverterFactoryGson converterFactory: Converter.Factory,
         @GitHubOkhttp okHttpClient: OkHttpClient
     ): Retrofit {
         val builder = Retrofit.Builder().apply {

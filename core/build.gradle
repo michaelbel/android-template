@@ -27,6 +27,20 @@ android {
         }
     }
 
+    kotlinOptions {
+        freeCompilerArgs += [
+            "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xuse-experimental=kotlinx.coroutines.ObsoleteCoroutinesApi",
+            "-Xuse-experimental=androidx.paging.ExperimentalPagingApi",
+            "-Xuse-experimental=androidx.compose.ui.ExperimentalComposeUiApi",
+            "-Xuse-experimental=androidx.compose.material.ExperimentalMaterialApi",
+            "-Xuse-experimental=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-Xuse-experimental=coil.annotation.ExperimentalCoilApi",
+            "-Xuse-experimental=kotlinx.serialization.ExperimentalSerializationApi",
+            "-Xopt-in=kotlinx.coroutines.FlowPreview"
+        ]
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -54,9 +68,16 @@ dependencies {
     api "com.google.firebase:firebase-core:$firebaseCoreVersion"
     api "com.google.firebase:firebase-crashlytics-ktx:$firebaseCrashlyticsVersion"
     api "com.google.firebase:firebase-config-ktx:$firebaseConfigVersion"
+    api "com.google.android.play:core-ktx:$playcoreVersion"
 
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptorVersion"
     api "com.jakewharton.timber:timber:$timberVersion"
     api "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$serializationConverterVersion"
+    api "com.ashokvarma.android:gander-persistence:$ganderVersion"
+    api "com.ashokvarma.android:gander-imdb:$ganderVersion"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$testJunitVersion"

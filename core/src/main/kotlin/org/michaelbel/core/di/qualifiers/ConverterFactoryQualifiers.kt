@@ -1,15 +1,15 @@
-package org.michaelbel.template.features.tmdb_api.di
+package org.michaelbel.core.di.qualifiers
 
 import javax.inject.Qualifier
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class TmdbBaseUrl
+annotation class ConverterFactoryGson
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class TmdbOkhttp
+annotation class ConverterFactoryMoshi
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class TmdbRetrofit
+annotation class ConverterFactorySerialization

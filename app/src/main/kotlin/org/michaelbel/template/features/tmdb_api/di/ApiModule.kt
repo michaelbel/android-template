@@ -1,11 +1,7 @@
 package org.michaelbel.template.features.tmdb_api.di
 
 import android.content.Context
-import com.ashokvarma.gander.Gander
 import com.ashokvarma.gander.GanderInterceptor
-import com.ashokvarma.gander.imdb.GanderIMDB
-import com.ashokvarma.gander.persistence.GanderPersistence
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,13 +9,11 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-import kotlinx.serialization.json.Json
 import okhttp3.Cache
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import org.michaelbel.core.di.qualifiers.ConverterFactorySerialization
 import org.michaelbel.template.Constants
-import org.michaelbel.template.features.tmdb_api.api.MovieApi
+import org.michaelbel.template.features.tmdb_api.api.MoviesApi
 import retrofit2.Converter
 import retrofit2.Retrofit
 
@@ -30,17 +24,6 @@ object ApiModule {
     @Provides
     @TmdbBaseUrl
     fun provideBaseUrl(): String = Constants.TMDB_API_ENDPOINT
-
-    @Provides
-    @Singleton
-    fun provideGanderInterceptor(@ApplicationContext context: Context): GanderInterceptor {
-        Gander.setGanderStorage(GanderPersistence.getInstance(context))
-        Gander.setGanderStorage(GanderIMDB.getInstance())
-        return GanderInterceptor(context)
-            .showNotification(true)
-            .maxContentLength(250000L)
-            .retainDataFor(GanderInterceptor.Period.ONE_HOUR)
-    }
 
     @Provides
     @Singleton
@@ -72,18 +55,10 @@ object ApiModule {
 
     @Provides
     @Singleton
-    @TmdbConverterFactory
-    fun provideConverterFactory(): Converter.Factory {
-        val contentType: MediaType = "application/json".toMediaType()
-        return Json.asConverterFactory(contentType)
-    }
-
-    @Provides
-    @Singleton
     @TmdbRetrofit
     fun provideRetrofit(
         @TmdbBaseUrl baseUrl: String,
-        @TmdbConverterFactory converterFactory: Converter.Factory,
+        @ConverterFactorySerialization converterFactory: Converter.Factory,
         @TmdbOkhttp okHttpClient: OkHttpClient
     ): Retrofit {
         val builder = Retrofit.Builder().apply {
@@ -96,7 +71,7 @@ object ApiModule {
 
     @Provides
     @Singleton
-    fun provideMovieApi(@TmdbRetrofit retrofit: Retrofit): MovieApi {
-        return retrofit.create(MovieApi::class.java)
-    }
+    fun provideMoviesApi(
+        @TmdbRetrofit retrofit: Retrofit
+    ): MoviesApi = retrofit.create(MoviesApi::class.java)
 }

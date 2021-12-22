@@ -40,7 +40,7 @@ android {
         applicationId "org.michaelbel.template"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
-        versionCode rootProject.versionCode
+        versionCode rootProject.generateVersionCode()
         versionName rootProject.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "app" + "-v" + versionName + "(" + versionCode + ")")
@@ -197,17 +197,13 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-core:$exoplayerVersion"
     implementation "com.google.android.exoplayer:exoplayer-dash:$exoplayerVersion"
     implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion"
-    implementation "com.google.android.play:core-ktx:$playcoreVersion"
     implementation "com.google.android.gms:play-services-ads:$adsVersion"
     implementation "com.google.android.gms:play-services-auth:$authVersion"
     implementation "com.google.android.material:compose-theme-adapter:$materialComposeThemeAdapterVersion"
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptorVersion"
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+              kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
     implementation "com.squareup.picasso:picasso:$picassoVersion"
-    implementation "com.ashokvarma.android:gander-persistence:$ganderVersion"
-    implementation "com.ashokvarma.android:gander-imdb:$ganderVersion"
     implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
     implementation "io.coil-kt:coil:$coilVersion"
     implementation "io.coil-kt:coil-compose:$coilVersion"

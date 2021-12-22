@@ -13,7 +13,3 @@ annotation class GitHubOkhttp
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
 annotation class GitHubRetrofit
-
-@Retention(AnnotationRetention.BINARY)
-@Qualifier
-annotation class GitHubConverterFactory

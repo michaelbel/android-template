@@ -1,4 +1,4 @@
-package org.michaelbel.template.app.sharedpreferences.property
+package org.michaelbel.core.sharedpreferences
 
 import android.content.SharedPreferences
 import androidx.annotation.WorkerThread

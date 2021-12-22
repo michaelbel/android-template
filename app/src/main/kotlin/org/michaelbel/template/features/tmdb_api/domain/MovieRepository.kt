@@ -1,16 +1,15 @@
 package org.michaelbel.template.features.tmdb_api.domain
 
 import javax.inject.Inject
-import org.michaelbel.template.app.model.Result
 import org.michaelbel.template.features.tmdb_api.api.MovieApi
-import org.michaelbel.template.features.tmdb_api.model.Movie
+import org.michaelbel.template.features.tmdb_api.model.moshi.Movie2
 
 class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
 
-    suspend fun getMovies(
-        list: String,
+    suspend fun movie(
+        movieId: Long,
         apiKey: String,
         language: String,
-        page: Int
-    ): Result<Movie> = movieApi.movies(list, apiKey, language, page)
+        addToResponse: String
+    ): Movie2 = movieApi.movie(movieId, apiKey, language, addToResponse)
 }

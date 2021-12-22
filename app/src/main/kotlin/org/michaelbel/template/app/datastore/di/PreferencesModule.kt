@@ -8,11 +8,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import org.michaelbel.template.app.datastore.dataStore
 import javax.inject.Singleton
+import org.michaelbel.template.app.datastore.dataStore
 
-@InstallIn(SingletonComponent::class)
 @Module
+@InstallIn(SingletonComponent::class)
 object PreferencesModule {
 
     @Provides
