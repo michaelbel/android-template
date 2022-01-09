@@ -212,6 +212,7 @@ dependencies {
 
     //debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion" — not uses exported in manifest
 
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$composeVersion"
     androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
@@ -225,6 +226,7 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$workVersion"
     androidTestImplementation "com.google.truth:truth:$truthVersion"
 
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
     testImplementation "androidx.test:core:$androidxTestCore"
     testImplementation "androidx.room:room-testing:$roomVersion"
 

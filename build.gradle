@@ -10,7 +10,7 @@ buildscript {
         buildToolsVersion = '31.0.0'
         gradleVersion = '7.0.4'
         detektVersion = '1.19.0'  // https://github.com/detekt/detekt/releases
-        spotlessVersion = '6.1.0' // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
+        spotlessVersion = '6.1.2' // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
 
         // Kotlin
         kotlinVersion = '1.5.31'       // https://github.com/JetBrains/kotlin/releases
