@@ -85,7 +85,7 @@ buildscript {
         picassoVersion = '2.71828'                      // https://github.com/square/picasso
         timberVersion = '5.0.1'                         // https://github.com/JakeWharton/timber/releases
         ganderVersion = '3.1.0'                         // https://github.com/Ashok-Varma/Gander/releases
-        viewBindingPropertyDelegateVersion = '1.5.3'    // https://github.com/androidbroadcast/ViewBindingPropertyDelegate/releases
+        viewBindingPropertyDelegateVersion = '1.5.6'    // https://github.com/androidbroadcast/ViewBindingPropertyDelegate/releases
         vkVersion = '3.4.1'                             // http://github.com/VKCOM/vk-android-sdk
         moshiVersion = '1.12.0'
 
