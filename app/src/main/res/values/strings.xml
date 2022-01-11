@@ -124,6 +124,11 @@
     <string name="battery_not_charging">Battery is Not Charging</string>
     <string name="battery_level">Battery Level: %d</string>
 
+    <!--Timer-->
+    <string name="title_timer">Timer</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="time_over">Time is Over!</string>
+
     <!--Toast-->
     <string name="title_toast">Toast</string>
     <string name="show_toast">Show Toast</string>

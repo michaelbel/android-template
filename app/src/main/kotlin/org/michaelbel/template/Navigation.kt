@@ -31,6 +31,7 @@ enum class Screen {
     SettingsPanel,
     Social,
     SystemServices,
+    Timer,
     Toast,
     WindowInsets,
 
@@ -61,6 +62,7 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.SettingsPanel to R.id.settingsPanelFragment,
     Screen.Social to R.id.socialFragment,
     Screen.SystemServices to R.id.systemServicesFragment,
+    Screen.Timer to R.id.timerFragment,
     Screen.Toast to R.id.toastFragment,
     Screen.WindowInsets to R.id.insetsFragment,
 

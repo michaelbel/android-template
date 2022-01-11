@@ -119,6 +119,7 @@ class MainViewModel @Inject constructor(
                 ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
                 ScreenData(Screen.Social, bundleOf(), R.string.title_social),
                 ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
+                ScreenData(Screen.Timer, bundleOf(), R.string.title_timer),
                 ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
                 ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
 
