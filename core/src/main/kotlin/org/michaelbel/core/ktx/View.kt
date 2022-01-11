@@ -8,6 +8,7 @@ import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
@@ -30,6 +31,20 @@ var View.bottomPadding: Int
 
 fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat) -> WindowInsetsCompat) {
     ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets -> block(v, insets) }
+}
+
+/**
+ * Задать действие по событию onGlobalLayout, снимающееся после первого срабатывания
+ *
+ * @param onGlobalLayoutAction действие, происходящее при событии onGlobalLayout
+ */
+fun View.setOnGlobalLayoutListenerSingle(onGlobalLayoutAction: () -> Unit) {
+    viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+        override fun onGlobalLayout() {
+            viewTreeObserver.removeOnGlobalLayoutListener(this)
+            onGlobalLayoutAction()
+        }
+    })
 }
 
 /**
