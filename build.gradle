@@ -33,6 +33,7 @@ buildscript {
         coreroleVersion = '1.0.0'                     // https://d.android.com/jetpack/androidx/releases/core
         coreSplashScreenVersion = '1.0.0-alpha02'     // https://d.android.com/jetpack/androidx/releases/core
         datastoreVersion = '1.0.0'                    // https://d.android.com/jetpack/androidx/releases/datastore
+        draganddropVersion = '1.0.0-alpha02'          // https://d.android.com/jetpack/androidx/releases/draganddrop
         fragmentVersion = '1.4.0'                     // https://d.android.com/jetpack/androidx/releases/fragment
         hiltNavigationFragmentVersion = '1.0.0'       // https://d.android.com/jetpack/androidx/releases/hilt
         hiltWorkVersion = '1.0.0'                     // https://d.android.com/jetpack/androidx/releases/hilt

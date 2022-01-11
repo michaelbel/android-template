@@ -142,6 +142,7 @@ dependencies {
     implementation "androidx.collection:collection-ktx:$collectionVersion"
     implementation "androidx.compose.animation:animation:$composeVersion"
     implementation "androidx.compose.compiler:compiler:$composeVersion"
+    implementation "androidx.draganddrop:draganddrop:$draganddropVersion"
     implementation "androidx.compose.foundation:foundation:$composeVersion"
     implementation "androidx.compose.foundation:foundation-layout:$composeVersion"
     implementation "androidx.compose.material3:material3:$material3Version"
