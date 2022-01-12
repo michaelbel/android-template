@@ -12,6 +12,7 @@ import javax.inject.Singleton
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import org.michaelbel.core.di.qualifiers.ConverterFactorySerialization
+import org.michaelbel.core.ktx.createService
 import org.michaelbel.template.Constants
 import org.michaelbel.template.features.tmdb_api.api.MovieApi
 import org.michaelbel.template.features.tmdb_api.api.MoviesApi
@@ -80,5 +81,5 @@ object ApiModule {
     @Singleton
     fun provideMoviesApi(
         @TmdbRetrofit retrofit: Retrofit
-    ): MoviesApi = retrofit.create(MoviesApi::class.java)
+    ): MoviesApi = createService(retrofit)
 }
