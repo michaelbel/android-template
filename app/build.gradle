@@ -244,9 +244,9 @@ dependencies {
     implementation "androidx.recommendation:recommendation:$recommendationVersion"
     implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
     implementation "androidx.recyclerview:recyclerview-selection:$recyclerviewSelectionVersion"
-    //implementation "androidx.remotecallback:remotecallback:1.0.0-alpha02"
-    //          kapt "androidx.remotecallback:remotecallback-processor:1.0.0-alpha02"
-    //implementation "androidx.resourceinspection:resourceinspection-annotation:1.0.0"
+    implementation "androidx.remotecallback:remotecallback:$remotecallbackVersion"
+              kapt "androidx.remotecallback:remotecallback-processor:$remotecallbackVersion"
+    implementation "androidx.resourceinspection:resourceinspection-annotation:$resourceinspectionVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
               kapt "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
@@ -272,7 +272,7 @@ dependencies {
     implementation "androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02"
     implementation "androidx.versionedparcelable:versionedparcelable:$versionedparcelableVersion"
     implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
-    //implementation "androidx.wear:wear:1.2.0" // 26
+    implementation "androidx.wear:wear:$wearVersion"
     //implementation "androidx.wear:wear-input:1.1.0" // 26
     //implementation "androidx.wear:wear-input-testing:1.1.0" // 26
     //implementation "androidx.wear:wear-ongoing:1.0.0" // 26

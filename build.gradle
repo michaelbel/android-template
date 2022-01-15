@@ -85,6 +85,8 @@ buildscript {
         recommendationVersion = '1.0.0'
         recyclerviewVersion = '1.2.1'                 // https://d.android.com/jetpack/androidx/releases/recyclerview
         recyclerviewSelectionVersion = '1.1.0'        // https://d.android.com/jetpack/androidx/releases/recyclerview
+        remotecallbackVersion = '1.0.0-alpha02'
+        resourceinspectionVersion = '1.0.0'
         roomVersion = '2.4.0'                         // https://d.android.com/jetpack/androidx/releases/room
         savedstateVersion = '1.1.0'                   // https://d.android.com/jetpack/androidx/releases/savedstate
         securityCryptoVersion = '1.0.0'
@@ -104,6 +106,7 @@ buildscript {
         vectordrawableSeekableVersion = '1.0.0-alpha02'
         versionedparcelableVersion = '1.1.1'
         viewpager2Version = '1.0.0'                   // https://d.android.com/jetpack/androidx/releases/viewpager2
+        wearVersion = '1.2.0'
         webkitVersion = '1.4.0'
         windowVersion = '1.0.0-rc01'
         workVersion = '2.7.1'                         // https://d.android.com/jetpack/androidx/releases/work
