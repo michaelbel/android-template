@@ -142,7 +142,7 @@ buildscript {
         firebaseCoreVersion = '20.0.2'                   // https://mvnrepository.com/artifact/com.google.firebase/firebase-core
         firebaseCrashlyticsVersion = '18.2.6'            // https://mvnrepository.com/artifact/com.google.firebase/firebase-crashlytics-ktx
         firebaseConfigVersion = '21.0.1'                 // https://mvnrepository.com/artifact/com.google.firebase/firebase-config
-        materialVersion = '1.6.0-alpha01'                // https://mvnrepository.com/artifact/com.google.android.material/material
+        materialVersion = '1.6.0-alpha01'                // https://github.com/material-components/material-components-android/releases & https://mvnrepository.com/artifact/com.google.android.material/material
         materialComposeThemeAdapterVersion = '1.1.2'     // https://mvnrepository.com/artifact/com.google.android.material/compose-theme-adapter
         playcoreVersion = '1.8.1'                        // https://d.android.com/reference/com/google/android/play/core/release-notes
 
