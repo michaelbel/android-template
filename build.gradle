@@ -214,6 +214,9 @@ buildscript {
         mockitoVersion = '4.2.0'        // https://mvnrepository.com/artifact/org.mockito/mockito-core
         robolectricVersion = '4.7.3'    // https://mvnrepository.com/artifact/org.robolectric/robolectric
         androidxTestCore = '1.4.0'      // https://mvnrepository.com/artifact/androidx.test/core
+        orchestratorVersion = '1.4.1'
+        benchmarkMacroVersion = '1.1.0-beta01'
+        securityAppAuthenticatorVersion = '1.0.0-alpha02'
     }
 
     repositories {
