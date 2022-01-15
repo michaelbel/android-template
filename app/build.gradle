@@ -273,18 +273,18 @@ dependencies {
     implementation "androidx.versionedparcelable:versionedparcelable:$versionedparcelableVersion"
     implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
     implementation "androidx.wear:wear:$wearVersion"
-    //implementation "androidx.wear:wear-input:1.1.0" // 26
-    //implementation "androidx.wear:wear-input-testing:1.1.0" // 26
-    //implementation "androidx.wear:wear-ongoing:1.0.0" // 26
-    //implementation "androidx.wear:wear-phone-interactions:1.1.0-alpha02" // 26
-    //implementation "androidx.wear:wear-remote-interactions:1.0.0" // 26
-    //implementation "androidx.wear.compose:compose-foundation:1.0.0-alpha14" // 26
-    //implementation "androidx.wear.compose:compose-material:1.0.0-alpha14" // 26
-    //implementation "androidx.wear.compose:compose-navigation:1.0.0-alpha14" // 26
-    //implementation "androidx.wear.tiles:tiles:1.0.0" // 26
-    //implementation "androidx.wear.watchface:watchface:1.1.0-alpha02" // 26
-    //implementation "androidx.wear.watchface:watchface-complications-data-source-ktx:1.1.0-alpha02" // 26
-    //implementation "androidx.wear.watchface:watchface-editor:1.1.0-alpha02" // 26
+    implementation "androidx.wear:wear-input:$wearInputVersion"
+    implementation "androidx.wear:wear-input-testing:$wearInputVersion"
+    implementation "androidx.wear:wear-ongoing:$wearOngoingVersion"
+    implementation "androidx.wear:wear-phone-interactions:$wearPhoneInteractionsVersion"
+    implementation "androidx.wear:wear-remote-interactions:$wearRemoteInteractionsVersion"
+    implementation "androidx.wear.compose:compose-foundation:$wearComposeVersion"
+    implementation "androidx.wear.compose:compose-material:$wearComposeVersion"
+    implementation "androidx.wear.compose:compose-navigation:$wearComposeVersion"
+    implementation "androidx.wear.tiles:tiles:$wearTilesVersion"
+    implementation "androidx.wear.watchface:watchface:$wearWatchfaceVersion"
+    implementation "androidx.wear.watchface:watchface-complications-data-source-ktx:$wearWatchfaceVersion"
+    implementation "androidx.wear.watchface:watchface-editor:$wearWatchfaceVersion"
     implementation "androidx.webkit:webkit:$webkitVersion"
     implementation "androidx.window:window:$windowVersion"
     implementation "androidx.window:window-testing:$windowVersion"
