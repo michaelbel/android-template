@@ -259,18 +259,18 @@ dependencies {
     //implementation "androidx.slice:slice-core:1.1.0-alpha02" // 26
     //implementation "androidx.slice:slice-view:1.1.0-alpha02" // 26
     implementation "androidx.slidingpanelayout:slidingpanelayout:$slidingpanelayoutVersion"
-    //implementation "androidx.sqlite:sqlite-ktx:2.2.0"
-    //implementation "androidx.sqlite:sqlite-framework:2.2.0"
-    //implementation "androidx.startup:startup-runtime:1.1.0"
+    implementation "androidx.sqlite:sqlite-ktx:$sqliteVersion"
+    implementation "androidx.sqlite:sqlite-framework:$sqliteVersion"
+    implementation "androidx.startup:startup-runtime:$startupVersion"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayoutVersion"
-    //implementation "androidx.textclassifier:textclassifier:1.0.0-alpha03"
-    //implementation "androidx.tracing:tracing-ktx:1.1.0-beta01"
-    //implementation "androidx.transition:transition-ktx:1.4.1"
-    //implementation "androidx.tvprovider:tvprovider:1.1.0-alpha01"
-    //implementation "androidx.vectordrawable:vectordrawable:1.1.0"
-    //implementation "androidx.vectordrawable:vectordrawable-animated:1.1.0"
-    //implementation "androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02"
-    //implementation "androidx.versionedparcelable:versionedparcelable:1.1.1"
+    implementation "androidx.textclassifier:textclassifier:$textclassifierVersion"
+    implementation "androidx.tracing:tracing-ktx:$tracingVersion"
+    implementation "androidx.transition:transition-ktx:$transitionVersion"
+    implementation "androidx.tvprovider:tvprovider:$tvproviderVersion"
+    implementation "androidx.vectordrawable:vectordrawable:$vectordrawableVersion"
+    implementation "androidx.vectordrawable:vectordrawable-animated:$vectordrawableVersion"
+    implementation "androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02"
+    implementation "androidx.versionedparcelable:versionedparcelable:$versionedparcelableVersion"
     implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
     //implementation "androidx.wear:wear:1.2.0" // 26
     //implementation "androidx.wear:wear-input:1.1.0" // 26
@@ -289,8 +289,8 @@ dependencies {
     implementation "androidx.window:window:$windowVersion"
     implementation "androidx.window:window-testing:$windowVersion"
     implementation "androidx.work:work-runtime-ktx:$workVersion"
-    //implementation "androidx.work:work-gcm:$workVersion"
-    //implementation "androidx.work:work-multiprocess:$workVersion"
+    implementation "androidx.work:work-gcm:$workVersion"
+    implementation "androidx.work:work-multiprocess:$workVersion"
 
     implementation "com.android.installreferrer:installreferrer:$installreferrerVersion"
 

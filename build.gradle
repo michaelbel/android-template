@@ -82,7 +82,16 @@ buildscript {
         savedstateVersion = '1.1.0'                   // https://d.android.com/jetpack/androidx/releases/savedstate
         sharetargetVersion = '1.2.0-rc01'             // https://d.android.com/jetpack/androidx/releases/sharetarget
         slidingpanelayoutVersion = '1.2.0-rc01'
+        startupVersion = '1.1.0'
+        sqliteVersion = '2.2.0'
         swiperefreshlayoutVersion = '1.1.0'           // https://d.android.com/jetpack/androidx/releases/swiperefreshlayout
+        textclassifierVersion = '1.0.0-alpha03'
+        tracingVersion = '1.1.0-beta01'
+        transitionVersion = '1.4.1'
+        tvproviderVersion = '1.1.0-alpha01'
+        vectordrawableVersion = '1.1.0'
+        vectordrawableSeekableVersion = '1.0.0-alpha02'
+        versionedparcelableVersion = '1.1.1'
         viewpager2Version = '1.0.0'                   // https://d.android.com/jetpack/androidx/releases/viewpager2
         webkitVersion = '1.4.0'
         windowVersion = '1.0.0-rc01'
