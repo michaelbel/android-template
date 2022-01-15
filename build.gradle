@@ -10,19 +10,23 @@ buildscript {
         buildToolsVersion = '31.0.0'
         gradleVersion = '7.0.4'
         detektVersion = '1.19.0'  // https://github.com/detekt/detekt/releases
-        spotlessVersion = '6.1.2' // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
+        spotlessVersion = '6.2.0' // https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
 
         // Kotlin
         kotlinVersion = '1.6.0'        // https://github.com/JetBrains/kotlin/releases
         coroutinesVersion = '1.6.0'    // https://github.com/Kotlin/kotlinx.coroutines/releases
-        serializationVersion = '1.3.1' // https://github.com/Kotlin/kotlinx.serialization/releases
+        serializationVersion = '1.3.2' // https://github.com/Kotlin/kotlinx.serialization/releases
 
         // AndroidX
         activityVersion = '1.4.0'                     // https://d.android.com/jetpack/androidx/releases/activity
+        adsIdentifierVersion = '1.0.0-alpha04'        // https://d.android.com/jetpack/androidx/releases/ads
         annotationVersion = '1.3.0'                   // https://d.android.com/jetpack/androidx/releases/annotation
         annotationExperimentalVersion = '1.2.0'       // https://d.android.com/jetpack/androidx/releases/annotation
         appcompatVersion = '1.4.0'                    // https://d.android.com/jetpack/androidx/releases/appcompat
+        appsearchVersion = '1.0.0-alpha04'            // https://d.android.com/jetpack/androidx/releases/appsearch
         asynclayoutinflaterVersion = '1.0.0'          // https://d.android.com/jetpack/androidx/releases/asynclayoutinflater
+        autofillVersion = '1.1.0'                     // https://d.android.com/jetpack/androidx/releases/autofill
+        benchmarkPluginVersion = '1.0.0'              // https://d.android.com/jetpack/androidx/releases/benchmark
         browserVersion = '1.4.0'                      // https://d.android.com/jetpack/androidx/releases/browser
         cardviewVersion = '1.0.0'                     // https://d.android.com/jetpack/androidx/releases/cardview
         collectionVersion = '1.2.0'                   // https://d.android.com/jetpack/androidx/releases/collection
@@ -38,13 +42,16 @@ buildscript {
         fragmentVersion = '1.4.0'                     // https://d.android.com/jetpack/androidx/releases/fragment
         hiltNavigationFragmentVersion = '1.0.0'       // https://d.android.com/jetpack/androidx/releases/hilt
         hiltWorkVersion = '1.0.0'                     // https://d.android.com/jetpack/androidx/releases/hilt
+        leanbackVersion = '1.2.0-alpha02'             // https://d.android.com/jetpack/androidx/releases/leanback
         lifecycleVersion = '2.4.0'                    // https://d.android.com/jetpack/androidx/releases/lifecycle
         material3Version = '1.0.0-SNAPSHOT'           // https://d.android.google.cn/jetpack/androidx/releases/compose-material3
         materialIconsVersion = '1.1.0-SNAPSHOT'       // https://mvnrepository.com/artifact/androidx.compose.material/material-icons-extended
+        media3Version = '1.0.0-alpha01'               // https://d.android.com/jetpack/androidx/releases/media3
         navigationVersion = '2.3.5'                   // https://d.android.com/jetpack/androidx/releases/navigation
         recyclerviewVersion = '1.2.1'                 // https://d.android.com/jetpack/androidx/releases/recyclerview
         roomVersion = '2.4.0'                         // https://d.android.com/jetpack/androidx/releases/room
         pagingVersion = '3.1.0'                       // https://d.android.com/jetpack/androidx/releases/paging
+        pagingComposeVersion = '1.0.0-alpha14'        // https://d.android.com/jetpack/androidx/releases/paging
         savedstateVersion = '1.1.0'                   // https://d.android.com/jetpack/androidx/releases/savedstate
         sharetargetVersion = '1.2.0-rc01'             // https://d.android.com/jetpack/androidx/releases/sharetarget
         swiperefreshlayoutVersion = '1.1.0'           // https://d.android.com/jetpack/androidx/releases/swiperefreshlayout
@@ -133,7 +140,7 @@ buildscript {
         ganderVersion = '3.1.0'                      // https://github.com/Ashok-Varma/Gander/releases
         viewBindingPropertyDelegateVersion = '1.5.6' // https://github.com/androidbroadcast/ViewBindingPropertyDelegate/releases
         vkVersion = '3.4.1'                          // http://github.com/VKCOM/vk-android-sdk
-        moshiVersion = '1.12.0'
+        moshiVersion = '1.12.0'                      // https://github.com/square/moshi/blob/master/CHANGELOG.md
 
         // Test
         coreTestingVersion = '2.1.0'    // https://mvnrepository.com/artifact/androidx.arch.core/core-testing
@@ -143,8 +150,8 @@ buildscript {
         testRulesVersion = '1.4.0'      // https://mvnrepository.com/artifact/androidx.test/rules
         testUianimatorVersion = '2.2.0' // https://mvnrepository.com/artifact/androidx.test.uiautomator/uiautomator
         truthVersion = '1.1.3'          // https://mvnrepository.com/artifact/com.google.truth/truth
-        mockkVersion = '1.12.0'         // https://mvnrepository.com/artifact/io.mockk/mockk
-        mockitoVersion = '4.1.0'        // https://mvnrepository.com/artifact/org.mockito/mockito-core
+        mockkVersion = '1.12.2'         // https://mvnrepository.com/artifact/io.mockk/mockk
+        mockitoVersion = '4.2.0'        // https://mvnrepository.com/artifact/org.mockito/mockito-core
         robolectricVersion = '4.7.3'    // https://mvnrepository.com/artifact/org.robolectric/robolectric
         androidxTestCore = '1.4.0'      // https://mvnrepository.com/artifact/androidx.test/core
     }
@@ -164,6 +171,7 @@ buildscript {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$daggerVersion"
         classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsPluginVersion"
         classpath "com.google.firebase:firebase-appdistribution-gradle:$firebaseAppDistribution"
+        classpath "androidx.benchmark:benchmark-gradle-plugin:$benchmarkPluginVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         classpath "com.diffplug.spotless:spotless-plugin-gradle:$spotlessVersion"
     }
