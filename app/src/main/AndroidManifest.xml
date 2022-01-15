@@ -11,7 +11,15 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
 
-    <uses-sdk tools:overrideLibrary="androidx.draganddrop"/>
+    <!--androidx.draganddrop minSdk 24-->
+    <!--androidx.health.services.client minSdk 30-->
+    <!--androidx.heifwriter minSdk 38-->
+    <uses-sdk
+        tools:overrideLibrary="
+            androidx.draganddrop,
+            androidx.health.services.client,
+            androidx.heifwriter"
+        />
 
     <application
         android:name=".App"

@@ -58,10 +58,14 @@ buildscript {
         glanceVersion = '1.0.0-alpha01'               // https://d.android.com/jetpack/androidx/releases/glance
         gridlayoutVersion = '1.0.0'
         fragmentVersion = '1.4.0'                     // https://d.android.com/jetpack/androidx/releases/fragment
+        healthVersion = '1.0.0-alpha03'
+        heifwriterVersion = '1.1.0-alpha01'
         hiltNavigationFragmentVersion = '1.0.0'       // https://d.android.com/jetpack/androidx/releases/hilt
         hiltWorkVersion = '1.0.0'                     // https://d.android.com/jetpack/androidx/releases/hilt
         interpolatorVersion = '1.0.0'
         leanbackVersion = '1.2.0-alpha02'             // https://d.android.com/jetpack/androidx/releases/leanback
+        leanbackPagingVersion = '1.1.0-alpha09'
+        leanbackTabVersion = '1.1.0-beta01'
         lifecycleVersion = '2.4.0'                    // https://d.android.com/jetpack/androidx/releases/lifecycle
         loaderVersion = '1.1.0'
         material3Version = '1.0.0-SNAPSHOT'           // https://d.android.google.cn/jetpack/androidx/releases/compose-material3
