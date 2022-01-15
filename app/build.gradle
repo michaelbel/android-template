@@ -211,27 +211,27 @@ dependencies {
     implementation "androidx.media2:media2-session:$media2Version"
     implementation "androidx.media2:media2-widget:$media2Version"
     implementation "androidx.media2:media2-player:$media2Version"
-    //implementation "androidx.media3:media3-exoplayer:$media3Version"
-    //implementation "androidx.media3:media3-exoplayer-dash:$media3Version"
-    //implementation "androidx.media3:media3-exoplayer-hls:$media3Version"
-    //implementation "androidx.media3:media3-exoplayer-rtsp:$media3Version"
-    //implementation "androidx.media3:media3-exoplayer-ima:$media3Version"
-    //implementation "androidx.media3:media3-datasource-cronet:$media3Version"
-    //implementation "androidx.media3:media3-datasource-okhttp:$media3Version"
-    //implementation "androidx.media3:media3-datasource-rtmp:$media3Version"
-    //implementation "androidx.media3:media3-ui:$media3Version"
-    //implementation "androidx.media3:media3-ui-leanback:$media3Version"
-    //implementation "androidx.media3:media3-session:$media3Version"
-    //implementation "androidx.media3:media3-extractor:$media3Version"
-    //implementation "androidx.media3:media3-cast:$media3Version"
-    //implementation "androidx.media3:media3-exoplayer-workmanager:$media3Version"
-    //implementation "androidx.media3:media3-transformer:$media3Version"
-    //implementation "androidx.media3:media3-test-utils:$media3Version"
-    //implementation "androidx.media3:media3-test-utils-robolectric:$media3Version"
-    //implementation "androidx.media3:media3-database:$media3Version"
-    //implementation "androidx.media3:media3-decoder:$media3Version"
-    //implementation "androidx.media3:media3-datasource:$media3Version"
-    //implementation "androidx.media3:media3-common:$media3Version"
+    //implementation "androidx.media3:media3-exoplayer:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-exoplayer-dash:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-exoplayer-hls:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-exoplayer-rtsp:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-exoplayer-ima:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-datasource-cronet:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-datasource-okhttp:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-datasource-rtmp:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-ui:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-ui-leanback:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-session:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-extractor:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-cast:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-exoplayer-workmanager:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-transformer:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-test-utils:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-test-utils-robolectric:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-database:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-decoder:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-datasource:$media3Version" Manifest merger failed
+    //implementation "androidx.media3:media3-common:$media3Version" Manifest merger failed
     implementation "androidx.mediarouter:mediarouter:$mediarouterVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
