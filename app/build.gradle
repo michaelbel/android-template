@@ -183,7 +183,7 @@ dependencies {
     implementation "androidx.documentfile:documentfile:$documentfileVersion"
     implementation "androidx.draganddrop:draganddrop:$draganddropVersion"
     implementation "androidx.drawerlayout:drawerlayout:$drawerlayoutVersion"
-    //implementation "androidx.dynamicanimation:dynamicanimation-ktx:$dynamicanimationVersion"
+    //implementation "androidx.dynamicanimation:dynamicanimation-ktx:$dynamicanimationVersion" not found
     implementation "androidx.emoji:emoji:$emojiVersion"
     implementation "androidx.emoji:emoji-appcompat:$emojiVersion"
     implementation "androidx.emoji:emoji-bundled:$emojiVersion"
@@ -235,13 +235,13 @@ dependencies {
     implementation "androidx.mediarouter:mediarouter:$mediarouterVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
-    //implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
-    //implementation "androidx.navigation:navigation-compose:2.4.0-rc01"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
+    implementation "androidx.navigation:navigation-compose:$navigationComposeVersion"
     implementation "androidx.palette:palette-ktx:$paletteVersion"
     implementation "androidx.preference:preference-ktx:$preferenceVersion"
     implementation "androidx.print:print:$printVersion"
-    //implementation "androidx.profileinstaller:profileinstaller:1.2.0-alpha01"
-    //implementation "androidx.recommendation:recommendation:1.0.0"
+    implementation "androidx.profileinstaller:profileinstaller:$profileinstallerVersion"
+    implementation "androidx.recommendation:recommendation:$recommendationVersion"
     implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
     implementation "androidx.recyclerview:recyclerview-selection:$recyclerviewSelectionVersion"
     //implementation "androidx.remotecallback:remotecallback:1.0.0-alpha02"
@@ -251,13 +251,13 @@ dependencies {
               kapt "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     implementation "androidx.savedstate:savedstate-ktx:$savedstateVersion"
-    //implementation "androidx.security:security-crypto:1.0.0" // 26
-    //implementation "androidx.security:security-identity-credential:1.0.0-alpha03" // 26
-    //implementation "androidx.security:security-app-authenticator:1.0.0-alpha02"
+    implementation "androidx.security:security-crypto:$securityCryptoVersion"
+    implementation "androidx.security:security-identity-credential:$securityIdentityCredentialVersion"
+    implementation "androidx.security:security-app-authenticator:$securityAppAuthenticatorVersion"
     implementation "androidx.sharetarget:sharetarget:$sharetargetVersion"
-    //implementation "androidx.slice:slice-builders-ktx:1.1.0-alpha02" // 26
-    //implementation "androidx.slice:slice-core:1.1.0-alpha02" // 26
-    //implementation "androidx.slice:slice-view:1.1.0-alpha02" // 26
+    //implementation "androidx.slice:slice-builders-ktx:$sliceVersion" not found
+    implementation "androidx.slice:slice-core:$sliceVersion"
+    implementation "androidx.slice:slice-view:$sliceVersion"
     implementation "androidx.slidingpanelayout:slidingpanelayout:$slidingpanelayoutVersion"
     implementation "androidx.sqlite:sqlite-ktx:$sqliteVersion"
     implementation "androidx.sqlite:sqlite-framework:$sqliteVersion"

@@ -13,13 +13,14 @@
 
     <!--androidx.draganddrop minSdk 24-->
     <!--androidx.health.services.client minSdk 30-->
-    <!--androidx.heifwriter minSdk 38-->
+    <!--androidx.heifwriter minSdk 28-->
+    <!--androidx.security.identity.credential minSdk 24-->
     <uses-sdk
         tools:overrideLibrary="
             androidx.draganddrop,
             androidx.health.services.client,
-            androidx.heifwriter"
-        />
+            androidx.heifwriter,
+            androidx.security.identity.credential"/>
 
     <application
         android:name=".App"
