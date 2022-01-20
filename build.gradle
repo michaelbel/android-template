@@ -22,7 +22,7 @@ buildscript {
         adsIdentifierVersion = '1.0.0-alpha04'        // https://d.android.com/jetpack/androidx/releases/ads
         annotationVersion = '1.3.0'                   // https://d.android.com/jetpack/androidx/releases/annotation
         annotationExperimentalVersion = '1.2.0'       // https://d.android.com/jetpack/androidx/releases/annotation
-        appcompatVersion = '1.4.0'                    // https://d.android.com/jetpack/androidx/releases/appcompat
+        appcompatVersion = '1.4.1'                    // https://d.android.com/jetpack/androidx/releases/appcompat
         appsearchVersion = '1.0.0-alpha04'            // https://d.android.com/jetpack/androidx/releases/appsearch
         asynclayoutinflaterVersion = '1.0.0'          // https://d.android.com/jetpack/androidx/releases/asynclayoutinflater
         autofillVersion = '1.1.0'                     // https://d.android.com/jetpack/androidx/releases/autofill
@@ -37,14 +37,14 @@ buildscript {
         collectionVersion = '1.2.0'                   // https://d.android.com/jetpack/androidx/releases/collection
         concurrentVersion = '1.1.0'
         contentpagerVersion = '1.0.0'
-        constraintlayoutVersion = '2.1.2'             // https://d.android.com/jetpack/androidx/releases/constraintlayout
-        constraintlayoutComposeVersion = '1.0.0-rc02' // https://d.android.com/jetpack/compose/layouts/constraintlayout
+        constraintlayoutVersion = '2.1.3'             // https://d.android.com/jetpack/androidx/releases/constraintlayout
+        constraintlayoutComposeVersion = '1.0.0'      // https://d.android.com/jetpack/compose/layouts/constraintlayout
         composeVersion = '1.1.0-rc01'                 // https://d.android.google.cn/jetpack/androidx/releases/compose
         composeCompilerVersion = '1.1.0-rc02'         // https://d.android.google.cn/jetpack/androidx/releases/compose
         coordinatorlayoutVersion = '1.2.0'
         coreVersion = '1.7.0'                         // https://d.android.com/jetpack/androidx/releases/core
         coreroleVersion = '1.0.0'                     // https://d.android.com/jetpack/androidx/releases/core
-        coreSplashScreenVersion = '1.0.0-alpha02'     // https://d.android.com/jetpack/androidx/releases/core
+        coreSplashScreenVersion = '1.0.0-beta01'      // https://d.android.com/jetpack/androidx/releases/core
         cursoradapterVersion = '1.0.0'
         customviewVersion = '1.1.0'
         datastoreVersion = '1.0.0'                    // https://d.android.com/jetpack/androidx/releases/datastore
@@ -87,7 +87,7 @@ buildscript {
         recyclerviewSelectionVersion = '1.1.0'        // https://d.android.com/jetpack/androidx/releases/recyclerview
         remotecallbackVersion = '1.0.0-alpha02'
         resourceinspectionVersion = '1.0.0'
-        roomVersion = '2.4.0'                         // https://d.android.com/jetpack/androidx/releases/room
+        roomVersion = '2.4.1'                         // https://d.android.com/jetpack/androidx/releases/room
         savedstateVersion = '1.1.0'                   // https://d.android.com/jetpack/androidx/releases/savedstate
         securityCryptoVersion = '1.0.0'
         securityIdentityCredentialVersion = '1.0.0-alpha03'
@@ -139,11 +139,12 @@ buildscript {
         firebaseAbtVersion = '21.0.0'                    // https://mvnrepository.com/artifact/com.google.firebase/firebase-abt
         firebaseAppDistribution = '2.2.0'                // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
         firebaseAnalytics = '20.0.2'                     // https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics-ktx
+        firebaseCommonVersion = '20.0.0'
         firebaseCoreVersion = '20.0.2'                   // https://mvnrepository.com/artifact/com.google.firebase/firebase-core
         firebaseCrashlyticsVersion = '18.2.6'            // https://mvnrepository.com/artifact/com.google.firebase/firebase-crashlytics-ktx
         firebaseConfigVersion = '21.0.1'                 // https://mvnrepository.com/artifact/com.google.firebase/firebase-config
-        materialVersion = '1.6.0-alpha01'                // https://github.com/material-components/material-components-android/releases & https://mvnrepository.com/artifact/com.google.android.material/material
-        materialComposeThemeAdapterVersion = '1.1.2'     // https://mvnrepository.com/artifact/com.google.android.material/compose-theme-adapter
+        materialVersion = '1.6.0-alpha02'                // https://github.com/material-components/material-components-android/releases & https://mvnrepository.com/artifact/com.google.android.material/material
+        materialComposeThemeAdapterVersion = '1.1.3'     // https://mvnrepository.com/artifact/com.google.android.material/compose-theme-adapter
         playcoreVersion = '1.8.1'                        // https://d.android.com/reference/com/google/android/play/core/release-notes
 
         // Gms

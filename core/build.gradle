@@ -69,6 +69,7 @@ dependencies {
     api "com.google.firebase:firebase-analytics-ktx:$firebaseAnalytics"
     api "com.google.firebase:firebase-core:$firebaseCoreVersion"
     api "com.google.firebase:firebase-crashlytics-ktx:$firebaseCrashlyticsVersion"
+    api "com.google.firebase:firebase-common-ktx:$firebaseCommonVersion"
     api "com.google.firebase:firebase-config-ktx:$firebaseConfigVersion"
     api "com.google.android.play:core-ktx:$playcoreVersion"
 
