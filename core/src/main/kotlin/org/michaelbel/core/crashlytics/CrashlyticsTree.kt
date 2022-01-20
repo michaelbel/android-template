@@ -7,10 +7,12 @@ class CrashlyticsTree: Timber.Tree() {
 
     override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
         val exception: Throwable = t ?: Exception(message)
-        FirebaseCrashlytics.getInstance().setCustomKey(CRASHLYTICS_KEY_PRIORITY, priority)
-        FirebaseCrashlytics.getInstance().setCustomKey(CRASHLYTICS_KEY_TAG, tag.toString())
-        FirebaseCrashlytics.getInstance().setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
-        FirebaseCrashlytics.getInstance().recordException(exception)
+        FirebaseCrashlytics.getInstance().run {
+            setCustomKey(CRASHLYTICS_KEY_PRIORITY, priority)
+            setCustomKey(CRASHLYTICS_KEY_TAG, tag.orEmpty())
+            setCustomKey(CRASHLYTICS_KEY_MESSAGE, message)
+            recordException(exception)
+        }
     }
 
     private companion object {

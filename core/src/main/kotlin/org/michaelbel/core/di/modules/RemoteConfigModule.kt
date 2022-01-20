@@ -1,6 +1,8 @@
 package org.michaelbel.core.di.modules
 
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,7 +15,5 @@ object RemoteConfigModule {
 
     @Provides
     @Singleton
-    fun provideFirebaseRemoteConfig(): FirebaseRemoteConfig {
-        return FirebaseRemoteConfig.getInstance()
-    }
+    fun provideFirebaseRemoteConfig(): FirebaseRemoteConfig = Firebase.remoteConfig
 }

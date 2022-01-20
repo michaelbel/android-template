@@ -3,6 +3,7 @@ package org.michaelbel.template.features.config
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -27,6 +28,10 @@ class RemoteConfigViewModel @Inject constructor(
     }
 
     private fun fetchRemoteConfig() {
+        val configSettings = remoteConfigSettings {
+            minimumFetchIntervalInSeconds = 60
+        }
+        firebaseRemoteConfig.setConfigSettingsAsync(configSettings)
         firebaseRemoteConfig.fetchAndActivate().addOnFailureListener(Timber::e)
     }
 
