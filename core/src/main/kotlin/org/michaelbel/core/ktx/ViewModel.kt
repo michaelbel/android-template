@@ -16,9 +16,7 @@ inline fun <reified T: ViewModel> Fragment.assistedViewModels(
     crossinline viewModelProducer: () -> T
 ): Lazy<T> = viewModels {
     object: ViewModelProvider.Factory {
-        override fun <T: ViewModel> create(modelClass: Class<T>): T {
-            return viewModelProducer() as T
-        }
+        override fun <T: ViewModel> create(modelClass: Class<T>): T = viewModelProducer() as T
     }
 }
 
@@ -26,9 +24,7 @@ inline fun <reified T: ViewModel> Fragment.assistedActivityViewModels(
     crossinline viewModelProducer: () -> T
 ): Lazy<T> = activityViewModels {
     object: ViewModelProvider.Factory {
-        override fun <T: ViewModel> create(modelClass: Class<T>): T {
-            return viewModelProducer() as T
-        }
+        override fun <T: ViewModel> create(modelClass: Class<T>): T = viewModelProducer() as T
     }
 }
 
@@ -36,9 +32,7 @@ inline fun <reified T: ViewModel> FragmentActivity.assistedViewModels(
     crossinline viewModelProducer: () -> T
 ): Lazy<T> = viewModels {
     object: ViewModelProvider.Factory {
-        override fun <T: ViewModel> create(modelClass: Class<T>): T {
-            return viewModelProducer() as T
-        }
+        override fun <T: ViewModel> create(modelClass: Class<T>): T = viewModelProducer() as T
     }
 }
 
@@ -50,9 +44,7 @@ inline fun <reified T: ViewModel> Fragment.savedStateViewModels(
             key: String,
             modelClass: Class<T>,
             handle: SavedStateHandle
-        ): T {
-            return viewModelProducer(handle) as T
-        }
+        ): T = viewModelProducer(handle) as T
     }
 }
 
@@ -64,9 +56,7 @@ inline fun <reified T: ViewModel> Fragment.savedStateActivityViewModels(
             key: String,
             modelClass: Class<T>,
             handle: SavedStateHandle
-        ): T {
-            return viewModelProducer(handle) as T
-        }
+        ): T = viewModelProducer(handle) as T
     }
 }
 
@@ -78,8 +68,6 @@ inline fun <reified T: ViewModel> FragmentActivity.savedStateViewModels(
             key: String,
             modelClass: Class<T>,
             handle: SavedStateHandle
-        ): T {
-            return viewModelProducer(handle) as T
-        }
+        ): T = viewModelProducer(handle) as T
     }
 }

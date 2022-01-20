@@ -9,7 +9,8 @@ import java.io.File
 inline val File.type: String
     get() = absolutePath.substring(absolutePath.lastIndexOf(".") + 1)
 
-fun File.toBitmap(): Bitmap = BitmapFactory.decodeFile(absolutePath)
+inline val File.toBitmap: Bitmap
+    get() = BitmapFactory.decodeFile(absolutePath)
 
 fun File.size(): Long {
     return try {
