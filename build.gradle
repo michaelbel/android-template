@@ -137,7 +137,7 @@ buildscript {
         daggerVersion = "2.40.5"                         // https://github.com/google/dagger/releases
         exoplayerVersion = "2.16.1"                      // https://github.com/google/ExoPlayer/releases
         firebaseAbtVersion = "21.0.0"                    // https://mvnrepository.com/artifact/com.google.firebase/firebase-abt
-        firebaseAppDistribution = "2.2.0"                // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
+        firebaseAppDistribution = "3.0.0"                // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
         firebaseAnalytics = "20.0.2"                     // https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics-ktx
         firebaseCommonVersion = "20.0.0"
         firebaseCoreVersion = "20.0.2"                   // https://mvnrepository.com/artifact/com.google.firebase/firebase-core
