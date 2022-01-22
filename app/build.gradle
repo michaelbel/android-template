@@ -1,17 +1,17 @@
 // Плагин google-services должен быть перед firebase
 plugins {
-    id "com.android.application"
-    id "dagger.hilt.android.plugin"
-    id "kotlin-android"
-    id "kotlin-kapt"
-    id "kotlin-parcelize"
-    id "kotlinx-serialization"
-    id "androidx.benchmark"
-    id "androidx.navigation.safeargs.kotlin"
-    id "com.google.gms.google-services"
-    id "com.google.firebase.appdistribution"
-    id "com.google.firebase.crashlytics"
-    id "io.gitlab.arturbosch.detekt"
+    id("com.android.application")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("kotlinx-serialization")
+    id("androidx.benchmark")
+    id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.appdistribution")
+    id("com.google.firebase.crashlytics")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 apply from: "$project.rootDir/spotless.gradle"
@@ -292,29 +292,29 @@ dependencies {
     implementation "androidx.work:work-gcm:$workVersion"
     implementation "androidx.work:work-multiprocess:$workVersion"
 
-    implementation "com.android.installreferrer:installreferrer:$installreferrerVersion"
+    implementation("com.android.installreferrer:installreferrer:$installreferrerVersion")
 
-    implementation "com.google.accompanist:accompanist-appcompat-theme:$accompanistAppcompatThemeVersion"
-    implementation "com.google.accompanist:accompanist-drawablepainter:$accompanistDrawablePainterVersion"
-    implementation "com.google.accompanist:accompanist-insets:$accompanistInsetsVersion"
-    implementation "com.google.accompanist:accompanist-insets-ui:$accompanistInsetsVersion"
-    implementation "com.google.accompanist:accompanist-flowlayout:$accompanistFlowlayoutVersion"
-    implementation "com.google.accompanist:accompanist-navigation-animation:$accompanistNavigationAnimationVersion"
-    implementation "com.google.accompanist:accompanist-navigation-material:$accompanistNavigationMaterialVersion"
-    implementation "com.google.accompanist:accompanist-pager:$accompanistPagerVersion"
-    implementation "com.google.accompanist:accompanist-pager-indicators:$accompanistPagerVersion"
-    implementation "com.google.accompanist:accompanist-permissions:$accompanistPermissionsVersion"
-    implementation "com.google.accompanist:accompanist-placeholder:$accompanistPlaceholderVersion"
-    implementation "com.google.accompanist:accompanist-placeholder-material:$accompanistPlaceholderVersion"
-    implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanistSystemuicontrollerVersion"
-    implementation "com.google.accompanist:accompanist-swiperefresh:$accompanistSwiperefreshVersion"
-    implementation "com.google.dagger:hilt-android:$daggerVersion"
-              kapt "com.google.dagger:hilt-compiler:$daggerVersion"
-    implementation "com.google.android.exoplayer:exoplayer:$exoplayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-core:$exoplayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-dash:$exoplayerVersion"
-    implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion"
-    implementation "com.google.android.material:compose-theme-adapter:$materialComposeThemeAdapterVersion"
+    implementation("com.google.accompanist:accompanist-appcompat-theme:$accompanistAppcompatThemeVersion")
+    implementation("com.google.accompanist:accompanist-drawablepainter:$accompanistDrawablePainterVersion")
+    implementation("com.google.accompanist:accompanist-insets:$accompanistInsetsVersion")
+    implementation("com.google.accompanist:accompanist-insets-ui:$accompanistInsetsVersion")
+    implementation("com.google.accompanist:accompanist-flowlayout:$accompanistFlowlayoutVersion")
+    implementation("com.google.accompanist:accompanist-navigation-animation:$accompanistNavigationAnimationVersion")
+    implementation("com.google.accompanist:accompanist-navigation-material:$accompanistNavigationMaterialVersion")
+    implementation("com.google.accompanist:accompanist-pager:$accompanistPagerVersion")
+    implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistPagerVersion")
+    implementation("com.google.accompanist:accompanist-permissions:$accompanistPermissionsVersion")
+    implementation("com.google.accompanist:accompanist-placeholder:$accompanistPlaceholderVersion")
+    implementation("com.google.accompanist:accompanist-placeholder-material:$accompanistPlaceholderVersion")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistSystemuicontrollerVersion")
+    implementation("com.google.accompanist:accompanist-swiperefresh:$accompanistSwiperefreshVersion")
+    implementation("com.google.dagger:hilt-android:$daggerVersion")
+              kapt("com.google.dagger:hilt-compiler:$daggerVersion")
+    implementation("com.google.android.exoplayer:exoplayer:$exoplayerVersion")
+    implementation("com.google.android.exoplayer:exoplayer-core:$exoplayerVersion")
+    implementation("com.google.android.exoplayer:exoplayer-dash:$exoplayerVersion")
+    implementation("com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion")
+    implementation("com.google.android.material:compose-theme-adapter:$materialComposeThemeAdapterVersion")
 
     implementation "com.google.android.gms:play-services-ads:$gmsAdsVersion"
     implementation "com.google.android.gms:play-services-ads-identifier:$gmsAdsIdentifierVersion"
@@ -355,17 +355,17 @@ dependencies {
     implementation "com.google.android.gms:play-services-wallet:$gmsWalletVersion"
     implementation "com.google.android.gms:play-services-wearable:$gmsWearableVersion"
 
-    implementation "com.squareup.moshi:moshi:$moshiVersion" // нужен переход на ksp
-              kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
-    implementation "com.squareup.picasso:picasso:$picassoVersion"
-    implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion"
-    implementation "io.coil-kt:coil:$coilVersion"
-    implementation "io.coil-kt:coil-compose:$coilVersion"
-    implementation "com.vk:android-sdk-core:$vkVersion"
-    implementation "com.vk:android-sdk-api:$vkVersion"
+    implementation("com.squareup.moshi:moshi:$moshiVersion") // нужен переход на ksp
+              kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
+    implementation("com.squareup.picasso:picasso:$picassoVersion")
+    implementation("com.github.kirich1409:viewbindingpropertydelegate:$viewBindingPropertyDelegateVersion")
+    implementation("io.coil-kt:coil:$coilVersion")
+    implementation("io.coil-kt:coil-compose:$coilVersion")
+    implementation("com.vk:android-sdk-core:$vkVersion")
+    implementation("com.vk:android-sdk-api:$vkVersion")
 
-    //debugImplementation "androidx.wear.tiles:tiles-renderer:1.0.0" // 26
-    //debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion" — not uses exported in manifest
+    //debugImplementation("androidx.wear.tiles:tiles-renderer:1.0.0") // 26
+    //debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion") — not uses exported in manifest
 
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
@@ -387,17 +387,17 @@ dependencies {
     androidTestImplementation "androidx.work:work-testing:$workVersion"
     androidTestImplementation "com.google.truth:truth:$truthVersion"
 
-    androidTestUtil "androidx.test:orchestrator:$orchestratorVersion"
+    androidTestUtil("androidx.test:orchestrator:$orchestratorVersion")
 
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
-    testImplementation "androidx.test:core:$androidxTestCore"
-    testImplementation "androidx.room:room-testing:$roomVersion"
-    testImplementation "androidx.wear.tiles:tiles-testing:$wearTilesVersion"
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
+    testImplementation("androidx.test:core:$androidxTestCore")
+    testImplementation("androidx.room:room-testing:$roomVersion")
+    testImplementation("androidx.wear.tiles:tiles-testing:$wearTilesVersion")
 
-    testImplementation "junit:junit:$junitVersion"
-    testImplementation "io.mockk:mockk:$mockkVersion"
-    testImplementation "org.mockito:mockito-core:$mockitoVersion"
-    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation("junit:junit:$junitVersion")
+    testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("org.mockito:mockito-core:$mockitoVersion")
+    testImplementation("org.robolectric:robolectric:$robolectricVersion")
 
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$composeVersion"
+    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 }
