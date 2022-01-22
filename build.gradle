@@ -68,7 +68,7 @@ buildscript {
         exoplayerVersion = '2.16.1'                      // https://github.com/google/ExoPlayer/releases
         googleServicesVersion = '4.3.10'                 // https://developers.google.com/android/guides/google-services-plugin
         firebaseAbtVersion = '21.0.0'                    // https://mvnrepository.com/artifact/com.google.firebase/firebase-abt
-        firebaseAppDistribution = '2.2.0'                // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
+        firebaseAppDistribution = '3.0.0'                // https://firebase.google.com/docs/app-distribution/android/distribute-gradle
         firebaseAnalytics = '20.0.2'                     // https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics-ktx
         firebaseCoreVersion = '20.0.2'                   // https://mvnrepository.com/artifact/com.google.firebase/firebase-core
         firebaseCrashlyticsVersion = '18.2.6'            // https://mvnrepository.com/artifact/com.google.firebase/firebase-crashlytics-ktx
