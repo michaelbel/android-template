@@ -7,8 +7,10 @@ import coil.ImageLoaderFactory
 import com.google.android.material.color.DynamicColors
 import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.kirillr.strictmodehelper.kotlin.dsl.initStrictMode
 import com.vk.api.sdk.VK
 import dagger.hilt.android.HiltAndroidApp
+import org.michaelbel.core.BuildConfig
 import org.michaelbel.core.crashlytics.CrashlyticsTree
 import org.michaelbel.template.ui.utils.UnsplashSizingInterceptor
 import timber.log.Timber
@@ -22,6 +24,7 @@ class App: Application(), ImageLoaderFactory {
         initFirebaseCrashlytics()
         initTimber()
         initVK()
+        initAndroidStrictMode()
     }
 
     override fun newImageLoader(): ImageLoader {
@@ -48,5 +51,32 @@ class App: Application(), ImageLoaderFactory {
 
     private fun initVK() {
         VK.initialize(this)
+    }
+
+    private fun initAndroidStrictMode() {
+        initStrictMode(enable = BuildConfig.DEBUG, enableDefaults = false) {
+            threadPolicy {
+                resourceMismatches = true
+                customSlowCalls = true
+                unbufferedIo = true
+
+                penalty {
+                    log = true
+                }
+            }
+
+            vmPolicy {
+                fileUriExposure = true
+                leakedRegistrationObjects = true
+                cleartextNetwork = true
+                cleartextNetwork = true
+                untaggedSockets = true
+                contentUriWithoutPermission = true
+
+                penalty {
+                    log = true
+                }
+            }
+        }
     }
 }
