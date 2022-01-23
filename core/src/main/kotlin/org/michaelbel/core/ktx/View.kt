@@ -8,9 +8,15 @@ import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
+import androidx.core.view.marginBottom
+import androidx.core.view.marginEnd
+import androidx.core.view.marginStart
+import androidx.core.view.marginTop
+import androidx.core.view.updateLayoutParams
 
 var View.startPadding: Int
     inline get() = paddingLeft
@@ -28,8 +34,38 @@ var View.bottomPadding: Int
     inline get() = paddingBottom
     set(value) = setPadding(paddingLeft, paddingTop, paddingRight, value)
 
+var View.startMargin: Int
+    inline get() = marginStart
+    set(value) = updateLayoutParams<ViewGroup.MarginLayoutParams> { marginStart = value }
+
+var View.topMargin: Int
+    inline get() = marginTop
+    set(value) = updateLayoutParams<ViewGroup.MarginLayoutParams> { topMargin = value }
+
+var View.endMargin: Int
+    inline get() = marginEnd
+    set(value) = updateLayoutParams<ViewGroup.MarginLayoutParams> { marginEnd = value }
+
+var View.bottomMargin: Int
+    inline get() = marginBottom
+    set(value) = updateLayoutParams<ViewGroup.MarginLayoutParams> { bottomMargin = value }
+
 fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat) -> WindowInsetsCompat) {
     ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets -> block(v, insets) }
+}
+
+/**
+ * Задать действие по событию onGlobalLayout, снимающееся после первого срабатывания
+ *
+ * @param onGlobalLayoutAction действие, происходящее при событии onGlobalLayout
+ */
+fun View.setOnGlobalLayoutListenerSingle(onGlobalLayoutAction: () -> Unit) {
+    viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+        override fun onGlobalLayout() {
+            viewTreeObserver.removeOnGlobalLayoutListener(this)
+            onGlobalLayoutAction()
+        }
+    })
 }
 
 /**
@@ -58,14 +94,6 @@ fun View.findViewCenterY(): Int {
     val top = location[1]
     val height: Int = this.measuredHeight
     return top.plus(height.div(2))
-}
-
-fun View.toBitmap(): Bitmap {
-    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-    val canvas = Canvas(bitmap)
-    layout(left, top, right, bottom)
-    draw(canvas)
-    return bitmap
 }
 
 fun View.toBitmapDrawable(): BitmapDrawable {

@@ -8,6 +8,7 @@ import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.michaelbel.core.di.qualifiers.ConverterFactoryGson
+import org.michaelbel.core.ktx.createService
 import org.michaelbel.template.features.github_api.api.GithubService
 import retrofit2.Converter
 import retrofit2.Retrofit
@@ -50,6 +51,6 @@ object ApiModule {
     @Provides
     @Singleton
     fun provideGitHubService(@GitHubRetrofit retrofit: Retrofit): GithubService {
-        return retrofit.create(GithubService::class.java)
+        return createService(retrofit)
     }
 }

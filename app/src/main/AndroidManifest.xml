@@ -4,12 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.michaelbel.template">
 
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" tools:ignore="LeanbackUsesWifi"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.INTERNET" tools:ignore="LeanbackUsesWifi"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+    <!--androidx.draganddrop minSdk 24-->
+    <!--androidx.health.services.client minSdk 30-->
+    <!--androidx.heifwriter minSdk 28-->
+    <!--androidx.security.identity.credential minSdk 24-->
+    <!--androidx.wear minSdk 23-->
+    <!--androidx.wear.compose.foundation minSdk 25-->
+    <!--androidx.wear.compose.material minSdk 25-->
+    <!--androidx.wear.compose.navigation minSdk 25-->
+    <!--androidx.wear.input.testing minSdk 25-->
+    <!--androidx.wear.ongoing minSdk 25-->
+    <!--androidx.wear.phone.interactions minSdk 25-->
+    <!--androidx.wear.remote.interactions minSdk 23-->
+    <!--androidx.wear.tiles minSdk 25-->
+    <!--androidx.wear.watchface.client minSdk 26-->
+    <!--androidx.wear.watchface.complications.datasource.ktx minSdk 26-->
+    <!--androidx.wear.watchface.editor minSdk 26-->
+    <!--androidx.wear.watchface.style minSdk 26-->
+    <!--android.support.wearable.watchface minSdk 26-->
+    <uses-sdk
+        tools:overrideLibrary="
+            androidx.draganddrop,
+            androidx.health.services.client,
+            androidx.heifwriter,
+            androidx.security.identity.credential,
+            androidx.wear,
+            androidx.wear.compose.foundation,
+            androidx.wear.compose.material,
+            androidx.wear.compose.navigation,
+            androidx.wear.input.testing,
+            androidx.wear.ongoing,
+            androidx.wear.phone.interactions,
+            androidx.wear.remote.interactions,
+            androidx.wear.tiles,
+            androidx.wear.watchface.client,
+            androidx.wear.watchface.complications.datasource.ktx,
+            androidx.wear.watchface.editor,
+            androidx.wear.watchface.style,
+            android.support.wearable.watchface"/>
 
     <application
         android:name=".App"
@@ -20,7 +63,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
-        tools:ignore="AllowBackup,UnusedAttribute">
+        tools:ignore="AllowBackup,MissingTvBanner,UnusedAttribute">
 
         <activity
             android:name=".MainActivity"
@@ -29,9 +72,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
             </intent-filter>
 
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
@@ -41,7 +85,7 @@
                 <data
                     android:scheme="https"
                     android:host="main.community"/>
-            </intent-filter>
+            </intent-filter>-->
 
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
