@@ -43,13 +43,15 @@ fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
 /**
  * Позволяет вводить только телефонный номер
  */
-fun EditText.allowJustPhoneNumber() {
+/*fun EditText.allowJustPhoneNumber() {
     val inputTextFilter = InputFilter { source, _, _, _, _, _ ->
         val inputString = source.toString()
         val inputStringLength = inputString.length
 
         //удаляем последний введеный символ если он не цифра или второй + в строке
-        if ((inputStringLength > 1 && inputString.endsWith("+")) || (inputStringLength > 0 && !PHONE_NUMBER_CHARS.contains(inputString[inputStringLength - 1]))) {
+        if ((inputStringLength > 1 && inputString.endsWith("+"))
+        || (inputStringLength > 0
+        && !PHONE_NUMBER_CHARS.contains(inputString[inputStringLength - 1]))) {
             source.removeRange(inputStringLength - 1, inputStringLength)
         } else {
             null
@@ -57,4 +59,4 @@ fun EditText.allowJustPhoneNumber() {
     }
 
     this.filters = arrayOf(inputTextFilter).plus(filters)
-}
+}*/

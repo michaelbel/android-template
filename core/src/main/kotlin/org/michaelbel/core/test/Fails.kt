@@ -1,3 +1,3 @@
 package org.michaelbel.core.test
 
-annotation class Fails()
+annotation class Fails

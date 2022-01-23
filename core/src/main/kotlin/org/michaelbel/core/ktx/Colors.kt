@@ -9,7 +9,6 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
-import timber.log.Timber
 import kotlin.math.floor
 import kotlin.math.roundToInt
 
@@ -20,15 +19,14 @@ fun Context.getAttrColor(@AttrRes colorAttr: Int): Int {
     var color = 0
     val attrs = intArrayOf(colorAttr)
 
-    try {
+    return try {
         val typedArray = obtainStyledAttributes(attrs)
         color = typedArray.getColor(0, 0)
         typedArray.recycle()
+        color
     } catch (e: Exception) {
-        Timber.e(e)
+        color
     }
-
-    return color
 }
 
 fun Context.getColorArray(@ArrayRes arrayRes: Int): IntArray? {

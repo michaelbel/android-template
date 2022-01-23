@@ -1,7 +1,7 @@
 package org.michaelbel.template.app.data.entity
 
 import androidx.room.Entity
-import org.michaelbel.template.features.tmdb_api.model.Movie
+import org.michaelbel.template.features.tmdbapi.model.Movie
 
 @Entity(tableName = "movies", primaryKeys = ["id"])
 data class MovieDb(

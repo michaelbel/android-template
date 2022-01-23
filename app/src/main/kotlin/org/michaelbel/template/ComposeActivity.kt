@@ -184,8 +184,13 @@ fun MySmallTopAppBar() {
 
 
                         item {
-
-                            Text(text = if (scaffoldState.drawerState.isClosed) ">>> Swipe to open or close drawer >>>" else "<<< Swipe <<<")
+                            Text(
+                                text = if (scaffoldState.drawerState.isClosed) {
+                                    ">>> Swipe to open or close drawer >>>"
+                                } else {
+                                    "<<< Swipe <<<"
+                                }
+                            )
                             Spacer(Modifier.height(20.dp))
                             Button(onClick = {
                                 scope.launch {
