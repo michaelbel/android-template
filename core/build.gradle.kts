@@ -62,6 +62,7 @@ dependencies {
     api(Dependencies.PagingRuntime)
     api(Dependencies.PagingCompose)
     api(Dependencies.RoomPaging)
+    api(Dependencies.ViewPager2)
 
     api(Dependencies.Material)
     api(Dependencies.HiltAndroid)

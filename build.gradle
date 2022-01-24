@@ -100,7 +100,6 @@ buildscript {
         vectordrawableVersion = "1.1.0"
         vectordrawableSeekableVersion = "1.0.0-alpha02"
         versionedparcelableVersion = "1.1.1"
-        viewpager2Version = "1.0.0"                   // https://d.android.com/jetpack/androidx/releases/viewpager2
         wearVersion = "1.2.0"
         wearComposeVersion = "1.0.0-alpha14"
         wearInputVersion = "1.1.0"
