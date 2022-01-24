@@ -71,6 +71,9 @@ android {
                 serviceCredentialsFile = "$rootDir/config/firebase-app-distribution.json"
             }
         }
+        debug {
+            applicationIdSuffix = ".debug"
+        }
     }
 
     compileOptions {
