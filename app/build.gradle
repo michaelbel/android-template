@@ -298,22 +298,6 @@ dependencies {
     implementation "androidx.work:work-gcm:$workVersion"
     implementation "androidx.work:work-multiprocess:$workVersion"
 
-    implementation("com.android.installreferrer:installreferrer:$installreferrerVersion")
-
-    implementation("com.google.accompanist:accompanist-appcompat-theme:$accompanistAppcompatThemeVersion")
-    implementation("com.google.accompanist:accompanist-drawablepainter:$accompanistDrawablePainterVersion")
-    implementation("com.google.accompanist:accompanist-insets:$accompanistInsetsVersion")
-    implementation("com.google.accompanist:accompanist-insets-ui:$accompanistInsetsVersion")
-    implementation("com.google.accompanist:accompanist-flowlayout:$accompanistFlowlayoutVersion")
-    implementation("com.google.accompanist:accompanist-navigation-animation:$accompanistNavigationAnimationVersion")
-    implementation("com.google.accompanist:accompanist-navigation-material:$accompanistNavigationMaterialVersion")
-    implementation("com.google.accompanist:accompanist-pager:$accompanistPagerVersion")
-    implementation("com.google.accompanist:accompanist-pager-indicators:$accompanistPagerVersion")
-    implementation("com.google.accompanist:accompanist-permissions:$accompanistPermissionsVersion")
-    implementation("com.google.accompanist:accompanist-placeholder:$accompanistPlaceholderVersion")
-    implementation("com.google.accompanist:accompanist-placeholder-material:$accompanistPlaceholderVersion")
-    implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistSystemuicontrollerVersion")
-    implementation("com.google.accompanist:accompanist-swiperefresh:$accompanistSwiperefreshVersion")
     implementation("com.google.dagger:hilt-android:$daggerVersion")
               kapt("com.google.dagger:hilt-compiler:$daggerVersion")
     implementation("com.google.android.exoplayer:exoplayer:$exoplayerVersion")

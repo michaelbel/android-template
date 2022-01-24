@@ -112,22 +112,7 @@ buildscript {
         windowVersion = "1.0.0-rc01"
         workVersion = "2.7.1"                         // https://d.android.com/jetpack/androidx/releases/work
 
-        // Android
-        installreferrerVersion = "2.2" // https://d.android.com/google/play/installreferrer/library
-
         // Google
-        accompanistAppcompatThemeVersion = "0.20.3"      // https://google.github.io/accompanist/appcompat-theme
-        accompanistDrawablePainterVersion = "0.20.3"     // https://google.github.io/accompanist/drawablepainter
-        accompanistInsetsVersion = "0.20.3"              // https://google.github.io/accompanist/insets
-        accompanistFlowlayoutVersion = "0.20.3"          // https://google.github.io/accompanist/flowlayout
-        accompanistNavigationAnimationVersion = "0.20.3" // https://google.github.io/accompanist/navigation-animation
-        accompanistNavigationMaterialVersion = "0.20.3"  // https://google.github.io/accompanist/navigation-material
-        accompanistPagerVersion = "0.20.3"               // https://google.github.io/accompanist/pager
-        accompanistPermissionsVersion = "0.20.3"         // https://google.github.io/accompanist/permissions
-        accompanistPlaceholderVersion = "0.20.3"         // https://google.github.io/accompanist/placeholder
-        accompanistSystemuicontrollerVersion = "0.20.3"  // https://google.github.io/accompanist/systemuicontroller
-        accompanistSwiperefreshVersion = "0.20.3"        // https://google.github.io/accompanist/swiperefresh
-
         crashlyticsPluginVersion = "2.8.1"               // https://firebase.google.com/docs/crashlytics/get-started?platform=android
         daggerVersion = "2.40.5"                         // https://github.com/google/dagger/releases
         exoplayerVersion = "2.16.1"                      // https://github.com/google/ExoPlayer/releases

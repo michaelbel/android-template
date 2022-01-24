@@ -38,8 +38,6 @@ object Plugin {
  * @property InstallReferrer — https://d.android.com/google/play/installreferrer/library
  *
  * Google
- * Accompanist — https://google.github.io/accompanist
- * @property CrashlyticsPlugin —
  * @property Dagger —
  * @property ExoPlayer —
  * @property Material —
@@ -154,17 +152,6 @@ object Version {
 
     const val InstallReferrer = "2.2"
 
-    const val AccompanistAppcompatTheme = "0.20.3"
-    const val AccompanistDrawablePainter = "0.20.3"
-    const val AccompanistInsets = "0.20.3"
-    const val AccompanistFlowlayout = "0.20.3"
-    const val AccompanistNavigationAnimation = "0.20.3"
-    const val AccompanistNavigationMaterial = "0.20.3"
-    const val AccompanistPager = "0.20.3"
-    const val AccompanistPermissions = "0.20.3"
-    const val AccompanistPlaceholder = "0.20.3"
-    const val AccompanistSystemUiController = "0.20.3"
-    const val AccompanistSwipeRefresh = "0.20.3"
     const val CrashlyticsPlugin = "2.8.1"               // https://firebase.google.com/docs/crashlytics/get-started?platform=android
     const val Dagger = "2.40.5"                         // https://github.com/google/dagger/releases
     const val ExoPlayer = "2.16.1"                      // https://github.com/google/ExoPlayer/releases
@@ -262,6 +249,8 @@ object Dependencies {
     const val PagingCompose = "androidx.paging:paging-compose:${Version.PagingCompose}"
     const val RoomPaging = "androidx.room:room-paging:${Version.Room}"
     const val ViewPager2 = "androidx.viewpager2:viewpager2:${Version.ViewPager2}"
+
+    const val InstallReferrer = "com.android.installreferrer:installreferrer:${Version.InstallReferrer}"
 
     const val Material = "com.google.android.material:material:${Version.Material}"
     const val HiltAndroid = "com.google.dagger:hilt-android:${Version.Dagger}"

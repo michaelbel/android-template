@@ -1,4 +1,5 @@
 
+import org.michaelbel.template.Accompanist
 import org.michaelbel.template.App
 import org.michaelbel.template.Dependencies
 import org.michaelbel.template.Firebase
@@ -64,16 +65,34 @@ dependencies {
     api(Dependencies.RoomPaging)
     api(Dependencies.ViewPager2)
 
+    api(Dependencies.InstallReferrer)
+
     api(Dependencies.Material)
     api(Dependencies.HiltAndroid)
     kapt(Dependencies.HiltCompiler)
+    api(Dependencies.PlayCore)
+
+    api(Accompanist.AppCompat)
+    api(Accompanist.DrawablePainter)
+    api(Accompanist.Insets)
+    api(Accompanist.InsetsUi)
+    api(Accompanist.FlowLayout)
+    api(Accompanist.NavigationAnimation)
+    api(Accompanist.NavigationMaterial)
+    api(Accompanist.Pager)
+    api(Accompanist.PagerIndicators)
+    api(Accompanist.Permissions)
+    api(Accompanist.Placeholder)
+    api(Accompanist.PlaceholderMaterial)
+    api(Accompanist.SystemUiController)
+    api(Accompanist.SwipeRefresh)
+
     api(Firebase.Abt)
     api(Firebase.Analytics)
     api(Firebase.Common)
     api(Firebase.Config)
     api(Firebase.Core)
     api(Firebase.Crashlytics)
-    api(Dependencies.PlayCore)
 
     api(Dependencies.Retrofit)
     api(Dependencies.RetrofitConverterGson)
