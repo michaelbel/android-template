@@ -42,13 +42,6 @@ object Plugin {
  * @property CrashlyticsPlugin —
  * @property Dagger —
  * @property ExoPlayer —
- * @property FirebaseAbt —
- * @property FirebaseAppDistribution —
- * @property FirebaseAnalytics —
- * @property FirebaseCommon —
- * @property FirebaseCore —
- * @property FirebaseCrashlytics —
- * @property FirebaseConfig —
  * @property Material —
  */
 object Version {
@@ -268,6 +261,7 @@ object Dependencies {
     const val PagingRuntime = "androidx.paging:paging-runtime-ktx:${Version.Paging}"
     const val PagingCompose = "androidx.paging:paging-compose:${Version.PagingCompose}"
     const val RoomPaging = "androidx.room:room-paging:${Version.Room}"
+    const val ViewPager2 = "androidx.viewpager2:viewpager2:${Version.ViewPager2}"
 
     const val Material = "com.google.android.material:material:${Version.Material}"
     const val HiltAndroid = "com.google.dagger:hilt-android:${Version.Dagger}"

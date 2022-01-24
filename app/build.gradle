@@ -278,7 +278,6 @@ dependencies {
     implementation "androidx.vectordrawable:vectordrawable-animated:$vectordrawableVersion"
     implementation "androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02"
     implementation "androidx.versionedparcelable:versionedparcelable:$versionedparcelableVersion"
-    implementation "androidx.viewpager2:viewpager2:$viewpager2Version"
     implementation "androidx.wear:wear:$wearVersion"
     implementation "androidx.wear:wear-input:$wearInputVersion"
     implementation "androidx.wear:wear-input-testing:$wearInputVersion"
