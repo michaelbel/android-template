@@ -29,4 +29,10 @@ object Firebase {
     const val Core = "com.google.firebase:firebase-core:$CoreVersion"
     const val CrashlyticsPlugin = "com.google.firebase:firebase-crashlytics-gradle:$CrashlyticsPluginVersion"
     const val Crashlytics = "com.google.firebase:firebase-crashlytics-ktx:$CrashlyticsVersion"
+
+    const val MobileSdkAppId = "1:770317857182:android:876190afbc53df31"
+    const val ArtifactType = "APK"
+    const val Testers = "michaelbel24865@gmail.com"
+    const val Groups = "qa"
+    const val ReleaseNotes = "Release ${App.VersionName} (${App.VersionCode})"
 }
