@@ -34,6 +34,8 @@ import androidx.compose.material3.samples.ButtonSample
 import androidx.compose.material3.samples.ButtonWithIconSample
 import androidx.compose.material3.samples.ColorSchemeSample
 import androidx.compose.material3.samples.ElevatedButtonSample
+import androidx.compose.material3.samples.EnterAlwaysSmallTopAppBar
+import androidx.compose.material3.samples.ExitUntilCollapsedMediumTopAppBar
 import androidx.compose.material3.samples.ExtendedFloatingActionButtonSample
 import androidx.compose.material3.samples.FilledTonalButtonSample
 import androidx.compose.material3.samples.FloatingActionButtonSample
@@ -41,6 +43,8 @@ import androidx.compose.material3.samples.IconButtonSample
 import androidx.compose.material3.samples.IconToggleButtonSample
 import androidx.compose.material3.samples.LargeFloatingActionButtonSample
 import androidx.compose.material3.samples.OutlinedButtonSample
+import androidx.compose.material3.samples.SimpleCenterAlignedTopAppBar
+import androidx.compose.material3.samples.SimpleSmallTopAppBar
 import androidx.compose.material3.samples.SmallFloatingActionButtonSample
 import androidx.compose.material3.samples.TextButtonSample
 import androidx.compose.runtime.Composable
@@ -94,14 +98,18 @@ class ComposeActivity: ComponentActivity() {
 }
 
 sealed class Pages {
-    object List : Pages()
-    object Colors : Pages()
+    object Page1: Pages()
+    object Page2: Pages()
+    object Page3: Pages()
+    object Page4: Pages()
+    object Page5: Pages()
+    object Page6: Pages()
 }
 
 @Composable
 fun MySmallTopAppBar() {
     val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
-    val page = remember { mutableStateOf<Pages>(Pages.List) }
+    val page = remember { mutableStateOf<Pages>(Pages.Page1) }
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     Scaffold(
@@ -168,12 +176,8 @@ fun MySmallTopAppBar() {
             )
         },
         content = { innerPadding ->
-
             when (page.value) {
-                Pages.Colors -> ColorSchemeSample()
-                Pages.List -> {
-
-
+                Pages.Page1 -> {
                     LazyColumn(
                         modifier = Modifier
                             .fillMaxSize()
@@ -181,8 +185,6 @@ fun MySmallTopAppBar() {
                         contentPadding = innerPadding,
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-
-
                         item {
                             Text(
                                 text = if (scaffoldState.drawerState.isClosed) {
@@ -208,7 +210,6 @@ fun MySmallTopAppBar() {
                             OutlinedButtonSample()
                             TextButtonSample()
                         }
-
                         item {
                             IconButtonSample()
                             IconToggleButtonSample()
@@ -277,9 +278,13 @@ fun MySmallTopAppBar() {
                                 style = MaterialTheme.typography.labelSmall
                             )
                         }
-
                     }
                 }
+                Pages.Page2 -> ColorSchemeSample()
+                Pages.Page3 -> SimpleSmallTopAppBar()
+                Pages.Page4 -> SimpleCenterAlignedTopAppBar()
+                Pages.Page5 -> EnterAlwaysSmallTopAppBar()
+                Pages.Page6 -> ExitUntilCollapsedMediumTopAppBar()
             }
         }
     )
@@ -297,10 +302,9 @@ fun MyNavigationBarItemWithBadge(navigate: (Pages) -> Unit) {
                     )
                 }
             },
+            label = { Text("Page 1") },
             selected = true,
-            onClick = {
-                navigate(Pages.List)
-            }
+            onClick = { navigate(Pages.Page1) }
         )
         NavigationBarItem(
             icon = {
@@ -311,10 +315,61 @@ fun MyNavigationBarItemWithBadge(navigate: (Pages) -> Unit) {
                     )
                 }
             },
+            label = { Text("Page 2") },
             selected = false,
-            onClick = {
-                navigate(Pages.Colors)
-            }
+            onClick = { navigate(Pages.Page2) }
+        )
+        NavigationBarItem(
+            icon = {
+                BadgedBox(badge = { Badge { Text("8") } }) {
+                    Icon(
+                        Icons.Filled.Palette,
+                        contentDescription = "Favorite"
+                    )
+                }
+            },
+            label = { Text("Page 3") },
+            selected = false,
+            onClick = { navigate(Pages.Page3) }
+        )
+        NavigationBarItem(
+            icon = {
+                BadgedBox(badge = { Badge { Text("8") } }) {
+                    Icon(
+                        Icons.Filled.Palette,
+                        contentDescription = "Favorite"
+                    )
+                }
+            },
+            label = { Text("Page 4") },
+            selected = false,
+            onClick = { navigate(Pages.Page4) }
+        )
+        NavigationBarItem(
+            icon = {
+                BadgedBox(badge = { Badge { Text("8") } }) {
+                    Icon(
+                        Icons.Filled.Palette,
+                        contentDescription = "Favorite"
+                    )
+                }
+            },
+            label = { Text("Page 5") },
+            selected = false,
+            onClick = { navigate(Pages.Page5) }
+        )
+        NavigationBarItem(
+            icon = {
+                BadgedBox(badge = { Badge { Text("8") } }) {
+                    Icon(
+                        Icons.Filled.Palette,
+                        contentDescription = "Favorite"
+                    )
+                }
+            },
+            label = { Text("Page 6") },
+            selected = false,
+            onClick = { navigate(Pages.Page6) }
         )
     }
 }

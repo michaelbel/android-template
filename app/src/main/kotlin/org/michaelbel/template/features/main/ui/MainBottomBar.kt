@@ -16,13 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import com.google.accompanist.insets.navigationBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
 
 @Composable
 fun MainBottomBar() {
     NavigationBar(
-        modifier = Modifier.navigationBarsPadding()
+        modifier = Modifier.systemBarsPadding()
     ) {
         NavigationBarItem(
             icon = {

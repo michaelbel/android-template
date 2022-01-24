@@ -7,7 +7,6 @@ import android.os.Parcelable
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
@@ -27,10 +26,8 @@ class MainActivity: AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
-            ProvideWindowInsets(consumeWindowInsets = false) {
-                CompositionLocalProvider(
-                    LocalBackPressedDispatcher provides this.onBackPressedDispatcher
-                ) { AndroidViewBinding(ActivityMainBinding::inflate) }
+            ProvideWindowInsets {
+                AndroidViewBinding(ActivityMainBinding::inflate)
             }
         }
 
