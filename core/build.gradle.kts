@@ -1,5 +1,7 @@
+
 import org.michaelbel.template.App
 import org.michaelbel.template.Dependencies
+import org.michaelbel.template.Firebase
 import org.michaelbel.template.KotlinOptions
 
 plugins {
@@ -64,12 +66,12 @@ dependencies {
     api(Dependencies.Material)
     api(Dependencies.HiltAndroid)
     kapt(Dependencies.HiltCompiler)
-    api(Dependencies.FirebaseAbt)
-    api(Dependencies.FirebaseAnalytics)
-    api(Dependencies.FirebaseCore)
-    api(Dependencies.FirebaseCrashlytics)
-    api(Dependencies.FirebaseCommon)
-    api(Dependencies.FirebaseConfig)
+    api(Firebase.Abt)
+    api(Firebase.Analytics)
+    api(Firebase.Common)
+    api(Firebase.Config)
+    api(Firebase.Core)
+    api(Firebase.Crashlytics)
     api(Dependencies.PlayCore)
 
     api(Dependencies.Retrofit)
@@ -81,7 +83,9 @@ dependencies {
     api(Dependencies.GanderPersistence)
     api(Dependencies.GanderImdb)
 
-    testImplementation(Dependencies.Junit)
-    androidTestImplementation(Dependencies.TestJunit)
-    androidTestImplementation(Dependencies.TestEspresso)
+    testApi(Dependencies.Junit)
+    testApi(Dependencies.KotlinCoroutinesTest)
+    androidTestApi(Dependencies.KotlinCoroutinesTest)
+    androidTestApi(Dependencies.TestJunit)
+    androidTestApi(Dependencies.TestEspresso)
 }

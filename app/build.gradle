@@ -372,7 +372,6 @@ dependencies {
     //debugImplementation("androidx.wear.tiles:tiles-renderer:1.0.0") // 26
     //debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion") — not uses exported in manifest
 
-    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
     androidTestImplementation "androidx.benchmark:benchmark-junit4:$benchmarkPluginVersion"
     androidTestImplementation "androidx.benchmark:benchmark-macro-junit4:$benchmarkMacroVersion"
@@ -394,7 +393,6 @@ dependencies {
 
     androidTestUtil("androidx.test:orchestrator:$orchestratorVersion")
 
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
     testImplementation("androidx.test:core:$androidxTestCore")
     testImplementation("androidx.room:room-testing:$roomVersion")
     testImplementation("androidx.wear.tiles:tiles-testing:$wearTilesVersion")
