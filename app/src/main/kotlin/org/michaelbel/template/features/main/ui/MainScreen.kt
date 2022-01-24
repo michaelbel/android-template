@@ -45,7 +45,7 @@ import org.michaelbel.template.R
 import org.michaelbel.template.Screen
 import org.michaelbel.template.features.main.MainScreenState
 import org.michaelbel.template.features.main.MainViewModel
-import org.michaelbel.template.launchComposeActivity
+import org.michaelbel.template.launchSecondActivity
 import org.michaelbel.template.ui.components.HomeBottomSheet
 import org.michaelbel.template.ui.theme.AppTheme
 
@@ -100,7 +100,7 @@ fun MainScreen(
         drawerGesturesEnabled = true,
         floatingActionButton = {
             Column(horizontalAlignment = Alignment.End) {
-                Fab { launchComposeActivity(context) }
+                Fab { launchSecondActivity(context) }
             }
         },
     ) {
