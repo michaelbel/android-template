@@ -7,15 +7,20 @@ package org.michaelbel.template
  * https://github.com/google/accompanist
  */
 object Accompanist {
-    const val AppcompatThemeVersion = "0.20.3"
-    const val DrawablePainterVersion = "0.20.3"
-    const val InsetsVersion = "0.20.3"
-    const val FlowlayoutVersion = "0.20.3"
-    const val NavigationAnimationVersion = "0.20.3"
-    const val NavigationMaterialVersion = "0.20.3"
-    const val PagerVersion = "0.20.3"
-    const val PermissionsVersion = "0.20.3"
-    const val PlaceholderVersion = "0.20.3"
-    const val SystemUiControllerVersion = "0.20.3"
-    const val SwipeRefreshVersion = "0.20.3"
+    private const val Version = "0.20.3"
+
+    const val AppCompat = "com.google.accompanist:accompanist-appcompat-theme:$Version"
+    const val DrawablePainter = "com.google.accompanist:accompanist-drawablepainter:$Version"
+    const val Insets = "com.google.accompanist:accompanist-insets:$Version"
+    const val InsetsUi = "com.google.accompanist:accompanist-insets-ui:$Version"
+    const val FlowLayout = "com.google.accompanist:accompanist-flowlayout:$Version"
+    const val NavigationAnimation = "com.google.accompanist:accompanist-navigation-animation:$Version"
+    const val NavigationMaterial = "com.google.accompanist:accompanist-navigation-material:$Version"
+    const val Pager = "com.google.accompanist:accompanist-pager:$Version"
+    const val PagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$Version"
+    const val Permissions = "com.google.accompanist:accompanist-permissions:$Version"
+    const val Placeholder = "com.google.accompanist:accompanist-placeholder:$Version"
+    const val PlaceholderMaterial = "com.google.accompanist:accompanist-placeholder-material:$Version"
+    const val SystemUiController = "com.google.accompanist:accompanist-systemuicontroller:$Version"
+    const val SwipeRefresh = "com.google.accompanist:accompanist-swiperefresh:$Version"
 }
