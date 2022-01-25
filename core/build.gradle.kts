@@ -3,7 +3,8 @@ import org.michaelbel.template.Accompanist
 import org.michaelbel.template.App
 import org.michaelbel.template.Dependencies
 import org.michaelbel.template.Firebase
-import org.michaelbel.template.KotlinOptions
+import org.michaelbel.template.GooglePlayServices
+import org.michaelbel.template.Kotlin
 import org.michaelbel.template.Version
 
 plugins {
@@ -41,7 +42,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "11"
-        freeCompilerArgs = freeCompilerArgs + KotlinOptions.all
+        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.all
     }
 
     sourceSets.getByName("main") {
@@ -50,9 +51,9 @@ android {
 }
 
 dependencies {
-    api(Dependencies.KotlinCoroutinesCore)
-    api(Dependencies.KotlinCoroutinesAndroid)
-    api(Dependencies.KotlinSerialization)
+    api(Kotlin.CoroutinesCore)
+    api(Kotlin.CoroutinesAndroid)
+    api(Kotlin.Serialization)
 
     //implementation("androidx.dynamicanimation:dynamicanimation-ktx:$dynamicanimationVersion") not found
     //implementation "androidx.media3:media3-exoplayer:$media3Version" Manifest merger failed
@@ -148,10 +149,6 @@ dependencies {
     api("androidx.interpolator:interpolator:${Version.Interpolator}")
     api(Dependencies.LifecycleRuntime)
     api(Dependencies.LifecycleViewmodel)
-    api("androidx.leanback:leanback:${Version.Leanback}")
-    api("androidx.leanback:leanback-preference:${Version.Leanback}")
-    api("androidx.leanback:leanback-paging:${Version.LeanbackPagingersion}")
-    api("androidx.leanback:leanback-tab:${Version.LeanbackTab}")
     api("androidx.lifecycle:lifecycle-common-java8:${Version.Lifecycle}")
     kapt("androidx.lifecycle:lifecycle-common-java8:${Version.Lifecycle}")
     api("androidx.lifecycle:lifecycle-livedata-ktx:${Version.Lifecycle}")
@@ -203,19 +200,6 @@ dependencies {
     api("androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02")
     api("androidx.versionedparcelable:versionedparcelable:${Version.VersionedParcelable}")
     api(Dependencies.ViewPager2)
-    api("androidx.wear:wear:${Version.Wear}")
-    api("androidx.wear:wear-input:${Version.WearInput}")
-    api("androidx.wear:wear-input-testing:${Version.WearInput}")
-    api("androidx.wear:wear-ongoing:${Version.WearOngoing}")
-    api("androidx.wear:wear-phone-interactions:${Version.WearPhoneInteractions}")
-    api("androidx.wear:wear-remote-interactions:${Version.WearRemoteInteractions}")
-    api("androidx.wear.compose:compose-foundation:${Version.WearCompose}")
-    api("androidx.wear.compose:compose-material:${Version.WearCompose}")
-    api("androidx.wear.compose:compose-navigation:${Version.WearCompose}")
-    api("androidx.wear.tiles:tiles:${Version.WearTiles}")
-    api("androidx.wear.watchface:watchface:${Version.WearWatchface}")
-    api("androidx.wear.watchface:watchface-complications-data-source-ktx:${Version.WearWatchface}")
-    api("androidx.wear.watchface:watchface-editor:${Version.WearWatchface}")
     api("androidx.webkit:webkit:${Version.Webkit}")
     api("androidx.window:window:${Version.Window}")
     api("androidx.window:window-testing:${Version.Window}")
@@ -235,44 +219,9 @@ dependencies {
     kapt(Dependencies.HiltCompiler)
     api(Dependencies.PlayCore)
 
-    api("com.google.android.gms:play-services-ads:${Version.GmsAds}")
-    api("com.google.android.gms:play-services-ads-identifier:${Version.GmsAdsIdentifier}")
-    api("com.google.android.gms:play-services-ads-lite:${Version.GmsAdsLite}")
-    api("com.google.android.gms:play-services-afs-native:${Version.GmsAfsNative}")
-    api("com.google.android.gms:play-services-analytics:${Version.GmsAnalytics}")
-    api("com.google.android.gms:play-services-appset:${Version.GmsAppset}")
-    api("com.google.android.gms:play-services-auth:${Version.GmsAuth}")
-    api("com.google.android.gms:play-services-auth-api-phone:${Version.GmsAuthApiPhone}")
-    api("com.google.android.gms:play-services-auth-blockstore:${Version.GmsAuthBlockstore}")
-    api("com.google.android.gms:play-services-awareness:${Version.GmsAwareness}")
-    api("com.google.android.gms:play-services-base:${Version.GmsBase}")
-    api("com.google.android.gms:play-services-basement:${Version.GmsBasement}")
-    api("com.google.android.gms:play-services-cast:${Version.GmsCast}")
-    api("com.google.android.gms:play-services-cast-framework:${Version.GmsCastFramework}")
-    api("com.google.android.gms:play-services-cronet:${Version.GmsCronet}")
-    api("com.google.android.gms:play-services-fido:${Version.GmsFido}")
-    api("com.google.android.gms:play-services-fitness:${Version.GmsFitness}")
-    api("com.google.android.gms:play-services-games:${Version.GmsGames}")
-    api("com.google.android.gms:play-services-instantapps:${Version.GmsInstantapps}")
-    api("com.google.android.gms:play-services-location:${Version.GmsLocation}")
-    api("com.google.android.gms:play-services-maps:${Version.GmsMaps}")
-    api("com.google.android.gms:play-services-mlkit-barcode-scanning:${Version.GmsMlkitBarcodeScanning}")
-    api("com.google.android.gms:play-services-mlkit-face-detection:${Version.GmsMlkitFaceDetection}")
-    api("com.google.android.gms:play-services-mlkit-image-labeling:${Version.GmsMlkitImageLabeling}")
-    api("com.google.android.gms:play-services-mlkit-image-labeling-custom:${Version.GmsMlkitImageLabelingCustom}")
-    api("com.google.android.gms:play-services-mlkit-language-id:${Version.GmsMlkitLanguageId}")
-    api("com.google.android.gms:play-services-mlkit-text-recognition:${Version.GmsMlkitTextRecognition}")
-    api("com.google.android.gms:play-services-nearby:${Version.GmsNearby}")
-    api("com.google.android.gms:play-services-oss-licenses:${Version.GmsOssLicenses}")
-    api("com.google.android.gms:play-services-password-complexity:${Version.GmsPasswordComplexity}")
-    api("com.google.android.gms:play-services-pay:${Version.GmsPay}")
-    api("com.google.android.gms:play-services-recaptcha:${Version.GmsRecaptcha}")
-    api("com.google.android.gms:play-services-safetynet:${Version.GmsSafetynet}")
-    api("com.google.android.gms:play-services-tagmanager:${Version.GmsTagManager}")
-    api("com.google.android.gms:play-services-tasks:${Version.GmsTasks}")
-    api("com.google.android.gms:play-services-vision:${Version.GmsVision}")
-    api("com.google.android.gms:play-services-wallet:${Version.GmsWallet}")
-    api("com.google.android.gms:play-services-wearable:${Version.GmsWearable}")
+    api(GooglePlayServices.Ads)
+    api(GooglePlayServices.Auth)
+    api(GooglePlayServices.Base)
 
     api(Accompanist.AppCompat)
     api(Accompanist.DrawablePainter)
@@ -308,14 +257,13 @@ dependencies {
     api("io.coil-kt:coil-compose:${Version.Coil}")
 
     testApi(Dependencies.Junit)
-    testApi(Dependencies.KotlinCoroutinesTest)
+    testApi(Kotlin.CoroutinesTest)
     testApi("io.mockk:mockk:${Version.Mockk}")
     testApi("org.mockito:mockito-core:${Version.Mockito}")
     testApi("org.robolectric:robolectric:${Version.Robolectric}")
     testApi("androidx.test:core:${Version.AndroidxTestCore}")
     testApi("androidx.room:room-testing:${Version.Room}")
-    testApi("androidx.wear.tiles:tiles-testing:${Version.WearTiles}")
-    androidTestApi(Dependencies.KotlinCoroutinesTest)
+    androidTestApi(Kotlin.CoroutinesTest)
     androidTestApi(Dependencies.TestJunit)
     androidTestApi(Dependencies.TestEspresso)
     androidTestApi("androidx.arch.core:core-testing:${Version.CoreTesting}")
@@ -337,7 +285,6 @@ dependencies {
     androidTestApi("androidx.work:work-testing:${Version.Work}")
     androidTestApi("com.google.truth:truth:${Version.Truth}")
 
-    //debugApi("androidx.wear.tiles:tiles-renderer:1.0.0") // 26
     //debugApi("androidx.fragment:fragment-testing:$fragmentVersion") — not uses exported in manifest
     //androidTestUtil("androidx.test:orchestrator:$orchestratorVersion")
 

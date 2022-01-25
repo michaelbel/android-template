@@ -3,6 +3,9 @@ package org.michaelbel.template
 /**
  * Google Accompanist
  *
+ * Accompanist is a group of libraries that aim to supplement Jetpack Compose
+ * with features that are commonly required by developers but not yet available.
+ *
  * https://google.github.io/accompanist
  * https://github.com/google/accompanist
  */
