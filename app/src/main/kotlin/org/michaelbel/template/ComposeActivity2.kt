@@ -60,11 +60,11 @@ import kotlinx.coroutines.launch
 import org.michaelbel.template.ui.theme.AppTheme
 
 fun launchComposeActivity(context: Context) {
-    val intent = Intent(context, ComposeActivity::class.java)
+    val intent = Intent(context, ComposeActivity2::class.java)
     context.startActivity(intent)
 }
 
-class ComposeActivity: ComponentActivity() {
+class ComposeActivity2: ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

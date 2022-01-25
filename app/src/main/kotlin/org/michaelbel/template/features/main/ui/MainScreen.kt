@@ -1,6 +1,7 @@
 package org.michaelbel.template.features.main.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -43,9 +44,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
+import org.michaelbel.template.features.compose.ComposeActivity
 import org.michaelbel.template.features.main.MainScreenState
 import org.michaelbel.template.features.main.MainViewModel
-import org.michaelbel.template.launchSecondActivity
 import org.michaelbel.template.ui.components.HomeBottomSheet
 import org.michaelbel.template.ui.theme.AppTheme
 
@@ -100,7 +101,10 @@ fun MainScreen(
         drawerGesturesEnabled = true,
         floatingActionButton = {
             Column(horizontalAlignment = Alignment.End) {
-                Fab { launchSecondActivity(context) }
+                Fab {
+                    val intent = Intent(context, ComposeActivity::class.java)
+                    context.startActivity(intent)
+                }
             }
         },
     ) {

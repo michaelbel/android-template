@@ -47,7 +47,7 @@ private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
 }
 
 @Composable
-fun Content(
+private fun Content(
     args: NavArgsFragmentArgs
 ) {
     Box(modifier = Modifier.fillMaxSize()) {

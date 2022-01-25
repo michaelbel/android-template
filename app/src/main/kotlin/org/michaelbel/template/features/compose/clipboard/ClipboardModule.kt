@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.clipboard.di
+package org.michaelbel.template.features.compose.clipboard
 
 import android.content.ClipboardManager
 import android.content.Context
@@ -9,8 +9,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
 @Module
+@InstallIn(SingletonComponent::class)
 object ClipboardModule {
 
     @Provides

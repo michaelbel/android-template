@@ -18,16 +18,6 @@
         tools:layout="@layout/fragment_ads"/>
 
     <fragment
-        android:id="@+id/browserFragment"
-        android:name="org.michaelbel.template.features.browser.BrowserFragment"
-        android:label="Browser"/>
-
-    <fragment
-        android:id="@+id/clipboardFragment"
-        android:name="org.michaelbel.template.features.clipboard.ClipboardFragment"
-        android:label="Clipboard"/>
-
-    <fragment
         android:id="@+id/configFragment"
         android:name="org.michaelbel.template.features.config.RemoteConfigFragment"
         android:label="Config"/>
@@ -100,25 +90,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/networkImageFragment"
-        android:name="org.michaelbel.template.features.networkimage.NetworkImageFragment"
-        android:label="NetworkImage"/>
-
-    <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="org.michaelbel.template.features.notifications.NotificationsFragment"
-        android:label="Notifications"/>
-
-    <fragment
         android:id="@+id/savedStateFragment"
         android:name="org.michaelbel.template.features.savedstate.SavedStateFragment"
         android:label="SavedState"
         tools:layout="@layout/fragment_saved_state"/>
-
-    <fragment
-        android:id="@+id/settingsPanelFragment"
-        android:name="org.michaelbel.template.features.settingspanel.SettingsPanelFragment"
-        android:label="SettingsPanel"/>
 
     <fragment
         android:id="@+id/socialFragment"
