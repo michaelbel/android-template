@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.google.accompanist.insets.ViewWindowInsetObserver
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.Screen
 import org.michaelbel.template.features.main.ui.MainScreen
@@ -28,17 +27,10 @@ class MainFragment: Fragment() {
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.MATCH_PARENT
         )
-        val windowInsets = ViewWindowInsetObserver(this)
-            .start(windowInsetsAnimationsEnabled = true)
         setContent {
-            //CompositionLocalProvider(
-            //    LocalBackPressedDispatcher provides requireActivity().onBackPressedDispatcher,
-            //    LocalWindowInsets provides windowInsets,
-            //) {
-                AppTheme {
-                    MainScreen(::onAppUpdateClick, ::navigate)
-                }
-            //}
+            AppTheme {
+                MainScreen(::onAppUpdateClick, ::navigate)
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.clipboard
+package org.michaelbel.template.features.compose.clipboard
 
 import android.content.ClipData
 import android.content.ClipDescription
@@ -23,7 +23,7 @@ class ClipboardViewModel @Inject constructor(
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ClipboardFragment::class.simpleName)
+        analytics.trackScreen("ClipboardScreen")
     }
 
     fun copyText() {

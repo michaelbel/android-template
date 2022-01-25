@@ -1,6 +1,5 @@
-package org.michaelbel.template.features.notifications.ui
+package org.michaelbel.template.features.compose.notifications
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -21,27 +20,30 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.areNotificationsEnabled
 
 @Composable
-fun NotificationsScreen(onNavigationBackClick: OnNavigationBackClick) {
+fun NotificationsScreen(
+    navController: NavController
+) {
     Scaffold(
-        topBar = { Toolbar(onNavigationBackClick) }
+        topBar = { Toolbar(navController) }
     ) { Content() }
 }
 
 @Composable
-private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
+private fun Toolbar(
+    navController: NavController
+) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_notifications)) },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = onNavigationBackClick) {
+            IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -52,7 +54,9 @@ private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
 }
 
 @Composable
-private fun Content(modifier: Modifier = Modifier) {
+private fun Content(
+    modifier: Modifier = Modifier
+) {
     val context = LocalContext.current
     val areNotificationsEnabled by remember { mutableStateOf(context.areNotificationsEnabled()) }
 
@@ -94,13 +98,4 @@ private fun Content(modifier: Modifier = Modifier) {
             )
         )
     }
-}
-
-@Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-private fun NotificationsPreview() {
-    NotificationsScreen(
-        onNavigationBackClick = {}
-    )
 }

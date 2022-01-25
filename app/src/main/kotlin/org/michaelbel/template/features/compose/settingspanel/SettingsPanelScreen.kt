@@ -1,8 +1,7 @@
-package org.michaelbel.template.features.settingspanel.ui
+package org.michaelbel.template.features.compose.settingspanel
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.provider.Settings
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.padding
@@ -19,33 +18,39 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
+
+/**
+ * Settings.Global.getString(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON)
+ * 0 if false, 1 if true.
+ */
 
 @RequiresApi(29)
 @Composable
 fun SettingsPanelScreen(
-    onNavigationBackClick: OnNavigationBackClick
+    navController: NavController
 ) {
     val context: Context = LocalContext.current
 
     Scaffold(
-        topBar = { Toolbar(onNavigationBackClick) }
+        topBar = { Toolbar(navController) }
     ) {
         Content(onClick = { panel -> context.startActivity(Intent(panel)) })
     }
 }
 
 @Composable
-private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
+private fun Toolbar(
+    navController: NavController
+) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_settings_panel)) },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = onNavigationBackClick) {
+            IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -90,14 +95,4 @@ private fun Content(
             ) { Text(text = stringResource(R.string.settings_panel_wifi)) }
         }
     }
-}
-
-@RequiresApi(29)
-@Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-private fun SettingsPanelPreview() {
-    SettingsPanelScreen(
-        onNavigationBackClick = {}
-    )
 }

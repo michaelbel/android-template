@@ -96,11 +96,11 @@
         </activity>
 
         <activity
-            android:name=".ComposeActivity"
+            android:name=".ComposeActivity2"
             android:exported="false"/>
 
         <activity
-            android:name=".SystemBarsPaddingActivity"
+            android:name=".features.compose.ComposeActivity"
             android:exported="false"/>
 
         <meta-data

@@ -25,7 +25,7 @@ fun MainTopBar(
     onMenuClick: () -> Unit
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.app_name)) },
+        title = { Text(text = "Android View") },
         modifier = modifier,
         navigationIcon = {
             IconButton(onClick = { onNavigationBackClick() }) {

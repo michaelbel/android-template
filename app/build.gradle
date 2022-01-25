@@ -142,82 +142,62 @@ android {
 dependencies {
     implementation project(":core")
 
-    implementation "androidx.activity:activity-compose:$activityVersion"
-    implementation "androidx.ads:ads-identifier:$adsIdentifierVersion"
-    implementation "androidx.annotation:annotation:$annotationVersion"
-    implementation "androidx.annotation:annotation-experimental:$annotationExperimentalVersion"
-    implementation "androidx.appsearch:appsearch:$appsearchVersion"
-              kapt "androidx.appsearch:appsearch-compiler:$appsearchVersion"
-    implementation "androidx.appsearch:appsearch-local-storage:$appsearchVersion"
-    implementation "androidx.appsearch:appsearch-platform-storage:$appsearchVersion"
-    implementation "androidx.asynclayoutinflater:asynclayoutinflater:$asynclayoutinflaterVersion"
-    implementation "androidx.autofill:autofill:$autofillVersion"
-    implementation "androidx.biometric:biometric-ktx:$biometricVersion"
-    implementation "androidx.browser:browser:$browserVersion"
-    implementation "androidx.camera:camera-core:$cameraVersion"
-    implementation "androidx.camera:camera-camera2:$cameraVersion"
-    implementation "androidx.camera:camera-lifecycle:$cameraVersion"
-    implementation "androidx.camera:camera-video:$cameraVideoVersion"
-    implementation "androidx.camera:camera-view:$cameraViewVersion"
-    implementation "androidx.camera:camera-extensions:$cameraExtensionsVersion"
-    implementation "androidx.cardview:cardview:$cardviewVersion"
-    implementation "androidx.collection:collection-ktx:$collectionVersion"
-    implementation "androidx.compose.animation:animation:$composeVersion"
-    implementation "androidx.compose.compiler:compiler:$composeCompilerVersion"
-    implementation "androidx.draganddrop:draganddrop:$draganddropVersion"
-    implementation "androidx.compose.foundation:foundation:$composeVersion"
-    implementation "androidx.compose.foundation:foundation-layout:$composeVersion"
-    implementation "androidx.compose.material3:material3:$material3Version"
-    implementation "androidx.compose.material3:material3-samples:$material3Version"
-    implementation "androidx.compose.material:material-icons-core-samples:$materialIconsVersion"
-    implementation "androidx.compose.material:material-icons-extended:$materialIconsVersion"
-    implementation "androidx.compose.runtime:runtime:$composeVersion"
-    implementation "androidx.compose.runtime:runtime-livedata:$composeVersion"
-    implementation "androidx.compose.ui:ui:$composeVersion"
-    implementation "androidx.compose.ui:ui-viewbinding:$composeVersion"
-    implementation "androidx.compose.ui:ui-tooling:$composeVersion"
-    implementation "androidx.concurrent:concurrent-futures-ktx:$concurrentVersion"
-    implementation "androidx.contentpager:contentpager:$contentpagerVersion"
-    implementation "androidx.coordinatorlayout:coordinatorlayout:$coordinatorlayoutVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
-    implementation "androidx.constraintlayout:constraintlayout-compose:$constraintlayoutComposeVersion"
-    implementation "androidx.core:core-role:$coreroleVersion"
-    implementation "androidx.cursoradapter:cursoradapter:$cursoradapterVersion"
-    implementation "androidx.customview:customview:$customviewVersion"
-    implementation "androidx.datastore:datastore-core:$datastoreVersion"
-    implementation "androidx.datastore:datastore-preferences:$datastoreVersion"
-    implementation "androidx.datastore:datastore-preferences-core:$datastoreVersion"
-    implementation "androidx.documentfile:documentfile:$documentfileVersion"
-    implementation "androidx.draganddrop:draganddrop:$draganddropVersion"
-    implementation "androidx.drawerlayout:drawerlayout:$drawerlayoutVersion"
-    //implementation "androidx.dynamicanimation:dynamicanimation-ktx:$dynamicanimationVersion" not found
-    implementation "androidx.emoji:emoji:$emojiVersion"
-    implementation "androidx.emoji:emoji-appcompat:$emojiVersion"
-    implementation "androidx.emoji:emoji-bundled:$emojiVersion"
-    implementation "androidx.emoji2:emoji2:$emoji2Version"
-    implementation "androidx.emoji2:emoji2-views:$emoji2Version"
-    implementation "androidx.emoji2:emoji2-views-helper:$emoji2Version"
-    implementation "androidx.exifinterface:exifinterface:$exifinterfaceVersion"
-    implementation "androidx.glance:glance:$glanceVersion"
-    implementation "androidx.gridlayout:gridlayout:$gridlayoutVersion"
-    implementation "androidx.health:health-services-client:$healthVersion"
-    implementation "androidx.heifwriter:heifwriter:$heifwriterVersion"
-    implementation "androidx.hilt:hilt-navigation-fragment:$hiltNavigationFragmentVersion"
-    implementation "androidx.hilt:hilt-work:$hiltWorkVersion"
-    implementation "androidx.interpolator:interpolator:$interpolatorVersion"
-    implementation "androidx.leanback:leanback:$leanbackVersion"
-    implementation "androidx.leanback:leanback-preference:$leanbackVersion"
-    implementation "androidx.leanback:leanback-paging:$leanbackPagingVersion"
-    implementation "androidx.leanback:leanback-tab:$leanbackTabVersion"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
-              kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
-    implementation "androidx.loader:loader:$loaderVersion"
-    implementation "androidx.media:media:$mediaVersion"
-    implementation "androidx.media2:media2-session:$media2Version"
-    implementation "androidx.media2:media2-widget:$media2Version"
-    implementation "androidx.media2:media2-player:$media2Version"
+    implementation("androidx.camera:camera-core:$cameraVersion")
+    implementation("androidx.camera:camera-camera2:$cameraVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraVersion")
+    implementation("androidx.camera:camera-video:$cameraVideoVersion")
+    implementation("androidx.camera:camera-view:$cameraViewVersion")
+    implementation("androidx.camera:camera-extensions:$cameraExtensionsVersion")
+    implementation("androidx.cardview:cardview:$cardviewVersion")
+    implementation("androidx.collection:collection-ktx:$collectionVersion")
+    implementation("androidx.compose.animation:animation:$composeVersion")
+    implementation("androidx.compose.compiler:compiler:$composeCompilerVersion")
+    implementation("androidx.draganddrop:draganddrop:$draganddropVersion")
+    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation("androidx.compose.foundation:foundation-layout:$composeVersion")
+    implementation("androidx.compose.material3:material3:$material3Version")
+    implementation("androidx.compose.material3:material3-samples:$material3Version")
+    implementation("androidx.compose.material:material-icons-core-samples:$materialIconsVersion")
+    implementation("androidx.compose.material:material-icons-extended:$materialIconsVersion")
+    implementation("androidx.compose.runtime:runtime:$composeVersion")
+    implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.ui:ui-viewbinding:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.concurrent:concurrent-futures-ktx:$concurrentVersion")
+    implementation("androidx.contentpager:contentpager:$contentpagerVersion")
+    implementation("androidx.coordinatorlayout:coordinatorlayout:$coordinatorlayoutVersion")
+    implementation("androidx.core:core-role:$coreroleVersion")
+    implementation("androidx.cursoradapter:cursoradapter:$cursoradapterVersion")
+    implementation("androidx.customview:customview:$customviewVersion")
+    implementation("androidx.documentfile:documentfile:$documentfileVersion")
+    implementation("androidx.draganddrop:draganddrop:$draganddropVersion")
+    implementation("androidx.drawerlayout:drawerlayout:$drawerlayoutVersion")
+    //implementation("androidx.dynamicanimation:dynamicanimation-ktx:$dynamicanimationVersion") not found
+    implementation("androidx.emoji:emoji:$emojiVersion")
+    implementation("androidx.emoji:emoji-appcompat:$emojiVersion")
+    implementation("androidx.emoji:emoji-bundled:$emojiVersion")
+    implementation("androidx.emoji2:emoji2:$emoji2Version")
+    implementation("androidx.emoji2:emoji2-views:$emoji2Version")
+    implementation("androidx.emoji2:emoji2-views-helper:$emoji2Version")
+    implementation("androidx.exifinterface:exifinterface:$exifinterfaceVersion")
+    implementation("androidx.glance:glance:$glanceVersion")
+    implementation("androidx.gridlayout:gridlayout:$gridlayoutVersion")
+    implementation("androidx.health:health-services-client:$healthVersion")
+    implementation("androidx.heifwriter:heifwriter:$heifwriterVersion")
+    implementation("androidx.leanback:leanback:$leanbackVersion")
+    implementation("androidx.leanback:leanback-preference:$leanbackVersion")
+    implementation("androidx.leanback:leanback-paging:$leanbackPagingVersion")
+    implementation("androidx.leanback:leanback-tab:$leanbackTabVersion")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
+              kapt("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
+    implementation("androidx.loader:loader:$loaderVersion")
+    implementation("androidx.media:media:$mediaVersion")
+    implementation("androidx.media2:media2-session:$media2Version")
+    implementation("androidx.media2:media2-widget:$media2Version")
+    implementation("androidx.media2:media2-player:$media2Version")
     //implementation "androidx.media3:media3-exoplayer:$media3Version" Manifest merger failed
     //implementation "androidx.media3:media3-exoplayer-dash:$media3Version" Manifest merger failed
     //implementation "androidx.media3:media3-exoplayer-hls:$media3Version" Manifest merger failed
@@ -239,111 +219,67 @@ dependencies {
     //implementation "androidx.media3:media3-decoder:$media3Version" Manifest merger failed
     //implementation "androidx.media3:media3-datasource:$media3Version" Manifest merger failed
     //implementation "androidx.media3:media3-common:$media3Version" Manifest merger failed
-    implementation "androidx.mediarouter:mediarouter:$mediarouterVersion"
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
-    implementation "androidx.navigation:navigation-compose:$navigationComposeVersion"
-    implementation "androidx.palette:palette-ktx:$paletteVersion"
-    implementation "androidx.preference:preference-ktx:$preferenceVersion"
-    implementation "androidx.print:print:$printVersion"
-    implementation "androidx.profileinstaller:profileinstaller:$profileinstallerVersion"
-    implementation "androidx.recommendation:recommendation:$recommendationVersion"
-    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
-    implementation "androidx.recyclerview:recyclerview-selection:$recyclerviewSelectionVersion"
-    implementation "androidx.remotecallback:remotecallback:$remotecallbackVersion"
-              kapt "androidx.remotecallback:remotecallback-processor:$remotecallbackVersion"
-    implementation "androidx.resourceinspection:resourceinspection-annotation:$resourceinspectionVersion"
-    implementation "androidx.room:room-runtime:$roomVersion"
-              kapt "androidx.room:room-compiler:$roomVersion"
-    implementation "androidx.room:room-ktx:$roomVersion"
-    implementation "androidx.savedstate:savedstate-ktx:$savedstateVersion"
-    implementation "androidx.security:security-crypto:$securityCryptoVersion"
-    implementation "androidx.security:security-identity-credential:$securityIdentityCredentialVersion"
-    implementation "androidx.security:security-app-authenticator:$securityAppAuthenticatorVersion"
-    implementation "androidx.sharetarget:sharetarget:$sharetargetVersion"
-    //implementation "androidx.slice:slice-builders-ktx:$sliceVersion" not found
-    implementation "androidx.slice:slice-core:$sliceVersion"
-    implementation "androidx.slice:slice-view:$sliceVersion"
-    implementation "androidx.slidingpanelayout:slidingpanelayout:$slidingpanelayoutVersion"
-    implementation "androidx.sqlite:sqlite-ktx:$sqliteVersion"
-    implementation "androidx.sqlite:sqlite-framework:$sqliteVersion"
-    implementation "androidx.startup:startup-runtime:$startupVersion"
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayoutVersion"
-    implementation "androidx.textclassifier:textclassifier:$textclassifierVersion"
-    implementation "androidx.tracing:tracing-ktx:$tracingVersion"
-    implementation "androidx.transition:transition-ktx:$transitionVersion"
-    implementation "androidx.tvprovider:tvprovider:$tvproviderVersion"
-    implementation "androidx.vectordrawable:vectordrawable:$vectordrawableVersion"
-    implementation "androidx.vectordrawable:vectordrawable-animated:$vectordrawableVersion"
-    implementation "androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02"
-    implementation "androidx.versionedparcelable:versionedparcelable:$versionedparcelableVersion"
-    implementation "androidx.wear:wear:$wearVersion"
-    implementation "androidx.wear:wear-input:$wearInputVersion"
-    implementation "androidx.wear:wear-input-testing:$wearInputVersion"
-    implementation "androidx.wear:wear-ongoing:$wearOngoingVersion"
-    implementation "androidx.wear:wear-phone-interactions:$wearPhoneInteractionsVersion"
-    implementation "androidx.wear:wear-remote-interactions:$wearRemoteInteractionsVersion"
-    implementation "androidx.wear.compose:compose-foundation:$wearComposeVersion"
-    implementation "androidx.wear.compose:compose-material:$wearComposeVersion"
-    implementation "androidx.wear.compose:compose-navigation:$wearComposeVersion"
-    implementation "androidx.wear.tiles:tiles:$wearTilesVersion"
-    implementation "androidx.wear.watchface:watchface:$wearWatchfaceVersion"
-    implementation "androidx.wear.watchface:watchface-complications-data-source-ktx:$wearWatchfaceVersion"
-    implementation "androidx.wear.watchface:watchface-editor:$wearWatchfaceVersion"
-    implementation "androidx.webkit:webkit:$webkitVersion"
-    implementation "androidx.window:window:$windowVersion"
-    implementation "androidx.window:window-testing:$windowVersion"
-    implementation "androidx.work:work-runtime-ktx:$workVersion"
-    implementation "androidx.work:work-gcm:$workVersion"
-    implementation "androidx.work:work-multiprocess:$workVersion"
+    implementation("androidx.mediarouter:mediarouter:$mediarouterVersion")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion")
+    implementation("androidx.navigation:navigation-compose:$navigationComposeVersion")
+    implementation("androidx.palette:palette-ktx:$paletteVersion")
+    implementation("androidx.preference:preference-ktx:$preferenceVersion")
+    implementation("androidx.print:print:$printVersion")
+    implementation("androidx.profileinstaller:profileinstaller:$profileinstallerVersion")
+    implementation("androidx.recommendation:recommendation:$recommendationVersion")
+    implementation("androidx.recyclerview:recyclerview:$recyclerviewVersion")
+    implementation("androidx.recyclerview:recyclerview-selection:$recyclerviewSelectionVersion")
+    implementation("androidx.remotecallback:remotecallback:$remotecallbackVersion")
+              kapt("androidx.remotecallback:remotecallback-processor:$remotecallbackVersion")
+    implementation("androidx.resourceinspection:resourceinspection-annotation:$resourceinspectionVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
+              kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation("androidx.savedstate:savedstate-ktx:$savedstateVersion")
+    implementation("androidx.security:security-crypto:$securityCryptoVersion")
+    implementation("androidx.security:security-identity-credential:$securityIdentityCredentialVersion")
+    implementation("androidx.security:security-app-authenticator:$securityAppAuthenticatorVersion")
+    implementation("androidx.sharetarget:sharetarget:$sharetargetVersion")
+    //implementation("androidx.slice:slice-builders-ktx:$sliceVersion") not found
+    implementation("androidx.slice:slice-core:$sliceVersion")
+    implementation("androidx.slice:slice-view:$sliceVersion")
+    implementation("androidx.slidingpanelayout:slidingpanelayout:$slidingpanelayoutVersion")
+    implementation("androidx.sqlite:sqlite-ktx:$sqliteVersion")
+    implementation("androidx.sqlite:sqlite-framework:$sqliteVersion")
+    implementation("androidx.startup:startup-runtime:$startupVersion")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayoutVersion")
+    implementation("androidx.textclassifier:textclassifier:$textclassifierVersion")
+    implementation("androidx.tracing:tracing-ktx:$tracingVersion")
+    implementation("androidx.transition:transition-ktx:$transitionVersion")
+    implementation("androidx.tvprovider:tvprovider:$tvproviderVersion")
+    implementation("androidx.vectordrawable:vectordrawable:$vectordrawableVersion")
+    implementation("androidx.vectordrawable:vectordrawable-animated:$vectordrawableVersion")
+    implementation("androidx.vectordrawable:vectordrawable-seekable:1.0.0-alpha02")
+    implementation("androidx.versionedparcelable:versionedparcelable:$versionedparcelableVersion")
+    implementation("androidx.wear:wear:$wearVersion")
+    implementation("androidx.wear:wear-input:$wearInputVersion")
+    implementation("androidx.wear:wear-input-testing:$wearInputVersion")
+    implementation("androidx.wear:wear-ongoing:$wearOngoingVersion")
+    implementation("androidx.wear:wear-phone-interactions:$wearPhoneInteractionsVersion")
+    implementation("androidx.wear:wear-remote-interactions:$wearRemoteInteractionsVersion")
+    implementation("androidx.wear.compose:compose-foundation:$wearComposeVersion")
+    implementation("androidx.wear.compose:compose-material:$wearComposeVersion")
+    implementation("androidx.wear.compose:compose-navigation:$wearComposeVersion")
+    implementation("androidx.wear.tiles:tiles:$wearTilesVersion")
+    implementation("androidx.wear.watchface:watchface:$wearWatchfaceVersion")
+    implementation("androidx.wear.watchface:watchface-complications-data-source-ktx:$wearWatchfaceVersion")
+    implementation("androidx.wear.watchface:watchface-editor:$wearWatchfaceVersion")
+    implementation("androidx.webkit:webkit:$webkitVersion")
+    implementation("androidx.window:window:$windowVersion")
+    implementation("androidx.window:window-testing:$windowVersion")
+    implementation("androidx.work:work-runtime-ktx:$workVersion")
+    implementation("androidx.work:work-gcm:$workVersion")
+    implementation("androidx.work:work-multiprocess:$workVersion")
 
     implementation("com.google.dagger:hilt-android:$daggerVersion")
               kapt("com.google.dagger:hilt-compiler:$daggerVersion")
-    implementation("com.google.android.exoplayer:exoplayer:$exoplayerVersion")
-    implementation("com.google.android.exoplayer:exoplayer-core:$exoplayerVersion")
-    implementation("com.google.android.exoplayer:exoplayer-dash:$exoplayerVersion")
-    implementation("com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion")
-    implementation("com.google.android.material:compose-theme-adapter:$materialComposeThemeAdapterVersion")
-
-    implementation "com.google.android.gms:play-services-ads:$gmsAdsVersion"
-    implementation "com.google.android.gms:play-services-ads-identifier:$gmsAdsIdentifierVersion"
-    implementation "com.google.android.gms:play-services-ads-lite:$gmsAdsLiteVersion"
-    implementation "com.google.android.gms:play-services-afs-native:$gmsAfsNativeVersion"
-    implementation "com.google.android.gms:play-services-analytics:$gmsAnalyticsVersion"
-    implementation "com.google.android.gms:play-services-appset:$gmsAppsetVersion"
-    implementation "com.google.android.gms:play-services-auth:$gmsAuthVersion"
-    implementation "com.google.android.gms:play-services-auth-api-phone:$gmsAuthApiPhoneVersion"
-    implementation "com.google.android.gms:play-services-auth-blockstore:$gmsAuthBlockstoreVersion"
-    implementation "com.google.android.gms:play-services-awareness:$gmsAwarenessVersion"
-    implementation "com.google.android.gms:play-services-base:$gmsBaseVersion"
-    implementation "com.google.android.gms:play-services-basement:$gmsBasementVersion"
-    implementation "com.google.android.gms:play-services-cast:$gmsCastVersion"
-    implementation "com.google.android.gms:play-services-cast-framework:$gmsCastFrameworkVersion"
-    implementation "com.google.android.gms:play-services-cronet:$gmsCronetVersion"
-    implementation "com.google.android.gms:play-services-fido:$gmsFidoVersion"
-    implementation "com.google.android.gms:play-services-fitness:$gmsFitnessVersion"
-    implementation "com.google.android.gms:play-services-games:$gmsGamesVersion"
-    implementation "com.google.android.gms:play-services-instantapps:$gmsInstantappsVersion"
-    implementation "com.google.android.gms:play-services-location:$gmsLocationVersion"
-    implementation "com.google.android.gms:play-services-maps:$gmsMapsVersion"
-    implementation "com.google.android.gms:play-services-mlkit-barcode-scanning:$gmsMlkitBarcodeScanningVersion"
-    implementation "com.google.android.gms:play-services-mlkit-face-detection:$gmsMlkitFaceDetectionVersion"
-    implementation "com.google.android.gms:play-services-mlkit-image-labeling:$gmsMlkitImageLabelingVersion"
-    implementation "com.google.android.gms:play-services-mlkit-image-labeling-custom:$gmsMlkitImageLabelingCustomVersion"
-    implementation "com.google.android.gms:play-services-mlkit-language-id:$gmsMlkitLanguageIdVersion"
-    implementation "com.google.android.gms:play-services-mlkit-text-recognition:$gmsMlkitTextRecognitionVersion"
-    implementation "com.google.android.gms:play-services-nearby:$gmsNearbyVersion"
-    implementation "com.google.android.gms:play-services-oss-licenses:$gmsOssLicensesVersion"
-    implementation "com.google.android.gms:play-services-password-complexity:$gmsPasswordComplexityVersion"
-    implementation "com.google.android.gms:play-services-pay:$gmsPayVersion"
-    implementation "com.google.android.gms:play-services-recaptcha:$gmsRecaptchaVersion"
-    implementation "com.google.android.gms:play-services-safetynet:$gmsSafetynetVersion"
-    implementation "com.google.android.gms:play-services-tagmanager:$gmsTagmanagerVersion"
-    implementation "com.google.android.gms:play-services-tasks:$gmsTasksVersion"
-    implementation "com.google.android.gms:play-services-vision:$gmsVisionVersion"
-    implementation "com.google.android.gms:play-services-wallet:$gmsWalletVersion"
-    implementation "com.google.android.gms:play-services-wearable:$gmsWearableVersion"
 
     implementation("com.squareup.moshi:moshi:$moshiVersion") // нужен переход на ksp
               kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
@@ -358,24 +294,24 @@ dependencies {
     //debugImplementation("androidx.wear.tiles:tiles-renderer:1.0.0") // 26
     //debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion") — not uses exported in manifest
 
-    androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
-    androidTestImplementation "androidx.benchmark:benchmark-junit4:$benchmarkPluginVersion"
-    androidTestImplementation "androidx.benchmark:benchmark-macro-junit4:$benchmarkMacroVersion"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$composeVersion"
-    androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
-    androidTestImplementation "androidx.security:security-app-authenticator:$securityAppAuthenticatorVersion"
-    androidTestImplementation "androidx.test:core-ktx:$androidxTestCore"
-    androidTestImplementation "androidx.test.ext:junit-ktx:$testJunitVersion"
-    androidTestImplementation "androidx.test:runner:$androidxTestCore"
-    androidTestImplementation "androidx.test.ext:truth:$androidxTestCore"
-    androidTestImplementation "androidx.test.espresso:espresso-accessibility:$testEspressoVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:$testEspressoVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$testEspressoVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-intents:$testEspressoVersion"
-    androidTestImplementation "androidx.test.uiautomator:uiautomator:$testUianimatorVersion"
-    androidTestImplementation "androidx.test:rules:$testRulesVersion"
-    androidTestImplementation "androidx.work:work-testing:$workVersion"
-    androidTestImplementation "com.google.truth:truth:$truthVersion"
+    androidTestImplementation("androidx.arch.core:core-testing:$coreTestingVersion")
+    androidTestImplementation("androidx.benchmark:benchmark-junit4:$benchmarkPluginVersion")
+    androidTestImplementation("androidx.benchmark:benchmark-macro-junit4:$benchmarkMacroVersion")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+    androidTestImplementation("androidx.navigation:navigation-testing:$navigationVersion")
+    androidTestImplementation("androidx.security:security-app-authenticator:$securityAppAuthenticatorVersion")
+    androidTestImplementation("androidx.test:core-ktx:$androidxTestCore")
+    androidTestImplementation("androidx.test.ext:junit-ktx:$testJunitVersion")
+    androidTestImplementation("androidx.test:runner:$androidxTestCore")
+    androidTestImplementation("androidx.test.ext:truth:$androidxTestCore")
+    androidTestImplementation("androidx.test.espresso:espresso-accessibility:$testEspressoVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:$testEspressoVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-core:$testEspressoVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:$testEspressoVersion")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:$testUianimatorVersion")
+    androidTestImplementation("androidx.test:rules:$testRulesVersion")
+    androidTestImplementation("androidx.work:work-testing:$workVersion")
+    androidTestImplementation("com.google.truth:truth:$truthVersion")
 
     androidTestUtil("androidx.test:orchestrator:$orchestratorVersion")
 

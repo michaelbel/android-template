@@ -1,6 +1,5 @@
-package org.michaelbel.template.features.clipboard.ui
+package org.michaelbel.template.features.compose.clipboard
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -26,21 +25,19 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.google.accompanist.insets.navigationBarsPadding
 import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.launch
-import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.features.clipboard.ClipboardViewModel
 
 @Composable
 fun ClipboardScreen(
-    onNavigationBackClick: OnNavigationBackClick
+    navController: NavController
 ) {
-    val viewModel = viewModel(ClipboardViewModel::class.java)
+    val viewModel: ClipboardViewModel = hiltViewModel()
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
 
@@ -61,7 +58,7 @@ fun ClipboardScreen(
 
     Scaffold(
         scaffoldState = scaffoldState,
-        topBar = { Toolbar(onNavigationBackClick) },
+        topBar = { Toolbar(navController) },
         floatingActionButton = {
             Fab {
                 scope.launch {
@@ -80,14 +77,16 @@ fun ClipboardScreen(
 }
 
 @Composable
-private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
+private fun Toolbar(
+    navController: NavController
+) {
     TopAppBar(
         backgroundColor = MaterialTheme.colorScheme.error,
 
         title = { Text(text = stringResource(R.string.title_clipboard)) },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { onNavigationBackClick() }) {
+            IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -139,13 +138,4 @@ private fun Fab(
             contentDescription = stringResource(R.string.cd_favorite)
         )
     }
-}
-
-@Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-private fun ClipboardScreenPreview() {
-    ClipboardScreen(
-        onNavigationBackClick = {}
-    )
 }

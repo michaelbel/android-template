@@ -1,6 +1,5 @@
-package org.michaelbel.template.features.networkimage.ui
+package org.michaelbel.template.features.compose.networkimage
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
@@ -17,29 +16,30 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.utils.NetworkImage
 
 @Composable
 fun NetworkImageScreen(
-    onNavigationBackClick: OnNavigationBackClick
+    navController: NavController
 ) {
     Scaffold(
-        topBar = { Toolbar(onNavigationBackClick) }
+        topBar = { Toolbar(navController) }
     ) { Content() }
 }
 
 @Composable
-private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
+private fun Toolbar(
+    navController: NavController
+) {
     SmallTopAppBar(
         title = { Text(text = stringResource(R.string.title_network_image)) },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { onNavigationBackClick() }) {
+            IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -50,7 +50,7 @@ private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
 }
 
 @Composable
-fun Content(
+private fun Content(
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier.fillMaxSize()) {
@@ -63,11 +63,4 @@ fun Content(
                 .clip(CircleShape)
         )
     }
-}
-
-@Preview(name = "default", uiMode = Configuration.UI_MODE_NIGHT_NO)
-@Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-private fun ClipboardScreenPreview() {
-    NetworkImageScreen(onNavigationBackClick = {})
 }
