@@ -122,7 +122,7 @@ dependencies {
     androidTestApi(Jetpack.TestEspressoAccessibility)
     androidTestApi(Jetpack.TestEspressoContrib)
     androidTestApi(Jetpack.TestEspressoIntents)
-    androidTestApi(Jetpack.TestUiAnimator)
+    androidTestApi(Jetpack.TestUiAutomator)
     androidTestApi(Jetpack.TestRules)
 
     // GooglePlayServices
