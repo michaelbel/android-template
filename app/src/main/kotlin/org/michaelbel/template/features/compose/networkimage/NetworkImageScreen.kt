@@ -1,9 +1,9 @@
 package org.michaelbel.template.features.compose.networkimage
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
@@ -14,13 +14,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import coil.compose.ImagePainter
+import coil.compose.rememberImagePainter
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.utils.NetworkImage
 
 @Composable
 fun NetworkImageScreen(
@@ -53,14 +52,26 @@ private fun Toolbar(
 private fun Content(
     modifier: Modifier = Modifier
 ) {
+    val painter = rememberImagePainter(
+        data = "https://picsum.photos/300/300",
+        builder = {
+            crossfade(true)
+        }
+    )
+    
     Box(modifier = modifier.fillMaxSize()) {
-        NetworkImage(
-            url = "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
-            contentDescription = null,
-            modifier = Modifier
-                .align(Alignment.Center)
-                .size(280.dp)
-                .clip(CircleShape)
+        Image(
+            painter = painter,
+            contentDescription = null
         )
+
+        when (painter.state) {
+            is ImagePainter.State.Loading -> {
+                CircularProgressIndicator(Modifier.align(Alignment.Center))
+            }
+            is ImagePainter.State.Error -> {}
+            is ImagePainter.State.Empty -> {}
+            is ImagePainter.State.Success -> {}
+        }
     }
 }
