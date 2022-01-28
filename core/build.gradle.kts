@@ -89,7 +89,7 @@ dependencies {
     api(Jetpack.LifecycleCommon)
     api(Jetpack.LifecycleLivedata)
     api(Jetpack.LifecycleRuntime)
-    api(Jetpack.LifecycleViewmodel)
+    api(Jetpack.LifecycleViewModel)
     api(Jetpack.LifecycleViewModelSavedState)
     api(Jetpack.NavigationCompose)
     api(Jetpack.NavigationDynamic)

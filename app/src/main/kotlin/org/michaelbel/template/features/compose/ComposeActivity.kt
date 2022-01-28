@@ -19,7 +19,7 @@ class ComposeActivity: ComponentActivity() {
         setContent {
             ProvideWindowInsets {
                 AppTheme {
-                    ComposeActivityView()
+                    ComposeActivityScreen()
                 }
             }
         }

@@ -27,15 +27,14 @@ import org.michaelbel.template.features.compose.notifications.NotificationsScree
 import org.michaelbel.template.features.compose.settingspanel.SettingsPanelScreen
 
 @Composable
-fun ComposeActivityView() {
+fun ComposeActivityScreen() {
     val navController = rememberNavController()
 
-    Scaffold (
+    Scaffold(
         bottomBar = {
             BottomBar(navController)
         }
-    )
-    {
+    ) {
         Content(navController)
     }
 }
