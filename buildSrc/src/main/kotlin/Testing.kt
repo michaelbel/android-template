@@ -12,7 +12,7 @@ package org.michaelbel.template
 object Testing {
     private const val JunitVersion = "4.13.2"
     private const val MockkVersion = "1.12.2"
-    private const val MockitoVersion = "4.2.0"
+    private const val MockitoVersion = "4.3.1"
     private const val RobolectricVersion = "4.7.3"
     private const val TruthVersion = "1.1.3"
     private const val TurbineVersion = "0.7.0"
