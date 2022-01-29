@@ -6,7 +6,6 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-parcelize")
     id("kotlinx-serialization")
-    id("androidx.benchmark")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
     id("com.google.firebase.appdistribution")
@@ -14,7 +13,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
 }
 
-apply from: "$project.rootDir/spotless.gradle"
+//apply from: "$project.rootDir/spotless.gradle"
 
 // Для локальных сборок берем ключи из локального хранилища keystore.properties.
 // Для удаленных сборок на GitHub Actions берем ключи из Actions Secrets.

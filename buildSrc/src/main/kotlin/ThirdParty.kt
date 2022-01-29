@@ -23,6 +23,7 @@ object ThirdParty {
     private const val RetrofitVersion = "2.9.0"
     private const val RetrofitConverterSerializationVersion = "0.8.0"
     private const val SpotlessVersion = "6.2.0"
+    const val DetektVersion = "1.19.0"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
     const val MaterialComposeThemeAdapter = "com.google.android.material:compose-theme-adapter:$MaterialComposeThemeAdapterVersion"
@@ -40,4 +41,5 @@ object ThirdParty {
     const val RetrofitConverterMoshi = "com.squareup.retrofit2:converter-moshi:$RetrofitVersion"
     const val RetrofitConverterSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$RetrofitConverterSerializationVersion"
     const val SpotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:$SpotlessVersion"
+    const val Detekt = "io.gitlab.arturbosch.detekt"
 }
