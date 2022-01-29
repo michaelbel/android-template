@@ -22,10 +22,12 @@ object ThirdParty {
     private const val GanderVersion = "3.1.0"
     private const val RetrofitVersion = "2.9.0"
     private const val RetrofitConverterSerializationVersion = "0.8.0"
+    private const val SpotlessVersion = "6.2.0"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
     const val MaterialComposeThemeAdapter = "com.google.android.material:compose-theme-adapter:$MaterialComposeThemeAdapterVersion"
     const val PlayCore = "com.google.android.play:core-ktx:$PlayCoreVersion"
+    const val HiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$DaggerVersion"
     const val HiltAndroid = "com.google.dagger:hilt-android:$DaggerVersion"
     const val HiltCompiler = "com.google.dagger:hilt-compiler:$DaggerVersion"
     const val Coil = "io.coil-kt:coil:$CoilVersion"
@@ -37,4 +39,5 @@ object ThirdParty {
     const val RetrofitConverterGson = "com.squareup.retrofit2:converter-gson:$RetrofitVersion"
     const val RetrofitConverterMoshi = "com.squareup.retrofit2:converter-moshi:$RetrofitVersion"
     const val RetrofitConverterSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$RetrofitConverterSerializationVersion"
+    const val SpotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:$SpotlessVersion"
 }
