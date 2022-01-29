@@ -51,7 +51,7 @@ jobs:
    - name: Expose Version Name
      uses: michpohl/android-expose-version-name-action@v1.0.0
      with:
-      path: app/build.gradle
+      path: app/build.gradle.kts
       expose-version-name: 'true'
       expose-version-code: 'true'
       
