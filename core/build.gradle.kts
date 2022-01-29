@@ -43,7 +43,8 @@ android {
 
     kotlinOptions {
         jvmTarget = "11"
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.all
+        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterial3Api
+        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalFoundationApi
     }
 
     sourceSets.getByName("main") {
@@ -53,11 +54,11 @@ android {
 
 dependencies {
     // Kotlin
-    api(Kotlin.CoroutinesCore)
-    api(Kotlin.CoroutinesAndroid)
-    api(Kotlin.Serialization)
-    testApi(Kotlin.CoroutinesTest)
-    androidTestApi(Kotlin.CoroutinesTest)
+    api(Kotlin.KotlinCoroutinesCore)
+    api(Kotlin.KotlinCoroutinesAndroid)
+    api(Kotlin.KotlinSerialization)
+    testApi(Kotlin.KotlinCoroutinesTest)
+    androidTestApi(Kotlin.KotlinCoroutinesTest)
 
     // Jetpack
     api(Jetpack.Activity)
