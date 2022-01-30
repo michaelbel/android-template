@@ -45,6 +45,7 @@ android {
         jvmTarget = "11"
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterial3Api
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalFoundationApi
+        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalSerializationApi
     }
 
     sourceSets.getByName("main") {
@@ -136,24 +137,24 @@ dependencies {
     api(Accompanist.DrawablePainter)
     api(Accompanist.Insets)
     api(Accompanist.InsetsUi)
-    api(Accompanist.FlowLayout)
-    api(Accompanist.NavigationAnimation)
-    api(Accompanist.NavigationMaterial)
-    api(Accompanist.Pager)
-    api(Accompanist.PagerIndicators)
-    api(Accompanist.Permissions)
-    api(Accompanist.Placeholder)
-    api(Accompanist.PlaceholderMaterial)
-    api(Accompanist.SystemUiController)
-    api(Accompanist.SwipeRefresh)
+    //api(Accompanist.FlowLayout)
+    //api(Accompanist.NavigationAnimation)
+    //api(Accompanist.NavigationMaterial)
+    //api(Accompanist.Pager)
+    //api(Accompanist.PagerIndicators)
+    //api(Accompanist.Permissions)
+    //api(Accompanist.Placeholder)
+    //api(Accompanist.PlaceholderMaterial)
+    //api(Accompanist.SystemUiController)
+    //api(Accompanist.SwipeRefresh)
 
     // Firebase
-    api(Firebase.Abt)
-    api(Firebase.Analytics)
-    api(Firebase.Common)
-    api(Firebase.Config)
-    api(Firebase.Core)
-    api(Firebase.Crashlytics)
+    api(Firebase.FirebaseAbt)
+    api(Firebase.FirebaseAnalytics)
+    api(Firebase.FirebaseCommon)
+    api(Firebase.FirebaseConfig)
+    api(Firebase.FirebaseCore)
+    api(Firebase.FirebaseCrashlytics)
 
     // Testing
     testApi(Testing.Junit)
