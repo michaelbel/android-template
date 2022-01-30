@@ -59,11 +59,6 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import org.michaelbel.template.ui.theme.AppTheme
 
-fun launchComposeActivity(context: Context) {
-    val intent = Intent(context, ComposeActivity2::class.java)
-    context.startActivity(intent)
-}
-
 class ComposeActivity2: ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
