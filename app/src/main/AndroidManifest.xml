@@ -103,6 +103,34 @@
             android:name=".features.compose.ComposeActivity"
             android:exported="false"/>
 
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+
+            <meta-data
+                android:name="org.michaelbel.template.app.initializer.FirebaseCrashlyticsInitializer"
+                android:value="androidx.startup"
+                tools:node="remove"/>
+
+            <meta-data
+                android:name="org.michaelbel.template.app.initializer.FirebaseConfigInitializer"
+                android:value="androidx.startup"
+                tools:node="remove"/>
+
+            <meta-data
+                android:name="org.michaelbel.template.app.initializer.TimberInitializer"
+                android:value="androidx.startup"
+                tools:node="remove"/>
+
+            <meta-data
+                android:name="org.michaelbel.template.app.initializer.VkInitializer"
+                android:value="androidx.startup"
+                tools:node="remove"/>
+
+        </provider>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713"/>
