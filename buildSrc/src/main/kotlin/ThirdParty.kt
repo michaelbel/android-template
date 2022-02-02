@@ -22,7 +22,7 @@ object ThirdParty {
     private const val GanderVersion = "3.1.0"
     private const val RetrofitVersion = "2.9.0"
     private const val RetrofitConverterSerializationVersion = "0.8.0"
-    private const val SpotlessVersion = "6.2.0"
+    private const val SpotlessVersion = "6.2.1"
     const val DetektVersion = "1.19.0"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
