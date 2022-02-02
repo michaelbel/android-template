@@ -23,8 +23,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.core.ktx.areNotificationsEnabled
 import org.michaelbel.template.R
-import org.michaelbel.template.areNotificationsEnabled
 
 @Composable
 fun NotificationsScreen(
@@ -58,7 +58,7 @@ private fun Content(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    val areNotificationsEnabled by remember { mutableStateOf(context.areNotificationsEnabled()) }
+    val areNotificationsEnabled by remember { mutableStateOf(context.areNotificationsEnabled) }
 
     Box(modifier = modifier.fillMaxWidth(1F)) {
         Text(
