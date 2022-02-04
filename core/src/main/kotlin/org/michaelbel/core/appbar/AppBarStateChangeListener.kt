@@ -3,6 +3,7 @@ package org.michaelbel.core.appbar
 import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.abs
 
+@Suppress("unused")
 abstract class AppBarStateChangeListener: AppBarLayout.OnOffsetChangedListener {
 
     private var currentState = AppBarState.IDLE
