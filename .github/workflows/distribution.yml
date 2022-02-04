@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  destribution:
+  pr:
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       KEYSTORE_FILE: ${{secrets.KEYSTORE_FILE}}
