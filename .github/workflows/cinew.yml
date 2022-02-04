@@ -15,6 +15,7 @@ on:
   
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  FIREBASE_APP_DISTRIBUTION_FILE: ${{secrets.FIREBASE_APP_DISTRIBUTION_FILE}}
   KEYSTORE_FILE: ${{secrets.KEYSTORE_FILE}}
   KEYSTORE_KEY_ALIAS: ${{secrets.KEYSTORE_KEY_ALIAS}}
   KEYSTORE_KEY_PASSWORD: ${{secrets.KEYSTORE_KEY_PASSWORD}}
@@ -50,6 +51,16 @@ jobs:
           
       - name: Set Decoded File Location as Environment
         run: echo "KEYSTORE_FILE=${{steps.decode_keystore_file.outputs.filePath}}" >> $GITHUB_ENV
+        
+      - name: Decode Firebase AppDistribution File
+        id: decode_firebase_file
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'firebase-app-distribution.json'
+          encodedString: ${{ secrets.FIREBASE_APP_DISTRIBUTION_FILE }}
+          
+      - name: Set Decoded Firebase AppDistribution File Location as Environment
+        run: echo "FIREBASE_APP_DISTRIBUTION_FILE=${{steps.decode_firebase_file.outputs.filePath}}" >> $GITHUB_ENV
         
       - name: Expose Version Name
         uses: michpohl/android-expose-version-name-action@v1.0.0
