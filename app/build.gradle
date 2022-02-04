@@ -32,6 +32,14 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties["storeFile"] = System.env.KEYSTORE_FILE ?: ''
 }
 
+def appDistributionProperties = new Properties()
+def appDistributionFile = rootProject.file("config/firebase-app-distribution.json")
+if (appDistributionFile.exists()) {
+    appDistributionProperties["path"] = "$rootDir/config/firebase-app-distribution.json"
+} else {
+    appDistributionProperties["path"] = System.env.FIREBASE_APP_DISTRIBUTION_FILE ?: ''
+}
+
 def generateVersionCode() {
     def result = "git rev-list HEAD --count".execute().text.trim() // unix
     if (result.empty) result = "PowerShell -Command git rev-list HEAD --count".execute().text.trim() // windows
@@ -74,7 +82,7 @@ android {
                 artifactType="APK"
                 testers="michaelbel24865@gmail.com"
                 releaseNotes="Release Build"
-                serviceCredentialsFile = "$rootDir/config/firebase-app-distribution.json"
+                serviceCredentialsFile = appDistributionFile["path"]
             }
         }
         debug {
