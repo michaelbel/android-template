@@ -29,7 +29,7 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties["keyAlias"] = System.env.KEYSTORE_KEY_ALIAS ?: ''
     keystoreProperties["keyPassword"] = System.env.KEYSTORE_KEY_PASSWORD ?: ''
     keystoreProperties["storePassword"] = System.env.KEYSTORE_STORE_PASSWORD ?: ''
-    keystoreProperties["storeFile"] = System.env.KEYSTORE_FILE_LOCATION ?: ''
+    keystoreProperties["storeFile"] = System.env.KEYSTORE_FILE ?: ''
 }
 
 def generateVersionCode() {
@@ -146,11 +146,6 @@ android {
 
 dependencies {
     implementation project(":core")
-    //implementation("com.android.installreferrer:installreferrer:2.2")
-    //implementation("com.google.android.exoplayer:exoplayer:2.16.1")
-    //implementation("com.google.android.exoplayer:exoplayer-core:2.16.1")
-    //implementation("com.google.android.exoplayer:exoplayer-dash:2.16.1")
-    //implementation("com.google.android.exoplayer:exoplayer-ui:2.16.1")
     implementation("com.google.dagger:hilt-android:2.40.5")
               kapt("com.google.dagger:hilt-compiler:2.40.5")
 
