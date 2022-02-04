@@ -1,6 +1,7 @@
 package org.michaelbel.template.features.main.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -13,8 +14,9 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ListItem
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetValue
-import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
+import androidx.compose.material.SnackbarHost
+import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.SnackbarResult
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -39,13 +41,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.ui.Scaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
+import org.michaelbel.template.features.compose.ComposeActivity
 import org.michaelbel.template.features.main.MainScreenState
 import org.michaelbel.template.features.main.MainViewModel
-import org.michaelbel.template.launchComposeActivity
 import org.michaelbel.template.ui.components.HomeBottomSheet
 import org.michaelbel.template.ui.theme.AppTheme
 
@@ -61,6 +64,7 @@ fun MainScreen(
     val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
     val scope: CoroutineScope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
+    val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
     val context: Context = LocalContext.current
     val snackBarUpdateVisibleState by rememberUpdatedState(viewModel.updateAvailableMessage)
     val sheetState = rememberModalBottomSheetState(
@@ -69,9 +73,9 @@ fun MainScreen(
     val mainScreenState by viewModel.uiState.collectAsState()
     val mainState = mainScreenState as MainScreenState.MainScreen
 
-    val onShowSnackBar: (String, String) -> Unit = { message, actionLabel ->
+    val onShowSnackbar: (String, String) -> Unit = { message, actionLabel ->
         scope.launch {
-            val snackBarResult = scaffoldState.snackbarHostState.showSnackbar(
+            val snackBarResult = snackbarHostState.showSnackbar(
                 message = message,
                 actionLabel = actionLabel,
                 duration = SnackbarDuration.Long
@@ -82,9 +86,16 @@ fun MainScreen(
         }
     }
 
+    if (snackBarUpdateVisibleState) {
+        onShowSnackbar(
+            stringResource(R.string.message_in_app_update_new_version_available),
+            stringResource(R.string.action_update)
+        )
+    }
+
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        scaffoldState = scaffoldState,
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
         topBar = {
             MainTopBar(
                 modifier = Modifier.statusBarsPadding(),
@@ -100,7 +111,10 @@ fun MainScreen(
         drawerGesturesEnabled = true,
         floatingActionButton = {
             Column(horizontalAlignment = Alignment.End) {
-                Fab { launchComposeActivity(context) }
+                Fab {
+                    val intent = Intent(context, ComposeActivity::class.java)
+                    context.startActivity(intent)
+                }
             }
         },
     ) {
@@ -132,13 +146,6 @@ fun MainScreen(
                 }
             }
         }
-    }
-
-    if (snackBarUpdateVisibleState) {
-        onShowSnackBar(
-            context.getString(R.string.message_in_app_update_new_version_available),
-            context.getString(R.string.action_update)
-        )
     }
 }
 

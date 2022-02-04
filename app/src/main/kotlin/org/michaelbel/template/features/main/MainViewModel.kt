@@ -75,8 +75,6 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             screensList.value = listOf(
                 ScreenData(Screen.Ads, bundleOf(), R.string.title_ads),
-                ScreenData(Screen.Browser, bundleOf(), R.string.title_browser),
-                ScreenData(Screen.Clipboard, bundleOf(), R.string.title_clipboard),
                 ScreenData(Screen.Config, bundleOf(), R.string.title_remote_config),
                 ScreenData(
                     Screen.ConstraintsBaseline,
@@ -113,10 +111,7 @@ class MainViewModel @Inject constructor(
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),
                     R.string.title_nav_args
                 ),
-                ScreenData(Screen.NetworkImage, bundleOf(), R.string.title_network_image),
-                ScreenData(Screen.Notifications, bundleOf(), R.string.title_notifications),
                 ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
-                ScreenData(Screen.SettingsPanel, bundleOf(), R.string.title_settings_panel),
                 ScreenData(Screen.Social, bundleOf(), R.string.title_social),
                 ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
                 ScreenData(Screen.Timer, bundleOf(), R.string.title_timer),

@@ -4,7 +4,10 @@ import android.text.InputFilter
 import android.text.Spanned
 import timber.log.Timber
 
-class InputFilterMinMax(private val min: Int = 0, private val max: Int = 0): InputFilter {
+class InputFilterMinMax(
+    private val min: Int = 0,
+    private val max: Int = 0
+): InputFilter {
 
     override fun filter(
         source: CharSequence?,
