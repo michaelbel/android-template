@@ -82,7 +82,7 @@ android {
                 artifactType="APK"
                 testers="michaelbel24865@gmail.com"
                 releaseNotes="Release Build"
-                serviceCredentialsFile = appDistributionFile["path"]
+                serviceCredentialsFile appDistributionFile["path"]
             }
         }
         debug {
