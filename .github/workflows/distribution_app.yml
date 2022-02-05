@@ -35,6 +35,7 @@ jobs:
           access_token: ${{ github.token }}
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout Repo
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
@@ -105,15 +106,17 @@ jobs:
 #       env:
 #         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-      - name: Push Message to Telegram Bot
+      - name: Push Telegram Message
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_notification: true
+          disable_web_page_preview: true
+          document: app/build/outputs/apk/**/*.apk
           message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
-            
+            New Artifact Available!
+            Version: ${{ env.ANDROID_VERSION_NAME }}
+            Code: ${{ env.ANDROID_VERSION_CODE }}
             Repository: ${{ github.repository }}
-            
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
