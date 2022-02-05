@@ -58,10 +58,34 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-      - name: Build Release Artifacts
-        run: bash ./gradlew app:assembleRelease --stacktrace
+      - name: Build Debug Artifacts
+        run: bash ./gradlew app:assembleDebug
           
-      - name: Distribute Artifacts via Firebase
-        run: bash ./gradlew appDistributionUploadRelease --stacktrace
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+#     - name: Build Release Artifacts
+#       run: bash ./gradlew app:assembleRelease --stacktrace
+        
+#     - name: Build Bundle Artifacts
+#     - run: bash ./gradlew app:bundleRelease
+
+      - name: Upload Artifacts to Outputs
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            app/build/outputs/apk
+            app/build/outputs/bundle
+            
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.ANDROID_VERSION_NAME }}
+          tag_name: ${{ env.ANDROID_VERSION_NAME }}
+          draft: false
+          prerelease: false
+          files: |
+            app/build/outputs/apk/**/*.apk
+            app/build/outputs/bundle/**/*.aab
+          
+#     - name: Distribute Artifacts via Firebase
+#       run: bash ./gradlew appDistributionUploadRelease --stacktrace
+#       env:
+#         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
