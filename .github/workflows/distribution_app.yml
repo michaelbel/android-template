@@ -36,7 +36,7 @@ jobs:
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -64,8 +64,8 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-#     - name: Build Debug Artifacts
-#       run: bash ./gradlew app:assembleDebug
+      - name: Build Debug Artifacts
+        run: bash ./gradlew app:assembleDebug
           
 #     - name: Build Release Artifacts
 #       run: bash ./gradlew app:assembleRelease --stacktrace
@@ -73,12 +73,12 @@ jobs:
 #     - name: Build Bundle Artifacts
 #     - run: bash ./gradlew app:bundleRelease
 
-#     - name: Upload Artifacts to Outputs
-#       uses: actions/upload-artifact@v2
-#       with:
-#         path: |
-#           app/build/outputs/apk
-#           app/build/outputs/bundle
+      - name: Upload Artifacts to Outputs
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            app/build/outputs/apk
+            app/build/outputs/bundle
             
       # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
 #     - name: Download a Build Artifact
