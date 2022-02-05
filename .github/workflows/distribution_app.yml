@@ -58,7 +58,10 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-      - name: Build Artifacts
-        run: bash ./gradlew app:assembleRelease appDistributionUploadRelease --stacktrace
+      - name: Build Release Artifacts
+        run: bash ./gradlew app:assembleRelease --stacktrace
+          
+      - name: Distribute Artifacts via Firebase
+        run: bash ./gradlew appDistributionUploadRelease --stacktrace
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
