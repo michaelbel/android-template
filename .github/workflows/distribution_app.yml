@@ -74,16 +74,26 @@ jobs:
             app/build/outputs/apk
             app/build/outputs/bundle
             
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: ${{ env.ANDROID_VERSION_NAME }}
-          tag_name: ${{ env.ANDROID_VERSION_NAME }}
-          draft: false
-          prerelease: false
-          files: |
-            app/build/outputs/apk/**/*.apk
-            app/build/outputs/bundle/**/*.aab
+      # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2
+        
+      - name: Display structure of downloaded files
+        run: ls -R
+        
+      - name: 'Echo download path'
+        run: echo ${{steps.download.outputs.download-path}}
+            
+#     - name: Create GitHub Release
+#       uses: softprops/action-gh-release@v1
+#       with:
+#         name: ${{ env.ANDROID_VERSION_NAME }}
+#         tag_name: ${{ env.ANDROID_VERSION_NAME }}
+#         draft: false
+#         prerelease: false
+#         files: |
+#           app/build/outputs/apk/**/*.apk
+#           app/build/outputs/bundle/**/*.aab
           
 #     - name: Distribute Artifacts via Firebase
 #       run: bash ./gradlew appDistributionUploadRelease --stacktrace
