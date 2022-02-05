@@ -22,40 +22,9 @@ jobs:
   runs-on: ubuntu-latest
     
   steps:
-   - name: Checkout Repository
-     uses: actions/checkout@v2  
-
-   - name: Setup JDK 11
-     uses: actions/setup-java@v1
-     with:
-      java-version: 1.11
 
    - name: Make Gradlew Executable
      run: chmod +x ./gradlew
-   
-   - name: Decode Keystore File
-     id: decode_keystore_file
-     uses: timheuer/base64-to-file@v1
-     with:
-      fileName: 'keystore_release.jks'
-      encodedString: ${{ secrets.KEYSTORE_FILE }}
       
-   - name: Set Decoded File Location as Environment
-     run: echo "KEYSTORE_FILE_LOCATION=${{steps.decode_keystore_file.outputs.filePath}}" >> $GITHUB_ENV
-        
-   - name: Expose Version Name
-     uses: michpohl/android-expose-version-name-action@v1.0.0
-     with:
-      path: app/build.gradle.kts
-      expose-version-name: 'true'
-      expose-version-code: 'true'
-      
-#  - name: Run Unit Tests
-#    run: ./gradlew test
-          
-#  - name: Push Notification Message In Telegram
-#    uses: appleboy/telegram-action@master
-#    with:
-#     to: ${{ secrets.TELEGRAM_BOT_ID }}
-#     token: ${{ secrets.TELEGRAM_TOKEN }}
-#     args: The ${{ github.event_name }} event triggered first step.
+   - name: Run Unit Tests
+     run: ./gradlew test
