@@ -98,12 +98,15 @@ jobs:
 #       env:
 #         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-      - name: Get Commits since last Release
-        id: changes
-        uses: simbo/changes-since-last-release-action@v1
-        with:
-          line-prefix: "• "
-          include-hashes: true
+#      - name: Get Commits since last Release
+#        id: changes
+#        uses: simbo/changes-since-last-release-action@v1
+#        with:
+#          line-prefix: "• "
+#          include-hashes: true
+          
+      - name: Run Merge Commits
+        uses: autamus/merge-commits@master
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
