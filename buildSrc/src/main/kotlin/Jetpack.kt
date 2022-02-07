@@ -79,7 +79,7 @@ object Jetpack {
     private const val Media3Version = "1.0.0-alpha01"
     private const val MediaRouterVersion = "1.2.5"
     private const val NavigationVersion = "2.3.5"
-    private const val NavigationSafeArgsPluginVersion = "2.4.0"
+    private const val NavigationSafeArgsPluginVersion = "2.5.0-alpha01"
     private const val NavigationComposeVersion = "2.4.0-rc01"
     private const val PagingVersion = "3.1.0"
     private const val PagingComposeVersion = "1.0.0-alpha14"

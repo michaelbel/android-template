@@ -11,5 +11,5 @@ object App {
 
     const val ApplicationId = "org.michaelbel.template"
 
-    const val GradlePlugin = "com.android.tools.build:gradle:7.0.4"
+    const val GradlePlugin = "com.android.tools.build:gradle:7.1.1"
 }
