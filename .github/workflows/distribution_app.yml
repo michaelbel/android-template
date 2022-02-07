@@ -2,15 +2,12 @@
 
 name: Distribution App
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
 # pull_request:
 #   branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
 env:
@@ -37,6 +34,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # [!] we need to checkout with tags and commit history
           
       - name: Setup JDK 11
         uses: actions/setup-java@v1
@@ -69,12 +68,12 @@ jobs:
 #     - name: Build Bundle Artifacts
 #     - run: bash ./gradlew app:bundleRelease
 
-      - name: Upload Artifacts to Outputs
-        uses: actions/upload-artifact@v2
-        with:
-          path: |
-            app/build/outputs/apk
-            app/build/outputs/bundle
+#      - name: Upload Artifacts to Outputs
+#        uses: actions/upload-artifact@v2
+#        with:
+#          path: |
+#            app/build/outputs/apk
+#            app/build/outputs/bundle
             
       # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
 #     - name: Download a Build Artifact
@@ -102,17 +101,30 @@ jobs:
 #       env:
 #         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
+      - name: 📋 Get Commits since last Release
+        id: changes
+        uses: simbo/changes-since-last-release-action@v1
+        with:
+          line-prefix: "• "
+          include-hashes: true
+        
+      - name: 📣 Output collected Data
+        run: |
+          echo "Changes since ${{ steps.changes.outputs.last-tag }}:"
+          echo "${{ steps.changes.outputs.log }}"
+
       - name: Push Telegram Message
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          disable_notification: true
+          disable_notification: false
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
           message: |
-            New Artifact Available!
+            New Artifacts Available!
             Version: ${{ env.ANDROID_VERSION_NAME }}
             Code: ${{ env.ANDROID_VERSION_CODE }}
             Repository: ${{ github.repository }}
+            Changes: ${{ steps.changes.outputs.log }}
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
