@@ -117,6 +117,12 @@ jobs:
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
+        
+      - name: Get PR Commits
+        id: 'get-pr-commits'
+        uses: tim-actions/get-pr-commits@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
