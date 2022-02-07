@@ -123,7 +123,7 @@ jobs:
           message: |
             New Artifacts Available!
             Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            [Repository](${{github.repository}})
-            Changes:
+            [Repository](https://github.com/${{github.repository}})
+            **Changes**:
             ${{ steps.changes.outputs.log }}
             [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
