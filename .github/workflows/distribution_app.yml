@@ -104,12 +104,8 @@ jobs:
         with:
           line-prefix: "• "
           include-hashes: true
-        
-      - name: Output collected Data
-        run: |
-          echo "Changes since ${{ steps.changes.outputs.last-tag }}:"
 
-      - name: Push Telegram Message
+      - name: Telegram Message
         uses: appleboy/telegram-action@master
         with:
           to: ${{secrets.TELEGRAM_TO_ID}}
@@ -121,6 +117,6 @@ jobs:
           message: |
             New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
             Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            **Changes since ${{steps.changes.outputs.last-tag}}**:
+            Changes since ${{steps.changes.outputs.last-tag}}:
             ${{steps.changes.outputs.log}}
             [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
