@@ -124,6 +124,6 @@ jobs:
           message: |
             New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
             Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            **Changes**:
-            ${{ steps.changes.outputs.log }}
+            *bold \*Changes*:
+            ${{steps.changes.outputs.log}}
             [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
