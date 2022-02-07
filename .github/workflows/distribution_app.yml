@@ -31,11 +31,10 @@ jobs:
         with:
           access_token: ${{ github.token }}
       
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # [!] we need to checkout with tags and commit history
+          fetch-depth: 0
           
       - name: Setup JDK 11
         uses: actions/setup-java@v1
@@ -59,8 +58,8 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-      - name: Build Debug Artifacts
-        run: bash ./gradlew app:assembleDebug
+#     - name: Build Debug Artifacts
+#       run: bash ./gradlew app:assembleDebug
           
 #     - name: Build Release Artifacts
 #       run: bash ./gradlew app:assembleRelease --stacktrace
@@ -68,12 +67,12 @@ jobs:
 #     - name: Build Bundle Artifacts
 #     - run: bash ./gradlew app:bundleRelease
 
-#      - name: Upload Artifacts to Outputs
-#        uses: actions/upload-artifact@v2
-#        with:
-#          path: |
-#            app/build/outputs/apk
-#            app/build/outputs/bundle
+#     - name: Upload Artifacts to Outputs
+#       uses: actions/upload-artifact@v2
+#       with:
+#         path: |
+#           app/build/outputs/apk
+#           app/build/outputs/bundle
             
       # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
 #     - name: Download a Build Artifact
@@ -101,14 +100,14 @@ jobs:
 #       env:
 #         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-      - name: 📋 Get Commits since last Release
+      - name: Get Commits since last Release
         id: changes
         uses: simbo/changes-since-last-release-action@v1
         with:
           line-prefix: "• "
           include-hashes: true
         
-      - name: 📣 Output collected Data
+      - name: Output collected Data
         run: |
           echo "Changes since ${{ steps.changes.outputs.last-tag }}:"
           echo "${{ steps.changes.outputs.log }}"
@@ -123,8 +122,8 @@ jobs:
           document: app/build/outputs/apk/**/*.apk
           message: |
             New Artifacts Available!
-            Version: ${{ env.ANDROID_VERSION_NAME }}
-            Code: ${{ env.ANDROID_VERSION_CODE }}
-            Repository: ${{ github.repository }}
-            Changes: ${{ steps.changes.outputs.log }}
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
+            [Repository](${{github.repository}})
+            Changes:
+            ${{ steps.changes.outputs.log }}
+            [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
