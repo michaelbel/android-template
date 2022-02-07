@@ -109,7 +109,7 @@ jobs:
         id: check-new-commits
         uses: adriangl/check-new-commits-action@v1
         with:
-          token: 'your_github_token'
+          token: ${{github.token}}
           seconds: 86400 # One day in seconds
           branch: 'master'
       - name: Print something if new commits are found
