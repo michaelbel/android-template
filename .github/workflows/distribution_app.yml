@@ -120,10 +120,10 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
+          format: markdown
           message: |
-            New Artifacts Available!
+            New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
             Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            [Repository](https://github.com/${{github.repository}})
             **Changes**:
             ${{ steps.changes.outputs.log }}
             [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
