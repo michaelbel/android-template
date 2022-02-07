@@ -8,10 +8,6 @@ import org.michaelbel.template.app.data.converters.ListStringConverter
 @Fails
 class ListStringConverterTest {
 
-    private companion object {
-        private const val SEPARATOR = "{ELEMENT_SEPARATOR}"
-    }
-
     private val list: List<String> = listOf("Apple", "Orange", "Banana")
     private val text: String = "Apple${SEPARATOR}Orange${SEPARATOR}Banana"
 
@@ -23,5 +19,9 @@ class ListStringConverterTest {
     @Test
     fun textToListText() {
         assertEquals(list, ListStringConverter().textToList(text))
+    }
+
+    private companion object {
+        private const val SEPARATOR = "{ELEMENT_SEPARATOR}"
     }
 }
