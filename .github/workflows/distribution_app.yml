@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Distribution App
 
 on:
@@ -29,7 +27,7 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
         with:
-          access_token: ${{ github.token }}
+          access_token: ${{github.token}}
       
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -46,7 +44,7 @@ jobs:
         uses: timheuer/base64-to-file@v1
         with:
           fileName: 'keystore_release.jks'
-          encodedString: ${{ secrets.KEYSTORE_FILE }}
+          encodedString: ${{secrets.KEYSTORE_FILE}}
           
       - name: Set Decoded File Location as Environment
         run: echo "KEYSTORE_FILE=${{steps.decode_keystore_file.outputs.filePath}}" >> $GITHUB_ENV
@@ -110,13 +108,12 @@ jobs:
       - name: Output collected Data
         run: |
           echo "Changes since ${{ steps.changes.outputs.last-tag }}:"
-          echo "${{ steps.changes.outputs.log }}"
 
       - name: Push Telegram Message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: ${{secrets.TELEGRAM_TO_ID}}
+          token: ${{secrets.TELEGRAM_TOKEN}}
           disable_notification: false
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
@@ -124,6 +121,6 @@ jobs:
           message: |
             New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
             Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            *bold \*Changes*:
+            **Changes since ${{steps.changes.outputs.last-tag}}**:
             ${{steps.changes.outputs.log}}
             [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
