@@ -104,9 +104,25 @@ jobs:
 #        with:
 #          line-prefix: "• "
 #          include-hashes: true
+
+      - name: Check for new commits today
+        id: check-new-commits
+        uses: adriangl/check-new-commits-action@v1
+        with:
+          token: 'your_github_token'
+          seconds: 86400 # One day in seconds
+          branch: 'master'
+      - name: Print something if new commits are found
+        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
+        run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"
+      - name: Print another thing if new commits couldn't be found
+        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
+        run: echo "You don't have new commits 🛑!"
           
       - name: Run Merge Commits
         uses: autamus/merge-commits@master
+        with:
+          repo_location: '/github/workspace/'
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
