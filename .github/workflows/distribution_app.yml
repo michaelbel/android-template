@@ -59,8 +59,8 @@ jobs:
 #     - name: Build Debug Artifacts
 #       run: bash ./gradlew app:assembleDebug
           
-#     - name: Build Release Artifacts
-#       run: bash ./gradlew app:assembleRelease --stacktrace
+      - name: Build Release Artifacts
+        run: ./gradlew app:assembleRelease
         
 #     - name: Build Bundle Artifacts
 #     - run: bash ./gradlew app:bundleRelease
@@ -104,25 +104,6 @@ jobs:
 #        with:
 #          line-prefix: "• "
 #          include-hashes: true
-
-      - name: Check for new commits today
-        id: check-new-commits
-        uses: adriangl/check-new-commits-action@v1
-        with:
-          token: ${{github.token}}
-          branch: 'master'
-      - name: Print something if new commits are found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
-        run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"
-      - name: Print another thing if new commits couldn't be found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
-        run: echo "You don't have new commits 🛑!"
-        
-      - name: Get PR Commits
-        id: 'get-pr-commits'
-        uses: tim-actions/get-pr-commits@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
