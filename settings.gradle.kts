@@ -1,2 +1,2 @@
 include(":app", ":core")
-rootProject.name = "project"
+rootProject.name = "android-app-template"
