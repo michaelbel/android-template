@@ -137,16 +137,6 @@ dependencies {
     api(Accompanist.DrawablePainter)
     api(Accompanist.Insets)
     api(Accompanist.InsetsUi)
-    //api(Accompanist.FlowLayout)
-    //api(Accompanist.NavigationAnimation)
-    //api(Accompanist.NavigationMaterial)
-    //api(Accompanist.Pager)
-    //api(Accompanist.PagerIndicators)
-    //api(Accompanist.Permissions)
-    //api(Accompanist.Placeholder)
-    //api(Accompanist.PlaceholderMaterial)
-    //api(Accompanist.SystemUiController)
-    //api(Accompanist.SwipeRefresh)
 
     // Firebase
     api(Firebase.FirebaseAbt)

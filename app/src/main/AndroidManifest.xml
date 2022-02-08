@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.INTERNET" tools:ignore="LeanbackUsesWifi"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <!--androidx.draganddrop minSdk 24-->
     <!--androidx.health.services.client minSdk 30-->
