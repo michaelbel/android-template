@@ -3,8 +3,6 @@ name: Distribution App
 on:
   push:
     branches: [ master ]
-# pull_request:
-#   branches: [ master ]
 
   workflow_dispatch:
   
@@ -15,14 +13,9 @@ env:
   KEYSTORE_KEY_PASSWORD: ${{secrets.KEYSTORE_KEY_PASSWORD}}
   KEYSTORE_STORE_PASSWORD: ${{secrets.KEYSTORE_STORE_PASSWORD}}  
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  preparation:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -56,14 +49,17 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-#     - name: Build Debug Artifacts
-#       run: bash ./gradlew app:assembleDebug
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Build Debug Artifacts
+       run: ./gradlew app:assembleDebug
           
-      - name: Build Release Artifacts
-        run: ./gradlew app:assembleRelease
+     - name: Build Release Artifacts
+       run: ./gradlew app:assembleRelease
         
 #     - name: Build Bundle Artifacts
-#     - run: bash ./gradlew app:bundleRelease
+#       run: ./gradlew app:bundleRelease
 
 #     - name: Upload Artifacts to Outputs
 #       uses: actions/upload-artifact@v2
@@ -75,13 +71,7 @@ jobs:
       # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
 #     - name: Download a Build Artifact
 #       uses: actions/download-artifact@v2
-        
-#     - name: Display structure of downloaded files
-#       run: ls -R
-        
-#     - name: 'Echo download path'
-#       run: echo ${{steps.download.outputs.download-path}}
-            
+      
 #     - name: Create GitHub Release
 #       uses: softprops/action-gh-release@v1
 #       with:
@@ -105,18 +95,18 @@ jobs:
 #          line-prefix: "• "
 #          include-hashes: true
 
-      - name: Telegram Message
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{secrets.TELEGRAM_TO_ID}}
-          token: ${{secrets.TELEGRAM_TOKEN}}
-          disable_notification: false
-          disable_web_page_preview: true
-          document: app/build/outputs/apk/**/*.apk
-          format: markdown
-          message: |
-            New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
-            Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            Changes since ${{steps.changes.outputs.last-tag}}:
-            ${{steps.changes.outputs.log}}
-            [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
+     - name: Telegram Message
+       uses: appleboy/telegram-action@master
+       with:
+         to: ${{secrets.TELEGRAM_TO_ID}}
+         token: ${{secrets.TELEGRAM_TOKEN}}
+         disable_notification: false
+         disable_web_page_preview: true
+         document: app/build/outputs/apk/**/*.apk
+         format: markdown
+         message: |
+           New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
+           Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
+           Changes since ${{steps.changes.outputs.last-tag}}:
+           ${{steps.changes.outputs.log}}
+           [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
