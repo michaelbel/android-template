@@ -1,1 +1,2 @@
-[![CI](https://github.com/michaelbel/android-app-template/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/michaelbel/android-app-template/actions/workflows/ci.yml)
+[![Distribution App](https://github.com/michaelbel/android-app-template/actions/workflows/distribution_app.yml/badge.svg?branch=master)](https://github.com/michaelbel/android-app-template/actions/workflows/distribution_app.yml)
+[![Check PR](https://github.com/michaelbel/android-app-template/actions/workflows/check_pr.yml/badge.svg?branch=master)](https://github.com/michaelbel/android-app-template/actions/workflows/check_pr.yml)
