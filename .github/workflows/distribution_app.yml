@@ -55,15 +55,15 @@ jobs:
     #  - name: Build Release Artifacts
     #    run: ./gradlew app:assembleRelease
         
-#     - name: Build Bundle Artifacts
-#       run: ./gradlew app:bundleRelease
-
-#     - name: Upload Artifacts to Outputs
-#       uses: actions/upload-artifact@v2
-#       with:
-#         path: |
-#           app/build/outputs/apk
-#           app/build/outputs/bundle
+      - name: Build Bundle Artifacts
+        run: ./gradlew app:bundleRelease
+ 
+      - name: Upload Artifacts to Outputs
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            app/build/outputs/apk
+            app/build/outputs/bundle
             
       # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
 #     - name: Download a Build Artifact
@@ -84,6 +84,20 @@ jobs:
 #       run: bash ./gradlew appDistributionUploadRelease --stacktrace
 #       env:
 #         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      - name: Create service_account.json
+        id: createServiceAccount
+        run: echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}' > service_account.json
+        
+      - name: Deploy to Play Store (BETA)
+        id: deploy
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service_account.json
+          packageName: org.michaelbel.template
+          releaseFile: app/build/outputs/bundle/release/*.aab
+          track: beta
+        # whatsNewDirectory: whatsnew/
 
 #      - name: Get Commits since last Release
 #        id: changes
