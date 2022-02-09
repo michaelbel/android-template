@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.INTERNET" tools:ignore="LeanbackUsesWifi"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-sdk
         tools:overrideLibrary="
