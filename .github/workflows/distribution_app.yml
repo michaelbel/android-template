@@ -20,7 +20,7 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
         with:
-          access_token: ${{github.token}}
+          access_token: ${{ github.token }}
       
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -37,10 +37,10 @@ jobs:
         uses: timheuer/base64-to-file@v1
         with:
           fileName: 'keystore_release.jks'
-          encodedString: ${{secrets.KEYSTORE_FILE}}
+          encodedString: ${{ secrets.KEYSTORE_FILE }}
           
       - name: Set Decoded File Location as Environment
-        run: echo "KEYSTORE_FILE=${{steps.decode_keystore_file.outputs.filePath}}" >> $GITHUB_ENV
+        run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
         
       - name: Expose Version Name
         uses: michpohl/android-expose-version-name-action@v1.0.0
@@ -49,11 +49,11 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-    #  - name: Build Debug Artifacts
-    #    run: ./gradlew app:assembleDebug
+      - name: Build Debug Artifacts
+        run: ./gradlew app:assembleDebug
           
-    #  - name: Build Release Artifacts
-    #    run: ./gradlew app:assembleRelease
+      - name: Build Release Artifacts
+        run: ./gradlew app:assembleRelease
         
       - name: Build Bundle Artifacts
         run: ./gradlew app:bundleRelease
@@ -64,10 +64,6 @@ jobs:
           path: |
             app/build/outputs/apk
             app/build/outputs/bundle
-            
-      # Download a build artifact that was previously uploaded in the workflow by the upload-artifact action
-#     - name: Download a Build Artifact
-#       uses: actions/download-artifact@v2
       
 #     - name: Create GitHub Release
 #       uses: softprops/action-gh-release@v1
@@ -80,15 +76,15 @@ jobs:
 #           app/build/outputs/apk/**/*.apk
 #           app/build/outputs/bundle/**/*.aab
           
-#     - name: Distribute Artifacts via Firebase
-#       run: bash ./gradlew appDistributionUploadRelease --stacktrace
-#       env:
-#         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Distribute Artifacts via Firebase
+        run: ./gradlew appDistributionUploadRelease
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
       - name: Create Service Account JSON File
         run: echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}' > service_account.json
         
-      - name: Deploy to Play Store
+      - name: Upload Bundle to Google Play Console
         uses: sokchanbo/android-upload-google-play@v1.0.0
         with:
           service-account: service_account.json
@@ -96,27 +92,20 @@ jobs:
           release-file: app/build/outputs/bundle/**/*.aab
           track: internal
 
-#      - name: Get Commits since last Release
-#        id: changes
-#        uses: simbo/changes-since-last-release-action@v1
-#        with:
-#          line-prefix: "• "
-#          include-hashes: true
-
       - name: Telegram Message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{secrets.TELEGRAM_TO_ID}}
-          token: ${{secrets.TELEGRAM_TOKEN}}
+          to: ${{ secrets.TELEGRAM_TO_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_notification: false
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
           format: markdown
           message: |
-            New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
+            New Artifacts Available in [Repository](https://github.com/${{ github.repository }})!
             Include Commits:
             ${{ github.event.head_commit.message }}
-            Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
-            Changes since ${{steps.changes.outputs.last-tag}}:
+            Version: ${{ env.ANDROID_VERSION_NAME }}(${{ env.ANDROID_VERSION_CODE }})
+            Changes since ${{ steps.changes.outputs.last-tag }}:
             ${{steps.changes.outputs.log}}
-            [See changes](https://github.com/${{github.repository}}/commit/${{github.sha}})
+            [See changes](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
