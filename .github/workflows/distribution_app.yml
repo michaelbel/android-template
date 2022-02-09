@@ -85,19 +85,16 @@ jobs:
 #       env:
 #         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-      - name: Create service_account.json
-        id: createServiceAccount
+      - name: Create Service Account JSON File
         run: echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}' > service_account.json
         
-      - name: Deploy to Play Store (BETA)
-        id: deploy
-        uses: r0adkll/upload-google-play@v1
+      - name: Deploy to Play Store
+        uses: sokchanbo/android-upload-google-play@v1.0.0
         with:
-          serviceAccountJson: service_account.json
-          packageName: org.michaelbel.template
-          releaseFiles: app/build/outputs/bundle/**/*.aab
-          track: beta
-        # whatsNewDirectory: whatsnew/
+          service-account: service_account.json
+          package-name: org.michaelbel.template
+          release-file: app/build/outputs/bundle/**/*.aab
+          track: internal
 
 #      - name: Get Commits since last Release
 #        id: changes
