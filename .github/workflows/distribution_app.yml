@@ -49,11 +49,11 @@ jobs:
           expose-version-name: 'true'
           expose-version-code: 'true'
           
-      - name: Build Debug Artifacts
-        run: ./gradlew app:assembleDebug
+    #  - name: Build Debug Artifacts
+    #    run: ./gradlew app:assembleDebug
           
-      - name: Build Release Artifacts
-        run: ./gradlew app:assembleRelease
+    #  - name: Build Release Artifacts
+    #    run: ./gradlew app:assembleRelease
         
 #     - name: Build Bundle Artifacts
 #       run: ./gradlew app:bundleRelease
@@ -103,6 +103,8 @@ jobs:
           format: markdown
           message: |
             New Artifacts Available in [Repository](https://github.com/${{github.repository}})!
+            Include Commits:
+            ${{ github.event.head_commit.message }}
             Version: ${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})
             Changes since ${{steps.changes.outputs.last-tag}}:
             ${{steps.changes.outputs.log}}
