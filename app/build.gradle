@@ -65,6 +65,7 @@ android {
 
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
@@ -77,6 +78,7 @@ android {
             }
         }
         debug {
+            debuggable true
             applicationIdSuffix = ".debug"
         }
     }
