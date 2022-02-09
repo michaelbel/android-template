@@ -95,7 +95,7 @@ jobs:
         with:
           serviceAccountJson: service_account.json
           packageName: org.michaelbel.template
-          releaseFile: app/build/outputs/bundle/release/*.aab
+          releaseFiles: app/build/outputs/bundle/**/*.aab
           track: beta
         # whatsNewDirectory: whatsnew/
 
