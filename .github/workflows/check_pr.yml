@@ -32,11 +32,8 @@ jobs:
       - name: Detekt
         run: ./gradlew detekt
         
-#     - name: Run Unit Tests
-#       run: ./gradlew test
-        
-#     - name: Tests
-#       run: ./gradlew testDebugUnitTest
+      - name: Unit Tests
+        run: ./gradlew testDebugUnitTest
         
       - name: Build
         run: ./gradlew compileDebugKotlin
