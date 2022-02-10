@@ -8,7 +8,6 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -20,6 +19,7 @@ import org.michaelbel.template.R
 import org.michaelbel.template.Screen
 import org.michaelbel.template.app.InAppUpdate
 import org.michaelbel.template.features.main.model.ScreenData
+import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
