@@ -77,12 +77,13 @@
         </activity>
 
         <activity
-            android:name=".ComposeActivity2"
-            android:exported="false"/>
+            android:name=".ComposeActivity2"/>
 
         <activity
-            android:name=".features.compose.ComposeActivity"
-            android:exported="false"/>
+            android:name=".features.compose.ComposeActivity"/>
+
+        <activity
+            android:name=".app.samples.lemonade.LemonadeActivity"/>
 
         <provider
             android:name="androidx.startup.InitializationProvider"
