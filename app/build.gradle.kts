@@ -99,6 +99,7 @@ android {
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalPagingApi
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalComposeUiApi
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterialApi
+        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalCoilApi
     }
 
     composeOptions {

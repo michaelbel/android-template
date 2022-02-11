@@ -26,8 +26,12 @@ fun NetworkImageScreen(
     navController: NavController
 ) {
     Scaffold(
-        topBar = { Toolbar(navController) }
-    ) { Content() }
+        topBar = {
+            Toolbar(navController)
+        }
+    ) {
+        Content()
+    }
 }
 
 @Composable
@@ -35,7 +39,9 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_network_image)) },
+        title = {
+            Text(text = stringResource(R.string.title_network_image))
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = { navController.popBackStack() }) {

@@ -1,9 +1,7 @@
-package org.michaelbel.template.features.compose.browser
+package org.michaelbel.template.features.compose.timer
 
 import android.content.Context
-import android.content.Intent
-import androidx.browser.customtabs.CustomTabColorSchemeParams
-import androidx.browser.customtabs.CustomTabsIntent
+import android.widget.Toast
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -15,33 +13,37 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.theme.AppTheme
 
 /**
- * Browser
- * InAppBrowser Chrome Custom Tabs
+ * Coroutines Timer
  */
 
 @Composable
-fun BrowserScreen(
+fun TimerScreen(
     navController: NavController
 ) {
+    val viewModel: TimerViewModel = hiltViewModel()
+
     Scaffold(
         topBar = {
             Toolbar(navController)
         }
     ) {
-        Content()
+        Content(
+            viewModel = viewModel
+        )
     }
 }
 
@@ -50,9 +52,7 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = {
-            Text(text = stringResource(R.string.title_browser))
-        },
+        title = { Text(text = stringResource(R.string.title_timer)) },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = { navController.popBackStack() }) {
@@ -66,54 +66,38 @@ private fun Toolbar(
 }
 
 @Composable
-private fun Content() {
+private fun Content(
+    viewModel: TimerViewModel
+) {
     val context: Context = LocalContext.current
 
-    fun browserIntent(url: String): Intent {
-        return Intent(Intent.ACTION_VIEW, url.toUri())
-    }
+    val isTimeOver: Boolean by rememberUpdatedState(viewModel.isTimeOver)
 
-    fun inAppBrowseIntent(url: String): Intent {
-        val colorSchemeParams: CustomTabColorSchemeParams = CustomTabColorSchemeParams.Builder()
-            .setToolbarColor(ContextCompat.getColor(context, R.color.Primary))
-            .build()
-        val customTabsIntentBuilder: CustomTabsIntent.Builder = CustomTabsIntent.Builder()
-        customTabsIntentBuilder.setDefaultColorSchemeParams(colorSchemeParams)
-        val customTabsIntent: CustomTabsIntent = customTabsIntentBuilder.build()
-        customTabsIntent.intent.data = url.toUri()
-        return customTabsIntent.intent
+    if (isTimeOver) {
+        Toast.makeText(context, R.string.time_over, Toast.LENGTH_SHORT).show()
     }
 
     LazyColumn {
         item {
             OutlinedButton(
-                onClick = { context.startActivity(browserIntent("https://www.google.com")) },
+                onClick = {
+                    viewModel.startTimer()
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.start_browser)) }
-        }
-        item {
-            OutlinedButton(
-                onClick = { context.startActivity(inAppBrowseIntent("https://www.google.com")) },
-                modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) {
-                Text(
-                    text = stringResource(R.string.start_in_app_browser)
-                )
-            }
+            ) { Text(text = stringResource(R.string.start_timer)) }
         }
     }
 }
 
 @Preview
 @Composable
-private fun BrowserPreview() {
+private fun TimerPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
     AppTheme {
-        BrowserScreen(
+        TimerScreen(
             navController = navController
         )
     }
@@ -121,14 +105,14 @@ private fun BrowserPreview() {
 
 @Preview
 @Composable
-private fun BrowserPreviewDark() {
+private fun TimerPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
     AppTheme(
         darkTheme = true
     ) {
-        BrowserScreen(
+        TimerScreen(
             navController = navController
         )
     }

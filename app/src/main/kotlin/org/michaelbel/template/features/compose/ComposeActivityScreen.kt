@@ -26,6 +26,8 @@ import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
 import org.michaelbel.template.features.compose.notifications.NotificationsScreen
 import org.michaelbel.template.features.compose.settingspanel.SettingsPanelScreen
 import org.michaelbel.template.features.compose.social.SocialScreen
+import org.michaelbel.template.features.compose.system.SystemScreen
+import org.michaelbel.template.features.compose.timer.TimerScreen
 
 @Composable
 fun ComposeActivityScreen() {
@@ -104,5 +106,7 @@ private fun Content(
         composable(ROUTE_NOTIFICATIONS) { NotificationsScreen(navController) }
         composable(ROUTE_SETTINGS_PANEL) { SettingsPanelScreen(navController) }
         composable(ROUTE_SOCIAL) { SocialScreen(navController) }
+        composable(ROUTE_SYSTEM) { SystemScreen(navController) }
+        composable(ROUTE_TIMER) { TimerScreen(navController) }
     }
 }

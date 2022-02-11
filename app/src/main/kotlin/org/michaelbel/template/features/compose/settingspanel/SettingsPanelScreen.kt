@@ -38,7 +38,9 @@ fun SettingsPanelScreen(
     Scaffold(
         topBar = { Toolbar(navController) }
     ) {
-        Content(onClick = { panel -> context.startActivity(Intent(panel)) })
+        Content(
+            onClick = { panel -> context.startActivity(Intent(panel)) }
+        )
     }
 }
 

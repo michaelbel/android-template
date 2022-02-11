@@ -30,5 +30,6 @@ object Kotlin {
         const val OptExperimentalPagingApi = "-Xopt-in=androidx.paging.ExperimentalPagingApi"
         const val OptExperimentalComposeUiApi = "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
         const val OptExperimentalMaterialApi = "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"
+        const val OptExperimentalCoilApi = "-Xopt-in=coil.annotation.ExperimentalCoilApi"
     }
 }

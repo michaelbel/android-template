@@ -49,7 +49,9 @@ fun SocialScreen(
     Scaffold(
         topBar = { Toolbar(navController) }
     ) {
-        Content(viewModel = viewModel)
+        Content(
+            viewModel = viewModel
+        )
     }
 }
 
@@ -159,7 +161,9 @@ private fun SocialPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    AppTheme(darkTheme = true) {
+    AppTheme(
+        darkTheme = true
+    ) {
         SocialScreen(
             navController = navController
         )

@@ -51,7 +51,9 @@ private fun Content(
         ROUTE_NETWORK_IMAGE to R.string.title_network_image,
         ROUTE_NOTIFICATIONS to R.string.title_notifications,
         ROUTE_SETTINGS_PANEL to R.string.title_settings_panel,
-        ROUTE_SOCIAL to R.string.title_social
+        ROUTE_SOCIAL to R.string.title_social,
+        ROUTE_SYSTEM to R.string.title_system_services,
+        ROUTE_TIMER to R.string.title_timer
     )
 
     Box(

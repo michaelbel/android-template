@@ -112,8 +112,6 @@ class MainViewModel @Inject constructor(
                     R.string.title_nav_args
                 ),
                 ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
-                ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
-                ScreenData(Screen.Timer, bundleOf(), R.string.title_timer),
                 ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
                 ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
 
