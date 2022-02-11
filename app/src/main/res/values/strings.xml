@@ -107,6 +107,7 @@
     <string name="title_social">Social</string>
     <string name="sign_in_google">Sign In with Google</string>
     <string name="sign_in_vk">Sign In with VK</string>
+    <string name="sign_in_facebook">Sign In with Facebook</string>
 
     <!--System Services-->
     <string name="title_system_services">System Services</string>

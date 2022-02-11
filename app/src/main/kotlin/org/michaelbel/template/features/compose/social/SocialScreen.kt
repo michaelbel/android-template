@@ -3,6 +3,7 @@ package org.michaelbel.template.features.compose.social
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultRegistryOwner
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -75,6 +76,7 @@ private fun Content(
     viewModel: SocialViewModel
 ) {
     val context: Context = LocalContext.current
+    val owner: ActivityResultRegistryOwner = context as ActivityResultRegistryOwner
 
     val googleSignInContract = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -125,6 +127,15 @@ private fun Content(
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
             ) { Text(text = stringResource(R.string.sign_in_vk)) }
+        }
+        item {
+            OutlinedButton(
+                onClick = {
+                    viewModel.facebookLogin(owner)
+                },
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+            ) { Text(text = stringResource(R.string.sign_in_facebook)) }
         }
     }
 }

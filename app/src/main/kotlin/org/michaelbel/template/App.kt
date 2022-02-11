@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import coil.ImageLoader
 import coil.ImageLoaderFactory
+import com.facebook.FacebookSdk
 import com.google.android.material.color.DynamicColors
 import com.kirillr.strictmodehelper.kotlin.dsl.initStrictMode
 import dagger.hilt.android.HiltAndroidApp
@@ -17,6 +18,7 @@ class App: Application(), ImageLoaderFactory {
         super.onCreate()
         initAppTheme()
         initAndroidStrictMode()
+        FacebookSdk.sdkInitialize(applicationContext)
     }
 
     override fun newImageLoader(): ImageLoader {

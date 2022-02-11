@@ -11,6 +11,8 @@ package org.michaelbel.template
  * Gander — https://github.com/Ashok-Varma/Gander/releases
  * Retrofit — https://github.com/square/retrofit
  * Converter Serialization — https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
+ * Facebook - https://github.com/facebook/facebook-android-sdk
+ * VK - https://github.com/VKCOM/vk-android-sdk
  */
 object ThirdParty {
     private const val MaterialVersion = "1.6.0-alpha02"
@@ -23,6 +25,8 @@ object ThirdParty {
     private const val RetrofitVersion = "2.9.0"
     private const val RetrofitConverterSerializationVersion = "0.8.0"
     private const val SpotlessVersion = "6.2.1"
+    private const val FacebookLoginVersion = "12.3.0"
+    private const val VKVersion = "3.5.0"
     const val DetektVersion = "1.19.0"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
@@ -42,4 +46,6 @@ object ThirdParty {
     const val RetrofitConverterSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$RetrofitConverterSerializationVersion"
     const val SpotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:$SpotlessVersion"
     const val Detekt = "io.gitlab.arturbosch.detekt"
+    const val FacebookLogin = "com.facebook.android:facebook-login:$FacebookLoginVersion"
+    const val VK = "com.vk:android-sdk-core:$VKVersion"
 }

@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties["storeFile"] = System.env.KEYSTORE_FILE ?: ''
 }
 
-def generateVersionCode() {
+static def generateVersionCode() {
     def result = "git rev-list HEAD --count".execute().text.trim() // unix
     if (result.empty) result = "PowerShell -Command git rev-list HEAD --count".execute().text.trim() // windows
     if (result.empty) throw new RuntimeException("Could not generate versioncode on this platform? Cmd output: ${result.text}")
@@ -105,7 +105,8 @@ android {
             "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api",
             "-Xopt-in=coil.annotation.ExperimentalCoilApi",
             "-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi",
-            "-Xopt-in=kotlinx.coroutines.FlowPreview"
+            "-Xopt-in=kotlinx.coroutines.FlowPreview",
+            "-opt-in=kotlin.RequiresOptIn"
         ]
     }
 
@@ -153,10 +154,12 @@ dependencies {
     implementation("com.squareup.moshi:moshi:1.12.0") // нужен переход на ksp
               kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
     implementation("com.squareup.picasso:picasso:2.71828")
+
     implementation("com.github.kirich1409:viewbindingpropertydelegate:1.5.6")
     implementation("com.github.kirich1409:strict-mode-compat-ktx:30.2.0")
-    implementation("com.vk:android-sdk-core:3.4.1")
-    implementation("com.vk:android-sdk-api:3.4.1")
+
+    implementation("com.vk:android-sdk-core:3.5.0")
+    implementation("com.facebook.android:facebook-login:12.3.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:core-ktx:1.4.0")
