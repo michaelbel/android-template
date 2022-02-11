@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.constraints
+package org.michaelbel.template.features.views.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -12,17 +12,16 @@ import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsTextDynamicWidthBinding
+import org.michaelbel.template.databinding.FragmentConstraintsBaselineBinding
 
 @AndroidEntryPoint
-class ConstrainsTextDynamicWidthFragment:
-    Fragment(R.layout.fragment_constraints_text_dynamic_width) {
+class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baseline) {
 
-    private val binding: FragmentConstraintsTextDynamicWidthBinding by viewBinding()
+    private val binding: FragmentConstraintsBaselineBinding by viewBinding()
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsTextDynamicWidthFragment::class.simpleName)
+        analytics.trackScreen(ConstrainsBaselineFragment::class.simpleName)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

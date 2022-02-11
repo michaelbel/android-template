@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.constraints
+package org.michaelbel.template.features.views.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -12,17 +12,12 @@ import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsBaselineBinding
+import org.michaelbel.template.databinding.FragmentConstraintsGoneMarginsBinding
 
 @AndroidEntryPoint
-class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baseline) {
+class ConstrainsGoneMarginsFragment: Fragment(R.layout.fragment_constraints_gone_margins) {
 
-    private val binding: FragmentConstraintsBaselineBinding by viewBinding()
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsBaselineFragment::class.simpleName)
-    }
+    private val binding: FragmentConstraintsGoneMarginsBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,5 +27,10 @@ class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baselin
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsGoneMarginsFragment::class.simpleName)
     }
 }

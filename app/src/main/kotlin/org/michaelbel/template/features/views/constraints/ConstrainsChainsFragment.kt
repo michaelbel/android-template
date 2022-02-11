@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.constraints
+package org.michaelbel.template.features.views.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -12,12 +12,12 @@ import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsConstrainedWidthBinding
+import org.michaelbel.template.databinding.FragmentConstraintsChainsBinding
 
 @AndroidEntryPoint
-class ConstrainsConstrainedWidthFragment: Fragment(R.layout.fragment_constraints_constrained_width) {
+class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
 
-    private val binding: FragmentConstraintsConstrainedWidthBinding by viewBinding()
+    private val binding: FragmentConstraintsChainsBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,6 +31,6 @@ class ConstrainsConstrainedWidthFragment: Fragment(R.layout.fragment_constraints
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsConstrainedWidthFragment::class.simpleName)
+        analytics.trackScreen(ConstrainsChainsFragment::class.simpleName)
     }
 }

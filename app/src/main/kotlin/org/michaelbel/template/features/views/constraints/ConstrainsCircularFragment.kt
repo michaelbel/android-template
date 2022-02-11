@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.constraints
+package org.michaelbel.template.features.views.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -12,12 +12,12 @@ import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsGuidelineBinding
+import org.michaelbel.template.databinding.FragmentConstraintsCircularBinding
 
 @AndroidEntryPoint
-class ConstrainsGuidelineFragment: Fragment(R.layout.fragment_constraints_guideline) {
+class ConstrainsCircularFragment: Fragment(R.layout.fragment_constraints_circular) {
 
-    private val binding: FragmentConstraintsGuidelineBinding by viewBinding()
+    private val binding: FragmentConstraintsCircularBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,6 +31,6 @@ class ConstrainsGuidelineFragment: Fragment(R.layout.fragment_constraints_guidel
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsGuidelineFragment::class.simpleName)
+        analytics.trackScreen(ConstrainsCircularFragment::class.simpleName)
     }
 }

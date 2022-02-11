@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.constraints
+package org.michaelbel.template.features.views.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -12,12 +12,18 @@ import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsChainsBinding
+import org.michaelbel.template.databinding.FragmentConstraintsTextDynamicWidthBinding
 
 @AndroidEntryPoint
-class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
+class ConstrainsTextDynamicWidthFragment:
+    Fragment(R.layout.fragment_constraints_text_dynamic_width) {
 
-    private val binding: FragmentConstraintsChainsBinding by viewBinding()
+    private val binding: FragmentConstraintsTextDynamicWidthBinding by viewBinding()
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(ConstrainsTextDynamicWidthFragment::class.simpleName)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,10 +33,5 @@ class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
             WindowInsetsCompat.CONSUMED
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsChainsFragment::class.simpleName)
     }
 }
