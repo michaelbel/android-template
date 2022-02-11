@@ -10,7 +10,7 @@ package org.michaelbel.template
  * https://github.com/google/accompanist
  */
 object Accompanist {
-    private const val AccompanistVersion = "0.20.3"
+    private const val AccompanistVersion = "0.23.0"
 
     const val AppCompat = "com.google.accompanist:accompanist-appcompat-theme:$AccompanistVersion"
     const val DrawablePainter = "com.google.accompanist:accompanist-drawablepainter:$AccompanistVersion"
