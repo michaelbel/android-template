@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import java.util.*
+import java.util.Locale
 import org.michaelbel.template.Constants
 import org.michaelbel.template.app.data.entity.MovieDb
 import org.michaelbel.template.databinding.ItemMovieBinding

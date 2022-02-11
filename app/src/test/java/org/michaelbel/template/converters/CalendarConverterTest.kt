@@ -1,8 +1,8 @@
 package org.michaelbel.template.converters
 
+import java.util.Calendar
 import org.junit.Assert.assertEquals
 import org.michaelbel.template.app.data.converters.CalendarConverter
-import java.util.*
 
 class CalendarConverterTest {
 

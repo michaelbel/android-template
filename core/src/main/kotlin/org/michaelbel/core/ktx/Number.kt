@@ -4,7 +4,7 @@ package org.michaelbel.core.ktx
 
 import android.content.Context
 import android.util.TypedValue
-import java.util.*
+import java.util.Locale
 import kotlin.math.pow
 
 fun Number.dp(context: Context): Int = TypedValue.applyDimension(

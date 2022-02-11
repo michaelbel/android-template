@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.util.*
+import java.util.Locale
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
