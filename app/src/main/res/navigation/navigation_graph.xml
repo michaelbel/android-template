@@ -96,11 +96,6 @@
         tools:layout="@layout/fragment_saved_state"/>
 
     <fragment
-        android:id="@+id/socialFragment"
-        android:name="org.michaelbel.template.features.social.SocialFragment"
-        android:label="Social"/>
-
-    <fragment
         android:id="@+id/systemServicesFragment"
         android:name="org.michaelbel.template.features.systemservices.SystemServicesFragment"
         android:label="SystemServices"/>

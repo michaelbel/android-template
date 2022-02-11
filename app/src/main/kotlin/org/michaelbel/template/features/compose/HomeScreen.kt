@@ -18,12 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.Screen
-import org.michaelbel.template.features.main.model.ScreenData
 
 @Composable
 fun HomeScreen(
@@ -53,20 +50,8 @@ private fun Content(
         ROUTE_CLIPBOARD to R.string.title_clipboard,
         ROUTE_NETWORK_IMAGE to R.string.title_network_image,
         ROUTE_NOTIFICATIONS to R.string.title_notifications,
-        ROUTE_SETTINGS_PANEL to R.string.title_settings_panel
-    )
-
-    val list2 = listOf(
-        ScreenData(Screen.Config, bundleOf(), R.string.title_remote_config),
-        ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs),
-        ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
-        ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
-        ScreenData(
-            Screen.NavArgs,
-            bundleOf("firstText" to "Some Text", "secondNumber" to 100),
-            R.string.title_nav_args
-        ),
-        ScreenData(Screen.Toast, bundleOf(), R.string.title_toast)
+        ROUTE_SETTINGS_PANEL to R.string.title_settings_panel,
+        ROUTE_SOCIAL to R.string.title_social
     )
 
     Box(

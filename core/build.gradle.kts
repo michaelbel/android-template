@@ -1,5 +1,12 @@
 
-import org.michaelbel.template.*
+import org.michaelbel.template.Accompanist
+import org.michaelbel.template.App
+import org.michaelbel.template.Firebase
+import org.michaelbel.template.GooglePlayServices
+import org.michaelbel.template.Jetpack
+import org.michaelbel.template.Kotlin
+import org.michaelbel.template.Testing
+import org.michaelbel.template.ThirdParty
 
 plugins {
     id("com.android.library")
@@ -70,6 +77,7 @@ dependencies {
     api(Jetpack.ComposeRuntimeLivedata)
     api(Jetpack.ComposeUi)
     api(Jetpack.ComposeUiViewBinding)
+    api(Jetpack.ComposeUiTooling)
     api(Jetpack.ConstraintLayoutCompose)
     api(Jetpack.Core)
     api(Jetpack.CoreSplashScreen)
@@ -103,7 +111,6 @@ dependencies {
     kapt(Jetpack.LifecycleCommon)
     kapt(Jetpack.RoomCompiler)
     debugApi(Jetpack.ComposeUiTestManifest)
-    debugApi(Jetpack.ComposeUiTooling)
     testApi(Jetpack.RoomTesting)
     testApi(Jetpack.TestCore)
     androidTestApi(Jetpack.ArchCoreTesting)

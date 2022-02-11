@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.social.di
+package org.michaelbel.template.features.compose.social
 
 import android.content.Context
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object GoogleModule {
+object GoogleSignInModule {
 
     //const val CLIENT_SECRET = "rmQ3Ri3-B0ewWESSkhHYY4TG"
 

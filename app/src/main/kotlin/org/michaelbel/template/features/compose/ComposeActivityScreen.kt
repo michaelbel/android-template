@@ -25,6 +25,7 @@ import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
 import org.michaelbel.template.features.compose.notifications.NotificationsScreen
 import org.michaelbel.template.features.compose.settingspanel.SettingsPanelScreen
+import org.michaelbel.template.features.compose.social.SocialScreen
 
 @Composable
 fun ComposeActivityScreen() {
@@ -90,17 +91,18 @@ private fun BottomBar(
 @SuppressLint("NewApi")
 @Composable
 private fun Content(
-    navHostController: NavHostController
+    navController: NavHostController
 ) {
     NavHost(
-        navController = navHostController,
+        navController = navController,
         startDestination = ROUTE_HOME
     ) {
-        composable(ROUTE_HOME) { HomeScreen(navHostController) }
-        composable(ROUTE_BROWSER) { BrowserScreen(navHostController) }
-        composable(ROUTE_CLIPBOARD) { ClipboardScreen(navHostController) }
-        composable(ROUTE_NETWORK_IMAGE) { NetworkImageScreen(navHostController) }
-        composable(ROUTE_NOTIFICATIONS) { NotificationsScreen(navHostController) }
-        composable(ROUTE_SETTINGS_PANEL) { SettingsPanelScreen(navHostController) }
+        composable(ROUTE_HOME) { HomeScreen(navController) }
+        composable(ROUTE_BROWSER) { BrowserScreen(navController) }
+        composable(ROUTE_CLIPBOARD) { ClipboardScreen(navController) }
+        composable(ROUTE_NETWORK_IMAGE) { NetworkImageScreen(navController) }
+        composable(ROUTE_NOTIFICATIONS) { NotificationsScreen(navController) }
+        composable(ROUTE_SETTINGS_PANEL) { SettingsPanelScreen(navController) }
+        composable(ROUTE_SOCIAL) { SocialScreen(navController) }
     }
 }

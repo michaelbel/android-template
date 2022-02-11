@@ -216,10 +216,10 @@ inline fun <T> Either<T>.handle(success: (T) -> Unit, failure: (Throwable) -> Un
  *     )
  * ```
  */
-inline fun <T, R> Either<T>.zip(success: (T) -> R, failure: (Exception?) -> R): R =
+inline fun <T, R> Either<T>.zip(success: (T) -> R, failure: (Throwable) -> R): R =
     when (this) {
         is Either.Success -> success(this.value)
-        is Either.Failure -> error(this.exception)
+        is Either.Failure -> failure(this.exception)
     }
 
 /**
