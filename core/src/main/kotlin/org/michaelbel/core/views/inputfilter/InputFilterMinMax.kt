@@ -1,4 +1,4 @@
-package org.michaelbel.core.inputfilter
+package org.michaelbel.core.views.inputfilter
 
 import android.text.InputFilter
 import android.text.Spanned

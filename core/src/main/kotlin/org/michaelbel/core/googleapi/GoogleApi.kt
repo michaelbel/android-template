@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.systemservices
+package org.michaelbel.core.googleapi
 
 import android.content.Context
 import android.os.Build

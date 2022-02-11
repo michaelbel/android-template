@@ -1,4 +1,4 @@
-package org.michaelbel.core.di.modules
+package org.michaelbel.core.system
 
 import android.bluetooth.BluetoothManager
 import android.content.Context

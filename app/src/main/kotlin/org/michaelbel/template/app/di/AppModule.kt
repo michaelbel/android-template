@@ -1,7 +1,6 @@
 package org.michaelbel.template.app.di
 
 import android.content.Context
-import com.google.android.gms.common.GoogleApiAvailability
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,12 +13,6 @@ import org.michaelbel.template.app.data.dao.MovieDao
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
-    @Provides
-    @Singleton
-    fun provideGoogleApiAvailability(): GoogleApiAvailability {
-        return GoogleApiAvailability.getInstance()
-    }
 
     @Provides
     @Singleton

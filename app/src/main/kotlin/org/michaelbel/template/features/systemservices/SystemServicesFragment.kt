@@ -16,10 +16,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.core.googleapi.GoogleApi
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
+import org.michaelbel.core.system.Connectivity
 import org.michaelbel.template.R
-import org.michaelbel.template.app.Connectivity
 import org.michaelbel.template.databinding.FragmentSystemServicesBinding
 
 // todo добавить flow для состояния интернета

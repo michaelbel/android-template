@@ -1,4 +1,4 @@
-package org.michaelbel.core.di.modules
+package org.michaelbel.core.coroutines
 
 import dagger.Module
 import dagger.Provides
@@ -8,10 +8,6 @@ import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
-import org.michaelbel.core.di.qualifiers.DefaultApplicationScope
-import org.michaelbel.core.di.qualifiers.DefaultDispatcher
-import org.michaelbel.core.di.qualifiers.MainApplicationScope
-import org.michaelbel.core.di.qualifiers.MainDispatcher
 
 @Module
 @InstallIn(SingletonComponent::class)

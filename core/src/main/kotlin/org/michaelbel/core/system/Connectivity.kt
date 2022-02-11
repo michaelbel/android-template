@@ -1,4 +1,4 @@
-package org.michaelbel.template.app
+package org.michaelbel.core.system
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager

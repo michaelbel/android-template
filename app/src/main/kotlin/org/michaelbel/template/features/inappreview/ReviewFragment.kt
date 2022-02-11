@@ -11,6 +11,7 @@ import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.core.playcore.inappreview.InAppReview
 import org.michaelbel.template.features.inappreview.ui.ReviewScreen
 
 @AndroidEntryPoint

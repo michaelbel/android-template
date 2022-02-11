@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import okhttp3.Cache
 import okhttp3.OkHttpClient
-import org.michaelbel.core.di.qualifiers.ConverterFactorySerialization
 import org.michaelbel.core.ktx.createService
 import org.michaelbel.template.Constants
 import org.michaelbel.template.features.tmdbapi.api.MovieApi
@@ -66,7 +65,7 @@ object ApiModule {
     @TmdbRetrofit
     fun provideRetrofit(
         @TmdbBaseUrl baseUrl: String,
-        @ConverterFactorySerialization converterFactory: Converter.Factory,
+        converterFactory: Converter.Factory,
         @TmdbOkhttp okHttpClient: OkHttpClient
     ): Retrofit {
         val builder = Retrofit.Builder().apply {

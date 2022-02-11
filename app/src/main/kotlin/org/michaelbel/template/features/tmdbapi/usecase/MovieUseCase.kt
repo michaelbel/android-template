@@ -2,7 +2,7 @@ package org.michaelbel.template.features.tmdbapi.usecase
 
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
-import org.michaelbel.core.di.qualifiers.IoDispatcher
+import org.michaelbel.core.coroutines.IoDispatcher
 import org.michaelbel.core.usecase.UseCase
 import org.michaelbel.template.features.tmdbapi.domain.MovieRepository
 import org.michaelbel.template.features.tmdbapi.model.moshi.Movie2

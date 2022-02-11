@@ -1,4 +1,4 @@
-package org.michaelbel.core.appbar
+package org.michaelbel.core.views.appbar
 
 import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.abs

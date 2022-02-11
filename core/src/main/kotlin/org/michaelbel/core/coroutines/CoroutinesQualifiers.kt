@@ -1,4 +1,4 @@
-package org.michaelbel.core.di.qualifiers
+package org.michaelbel.core.coroutines
 
 import javax.inject.Qualifier
 

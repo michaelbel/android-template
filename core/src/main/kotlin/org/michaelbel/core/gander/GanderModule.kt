@@ -1,4 +1,4 @@
-package org.michaelbel.core.di.modules
+package org.michaelbel.core.gander
 
 import android.content.Context
 import com.ashokvarma.gander.Gander

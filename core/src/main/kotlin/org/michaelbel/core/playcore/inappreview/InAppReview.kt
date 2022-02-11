@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.inappreview
+package org.michaelbel.core.playcore.inappreview
 
 import android.app.Activity
 import com.google.android.play.core.review.ReviewInfo

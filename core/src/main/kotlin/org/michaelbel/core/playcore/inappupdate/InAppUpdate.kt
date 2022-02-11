@@ -1,4 +1,4 @@
-package org.michaelbel.template.app
+package org.michaelbel.core.playcore.inappupdate
 
 import android.app.Activity
 import com.google.android.play.core.appupdate.AppUpdateInfo
@@ -7,9 +7,9 @@ import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.tasks.Task
-import timber.log.Timber
 import javax.inject.Inject
-import org.michaelbel.template.features.systemservices.GoogleApi
+import org.michaelbel.core.googleapi.GoogleApi
+import timber.log.Timber
 
 class InAppUpdate @Inject constructor(
     private val appUpdateManager: AppUpdateManager,

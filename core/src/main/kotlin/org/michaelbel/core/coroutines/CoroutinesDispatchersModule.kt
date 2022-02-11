@@ -1,4 +1,4 @@
-package org.michaelbel.core.di.modules
+package org.michaelbel.core.coroutines
 
 import dagger.Module
 import dagger.Provides
@@ -6,10 +6,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import org.michaelbel.core.di.qualifiers.DefaultDispatcher
-import org.michaelbel.core.di.qualifiers.IoDispatcher
-import org.michaelbel.core.di.qualifiers.MainDispatcher
-import org.michaelbel.core.di.qualifiers.MainImmediateDispatcher
 
 @Module
 @InstallIn(SingletonComponent::class)

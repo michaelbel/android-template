@@ -1,4 +1,4 @@
-package org.michaelbel.core.di.modules
+package org.michaelbel.core.playcore
 
 import android.content.Context
 import com.google.android.play.core.appupdate.AppUpdateManager
