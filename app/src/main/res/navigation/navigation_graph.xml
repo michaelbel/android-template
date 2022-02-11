@@ -124,7 +124,6 @@
 
     <fragment
         android:id="@+id/tmdbApiFragment"
-        android:name="org.michaelbel.template.features.tmdbapi.ui.MovieFragment"
         android:label="TmdbApi"
         tools:layout="@layout/fragment_movies"/>
 

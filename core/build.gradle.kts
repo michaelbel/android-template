@@ -1,4 +1,3 @@
-
 import org.michaelbel.template.Accompanist
 import org.michaelbel.template.App
 import org.michaelbel.template.Firebase
@@ -16,8 +15,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
 }
-
-apply("$rootDir/spotless.gradle")
 
 android {
     compileSdk = App.CompileSdk
@@ -157,7 +154,7 @@ dependencies {
     api(ThirdParty.Material)
     api(ThirdParty.MaterialComposeThemeAdapter)
     api(ThirdParty.PlayCore)
-    api(ThirdParty.HiltAndroid)
+    implementation(ThirdParty.HiltAndroid)
     api(ThirdParty.Coil)
     api(ThirdParty.CoilCompose)
     api(ThirdParty.Timber)

@@ -27,6 +27,8 @@ object ThirdParty {
     private const val SpotlessVersion = "6.2.1"
     private const val FacebookLoginVersion = "12.3.0"
     private const val VKVersion = "3.5.0"
+    private const val ViewBindingPropertyDelegateVersion = "1.5.6"
+    private const val StrictModeVersion = "30.2.0"
     const val DetektVersion = "1.19.0"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
@@ -48,4 +50,6 @@ object ThirdParty {
     const val Detekt = "io.gitlab.arturbosch.detekt"
     const val FacebookLogin = "com.facebook.android:facebook-login:$FacebookLoginVersion"
     const val VK = "com.vk:android-sdk-core:$VKVersion"
+    const val ViewBindingPropertyDelegate = "com.github.kirich1409:viewbindingpropertydelegate:$ViewBindingPropertyDelegateVersion"
+    const val StrictMode = "com.github.kirich1409:strict-mode-compat-ktx:$StrictModeVersion"
 }
