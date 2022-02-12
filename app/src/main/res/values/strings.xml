@@ -51,13 +51,6 @@
     <string name="title_constraints_guideline">Constraints Guideline</string>
     <string name="constraints_guideline">Пример позиционирования элементов относительно невидимой линии Guideline</string>
 
-    <!--Dialogs-->
-    <string name="title_dialogs">Dialogs</string>
-    <string name="bottom_sheet">BottomSheet</string>
-    <string name="date_picker">Date Picker</string>
-    <string name="time_picker">Time Picker</string>
-    <string name="alert_dialog">Alert Dialog</string>
-
     <!--Fonts-->
     <string name="title_fonts">Fonts</string>
 

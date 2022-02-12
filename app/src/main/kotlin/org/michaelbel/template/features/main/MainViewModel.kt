@@ -101,7 +101,6 @@ class MainViewModel @Inject constructor(
                     bundleOf(),
                     R.string.title_constraints_guideline
                 ),
-                ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs),
                 ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
                 ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
                 ScreenData(

@@ -48,11 +48,6 @@
         android:label="ConstrainsGuideline"/>
 
     <fragment
-        android:id="@+id/dialogsFragment"
-        android:name="org.michaelbel.template.features.dialog.DialogsFragment"
-        android:label="Dialogs"/>
-
-    <fragment
         android:id="@+id/fontsFragment"
         android:name="org.michaelbel.template.features.views.fonts.FontsFragment"
         android:label="Fonts"/>
