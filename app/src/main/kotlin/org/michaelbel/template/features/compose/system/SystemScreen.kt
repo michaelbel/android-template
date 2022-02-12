@@ -1,11 +1,6 @@
 package org.michaelbel.template.features.compose.system
 
 import android.content.Context
-import android.content.Intent
-import android.speech.RecognizerIntent
-import android.widget.Toast
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -32,7 +27,6 @@ import org.michaelbel.template.ui.theme.AppTheme
 
 /**
  * Vibrate
- * Google Voice Input
  * GooglePlay is Available
  * Connectivity
  * Bluetooth
@@ -86,17 +80,6 @@ private fun Content(
     val isBatteryCharging: Boolean by rememberUpdatedState(viewModel.isBatteryCharging)
     val batteryLevel: Int by rememberUpdatedState(viewModel.batteryLevel)
 
-    val speechRecognizeContract = rememberLauncherForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { activityResult ->
-        val data: Intent? = activityResult.data
-        val spokenText: String? =
-            data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.let { results ->
-                results[0]
-            }
-        Toast.makeText(context, spokenText, Toast.LENGTH_SHORT).show()
-    }
-
     LazyColumn {
         item {
             OutlinedButton(
@@ -106,21 +89,6 @@ private fun Content(
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
             ) { Text(text = stringResource(R.string.button_vibrate)) }
-        }
-        item {
-            OutlinedButton(
-                onClick = {
-                    val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-                        putExtra(
-                            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
-                        )
-                    }
-                    speechRecognizeContract.launch(intent)
-                },
-                modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.button_voice)) }
         }
         item {
             Text(

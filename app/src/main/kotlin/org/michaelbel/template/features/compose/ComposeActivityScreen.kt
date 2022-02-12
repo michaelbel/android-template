@@ -20,11 +20,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.features.compose.browser.BrowserScreen
 import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
+import org.michaelbel.template.features.compose.intents.IntentsScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
 import org.michaelbel.template.features.compose.notifications.NotificationsScreen
-import org.michaelbel.template.features.compose.settingspanel.SettingsPanelScreen
 import org.michaelbel.template.features.compose.social.SocialScreen
 import org.michaelbel.template.features.compose.system.SystemScreen
 import org.michaelbel.template.features.compose.timer.TimerScreen
@@ -48,7 +47,6 @@ private fun BottomBar(
 ) {
     val items = listOf(
         ROUTE_HOME,
-        ROUTE_BROWSER,
         ROUTE_CLIPBOARD,
         ROUTE_NETWORK_IMAGE,
         ROUTE_NOTIFICATIONS
@@ -100,11 +98,10 @@ private fun Content(
         startDestination = ROUTE_HOME
     ) {
         composable(ROUTE_HOME) { HomeScreen(navController) }
-        composable(ROUTE_BROWSER) { BrowserScreen(navController) }
         composable(ROUTE_CLIPBOARD) { ClipboardScreen(navController) }
         composable(ROUTE_NETWORK_IMAGE) { NetworkImageScreen(navController) }
         composable(ROUTE_NOTIFICATIONS) { NotificationsScreen(navController) }
-        composable(ROUTE_SETTINGS_PANEL) { SettingsPanelScreen(navController) }
+        composable(ROUTE_SETTINGS_PANEL) { IntentsScreen(navController) }
         composable(ROUTE_SOCIAL) { SocialScreen(navController) }
         composable(ROUTE_SYSTEM) { SystemScreen(navController) }
         composable(ROUTE_TIMER) { TimerScreen(navController) }

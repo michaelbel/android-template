@@ -68,11 +68,6 @@
         android:label="InAppReview"/>
 
     <fragment
-        android:id="@+id/intentsFragment"
-        android:name="org.michaelbel.template.features.intents.IntentsFragment"
-        android:label="Intents"/>
-
-    <fragment
         android:id="@+id/navArgsFragment"
         android:name="org.michaelbel.template.features.navagrs.NavArgsFragment"
         android:label="NavArgs">

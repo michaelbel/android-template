@@ -109,13 +109,6 @@ android {
     buildFeatures {
         compose = true
         viewBinding = true
-
-        // Disable unused AGP features
-        /*aidl = false
-        buildConfig = false
-        renderScript = false
-        resValues = false
-        shaders = false*/
     }
 
     sourceSets.getByName("main") {

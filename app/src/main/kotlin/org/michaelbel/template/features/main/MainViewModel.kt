@@ -105,7 +105,6 @@ class MainViewModel @Inject constructor(
                 ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs),
                 ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
                 ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
-                ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
                 ScreenData(
                     Screen.NavArgs,
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),

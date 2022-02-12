@@ -46,11 +46,10 @@ private fun Content(
     val listState: LazyListState = rememberLazyListState()
 
     val list = mapOf(
-        ROUTE_BROWSER to R.string.title_browser,
         ROUTE_CLIPBOARD to R.string.title_clipboard,
         ROUTE_NETWORK_IMAGE to R.string.title_network_image,
         ROUTE_NOTIFICATIONS to R.string.title_notifications,
-        ROUTE_SETTINGS_PANEL to R.string.title_settings_panel,
+        ROUTE_SETTINGS_PANEL to R.string.title_intents,
         ROUTE_SOCIAL to R.string.title_social,
         ROUTE_SYSTEM to R.string.title_system_services,
         ROUTE_TIMER to R.string.title_timer
