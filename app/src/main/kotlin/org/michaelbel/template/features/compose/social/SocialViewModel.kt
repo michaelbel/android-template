@@ -1,6 +1,5 @@
 package org.michaelbel.template.features.compose.social
 
-import android.util.Log
 import androidx.activity.result.ActivityResultRegistryOwner
 import androidx.lifecycle.ViewModel
 import com.facebook.CallbackManager
@@ -56,26 +55,36 @@ class SocialViewModel @Inject constructor(
         analytics.trackScreen("SocialScreen")
     }
 
-    fun onGoogleSignInSuccess(account: GoogleSignInAccount) {}
+    fun onGoogleSignInSuccess(account: GoogleSignInAccount) {
+        /* not implemented */
+    }
 
-    fun onGoogleSignInCancel() {}
+    fun onGoogleSignInCancel() {
+        /* not implemented */
+    }
 
-    fun onGoogleSignInFailure(exception: ApiException) {}
+    fun onGoogleSignInFailure(exception: ApiException) {
+        /* not implemented */
+    }
 
-    fun onVKAuthSuccess(token: VKAccessToken) {}
+    fun onVKAuthSuccess(token: VKAccessToken) {
+        /* not implemented */
+    }
 
-    fun onVKAuthFailure(exception: VKAuthException) {}
+    fun onVKAuthFailure(exception: VKAuthException) {
+        /* not implemented */
+    }
 
     fun onFacebookSuccess(result: LoginResult) {
-        Log.e("2580", "onFacebookSuccess $result")
+        /* not implemented */
     }
 
     fun onFacebookCancel() {
-        Log.e("2580", "onFacebookCancel")
+        /* not implemented */
     }
 
     fun onFacebookFailure(error: FacebookException) {
-        Log.e("2580", "onFacebookFailure $error")
+        /* not implemented */
     }
 
     private fun googleLogout() {

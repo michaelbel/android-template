@@ -75,9 +75,13 @@ private fun Content() {
 
         if (Build.VERSION.SDK_INT >= 30) {
             toast.addCallback(object: Toast.Callback() {
-                override fun onToastShown() {}
+                override fun onToastShown() {
+                    /* not implemented */
+                }
 
-                override fun onToastHidden() {}
+                override fun onToastHidden() {
+                    /* not implemented */
+                }
             })
         }
 

@@ -10,6 +10,6 @@ fun Context.checkPackageNameValid(action: () -> Unit) {
     if (packageName == releasePackageName) {
         action()
     } else {
-        throw Exception("Invalid package name!")
+        TODO("Invalid package name!")
     }
 }
