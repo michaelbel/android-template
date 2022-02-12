@@ -42,7 +42,6 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.InAppReview to R.id.reviewFragment,
     Screen.Main to R.id.mainFragment,
     Screen.NavArgs to R.id.navArgsFragment,
-    Screen.SavedState to R.id.savedStateFragment,
     Screen.WindowInsets to R.id.insetsFragment,
 
     Screen.GitHubApi to R.id.gitHubApiFragment,

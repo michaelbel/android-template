@@ -96,9 +96,6 @@
     <string name="cd_notifications_enabled">Notifications Enabled</string>
     <string name="cd_notifications_disabled">Notifications Disabled</string>
 
-    <!--Saved State-->
-    <string name="title_saved_state">Saved State</string>
-
     <!--Social-->
     <string name="title_social">Social</string>
     <string name="sign_in_google">Sign In with Google</string>

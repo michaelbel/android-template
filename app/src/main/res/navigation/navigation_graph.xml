@@ -80,12 +80,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/savedStateFragment"
-        android:name="org.michaelbel.template.features.savedstate.SavedStateFragment"
-        android:label="SavedState"
-        tools:layout="@layout/fragment_saved_state"/>
-
-    <fragment
         android:id="@+id/insetsFragment"
         android:name="org.michaelbel.template.features.windowinsets.WindowInsetsFragment"
         android:label="Insets"

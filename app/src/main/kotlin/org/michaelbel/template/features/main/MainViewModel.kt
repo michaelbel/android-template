@@ -109,7 +109,6 @@ class MainViewModel @Inject constructor(
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),
                     R.string.title_nav_args
                 ),
-                ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
                 ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
 
                 ScreenData(Screen.GitHubApi, bundleOf(), R.string.title_github),
