@@ -1,14 +1,15 @@
-package org.michaelbel.template.features.config
+package org.michaelbel.template.features.compose.config
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
-import org.michaelbel.core.analytics.Analytics
 import timber.log.Timber
 
 @HiltViewModel
@@ -16,15 +17,10 @@ class RemoteConfigViewModel @Inject constructor(
     private val firebaseRemoteConfig: FirebaseRemoteConfig
 ): ViewModel() {
 
-    val customRemoteParam = MutableSharedFlow<Any>()
+    var customRemoteParam: Any? by mutableStateOf(null)
 
     init {
         fetchRemoteConfig()
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(RemoteConfigFragment::class.simpleName)
     }
 
     private fun fetchRemoteConfig() {
@@ -37,17 +33,17 @@ class RemoteConfigViewModel @Inject constructor(
 
     fun takeBooleanParam() = viewModelScope.launch {
         val customParam: Boolean = firebaseRemoteConfig.getBoolean(REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM)
-        customRemoteParam.emit(customParam)
+        customRemoteParam = customParam
     }
 
     fun takeStringParam() = viewModelScope.launch {
         val customParam: String = firebaseRemoteConfig.getString(REMOTE_CONFIG_CUSTOM_STRING_PARAM)
-        customRemoteParam.emit(customParam)
+        customRemoteParam = customParam
     }
 
     fun takeNumberParam() = viewModelScope.launch {
         val customParam: Number = firebaseRemoteConfig.getLong(REMOTE_CONFIG_CUSTOM_NUMBER_PARAM)
-        customRemoteParam.emit(customParam)
+        customRemoteParam = customParam
     }
 
     private companion object {

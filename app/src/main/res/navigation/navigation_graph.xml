@@ -18,11 +18,6 @@
         tools:layout="@layout/fragment_ads"/>
 
     <fragment
-        android:id="@+id/configFragment"
-        android:name="org.michaelbel.template.features.config.RemoteConfigFragment"
-        android:label="Config"/>
-
-    <fragment
         android:id="@+id/constraintsBaselineFragment"
         android:name="org.michaelbel.template.features.views.constraints.ConstrainsBaselineFragment"
         android:label="ConstrainsBaseline"/>

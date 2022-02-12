@@ -12,7 +12,7 @@ import javax.inject.Singleton
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import org.michaelbel.core.ktx.createService
-import org.michaelbel.template.Constants
+import org.michaelbel.template.features.tmdbapi.Constants
 import org.michaelbel.template.features.tmdbapi.api.MovieApi
 import org.michaelbel.template.features.tmdbapi.api.MoviesApi
 import retrofit2.Converter

@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
+import org.michaelbel.template.features.compose.config.RemoteConfigScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
 import org.michaelbel.template.features.compose.intents.IntentsScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
@@ -24,6 +25,7 @@ const val ROUTE_SOCIAL = "route_social"
 const val ROUTE_SYSTEM = "route_system"
 const val ROUTE_TIMER = "route_timer"
 const val ROUTE_TOAST = "route_toast"
+const val ROUTE_CONFIG = "route_config"
 
 @SuppressLint("NewApi")
 @Composable
@@ -43,5 +45,6 @@ fun Content(
         composable(ROUTE_SYSTEM) { SystemScreen(navController) }
         composable(ROUTE_TIMER) { TimerScreen(navController) }
         composable(ROUTE_TOAST) { ToastScreen(navController) }
+        composable(ROUTE_CONFIG) { RemoteConfigScreen(navController) }
     }
 }

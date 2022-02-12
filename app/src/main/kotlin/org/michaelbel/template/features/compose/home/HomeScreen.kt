@@ -22,6 +22,7 @@ import androidx.navigation.NavController
 import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.ROUTE_CLIPBOARD
+import org.michaelbel.template.features.compose.ROUTE_CONFIG
 import org.michaelbel.template.features.compose.ROUTE_NETWORK_IMAGE
 import org.michaelbel.template.features.compose.ROUTE_NOTIFICATIONS
 import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
@@ -65,7 +66,8 @@ private fun Content(
         ROUTE_SOCIAL to R.string.title_social,
         ROUTE_SYSTEM to R.string.title_system_services,
         ROUTE_TIMER to R.string.title_timer,
-        ROUTE_TOAST to R.string.title_toast
+        ROUTE_TOAST to R.string.title_toast,
+        ROUTE_CONFIG to R.string.title_remote_config
     )
 
     Box(

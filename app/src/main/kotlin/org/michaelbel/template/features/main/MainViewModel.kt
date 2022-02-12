@@ -75,7 +75,6 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             screensList.value = listOf(
                 ScreenData(Screen.Ads, bundleOf(), R.string.title_ads),
-                ScreenData(Screen.Config, bundleOf(), R.string.title_remote_config),
                 ScreenData(
                     Screen.ConstraintsBaseline,
                     bundleOf(),
