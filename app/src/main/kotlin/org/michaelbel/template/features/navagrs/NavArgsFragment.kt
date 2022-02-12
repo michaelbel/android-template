@@ -36,7 +36,7 @@ class NavArgsFragment: Fragment() {
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(NavArgsFragment::class.simpleName)
+        analytics.trackScreen(this::class.simpleName)
     }
 
     private fun onNavigationBackClick() {

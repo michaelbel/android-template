@@ -19,11 +19,6 @@ class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baselin
 
     private val binding: FragmentConstraintsBaselineBinding by viewBinding()
 
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsBaselineFragment::class.simpleName)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.appBarLayout.doOnApplyWindowInsets { v, insets ->
@@ -31,6 +26,13 @@ class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baselin
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(this::class.simpleName)
     }
 }

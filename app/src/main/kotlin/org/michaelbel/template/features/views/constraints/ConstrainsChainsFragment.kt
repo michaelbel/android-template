@@ -26,11 +26,13 @@ class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsChainsFragment::class.simpleName)
+        analytics.trackScreen(this::class.simpleName)
     }
 }

@@ -15,7 +15,9 @@ import org.michaelbel.template.R
 import org.michaelbel.template.databinding.FragmentConstraintsConstrainedWidthBinding
 
 @AndroidEntryPoint
-class ConstrainsConstrainedWidthFragment: Fragment(R.layout.fragment_constraints_constrained_width) {
+class ConstrainsConstrainedWidthFragment: Fragment(
+    R.layout.fragment_constraints_constrained_width
+) {
 
     private val binding: FragmentConstraintsConstrainedWidthBinding by viewBinding()
 
@@ -26,11 +28,13 @@ class ConstrainsConstrainedWidthFragment: Fragment(R.layout.fragment_constraints
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsConstrainedWidthFragment::class.simpleName)
+        analytics.trackScreen(this::class.simpleName)
     }
 }

@@ -26,11 +26,13 @@ class ConstrainsCircularFragment: Fragment(R.layout.fragment_constraints_circula
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsCircularFragment::class.simpleName)
+        analytics.trackScreen(this::class.simpleName)
     }
 }

@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.databinding.ActivityMainBinding
 
@@ -20,17 +19,10 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
-
-        // Turn off the decor fitting system windows, which allows us to handle insets,
-        // including IME animations
         WindowCompat.setDecorFitsSystemWindows(window, false)
-
         setContent {
-            ProvideWindowInsets {
-                AndroidViewBinding(ActivityMainBinding::inflate)
-            }
+            AndroidViewBinding(ActivityMainBinding::inflate)
         }
-
         resolveIntent()
     }
 

@@ -26,11 +26,13 @@ class ConstrainsGoneMarginsFragment: Fragment(R.layout.fragment_constraints_gone
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsGoneMarginsFragment::class.simpleName)
+        analytics.trackScreen(this::class.simpleName)
     }
 }

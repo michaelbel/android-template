@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 
@@ -25,10 +26,12 @@ fun MainTopBar(
     onMenuClick: () -> Unit
 ) {
     SmallTopAppBar(
-        title = { Text(text = "Android View") },
-        modifier = modifier,
+        title = { Text(text = "Views") },
+        modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { onNavigationBackClick() }) {
+            IconButton(
+                onClick = { onNavigationBackClick() }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.Menu,
                     contentDescription = stringResource(R.string.cd_menu)

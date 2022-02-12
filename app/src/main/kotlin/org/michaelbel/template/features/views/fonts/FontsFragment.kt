@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.views.constraints
+package org.michaelbel.template.features.views.fonts
 
 import android.os.Bundle
 import android.view.View
@@ -12,18 +12,12 @@ import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsTextDynamicWidthBinding
+import org.michaelbel.template.databinding.FragmentFontsBinding
 
 @AndroidEntryPoint
-class ConstrainsTextDynamicWidthFragment:
-    Fragment(R.layout.fragment_constraints_text_dynamic_width) {
+class FontsFragment: Fragment(R.layout.fragment_fonts) {
 
-    private val binding: FragmentConstraintsTextDynamicWidthBinding by viewBinding()
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsTextDynamicWidthFragment::class.simpleName)
-    }
+    private val binding: FragmentFontsBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,6 +26,13 @@ class ConstrainsTextDynamicWidthFragment:
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(this::class.simpleName)
     }
 }

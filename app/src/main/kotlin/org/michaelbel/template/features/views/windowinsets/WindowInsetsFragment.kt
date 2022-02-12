@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.windowinsets
+package org.michaelbel.template.features.views.windowinsets
 
 import android.os.Bundle
 import android.view.View
@@ -21,11 +21,6 @@ class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {
 
     private val binding: FragmentWindowInsetsBinding by viewBinding()
 
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(WindowInsetsFragment::class.simpleName)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,7 +29,9 @@ class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
 
         binding.showStatusBarButton.setOnClickListener {
             view.doOnLayout {
@@ -55,5 +52,10 @@ class WindowInsetsFragment: Fragment(R.layout.fragment_window_insets) {
             WindowInsetsControllerCompat(requireActivity().window, binding.root)
                 .hide(WindowInsetsCompat.Type.ime())
         }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(this::class.simpleName)
     }
 }

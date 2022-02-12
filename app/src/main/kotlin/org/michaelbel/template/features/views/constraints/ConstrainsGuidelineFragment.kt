@@ -26,11 +26,13 @@ class ConstrainsGuidelineFragment: Fragment(R.layout.fragment_constraints_guidel
             v.topPadding = systemBars.top
             WindowInsetsCompat.CONSUMED
         }
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     @Inject
     fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(ConstrainsGuidelineFragment::class.simpleName)
+        analytics.trackScreen(this::class.simpleName)
     }
 }
