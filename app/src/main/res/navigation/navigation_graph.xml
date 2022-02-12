@@ -91,11 +91,6 @@
         tools:layout="@layout/fragment_saved_state"/>
 
     <fragment
-        android:id="@+id/toastFragment"
-        android:name="org.michaelbel.template.features.toast.ToastFragment"
-        android:label="Toast"/>
-
-    <fragment
         android:id="@+id/insetsFragment"
         android:name="org.michaelbel.template.features.windowinsets.WindowInsetsFragment"
         android:label="Insets"

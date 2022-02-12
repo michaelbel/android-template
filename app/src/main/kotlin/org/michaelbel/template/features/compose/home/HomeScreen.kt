@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose
+package org.michaelbel.template.features.compose.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -21,6 +21,14 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
+import org.michaelbel.template.features.compose.ROUTE_CLIPBOARD
+import org.michaelbel.template.features.compose.ROUTE_NETWORK_IMAGE
+import org.michaelbel.template.features.compose.ROUTE_NOTIFICATIONS
+import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
+import org.michaelbel.template.features.compose.ROUTE_SOCIAL
+import org.michaelbel.template.features.compose.ROUTE_SYSTEM
+import org.michaelbel.template.features.compose.ROUTE_TIMER
+import org.michaelbel.template.features.compose.ROUTE_TOAST
 
 @Composable
 fun HomeScreen(
@@ -28,13 +36,17 @@ fun HomeScreen(
 ) {
     Scaffold(
         topBar = { Toolbar() }
-    ) { Content(navController) }
+    ) {
+        Content(navController)
+    }
 }
 
 @Composable
 private fun Toolbar() {
     SmallTopAppBar(
-        title = { Text(text = "Compose Design") },
+        title = {
+            Text(text = "Compose Design")
+        },
         modifier = Modifier.systemBarsPadding()
     )
 }
@@ -52,7 +64,8 @@ private fun Content(
         ROUTE_SETTINGS_PANEL to R.string.title_intents,
         ROUTE_SOCIAL to R.string.title_social,
         ROUTE_SYSTEM to R.string.title_system_services,
-        ROUTE_TIMER to R.string.title_timer
+        ROUTE_TIMER to R.string.title_timer,
+        ROUTE_TOAST to R.string.title_toast
     )
 
     Box(

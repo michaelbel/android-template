@@ -111,7 +111,6 @@ class MainViewModel @Inject constructor(
                     R.string.title_nav_args
                 ),
                 ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
-                ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
                 ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
 
                 ScreenData(Screen.GitHubApi, bundleOf(), R.string.title_github),

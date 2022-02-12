@@ -24,7 +24,6 @@ enum class Screen {
     Main,
     NavArgs,
     SavedState,
-    Toast,
     WindowInsets,
 
     GitHubApi,
@@ -46,7 +45,6 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.Main to R.id.mainFragment,
     Screen.NavArgs to R.id.navArgsFragment,
     Screen.SavedState to R.id.savedStateFragment,
-    Screen.Toast to R.id.toastFragment,
     Screen.WindowInsets to R.id.insetsFragment,
 
     Screen.GitHubApi to R.id.gitHubApiFragment,
