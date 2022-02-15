@@ -1,5 +1,6 @@
 plugins {
-    id(org.michaelbel.template.ThirdParty.Detekt).version(org.michaelbel.template.ThirdParty.DetektVersion)
+    id("io.gitlab.arturbosch.detekt").version("1.19.0")
+    id("org.jlleitschuh.gradle.ktlint").version("10.2.1")
 }
 
 buildscript {
@@ -18,6 +19,7 @@ buildscript {
         classpath(org.michaelbel.template.Firebase.FirebaseAppDistributionPlugin)
         classpath(org.michaelbel.template.Jetpack.NavigationSafeArgsPlugin)
         classpath(org.michaelbel.template.ThirdParty.SpotlessPlugin)
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
     }
 }
 
@@ -29,10 +31,31 @@ allprojects {
     }
 }
 
-tasks.register("clean").configure {
-    delete("build")
+subprojects {
+    apply {
+        plugin("io.gitlab.arturbosch.detekt")
+        plugin("org.jlleitschuh.gradle.ktlint")
+    }
+
+    detekt {
+        config = rootProject.files("config/detekt/detekt.yml")
+    }
+
+    ktlint {
+        debug.set(false)
+        version.set("10.2.1")
+        verbose.set(true)
+        android.set(false)
+        outputToConsole.set(true)
+        ignoreFailures.set(false)
+        enableExperimentalRules.set(true)
+        filter {
+            exclude("**/generated/**")
+            include("**/kotlin/**")
+        }
+    }
 }
 
-detekt {
-    config = files("$rootDir/config/detekt/detekt.yml")
+tasks.register("clean").configure {
+    delete("build")
 }
