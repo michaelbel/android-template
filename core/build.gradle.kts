@@ -45,8 +45,21 @@ android {
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalSerializationApi
     }
 
-    sourceSets.getByName("main") {
-        java.srcDir("src/main/kotlin")
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+        unitTests.isReturnDefaultValues = true
+    }
+
+    sourceSets {
+        getByName("main") {
+            java.srcDir("src/main/kotlin")
+        }
+        getByName("test") {
+            java.srcDir("src/test/kotlin")
+        }
+        getByName("androidTest") {
+            java.srcDir("src/androidTest/kotlin")
+        }
     }
 }
 

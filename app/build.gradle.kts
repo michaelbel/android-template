@@ -3,10 +3,10 @@ import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
 import org.michaelbel.template.App
-import org.michaelbel.template.Jetpack
 import org.michaelbel.template.Kotlin
 import org.michaelbel.template.Testing
 import org.michaelbel.template.ThirdParty
+import org.michaelbel.template.extensions.addTestsDependencies
 
 plugins {
     // google-services before firebase
@@ -107,13 +107,26 @@ android {
         kotlinCompilerExtensionVersion = "1.2.0-alpha02"
     }
 
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+        unitTests.isReturnDefaultValues = true
+    }
+
     buildFeatures {
         compose = true
         viewBinding = true
     }
 
-    sourceSets.getByName("main") {
-        java.srcDir("src/main/kotlin")
+    sourceSets {
+        getByName("main") {
+            java.srcDir("src/main/kotlin")
+        }
+        getByName("test") {
+            java.srcDir("src/test/kotlin")
+        }
+        getByName("androidTest") {
+            java.srcDir("src/androidTest/kotlin")
+        }
     }
 }
 
@@ -127,8 +140,5 @@ dependencies {
     implementation(ThirdParty.ViewBindingPropertyDelegate)
     implementation(ThirdParty.StrictMode)
 
-    testImplementation(Testing.Junit)
-    androidTestImplementation(Jetpack.TestCore)
-    androidTestImplementation(Jetpack.TestExtJunit)
-    androidTestImplementation(Jetpack.TestEspressoCore)
+    addTestsDependencies()
 }
