@@ -284,7 +284,7 @@ object Jetpack {
     const val TestCore = "androidx.test:core-ktx:$TestCoreVersion"
     const val TestEspressoAccessibility = "androidx.test.espresso:espresso-accessibility:$TestEspressoVersion"
     const val TestEspressoContrib = "androidx.test.espresso:espresso-contrib:$TestEspressoVersion"
-    const val TestEspressoCore = "androidx.test:espresso:espresso-core:$TestEspressoVersion"
+    const val TestEspressoCore = "androidx.test.espresso:espresso-core:$TestEspressoVersion"
     const val TestEspressoIntents = "androidx.test.espresso:espresso-intents:$TestEspressoVersion"
     const val TestExtJunit = "androidx.test.ext:junit-ktx:$TestExtJunitVersion"
     const val TestExtTruth = "androidx.test.ext:truth:$TestExtTruthVersion"

@@ -114,7 +114,7 @@ dependencies {
     androidTestApi(Jetpack.ComposeUiTest)
     androidTestApi(Jetpack.NavigationTesting)
     androidTestApi(Jetpack.TestExtJunit)
-    androidTestApi(Jetpack.TestEspressoCore)
+    androidTestImplementation(Jetpack.TestEspressoCore)
     androidTestApi(Jetpack.TestCore)
     androidTestApi(Jetpack.TestRunner)
     androidTestApi(Jetpack.TestExtTruth)
