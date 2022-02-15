@@ -27,10 +27,10 @@ object ApiModule {
     fun provideBaseUrl(): String = Constants.TMDB_API_ENDPOINT
 
     /**
-     * @property callTimeoutDuration — суммарное время на выполнение запроса (нет ограничений).
-     * @property connectTimeoutDuration — время на подключение к заданному хосту.
-     * @property readTimeoutDuration — время на получение ответа сервера.
-     * @property writeTimeoutDuration — время на передачу запроса серверу.
+     * callTimeoutDuration — суммарное время на выполнение запроса (нет ограничений).
+     * connectTimeoutDuration — время на подключение к заданному хосту.
+     * readTimeoutDuration — время на получение ответа сервера.
+     * writeTimeoutDuration — время на передачу запроса серверу.
      */
     @Provides
     @Singleton

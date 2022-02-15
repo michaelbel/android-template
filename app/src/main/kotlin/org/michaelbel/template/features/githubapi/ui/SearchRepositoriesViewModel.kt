@@ -35,7 +35,7 @@ class SearchRepositoriesViewModel @Inject constructor(
         val newResult: Flow<PagingData<UiModel>> = repository.getSearchResultStream(queryString)
                 .map { pagingData -> pagingData.map { UiModel.RepoItem(it) } }
                 .map {
-                    it.insertSeparators<UiModel.RepoItem, UiModel> { before, after ->
+                    it.insertSeparators { before, after ->
                         if (after == null) {
                             // we're at the end of the list
                             return@insertSeparators null

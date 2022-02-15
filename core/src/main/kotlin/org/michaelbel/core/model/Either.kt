@@ -3,7 +3,7 @@
 package org.michaelbel.core.model
 
 /**
- * A class that encapsulates a successful result with a value of type [T]
+ * A class that encapsulates a successful result with a value of type T
  * or a failure result with an [Throwable] exception
  */
 
