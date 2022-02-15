@@ -1,6 +1,6 @@
 plugins {
     id("io.gitlab.arturbosch.detekt").version("1.19.0")
-    id("org.jlleitschuh.gradle.ktlint").version("10.2.1")
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.1" apply false
 }
 
 buildscript {
@@ -19,7 +19,6 @@ buildscript {
         classpath(org.michaelbel.template.Firebase.FirebaseAppDistributionPlugin)
         classpath(org.michaelbel.template.Jetpack.NavigationSafeArgsPlugin)
         classpath(org.michaelbel.template.ThirdParty.SpotlessPlugin)
-        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
     }
 }
 
@@ -39,20 +38,6 @@ subprojects {
 
     detekt {
         config = rootProject.files("config/detekt/detekt.yml")
-    }
-
-    ktlint {
-        debug.set(false)
-        version.set("10.2.1")
-        verbose.set(true)
-        android.set(false)
-        outputToConsole.set(true)
-        ignoreFailures.set(false)
-        enableExperimentalRules.set(true)
-        filter {
-            exclude("**/generated/**")
-            include("**/kotlin/**")
-        }
     }
 }
 
