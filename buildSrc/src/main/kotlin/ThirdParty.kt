@@ -13,6 +13,10 @@ package org.michaelbel.template
  * Converter Serialization — https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
  * Facebook - https://github.com/facebook/facebook-android-sdk
  * VK - https://github.com/VKCOM/vk-android-sdk
+ *
+ * @see [ViewBindingPropertyDelegate](https://github.com/androidbroadcast/ViewBindingPropertyDelegate)
+ * @see [StrictMode](https://github.com/androidbroadcast/StrictModeCompat)
+ * @see [NotificationDsl](https://github.com/androidbroadcast/Android-Notification-DSL)
  */
 object ThirdParty {
     private const val MaterialVersion = "1.6.0-alpha02"
@@ -29,6 +33,7 @@ object ThirdParty {
     private const val VKVersion = "3.5.0"
     private const val ViewBindingPropertyDelegateVersion = "1.5.6"
     private const val StrictModeVersion = "30.2.0"
+    private const val NotificationsDslVersion = "0.2.1"
     const val DetektVersion = "1.19.0"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
@@ -52,4 +57,7 @@ object ThirdParty {
     const val VK = "com.vk:android-sdk-core:$VKVersion"
     const val ViewBindingPropertyDelegate = "com.github.kirich1409:viewbindingpropertydelegate:$ViewBindingPropertyDelegateVersion"
     const val StrictMode = "com.github.kirich1409:strict-mode-compat-ktx:$StrictModeVersion"
+    const val NotificationsDslCore = "com.github.kirich1409:android-notification-dsl-core:$NotificationsDslVersion"
+    const val NotificationsDslExtensions = "com.github.kirich1409:android-notification-dsl-extensions:$NotificationsDslVersion"
+    const val NotificationsDslMedia = "com.github.kirich1409:android-notification-dsl-media:$NotificationsDslVersion"
 }
