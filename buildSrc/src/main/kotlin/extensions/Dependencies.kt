@@ -12,4 +12,7 @@ fun DependencyHandler.addTestsDependencies() {
     androidTestImplementation(Jetpack.TestCore)
     androidTestImplementation(Jetpack.TestExtJunit)
     androidTestImplementation(Jetpack.TestEspressoCore)
+    androidTestImplementation(Jetpack.ComposeUiTest)
+    androidTestImplementation(Jetpack.NavigationTesting)
+    implementation(Jetpack.ComposeUiTestManifest)
 }
