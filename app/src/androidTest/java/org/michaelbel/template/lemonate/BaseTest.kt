@@ -37,8 +37,8 @@ open class BaseTest {
     fun testState(textActionResource: Int, drawableResource: Int) {
         onView(withId(R.id.text_action))
             .check(matches(ViewMatchers.withText(textActionResource)))
-        onView(withId(R.id.image_lemon_state)).check(
-            matches(withDrawable(drawableResource)))
+        onView(withId(R.id.image_lemon_state))
+            .check(matches(withDrawable(drawableResource)))
     }
 
     /**

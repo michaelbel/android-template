@@ -7,6 +7,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven("https://plugins.gradle.org/m2/")
     }
 
     dependencies {
@@ -19,6 +20,7 @@ buildscript {
         classpath(org.michaelbel.template.Firebase.FirebaseAppDistributionPlugin)
         classpath(org.michaelbel.template.Jetpack.NavigationSafeArgsPlugin)
         classpath(org.michaelbel.template.ThirdParty.SpotlessPlugin)
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
     }
 }
 
@@ -27,6 +29,7 @@ allprojects {
         google()
         mavenCentral()
         maven("https://androidx.dev/snapshots/builds/7850066/artifacts/repository")
+        maven("https://plugins.gradle.org/m2/")
     }
 }
 
@@ -38,6 +41,20 @@ subprojects {
 
     detekt {
         config = rootProject.files("config/detekt/detekt.yml")
+    }
+
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        debug.set(true)
+        verbose.set(true)
+        android.set(true)
+        outputToConsole.set(true)
+        ignoreFailures.set(true)
+        enableExperimentalRules.set(false)
+        disabledRules.set(setOf("final-newline", "comment-spacing"))
+        filter {
+            exclude("**/generated/**")
+            include("**/kotlin/**")
+        }
     }
 }
 
