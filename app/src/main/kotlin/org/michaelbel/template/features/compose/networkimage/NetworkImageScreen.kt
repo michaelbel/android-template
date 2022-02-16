@@ -64,7 +64,7 @@ private fun Content(
             crossfade(true)
         }
     )
-    
+
     Box(
         modifier = modifier.fillMaxSize()
     ) {

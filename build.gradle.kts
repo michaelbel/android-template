@@ -68,7 +68,7 @@ subprojects {
         }
         kotlin {
             target("**/*.kt")
-            //indentWithSpaces()
+            indentWithSpaces()
             trimTrailingWhitespace()
         }
         format("misc") {
