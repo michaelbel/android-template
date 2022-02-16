@@ -3,25 +3,28 @@ package org.michaelbel.template.features.compose.clipboard
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.SnackbarDuration
+import androidx.compose.material.SnackbarHost
+import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import com.google.accompanist.insets.ui.Scaffold
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 
@@ -30,15 +33,15 @@ fun ClipboardScreen(
     navController: NavController
 ) {
     val viewModel: ClipboardViewModel = hiltViewModel()
-    val scaffoldState = rememberScaffoldState()
-    val scope = rememberCoroutineScope()
+    val scope: CoroutineScope = rememberCoroutineScope()
+    val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
 
-    val clipText by rememberUpdatedState(viewModel.clipText)
+    val clipText: String by viewModel.clipText.collectAsState()
 
-    val onShowSnackbar: (CharSequence) -> Unit = { message ->
+    val onShowSnackbar: (String) -> Unit = { message ->
         scope.launch {
-            scaffoldState.snackbarHostState.showSnackbar(
-                message = message.toString(),
+            snackbarHostState.showSnackbar(
+                message = message,
                 duration = SnackbarDuration.Short
             )
         }
@@ -49,11 +52,16 @@ fun ClipboardScreen(
     }
 
     Scaffold(
-        scaffoldState = scaffoldState,
-        topBar = { Toolbar(navController) }
+        topBar = {
+            Toolbar(navController)
+        }
     ) {
         Content(
             viewModel = viewModel
+        )
+
+        SnackbarHost(
+            hostState = snackbarHostState
         )
     }
 }

@@ -1,4 +1,4 @@
-package org.michaelbel.template.compose
+/*package org.michaelbel.template.compose
 
 import android.content.Context
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -23,16 +23,16 @@ class HomeScreenTest {
     private val navController: NavController
         get() = TestNavHostController(ApplicationProvider.getApplicationContext())
 
-    /*@Before
+    @Before
     fun setup() {
         composeTestRule.setContent {
             AppTheme {
                 HomeScreen(navController)
             }
         }
-    }*/
+    }
 
-    /*@Test
+    @Test
     fun clipboardDestinationTest() {
         composeTestRule
             .onNodeWithText(context.getString(R.string.title_clipboard))
@@ -42,5 +42,5 @@ class HomeScreenTest {
         Thread.sleep(5000L)
 
         Espresso.pressBack()
-    }*/
-}
+    }
+}*/
