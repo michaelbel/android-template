@@ -1,11 +1,12 @@
 package org.michaelbel.template.features.compose.config
 
-import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.SnackbarDuration
+import androidx.compose.material.SnackbarHost
+import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
@@ -15,15 +16,19 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import org.michaelbel.template.R
 
 @Composable
@@ -31,13 +36,28 @@ fun RemoteConfigScreen(
     navController: NavController
 ) {
     val viewModel: RemoteConfigViewModel = hiltViewModel()
+    val scope: CoroutineScope = rememberCoroutineScope()
+    val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
+
+    val onShowSnackbar: (String) -> Unit = { message ->
+        scope.launch {
+            snackbarHostState.showSnackbar(
+                message = message,
+                duration = SnackbarDuration.Short
+            )
+        }
+    }
 
     Scaffold(
         topBar = {
             Toolbar(navController)
         }
     ) {
-        Content(viewModel)
+        Content(
+            viewModel = viewModel,
+            snackbarHostState = snackbarHostState,
+            onShowSnackbar = onShowSnackbar
+        )
     }
 }
 
@@ -61,17 +81,18 @@ private fun Toolbar(
 
 @Composable
 private fun Content(
-    viewModel: RemoteConfigViewModel
+    viewModel: RemoteConfigViewModel,
+    snackbarHostState: SnackbarHostState,
+    onShowSnackbar: (String) -> Unit
 ) {
-    val context: Context = LocalContext.current
-    val remoteParam: Any? by rememberUpdatedState(viewModel.customRemoteParam)
+    val remoteParam: Any? by viewModel.customRemoteParam.collectAsState()
 
     if (remoteParam != null) {
-        Toast.makeText(context, remoteParam.toString(), Toast.LENGTH_SHORT).show()
+        onShowSnackbar(remoteParam.toString())
     }
 
     Box(
-        modifier = Modifier.fillMaxWidth(1F)
+        modifier = Modifier.fillMaxSize()
     ) {
         LazyColumn {
             item {
@@ -96,5 +117,10 @@ private fun Content(
                 ) { Text(text = stringResource(R.string.button_fetch_number)) }
             }
         }
+
+        SnackbarHost(
+            hostState = snackbarHostState,
+            modifier = Modifier.align(Alignment.BottomCenter)
+        )
     }
 }

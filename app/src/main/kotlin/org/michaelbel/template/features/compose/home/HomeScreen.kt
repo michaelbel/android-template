@@ -38,7 +38,9 @@ fun HomeScreen(
     Scaffold(
         topBar = { Toolbar() }
     ) {
-        Content(navController)
+        Content(
+            navController
+        )
     }
 }
 

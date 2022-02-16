@@ -1,14 +1,13 @@
 package org.michaelbel.template.features.compose.config
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -17,10 +16,27 @@ class RemoteConfigViewModel @Inject constructor(
     private val firebaseRemoteConfig: FirebaseRemoteConfig
 ): ViewModel() {
 
-    var customRemoteParam: Any? by mutableStateOf(null)
+    private val _customRemoteParam: MutableStateFlow<Any?> = MutableStateFlow(null)
+    val customRemoteParam: StateFlow<Any?>
+        get() = _customRemoteParam
 
     init {
         fetchRemoteConfig()
+    }
+
+    fun takeBooleanParam() = viewModelScope.launch {
+        val customParam: Boolean = firebaseRemoteConfig.getBoolean(REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM)
+        _customRemoteParam.emit(customParam)
+    }
+
+    fun takeStringParam() = viewModelScope.launch {
+        val customParam: String = firebaseRemoteConfig.getString(REMOTE_CONFIG_CUSTOM_STRING_PARAM)
+        _customRemoteParam.emit(customParam)
+    }
+
+    fun takeNumberParam() = viewModelScope.launch {
+        val customParam: Number = firebaseRemoteConfig.getLong(REMOTE_CONFIG_CUSTOM_NUMBER_PARAM)
+        _customRemoteParam.emit(customParam)
     }
 
     private fun fetchRemoteConfig() {
@@ -29,21 +45,6 @@ class RemoteConfigViewModel @Inject constructor(
         }
         firebaseRemoteConfig.setConfigSettingsAsync(configSettings)
         firebaseRemoteConfig.fetchAndActivate().addOnFailureListener(Timber::e)
-    }
-
-    fun takeBooleanParam() = viewModelScope.launch {
-        val customParam: Boolean = firebaseRemoteConfig.getBoolean(REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM)
-        customRemoteParam = customParam
-    }
-
-    fun takeStringParam() = viewModelScope.launch {
-        val customParam: String = firebaseRemoteConfig.getString(REMOTE_CONFIG_CUSTOM_STRING_PARAM)
-        customRemoteParam = customParam
-    }
-
-    fun takeNumberParam() = viewModelScope.launch {
-        val customParam: Number = firebaseRemoteConfig.getLong(REMOTE_CONFIG_CUSTOM_NUMBER_PARAM)
-        customRemoteParam = customParam
     }
 
     private companion object {
