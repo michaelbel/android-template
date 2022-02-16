@@ -31,6 +31,9 @@ jobs:
         
       - name: Lint
         run: ./gradlew lint
+        
+      - name: Ktlint
+        run: ./gradlew ktlintCheck
           
       - name: Detekt
         run: ./gradlew detekt
