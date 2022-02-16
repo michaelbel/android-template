@@ -38,6 +38,9 @@ jobs:
       - name: Detekt
         run: ./gradlew detekt
         
+      - name: Spotless
+        run: ./gradlew spotlessCheck
+        
       - name: Unit Tests
         run: ./gradlew testDebugUnitTest
         
