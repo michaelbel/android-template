@@ -7,13 +7,9 @@ import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import org.junit.Before
 import org.junit.Rule
-import org.junit.Test
 import org.junit.runner.RunWith
 import org.michaelbel.template.features.compose.ComposeActivity
-import org.michaelbel.template.features.compose.home.HomeScreen
-import org.michaelbel.template.ui.theme.AppTheme
 
 @RunWith(AndroidJUnit4::class)
 class HomeScreenTest {
@@ -27,24 +23,24 @@ class HomeScreenTest {
     private val navController: NavController
         get() = TestNavHostController(ApplicationProvider.getApplicationContext())
 
-    @Before
+    /*@Before
     fun setup() {
         composeTestRule.setContent {
             AppTheme {
                 HomeScreen(navController)
             }
         }
-    }
+    }*/
 
-    @Test
+    /*@Test
     fun clipboardDestinationTest() {
-        /*composeTestRule
+        composeTestRule
             .onNodeWithText(context.getString(R.string.title_clipboard))
             .assertIsDisplayed()
             .performClick()
 
         Thread.sleep(5000L)
 
-        Espresso.pressBack()*/
-    }
+        Espresso.pressBack()
+    }*/
 }
