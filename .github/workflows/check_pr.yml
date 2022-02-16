@@ -41,8 +41,8 @@ jobs:
 #      - name: Spotless
 #        run: ./gradlew spotlessCheck
         
-      - name: Unit Tests
-        run: ./gradlew testDebugUnitTest
+#      - name: Unit Tests
+#        run: ./gradlew testDebugUnitTest
         
       - name: Instrimentation Tests
         uses: reactivecircus/android-emulator-runner@v2
