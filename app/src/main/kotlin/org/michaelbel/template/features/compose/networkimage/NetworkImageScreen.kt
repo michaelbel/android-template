@@ -65,7 +65,9 @@ private fun Content(
         }
     )
     
-    Box(modifier = modifier.fillMaxSize()) {
+    Box(
+        modifier = modifier.fillMaxSize()
+    ) {
         Image(
             painter = painter,
             contentDescription = null

@@ -1,6 +1,7 @@
 plugins {
-    id("io.gitlab.arturbosch.detekt").version("1.19.0")
-    id("org.jlleitschuh.gradle.ktlint") version "10.2.1" apply false
+    id(org.michaelbel.template.plugins.Plugins.Ktlint) version org.michaelbel.template.plugins.Plugins.KtlintVersion apply false
+    id(org.michaelbel.template.plugins.Plugins.Detekt) version org.michaelbel.template.plugins.Plugins.DetektVersion apply true
+    id(org.michaelbel.template.plugins.Plugins.Spotless) version org.michaelbel.template.plugins.Plugins.SpotlessVersion apply false
 }
 
 buildscript {
@@ -19,7 +20,6 @@ buildscript {
         classpath(org.michaelbel.template.Firebase.FirebaseCrashlyticsPlugin)
         classpath(org.michaelbel.template.Firebase.FirebaseAppDistributionPlugin)
         classpath(org.michaelbel.template.Jetpack.NavigationSafeArgsPlugin)
-        classpath(org.michaelbel.template.ThirdParty.SpotlessPlugin)
         classpath("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
     }
 }
@@ -35,12 +35,9 @@ allprojects {
 
 subprojects {
     apply {
-        plugin("io.gitlab.arturbosch.detekt")
-        plugin("org.jlleitschuh.gradle.ktlint")
-    }
-
-    detekt {
-        config = rootProject.files("config/detekt/detekt.yml")
+        plugin(org.michaelbel.template.plugins.Plugins.Ktlint)
+        plugin(org.michaelbel.template.plugins.Plugins.Detekt)
+        plugin(org.michaelbel.template.plugins.Plugins.Spotless)
     }
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
@@ -54,6 +51,38 @@ subprojects {
         filter {
             exclude("**/generated/**")
             include("**/kotlin/**")
+        }
+    }
+
+    detekt {
+        config = rootProject.files("config/detekt/detekt.yml")
+    }
+
+    configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+        java {
+            target("**/*.java")
+            googleJavaFormat().aosp()
+            removeUnusedImports()
+            indentWithSpaces()
+            trimTrailingWhitespace()
+        }
+        kotlin {
+            target("**/*.kt")
+            //indentWithSpaces()
+            trimTrailingWhitespace()
+        }
+        format("misc") {
+            target("**/*.gradle", "**/*.md", "**/.gitignore")
+            indentWithSpaces()
+            trimTrailingWhitespace()
+        }
+        kotlinGradle {
+            target("*.gradle.kts")
+        }
+        format("xml") {
+            target("**/*.xml")
+            indentWithSpaces()
+            trimTrailingWhitespace()
         }
     }
 }
