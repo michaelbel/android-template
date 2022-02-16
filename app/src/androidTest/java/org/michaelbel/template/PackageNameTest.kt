@@ -12,6 +12,11 @@ class PackageNameTest {
     @Test
     fun packageNameTest() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("org.michaelbel.template", appContext.packageName)
+        val applicationId: String = if (BuildConfig.DEBUG) {
+            "org.michaelbel.template.debug"
+        } else {
+            "org.michaelbel.template"
+        }
+        assertEquals(applicationId, appContext.packageName)
     }
 }
