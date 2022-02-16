@@ -11,9 +11,8 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import okhttp3.Cache
 import okhttp3.OkHttpClient
-import org.michaelbel.core.di.qualifiers.ConverterFactorySerialization
 import org.michaelbel.core.ktx.createService
-import org.michaelbel.template.Constants
+import org.michaelbel.template.features.tmdbapi.Constants
 import org.michaelbel.template.features.tmdbapi.api.MovieApi
 import org.michaelbel.template.features.tmdbapi.api.MoviesApi
 import retrofit2.Converter
@@ -28,10 +27,10 @@ object ApiModule {
     fun provideBaseUrl(): String = Constants.TMDB_API_ENDPOINT
 
     /**
-     * @property callTimeoutDuration — суммарное время на выполнение запроса (нет ограничений).
-     * @property connectTimeoutDuration — время на подключение к заданному хосту.
-     * @property readTimeoutDuration — время на получение ответа сервера.
-     * @property writeTimeoutDuration — время на передачу запроса серверу.
+     * callTimeoutDuration — суммарное время на выполнение запроса (нет ограничений).
+     * connectTimeoutDuration — время на подключение к заданному хосту.
+     * readTimeoutDuration — время на получение ответа сервера.
+     * writeTimeoutDuration — время на передачу запроса серверу.
      */
     @Provides
     @Singleton
@@ -66,7 +65,7 @@ object ApiModule {
     @TmdbRetrofit
     fun provideRetrofit(
         @TmdbBaseUrl baseUrl: String,
-        @ConverterFactorySerialization converterFactory: Converter.Factory,
+        converterFactory: Converter.Factory,
         @TmdbOkhttp okHttpClient: OkHttpClient
     ): Retrofit {
         val builder = Retrofit.Builder().apply {

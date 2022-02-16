@@ -9,7 +9,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- * Return the fully opaque color that results from compositing [onSurface] atop [surface] with the
+ * Return the fully opaque color that results from compositing onSurface atop surface with the
  * given [alpha]. Useful for situations where semi-transparent colors are undesirable.
  */
 @Composable

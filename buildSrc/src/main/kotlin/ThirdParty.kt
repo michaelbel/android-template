@@ -11,6 +11,12 @@ package org.michaelbel.template
  * Gander — https://github.com/Ashok-Varma/Gander/releases
  * Retrofit — https://github.com/square/retrofit
  * Converter Serialization — https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
+ * Facebook - https://github.com/facebook/facebook-android-sdk
+ * VK - https://github.com/VKCOM/vk-android-sdk
+ *
+ * @see [ViewBindingPropertyDelegate](https://github.com/androidbroadcast/ViewBindingPropertyDelegate)
+ * @see [StrictMode](https://github.com/androidbroadcast/StrictModeCompat)
+ * @see [NotificationDsl](https://github.com/androidbroadcast/Android-Notification-DSL)
  */
 object ThirdParty {
     private const val MaterialVersion = "1.6.0-alpha02"
@@ -22,8 +28,11 @@ object ThirdParty {
     private const val GanderVersion = "3.1.0"
     private const val RetrofitVersion = "2.9.0"
     private const val RetrofitConverterSerializationVersion = "0.8.0"
-    private const val SpotlessVersion = "6.2.1"
-    const val DetektVersion = "1.19.0"
+    private const val FacebookLoginVersion = "12.3.0"
+    private const val VKVersion = "3.5.0"
+    private const val ViewBindingPropertyDelegateVersion = "1.5.6"
+    private const val StrictModeVersion = "30.2.0"
+    private const val NotificationsDslVersion = "0.2.1"
 
     const val Material = "com.google.android.material:material:$MaterialVersion"
     const val MaterialComposeThemeAdapter = "com.google.android.material:compose-theme-adapter:$MaterialComposeThemeAdapterVersion"
@@ -40,6 +49,11 @@ object ThirdParty {
     const val RetrofitConverterGson = "com.squareup.retrofit2:converter-gson:$RetrofitVersion"
     const val RetrofitConverterMoshi = "com.squareup.retrofit2:converter-moshi:$RetrofitVersion"
     const val RetrofitConverterSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$RetrofitConverterSerializationVersion"
-    const val SpotlessPlugin = "com.diffplug.spotless:spotless-plugin-gradle:$SpotlessVersion"
-    const val Detekt = "io.gitlab.arturbosch.detekt"
+    const val FacebookLogin = "com.facebook.android:facebook-login:$FacebookLoginVersion"
+    const val VK = "com.vk:android-sdk-core:$VKVersion"
+    const val ViewBindingPropertyDelegate = "com.github.kirich1409:viewbindingpropertydelegate:$ViewBindingPropertyDelegateVersion"
+    const val StrictMode = "com.github.kirich1409:strict-mode-compat-ktx:$StrictModeVersion"
+    const val NotificationsDslCore = "com.github.kirich1409:android-notification-dsl-core:$NotificationsDslVersion"
+    const val NotificationsDslExtensions = "com.github.kirich1409:android-notification-dsl-extensions:$NotificationsDslVersion"
+    const val NotificationsDslMedia = "com.github.kirich1409:android-notification-dsl-media:$NotificationsDslVersion"
 }

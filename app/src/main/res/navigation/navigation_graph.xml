@@ -18,59 +18,44 @@
         tools:layout="@layout/fragment_ads"/>
 
     <fragment
-        android:id="@+id/configFragment"
-        android:name="org.michaelbel.template.features.config.RemoteConfigFragment"
-        android:label="Config"/>
-
-    <fragment
         android:id="@+id/constraintsBaselineFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsBaselineFragment"
+        android:name="org.michaelbel.template.features.views.constraints.ConstrainsBaselineFragment"
         android:label="ConstrainsBaseline"/>
 
     <fragment
         android:id="@+id/constraintsChainStyleFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsChainsFragment"
+        android:name="org.michaelbel.template.features.views.constraints.ConstrainsChainsFragment"
         android:label="ConstrainsChainStyle"/>
 
     <fragment
         android:id="@+id/constraintsCircularFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsCircularFragment"
+        android:name="org.michaelbel.template.features.views.constraints.ConstrainsCircularFragment"
         android:label="ConstrainsCircular"/>
 
     <fragment
         android:id="@+id/constraintsConstrainedWidthFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsConstrainedWidthFragment"
+        android:name="org.michaelbel.template.features.views.constraints.ConstrainsConstrainedWidthFragment"
         android:label="ConstrainsConstrainedWidth"/>
 
     <fragment
         android:id="@+id/constraintsGoneMarginFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsGoneMarginsFragment"
+        android:name="org.michaelbel.template.features.views.constraints.ConstrainsGoneMarginsFragment"
         android:label="ConstrainsGoneMargin"/>
 
     <fragment
         android:id="@+id/constraintsGuidelineFragment"
-        android:name="org.michaelbel.template.features.constraints.ConstrainsGuidelineFragment"
+        android:name="org.michaelbel.template.features.views.constraints.ConstrainsGuidelineFragment"
         android:label="ConstrainsGuideline"/>
 
     <fragment
-        android:id="@+id/dialogsFragment"
-        android:name="org.michaelbel.template.features.dialog.DialogsFragment"
-        android:label="Dialogs"/>
-
-    <fragment
         android:id="@+id/fontsFragment"
-        android:name="org.michaelbel.template.features.fonts.FontsFragment"
+        android:name="org.michaelbel.template.features.views.fonts.FontsFragment"
         android:label="Fonts"/>
 
     <fragment
         android:id="@+id/reviewFragment"
         android:name="org.michaelbel.template.features.inappreview.ReviewFragment"
         android:label="InAppReview"/>
-
-    <fragment
-        android:id="@+id/intentsFragment"
-        android:name="org.michaelbel.template.features.intents.IntentsFragment"
-        android:label="Intents"/>
 
     <fragment
         android:id="@+id/navArgsFragment"
@@ -90,34 +75,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/savedStateFragment"
-        android:name="org.michaelbel.template.features.savedstate.SavedStateFragment"
-        android:label="SavedState"
-        tools:layout="@layout/fragment_saved_state"/>
-
-    <fragment
-        android:id="@+id/socialFragment"
-        android:name="org.michaelbel.template.features.social.SocialFragment"
-        android:label="Social"/>
-
-    <fragment
-        android:id="@+id/systemServicesFragment"
-        android:name="org.michaelbel.template.features.systemservices.SystemServicesFragment"
-        android:label="SystemServices"/>
-
-    <fragment
-        android:id="@+id/timerFragment"
-        android:name="org.michaelbel.template.features.timer.TimerFragment"
-        android:label="Timer"/>
-
-    <fragment
-        android:id="@+id/toastFragment"
-        android:name="org.michaelbel.template.features.toast.ToastFragment"
-        android:label="Toast"/>
-
-    <fragment
         android:id="@+id/insetsFragment"
-        android:name="org.michaelbel.template.features.windowinsets.WindowInsetsFragment"
+        android:name="org.michaelbel.template.features.views.windowinsets.WindowInsetsFragment"
         android:label="Insets"
         tools:layout="@layout/fragment_window_insets"/>
 
@@ -129,7 +88,6 @@
 
     <fragment
         android:id="@+id/tmdbApiFragment"
-        android:name="org.michaelbel.template.features.tmdbapi.ui.MovieFragment"
         android:label="TmdbApi"
         tools:layout="@layout/fragment_movies"/>
 

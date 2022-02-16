@@ -8,7 +8,7 @@ import android.text.Html
 import android.text.Spanned
 import android.util.Patterns
 import androidx.core.text.HtmlCompat
-import java.util.*
+import java.util.Properties
 
 fun String.append(text: String): String = "$this$text"
 

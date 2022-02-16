@@ -6,11 +6,11 @@ package org.michaelbel.template
  * Accompanist is a group of libraries that aim to supplement Jetpack Compose
  * with features that are commonly required by developers but not yet available.
  *
- * https://google.github.io/accompanist
- * https://github.com/google/accompanist
+ * @see [Overview](https://google.github.io/accompanist)
+ * @see [Repository](https://github.com/google/accompanist)
  */
 object Accompanist {
-    private const val AccompanistVersion = "0.20.3"
+    private const val AccompanistVersion = "0.23.0"
 
     const val AppCompat = "com.google.accompanist:accompanist-appcompat-theme:$AccompanistVersion"
     const val DrawablePainter = "com.google.accompanist:accompanist-drawablepainter:$AccompanistVersion"

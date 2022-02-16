@@ -27,5 +27,9 @@ object Kotlin {
         const val OptExperimentalMaterial3Api = "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api"
         const val OptExperimentalFoundationApi = "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
         const val OptExperimentalSerializationApi = "-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi"
+        const val OptExperimentalPagingApi = "-Xopt-in=androidx.paging.ExperimentalPagingApi"
+        const val OptExperimentalComposeUiApi = "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
+        const val OptExperimentalMaterialApi = "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"
+        const val OptExperimentalCoilApi = "-Xopt-in=coil.annotation.ExperimentalCoilApi"
     }
 }

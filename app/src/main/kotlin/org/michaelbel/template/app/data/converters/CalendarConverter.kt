@@ -1,7 +1,7 @@
 package org.michaelbel.template.app.data.converters
 
 import androidx.room.TypeConverter
-import java.util.*
+import java.util.Calendar
 
 /**
  * Type converters to allow Room to reference complex data types.

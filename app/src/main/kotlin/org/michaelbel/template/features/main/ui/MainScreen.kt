@@ -20,12 +20,25 @@ import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.SnackbarResult
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.CardGiftcard
+import androidx.compose.material.icons.filled.ListAlt
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ViewQuilt
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
+import androidx.compose.material3.Button
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -41,9 +54,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.insets.statusBarsPadding
+import com.google.accompanist.insets.systemBarsPadding
 import com.google.accompanist.insets.ui.Scaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
 import org.michaelbel.template.features.compose.ComposeActivity
@@ -57,9 +72,9 @@ typealias OnButtonClick = (Screen, Bundle) -> Unit
 @Composable
 fun MainScreen(
     onUpdateAppClicked: () -> Unit,
-    onButtonClick: OnButtonClick,
-    listState: LazyListState = rememberLazyListState()
+    onButtonClick: OnButtonClick
 ) {
+    val listState: LazyListState = rememberLazyListState()
     val viewModel: MainViewModel = viewModel(MainViewModel::class.java)
     val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
     val scope: CoroutineScope = rememberCoroutineScope()
@@ -97,16 +112,15 @@ fun MainScreen(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
         topBar = {
-            MainTopBar(
-                modifier = Modifier.statusBarsPadding(),
+            Toolbar(
                 scrollBehavior = scrollBehavior,
                 onNavigationBackClick = { scope.launch { scaffoldState.drawerState.open() } },
                 onMenuClick = { scope.launch { sheetState.show() } }
             )
         },
-        bottomBar = { MainBottomBar() },
+        bottomBar = { BottomBar() },
         drawerContent = {
-            MainDrawerContent { scope.launch { scaffoldState.drawerState.close() } }
+            DrawerContent { scope.launch { scaffoldState.drawerState.close() } }
         },
         drawerGesturesEnabled = true,
         floatingActionButton = {
@@ -150,6 +164,92 @@ fun MainScreen(
 }
 
 @Composable
+private fun Toolbar(
+    scrollBehavior: TopAppBarScrollBehavior?,
+    onNavigationBackClick: OnNavigationBackClick,
+    onMenuClick: () -> Unit
+) {
+    SmallTopAppBar(
+        title = { Text(text = "Views") },
+        modifier = Modifier.statusBarsPadding(),
+        navigationIcon = {
+            IconButton(
+                onClick = { onNavigationBackClick() }
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Menu,
+                    contentDescription = stringResource(R.string.cd_menu)
+                )
+            }
+        },
+        actions = {
+            IconButton(onClick = { onMenuClick() }) {
+                Icon(
+                    imageVector = Icons.Filled.Settings,
+                    contentDescription = stringResource(R.string.cd_settings)
+                )
+            }
+        },
+        scrollBehavior = scrollBehavior
+    )
+}
+
+@Composable
+private fun BottomBar() {
+    NavigationBar(
+        modifier = Modifier.systemBarsPadding()
+    ) {
+        NavigationBarItem(
+            icon = {
+                Icon(
+                    imageVector = Icons.Filled.ViewQuilt,
+                    contentDescription = stringResource(R.string.bottom_item_compose)
+                )
+            },
+            label = { Text(stringResource(R.string.bottom_item_compose)) },
+            selected = true,
+            onClick = {}
+        )
+        NavigationBarItem(
+            icon = {
+                Icon(
+                    imageVector = Icons.Filled.CardGiftcard,
+                    contentDescription = stringResource(R.string.bottom_item_android)
+                )
+            },
+            label = { Text(stringResource(R.string.bottom_item_android)) },
+            selected = false,
+            onClick = {}
+        )
+        NavigationBarItem(
+            icon = {
+                BadgedBox(badge = { Badge { Text("1") } }) {
+                    Icon(
+                        imageVector = Icons.Filled.ListAlt,
+                        contentDescription = stringResource(R.string.bottom_item_other)
+                    )
+                }
+            },
+            label = { Text(stringResource(R.string.bottom_item_other)) },
+            selected = false,
+            onClick = {}
+        )
+    }
+}
+
+@Composable
+private fun DrawerContent(
+    onClick: () -> Unit
+) {
+    Button(
+        onClick = onClick,
+        content = {
+            Text("Close Drawer")
+        }
+    )
+}
+
+@Composable
 private fun Fab(onClick: () -> Unit) {
     FloatingActionButton(
         onClick = onClick,
@@ -157,37 +257,6 @@ private fun Fab(onClick: () -> Unit) {
         Icon(Icons.Filled.Add, "Localized description")
     }
 }
-
-/*@Composable
-fun MainTopBar(
-    onNavigationIconClick: () -> Unit,
-    onAccountIconClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    TopAppBar(
-        title = { Text(text = stringResource(R.string.app_name)) },
-        modifier = modifier,
-        navigationIcon = {
-            IconButton(onClick = onNavigationIconClick) {
-                Icon(
-                    imageVector = Icons.Filled.Menu,
-                    contentDescription = stringResource(R.string.cd_menu)
-                )
-            }
-        },
-        elevation = 2.dp,
-        actions = {
-            CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
-                IconButton(onClick = onAccountIconClick) {
-                    Icon(
-                        imageVector = Icons.Default.AccountCircle,
-                        contentDescription = stringResource(R.string.cd_account)
-                    )
-                }
-            }
-        }
-    )
-}*/
 
 @Preview
 @Composable

@@ -1,4 +1,3 @@
-
 import org.michaelbel.template.Accompanist
 import org.michaelbel.template.App
 import org.michaelbel.template.Firebase
@@ -16,8 +15,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
 }
-
-apply("$rootDir/spotless.gradle")
 
 android {
     compileSdk = App.CompileSdk
@@ -48,8 +45,21 @@ android {
         freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalSerializationApi
     }
 
-    sourceSets.getByName("main") {
-        java.srcDir("src/main/kotlin")
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+        unitTests.isReturnDefaultValues = true
+    }
+
+    sourceSets {
+        getByName("main") {
+            java.srcDir("src/main/kotlin")
+        }
+        getByName("test") {
+            java.srcDir("src/test/kotlin")
+        }
+        getByName("androidTest") {
+            java.srcDir("src/androidTest/kotlin")
+        }
     }
 }
 
@@ -76,8 +86,8 @@ dependencies {
     api(Jetpack.ComposeRuntime)
     api(Jetpack.ComposeRuntimeLivedata)
     api(Jetpack.ComposeUi)
-    api(Jetpack.ComposeUiTooling)
     api(Jetpack.ComposeUiViewBinding)
+    api(Jetpack.ComposeUiTooling)
     api(Jetpack.ConstraintLayoutCompose)
     api(Jetpack.Core)
     api(Jetpack.CoreSplashScreen)
@@ -117,7 +127,7 @@ dependencies {
     androidTestApi(Jetpack.ComposeUiTest)
     androidTestApi(Jetpack.NavigationTesting)
     androidTestApi(Jetpack.TestExtJunit)
-    androidTestApi(Jetpack.TestEspressoCore)
+    androidTestImplementation(Jetpack.TestEspressoCore)
     androidTestApi(Jetpack.TestCore)
     androidTestApi(Jetpack.TestRunner)
     androidTestApi(Jetpack.TestExtTruth)
@@ -157,7 +167,7 @@ dependencies {
     api(ThirdParty.Material)
     api(ThirdParty.MaterialComposeThemeAdapter)
     api(ThirdParty.PlayCore)
-    api(ThirdParty.HiltAndroid)
+    implementation(ThirdParty.HiltAndroid)
     api(ThirdParty.Coil)
     api(ThirdParty.CoilCompose)
     api(ThirdParty.Timber)

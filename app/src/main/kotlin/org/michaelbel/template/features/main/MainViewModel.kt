@@ -16,9 +16,9 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.core.playcore.inappupdate.InAppUpdate
 import org.michaelbel.template.R
 import org.michaelbel.template.Screen
-import org.michaelbel.template.app.InAppUpdate
 import org.michaelbel.template.features.main.model.ScreenData
 
 @HiltViewModel
@@ -75,7 +75,6 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             screensList.value = listOf(
                 ScreenData(Screen.Ads, bundleOf(), R.string.title_ads),
-                ScreenData(Screen.Config, bundleOf(), R.string.title_remote_config),
                 ScreenData(
                     Screen.ConstraintsBaseline,
                     bundleOf(),
@@ -102,20 +101,13 @@ class MainViewModel @Inject constructor(
                     bundleOf(),
                     R.string.title_constraints_guideline
                 ),
-                ScreenData(Screen.Dialogs, bundleOf(), R.string.title_dialogs),
                 ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
                 ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
-                ScreenData(Screen.Intents, bundleOf(), R.string.title_intents),
                 ScreenData(
                     Screen.NavArgs,
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),
                     R.string.title_nav_args
                 ),
-                ScreenData(Screen.SavedState, bundleOf(), R.string.title_saved_state),
-                ScreenData(Screen.Social, bundleOf(), R.string.title_social),
-                ScreenData(Screen.SystemServices, bundleOf(), R.string.title_system_services),
-                ScreenData(Screen.Timer, bundleOf(), R.string.title_timer),
-                ScreenData(Screen.Toast, bundleOf(), R.string.title_toast),
                 ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
 
                 ScreenData(Screen.GitHubApi, bundleOf(), R.string.title_github),
