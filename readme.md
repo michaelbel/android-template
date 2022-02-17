@@ -9,6 +9,8 @@
 [google-play-url]:           https://play.google.com/store/apps/details?id=org.michaelbel.template
 [kotlin-url]:                https://kotlinlang.org
 
+# Android App Template
+
 [![distribution-app](https://github.com/michaelbel/android-app-template/actions/workflows/distribution_app.yml/badge.svg?branch=master)][distribution-workflow-url]
 [![check-pr-badge](https://github.com/michaelbel/android-app-template/actions/workflows/check_pr.yml/badge.svg?branch=master)][check-pr-url]
 [![last-commit-badge](https://img.shields.io/github/last-commit/michaelbel/android-app-template?color=FFC877)][commits-url]
