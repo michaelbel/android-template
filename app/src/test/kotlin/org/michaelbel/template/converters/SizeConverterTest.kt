@@ -2,10 +2,8 @@ package org.michaelbel.template.converters
 
 import android.util.Size
 import org.junit.Assert.assertEquals
-import org.michaelbel.core.test.Fails
 import org.michaelbel.template.app.data.converters.SizeConverter
 
-@Fails
 class SizeConverterTest {
 
     private lateinit var size: Size

@@ -4,7 +4,6 @@ import org.junit.Assert.assertEquals
 import org.michaelbel.core.test.Fails
 import org.michaelbel.template.app.data.converters.ListStringConverter
 
-@Fails
 class ListStringConverterTest {
 
     private val list: List<String> = listOf("Apple", "Orange", "Banana")

@@ -2,13 +2,10 @@ package org.michaelbel.template
 
 import android.content.Context
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.michaelbel.core.test.Fails
 //import org.mockito.Mock
 //import org.mockito.Mockito.`when`
 //import org.mockito.junit.MockitoJUnitRunner
 
-@Fails
 //@RunWith(MockitoJUnitRunner::class)
 class StringsTest {
 
