@@ -29,29 +29,29 @@ jobs:
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
         
-#      - name: Lint
-#        run: ./gradlew lint
+      - name: Lint
+        run: ./gradlew lint
         
-#      - name: Ktlint
-#        run: ./gradlew ktlintCheck
+      - name: Ktlint
+        run: ./gradlew ktlintCheck
           
-#      - name: Detekt
-#        run: ./gradlew detekt
+      - name: Detekt
+        run: ./gradlew detekt
         
-#      - name: Spotless
-#        run: ./gradlew spotlessCheck
+      - name: Spotless
+        run: ./gradlew spotlessCheck
         
-#      - name: Unit Tests
-#        run: ./gradlew testDebugUnitTest
+      - name: Unit Tests
+        run: ./gradlew testDebugUnitTest
         
-      - name: Instrimentation Tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          target: default
-          arch: x86
-          profile: Nexus 6
-          script: ./gradlew connectedCheck --stacktrace
+#      - name: Instrimentation Tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 29
+#          target: default
+#          arch: x86
+#          profile: Nexus 6
+#          script: ./gradlew connectedCheck --stacktrace
         
-#      - name: Build
-#        run: ./gradlew compileDebugKotlin
+      - name: Build
+        run: ./gradlew compileDebugKotlin
