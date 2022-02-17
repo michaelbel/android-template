@@ -3,7 +3,6 @@ import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
 import org.michaelbel.template.App
-import org.michaelbel.template.Kotlin
 import org.michaelbel.template.Testing
 import org.michaelbel.template.ThirdParty
 import org.michaelbel.template.extensions.addTestsDependencies
@@ -90,17 +89,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterial3Api
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalFoundationApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalSerializationApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalPagingApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalComposeUiApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterialApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalCoilApi
     }
 
     composeOptions {

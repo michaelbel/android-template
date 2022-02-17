@@ -38,13 +38,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterial3Api
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalFoundationApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalSerializationApi
-    }
-
     testOptions {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true

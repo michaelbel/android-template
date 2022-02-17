@@ -85,6 +85,19 @@ subprojects {
             trimTrailingWhitespace()
         }
     }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).configureEach {
+        kotlinOptions {
+            jvmTarget = "11"
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalMaterial3Api
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalFoundationApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalSerializationApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalPagingApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalComposeUiApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalMaterialApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalCoilApi
+        }
+    }
 }
 
 tasks.register("clean").configure {
