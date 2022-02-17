@@ -49,18 +49,6 @@ android {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
     }
-
-    sourceSets {
-        getByName("main") {
-            kotlin.srcDir("src/main/kotlin")
-        }
-        getByName("test") {
-            kotlin.srcDir("src/test/kotlin")
-        }
-        getByName("androidTest") {
-            kotlin.srcDir("src/androidTest/kotlin")
-        }
-    }
 }
 
 dependencies {
