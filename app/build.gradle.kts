@@ -119,13 +119,13 @@ android {
 
     sourceSets {
         getByName("main") {
-            java.srcDir("src/main/kotlin")
+            kotlin.srcDir("src/main/kotlin")
         }
         getByName("test") {
-            java.srcDir("src/test/kotlin")
+            kotlin.srcDir("src/test/kotlin")
         }
         getByName("androidTest") {
-            java.srcDir("src/androidTest/kotlin")
+            kotlin.srcDir("src/androidTest/kotlin")
         }
     }
 }
