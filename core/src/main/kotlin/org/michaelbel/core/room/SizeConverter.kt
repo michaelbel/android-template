@@ -1,11 +1,8 @@
-package org.michaelbel.template.app.data.converters
+package org.michaelbel.core.room
 
 import android.util.Size
 import androidx.room.TypeConverter
 
-/**
- * Type converters to allow Room to reference complex data types.
- */
 class SizeConverter {
 
     @TypeConverter

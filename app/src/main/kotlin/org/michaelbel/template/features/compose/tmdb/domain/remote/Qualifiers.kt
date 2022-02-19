@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.tmdb.domain
+package org.michaelbel.template.features.compose.tmdb.domain.remote
 
 import javax.inject.Qualifier
 

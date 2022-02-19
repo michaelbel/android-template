@@ -1,27 +1,30 @@
-package org.michaelbel.template.app.data
+package org.michaelbel.template.features.compose.tmdb.domain.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import org.michaelbel.template.app.data.AppDatabase.Companion.DATABASE_VERSION
-import org.michaelbel.template.app.data.converters.CalendarConverter
-import org.michaelbel.template.app.data.converters.ListStringConverter
-import org.michaelbel.template.app.data.converters.SizeConverter
-import org.michaelbel.template.app.data.dao.MovieDao
-import org.michaelbel.template.app.data.entity.MovieDb
+import org.michaelbel.core.room.CalendarConverter
+import org.michaelbel.core.room.ListStringConverter
+import org.michaelbel.core.room.SizeConverter
+import org.michaelbel.template.features.compose.tmdb.data.local.MovieDb
 
-@Database(entities = [MovieDb::class], exportSchema = false, version = DATABASE_VERSION)
-@TypeConverters(CalendarConverter::class, ListStringConverter::class, SizeConverter::class)
+@Database(
+    entities = [MovieDb::class],
+    exportSchema = false,
+    version = DATABASE_VERSION
+)
+@TypeConverters(
+    CalendarConverter::class,
+    ListStringConverter::class,
+    SizeConverter::class
+)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract val movieDao: MovieDao
 
     companion object {
-        private const val DATABASE_NAME = "app_database"
-        const val DATABASE_VERSION = 1
-
         @Volatile private var instance: AppDatabase? = null
 
         fun instance(context: Context): AppDatabase {
@@ -37,3 +40,6 @@ abstract class AppDatabase: RoomDatabase() {
         }
     }
 }
+
+private const val DATABASE_NAME = "app_database"
+private const val DATABASE_VERSION = 1

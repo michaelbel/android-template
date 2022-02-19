@@ -1,8 +1,7 @@
 package org.michaelbel.template.converters
 
 import org.junit.Assert.assertEquals
-import org.michaelbel.core.test.Fails
-import org.michaelbel.template.app.data.converters.ListStringConverter
+import org.michaelbel.core.room.ListStringConverter
 
 class ListStringConverterTest {
 

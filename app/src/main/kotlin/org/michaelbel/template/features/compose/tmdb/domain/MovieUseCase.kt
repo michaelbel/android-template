@@ -4,11 +4,12 @@ import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import org.michaelbel.core.coroutines.IoDispatcher
 import org.michaelbel.core.usecase.UseCase
-import org.michaelbel.template.features.compose.tmdb.data.Movie
+import org.michaelbel.template.features.compose.tmdb.data.remote.Movie
+import org.michaelbel.template.features.compose.tmdb.domain.remote.MoviesRemoteDataSource
 
 class MovieUseCase @Inject constructor(
     @IoDispatcher dispatcher: CoroutineDispatcher,
-    private val moviesRepository: MoviesRepository
+    private val moviesRepository: MoviesRemoteDataSource
 ): UseCase<MovieUseCase.Params, Movie>(dispatcher) {
 
     override suspend fun execute(parameters: Params): Movie {

@@ -1,4 +1,4 @@
-package org.michaelbel.template.app.di
+package org.michaelbel.template.features.compose.tmdb.domain.local
 
 import android.content.Context
 import dagger.Module
@@ -7,12 +7,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-import org.michaelbel.template.app.data.AppDatabase
-import org.michaelbel.template.app.data.dao.MovieDao
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object RoomModule {
 
     @Provides
     @Singleton

@@ -1,6 +1,7 @@
 package org.michaelbel.template.features.compose.tmdb
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.CircularProgressIndicator
@@ -23,7 +24,7 @@ import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.features.compose.tmdb.data.Movie
+import org.michaelbel.template.features.compose.tmdb.data.remote.Movie
 import org.michaelbel.template.features.compose.tmdb.data.image
 
 @Composable
@@ -70,16 +71,19 @@ private fun Content(
 ) {
     val movie: Movie by viewModel.movie.collectAsState()
     val movieResult: Movie by viewModel.movieFlow.collectAsState(initial = Movie.empty())
+    val searchResults: List<Movie> by viewModel.searchResults.collectAsState(initial = emptyList())
 
     val painter = rememberImagePainter(
-        data = image(movieResult.posterPath),
+        data = image(movieResult.posterPath.orEmpty()),
         builder = {
             crossfade(true)
         }
     )
 
     Box(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .fillMaxSize()
+            .clickable { viewModel.setSearchQuery("spider") }
     ) {
         Image(
             painter = painter,

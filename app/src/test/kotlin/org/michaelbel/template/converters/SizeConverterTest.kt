@@ -2,7 +2,7 @@ package org.michaelbel.template.converters
 
 import android.util.Size
 import org.junit.Assert.assertEquals
-import org.michaelbel.template.app.data.converters.SizeConverter
+import org.michaelbel.core.room.SizeConverter
 
 class SizeConverterTest {
 

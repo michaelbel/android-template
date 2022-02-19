@@ -1,11 +1,8 @@
-package org.michaelbel.template.app.data.converters
+package org.michaelbel.core.room
 
 import android.text.TextUtils
 import androidx.room.TypeConverter
 
-/**
- * Type converters to allow Room to reference complex data types.
- */
 class ListStringConverter {
 
     @TypeConverter
