@@ -1,3 +1,5 @@
+import org.michaelbel.template.dependencies.mavenMaterial
+
 plugins {
     id(org.michaelbel.template.dependencies.Ktlint) version org.michaelbel.template.dependencies.KtlintVersion apply false
     id(org.michaelbel.template.dependencies.Detekt) version org.michaelbel.template.dependencies.DetektVersion apply true
@@ -8,7 +10,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven("https://plugins.gradle.org/m2/")
     }
 
     dependencies {
@@ -28,8 +29,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven("https://androidx.dev/snapshots/builds/7850066/artifacts/repository")
-        maven("https://plugins.gradle.org/m2/")
+        mavenMaterial()
     }
 }
 

@@ -3,6 +3,8 @@
 package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.api.artifacts.dsl.RepositoryHandler
+import org.gradle.kotlin.dsl.maven
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.implementation
 import org.michaelbel.template.extensions.kapt
@@ -137,4 +139,8 @@ fun DependencyHandler.apiPlayCoreDependencies() {
 fun DependencyHandler.implementationHiltDependencies() {
     implementation(HiltAndroid)
     kapt(HiltCompiler)
+}
+
+fun RepositoryHandler.mavenMaterial() {
+    maven("https://androidx.dev/snapshots/builds/7850066/artifacts/repository")
 }
