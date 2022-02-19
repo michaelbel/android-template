@@ -19,6 +19,10 @@ object SerializationModule {
     @Singleton
     fun provideSerializationConverterFactory(): Converter.Factory {
         val contentType: MediaType = "application/json".toMediaType()
-        return Json.asConverterFactory(contentType)
+        val json = Json {
+            explicitNulls = false
+            ignoreUnknownKeys = true
+        }
+        return json.asConverterFactory(contentType)
     }
 }

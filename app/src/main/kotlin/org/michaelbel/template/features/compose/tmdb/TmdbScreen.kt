@@ -12,6 +12,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -21,6 +23,8 @@ import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.R
+import org.michaelbel.template.features.compose.tmdb.data.Movie
+import org.michaelbel.template.features.compose.tmdb.data.image
 
 @Composable
 fun TmdbScreen(
@@ -33,7 +37,9 @@ fun TmdbScreen(
             Toolbar(navController)
         }
     ) {
-        Content()
+        Content(
+            viewModel = viewModel
+        )
     }
 }
 
@@ -59,10 +65,14 @@ private fun Toolbar(
 
 @Composable
 private fun Content(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: TmdbViewModel
 ) {
+    val movie: Movie by viewModel.movie.collectAsState()
+    val movieResult: Movie by viewModel.movieFlow.collectAsState(initial = Movie.empty())
+
     val painter = rememberImagePainter(
-        data = "https://picsum.photos/300/300",
+        data = image(movieResult.posterPath),
         builder = {
             crossfade(true)
         }

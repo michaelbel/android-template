@@ -25,6 +25,35 @@ data class Movie(
     @SerialName("video") val video: Boolean,
     @SerialName("vote_average") val voteAverage: Float,
     @SerialName("vote_count") val voteCount: Int,
-    @SerialName("media_type") val mediaType: String,
-    @SerialName("genre_ids") val genreIds: List<Int>
-)
+    @SerialName("media_type") val mediaType: String?,
+    @SerialName("genre_ids") val genreIds: List<Int>?
+) {
+    companion object {
+        fun empty(): Movie {
+            return Movie(
+                id = 0,
+                imdbId = "",
+                adult = false,
+                backdropPath = "",
+                budget = 0,
+                homepage = "",
+                originalLanguage = "",
+                originalTitle = "",
+                overview = "",
+                popularity = 0.0,
+                posterPath = "",
+                releaseDate = "",
+                revenue = 0L,
+                runtime = 0,
+                status = "",
+                tagline = "",
+                title = "",
+                video = false,
+                voteAverage = 0F,
+                voteCount = 0,
+                mediaType = "",
+                genreIds = emptyList()
+            )
+        }
+    }
+}
