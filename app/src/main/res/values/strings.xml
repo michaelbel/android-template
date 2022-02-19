@@ -19,6 +19,9 @@
     <string name="bottom_item_android">Android</string>
     <string name="bottom_item_other">Other</string>
 
+    <!--home-->
+    <string name="title_home">Compose</string>
+
     <!--Ads-->
     <string name="title_ads">Ads</string>
     <string name="show_ad">Show Ad</string>
@@ -124,17 +127,8 @@
     <string name="show_status_bar">Show StatusBar</string>
     <string name="hide_status_bar">Hide StatusBar</string>
 
-    <!--GitHub Api-->
-    <string name="title_github">GitHub Api</string>
-    <string name="loading">Loading</string>
-    <string name="language">Language: %s</string>
-    <string name="search_hint">GitHub Repository</string>
-    <string name="no_results">No results 😓</string>
-    <string name="unknown">\?</string>
-    <string name="retry">Retry</string>
-
-    <!--Tmdb Api-->
-    <string name="title_tmdb">Tmdb Api</string>
+    <!--tmdb-->
+    <string name="title_tmdb">Movie</string>
 
     <!--Lemonade Sample-->
     <string name="lemon_select">Click to select a lemon!</string>

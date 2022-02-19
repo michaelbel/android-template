@@ -14,6 +14,7 @@ import org.michaelbel.template.features.compose.notifications.NotificationsScree
 import org.michaelbel.template.features.compose.social.SocialScreen
 import org.michaelbel.template.features.compose.system.SystemScreen
 import org.michaelbel.template.features.compose.timer.TimerScreen
+import org.michaelbel.template.features.compose.tmdb.TmdbScreen
 import org.michaelbel.template.features.compose.toast.ToastScreen
 
 const val ROUTE_HOME = "route_home"
@@ -26,6 +27,7 @@ const val ROUTE_SYSTEM = "route_system"
 const val ROUTE_TIMER = "route_timer"
 const val ROUTE_TOAST = "route_toast"
 const val ROUTE_CONFIG = "route_config"
+const val ROUTE_TMDB = "route_tmdb"
 
 @SuppressLint("NewApi")
 @Composable
@@ -46,5 +48,6 @@ fun Content(
         composable(ROUTE_TIMER) { TimerScreen(navController) }
         composable(ROUTE_TOAST) { ToastScreen(navController) }
         composable(ROUTE_CONFIG) { RemoteConfigScreen(navController) }
+        composable(ROUTE_TMDB) { TmdbScreen(navController) }
     }
 }

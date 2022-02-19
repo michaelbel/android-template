@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection", "unused")
+
 package org.michaelbel.template
 
 /**
@@ -11,16 +13,17 @@ package org.michaelbel.template
  * @property FirebaseCommon —
  * @property FirebaseConfig — https://mvnrepository.com/artifact/com.google.firebase/firebase-config
  */
-object Firebase {
-    private const val FirebaseAbtVersion = "21.0.0"
-    private const val FirebaseAnalyticsVersion = "20.0.2"
-    private const val FirebaseAppDistributionVersion = "3.0.0"
-    private const val FirebaseCommonVersion = "20.0.0"
-    private const val FirebaseConfigVersion = "21.0.1"
-    private const val FirebaseCoreVersion = "20.0.2"
-    private const val FirebaseCrashlyticsPluginVersion = "2.8.1"
-    private const val FirebaseCrashlyticsVersion = "18.2.6"
 
+private const val FirebaseAbtVersion = "21.0.0"
+private const val FirebaseAnalyticsVersion = "20.0.2"
+private const val FirebaseAppDistributionVersion = "3.0.0"
+private const val FirebaseCommonVersion = "20.0.0"
+private const val FirebaseConfigVersion = "21.0.1"
+private const val FirebaseCoreVersion = "20.0.2"
+private const val FirebaseCrashlyticsPluginVersion = "2.8.1"
+private const val FirebaseCrashlyticsVersion = "18.2.6"
+
+object Firebase {
     const val FirebaseAppDistributionPlugin = "com.google.firebase:firebase-appdistribution-gradle:$FirebaseAppDistributionVersion"
     const val FirebaseCrashlyticsPlugin = "com.google.firebase:firebase-crashlytics-gradle:$FirebaseCrashlyticsPluginVersion"
 

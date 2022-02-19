@@ -4,8 +4,12 @@ import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
 import org.michaelbel.template.App
 import org.michaelbel.template.Testing
-import org.michaelbel.template.ThirdParty
-import org.michaelbel.template.extensions.addTestsDependencies
+import org.michaelbel.template.dependencies.implementationFacebookDependencies
+import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
+import org.michaelbel.template.dependencies.implementationViewBindingPropertyDelegateDependencies
+import org.michaelbel.template.dependencies.implementationVkDependencies
+import org.michaelbel.template.extensions.implementationHiltDependencies
+import org.michaelbel.template.extensions.implementationTestDependencies
 
 plugins {
     // google-services before firebase
@@ -108,13 +112,10 @@ android {
 
 dependencies {
     implementation(project(":core"))
-
-    implementation(ThirdParty.HiltAndroid)
-    kapt(ThirdParty.HiltCompiler)
-    implementation(ThirdParty.VK)
-    implementation(ThirdParty.FacebookLogin)
-    implementation(ThirdParty.ViewBindingPropertyDelegate)
-    implementation(ThirdParty.StrictMode)
-
-    addTestsDependencies()
+    implementationHiltDependencies()
+    implementationFacebookDependencies()
+    implementationVkDependencies()
+    implementationViewBindingPropertyDelegateDependencies()
+    implementationStrictModeCompatDependencies()
+    implementationTestDependencies()
 }

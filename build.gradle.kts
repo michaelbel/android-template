@@ -13,10 +13,10 @@ buildscript {
 
     dependencies {
         classpath(org.michaelbel.template.App.GradlePlugin)
-        classpath(org.michaelbel.template.Kotlin.KotlinPlugin)
-        classpath(org.michaelbel.template.Kotlin.KotlinSerializationPlugin)
-        classpath(org.michaelbel.template.GooglePlayServices.GoogleServicesPlugin)
-        classpath(org.michaelbel.template.ThirdParty.HiltPlugin)
+        classpath(org.michaelbel.template.dependencies.KotlinPlugin)
+        classpath(org.michaelbel.template.dependencies.KotlinSerializationPlugin)
+        classpath(org.michaelbel.template.Google.GoogleServicesPlugin)
+        classpath(org.michaelbel.template.Google.HiltPlugin)
         classpath(org.michaelbel.template.Firebase.FirebaseCrashlyticsPlugin)
         classpath(org.michaelbel.template.Firebase.FirebaseAppDistributionPlugin)
         classpath(org.michaelbel.template.Jetpack.NavigationSafeArgsPlugin)
@@ -89,13 +89,13 @@ subprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).configureEach {
         kotlinOptions {
             jvmTarget = "11"
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalMaterial3Api
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalFoundationApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalSerializationApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalPagingApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalComposeUiApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalMaterialApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Kotlin.Options.OptExperimentalCoilApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalMaterial3Api
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalFoundationApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalSerializationApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalPagingApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalComposeUiApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalMaterialApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalCoilApi
         }
     }
 }

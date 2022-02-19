@@ -29,6 +29,7 @@ import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
 import org.michaelbel.template.features.compose.ROUTE_SOCIAL
 import org.michaelbel.template.features.compose.ROUTE_SYSTEM
 import org.michaelbel.template.features.compose.ROUTE_TIMER
+import org.michaelbel.template.features.compose.ROUTE_TMDB
 import org.michaelbel.template.features.compose.ROUTE_TOAST
 
 @Composable
@@ -48,7 +49,7 @@ fun HomeScreen(
 private fun Toolbar() {
     SmallTopAppBar(
         title = {
-            Text(text = "Compose Design")
+            Text(text = stringResource(R.string.title_home))
         },
         modifier = Modifier.systemBarsPadding()
     )
@@ -69,7 +70,8 @@ private fun Content(
         ROUTE_SYSTEM to R.string.title_system_services,
         ROUTE_TIMER to R.string.title_timer,
         ROUTE_TOAST to R.string.title_toast,
-        ROUTE_CONFIG to R.string.title_remote_config
+        ROUTE_CONFIG to R.string.title_remote_config,
+        ROUTE_TMDB to R.string.title_tmdb
     )
 
     Box(
