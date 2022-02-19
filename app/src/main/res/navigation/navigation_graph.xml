@@ -53,11 +53,6 @@
         android:label="Fonts"/>
 
     <fragment
-        android:id="@+id/reviewFragment"
-        android:name="org.michaelbel.template.features.inappreview.ReviewFragment"
-        android:label="InAppReview"/>
-
-    <fragment
         android:id="@+id/navArgsFragment"
         android:name="org.michaelbel.template.features.navagrs.NavArgsFragment"
         android:label="NavArgs">

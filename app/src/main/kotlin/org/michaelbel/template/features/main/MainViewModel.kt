@@ -27,15 +27,6 @@ class MainViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _drawerShouldBeOpened = MutableStateFlow(false)
-    val drawerShouldBeOpened: StateFlow<Boolean> = _drawerShouldBeOpened
-
-    fun openDrawer() {
-        _drawerShouldBeOpened.value = true
-    }
-
-    fun resetOpenDrawerAction() {
-        _drawerShouldBeOpened.value = false
-    }
 
     private val screensList = MutableStateFlow<List<ScreenData>>(listOf())
     private val networkLoading = MutableStateFlow(false)
@@ -102,7 +93,6 @@ class MainViewModel @Inject constructor(
                     R.string.title_constraints_guideline
                 ),
                 ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
-                ScreenData(Screen.InAppReview, bundleOf(), R.string.title_in_app_review),
                 ScreenData(
                     Screen.NavArgs,
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),

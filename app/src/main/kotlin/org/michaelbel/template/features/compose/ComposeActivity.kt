@@ -22,11 +22,15 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.systemBarsPadding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import org.michaelbel.core.playcore.inappreview.InAppReview
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.theme.AppTheme
 
 @AndroidEntryPoint
 class ComposeActivity: ComponentActivity() {
+
+    @Inject lateinit var inAppReview: InAppReview
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_App)
@@ -35,15 +39,21 @@ class ComposeActivity: ComponentActivity() {
         setContent {
             ProvideWindowInsets {
                 AppTheme {
-                    ComposeActivityScreen()
+                    ComposeActivityScreen(::startReviewFlow)
                 }
             }
         }
     }
+
+    private fun startReviewFlow() {
+        inAppReview.startReviewFlow(this)
+    }
 }
 
 @Composable
-private fun ComposeActivityScreen() {
+private fun ComposeActivityScreen(
+    onReviewButtonClick: () -> Unit
+) {
     val navController: NavHostController = rememberNavController()
 
     Scaffold(
@@ -51,7 +61,10 @@ private fun ComposeActivityScreen() {
             BottomBar(navController)
         }
     ) {
-        Content(navController)
+        Content(
+            navController = navController,
+            onReviewButtonClick = onReviewButtonClick
+        )
     }
 }
 

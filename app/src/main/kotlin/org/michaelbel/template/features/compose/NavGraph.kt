@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.config.RemoteConfigScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
+import org.michaelbel.template.features.compose.inappreview.ReviewScreen
 import org.michaelbel.template.features.compose.intents.IntentsScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
 import org.michaelbel.template.features.compose.notifications.NotificationsScreen
@@ -28,11 +29,13 @@ const val ROUTE_TIMER = "route_timer"
 const val ROUTE_TOAST = "route_toast"
 const val ROUTE_CONFIG = "route_config"
 const val ROUTE_TMDB = "route_tmdb"
+const val ROUTE_IN_APP_REVIEW = "route_in_app_review"
 
 @SuppressLint("NewApi")
 @Composable
 fun Content(
-    navController: NavHostController
+    navController: NavHostController,
+    onReviewButtonClick: () -> Unit
 ) {
     NavHost(
         navController = navController,
@@ -49,5 +52,6 @@ fun Content(
         composable(ROUTE_TOAST) { ToastScreen(navController) }
         composable(ROUTE_CONFIG) { RemoteConfigScreen(navController) }
         composable(ROUTE_TMDB) { TmdbScreen(navController) }
+        composable(ROUTE_IN_APP_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
     }
 }
