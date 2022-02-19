@@ -1,15 +1,21 @@
-
 import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
-import org.michaelbel.template.App
-import org.michaelbel.template.Testing
+import org.michaelbel.template.ApplicationId
+import org.michaelbel.template.BuildTools
+import org.michaelbel.template.CompileSdk
+import org.michaelbel.template.MinSdk
+import org.michaelbel.template.TargetSdk
+import org.michaelbel.template.dependencies.TestRunner
+import org.michaelbel.template.VersionName
+import org.michaelbel.template.dependencies.FirebaseAppDistribution
 import org.michaelbel.template.dependencies.implementationFacebookDependencies
+import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationViewBindingPropertyDelegateDependencies
 import org.michaelbel.template.dependencies.implementationVkDependencies
-import org.michaelbel.template.extensions.implementationHiltDependencies
-import org.michaelbel.template.extensions.implementationTestDependencies
+import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
+import org.michaelbel.template.dependencies.implementationTestDependencies
 
 plugins {
     // google-services before firebase
@@ -37,16 +43,16 @@ val gitVersion: Int by lazy {
 }
 
 android {
-    compileSdk = App.CompileSdk
-    buildToolsVersion = App.BuildTools
+    compileSdk = CompileSdk
+    buildToolsVersion = BuildTools
 
     defaultConfig {
-        applicationId = App.ApplicationId
-        minSdk = App.MinSdk
-        targetSdk = App.TargetSdk
+        applicationId = ApplicationId
+        minSdk = MinSdk
+        targetSdk = TargetSdk
         versionCode = gitVersion
-        versionName = App.VersionName
-        testInstrumentationRunner = Testing.TestRunner
+        versionName = VersionName
+        testInstrumentationRunner = TestRunner
         setProperty("archivesBaseName", "template-v-$versionName($versionCode)")
     }
 
@@ -78,10 +84,10 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 
             firebaseAppDistribution {
-                appId = "1:33042426453:android:f766db4a18b6b79e9102dc" // google-services.json mobilesdk_app_id
-                artifactType = "APK"
-                testers = "michaelbel24865@gmail.com"
-                releaseNotes = "Release Build"
+                appId = FirebaseAppDistribution.MobileSdkAppId
+                artifactType = FirebaseAppDistribution.ArtifactType
+                testers = FirebaseAppDistribution.Testers
+                releaseNotes = FirebaseAppDistribution.ReleaseNotes
             }
         }
         debug {
@@ -118,4 +124,5 @@ dependencies {
     implementationViewBindingPropertyDelegateDependencies()
     implementationStrictModeCompatDependencies()
     implementationTestDependencies()
+    implementationJetpackTestDependencies()
 }

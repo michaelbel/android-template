@@ -1,7 +1,7 @@
 plugins {
-    id(org.michaelbel.template.plugins.Plugins.Ktlint) version org.michaelbel.template.plugins.Plugins.KtlintVersion apply false
-    id(org.michaelbel.template.plugins.Plugins.Detekt) version org.michaelbel.template.plugins.Plugins.DetektVersion apply true
-    id(org.michaelbel.template.plugins.Plugins.Spotless) version org.michaelbel.template.plugins.Plugins.SpotlessVersion apply false
+    id(org.michaelbel.template.dependencies.Ktlint) version org.michaelbel.template.dependencies.KtlintVersion apply false
+    id(org.michaelbel.template.dependencies.Detekt) version org.michaelbel.template.dependencies.DetektVersion apply true
+    id(org.michaelbel.template.dependencies.Spotless) version org.michaelbel.template.dependencies.SpotlessVersion apply false
 }
 
 buildscript {
@@ -12,15 +12,15 @@ buildscript {
     }
 
     dependencies {
-        classpath(org.michaelbel.template.App.GradlePlugin)
+        classpath(org.michaelbel.template.dependencies.Gradle)
         classpath(org.michaelbel.template.dependencies.KotlinPlugin)
         classpath(org.michaelbel.template.dependencies.KotlinSerializationPlugin)
-        classpath(org.michaelbel.template.Google.GoogleServicesPlugin)
-        classpath(org.michaelbel.template.Google.HiltPlugin)
-        classpath(org.michaelbel.template.Firebase.FirebaseCrashlyticsPlugin)
-        classpath(org.michaelbel.template.Firebase.FirebaseAppDistributionPlugin)
-        classpath(org.michaelbel.template.Jetpack.NavigationSafeArgsPlugin)
-        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
+        classpath(org.michaelbel.template.dependencies.GoogleServicesPlugin)
+        classpath(org.michaelbel.template.dependencies.HiltPlugin)
+        classpath(org.michaelbel.template.dependencies.FirebaseCrashlyticsPlugin)
+        classpath(org.michaelbel.template.dependencies.FirebaseAppDistributionPlugin)
+        classpath(org.michaelbel.template.dependencies.NavigationSafeArgsPlugin)
+        classpath(org.michaelbel.template.dependencies.KtlintGradle)
     }
 }
 
@@ -35,9 +35,9 @@ allprojects {
 
 subprojects {
     apply {
-        plugin(org.michaelbel.template.plugins.Plugins.Ktlint)
-        plugin(org.michaelbel.template.plugins.Plugins.Detekt)
-        plugin(org.michaelbel.template.plugins.Plugins.Spotless)
+        plugin(org.michaelbel.template.dependencies.Ktlint)
+        plugin(org.michaelbel.template.dependencies.Detekt)
+        plugin(org.michaelbel.template.dependencies.Spotless)
     }
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
@@ -89,12 +89,12 @@ subprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).configureEach {
         kotlinOptions {
             jvmTarget = "11"
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalMaterial3Api
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalFoundationApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalMaterial3Api
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalFoundationApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalSerializationApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalPagingApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalComposeUiApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.Options.OptExperimentalMaterialApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalPagingApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalComposeUiApi
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalMaterialApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalCoilApi
         }
     }

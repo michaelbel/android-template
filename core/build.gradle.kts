@@ -1,16 +1,21 @@
-import org.michaelbel.template.App
-import org.michaelbel.template.Testing
+import org.michaelbel.template.BuildTools
+import org.michaelbel.template.CompileSdk
+import org.michaelbel.template.MinSdk
+import org.michaelbel.template.TargetSdk
+import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
 import org.michaelbel.template.dependencies.apiChuckerDependencies
 import org.michaelbel.template.dependencies.apiCoilDependencies
-import org.michaelbel.template.dependencies.apiRetrofitDependencies
-import org.michaelbel.template.dependencies.apiTimberDependencies
-import org.michaelbel.template.extensions.apiFirebaseDependencies
-import org.michaelbel.template.extensions.apiGoogleDependencies
-import org.michaelbel.template.extensions.apiJetpackDependencies
+import org.michaelbel.template.dependencies.apiFirebaseDependencies
+import org.michaelbel.template.dependencies.apiGooglePlayServicesDependencies
+import org.michaelbel.template.dependencies.apiJetpackDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
-import org.michaelbel.template.extensions.apiTestDependencies
-import org.michaelbel.template.extensions.implementationHiltDependencies
+import org.michaelbel.template.dependencies.apiMaterialDependencies
+import org.michaelbel.template.dependencies.apiPlayCoreDependencies
+import org.michaelbel.template.dependencies.apiRetrofitDependencies
+import org.michaelbel.template.dependencies.apiTestDependencies
+import org.michaelbel.template.dependencies.apiTimberDependencies
+import org.michaelbel.template.dependencies.implementationHiltDependencies
 
 plugins {
     id("com.android.library")
@@ -22,13 +27,13 @@ plugins {
 }
 
 android {
-    compileSdk = App.CompileSdk
-    buildToolsVersion = App.BuildTools
+    compileSdk = CompileSdk
+    buildToolsVersion = BuildTools
 
     defaultConfig {
-        minSdk = App.MinSdk
-        targetSdk = App.TargetSdk
-        testInstrumentationRunner = Testing.TestRunner
+        minSdk = MinSdk
+        targetSdk = TargetSdk
+        testInstrumentationRunner = TestRunner
     }
 
     buildTypes {
@@ -50,15 +55,17 @@ android {
 }
 
 dependencies {
+    implementationHiltDependencies()
     apiKotlinDependencies()
     apiJetpackDependencies()
-    apiGoogleDependencies()
+    apiGooglePlayServicesDependencies()
+    apiPlayCoreDependencies()
+    apiMaterialDependencies()
     apiAccompanistDependencies()
     apiFirebaseDependencies()
     apiRetrofitDependencies()
     apiCoilDependencies()
     apiTimberDependencies()
-    implementationHiltDependencies()
     apiChuckerDependencies()
     apiTestDependencies()
 }
