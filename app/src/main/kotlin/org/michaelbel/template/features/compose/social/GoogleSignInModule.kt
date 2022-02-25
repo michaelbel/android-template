@@ -9,7 +9,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -22,7 +21,6 @@ object GoogleSignInModule {
     fun provideGoogleClientId(): String = "33042426453-pd3k32g9ns2c73v9npvm6ni82q9kgl3u.apps.googleusercontent.com"
 
     @Provides
-    @Singleton
     fun provideGoogleSignInOptions(
         @GoogleClientId clientId: String
     ): GoogleSignInOptions {
@@ -34,7 +32,6 @@ object GoogleSignInModule {
     }
 
     @Provides
-    @Singleton
     fun provideGoogleSignInClient(
         @ApplicationContext context: Context,
         options: GoogleSignInOptions

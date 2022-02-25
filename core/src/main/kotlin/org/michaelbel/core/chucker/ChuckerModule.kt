@@ -9,14 +9,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object ChuckerModule {
 
     @Provides
-    @Singleton
     fun provideChuckerInterceptor(@ApplicationContext context: Context): ChuckerInterceptor {
         val chuckerCollector = ChuckerCollector(
             context = context,

@@ -52,6 +52,10 @@ android {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
