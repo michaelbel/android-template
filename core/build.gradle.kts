@@ -11,6 +11,7 @@ import org.michaelbel.template.dependencies.apiFirebaseDependencies
 import org.michaelbel.template.dependencies.apiGooglePlayServicesDependencies
 import org.michaelbel.template.dependencies.apiJetpackDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
+import org.michaelbel.template.dependencies.apiLifecycleDependencies
 import org.michaelbel.template.dependencies.apiMaterialDependencies
 import org.michaelbel.template.dependencies.apiPlayCoreDependencies
 import org.michaelbel.template.dependencies.apiRetrofitDependencies
@@ -72,6 +73,7 @@ dependencies {
     apiKotlinDependencies()
     apiJetpackDependencies()
     apiComposeDependencies()
+    apiLifecycleDependencies()
     apiRoomDependencies()
     apiGooglePlayServicesDependencies()
     apiPlayCoreDependencies()

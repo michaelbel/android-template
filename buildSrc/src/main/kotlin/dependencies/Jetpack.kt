@@ -6,7 +6,6 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.androidTestApi
 import org.michaelbel.template.extensions.androidTestImplementation
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.kapt
 import org.michaelbel.template.extensions.testApi
 
 /**
@@ -53,8 +52,8 @@ private const val DocumentFileVersion = "1.0.1"
 private const val DragAndDropVersion = "1.0.0-alpha02"
 private const val DrawerLayoutVersion = "1.1.1"
 private const val DynamicAnimationVersion = "1.1.0-alpha03"
-private const val EmojiVersion = "1.2.0-alpha03"
-private const val Emoji2Version = "1.1.0-alpha01"
+private const val EmojiVersion = "1.1.0"
+private const val Emoji2Version = "1.1.0"
 private const val EnterpriseVersion = "1.1.0"
 private const val ExifinterfaceVersion = "1.3.3"
 private const val FragmentVersion = "1.4.0"
@@ -66,7 +65,6 @@ private const val HiltNavigationComposeVersion = "1.0.0-rc01"
 private const val HiltNavigationFragmentVersion = "1.0.0"
 private const val HiltWorkVersion = "1.0.0"
 private const val InterpolatorVersion = "1.0.0"
-private const val LifecycleVersion = "2.4.0"
 private const val LoaderVersion = "1.1.0"
 private const val MediaVersion = "1.4.3"
 private const val Media2Version = "1.2.0"
@@ -186,12 +184,6 @@ private const val HiltNavigationCompose = "androidx.hilt:hilt-navigation-compose
 private const val HiltNavigationFragment = "androidx.hilt:hilt-navigation-fragment:$HiltNavigationFragmentVersion"
 private const val HiltWork = "androidx.hilt:hilt-work:$HiltWorkVersion"
 private const val Interpolator = "androidx.interpolator:interpolator:$InterpolatorVersion"
-private const val LifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:$LifecycleVersion"
-private const val LifecycleLivedata = "androidx.lifecycle:lifecycle-livedata-ktx:$LifecycleVersion"
-private const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$LifecycleVersion"
-private const val LifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$LifecycleVersion"
-private const val LifecycleViewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$LifecycleVersion"
-private const val LifecycleViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$LifecycleVersion"
 private const val Loader = "androidx.loader:loader:$LoaderVersion"
 private const val Media = "androidx.media:media:$MediaVersion"
 private const val Media2Player = "androidx.media2:media2-player:$Media2Version"
@@ -293,11 +285,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(HiltNavigationCompose)
     api(HiltNavigationFragment)
     api(HiltWork)
-    api(LifecycleCommon)
-    api(LifecycleLivedata)
-    api(LifecycleRuntime)
-    api(LifecycleViewModel)
-    api(LifecycleViewModelSavedState)
     api(NavigationCompose)
     api(NavigationDynamic)
     api(NavigationFragment)
@@ -310,7 +297,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(ViewPager2)
     api(Window)
     api(WindowTesting)
-    kapt(LifecycleCommon)
     testApi(TestCore)
     androidTestApi(ArchCoreTesting)
     androidTestApi(NavigationTesting)
