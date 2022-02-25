@@ -13,6 +13,7 @@ import org.michaelbel.template.dependencies.apiKotlinDependencies
 import org.michaelbel.template.dependencies.apiMaterialDependencies
 import org.michaelbel.template.dependencies.apiPlayCoreDependencies
 import org.michaelbel.template.dependencies.apiRetrofitDependencies
+import org.michaelbel.template.dependencies.apiRoomDependencies
 import org.michaelbel.template.dependencies.apiTestDependencies
 import org.michaelbel.template.dependencies.apiTimberDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
@@ -24,6 +25,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
     kotlin("android")
     kotlin("kapt")
+    id("com.google.devtools.ksp") version "1.6.10-1.0.2"
 }
 
 android {
@@ -58,10 +60,17 @@ android {
     }
 }
 
+kotlin {
+    sourceSets.debug {
+        kotlin.srcDir("build/generated/ksp/debug/kotlin")
+    }
+}
+
 dependencies {
     implementationHiltDependencies()
     apiKotlinDependencies()
     apiJetpackDependencies()
+    apiRoomDependencies()
     apiGooglePlayServicesDependencies()
     apiPlayCoreDependencies()
     apiMaterialDependencies()

@@ -4,6 +4,7 @@ package org.michaelbel.template.extensions
 
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.add
 
 /**
  * Adds a dependency to the `debugImplementation` configuration.
@@ -48,6 +49,17 @@ fun DependencyHandler.api(dependencyNotation: String): Dependency? {
 fun DependencyHandler.kapt(dependencyNotation: String): Dependency? {
     return add("kapt", dependencyNotation)
 }
+
+/**
+ * Adds a dependency to the 'ksp' configuration.
+ *
+ * @param dependencyNotation notation for the dependency to be added.
+ * @return The dependency.
+ *
+ * @see [DependencyHandler.add]
+ */
+fun DependencyHandler.ksp(dependencyNotation: String): Dependency? =
+    add("ksp", dependencyNotation)
 
 /**
  * Adds a dependency to the `testImplementation` configuration.

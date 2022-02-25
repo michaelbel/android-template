@@ -93,7 +93,6 @@ private const val RecyclerViewVersion = "1.2.1"
 private const val RecyclerviewSelectionVersion = "1.1.0"
 private const val RemoteCallbackVersion = "1.0.0-alpha02"
 private const val ResourceInspectionVersion = "1.0.0"
-private const val RoomVersion = "2.4.1"
 private const val SavedStateVersion = "1.1.0"
 private const val SecurityCryptoVersion = "1.0.0"
 private const val SecurityIdentityCredentialVersion = "1.0.0-alpha03"
@@ -265,11 +264,6 @@ private const val RecyclerViewSelection = "androidx.recyclerview:recyclerview-se
 private const val RemoteCallback = "androidx.remotecallback:remotecallback:$RemoteCallbackVersion"
 private const val RemoteCallbackProcessor = "androidx.remotecallback:remotecallback-processor:$RemoteCallbackVersion"
 private const val ResourceInspection = "androidx.resourceinspection:resourceinspection-annotation:$ResourceInspectionVersion"
-private const val Room = "androidx.room:room-ktx:$RoomVersion"
-private const val RoomCompiler = "androidx.room:room-compiler:$RoomVersion"
-private const val RoomPaging = "androidx.room:room-paging:$RoomVersion"
-private const val RoomRuntime = "androidx.room:room-runtime:$RoomVersion"
-private const val RoomTesting = "androidx.room:room-testing:$RoomVersion"
 private const val SavedState = "androidx.savedstate:savedstate-ktx:$SavedStateVersion"
 private const val SecurityCrypto = "androidx.security:security-crypto:$SecurityCryptoVersion"
 private const val SecurityIdentityCredential = "androidx.security:security-identity-credential:$SecurityIdentityCredentialVersion"
@@ -352,17 +346,12 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(PagingCompose)
     api(RecyclerView)
     api(ResourceInspection)
-    api(Room)
-    api(RoomPaging)
-    api(RoomRuntime)
     api(Startup)
     api(ViewPager2)
     api(Window)
     api(WindowTesting)
     kapt(LifecycleCommon)
-    kapt(RoomCompiler)
     debugApi(ComposeUiTestManifest)
-    testApi(RoomTesting)
     testApi(TestCore)
     androidTestApi(ArchCoreTesting)
     androidTestApi(ComposeUiTest)
