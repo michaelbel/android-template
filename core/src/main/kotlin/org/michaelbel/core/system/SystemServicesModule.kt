@@ -7,6 +7,7 @@ import android.os.BatteryManager
 import android.os.Build
 import android.os.Vibrator
 import android.os.VibratorManager
+import androidx.core.content.ContextCompat
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,29 +20,36 @@ object SystemServicesModule {
 
     @Provides
     fun provideBatteryService(@ApplicationContext context: Context): BatteryManager {
-        return context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+        return ContextCompat.getSystemService(context, BatteryManager::class.java) as BatteryManager
     }
 
     @Provides
     fun provideBluetoothService(@ApplicationContext context: Context): BluetoothManager {
-        return context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+        return ContextCompat.getSystemService(
+            context,
+            BluetoothManager::class.java
+        ) as BluetoothManager
     }
 
     @Provides
     fun provideConnectivityService(@ApplicationContext context: Context): ConnectivityManager {
-        return context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        return ContextCompat.getSystemService(
+            context,
+            ConnectivityManager::class.java
+        ) as ConnectivityManager
     }
 
     @Provides
     fun provideVibratorService(@ApplicationContext context: Context): Vibrator {
         return if (Build.VERSION.SDK_INT >= 31) {
-            val vibratorManager: VibratorManager = context.getSystemService(
-                Context.VIBRATOR_MANAGER_SERVICE
+            val vibratorManager: VibratorManager = ContextCompat.getSystemService(
+                context,
+                VibratorManager::class.java
             ) as VibratorManager
             vibratorManager.defaultVibrator
         } else {
             @Suppress("Deprecation")
-            context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            ContextCompat.getSystemService(context, Vibrator::class.java) as Vibrator
         }
     }
 }

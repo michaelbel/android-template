@@ -1,7 +1,8 @@
-package org.michaelbel.template.features.compose.clipboard
+package org.michaelbel.core.system
 
 import android.content.ClipboardManager
 import android.content.Context
+import androidx.core.content.ContextCompat
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +15,9 @@ object ClipboardModule {
 
     @Provides
     fun provideClipboardService(@ApplicationContext context: Context): ClipboardManager {
-        return context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        return ContextCompat.getSystemService(
+            context,
+            ClipboardManager::class.java
+        ) as ClipboardManager
     }
 }

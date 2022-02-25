@@ -12,6 +12,7 @@ import org.michaelbel.template.extensions.testImplementation
  *
  * @see <a href="https://junit.org/junit5">JUnit</a>
  * @see <a href="https://mockk.io">Mockk</a>
+ * @see <a href="https://github.com/mockito/mockito">Mockito</a>
  * @see <a href="https://github.com/cashapp/turbine">Turbine</a>
  * @see <a href="https://github.com/robolectric/robolectric">Robolectric</a>
  * @see <a href="https://github.com/KasperskyLab/Kaspresso">Kaspresso</a>

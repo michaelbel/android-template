@@ -6,16 +6,13 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import org.gradle.kotlin.dsl.maven
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
-import org.michaelbel.template.extensions.kapt
 
 /**
- * Google Play services, Material, Play Core, Hilt
+ * Google Play services, Material, Play Core
  *
  * @see <a href="https://developers.google.com/android/guides/setup">Set up Google Play services</a>
  * @see <a href="https://github.com/material-components/material-components-android/releases">Material</a>
  * @see <a href="https://d.android.com/reference/com/google/android/play/core/release-notes">Play Core</a>
- * @see <a href="https://github.com/google/dagger/releases">Hilt</a>
  */
 
 private const val GmsAds = "20.5.0"
@@ -66,8 +63,6 @@ private const val MaterialComposeThemeAdapterVersion = "1.1.3"
 
 private const val PlayCoreVersion = "1.8.1"
 
-private const val DaggerVersion = "2.40.5"
-
 private const val Ads = "com.google.android.gms:play-services-ads:$GmsAds"
 private const val AdsIdentifier = "com.google.android.gms:play-services-ads-identifier:$GmsAdsIdentifier"
 private const val AdsLite = "com.google.android.gms:play-services-ads-lite:$GmsAdsLite"
@@ -114,10 +109,6 @@ private const val MaterialComposeThemeAdapter = "com.google.android.material:com
 
 private const val PlayCore = "com.google.android.play:core-ktx:$PlayCoreVersion"
 
-const val HiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$DaggerVersion"
-private const val HiltAndroid = "com.google.dagger:hilt-android:$DaggerVersion"
-private const val HiltCompiler = "com.google.dagger:hilt-compiler:$DaggerVersion"
-
 const val OptExperimentalMaterialApi = "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"
 const val OptExperimentalMaterial3Api = "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api"
 
@@ -134,11 +125,6 @@ fun DependencyHandler.apiMaterialDependencies() {
 
 fun DependencyHandler.apiPlayCoreDependencies() {
     api(PlayCore)
-}
-
-fun DependencyHandler.implementationHiltDependencies() {
-    implementation(HiltAndroid)
-    kapt(HiltCompiler)
 }
 
 fun RepositoryHandler.mavenMaterial() {
