@@ -10,6 +10,7 @@ import org.michaelbel.template.VersionName
 import org.michaelbel.template.dependencies.FirebaseAppDistribution
 import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
+import org.michaelbel.template.dependencies.implementationComposeTestDependencies
 import org.michaelbel.template.dependencies.implementationFacebookDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
@@ -127,4 +128,5 @@ dependencies {
     implementationStrictModeCompatDependencies()
     implementationTestDependencies()
     implementationJetpackTestDependencies()
+    implementationComposeTestDependencies()
 }

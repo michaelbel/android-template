@@ -6,8 +6,6 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.androidTestApi
 import org.michaelbel.template.extensions.androidTestImplementation
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.debugApi
-import org.michaelbel.template.extensions.implementation
 import org.michaelbel.template.extensions.kapt
 import org.michaelbel.template.extensions.testApi
 
@@ -37,8 +35,6 @@ private const val CameraViewVersion = "1.0.0-alpha32"
 private const val CameraExtensionsVersion = "1.0.0-alpha32"
 private const val CardViewVersion = "1.0.0"
 private const val CollectionVersion = "1.2.0"
-private const val ComposeVersion = "1.1.0"
-private const val ComposeCompilerVersion = "1.1.0-rc02"
 private const val ConcurrentVersion = "1.1.0"
 private const val ConstraintLayoutVersion = "2.1.3"
 private const val ConstraintLayoutComposeVersion = "1.0.0"
@@ -72,8 +68,6 @@ private const val HiltWorkVersion = "1.0.0"
 private const val InterpolatorVersion = "1.0.0"
 private const val LifecycleVersion = "2.4.0"
 private const val LoaderVersion = "1.1.0"
-private const val Material3Version = "1.0.0-SNAPSHOT"
-private const val MaterialIconsVersion = "1.1.0-SNAPSHOT"
 private const val MediaVersion = "1.4.3"
 private const val Media2Version = "1.2.0"
 private const val Media3Version = "1.0.0-alpha01"
@@ -151,26 +145,6 @@ private const val CameraView = "androidx.camera:camera-view:$CameraViewVersion"
 private const val CameraExtensions = "androidx.camera:camera-extensions:$CameraExtensionsVersion"
 private const val CardView = "androidx.cardview:cardview:$CardViewVersion"
 private const val Collection = "androidx.collection:collection-ktx:$CollectionVersion"
-private const val ComposeAnimation = "androidx.compose.animation:animation:$ComposeVersion"
-private const val ComposeAnimationCore = "androidx.compose.animation:animation-core:$ComposeVersion"
-private const val ComposeCompiler = "androidx.compose.compiler:compiler:$ComposeVersion"
-private const val ComposeFoundation = "androidx.compose.foundation:foundation:$ComposeVersion"
-private const val ComposeFoundationLayout = "androidx.compose.foundation:foundation-layout:$ComposeVersion"
-private const val ComposeMaterialIconsCore = "androidx.compose.material:material-icons-core-samples:$MaterialIconsVersion"
-private const val ComposeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:$MaterialIconsVersion"
-private const val ComposeMaterial3 = "androidx.compose.material3:material3:$Material3Version"
-private const val ComposeMaterial3Samples = "androidx.compose.material3:material3-samples:$Material3Version"
-private const val ComposeRuntime = "androidx.compose.runtime:runtime:$ComposeVersion"
-private const val ComposeRuntimeLivedata = "androidx.compose.runtime:runtime-livedata:$ComposeVersion"
-private const val ComposeUi = "androidx.compose.ui:ui:$ComposeVersion"
-private const val ComposeUiGeometry = "androidx.compose.ui:ui-geometry:$ComposeVersion"
-private const val ComposeUiGraphics = "androidx.compose.ui:ui-graphics:$ComposeVersion"
-private const val ComposeUiText = "androidx.compose.ui:ui-text:$ComposeVersion"
-private const val ComposeUiUtil = "androidx.compose.ui:ui-util:$ComposeVersion"
-private const val ComposeUiTest = "androidx.compose.ui:ui-test-junit4:$ComposeVersion"
-private const val ComposeUiTestManifest = "androidx.compose.ui:ui-test-manifest:$ComposeVersion"
-private const val ComposeUiTooling = "androidx.compose.ui:ui-tooling:$ComposeVersion"
-private const val ComposeUiViewBinding = "androidx.compose.ui:ui-viewbinding:$ComposeVersion"
 private const val Concurrent = "androidx.concurrent:concurrent-futures-ktx:$ConcurrentVersion"
 private const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:$ConstraintLayoutVersion"
 private const val ConstraintLayoutCompose = "androidx.constraintlayout:constraintlayout-compose:$ConstraintLayoutComposeVersion"
@@ -303,26 +277,12 @@ private const val WorkMultiprocess = "androidx.work:work-multiprocess:$WorkVersi
 private const val WorkTesting = "androidx.work:work-testing:$WorkVersion"
 
 const val OptExperimentalPagingApi = "-Xopt-in=androidx.paging.ExperimentalPagingApi"
-const val OptExperimentalComposeUiApi = "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
-const val OptExperimentalFoundationApi = "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
 
 fun DependencyHandler.apiJetpackDependencies() {
     api(Activity)
     api(ActivityCompose)
     api(AppCompat)
     api(Browser)
-    api(ComposeCompiler)
-    api(ComposeFoundation)
-    api(ComposeFoundationLayout)
-    api(ComposeMaterialIconsCore)
-    api(ComposeMaterialIconsExtended)
-    api(ComposeMaterial3)
-    api(ComposeMaterial3Samples)
-    api(ComposeRuntime)
-    api(ComposeRuntimeLivedata)
-    api(ComposeUi)
-    api(ComposeUiViewBinding)
-    api(ComposeUiTooling)
     api(ConstraintLayoutCompose)
     api(Core)
     api(CoreSplashScreen)
@@ -351,10 +311,8 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(Window)
     api(WindowTesting)
     kapt(LifecycleCommon)
-    debugApi(ComposeUiTestManifest)
     testApi(TestCore)
     androidTestApi(ArchCoreTesting)
-    androidTestApi(ComposeUiTest)
     androidTestApi(NavigationTesting)
     androidTestApi(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
@@ -372,7 +330,5 @@ fun DependencyHandler.implementationJetpackTestDependencies() {
     androidTestImplementation(TestCore)
     androidTestImplementation(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
-    androidTestImplementation(ComposeUiTest)
     androidTestImplementation(NavigationTesting)
-    implementation(ComposeUiTestManifest)
 }

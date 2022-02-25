@@ -6,6 +6,7 @@ import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
 import org.michaelbel.template.dependencies.apiChuckerDependencies
 import org.michaelbel.template.dependencies.apiCoilDependencies
+import org.michaelbel.template.dependencies.apiComposeDependencies
 import org.michaelbel.template.dependencies.apiFirebaseDependencies
 import org.michaelbel.template.dependencies.apiGooglePlayServicesDependencies
 import org.michaelbel.template.dependencies.apiJetpackDependencies
@@ -70,6 +71,7 @@ dependencies {
     implementationHiltDependencies()
     apiKotlinDependencies()
     apiJetpackDependencies()
+    apiComposeDependencies()
     apiRoomDependencies()
     apiGooglePlayServicesDependencies()
     apiPlayCoreDependencies()
