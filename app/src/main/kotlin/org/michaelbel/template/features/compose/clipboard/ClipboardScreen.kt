@@ -1,5 +1,6 @@
 package org.michaelbel.template.features.compose.clipboard
 
+import android.content.Context
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.SnackbarDuration
@@ -19,7 +20,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -27,6 +30,7 @@ import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
+import org.michaelbel.template.ui.theme.AppTheme
 
 @Composable
 fun ClipboardScreen(
@@ -110,5 +114,33 @@ private fun Content(
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
             ) { Text(text = stringResource(R.string.clear_clipboard)) }
         }
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    AppTheme {
+        ClipboardScreen(
+            navController = navController
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreviewDark() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    AppTheme(
+        darkTheme = true
+    ) {
+        ClipboardScreen(
+            navController = navController
+        )
     }
 }
