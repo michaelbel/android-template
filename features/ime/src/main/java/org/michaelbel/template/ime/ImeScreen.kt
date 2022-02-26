@@ -1,5 +1,6 @@
 package org.michaelbel.template.ime
 
+import android.content.Context
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -25,12 +26,14 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.SoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
@@ -141,4 +144,28 @@ private fun Content() {
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    ImeScreen(
+        navController = navController,
+        toolbarTextRes = 0
+    )
+}
+
+@Preview
+@Composable
+private fun ScreenPreviewDark() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    ImeScreen(
+        navController = navController,
+        toolbarTextRes = 0
+    )
 }

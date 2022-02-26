@@ -92,7 +92,7 @@ private fun Content(
 
 @Preview
 @Composable
-private fun TimerPreview() {
+private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
@@ -105,7 +105,7 @@ private fun TimerPreview() {
 
 @Preview
 @Composable
-private fun TimerPreviewDark() {
+private fun ScreenPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 

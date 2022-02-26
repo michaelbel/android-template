@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -112,5 +113,31 @@ private fun BottomBar(
                 }
             )
         }
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    val onReviewButtonClick: () -> Unit = {}
+
+    AppTheme {
+        ComposeActivityScreen(
+            onReviewButtonClick = onReviewButtonClick
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreviewDark() {
+    val onReviewButtonClick: () -> Unit = {}
+
+    AppTheme(
+        darkTheme = true
+    ) {
+        ComposeActivityScreen(
+            onReviewButtonClick = onReviewButtonClick
+        )
     }
 }

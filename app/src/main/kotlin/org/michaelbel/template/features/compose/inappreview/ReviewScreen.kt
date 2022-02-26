@@ -101,7 +101,7 @@ private fun Content(
 )
 @Preview(name = "dark theme", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun ReviewScreenPreview() {
+private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
