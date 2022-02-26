@@ -23,6 +23,7 @@ import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.ROUTE_CLIPBOARD
 import org.michaelbel.template.features.compose.ROUTE_CONFIG
+import org.michaelbel.template.features.compose.ROUTE_IME
 import org.michaelbel.template.features.compose.ROUTE_IN_APP_REVIEW
 import org.michaelbel.template.features.compose.ROUTE_NETWORK_IMAGE
 import org.michaelbel.template.features.compose.ROUTE_NOTIFICATIONS
@@ -73,7 +74,8 @@ private fun Content(
         ROUTE_TOAST to R.string.title_toast,
         ROUTE_CONFIG to R.string.title_remote_config,
         ROUTE_TMDB to R.string.title_tmdb,
-        ROUTE_IN_APP_REVIEW to R.string.title_in_app_review
+        ROUTE_IN_APP_REVIEW to R.string.title_in_app_review,
+        ROUTE_IME to R.string.title_ime_actions
     )
 
     Box(

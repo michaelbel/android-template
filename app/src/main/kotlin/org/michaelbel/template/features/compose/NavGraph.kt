@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.config.RemoteConfigScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
@@ -17,19 +18,21 @@ import org.michaelbel.template.features.compose.system.SystemScreen
 import org.michaelbel.template.features.compose.timer.TimerScreen
 import org.michaelbel.template.features.compose.tmdb.TmdbScreen
 import org.michaelbel.template.features.compose.toast.ToastScreen
+import org.michaelbel.template.ime.ImeScreen
 
-const val ROUTE_HOME = "route_home"
-const val ROUTE_CLIPBOARD = "route_clipboard"
-const val ROUTE_NETWORK_IMAGE = "route_network_image"
-const val ROUTE_NOTIFICATIONS = "route_notifications"
-const val ROUTE_SETTINGS_PANEL = "route_settings_panel"
-const val ROUTE_SOCIAL = "route_social"
-const val ROUTE_SYSTEM = "route_system"
-const val ROUTE_TIMER = "route_timer"
-const val ROUTE_TOAST = "route_toast"
-const val ROUTE_CONFIG = "route_config"
-const val ROUTE_TMDB = "route_tmdb"
-const val ROUTE_IN_APP_REVIEW = "route_in_app_review"
+const val ROUTE_HOME = "home"
+const val ROUTE_CLIPBOARD = "clipboard"
+const val ROUTE_NETWORK_IMAGE = "network_image"
+const val ROUTE_NOTIFICATIONS = "notifications"
+const val ROUTE_SETTINGS_PANEL = "settings_panel"
+const val ROUTE_SOCIAL = "social"
+const val ROUTE_SYSTEM = "system"
+const val ROUTE_TIMER = "timer"
+const val ROUTE_TOAST = "toast"
+const val ROUTE_CONFIG = "config"
+const val ROUTE_TMDB = "tmdb"
+const val ROUTE_IN_APP_REVIEW = "in_app_review"
+const val ROUTE_IME = "ime"
 
 @SuppressLint("NewApi")
 @Composable
@@ -53,5 +56,6 @@ fun Content(
         composable(ROUTE_CONFIG) { RemoteConfigScreen(navController) }
         composable(ROUTE_TMDB) { TmdbScreen(navController) }
         composable(ROUTE_IN_APP_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
+        composable(ROUTE_IME) { ImeScreen(navController, R.string.title_ime_actions) }
     }
 }

@@ -60,6 +60,9 @@
     <!--In-App Review-->
     <string name="title_in_app_review">In-App Review</string>
 
+    <!--IME Actions-->
+    <string name="title_ime_actions">IME Actions</string>
+
     <!--Intent-->
     <string name="title_intents">Intents</string>
     <string name="share_intent">Share Intent</string>

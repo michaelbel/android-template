@@ -121,6 +121,8 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":features"))
+
     implementationHiltDependencies()
     implementationFacebookDependencies()
     implementationVkDependencies()
