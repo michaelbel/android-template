@@ -37,4 +37,5 @@ fun DependencyHandler.apiAccompanistDependencies() {
     api(AccompanistDrawablePainter)
     api(AccompanistInsets)
     api(AccompanistInsetsUi)
+    api(AccompanistNavigationAnimation)
 }

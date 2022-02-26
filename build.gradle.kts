@@ -1,4 +1,9 @@
+import Build_gradle.Ktlint
+import Build_gradle.Spotless
 import org.michaelbel.template.dependencies.mavenMaterial
+
+typealias Ktlint = org.jlleitschuh.gradle.ktlint.KtlintExtension
+typealias Spotless = com.diffplug.gradle.spotless.SpotlessExtension
 
 plugins {
     id(org.michaelbel.template.dependencies.Ktlint) version org.michaelbel.template.dependencies.KtlintVersion apply false
@@ -43,7 +48,7 @@ subprojects {
         plugin(org.michaelbel.template.dependencies.Spotless)
     }
 
-    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+    configure<Ktlint> {
         debug.set(true)
         verbose.set(true)
         android.set(true)
@@ -61,7 +66,7 @@ subprojects {
         config = rootProject.files("config/detekt/detekt.yml")
     }
 
-    configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+    configure<Spotless> {
         java {
             target("**/*.java")
             googleJavaFormat().aosp()
@@ -93,6 +98,7 @@ subprojects {
         kotlinOptions {
             jvmTarget = "11"
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalMaterial3Api
+            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalAnimationApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalFoundationApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalCoroutinesApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalSerializationApi

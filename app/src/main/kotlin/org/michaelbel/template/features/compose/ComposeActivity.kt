@@ -19,9 +19,9 @@ import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.systemBarsPadding
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.core.playcore.inappreview.InAppReview
@@ -55,7 +55,7 @@ class ComposeActivity: ComponentActivity() {
 private fun ComposeActivityScreen(
     onReviewButtonClick: () -> Unit
 ) {
-    val navController: NavHostController = rememberNavController()
+    val navController: NavHostController = rememberAnimatedNavController()
 
     Scaffold(
         bottomBar = {
