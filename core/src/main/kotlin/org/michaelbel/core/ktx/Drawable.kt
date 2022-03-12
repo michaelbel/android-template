@@ -6,7 +6,9 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.LayerDrawable
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
@@ -44,4 +46,20 @@ fun Context.getTintDrawable(@DrawableRes drawableRes: Int, @ColorRes colorRes: I
 fun Drawable.setColor(@ColorInt color: Int) {
     colorFilter = BlendModeColorFilterCompat
         .createBlendModeColorFilterCompat(color, BlendModeCompat.SRC_ATOP)
+}
+
+fun Context.selectableItemBackgroundDrawable(@ColorRes colorRes: Int? = null): Drawable? {
+    val attrs = intArrayOf(android.R.attr.selectableItemBackground)
+    val typedArray = obtainStyledAttributes(attrs)
+    val drawableSelectable = typedArray.getDrawable(0)
+    typedArray.recycle()
+
+    if (colorRes != null) {
+        return LayerDrawable(arrayOf(
+            ColorDrawable(ContextCompat.getColor(this, colorRes)),
+            drawableSelectable
+        ))
+    }
+
+    return drawableSelectable
 }
