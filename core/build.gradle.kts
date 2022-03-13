@@ -13,6 +13,7 @@ import org.michaelbel.template.dependencies.apiJetpackDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
 import org.michaelbel.template.dependencies.apiLifecycleDependencies
 import org.michaelbel.template.dependencies.apiMaterialDependencies
+import org.michaelbel.template.dependencies.apiPagingDependencies
 import org.michaelbel.template.dependencies.apiPlayCoreDependencies
 import org.michaelbel.template.dependencies.apiRetrofitDependencies
 import org.michaelbel.template.dependencies.apiRoomDependencies
@@ -74,6 +75,7 @@ dependencies {
     apiJetpackDependencies()
     apiComposeDependencies()
     apiLifecycleDependencies()
+    apiPagingDependencies()
     apiRoomDependencies()
     apiGooglePlayServicesDependencies()
     apiPlayCoreDependencies()

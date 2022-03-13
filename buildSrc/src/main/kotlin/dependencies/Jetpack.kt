@@ -74,8 +74,6 @@ private const val MetricsVersion = "1.0.0-alpha01"
 private const val NavigationVersion = "2.3.5"
 private const val NavigationSafeArgsPluginVersion = "2.5.0-alpha01"
 private const val NavigationComposeVersion = "2.4.0-rc01"
-private const val PagingVersion = "3.1.0"
-private const val PagingComposeVersion = "1.0.0-alpha14"
 private const val PaletteVersion = "1.0.0"
 private const val PreferenceVersion = "1.1.1"
 private const val PrintVersion = "1.0.0"
@@ -218,8 +216,6 @@ private const val NavigationDynamic = "androidx.navigation:navigation-dynamic-fe
 private const val NavigationFragment = "androidx.navigation:navigation-fragment-ktx:$NavigationVersion"
 private const val NavigationTesting = "androidx.navigation:navigation-testing:$NavigationVersion"
 private const val NavigationUi = "androidx.navigation:navigation-ui-ktx:$NavigationVersion"
-private const val PagingRuntime = "androidx.paging:paging-runtime-ktx:$PagingVersion"
-private const val PagingCompose = "androidx.paging:paging-compose:$PagingComposeVersion"
 private const val Palette = "androidx.palette:palette-ktx:$PaletteVersion"
 private const val Preference = "androidx.preference:preference-ktx:$PreferenceVersion"
 private const val Print = "androidx.print:print:$PrintVersion"
@@ -268,8 +264,6 @@ private const val WorkGcm = "androidx.work:work-gcm:$WorkVersion"
 private const val WorkMultiprocess = "androidx.work:work-multiprocess:$WorkVersion"
 private const val WorkTesting = "androidx.work:work-testing:$WorkVersion"
 
-const val OptExperimentalPagingApi = "-Xopt-in=androidx.paging.ExperimentalPagingApi"
-
 fun DependencyHandler.apiJetpackDependencies() {
     api(Activity)
     api(ActivityCompose)
@@ -289,8 +283,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(NavigationDynamic)
     api(NavigationFragment)
     api(NavigationUi)
-    api(PagingRuntime)
-    api(PagingCompose)
     api(RecyclerView)
     api(ResourceInspection)
     api(Startup)
