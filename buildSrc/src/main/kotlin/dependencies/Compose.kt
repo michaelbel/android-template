@@ -42,7 +42,6 @@ private const val ComposeUiTooling = "androidx.compose.ui:ui-tooling:$ComposeVer
 private const val ComposeUiViewBinding = "androidx.compose.ui:ui-viewbinding:$ComposeVersion"
 
 const val OptExperimentalAnimationApi = "-Xopt-in=androidx.compose.animation.ExperimentalAnimationApi"
-const val OptExperimentalFoundationApi = "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
 const val OptExperimentalComposeUiApi = "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
 
 fun DependencyHandler.apiComposeDependencies() {
