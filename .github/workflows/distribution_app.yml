@@ -3,7 +3,6 @@ name: Distribution App
 on:
   push:
     branches: [ master ]
-
   workflow_dispatch:
   
 env:
@@ -11,7 +10,11 @@ env:
   KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
   KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
   KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
-  KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}  
+  KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
+  
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true  
 
 jobs:
   build:
