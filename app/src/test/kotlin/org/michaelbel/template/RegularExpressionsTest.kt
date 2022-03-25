@@ -1,7 +1,6 @@
 package org.michaelbel.template
 
 import androidx.core.util.PatternsCompat
-import java.util.regex.Pattern
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -13,7 +12,8 @@ class RegularExpressionsTest {
     @Test
     fun validEmailAddress() {
         val email = "michael-bel@outlook.com"
-        assertTrue(email.matches(PatternsCompat.AUTOLINK_EMAIL_ADDRESS.toRegex()))
+        val regex: Regex = PatternsCompat.AUTOLINK_EMAIL_ADDRESS.toRegex()
+        assertTrue(email.matches(regex))
     }
 
     /**
@@ -22,8 +22,8 @@ class RegularExpressionsTest {
     @Test
     fun testValidNumber() {
         val url = "https://main.community/i/123456"
-        val pattern = Pattern.compile("https?://main.community/i/\\d+")
-        assertTrue(url.matches(pattern.toRegex()))
+        val regex: Regex = "https?://main.community/i/\\d+".toRegex()
+        assertTrue(url.matches(regex))
     }
 
     /**
@@ -32,8 +32,8 @@ class RegularExpressionsTest {
     @Test
     fun testValidNumberLength() {
         val url = "https://main.community/i/123456"
-        val pattern = Pattern.compile("https?://main.community/i/\\d{6}\$")
-        assertTrue(url.matches(pattern.toRegex()))
+        val regex: Regex = "https?://main.community/i/\\d{6}\$".toRegex()
+        assertTrue(url.matches(regex))
     }
 
     /**
@@ -42,8 +42,8 @@ class RegularExpressionsTest {
     @Test
     fun testValidNumberLengthRange() {
         val url = "https://main.community/i/123456"
-        val pattern = Pattern.compile("https?://main.community/i/\\d{1,6}\$")
-        assertTrue(url.matches(pattern.toRegex()))
+        val regex: Regex = "https?://main.community/i/\\d{1,6}\$".toRegex()
+        assertTrue(url.matches(regex))
     }
 
     /**
@@ -52,8 +52,8 @@ class RegularExpressionsTest {
     @Test
     fun testValidNumberMinLength() {
         val url = "https://main.community/i/123456"
-        val pattern = Pattern.compile("https?://main.community/i/\\d{6,}\$")
-        assertTrue(url.matches(pattern.toRegex()))
+        val regex: Regex = "https?://main.community/i/\\d{6,}\$".toRegex()
+        assertTrue(url.matches(regex))
     }
 
     /**
@@ -62,7 +62,7 @@ class RegularExpressionsTest {
     @Test
     fun testValidExpression() {
         val url = "https://main.community/i/GIICMQ"
-        val pattern = Pattern.compile("https?://main.community/i/\\b[A-Z0-9]{6}")
-        assertTrue(url.matches(pattern.toRegex()))
+        val regex: Regex = "https?://main.community/i/\\b[A-Z0-9]{6}".toRegex()
+        assertTrue(url.matches(regex))
     }
 }
