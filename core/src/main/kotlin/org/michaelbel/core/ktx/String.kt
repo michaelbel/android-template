@@ -6,8 +6,8 @@ import android.content.Context
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
-import android.util.Patterns
 import androidx.core.text.HtmlCompat
+import androidx.core.util.PatternsCompat
 import java.util.Properties
 
 fun String.append(text: String): String = "$this$text"
@@ -41,7 +41,7 @@ inline val CharSequence.isTextOnly: Boolean
  * Проверка валидность URL.
  */
 inline val String.isUrlValid: Boolean
-    get() = !Patterns.WEB_URL.matcher(this).matches()
+    get() = PatternsCompat.WEB_URL.matcher(this).matches()
 
 /**
  * Splits by spaces, newlines, and tabs only
@@ -89,15 +89,16 @@ val String.isNumeric: Boolean
     get() = matches("^[0-9]*$".toRegex())
 
 val String.isEmail: Boolean
-    get() = matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}".toRegex())
+    get() = matches(PatternsCompat.EMAIL_ADDRESS.toRegex())
 
 /**
- * If there is more than one most common character, this returns the character that occurred first in the String
+ * If there is more than one most common character,
+ * this returns the character that occurred first in the String
  */
-val String.mostCommonCharacter: Char?
+val String.mostCommonChar: Char?
     get() {
         if (length == 0) return null
-        val map = HashMap<Char, Int>()
+        val map = hashMapOf<Char, Int>()
         for (char in toCharArray()) map[char] = (map[char] ?: 0) + 1
         var maxEntry = map.entries.elementAt(0)
         for (entry in map) maxEntry = if (entry.value > maxEntry.value) entry else maxEntry

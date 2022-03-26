@@ -2,7 +2,7 @@ package org.michaelbel.core.views.inputfilter
 
 import android.text.InputFilter
 import android.text.Spanned
-import timber.log.Timber
+import org.michaelbel.core.BuildConfig
 
 class InputFilterMinMax(
     private val min: Int = 0,
@@ -22,7 +22,9 @@ class InputFilterMinMax(
             if (isInRange(min, max, input)) {
                 return null
             }
-        } catch (e: NumberFormatException) { Timber.d(e) }
+        } catch (e: NumberFormatException) {
+            if (BuildConfig.DEBUG) error(e)
+        }
 
         return ""
     }

@@ -29,7 +29,7 @@ fun EditText.allowJustText() {
  *
  * @param predicate предикат, ограничивающий возможность ввода текста
  */
-fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
+private fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
     val inputTextFilter = InputFilter { source, start, end, _, _, _ ->
         if ((start until end).any { predicate(source[it]) }) {
             source.trim { predicate(it) }.toString()

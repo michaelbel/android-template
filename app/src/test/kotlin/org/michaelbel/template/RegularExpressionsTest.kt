@@ -1,20 +1,9 @@
 package org.michaelbel.template
 
-import androidx.core.util.PatternsCompat
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class RegularExpressionsTest {
-
-    /**
-     * Тест валидности Email-адреса.
-     */
-    @Test
-    fun validEmailAddress() {
-        val email = "michael-bel@outlook.com"
-        val regex: Regex = PatternsCompat.AUTOLINK_EMAIL_ADDRESS.toRegex()
-        assertTrue(email.matches(regex))
-    }
 
     /**
      * Тест валидности числа.
