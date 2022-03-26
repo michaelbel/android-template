@@ -10,4 +10,5 @@ android {
 
 dependencies {
     api(project(":features:ime"))
+    api(project(":features:toast"))
 }

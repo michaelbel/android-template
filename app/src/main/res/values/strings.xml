@@ -60,9 +60,6 @@
     <!--In-App Review-->
     <string name="title_in_app_review">In-App Review</string>
 
-    <!--IME Actions-->
-    <string name="title_ime_actions">IME Actions</string>
-
     <!--Intent-->
     <string name="title_intents">Intents</string>
     <string name="share_intent">Share Intent</string>
@@ -118,10 +115,6 @@
     <string name="title_timer">Timer</string>
     <string name="start_timer">Start Timer</string>
     <string name="time_over">Time is Over!</string>
-
-    <!--Toast-->
-    <string name="title_toast">Toast</string>
-    <string name="show_toast">Show Toast</string>
 
     <!--Window Insets-->
     <string name="title_window_insets">Window Insets</string>

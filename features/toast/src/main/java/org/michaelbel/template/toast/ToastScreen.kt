@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.toast
+package org.michaelbel.template.toast
 
 import android.content.Context
 import android.os.Build
@@ -19,10 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.template.R
+import org.michaelbel.core.res.CoreStrings
 
 /**
  * Android 11 Toast Updates: add callback.
@@ -34,7 +35,9 @@ fun ToastScreen(
 ) {
     Scaffold(
         topBar = {
-            Toolbar(navController)
+            Toolbar(
+                navController = navController
+            )
         }
     ) {
         Content()
@@ -52,7 +55,7 @@ private fun Toolbar(
             IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.cd_back)
+                    contentDescription = stringResource(CoreStrings.cd_back)
                 )
             }
         }
@@ -93,7 +96,31 @@ private fun Content() {
             onClick = { onShowToast() },
             modifier = Modifier.align(Alignment.Center).padding(start = 16.dp)
         ) {
-            Text(text = stringResource(R.string.show_toast))
+            Text(
+                text = stringResource(R.string.show_toast)
+            )
         }
     }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    ToastScreen(
+        navController = navController
+    )
+}
+
+@Preview
+@Composable
+private fun ScreenPreviewDark() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    ToastScreen(
+        navController = navController
+    )
 }

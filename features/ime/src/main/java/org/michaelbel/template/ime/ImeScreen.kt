@@ -1,7 +1,6 @@
 package org.michaelbel.template.ime
 
 import android.content.Context
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.KeyboardActions
@@ -37,17 +36,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.core.res.CoreStrings
 
 @Composable
 fun ImeScreen(
-    navController: NavController,
-    @StringRes toolbarTextRes: Int
+    navController: NavController
 ) {
     Scaffold(
         topBar = {
             Toolbar(
-                navController = navController,
-                toolbarTextRes = toolbarTextRes
+                navController = navController
             )
         }
     ) {
@@ -57,13 +55,12 @@ fun ImeScreen(
 
 @Composable
 private fun Toolbar(
-    navController: NavController,
-    @StringRes toolbarTextRes: Int
+    navController: NavController
 ) {
     SmallTopAppBar(
         title = {
             Text(
-                text = stringResource(toolbarTextRes)
+                text = stringResource(R.string.title_ime_actions)
             )
         },
         modifier = Modifier.statusBarsPadding(),
@@ -75,7 +72,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = null
+                    contentDescription = stringResource(CoreStrings.cd_back)
                 )
             }
         }
@@ -153,8 +150,7 @@ private fun ScreenPreview() {
     val navController = NavController(context)
 
     ImeScreen(
-        navController = navController,
-        toolbarTextRes = 0
+        navController = navController
     )
 }
 
@@ -165,7 +161,6 @@ private fun ScreenPreviewDark() {
     val navController = NavController(context)
 
     ImeScreen(
-        navController = navController,
-        toolbarTextRes = 0
+        navController = navController
     )
 }

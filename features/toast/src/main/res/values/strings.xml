@@ -1,0 +1,4 @@
+<resources>
+    <string name="title_toast">Toast</string>
+    <string name="show_toast">Show Toast</string>
+</resources>

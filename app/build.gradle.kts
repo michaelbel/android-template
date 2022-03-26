@@ -121,7 +121,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":features"))
+    api(project(":features"))
 
     implementationHiltDependencies()
     implementationFacebookDependencies()

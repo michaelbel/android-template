@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.config.RemoteConfigScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
@@ -22,8 +21,8 @@ import org.michaelbel.template.features.compose.social.SocialScreen
 import org.michaelbel.template.features.compose.system.SystemScreen
 import org.michaelbel.template.features.compose.timer.TimerScreen
 import org.michaelbel.template.features.compose.tmdb.TmdbScreen
-import org.michaelbel.template.features.compose.toast.ToastScreen
 import org.michaelbel.template.ime.ImeScreen
+import org.michaelbel.template.toast.ToastScreen
 
 const val ROUTE_HOME = "home"
 const val ROUTE_CLIPBOARD = "clipboard"
@@ -83,6 +82,6 @@ fun Content(
         composable(route = ROUTE_CONFIG) { RemoteConfigScreen(navController) }
         composable(route = ROUTE_TMDB) { TmdbScreen(navController) }
         composable(route = ROUTE_IN_APP_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
-        composable(route = ROUTE_IME) { ImeScreen(navController, R.string.title_ime_actions) }
+        composable(route = ROUTE_IME) { ImeScreen(navController) }
     }
 }

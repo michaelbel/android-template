@@ -34,6 +34,9 @@ import org.michaelbel.template.features.compose.ROUTE_TIMER
 import org.michaelbel.template.features.compose.ROUTE_TMDB
 import org.michaelbel.template.features.compose.ROUTE_TOAST
 
+typealias ToastStrings = org.michaelbel.template.toast.R.string
+typealias ImeStrings = org.michaelbel.template.ime.R.string
+
 @Composable
 fun HomeScreen(
     navController: NavController
@@ -71,11 +74,11 @@ private fun Content(
         ROUTE_SOCIAL to R.string.title_social,
         ROUTE_SYSTEM to R.string.title_system_services,
         ROUTE_TIMER to R.string.title_timer,
-        ROUTE_TOAST to R.string.title_toast,
+        ROUTE_TOAST to ToastStrings.title_toast,
         ROUTE_CONFIG to R.string.title_remote_config,
         ROUTE_TMDB to R.string.title_tmdb,
         ROUTE_IN_APP_REVIEW to R.string.title_in_app_review,
-        ROUTE_IME to R.string.title_ime_actions
+        ROUTE_IME to ImeStrings.title_ime_actions
     )
 
     Box(
