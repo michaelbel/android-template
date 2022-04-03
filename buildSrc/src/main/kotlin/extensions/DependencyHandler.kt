@@ -1,7 +1,10 @@
+@file:Suppress("SpellCheckingInspection", "unused")
+
 package org.michaelbel.template.extensions
 
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.add
 
 /**
  * Adds a dependency to the `debugImplementation` configuration.
@@ -48,6 +51,17 @@ fun DependencyHandler.kapt(dependencyNotation: String): Dependency? {
 }
 
 /**
+ * Adds a dependency to the 'ksp' configuration.
+ *
+ * @param dependencyNotation notation for the dependency to be added.
+ * @return The dependency.
+ *
+ * @see [DependencyHandler.add]
+ */
+fun DependencyHandler.ksp(dependencyNotation: String): Dependency? =
+    add("ksp", dependencyNotation)
+
+/**
  * Adds a dependency to the `testImplementation` configuration.
  *
  * @param dependencyNotation name of dependency to add at specific configuration
@@ -59,6 +73,39 @@ fun DependencyHandler.testImplementation(dependencyNotation: String): Dependency
 }
 
 /**
+ * Adds a dependency to the `testApi` configuration.
+ *
+ * @param dependencyNotation name of dependency to add at specific configuration
+ *
+ * @return the dependency
+ */
+fun DependencyHandler.testApi(dependencyNotation: String): Dependency? {
+    return add("testApi", dependencyNotation)
+}
+
+/**
+ * Adds a dependency to the `debugApi` configuration.
+ *
+ * @param dependencyNotation name of dependency to add at specific configuration
+ *
+ * @return the dependency
+ */
+fun DependencyHandler.debugApi(dependencyNotation: String): Dependency? {
+    return add("debugApi", dependencyNotation)
+}
+
+/**
+ * Adds a dependency to the `releaseApi` configuration.
+ *
+ * @param dependencyNotation name of dependency to add at specific configuration
+ *
+ * @return the dependency
+ */
+fun DependencyHandler.releaseApi(dependencyNotation: String): Dependency? {
+    return add("releaseApi", dependencyNotation)
+}
+
+/**
  * Adds a dependency to the `androidTestImplementation` configuration.
  *
  * @param dependencyNotation name of dependency to add at specific configuration
@@ -67,4 +114,15 @@ fun DependencyHandler.testImplementation(dependencyNotation: String): Dependency
  */
 fun DependencyHandler.androidTestImplementation(dependencyNotation: String): Dependency? {
     return add("androidTestImplementation", dependencyNotation)
+}
+
+/**
+ * Adds a dependency to the `androidTestApi` configuration.
+ *
+ * @param dependencyNotation name of dependency to add at specific configuration
+ *
+ * @return the dependency
+ */
+fun DependencyHandler.androidTestApi(dependencyNotation: String): Dependency? {
+    return add("androidTestApi", dependencyNotation)
 }

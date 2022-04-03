@@ -1,3 +1,5 @@
+@file:RequiresApi(29)
+
 package org.michaelbel.template.features.compose.intents
 
 import android.content.ActivityNotFoundException
@@ -50,7 +52,6 @@ import org.michaelbel.template.R
  * 0 if false, 1 if true.
  */
 
-@RequiresApi(29)
 @Composable
 fun IntentsScreen(
     navController: NavController
@@ -89,10 +90,16 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_intents)) },
+        title = {
+            Text(text = stringResource(R.string.title_intents))
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -102,7 +109,6 @@ private fun Toolbar(
     )
 }
 
-@RequiresApi(29)
 @Composable
 private fun Content(
     resultContract: ManagedActivityResultLauncher<Intent, ActivityResult>,

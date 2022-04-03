@@ -167,7 +167,7 @@ private fun Content(
 
 @Preview
 @Composable
-private fun SystemPreview() {
+private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
@@ -180,7 +180,7 @@ private fun SystemPreview() {
 
 @Preview
 @Composable
-private fun SystemPreviewDark() {
+private fun ScreenPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 

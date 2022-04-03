@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.ktx
 
 import android.text.InputFilter
@@ -29,7 +31,7 @@ fun EditText.allowJustText() {
  *
  * @param predicate предикат, ограничивающий возможность ввода текста
  */
-fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
+private fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
     val inputTextFilter = InputFilter { source, start, end, _, _, _ ->
         if ((start until end).any { predicate(source[it]) }) {
             source.trim { predicate(it) }.toString()
@@ -43,15 +45,17 @@ fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
 /**
  * Позволяет вводить только телефонный номер
  */
-/*fun EditText.allowJustPhoneNumber() {
+fun EditText.allowJustPhoneNumber() {
     val inputTextFilter = InputFilter { source, _, _, _, _, _ ->
         val inputString = source.toString()
         val inputStringLength = inputString.length
 
         //удаляем последний введеный символ если он не цифра или второй + в строке
-        if ((inputStringLength > 1 && inputString.endsWith("+"))
-        || (inputStringLength > 0
-        && !PHONE_NUMBER_CHARS.contains(inputString[inputStringLength - 1]))) {
+        val endWithPlus: Boolean = inputStringLength > 1 && inputString.endsWith("+")
+        val phoneNumberChars: Boolean = inputStringLength > 0
+                && !PHONE_NUMBER_CHARS.contains(inputString[inputStringLength - 1])
+
+        if (endWithPlus || phoneNumberChars) {
             source.removeRange(inputStringLength - 1, inputStringLength)
         } else {
             null
@@ -59,4 +63,4 @@ fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
     }
 
     this.filters = arrayOf(inputTextFilter).plus(filters)
-}*/
+}

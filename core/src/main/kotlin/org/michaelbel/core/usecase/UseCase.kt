@@ -15,7 +15,7 @@ abstract class UseCase<in P, R>(
                 execute(parameters).let { Either.Success(it) }
             }
         } catch (e: Exception) {
-            Timber.d(e)
+            Timber.e(e)
             Either.Failure(e)
         }
     }

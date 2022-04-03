@@ -14,19 +14,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.systemBarsPadding
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import org.michaelbel.core.playcore.inappreview.InAppReview
 import org.michaelbel.template.R
 import org.michaelbel.template.ui.theme.AppTheme
 
 @AndroidEntryPoint
 class ComposeActivity: ComponentActivity() {
+
+    @Inject lateinit var inAppReview: InAppReview
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_App)
@@ -35,23 +40,32 @@ class ComposeActivity: ComponentActivity() {
         setContent {
             ProvideWindowInsets {
                 AppTheme {
-                    ComposeActivityScreen()
+                    ComposeActivityScreen(::startReviewFlow)
                 }
             }
         }
     }
+
+    private fun startReviewFlow() {
+        inAppReview.startReviewFlow(this)
+    }
 }
 
 @Composable
-private fun ComposeActivityScreen() {
-    val navController: NavHostController = rememberNavController()
+private fun ComposeActivityScreen(
+    onReviewButtonClick: () -> Unit
+) {
+    val navController: NavHostController = rememberAnimatedNavController()
 
     Scaffold(
         bottomBar = {
             BottomBar(navController)
         }
     ) {
-        Content(navController)
+        Content(
+            navController = navController,
+            onReviewButtonClick = onReviewButtonClick
+        )
     }
 }
 
@@ -99,5 +113,31 @@ private fun BottomBar(
                 }
             )
         }
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    val onReviewButtonClick: () -> Unit = {}
+
+    AppTheme {
+        ComposeActivityScreen(
+            onReviewButtonClick = onReviewButtonClick
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreviewDark() {
+    val onReviewButtonClick: () -> Unit = {}
+
+    AppTheme(
+        darkTheme = true
+    ) {
+        ComposeActivityScreen(
+            onReviewButtonClick = onReviewButtonClick
+        )
     }
 }

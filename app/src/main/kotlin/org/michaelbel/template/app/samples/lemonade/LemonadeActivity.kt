@@ -3,11 +3,11 @@ package org.michaelbel.template.app.samples.lemonade
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import com.google.android.material.snackbar.Snackbar
 import org.michaelbel.template.R
 
-class LemonadeActivity: AppCompatActivity() {
+class LemonadeActivity: ComponentActivity() {
 
     /**
      * Anything labeled var instead of val is expected to be changed in the functions but DO NOT

@@ -6,12 +6,13 @@ import android.content.Context
 import android.util.TypedValue
 import java.util.Locale
 import kotlin.math.pow
+import kotlin.math.roundToInt
 
 fun Number.dp(context: Context): Int = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_DIP,
     toFloat(),
     context.resources.displayMetrics
-).toInt()
+).roundToInt()
 
 fun Number.isBetween(int1: Int, int2: Int): Boolean = this in (int1 + 1) until int2
 

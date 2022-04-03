@@ -53,11 +53,6 @@
         android:label="Fonts"/>
 
     <fragment
-        android:id="@+id/reviewFragment"
-        android:name="org.michaelbel.template.features.inappreview.ReviewFragment"
-        android:label="InAppReview"/>
-
-    <fragment
         android:id="@+id/navArgsFragment"
         android:name="org.michaelbel.template.features.navagrs.NavArgsFragment"
         android:label="NavArgs">
@@ -79,16 +74,5 @@
         android:name="org.michaelbel.template.features.views.windowinsets.WindowInsetsFragment"
         android:label="Insets"
         tools:layout="@layout/fragment_window_insets"/>
-
-    <fragment
-        android:id="@+id/gitHubApiFragment"
-        android:name="org.michaelbel.template.features.githubapi.ui.SearchReposFragment"
-        android:label="GitHubApi"
-        tools:layout="@layout/fragment_search_repositories"/>
-
-    <fragment
-        android:id="@+id/tmdbApiFragment"
-        android:label="TmdbApi"
-        tools:layout="@layout/fragment_movies"/>
 
 </navigation>

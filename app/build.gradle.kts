@@ -1,11 +1,23 @@
 import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
-import org.michaelbel.template.App
-import org.michaelbel.template.Kotlin
-import org.michaelbel.template.Testing
-import org.michaelbel.template.ThirdParty
-import org.michaelbel.template.extensions.addTestsDependencies
+import org.michaelbel.template.ApplicationId
+import org.michaelbel.template.BuildTools
+import org.michaelbel.template.CompileSdk
+import org.michaelbel.template.MinSdk
+import org.michaelbel.template.TargetSdk
+import org.michaelbel.template.VersionName
+import org.michaelbel.template.dependencies.FirebaseAppDistribution
+import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
+import org.michaelbel.template.dependencies.TestRunner
+import org.michaelbel.template.dependencies.implementationComposeTestDependencies
+import org.michaelbel.template.dependencies.implementationFacebookDependencies
+import org.michaelbel.template.dependencies.implementationHiltDependencies
+import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
+import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
+import org.michaelbel.template.dependencies.implementationTestDependencies
+import org.michaelbel.template.dependencies.implementationViewBindingPropertyDelegateDependencies
+import org.michaelbel.template.dependencies.implementationVkDependencies
 
 plugins {
     // google-services before firebase
@@ -33,16 +45,16 @@ val gitVersion: Int by lazy {
 }
 
 android {
-    compileSdk = App.CompileSdk
-    buildToolsVersion = App.BuildTools
+    compileSdk = CompileSdk
+    buildToolsVersion = BuildTools
 
     defaultConfig {
-        applicationId = App.ApplicationId
-        minSdk = App.MinSdk
-        targetSdk = App.TargetSdk
+        applicationId = ApplicationId
+        minSdk = MinSdk
+        targetSdk = TargetSdk
         versionCode = gitVersion
-        versionName = App.VersionName
-        testInstrumentationRunner = Testing.TestRunner
+        versionName = VersionName
+        testInstrumentationRunner = TestRunner
         setProperty("archivesBaseName", "template-v-$versionName($versionCode)")
     }
 
@@ -74,10 +86,10 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 
             firebaseAppDistribution {
-                appId = "1:33042426453:android:f766db4a18b6b79e9102dc" // google-services.json mobilesdk_app_id
-                artifactType = "APK"
-                testers = "michaelbel24865@gmail.com"
-                releaseNotes = "Release Build"
+                appId = FirebaseAppDistribution.MobileSdkAppId
+                artifactType = FirebaseAppDistribution.ArtifactType
+                testers = FirebaseAppDistribution.Testers
+                releaseNotes = FirebaseAppDistribution.ReleaseNotes
             }
         }
         debug {
@@ -91,19 +103,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    kotlinOptions {
-        jvmTarget = "11"
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterial3Api
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalFoundationApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalSerializationApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalPagingApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalComposeUiApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalMaterialApi
-        freeCompilerArgs = freeCompilerArgs + Kotlin.Options.OptExperimentalCoilApi
-    }
-
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0-alpha02"
+        kotlinCompilerExtensionVersion = KotlinCompilerExtensionVersion
     }
 
     testOptions {
@@ -114,30 +115,20 @@ android {
     buildFeatures {
         compose = true
         viewBinding = true
-    }
-
-    sourceSets {
-        getByName("main") {
-            java.srcDir("src/main/kotlin")
-        }
-        getByName("test") {
-            java.srcDir("src/test/kotlin")
-        }
-        getByName("androidTest") {
-            java.srcDir("src/androidTest/kotlin")
-        }
+        buildConfig = true
     }
 }
 
 dependencies {
     implementation(project(":core"))
+    api(project(":features"))
 
-    implementation(ThirdParty.HiltAndroid)
-    kapt(ThirdParty.HiltCompiler)
-    implementation(ThirdParty.VK)
-    implementation(ThirdParty.FacebookLogin)
-    implementation(ThirdParty.ViewBindingPropertyDelegate)
-    implementation(ThirdParty.StrictMode)
-
-    addTestsDependencies()
+    implementationHiltDependencies()
+    implementationFacebookDependencies()
+    implementationVkDependencies()
+    implementationViewBindingPropertyDelegateDependencies()
+    implementationStrictModeCompatDependencies()
+    implementationTestDependencies()
+    implementationJetpackTestDependencies()
+    implementationComposeTestDependencies()
 }

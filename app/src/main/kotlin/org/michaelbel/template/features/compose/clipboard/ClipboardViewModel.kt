@@ -4,13 +4,13 @@ import android.content.ClipData
 import android.content.ClipDescription
 import android.content.ClipboardManager
 import android.os.Build
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
 
@@ -19,7 +19,9 @@ class ClipboardViewModel @Inject constructor(
     private val clipboard: ClipboardManager
 ): ViewModel() {
 
-    var clipText: CharSequence by mutableStateOf("")
+    private val _clipText: MutableStateFlow<String> = MutableStateFlow("")
+    val clipText: StateFlow<String>
+        get() = _clipText.asStateFlow()
 
     @Inject
     fun trackScreen(analytics: Analytics) {
@@ -39,7 +41,9 @@ class ClipboardViewModel @Inject constructor(
 
         val clip: ClipData.Item = clipboard.primaryClip?.getItemAt(0) ?: return
 
-        viewModelScope.launch { clipText = clip.text }
+        viewModelScope.launch {
+            _clipText.emit(clip.text.toString())
+        }
     }
 
     fun clearClipboard() {

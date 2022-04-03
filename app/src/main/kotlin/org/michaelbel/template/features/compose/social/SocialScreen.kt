@@ -144,7 +144,7 @@ private fun Content(
 
 @Preview
 @Composable
-private fun SocialPreview() {
+private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
@@ -157,7 +157,7 @@ private fun SocialPreview() {
 
 @Preview
 @Composable
-private fun SocialPreviewDark() {
+private fun ScreenPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 

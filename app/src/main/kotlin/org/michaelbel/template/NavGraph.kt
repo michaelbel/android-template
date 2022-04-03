@@ -10,7 +10,6 @@ typealias OnNavigationBackClick = () -> Unit
 
 enum class Screen {
     Ads,
-
     ConstraintsBaseline,
     ConstraintsChains,
     ConstraintsCircular,
@@ -18,14 +17,9 @@ enum class Screen {
     ConstraintsGoneMargins,
     ConstraintsGuideline,
     Fonts,
-    InAppReview,
     Main,
     NavArgs,
-    SavedState,
-    WindowInsets,
-
-    GitHubApi,
-    TmdbApi
+    WindowInsets
 }
 
 val screensMap: Map<Screen, Int> = mapOf(
@@ -37,13 +31,9 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.ConstraintsGoneMargins to R.id.constraintsGoneMarginFragment,
     Screen.ConstraintsGuideline to R.id.constraintsGuidelineFragment,
     Screen.Fonts to R.id.fontsFragment,
-    Screen.InAppReview to R.id.reviewFragment,
     Screen.Main to R.id.mainFragment,
     Screen.NavArgs to R.id.navArgsFragment,
-    Screen.WindowInsets to R.id.insetsFragment,
-
-    Screen.GitHubApi to R.id.gitHubApiFragment,
-    Screen.TmdbApi to R.id.tmdbApiFragment
+    Screen.WindowInsets to R.id.insetsFragment
 )
 
 fun Fragment.navigate(to: Screen, from: Screen, args: Bundle = bundleOf()) {

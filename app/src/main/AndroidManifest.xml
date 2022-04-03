@@ -12,28 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-    <uses-sdk
-        tools:overrideLibrary="
-            androidx.draganddrop,
-            androidx.health.services.client,
-            androidx.heifwriter,
-            androidx.security.identity.credential,
-            androidx.wear,
-            androidx.wear.compose.foundation,
-            androidx.wear.compose.material,
-            androidx.wear.compose.navigation,
-            androidx.wear.input.testing,
-            androidx.wear.ongoing,
-            androidx.wear.phone.interactions,
-            androidx.wear.remote.interactions,
-            androidx.wear.tiles,
-            androidx.wear.watchface.client,
-            androidx.wear.watchface.complications.datasource.ktx,
-            androidx.wear.watchface.editor,
-            androidx.wear.watchface.style,
-            android.support.wearable.watchface"/>
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
 
     <application
         android:name=".App"

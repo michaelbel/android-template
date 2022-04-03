@@ -15,5 +15,5 @@ pluginManagement {
     }
 }
 
-include(":app", ":core")
+include(":app", ":core", ":features", ":features:ime", ":features:toast")
 rootProject.name = "android-app-template"
