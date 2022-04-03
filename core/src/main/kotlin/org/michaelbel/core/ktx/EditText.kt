@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.ktx
 
 import android.text.InputFilter
@@ -43,7 +45,7 @@ private fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
 /**
  * Позволяет вводить только телефонный номер
  */
-/*fun EditText.allowJustPhoneNumber() {
+fun EditText.allowJustPhoneNumber() {
     val inputTextFilter = InputFilter { source, _, _, _, _, _ ->
         val inputString = source.toString()
         val inputStringLength = inputString.length
@@ -59,4 +61,4 @@ private fun EditText.restrictMatch(predicate: (Char) -> Boolean) {
     }
 
     this.filters = arrayOf(inputTextFilter).plus(filters)
-}*/
+}

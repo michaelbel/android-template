@@ -25,7 +25,7 @@ import coil.compose.rememberImagePainter
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.tmdb.data.remote.Movie
-import org.michaelbel.template.features.compose.tmdb.data.image
+import org.michaelbel.template.features.compose.tmdb.data.remote.image
 
 @Composable
 fun TmdbScreen(

@@ -17,8 +17,8 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.core.model.handle
-import org.michaelbel.template.features.compose.tmdb.data.TMDB_API_KEY
 import org.michaelbel.template.features.compose.tmdb.data.remote.Movie
+import org.michaelbel.template.features.compose.tmdb.data.remote.TMDB_API_KEY
 import org.michaelbel.template.features.compose.tmdb.domain.MovieUseCase
 import org.michaelbel.template.features.compose.tmdb.domain.MoviesRepository
 import timber.log.Timber

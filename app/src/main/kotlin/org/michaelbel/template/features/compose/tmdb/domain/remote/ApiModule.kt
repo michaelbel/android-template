@@ -12,7 +12,7 @@ import javax.inject.Singleton
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import org.michaelbel.core.ktx.createService
-import org.michaelbel.template.features.compose.tmdb.data.TMDB_API_ENDPOINT
+import org.michaelbel.template.features.compose.tmdb.data.remote.TMDB_API_ENDPOINT
 import retrofit2.Converter
 import retrofit2.Retrofit
 

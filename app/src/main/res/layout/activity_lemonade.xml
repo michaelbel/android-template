@@ -18,7 +18,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/image_lemon_state"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/image_lemon_state"

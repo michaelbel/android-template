@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.sharedpreferences
 
 import android.content.SharedPreferences

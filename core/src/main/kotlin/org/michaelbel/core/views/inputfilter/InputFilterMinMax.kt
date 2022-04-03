@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.views.inputfilter
 
 import android.text.InputFilter

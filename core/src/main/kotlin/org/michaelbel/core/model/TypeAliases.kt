@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.model
 
 import android.view.View

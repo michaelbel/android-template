@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.usecase
 
 import kotlinx.coroutines.CoroutineDispatcher

@@ -26,6 +26,4 @@
     <color name="SurfaceVariant">#E7E0EC</color>
     <color name="Tertiary">#7D5260</color>
     <color name="TertiaryContainer">#FFD8E4</color>
-
-    <color name="transparent">#33000000</color>
 </resources>

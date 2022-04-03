@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.tmdb.data
+package org.michaelbel.template.features.compose.tmdb.data.remote
 
 import java.util.Locale
 

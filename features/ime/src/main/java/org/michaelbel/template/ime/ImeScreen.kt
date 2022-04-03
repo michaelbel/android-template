@@ -85,8 +85,8 @@ private fun Content() {
     val keyboardController: SoftwareKeyboardController? = LocalSoftwareKeyboardController.current
     val focusRequester: FocusRequester = remember { FocusRequester() }
 
-    var firstNameText by remember { mutableStateOf("") }
-    var lastNameText by remember { mutableStateOf("") }
+    var firstNameText: String by remember { mutableStateOf("") }
+    var lastNameText: String by remember { mutableStateOf("") }
     
     LaunchedEffect(Unit) {
         focusRequester.requestFocus()
