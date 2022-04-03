@@ -87,7 +87,7 @@ private fun Content() {
 
     var firstNameText: String by remember { mutableStateOf("") }
     var lastNameText: String by remember { mutableStateOf("") }
-    
+
     LaunchedEffect(Unit) {
         focusRequester.requestFocus()
     }
