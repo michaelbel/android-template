@@ -51,9 +51,11 @@ fun EditText.allowJustPhoneNumber() {
         val inputStringLength = inputString.length
 
         //удаляем последний введеный символ если он не цифра или второй + в строке
-        if ((inputStringLength > 1 && inputString.endsWith("+"))
-        || (inputStringLength > 0
-        && !PHONE_NUMBER_CHARS.contains(inputString[inputStringLength - 1]))) {
+        val endWithPlus: Boolean = inputStringLength > 1 && inputString.endsWith("+")
+        val phoneNumberChars: Boolean = inputStringLength > 0
+                && !PHONE_NUMBER_CHARS.contains(inputString[inputStringLength - 1])
+
+        if (endWithPlus || phoneNumberChars) {
             source.removeRange(inputStringLength - 1, inputStringLength)
         } else {
             null
