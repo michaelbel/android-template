@@ -1,4 +1,6 @@
 import org.michaelbel.template.CompileSdk
+import org.michaelbel.template.MinSdk
+import org.michaelbel.template.TargetSdk
 import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 
 plugins {
@@ -10,6 +12,8 @@ android {
     compileSdk = CompileSdk
 
     defaultConfig {
+        minSdk = MinSdk
+        targetSdk = TargetSdk
         consumerProguardFiles("consumer-rules.pro")
     }
 
