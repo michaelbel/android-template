@@ -18,7 +18,7 @@ import org.michaelbel.template.extensions.testApi
  */
 
 private const val KotlinVersion = "1.6.10"
-private const val KotlinCoroutinesVersion = "1.6.0"
+private const val KotlinCoroutinesVersion = "1.6.1"
 private const val KotlinSerializationVersion = "1.3.2"
 private const val KotlinDatetimeVersion = "0.3.2"
 
