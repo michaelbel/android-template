@@ -49,10 +49,18 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_toast)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_toast)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(CoreStrings.cd_back)
@@ -94,7 +102,9 @@ private fun Content() {
     Box {
         Button(
             onClick = { onShowToast() },
-            modifier = Modifier.align(Alignment.Center).padding(start = 16.dp)
+            modifier = Modifier
+                .align(Alignment.Center)
+                .padding(start = 16.dp)
         ) {
             Text(
                 text = stringResource(R.string.show_toast)
