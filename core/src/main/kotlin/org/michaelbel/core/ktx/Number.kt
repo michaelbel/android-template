@@ -18,6 +18,12 @@ fun Number.isBetween(int1: Int, int2: Int): Boolean = this in (int1 + 1) until i
 
 infix fun Number.isBetween(range: IntRange): Boolean = this in range.first until range.last
 
+val Number.isInteger: Boolean
+    get() {
+        val afterDecimal: String = toString().substringAfter('.')
+        return afterDecimal.toInt() == 0
+    }
+
 val Long.formatSize: String
     get() = when {
         this < 1024 -> String.format(Locale.getDefault(), "%d B", this)
