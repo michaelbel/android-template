@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.views.constraints
+package org.michaelbel.template.constraintlayout
 
 import android.os.Bundle
 import android.view.View
@@ -11,15 +11,12 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
-import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsConstrainedWidthBinding
+import org.michaelbel.template.constraintlayout.databinding.FragmentConstraintsCircularBinding
 
 @AndroidEntryPoint
-class ConstrainsConstrainedWidthFragment: Fragment(
-    R.layout.fragment_constraints_constrained_width
-) {
+class ConstrainsCircularFragment: Fragment(R.layout.fragment_constraints_circular) {
 
-    private val binding: FragmentConstraintsConstrainedWidthBinding by viewBinding()
+    private val binding: FragmentConstraintsCircularBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

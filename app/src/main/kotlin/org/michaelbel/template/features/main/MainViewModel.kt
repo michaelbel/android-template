@@ -69,28 +69,32 @@ class MainViewModel @Inject constructor(
                 ScreenData(
                     Screen.ConstraintsBaseline,
                     bundleOf(),
-                    R.string.title_constraints_baseline
+                    org.michaelbel.template.constraintlayout.R.string.title_constraints_baseline
                 ),
-                ScreenData(Screen.ConstraintsChains, bundleOf(), R.string.title_constraints_chains),
+                ScreenData(
+                    Screen.ConstraintsChains,
+                    bundleOf(),
+                    org.michaelbel.template.constraintlayout.R.string.title_constraints_chains
+                ),
                 ScreenData(
                     Screen.ConstraintsCircular,
                     bundleOf(),
-                    R.string.title_constraints_circular
+                    org.michaelbel.template.constraintlayout.R.string.title_constraints_circular
                 ),
                 ScreenData(
                     Screen.ConstraintsConstrainedWidth,
                     bundleOf(),
-                    R.string.title_constraints_constrained_width
+                    org.michaelbel.template.constraintlayout.R.string.title_constraints_constrained_width
                 ),
                 ScreenData(
                     Screen.ConstraintsGoneMargins,
                     bundleOf(),
-                    R.string.title_constraints_gone_margins
+                    org.michaelbel.template.constraintlayout.R.string.title_constraints_gone_margins
                 ),
                 ScreenData(
                     Screen.ConstraintsGuideline,
                     bundleOf(),
-                    R.string.title_constraints_guideline
+                    org.michaelbel.template.constraintlayout.R.string.title_constraints_guideline
                 ),
                 ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
                 ScreenData(

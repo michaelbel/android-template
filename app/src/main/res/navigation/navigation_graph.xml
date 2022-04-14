@@ -19,32 +19,32 @@
 
     <fragment
         android:id="@+id/constraintsBaselineFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsBaselineFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsBaselineFragment"
         android:label="ConstrainsBaseline"/>
 
     <fragment
         android:id="@+id/constraintsChainStyleFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsChainsFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsChainsFragment"
         android:label="ConstrainsChainStyle"/>
 
     <fragment
         android:id="@+id/constraintsCircularFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsCircularFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsCircularFragment"
         android:label="ConstrainsCircular"/>
 
     <fragment
         android:id="@+id/constraintsConstrainedWidthFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsConstrainedWidthFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsConstrainedWidthFragment"
         android:label="ConstrainsConstrainedWidth"/>
 
     <fragment
         android:id="@+id/constraintsGoneMarginFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsGoneMarginsFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsGoneMarginsFragment"
         android:label="ConstrainsGoneMargin"/>
 
     <fragment
         android:id="@+id/constraintsGuidelineFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsGuidelineFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsGuidelineFragment"
         android:label="ConstrainsGuideline"/>
 
     <fragment

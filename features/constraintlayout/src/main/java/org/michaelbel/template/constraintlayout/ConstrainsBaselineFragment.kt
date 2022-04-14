@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.views.constraints
+package org.michaelbel.template.constraintlayout
 
 import android.os.Bundle
 import android.view.View
@@ -11,8 +11,7 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
-import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsBaselineBinding
+import org.michaelbel.template.constraintlayout.databinding.FragmentConstraintsBaselineBinding
 
 @AndroidEntryPoint
 class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baseline) {
