@@ -1,7 +1,6 @@
 <resources>
     <!--App-->
     <string name="app_name">Template</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <!--Main-->
     <string name="cd_menu">Menu</string>
@@ -21,10 +20,6 @@
 
     <!--home-->
     <string name="title_home">Compose</string>
-
-    <!--Ads-->
-    <string name="title_ads">Ads</string>
-    <string name="show_ad">Show Ad</string>
 
     <!--Clipboard-->
     <string name="title_clipboard">Clipboard</string>

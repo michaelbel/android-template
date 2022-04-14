@@ -3,6 +3,7 @@
 package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.implementation
 
 /**
@@ -17,4 +18,8 @@ private const val ViewBindingPropertyDelegate = "com.github.kirich1409:viewbindi
 
 fun DependencyHandler.implementationViewBindingPropertyDelegateDependencies() {
     implementation(ViewBindingPropertyDelegate)
+}
+
+fun DependencyHandler.apiViewBindingPropertyDelegateDependencies() {
+    api(ViewBindingPropertyDelegate)
 }

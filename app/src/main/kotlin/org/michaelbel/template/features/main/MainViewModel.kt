@@ -65,7 +65,7 @@ class MainViewModel @Inject constructor(
     private fun setData() {
         viewModelScope.launch {
             screensList.value = listOf(
-                ScreenData(Screen.Ads, bundleOf(), R.string.title_ads),
+                ScreenData(Screen.Ads, bundleOf(), org.michaelbel.template.ads.R.string.title_ads),
                 ScreenData(
                     Screen.ConstraintsBaseline,
                     bundleOf(),

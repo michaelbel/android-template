@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.ads
+package org.michaelbel.template.ads
 
 import android.os.Bundle
 import android.view.View
@@ -20,8 +20,7 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
-import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentAdsBinding
+import org.michaelbel.template.ads.databinding.FragmentAdsBinding
 
 @AndroidEntryPoint
 class AdsFragment: Fragment(R.layout.fragment_ads) {

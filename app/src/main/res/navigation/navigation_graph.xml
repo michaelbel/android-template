@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/adsFragment"
-        android:name="org.michaelbel.template.features.ads.AdsFragment"
+        android:name="org.michaelbel.template.ads.AdsFragment"
         android:label="Ads"
         tools:layout="@layout/fragment_ads"/>
 

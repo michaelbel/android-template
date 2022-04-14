@@ -1,3 +1,4 @@
+
 import org.michaelbel.template.BuildTools
 import org.michaelbel.template.CompileSdk
 import org.michaelbel.template.MinSdk
@@ -19,6 +20,7 @@ import org.michaelbel.template.dependencies.apiRetrofitDependencies
 import org.michaelbel.template.dependencies.apiRoomDependencies
 import org.michaelbel.template.dependencies.apiTestDependencies
 import org.michaelbel.template.dependencies.apiTimberDependencies
+import org.michaelbel.template.dependencies.apiViewBindingPropertyDelegateDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 
 plugins {
@@ -87,4 +89,5 @@ dependencies {
     apiTimberDependencies()
     apiChuckerDependencies()
     apiTestDependencies()
+    apiViewBindingPropertyDelegateDependencies()
 }

@@ -1,3 +1,4 @@
+
 import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
@@ -16,7 +17,6 @@ import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
-import org.michaelbel.template.dependencies.implementationViewBindingPropertyDelegateDependencies
 import org.michaelbel.template.dependencies.implementationVkDependencies
 
 plugins {
@@ -126,7 +126,6 @@ dependencies {
     implementationHiltDependencies()
     implementationFacebookDependencies()
     implementationVkDependencies()
-    implementationViewBindingPropertyDelegateDependencies()
     implementationStrictModeCompatDependencies()
     implementationTestDependencies()
     implementationJetpackTestDependencies()

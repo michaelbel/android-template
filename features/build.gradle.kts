@@ -16,6 +16,8 @@ android {
 }
 
 dependencies {
+    api(project(":features:ads"))
+    api(project(":features:constraintlayout"))
     api(project(":features:ime"))
     api(project(":features:toast"))
 }

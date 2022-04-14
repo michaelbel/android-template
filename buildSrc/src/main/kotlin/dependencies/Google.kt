@@ -6,6 +6,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import org.gradle.kotlin.dsl.maven
 import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Google Play services, Material, Play Core
@@ -113,9 +114,12 @@ const val OptExperimentalMaterialApi = "-Xopt-in=androidx.compose.material.Exper
 const val OptExperimentalMaterial3Api = "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api"
 
 fun DependencyHandler.apiGooglePlayServicesDependencies() {
-    api(Ads)
     api(Auth)
     api(Base)
+}
+
+fun DependencyHandler.implementationGooglePlayServicesAdsDependencies() {
+    implementation(Ads)
 }
 
 fun DependencyHandler.apiMaterialDependencies() {
