@@ -17,12 +17,12 @@ import org.michaelbel.template.extensions.testApi
  * @see <a href="https://d.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a>
  */
 
-private const val KotlinVersion = "1.6.10"
+private const val KotlinVersion = "1.6.20"
 private const val KotlinCoroutinesVersion = "1.6.1"
 private const val KotlinSerializationVersion = "1.3.2"
 private const val KotlinDatetimeVersion = "0.3.2"
 
-const val KotlinCompilerExtensionVersion = "1.2.0-alpha02"
+const val KotlinCompilerExtensionVersion = "1.2.0-alpha08"
 
 const val KotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KotlinVersion"
 const val KotlinSerializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:$KotlinVersion"
@@ -36,6 +36,7 @@ private const val KotlinDatetime = "org.jetbrains.kotlinx:kotlinx-datetime:$Kotl
 const val OptExperimentalCoroutinesApi = "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
 const val OptExperimentalSerializationApi = "-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi"
 const val RequiresOptIn = "-Xopt-in=kotlin.RequiresOptIn"
+const val OptContextReceivers = "-Xcontext-receivers"
 
 fun DependencyHandler.apiKotlinDependencies() {
     api(KotlinCoroutinesCore)
