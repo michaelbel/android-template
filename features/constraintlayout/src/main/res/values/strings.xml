@@ -13,4 +13,6 @@
     <string name="constraints_gone_margins">Пример позиционирования виджета с gone margins. Отступ слева при видимости view1 равен 8dp, при его невидимости 16dp</string>
     <string name="title_constraints_guideline">Constraints Guideline</string>
     <string name="constraints_guideline">Пример позиционирования элементов относительно невидимой линии Guideline</string>
+    <string name="title_constraints_flow">Constraints Flow</string>
+    <string name="constraints_flow">Пример позиционирования чепочки, которая переносится на новую строку, если не хватает места</string>
 </resources>

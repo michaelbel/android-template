@@ -15,7 +15,7 @@ import org.michaelbel.template.extensions.implementation
  * @see <a href="https://d.android.com/jetpack/androidx/releases/compose">Compose</a>
  */
 
-private const val ComposeVersion = "1.1.1"
+private const val ComposeVersion = "1.2.0-alpha08"
 
 private const val Material3Version = "1.0.0-SNAPSHOT"
 private const val MaterialIconsVersion = "1.1.0-SNAPSHOT"
