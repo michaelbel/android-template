@@ -20,11 +20,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.systemBarsPadding
+import org.michaelbel.features.ImeStrings
+import org.michaelbel.features.IntentsStrings
+import org.michaelbel.features.ToastStrings
 import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.ROUTE_CLIPBOARD
 import org.michaelbel.template.features.compose.ROUTE_CONFIG
 import org.michaelbel.template.features.compose.ROUTE_IME
 import org.michaelbel.template.features.compose.ROUTE_IN_APP_REVIEW
+import org.michaelbel.template.features.compose.ROUTE_LOCATION
 import org.michaelbel.template.features.compose.ROUTE_NETWORK_IMAGE
 import org.michaelbel.template.features.compose.ROUTE_NOTIFICATIONS
 import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
@@ -33,9 +37,6 @@ import org.michaelbel.template.features.compose.ROUTE_SYSTEM
 import org.michaelbel.template.features.compose.ROUTE_TIMER
 import org.michaelbel.template.features.compose.ROUTE_TMDB
 import org.michaelbel.template.features.compose.ROUTE_TOAST
-
-typealias ToastStrings = org.michaelbel.template.toast.R.string
-typealias ImeStrings = org.michaelbel.template.ime.R.string
 
 @Composable
 fun HomeScreen(
@@ -70,7 +71,7 @@ private fun Content(
         ROUTE_CLIPBOARD to R.string.title_clipboard,
         ROUTE_NETWORK_IMAGE to R.string.title_network_image,
         ROUTE_NOTIFICATIONS to R.string.title_notifications,
-        ROUTE_SETTINGS_PANEL to R.string.title_intents,
+        ROUTE_SETTINGS_PANEL to IntentsStrings.title_intents,
         ROUTE_SOCIAL to R.string.title_social,
         ROUTE_SYSTEM to R.string.title_system_services,
         ROUTE_TIMER to R.string.title_timer,
@@ -78,7 +79,8 @@ private fun Content(
         ROUTE_CONFIG to R.string.title_remote_config,
         ROUTE_TMDB to R.string.title_tmdb,
         ROUTE_IN_APP_REVIEW to R.string.title_in_app_review,
-        ROUTE_IME to ImeStrings.title_ime_actions
+        ROUTE_IME to ImeStrings.title_ime_actions,
+        ROUTE_LOCATION to ImeStrings.title_ime_actions
     )
 
     Box(

@@ -1,6 +1,4 @@
-@file:RequiresApi(29)
-
-package org.michaelbel.template.features.compose.intents
+package org.michaelbel.template.intents
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -13,7 +11,6 @@ import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.browser.customtabs.CustomTabColorSchemeParams
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -36,20 +33,18 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.template.R
 
 /**
  * Settings Panel Intents (Connectivity, NFC, Volume, Wi-Fi)
  * Share Intent
  * Email Intent
+ * TODO Phone Intent
  * GooglePlay Intent
  * Telegram Intent
  * Google Voice Input
  * Browser
- * InApp Browser
- *
- * Settings.Global.getString(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON)
- * 0 if false, 1 if true.
+ * In-App Browser
+ * TODO App Settings Intent
  */
 
 @Composable
@@ -102,7 +97,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.cd_back)
+                    contentDescription = stringResource(org.michaelbel.core.R.string.cd_back)
                 )
             }
         }
@@ -277,7 +272,7 @@ private fun Content(
                 onClick = {
                     val url = "https://www.google.com"
                     val colorSchemeParams: CustomTabColorSchemeParams = CustomTabColorSchemeParams.Builder()
-                        .setToolbarColor(ContextCompat.getColor(context, R.color.Primary))
+                        .setToolbarColor(ContextCompat.getColor(context, org.michaelbel.core.R.color.Primary))
                         .build()
                     val customTabsIntentBuilder: CustomTabsIntent.Builder = CustomTabsIntent.Builder()
                     customTabsIntentBuilder.setDefaultColorSchemeParams(colorSchemeParams)

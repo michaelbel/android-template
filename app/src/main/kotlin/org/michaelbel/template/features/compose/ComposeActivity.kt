@@ -58,9 +58,9 @@ private fun ComposeActivityScreen(
     val navController: NavHostController = rememberAnimatedNavController()
 
     Scaffold(
-        bottomBar = {
+        /*bottomBar = {
             BottomBar(navController)
-        }
+        }*/
     ) {
         Content(
             navController = navController,

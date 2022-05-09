@@ -14,7 +14,6 @@ import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.config.RemoteConfigScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
 import org.michaelbel.template.features.compose.inappreview.ReviewScreen
-import org.michaelbel.template.features.compose.intents.IntentsScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
 import org.michaelbel.template.features.compose.notifications.NotificationsScreen
 import org.michaelbel.template.features.compose.social.SocialScreen
@@ -22,6 +21,8 @@ import org.michaelbel.template.features.compose.system.SystemScreen
 import org.michaelbel.template.features.compose.timer.TimerScreen
 import org.michaelbel.template.features.compose.tmdb.TmdbScreen
 import org.michaelbel.template.ime.ImeScreen
+import org.michaelbel.template.intents.IntentsScreen
+import org.michaelbel.template.location.LocationScreen
 import org.michaelbel.template.toast.ToastScreen
 
 const val ROUTE_HOME = "home"
@@ -37,6 +38,7 @@ const val ROUTE_CONFIG = "config"
 const val ROUTE_TMDB = "tmdb"
 const val ROUTE_IN_APP_REVIEW = "in_app_review"
 const val ROUTE_IME = "ime"
+const val ROUTE_LOCATION = "location"
 
 @SuppressLint("NewApi")
 @Composable
@@ -83,5 +85,6 @@ fun Content(
         composable(route = ROUTE_TMDB) { TmdbScreen(navController) }
         composable(route = ROUTE_IN_APP_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
         composable(route = ROUTE_IME) { ImeScreen(navController) }
+        composable(route = ROUTE_LOCATION) { LocationScreen(navController) }
     }
 }
