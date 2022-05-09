@@ -22,6 +22,7 @@ include(
     ":features:ads",
     ":features:constraintlayout",
     ":features:ime",
-    ":features:toast"
+    ":features:toast",
+    ":features:location"
 )
 rootProject.name = "android-app-template"
