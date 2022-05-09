@@ -9,7 +9,7 @@
 
 <resources>
 
-    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Base.V21" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="background">@color/Background</item>
         <item name="colorError">@color/Error</item>
         <item name="colorErrorContainer">@color/ErrorContainer</item>
@@ -47,6 +47,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="Theme.App" parent="Theme.Base.V21"/>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/Background</item>
