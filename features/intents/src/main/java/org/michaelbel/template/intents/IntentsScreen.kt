@@ -1,9 +1,12 @@
 package org.michaelbel.template.intents
 
+import android.Manifest
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.provider.Settings
 import android.speech.RecognizerIntent
 import android.widget.Toast
@@ -38,13 +41,13 @@ import com.google.accompanist.insets.statusBarsPadding
  * Settings Panel Intents (Connectivity, NFC, Volume, Wi-Fi)
  * Share Intent
  * Email Intent
- * TODO Phone Intent
+ * Phone Intent
  * GooglePlay Intent
  * Telegram Intent
  * Google Voice Input
  * Browser
  * In-App Browser
- * TODO App Settings Intent
+ * App Settings Intent
  */
 
 @Composable
@@ -110,13 +113,14 @@ private fun Content(
     speechRecognizeContract: ManagedActivityResultLauncher<Intent, ActivityResult>
 ) {
     val context: Context = LocalContext.current
+    val packageName: String = context.packageName
 
     LazyColumn(
         modifier = Modifier.fillMaxWidth()
     ) {
         item {
             Text(
-                text = "Settings Panel",
+                text = stringResource(R.string.settings_panel),
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
             )
@@ -124,36 +128,66 @@ private fun Content(
         item {
             OutlinedButton(
                 onClick = {
-                    resultContract.launch(Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY))
+                    if (Build.VERSION.SDK_INT >= 29) {
+                        resultContract.launch(Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY))
+                    }
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.settings_panel_connectivity)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.settings_panel_connectivity)
+                )
+            }
         }
         item {
             OutlinedButton(
-                onClick = { resultContract.launch(Intent(Settings.Panel.ACTION_NFC)) },
+                onClick = {
+                    if (Build.VERSION.SDK_INT >= 29) {
+                        resultContract.launch(Intent(Settings.Panel.ACTION_NFC))
+                    }
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.settings_panel_nfc)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.settings_panel_nfc)
+                )
+            }
         }
         item {
             OutlinedButton(
-                onClick = { resultContract.launch(Intent(Settings.Panel.ACTION_VOLUME)) },
+                onClick = {
+                    if (Build.VERSION.SDK_INT >= 29) {
+                        resultContract.launch(Intent(Settings.Panel.ACTION_VOLUME))
+                    }
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.settings_panel_volume)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.settings_panel_volume)
+                )
+            }
         }
         item {
             OutlinedButton(
-                onClick = { resultContract.launch(Intent(Settings.Panel.ACTION_WIFI)) },
+                onClick = {
+                    if (Build.VERSION.SDK_INT >= 29) {
+                        resultContract.launch(Intent(Settings.Panel.ACTION_WIFI))
+                    }
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
-            ) { Text(text = stringResource(R.string.settings_panel_wifi)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.settings_panel_wifi)
+                )
+            }
         }
         item {
             Text(
-                text = "Actions",
+                text = stringResource(R.string.actions),
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
             )
@@ -161,97 +195,154 @@ private fun Content(
         item {
             OutlinedButton(
                 onClick = {
-                    val shareLink = "https://google.com"
-                    val shareIntent = Intent().apply {
+                    Intent().apply {
                         type = "text/plain"
                         action = Intent.ACTION_SEND
-                        putExtra(Intent.EXTRA_TEXT, shareLink)
+                        putExtra(Intent.EXTRA_TEXT, "https://google.com")
+                    }.also { intent: Intent ->
+                        Intent.createChooser(intent, context.getString(R.string.share_via))
                     }
-                    resultContract.launch(
-                        Intent.createChooser(shareIntent, context.getString(R.string.share_via))
-                    )
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
-            ) { Text(text = stringResource(R.string.share_intent)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.share_intent)
+                )
+            }
         }
         item {
             OutlinedButton(
                 onClick = {
-                    val email = "michaelbel24865@gmail.com"
-                    val emailSubject = "Email Title"
-                    val emailText = "Email Body"
-                    val emailIntent = Intent(
+                    if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                        Intent(
+                            Intent.ACTION_CALL,
+                            Uri.fromParts("tel", "88005553535", null)
+                        ).also { intent: Intent ->
+                            resultContract.launch(intent)
+                        }
+                    }
+                },
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.phone_intent)
+                )
+            }
+        }
+        item {
+            OutlinedButton(
+                onClick = {
+                    Intent(
                         Intent.ACTION_SENDTO,
-                        Uri.fromParts("mailto", email, null)
+                        Uri.fromParts("mailto", "michaelbel24865@gmail.com", null)
                     ).apply {
-                        putExtra(Intent.EXTRA_SUBJECT, emailSubject)
-                        putExtra(Intent.EXTRA_TEXT, emailText)
+                        putExtra(Intent.EXTRA_SUBJECT, "Email Title")
+                        putExtra(Intent.EXTRA_TEXT, "Email Body")
+                    }.also { intent: Intent ->
+                        Intent.createChooser(intent, context.getString(R.string.email_via))
                     }
-                    resultContract.launch(
-                        Intent.createChooser(emailIntent, context.getString(R.string.email_via))
-                    )
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
-            ) { Text(text = stringResource(R.string.email_intent)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.email_intent)
+                )
+            }
         }
         item {
             OutlinedButton(
                 onClick = {
-                    val appMarketLink = "market://details?id=${context.packageName}"
-                    val appBrowserLink =
-                        "https://play.google.com/store/apps/details?id=${context.packageName}"
                     try {
-                        val googlePlayIntent = Intent(
+                        Intent(
                             Intent.ACTION_VIEW,
-                            appMarketLink.toUri()
-                        )
-                        resultContract.launch(googlePlayIntent)
+                            "market://details?id=$packageName".toUri()
+                        ).also { intent: Intent ->
+                            resultContract.launch(intent)
+                        }
                     } catch (e: ActivityNotFoundException) {
-                        val googlePlayIntent = Intent(
+                        Intent(
                             Intent.ACTION_VIEW,
-                            appBrowserLink.toUri()
-                        )
-                        resultContract.launch(googlePlayIntent)
+                            "https://play.google.com/store/apps/details?id=$packageName".toUri()
+                        ).also { intent: Intent ->
+                            resultContract.launch(intent)
+                        }
                     }
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
-            ) { Text(text = stringResource(R.string.google_play)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.google_play)
+                )
+            }
         }
         item {
             OutlinedButton(
                 onClick = {
-                    val telegramChat = "https://t.me/michaelbel"
-                    val telegramIntent = Intent(
+                    Intent(
                         Intent.ACTION_VIEW,
-                        telegramChat.toUri()
-                    )
-                    resultContract.launch(telegramIntent)
+                        "https://t.me/michaelbel".toUri()
+                    ).also { intent: Intent ->
+                        resultContract.launch(intent)
+                    }
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
-            ) { Text(text = stringResource(R.string.open_telegram_chat)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.open_telegram_chat)
+                )
+            }
         }
         item {
             OutlinedButton(
                 onClick = {
-                    val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                    Intent(
+                        RecognizerIntent.ACTION_RECOGNIZE_SPEECH
+                    ).apply {
                         putExtra(
                             RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                             RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
                         )
+                    }.also { intent: Intent ->
+                        speechRecognizeContract.launch(intent)
                     }
-                    speechRecognizeContract.launch(intent)
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
-            ) { Text(text = stringResource(R.string.voice_input)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.voice_input)
+                )
+            }
+        }
+        item {
+            OutlinedButton(
+                onClick = {
+                    Intent(
+                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        "package:$packageName".toUri()
+                    ).apply {
+                        addCategory(Intent.CATEGORY_DEFAULT)
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }.also { intent: Intent ->
+                        resultContract.launch(intent)
+                    }
+                },
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.app_settings)
+                )
+            }
         }
         item {
             Text(
-                text = "Browser",
+                text = stringResource(R.string.browser),
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
             )
@@ -259,30 +350,40 @@ private fun Content(
         item {
             OutlinedButton(
                 onClick = {
-                    val url = "https://www.google.com"
-                    val intent = Intent(Intent.ACTION_VIEW, url.toUri())
-                    resultContract.launch(intent)
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        "https://www.google.com".toUri()
+                    ).also { intent: Intent ->
+                        resultContract.launch(intent)
+                    }
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.start_browser)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.start_browser)
+                )
+            }
         }
         item {
             OutlinedButton(
                 onClick = {
-                    val url = "https://www.google.com"
                     val colorSchemeParams: CustomTabColorSchemeParams = CustomTabColorSchemeParams.Builder()
                         .setToolbarColor(ContextCompat.getColor(context, org.michaelbel.core.R.color.Primary))
                         .build()
                     val customTabsIntentBuilder: CustomTabsIntent.Builder = CustomTabsIntent.Builder()
                     customTabsIntentBuilder.setDefaultColorSchemeParams(colorSchemeParams)
                     val customTabsIntent: CustomTabsIntent = customTabsIntentBuilder.build()
-                    customTabsIntent.intent.data = url.toUri()
+                    customTabsIntent.intent.data = "https://www.google.com".toUri()
                     resultContract.launch(customTabsIntent.intent)
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.start_in_app_browser)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.start_in_app_browser)
+                )
+            }
         }
     }
 }
