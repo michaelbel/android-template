@@ -10,7 +10,7 @@ plugins {
     id(org.michaelbel.template.dependencies.Detekt) version org.michaelbel.template.dependencies.DetektVersion apply true
     id(org.michaelbel.template.dependencies.Spotless) version org.michaelbel.template.dependencies.SpotlessVersion apply false
     id("org.jetbrains.kotlin.jvm") version "1.6.10" apply false
-    id("com.android.library") version "7.1.3" apply false
+    id("com.android.library") version "7.2.0" apply false
     id("org.jetbrains.kotlin.android") version "1.6.10" apply false
 }
 
