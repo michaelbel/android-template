@@ -20,9 +20,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.systemBarsPadding
-import org.michaelbel.features.ImeStrings
-import org.michaelbel.features.IntentsStrings
-import org.michaelbel.features.ToastStrings
 import org.michaelbel.template.R
 import org.michaelbel.template.features.compose.ROUTE_CLIPBOARD
 import org.michaelbel.template.features.compose.ROUTE_CONFIG
@@ -37,6 +34,10 @@ import org.michaelbel.template.features.compose.ROUTE_SYSTEM
 import org.michaelbel.template.features.compose.ROUTE_TIMER
 import org.michaelbel.template.features.compose.ROUTE_TMDB
 import org.michaelbel.template.features.compose.ROUTE_TOAST
+
+typealias ImeStrings = org.michaelbel.template.ime.R.string
+typealias IntentsStrings = org.michaelbel.template.intents.R.string
+typealias ToastStrings = org.michaelbel.template.toast.R.string
 
 @Composable
 fun HomeScreen(
