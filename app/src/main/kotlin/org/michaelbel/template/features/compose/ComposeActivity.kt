@@ -34,7 +34,7 @@ class ComposeActivity: ComponentActivity() {
     @Inject lateinit var inAppReview: InAppReview
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_App)
+        setTheme(org.michaelbel.core.R.style.Theme_App)
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {

@@ -1,4 +1,3 @@
-
 import org.michaelbel.template.BuildTools
 import org.michaelbel.template.CompileSdk
 import org.michaelbel.template.MinSdk

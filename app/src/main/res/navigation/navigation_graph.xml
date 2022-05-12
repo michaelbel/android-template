@@ -75,4 +75,9 @@
         android:label="Insets"
         tools:layout="@layout/fragment_window_insets"/>
 
+    <fragment
+        android:id="@+id/storageFragment"
+        android:name="org.michaelbel.template.storage.StorageFragment"
+        android:label="Storage"/>
+
 </navigation>

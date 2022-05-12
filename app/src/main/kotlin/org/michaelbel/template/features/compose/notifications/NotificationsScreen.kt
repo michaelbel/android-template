@@ -91,9 +91,9 @@ private fun Content(
                 .padding(end = 16.dp),
             tint = colorResource(
                 if (areNotificationsEnabled) {
-                    R.color.Primary
+                    org.michaelbel.core.R.color.Primary
                 } else {
-                    R.color.Error
+                    org.michaelbel.core.R.color.Error
                 }
             )
         )

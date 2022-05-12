@@ -20,6 +20,8 @@ private const val HiltAndroid = "com.google.dagger:hilt-android:$HiltVersion"
 private const val HiltCompiler = "com.google.dagger:hilt-compiler:$HiltVersion"
 private const val HiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$HiltViewModelVersion"
 
+const val HiltAndroidPlugin = "dagger.hilt.android.plugin"
+
 fun DependencyHandler.implementationHiltDependencies() {
     implementation(HiltAndroid)
     kapt(HiltCompiler)

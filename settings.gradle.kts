@@ -24,6 +24,7 @@ include(
     ":features:ime",
     ":features:intents",
     ":features:location",
+    ":features:storage",
     ":features:toast"
 )
 rootProject.name = "android-app-template"
