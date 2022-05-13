@@ -2,7 +2,7 @@ package org.michaelbel.template.features.main.model
 
 import android.os.Bundle
 import androidx.annotation.StringRes
-import org.michaelbel.template.Screen
+import org.michaelbel.template.ui.Screen
 
 data class ScreenData(
     val screen: Screen,

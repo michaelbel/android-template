@@ -58,12 +58,12 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.google.accompanist.insets.ui.Scaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.michaelbel.template.OnNavigationBackClick
 import org.michaelbel.template.R
-import org.michaelbel.template.Screen
 import org.michaelbel.template.features.compose.ComposeActivity
 import org.michaelbel.template.features.main.MainScreenState
 import org.michaelbel.template.features.main.MainViewModel
+import org.michaelbel.template.ui.OnNavigationBackClick
+import org.michaelbel.template.ui.Screen
 import org.michaelbel.template.ui.components.HomeBottomSheet
 import org.michaelbel.template.ui.theme.AppTheme
 

@@ -1,4 +1,4 @@
-package org.michaelbel.template.app.datastore.di
+package org.michaelbel.core.datastore
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -8,14 +8,15 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import org.michaelbel.template.app.datastore.dataStore
 
 @Module
 @InstallIn(SingletonComponent::class)
-object PreferencesModule {
+object DataStoreModule {
 
     @Provides
-    fun provideDataStore(@ApplicationContext context: Context): DataStore<Preferences> {
+    fun provideDataStore(
+        @ApplicationContext context: Context
+    ): DataStore<Preferences> {
         return context.dataStore
     }
 }

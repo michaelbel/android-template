@@ -19,12 +19,16 @@ import dagger.hilt.components.SingletonComponent
 object SystemServicesModule {
 
     @Provides
-    fun provideBatteryService(@ApplicationContext context: Context): BatteryManager {
+    fun provideBatteryService(
+        @ApplicationContext context: Context
+    ): BatteryManager {
         return ContextCompat.getSystemService(context, BatteryManager::class.java) as BatteryManager
     }
 
     @Provides
-    fun provideBluetoothService(@ApplicationContext context: Context): BluetoothManager {
+    fun provideBluetoothService(
+        @ApplicationContext context: Context
+    ): BluetoothManager {
         return ContextCompat.getSystemService(
             context,
             BluetoothManager::class.java
@@ -32,7 +36,9 @@ object SystemServicesModule {
     }
 
     @Provides
-    fun provideConnectivityService(@ApplicationContext context: Context): ConnectivityManager {
+    fun provideConnectivityService(
+        @ApplicationContext context: Context
+    ): ConnectivityManager {
         return ContextCompat.getSystemService(
             context,
             ConnectivityManager::class.java
@@ -40,7 +46,9 @@ object SystemServicesModule {
     }
 
     @Provides
-    fun provideVibratorService(@ApplicationContext context: Context): Vibrator {
+    fun provideVibratorService(
+        @ApplicationContext context: Context
+    ): Vibrator {
         return if (Build.VERSION.SDK_INT >= 31) {
             val vibratorManager: VibratorManager = ContextCompat.getSystemService(
                 context,

@@ -1,4 +1,4 @@
-package org.michaelbel.template.app.datastore
+package org.michaelbel.core.datastore
 
 import android.content.Context
 import androidx.datastore.preferences.SharedPreferencesMigration

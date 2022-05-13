@@ -5,6 +5,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.os.bundleOf
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,13 +20,16 @@ import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.playcore.inappupdate.InAppUpdate
 import org.michaelbel.template.R
-import org.michaelbel.template.Screen
 import org.michaelbel.template.features.main.model.ScreenData
+import org.michaelbel.template.ui.Screen
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val inAppUpdate: InAppUpdate
 ): ViewModel() {
+
+    private val numberMutableLiveData: MutableLiveData<Number> = MutableLiveData(0)
+    val numberLiveData: LiveData<Number> = numberMutableLiveData
 
     private val _drawerShouldBeOpened = MutableStateFlow(false)
 
@@ -102,7 +107,8 @@ class MainViewModel @Inject constructor(
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),
                     R.string.title_nav_args
                 ),
-                ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets)
+                ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
+                ScreenData(Screen.Storage, bundleOf(), org.michaelbel.template.storage.R.string.title_storage)
             )
         }
     }

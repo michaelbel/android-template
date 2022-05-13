@@ -1,4 +1,4 @@
-package org.michaelbel.template
+package org.michaelbel.template.ui
 
 import android.content.Intent
 import android.net.Uri

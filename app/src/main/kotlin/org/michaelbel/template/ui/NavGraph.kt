@@ -1,10 +1,11 @@
-package org.michaelbel.template
+package org.michaelbel.template.ui
 
 import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import java.security.InvalidParameterException
+import org.michaelbel.template.R
 
 typealias OnNavigationBackClick = () -> Unit
 

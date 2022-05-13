@@ -1,4 +1,4 @@
-package org.michaelbel.template.app.sharedpreferences
+package org.michaelbel.core.sharedpreferences.storage
 
 import android.content.Context
 import android.content.SharedPreferences

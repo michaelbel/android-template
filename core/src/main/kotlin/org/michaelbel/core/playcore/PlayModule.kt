@@ -16,12 +16,16 @@ import dagger.hilt.components.SingletonComponent
 object PlayModule {
 
     @Provides
-    fun provideAppUpdateManager(@ApplicationContext context: Context): AppUpdateManager {
+    fun provideAppUpdateManager(
+        @ApplicationContext context: Context
+    ): AppUpdateManager {
         return AppUpdateManagerFactory.create(context)
     }
 
     @Provides
-    fun provideReviewManager(@ApplicationContext context: Context): ReviewManager {
+    fun provideReviewManager(
+        @ApplicationContext context: Context
+    ): ReviewManager {
         return ReviewManagerFactory.create(context)
     }
 }

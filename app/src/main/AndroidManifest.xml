@@ -26,7 +26,7 @@
         tools:ignore="AllowBackup,MissingTvBanner,UnusedAttribute">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -57,9 +57,6 @@
         <activity
             android:name=".features.compose.ComposeActivity"/>
 
-        <activity
-            android:name=".app.samples.lemonade.LemonadeActivity"/>
-
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
@@ -67,22 +64,22 @@
             tools:node="merge">
 
             <meta-data
-                android:name="org.michaelbel.template.app.initializer.FirebaseCrashlyticsInitializer"
+                android:name="org.michaelbel.template.initializer.FirebaseCrashlyticsInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 
             <meta-data
-                android:name="org.michaelbel.template.app.initializer.FirebaseConfigInitializer"
+                android:name="org.michaelbel.template.initializer.FirebaseConfigInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 
             <meta-data
-                android:name="org.michaelbel.template.app.initializer.TimberInitializer"
+                android:name="org.michaelbel.template.initializer.TimberInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 
             <meta-data
-                android:name="org.michaelbel.template.app.initializer.VkInitializer"
+                android:name="org.michaelbel.template.initializer.VkInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 
