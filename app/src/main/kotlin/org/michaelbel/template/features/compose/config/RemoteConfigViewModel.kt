@@ -18,8 +18,7 @@ class RemoteConfigViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _customRemoteParam: MutableStateFlow<Any?> = MutableStateFlow(null)
-    val customRemoteParam: StateFlow<Any?>
-        get() = _customRemoteParam.asStateFlow()
+    val customRemoteParam: StateFlow<Any?> = _customRemoteParam.asStateFlow()
 
     init {
         fetchRemoteConfig()

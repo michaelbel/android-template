@@ -20,8 +20,7 @@ class ClipboardViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _clipText: MutableStateFlow<String> = MutableStateFlow("")
-    val clipText: StateFlow<String>
-        get() = _clipText.asStateFlow()
+    val clipText: StateFlow<String> = _clipText.asStateFlow()
 
     @Inject
     fun trackScreen(analytics: Analytics) {

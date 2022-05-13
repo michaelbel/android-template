@@ -5,8 +5,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.os.bundleOf
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,11 +25,6 @@ import org.michaelbel.template.ui.Screen
 class MainViewModel @Inject constructor(
     private val inAppUpdate: InAppUpdate
 ): ViewModel() {
-
-    private val numberMutableLiveData: MutableLiveData<Number> = MutableLiveData(0)
-    val numberLiveData: LiveData<Number> = numberMutableLiveData
-
-    private val _drawerShouldBeOpened = MutableStateFlow(false)
 
     private val screensList = MutableStateFlow<List<ScreenData>>(listOf())
     private val networkLoading = MutableStateFlow(false)
@@ -55,7 +48,7 @@ class MainViewModel @Inject constructor(
         inAppUpdate.onUpdateAvailableListener = { updateAvailable ->
             updateAvailableMessage = updateAvailable
         }
-        setData()
+        setContent()
     }
 
     @Inject
@@ -67,7 +60,7 @@ class MainViewModel @Inject constructor(
         inAppUpdate.startUpdateFlow(activity)
     }
 
-    private fun setData() {
+    private fun setContent() {
         viewModelScope.launch {
             screensList.value = listOf(
                 ScreenData(Screen.Ads, bundleOf(), org.michaelbel.template.ads.R.string.title_ads),

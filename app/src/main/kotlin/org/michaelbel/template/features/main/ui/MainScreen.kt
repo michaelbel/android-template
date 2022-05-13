@@ -20,21 +20,13 @@ import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.SnackbarResult
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.CardGiftcard
-import androidx.compose.material.icons.filled.ListAlt
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ViewQuilt
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material.rememberScaffoldState
-import androidx.compose.material3.Badge
-import androidx.compose.material3.BadgedBox
-import androidx.compose.material3.Button
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -54,7 +46,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.insets.statusBarsPadding
-import com.google.accompanist.insets.systemBarsPadding
 import com.google.accompanist.insets.ui.Scaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -118,11 +109,6 @@ fun MainScreen(
                 onMenuClick = { scope.launch { sheetState.show() } }
             )
         },
-        bottomBar = { BottomBar() },
-        drawerContent = {
-            DrawerContent { scope.launch { scaffoldState.drawerState.close() } }
-        },
-        drawerGesturesEnabled = true,
         floatingActionButton = {
             Column(horizontalAlignment = Alignment.End) {
                 Fab {
@@ -191,61 +177,6 @@ private fun Toolbar(
             }
         },
         scrollBehavior = scrollBehavior
-    )
-}
-
-@Composable
-private fun BottomBar() {
-    NavigationBar(
-        modifier = Modifier.systemBarsPadding()
-    ) {
-        NavigationBarItem(
-            icon = {
-                Icon(
-                    imageVector = Icons.Filled.ViewQuilt,
-                    contentDescription = stringResource(R.string.bottom_item_compose)
-                )
-            },
-            label = { Text(stringResource(R.string.bottom_item_compose)) },
-            selected = true,
-            onClick = {}
-        )
-        NavigationBarItem(
-            icon = {
-                Icon(
-                    imageVector = Icons.Filled.CardGiftcard,
-                    contentDescription = stringResource(R.string.bottom_item_android)
-                )
-            },
-            label = { Text(stringResource(R.string.bottom_item_android)) },
-            selected = false,
-            onClick = {}
-        )
-        NavigationBarItem(
-            icon = {
-                BadgedBox(badge = { Badge { Text("1") } }) {
-                    Icon(
-                        imageVector = Icons.Filled.ListAlt,
-                        contentDescription = stringResource(R.string.bottom_item_other)
-                    )
-                }
-            },
-            label = { Text(stringResource(R.string.bottom_item_other)) },
-            selected = false,
-            onClick = {}
-        )
-    }
-}
-
-@Composable
-private fun DrawerContent(
-    onClick: () -> Unit
-) {
-    Button(
-        onClick = onClick,
-        content = {
-            Text("Close Drawer")
-        }
     )
 }
 

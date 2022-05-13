@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.navagrs.ui
+package org.michaelbel.template.features.navagrs
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
@@ -17,7 +17,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.features.navagrs.NavArgsFragmentArgs
 import org.michaelbel.template.ui.OnNavigationBackClick
 
 @Composable
@@ -26,17 +25,25 @@ fun NavArgsScreen(
     onNavigationBackClick: OnNavigationBackClick
 ) {
     Scaffold(
-        topBar = { Toolbar(onNavigationBackClick) }
+        topBar = {
+            Toolbar(onNavigationBackClick)
+        }
     ) { Content(args) }
 }
 
 @Composable
 private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_nav_args)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_nav_args)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { onNavigationBackClick() }) {
+            IconButton(
+                onClick = { onNavigationBackClick() }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -50,7 +57,9 @@ private fun Toolbar(onNavigationBackClick: OnNavigationBackClick) {
 private fun Content(
     args: NavArgsFragmentArgs
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
         Text(
             text = "Arguments: ${args.firstText}, ${args.secondNumber}",
             modifier = Modifier.align(Alignment.Center)
