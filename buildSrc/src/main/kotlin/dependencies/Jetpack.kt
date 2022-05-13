@@ -61,9 +61,6 @@ private const val GlanceVersion = "1.0.0-alpha01"
 private const val GridLayoutVersion = "1.0.0"
 private const val HealthVersion = "1.0.0-alpha03"
 private const val HeifWriterVersion = "1.1.0-alpha01"
-private const val HiltNavigationComposeVersion = "1.0.0-rc01"
-private const val HiltNavigationFragmentVersion = "1.0.0"
-private const val HiltWorkVersion = "1.0.0"
 private const val InterpolatorVersion = "1.0.0"
 private const val LoaderVersion = "1.1.0"
 private const val MediaVersion = "1.4.3"
@@ -178,9 +175,6 @@ private const val GlanceAppWidget = "androidx.glance:glance-appwidget:$GlanceVer
 private const val GridLayout = "androidx.gridlayout:gridlayout:$GridLayoutVersion"
 private const val Health = "androidx.health:health-services-client:$HealthVersion"
 private const val Heifwriter = "androidx.heifwriter:heifwriter:$HeifWriterVersion"
-private const val HiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$HiltNavigationComposeVersion"
-private const val HiltNavigationFragment = "androidx.hilt:hilt-navigation-fragment:$HiltNavigationFragmentVersion"
-private const val HiltWork = "androidx.hilt:hilt-work:$HiltWorkVersion"
 private const val Interpolator = "androidx.interpolator:interpolator:$InterpolatorVersion"
 private const val Loader = "androidx.loader:loader:$LoaderVersion"
 private const val Media = "androidx.media:media:$MediaVersion"
@@ -276,9 +270,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(DataStorePreferences)
     api(DataStorePreferencesCore)
     api(Fragment)
-    api(HiltNavigationCompose)
-    api(HiltNavigationFragment)
-    api(HiltWork)
     api(NavigationCompose)
     api(NavigationDynamic)
     api(NavigationFragment)

@@ -14,13 +14,23 @@ import org.michaelbel.template.extensions.kapt
 
 private const val HiltVersion = "2.42"
 private const val HiltViewModelVersion = "1.0.0-alpha03"
+private const val HiltNavigationVersion = "1.0.0"
+private const val HiltNavigationComposeVersion = "1.0.0"
+private const val HiltNavigationFragmentVersion = "1.0.0"
+private const val HiltWorkVersion = "1.0.0"
 
 const val HiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$HiltVersion"
 private const val HiltAndroid = "com.google.dagger:hilt-android:$HiltVersion"
 private const val HiltCompiler = "com.google.dagger:hilt-compiler:$HiltVersion"
 private const val HiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$HiltViewModelVersion"
+private const val HiltNavigation = "androidx.hilt:hilt-navigation:$HiltNavigationVersion"
+private const val HiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$HiltNavigationComposeVersion"
+private const val HiltNavigationFragment = "androidx.hilt:hilt-navigation-fragment:$HiltNavigationFragmentVersion"
+private const val HiltWork = "androidx.hilt:hilt-work:$HiltWorkVersion"
 
 fun DependencyHandler.implementationHiltDependencies() {
     implementation(HiltAndroid)
+    implementation(HiltNavigationCompose)
+    implementation(HiltNavigationFragment)
     kapt(HiltCompiler)
 }

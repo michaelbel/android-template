@@ -2,10 +2,13 @@ import org.michaelbel.template.CompileSdk
 import org.michaelbel.template.MinSdk
 import org.michaelbel.template.TargetSdk
 import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
+import org.michaelbel.template.dependencies.implementationHiltDependencies
 
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -37,4 +40,5 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementationHiltDependencies()
 }

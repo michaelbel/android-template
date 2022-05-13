@@ -59,7 +59,7 @@ private const val GoogleServicesPluginVersion = "4.3.10"
 private const val OssLicensesPluginVersion = "0.10.4"
 private const val StrictPluginVersion = "1.2.2"
 
-private const val MaterialVersion = "1.6.0-alpha02"
+private const val MaterialVersion = "1.6.0"
 private const val MaterialComposeThemeAdapterVersion = "1.1.3"
 
 private const val PlayCoreVersion = "1.8.1"
