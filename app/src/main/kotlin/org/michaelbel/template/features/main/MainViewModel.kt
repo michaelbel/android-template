@@ -101,13 +101,12 @@ class MainViewModel @Inject constructor(
                     bundleOf(),
                     org.michaelbel.template.constraintlayout.R.string.title_constraints_guideline
                 ),
-                ScreenData(Screen.Fonts, bundleOf(), R.string.title_fonts),
+                ScreenData(Screen.Fonts, bundleOf(), org.michaelbel.template.fonts.R.string.title_fonts),
                 ScreenData(
                     Screen.NavArgs,
                     bundleOf("firstText" to "Some Text", "secondNumber" to 100),
                     R.string.title_nav_args
                 ),
-                ScreenData(Screen.WindowInsets, bundleOf(), R.string.title_window_insets),
                 ScreenData(Screen.Storage, bundleOf(), org.michaelbel.template.storage.R.string.title_storage)
             )
         }

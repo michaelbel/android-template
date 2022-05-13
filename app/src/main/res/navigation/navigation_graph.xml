@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/fontsFragment"
-        android:name="org.michaelbel.template.features.views.fonts.FontsFragment"
+        android:name="org.michaelbel.template.fonts.FontsFragment"
         android:label="Fonts"/>
 
     <fragment
@@ -68,12 +68,6 @@
             app:argType="integer"/>
 
     </fragment>
-
-    <fragment
-        android:id="@+id/insetsFragment"
-        android:name="org.michaelbel.template.features.views.windowinsets.WindowInsetsFragment"
-        android:label="Insets"
-        tools:layout="@layout/fragment_window_insets"/>
 
     <fragment
         android:id="@+id/storageFragment"

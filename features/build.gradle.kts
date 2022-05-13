@@ -18,6 +18,7 @@ android {
 dependencies {
     api(project(":features:ads"))
     api(project(":features:constraintlayout"))
+    api(project(":features:fonts"))
     api(project(":features:ime"))
     api(project(":features:intents"))
     api(project(":features:location"))

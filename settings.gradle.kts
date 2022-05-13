@@ -21,6 +21,7 @@ include(
     ":features",
     ":features:ads",
     ":features:constraintlayout",
+    ":features:fonts",
     ":features:ime",
     ":features:intents",
     ":features:location",

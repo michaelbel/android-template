@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.views.fonts
+package org.michaelbel.template.fonts
 
 import android.os.Bundle
 import android.view.View
@@ -11,8 +11,7 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
-import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentFontsBinding
+import org.michaelbel.template.fonts.databinding.FragmentFontsBinding
 
 @AndroidEntryPoint
 class FontsFragment: Fragment(R.layout.fragment_fonts) {
