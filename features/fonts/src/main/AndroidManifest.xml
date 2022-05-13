@@ -5,7 +5,6 @@
 
     <application>
 
-        <!-- Downloadable Fonts (https://d.android.com/guide/topics/ui/look-and-feel/downloadable-fonts) -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"/>

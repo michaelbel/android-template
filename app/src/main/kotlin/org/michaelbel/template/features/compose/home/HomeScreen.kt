@@ -28,6 +28,7 @@ import org.michaelbel.template.features.compose.ROUTE_IN_APP_REVIEW
 import org.michaelbel.template.features.compose.ROUTE_LOCATION
 import org.michaelbel.template.features.compose.ROUTE_NETWORK_IMAGE
 import org.michaelbel.template.features.compose.ROUTE_NOTIFICATIONS
+import org.michaelbel.template.features.compose.ROUTE_SERVICE
 import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
 import org.michaelbel.template.features.compose.ROUTE_SOCIAL
 import org.michaelbel.template.features.compose.ROUTE_SYSTEM
@@ -38,6 +39,8 @@ import org.michaelbel.template.features.compose.ROUTE_TOAST
 typealias ImeStrings = org.michaelbel.template.ime.R.string
 typealias IntentsStrings = org.michaelbel.template.intents.R.string
 typealias ToastStrings = org.michaelbel.template.toast.R.string
+typealias LocationString = org.michaelbel.template.location.R.string
+typealias ServiceStrings = org.michaelbel.template.service.R.string
 
 @Composable
 fun HomeScreen(
@@ -56,7 +59,9 @@ fun HomeScreen(
 private fun Toolbar() {
     SmallTopAppBar(
         title = {
-            Text(text = stringResource(R.string.title_home))
+            Text(
+                text = stringResource(R.string.title_home)
+            )
         },
         modifier = Modifier.systemBarsPadding()
     )
@@ -81,7 +86,8 @@ private fun Content(
         ROUTE_TMDB to R.string.title_tmdb,
         ROUTE_IN_APP_REVIEW to R.string.title_in_app_review,
         ROUTE_IME to ImeStrings.title_ime_actions,
-        ROUTE_LOCATION to ImeStrings.title_ime_actions
+        ROUTE_LOCATION to LocationString.title_location,
+        ROUTE_SERVICE to ServiceStrings.title_service
     )
 
     Box(

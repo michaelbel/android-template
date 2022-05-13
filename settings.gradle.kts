@@ -25,6 +25,8 @@ include(
     ":features:ime",
     ":features:intents",
     ":features:location",
+    ":features:receiver",
+    ":features:service",
     ":features:storage",
     ":features:toast"
 )

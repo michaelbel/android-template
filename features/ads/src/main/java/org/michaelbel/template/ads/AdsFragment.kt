@@ -67,11 +67,6 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
         }
     }
 
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(AdsFragment::class.simpleName)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -95,6 +90,11 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
                 }
             }
         }
+    }
+
+    @Inject
+    fun trackScreen(analytics: Analytics) {
+        analytics.trackScreen(AdsFragment::class.simpleName)
     }
 
     private fun loadInterstitialAd() {

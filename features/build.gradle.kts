@@ -22,6 +22,8 @@ dependencies {
     api(project(":features:ime"))
     api(project(":features:intents"))
     api(project(":features:location"))
+    api(project(":features:receiver"))
+    api(project(":features:service"))
     api(project(":features:storage"))
     api(project(":features:toast"))
 }

@@ -27,7 +27,6 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.core.res.CoreStrings
-import org.michaelbel.template.R
 
 @Composable
 fun LocationScreen(

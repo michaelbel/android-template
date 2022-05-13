@@ -1,5 +1,7 @@
 package org.michaelbel.core.system
 
+import android.app.DownloadManager
+import android.app.NotificationManager
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.net.ConnectivityManager
@@ -59,5 +61,19 @@ object SystemServicesModule {
             @Suppress("Deprecation")
             ContextCompat.getSystemService(context, Vibrator::class.java) as Vibrator
         }
+    }
+
+    @Provides
+    fun provideDownloadService(
+        @ApplicationContext context: Context
+    ): DownloadManager {
+        return ContextCompat.getSystemService(context, DownloadManager::class.java) as DownloadManager
+    }
+
+    @Provides
+    fun provideNotificationService(
+        @ApplicationContext context: Context
+    ): NotificationManager {
+        return ContextCompat.getSystemService(context, NotificationManager::class.java) as NotificationManager
     }
 }

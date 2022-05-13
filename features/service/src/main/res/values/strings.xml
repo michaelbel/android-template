@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_service">Service</string>
+    <string name="download_file">Download File</string>
+    <string name="play_music">Play Music</string>
+</resources>
