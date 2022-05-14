@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.config
+package org.michaelbel.template.remoteconfig
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -82,7 +82,10 @@ android {
             isDebuggable = false
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("release")
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
 
             firebaseAppDistribution {
                 appId = FirebaseAppDistribution.MobileSdkAppId
@@ -120,7 +123,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    api(project(":features"))
+    implementation(project(":features"))
 
     implementationHiltDependencies()
     implementationFacebookDependencies()

@@ -54,10 +54,18 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_system_services)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_system_services)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -88,7 +96,11 @@ private fun Content(
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.button_vibrate)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.button_vibrate)
+                )
+            }
         }
         item {
             Text(

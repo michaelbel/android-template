@@ -16,7 +16,7 @@ import org.michaelbel.core.analytics.Analytics
 
 @HiltViewModel
 class ClipboardViewModel @Inject constructor(
-    private val clipboard: ClipboardManager
+    private val clipboardManager: ClipboardManager
 ): ViewModel() {
 
     private val _clipText: MutableStateFlow<String> = MutableStateFlow("")
@@ -29,16 +29,16 @@ class ClipboardViewModel @Inject constructor(
 
     fun copyText() {
         val clip: ClipData = ClipData.newPlainText("simple text", "Hello, World!")
-        clipboard.setPrimaryClip(clip)
+        clipboardManager.setPrimaryClip(clip)
     }
 
     fun pasteText() {
-        if (!clipboard.hasPrimaryClip()) return
+        if (!clipboardManager.hasPrimaryClip()) return
 
-        val clipDescription: ClipDescription = clipboard.primaryClipDescription ?: return
+        val clipDescription: ClipDescription = clipboardManager.primaryClipDescription ?: return
         if (!clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) return
 
-        val clip: ClipData.Item = clipboard.primaryClip?.getItemAt(0) ?: return
+        val clip: ClipData.Item = clipboardManager.primaryClip?.getItemAt(0) ?: return
 
         viewModelScope.launch {
             _clipText.emit(clip.text.toString())
@@ -47,7 +47,7 @@ class ClipboardViewModel @Inject constructor(
 
     fun clearClipboard() {
         if (Build.VERSION.SDK_INT >= 28) {
-            clipboard.clearPrimaryClip()
+            clipboardManager.clearPrimaryClip()
         }
     }
 }

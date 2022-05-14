@@ -40,11 +40,17 @@ private fun Toolbar(
 ) {
     SmallTopAppBar(
         title = {
-            Text(text = stringResource(R.string.title_network_image))
+            Text(
+                text = stringResource(R.string.title_network_image)
+            )
         },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)

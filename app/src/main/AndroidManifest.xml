@@ -63,17 +63,17 @@
             tools:node="merge">
 
             <meta-data
-                android:name="org.michaelbel.template.initializer.FirebaseCrashlyticsInitializer"
+                android:name="org.michaelbel.core.initializer.FirebaseCrashlyticsInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 
             <meta-data
-                android:name="org.michaelbel.template.initializer.FirebaseConfigInitializer"
+                android:name="org.michaelbel.template.remoteconfig.initializer.FirebaseConfigInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 
             <meta-data
-                android:name="org.michaelbel.template.initializer.TimberInitializer"
+                android:name="org.michaelbel.core.initializer.TimberInitializer"
                 android:value="androidx.startup"
                 tools:node="remove"/>
 

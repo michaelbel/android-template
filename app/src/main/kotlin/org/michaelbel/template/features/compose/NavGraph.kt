@@ -11,7 +11,6 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
-import org.michaelbel.template.features.compose.config.RemoteConfigScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
 import org.michaelbel.template.features.compose.inappreview.ReviewScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
@@ -23,6 +22,7 @@ import org.michaelbel.template.features.compose.tmdb.TmdbScreen
 import org.michaelbel.template.ime.ImeScreen
 import org.michaelbel.template.intents.IntentsScreen
 import org.michaelbel.template.location.LocationScreen
+import org.michaelbel.template.remoteconfig.RemoteConfigScreen
 import org.michaelbel.template.service.ServiceScreen
 import org.michaelbel.template.toast.ToastScreen
 

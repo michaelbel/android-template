@@ -5,6 +5,7 @@ package org.michaelbel.template.dependencies
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.VersionName
 import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Firebase
@@ -40,9 +41,12 @@ fun DependencyHandler.apiFirebaseDependencies() {
     api(FirebaseAbt)
     api(FirebaseAnalytics)
     api(FirebaseCommon)
-    api(FirebaseConfig)
     api(FirebaseCore)
     api(FirebaseCrashlytics)
+}
+
+fun DependencyHandler.implementationFirebaseConfig() {
+    implementation(FirebaseConfig)
 }
 
 object FirebaseAppDistribution {

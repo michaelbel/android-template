@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.config
+package org.michaelbel.template.remoteconfig
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,7 +29,6 @@ import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.michaelbel.template.R
 
 @Composable
 fun RemoteConfigScreen(
@@ -72,7 +71,7 @@ private fun Toolbar(
             IconButton(onClick = { navController.popBackStack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.cd_back)
+                    contentDescription = stringResource(org.michaelbel.core.R.string.cd_back)
                 )
             }
         }

@@ -72,14 +72,20 @@ private fun Content(
     modifier: Modifier = Modifier,
     onButtonClick: OnButtonClick
 ) {
-    Box(modifier = modifier.fillMaxSize()) {
+    Box(
+        modifier = modifier.fillMaxSize()
+    ) {
         LazyColumn {
             item {
                 OutlinedButton(
                     onClick = { onButtonClick() },
                     modifier = Modifier
                         .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 4.dp)
-                ) { Text(text = stringResource(R.string.title_in_app_review)) }
+                ) {
+                    Text(
+                        text = stringResource(R.string.title_in_app_review)
+                    )
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-package org.michaelbel.template.initializer
+package org.michaelbel.core.initializer
 
 import android.content.Context
 import androidx.startup.Initializer

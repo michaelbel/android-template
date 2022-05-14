@@ -26,6 +26,7 @@ include(
     ":features:intents",
     ":features:location",
     ":features:receiver",
+    ":features:remoteconfig",
     ":features:service",
     ":features:storage",
     ":features:toast"

@@ -31,7 +31,9 @@ fun NotificationsScreen(
     navController: NavController
 ) {
     Scaffold(
-        topBar = { Toolbar(navController) }
+        topBar = {
+            Toolbar(navController)
+        }
     ) { Content() }
 }
 
@@ -40,10 +42,18 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_notifications)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_notifications)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = stringResource(R.string.cd_back)
@@ -60,7 +70,9 @@ private fun Content(
     val context = LocalContext.current
     val areNotificationsEnabled by remember { mutableStateOf(context.areNotificationsEnabled) }
 
-    Box(modifier = modifier.fillMaxWidth(1F)) {
+    Box(
+        modifier = modifier.fillMaxWidth(1F)
+    ) {
         Text(
             text = stringResource(
                 if (areNotificationsEnabled) {

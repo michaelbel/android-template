@@ -1,4 +1,4 @@
-package org.michaelbel.template.initializer
+package org.michaelbel.template.remoteconfig.initializer
 
 import android.content.Context
 import androidx.startup.Initializer
@@ -7,6 +7,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
+import org.michaelbel.core.initializer.TimberInitializer
 import timber.log.Timber
 
 @Suppress("unused")
