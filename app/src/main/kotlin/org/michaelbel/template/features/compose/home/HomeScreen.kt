@@ -42,6 +42,7 @@ typealias ToastStrings = org.michaelbel.template.toast.R.string
 typealias LocationString = org.michaelbel.template.location.R.string
 typealias ServiceStrings = org.michaelbel.template.service.R.string
 typealias ConfigStrings = org.michaelbel.template.remoteconfig.R.string
+typealias ClipboardStrings = org.michaelbel.template.clipboard.R.string
 
 @Composable
 fun HomeScreen(
@@ -75,7 +76,7 @@ private fun Content(
     val listState: LazyListState = rememberLazyListState()
 
     val list = mapOf(
-        ROUTE_CLIPBOARD to R.string.title_clipboard,
+        ROUTE_CLIPBOARD to ClipboardStrings.title_clipboard,
         ROUTE_NETWORK_IMAGE to R.string.title_network_image,
         ROUTE_NOTIFICATIONS to R.string.title_notifications,
         ROUTE_SETTINGS_PANEL to IntentsStrings.title_intents,
@@ -103,7 +104,11 @@ private fun Content(
         ) {
             items(list.toList()) { (route, titleRes) ->
                 ListItem(
-                    text = { Text(text = stringResource(titleRes)) },
+                    text = {
+                        Text(
+                            text = stringResource(titleRes)
+                        )
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable {

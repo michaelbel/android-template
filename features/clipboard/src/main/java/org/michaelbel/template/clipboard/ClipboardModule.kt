@@ -1,4 +1,4 @@
-package org.michaelbel.core.system
+package org.michaelbel.template.clipboard
 
 import android.content.ClipboardManager
 import android.content.Context
@@ -6,11 +6,11 @@ import androidx.core.content.ContextCompat
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object ClipboardModule {
 
     @Provides

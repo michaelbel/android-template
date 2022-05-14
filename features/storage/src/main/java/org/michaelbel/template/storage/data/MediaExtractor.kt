@@ -7,8 +7,10 @@ import android.database.Cursor
 import android.net.Uri
 import android.provider.MediaStore
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
+@ViewModelScoped
 class MediaExtractor @Inject constructor(
     @ApplicationContext private val context: Context
 ) {

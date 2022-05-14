@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
-import org.michaelbel.template.features.compose.clipboard.ClipboardScreen
+import org.michaelbel.template.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
 import org.michaelbel.template.features.compose.inappreview.ReviewScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
@@ -55,7 +55,7 @@ fun Content(
         composable(route = ROUTE_HOME) { HomeScreen(navController) }
         composable(
             route = ROUTE_CLIPBOARD,
-            enterTransition = { fadeIn(animationSpec = tween(2000)) }
+            enterTransition = { fadeIn(animationSpec = tween(200)) }
         ) { ClipboardScreen(navController) }
         composable(
             route = ROUTE_NETWORK_IMAGE,

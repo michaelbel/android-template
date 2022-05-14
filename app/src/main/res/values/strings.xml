@@ -21,12 +21,6 @@
     <!--home-->
     <string name="title_home">Compose</string>
 
-    <!--Clipboard-->
-    <string name="title_clipboard">Clipboard</string>
-    <string name="copy_to_clipboard">Copy to Clipboard</string>
-    <string name="paste_from_clipboard">Paste from Clipboard</string>
-    <string name="clear_clipboard">Clear Clipboard</string>
-
     <!--Fonts-->
     <string name="title_fonts">Fonts</string>
 
@@ -74,11 +68,4 @@
 
     <!--tmdb-->
     <string name="title_tmdb">Movie</string>
-
-    <!--Lemonade Sample-->
-    <string name="lemon_select">Click to select a lemon!</string>
-    <string name="lemon_squeeze">Click to juice the lemon!</string>
-    <string name="lemon_drink">Click to drink your lemonade!</string>
-    <string name="lemon_empty_glass">Click to start again!</string>
-    <string name="squeeze_count">Squeeze count: %1$d, keep squeezing!</string>
 </resources>

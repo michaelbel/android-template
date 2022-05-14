@@ -29,6 +29,7 @@ import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.michaelbel.core.res.CoreStrings
 
 @Composable
 fun RemoteConfigScreen(
@@ -65,13 +66,21 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_remote_config)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_remote_config)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(org.michaelbel.core.R.string.cd_back)
+                    contentDescription = stringResource(CoreStrings.cd_back)
                 )
             }
         }
@@ -96,24 +105,42 @@ private fun Content(
         LazyColumn {
             item {
                 OutlinedButton(
-                    onClick = { viewModel.takeBooleanParam() },
+                    onClick = {
+                        viewModel.takeBooleanParam()
+                    },
                     modifier = Modifier
                         .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-                ) { Text(text = stringResource(R.string.button_fetch_boolean)) }
+                ) {
+                    Text(
+                        text = stringResource(R.string.button_fetch_boolean)
+                    )
+                }
             }
             item {
                 OutlinedButton(
-                    onClick = { viewModel.takeStringParam() },
+                    onClick = {
+                        viewModel.takeStringParam()
+                    },
                     modifier = Modifier
                         .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-                ) { Text(text = stringResource(R.string.button_fetch_string)) }
+                ) {
+                    Text(
+                        text = stringResource(R.string.button_fetch_string)
+                    )
+                }
             }
             item {
                 OutlinedButton(
-                    onClick = { viewModel.takeNumberParam() },
+                    onClick = {
+                        viewModel.takeNumberParam()
+                    },
                     modifier = Modifier
                         .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 16.dp)
-                ) { Text(text = stringResource(R.string.button_fetch_number)) }
+                ) {
+                    Text(
+                        text = stringResource(R.string.button_fetch_number)
+                    )
+                }
             }
         }
 

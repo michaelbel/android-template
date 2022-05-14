@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.clipboard
+package org.michaelbel.template.clipboard
 
 import android.content.Context
 import androidx.compose.foundation.layout.padding
@@ -29,8 +29,7 @@ import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.michaelbel.template.R
-import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.core.res.CoreStrings
 
 @Composable
 fun ClipboardScreen(
@@ -75,13 +74,21 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_clipboard)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_clipboard)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.cd_back)
+                    contentDescription = stringResource(CoreStrings.cd_back)
                 )
             }
         }
@@ -95,24 +102,42 @@ private fun Content(
     LazyColumn {
         item {
             OutlinedButton(
-                onClick = { viewModel.copyText() },
+                onClick = {
+                    viewModel.copyText()
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.copy_to_clipboard)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.copy_to_clipboard)
+                )
+            }
         }
         item {
             OutlinedButton(
-                onClick = { viewModel.pasteText() },
+                onClick = {
+                    viewModel.pasteText()
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.paste_from_clipboard)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.paste_from_clipboard)
+                )
+            }
         }
         item {
             OutlinedButton(
-                onClick = { viewModel.clearClipboard() },
+                onClick = {
+                    viewModel.clearClipboard()
+                },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.clear_clipboard)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.clear_clipboard)
+                )
+            }
         }
     }
 }
@@ -123,11 +148,9 @@ private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    AppTheme {
-        ClipboardScreen(
-            navController = navController
-        )
-    }
+    ClipboardScreen(
+        navController = navController
+    )
 }
 
 @Preview
@@ -136,11 +159,7 @@ private fun ScreenPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    AppTheme(
-        darkTheme = true
-    ) {
-        ClipboardScreen(
-            navController = navController
-        )
-    }
+    ClipboardScreen(
+        navController = navController
+    )
 }

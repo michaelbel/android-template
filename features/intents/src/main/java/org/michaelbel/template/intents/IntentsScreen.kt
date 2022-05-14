@@ -37,6 +37,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.core.res.CoreStrings
 
 /**
  * Settings Panel Intents (Connectivity, NFC, Volume, Wi-Fi)
@@ -103,7 +104,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(org.michaelbel.core.R.string.cd_back)
+                    contentDescription = stringResource(CoreStrings.cd_back)
                 )
             }
         }
