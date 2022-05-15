@@ -21,12 +21,6 @@
     <!--home-->
     <string name="title_home">Compose</string>
 
-    <!--Fonts-->
-    <string name="title_fonts">Fonts</string>
-
-    <!--In-App Review-->
-    <string name="title_in_app_review">In-App Review</string>
-
     <!--Nav Args-->
     <string name="title_nav_args">Nav Args</string>
 

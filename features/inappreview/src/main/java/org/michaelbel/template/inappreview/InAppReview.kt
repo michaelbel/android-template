@@ -1,4 +1,4 @@
-package org.michaelbel.core.playcore.inappreview
+package org.michaelbel.template.inappreview
 
 import android.app.Activity
 import com.google.android.play.core.review.ReviewInfo
@@ -11,13 +11,14 @@ class InAppReview @Inject constructor(
     private val reviewManager: ReviewManager
 ) {
 
-    private val reviewInfo: Task<ReviewInfo> = reviewManager.requestReviewFlow()
+    private val reviewInfo: Task<ReviewInfo>
+        get() = reviewManager.requestReviewFlow()
 
     init {
         reviewInfo.addOnFailureListener(Timber::e)
     }
 
-    fun startReviewFlow(activity: Activity) {
+    fun launchReviewFlow(activity: Activity) {
         reviewManager.launchReviewFlow(activity, reviewInfo.result)
     }
 }

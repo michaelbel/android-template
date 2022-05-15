@@ -24,6 +24,7 @@ include(
     ":features:constraintlayout",
     ":features:fonts",
     ":features:ime",
+    ":features:inappreview",
     ":features:intents",
     ":features:location",
     ":features:receiver",

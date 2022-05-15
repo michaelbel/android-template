@@ -24,8 +24,8 @@ import com.google.accompanist.insets.systemBarsPadding
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import org.michaelbel.core.playcore.inappreview.InAppReview
 import org.michaelbel.template.R
+import org.michaelbel.template.inappreview.InAppReview
 import org.michaelbel.template.ui.theme.AppTheme
 
 @AndroidEntryPoint
@@ -40,14 +40,14 @@ class ComposeActivity: ComponentActivity() {
         setContent {
             ProvideWindowInsets {
                 AppTheme {
-                    ComposeActivityScreen(::startReviewFlow)
+                    ComposeActivityScreen(::launchReviewFlow)
                 }
             }
         }
     }
 
-    private fun startReviewFlow() {
-        inAppReview.startReviewFlow(this)
+    private fun launchReviewFlow() {
+        inAppReview.launchReviewFlow(this)
     }
 }
 

@@ -43,6 +43,7 @@ typealias LocationString = org.michaelbel.template.location.R.string
 typealias ServiceStrings = org.michaelbel.template.service.R.string
 typealias ConfigStrings = org.michaelbel.template.remoteconfig.R.string
 typealias ClipboardStrings = org.michaelbel.template.clipboard.R.string
+typealias ReviewStrings = org.michaelbel.template.inappreview.R.string
 
 @Composable
 fun HomeScreen(
@@ -86,7 +87,7 @@ private fun Content(
         ROUTE_TOAST to ToastStrings.title_toast,
         ROUTE_CONFIG to ConfigStrings.title_remote_config,
         ROUTE_TMDB to R.string.title_tmdb,
-        ROUTE_IN_APP_REVIEW to R.string.title_in_app_review,
+        ROUTE_IN_APP_REVIEW to ReviewStrings.title_in_app_review,
         ROUTE_IME to ImeStrings.title_ime_actions,
         ROUTE_LOCATION to LocationString.title_location,
         ROUTE_SERVICE to ServiceStrings.title_service

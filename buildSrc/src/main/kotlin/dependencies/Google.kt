@@ -127,6 +127,10 @@ fun DependencyHandler.apiMaterialDependencies() {
     api(MaterialComposeThemeAdapter)
 }
 
+fun DependencyHandler.implementationPlayCoreDependency() {
+    implementation(PlayCore)
+}
+
 fun DependencyHandler.apiPlayCoreDependencies() {
     api(PlayCore)
 }

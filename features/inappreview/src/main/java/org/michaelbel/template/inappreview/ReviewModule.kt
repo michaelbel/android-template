@@ -1,8 +1,8 @@
-package org.michaelbel.core.playcore
+package org.michaelbel.template.inappreview
 
 import android.content.Context
-import com.google.android.play.core.appupdate.AppUpdateManager
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.ReviewManagerFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,12 +11,12 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object PlayModule {
+object ReviewModule {
 
     @Provides
-    fun provideAppUpdateManager(
+    fun provideReviewManager(
         @ApplicationContext context: Context
-    ): AppUpdateManager {
-        return AppUpdateManagerFactory.create(context)
+    ): ReviewManager {
+        return ReviewManagerFactory.create(context)
     }
 }

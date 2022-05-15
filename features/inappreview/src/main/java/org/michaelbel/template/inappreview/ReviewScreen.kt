@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.inappreview
+package org.michaelbel.template.inappreview
 
 import android.content.Context
 import android.content.res.Configuration
@@ -23,14 +23,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.template.R
-
-typealias OnButtonClick = () -> Unit
+import org.michaelbel.core.res.CoreStrings
 
 @Composable
 fun ReviewScreen(
     navController: NavController,
-    onButtonClick: OnButtonClick
+    onButtonClick: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -60,7 +58,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.cd_back)
+                    contentDescription = stringResource(CoreStrings.cd_back)
                 )
             }
         }
@@ -70,7 +68,7 @@ private fun Toolbar(
 @Composable
 private fun Content(
     modifier: Modifier = Modifier,
-    onButtonClick: OnButtonClick
+    onButtonClick: () -> Unit
 ) {
     Box(
         modifier = modifier.fillMaxSize()

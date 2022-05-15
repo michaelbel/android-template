@@ -12,7 +12,6 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import org.michaelbel.template.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
-import org.michaelbel.template.features.compose.inappreview.ReviewScreen
 import org.michaelbel.template.features.compose.networkimage.NetworkImageScreen
 import org.michaelbel.template.features.compose.notifications.NotificationsScreen
 import org.michaelbel.template.features.compose.social.SocialScreen
@@ -20,6 +19,7 @@ import org.michaelbel.template.features.compose.system.SystemScreen
 import org.michaelbel.template.features.compose.timer.TimerScreen
 import org.michaelbel.template.features.compose.tmdb.TmdbScreen
 import org.michaelbel.template.ime.ImeScreen
+import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
 import org.michaelbel.template.location.LocationScreen
 import org.michaelbel.template.remoteconfig.RemoteConfigScreen
