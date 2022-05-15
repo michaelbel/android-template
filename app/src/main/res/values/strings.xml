@@ -27,13 +27,6 @@
     <!--Network Image-->
     <string name="title_network_image">Network Image</string>
 
-    <!--Notifications-->
-    <string name="title_notifications">Notifications</string>
-    <string name="notifications_enabled">Notifications Enabled</string>
-    <string name="notifications_disabled">Notifications Disabled</string>
-    <string name="cd_notifications_enabled">Notifications Enabled</string>
-    <string name="cd_notifications_disabled">Notifications Disabled</string>
-
     <!--Social-->
     <string name="title_social">Social</string>
     <string name="sign_in_google">Sign In with Google</string>

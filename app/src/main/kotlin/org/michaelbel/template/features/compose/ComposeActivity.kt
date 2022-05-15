@@ -76,8 +76,7 @@ private fun BottomBar(
     val items = listOf(
         ROUTE_HOME,
         ROUTE_CLIPBOARD,
-        ROUTE_NETWORK_IMAGE,
-        ROUTE_NOTIFICATIONS
+        ROUTE_NETWORK_IMAGE
     )
 
     NavigationBar(
