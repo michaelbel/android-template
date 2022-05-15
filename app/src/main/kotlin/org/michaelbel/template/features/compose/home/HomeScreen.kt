@@ -27,11 +27,8 @@ import org.michaelbel.template.features.compose.ROUTE_IME
 import org.michaelbel.template.features.compose.ROUTE_IN_APP_REVIEW
 import org.michaelbel.template.features.compose.ROUTE_LOCATION
 import org.michaelbel.template.features.compose.ROUTE_SERVICE
-import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
+import org.michaelbel.template.features.compose.ROUTE_INTENTS
 import org.michaelbel.template.features.compose.ROUTE_SOCIAL
-import org.michaelbel.template.features.compose.ROUTE_SYSTEM
-import org.michaelbel.template.features.compose.ROUTE_TIMER
-import org.michaelbel.template.features.compose.ROUTE_TMDB
 import org.michaelbel.template.features.compose.ROUTE_TOAST
 
 typealias ImeStrings = org.michaelbel.template.ime.R.string
@@ -76,13 +73,10 @@ private fun Content(
 
     val list = mapOf(
         ROUTE_CLIPBOARD to ClipboardStrings.title_clipboard,
-        ROUTE_SETTINGS_PANEL to IntentsStrings.title_intents,
+        ROUTE_INTENTS to IntentsStrings.title_intents,
         ROUTE_SOCIAL to R.string.title_social,
-        ROUTE_SYSTEM to R.string.title_system_services,
-        ROUTE_TIMER to R.string.title_timer,
         ROUTE_TOAST to ToastStrings.title_toast,
         ROUTE_CONFIG to ConfigStrings.title_remote_config,
-        ROUTE_TMDB to R.string.title_tmdb,
         ROUTE_IN_APP_REVIEW to ReviewStrings.title_in_app_review,
         ROUTE_IME to ImeStrings.title_ime_actions,
         ROUTE_LOCATION to LocationString.title_location,

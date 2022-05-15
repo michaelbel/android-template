@@ -10,9 +10,6 @@ import com.google.accompanist.navigation.animation.composable
 import org.michaelbel.template.clipboard.ClipboardScreen
 import org.michaelbel.template.features.compose.home.HomeScreen
 import org.michaelbel.template.features.compose.social.SocialScreen
-import org.michaelbel.template.features.compose.system.SystemScreen
-import org.michaelbel.template.features.compose.timer.TimerScreen
-import org.michaelbel.template.features.compose.tmdb.TmdbScreen
 import org.michaelbel.template.ime.ImeScreen
 import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
@@ -23,13 +20,10 @@ import org.michaelbel.template.toast.ToastScreen
 
 const val ROUTE_HOME = "home"
 const val ROUTE_CLIPBOARD = "clipboard"
-const val ROUTE_SETTINGS_PANEL = "settings_panel"
+const val ROUTE_INTENTS = "intents"
 const val ROUTE_SOCIAL = "social"
-const val ROUTE_SYSTEM = "system"
-const val ROUTE_TIMER = "timer"
 const val ROUTE_TOAST = "toast"
 const val ROUTE_CONFIG = "config"
-const val ROUTE_TMDB = "tmdb"
 const val ROUTE_IN_APP_REVIEW = "in_app_review"
 const val ROUTE_IME = "ime"
 const val ROUTE_LOCATION = "location"
@@ -50,13 +44,10 @@ fun Content(
             route = ROUTE_CLIPBOARD,
             enterTransition = { fadeIn(animationSpec = tween(200)) }
         ) { ClipboardScreen(navController) }
-        composable(route = ROUTE_SETTINGS_PANEL) { IntentsScreen(navController) }
+        composable(route = ROUTE_INTENTS) { IntentsScreen(navController) }
         composable(route = ROUTE_SOCIAL) { SocialScreen(navController) }
-        composable(route = ROUTE_SYSTEM) { SystemScreen(navController) }
-        composable(route = ROUTE_TIMER) { TimerScreen(navController) }
         composable(route = ROUTE_TOAST) { ToastScreen(navController) }
         composable(route = ROUTE_CONFIG) { RemoteConfigScreen(navController) }
-        composable(route = ROUTE_TMDB) { TmdbScreen(navController) }
         composable(route = ROUTE_IN_APP_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
         composable(route = ROUTE_IME) { ImeScreen(navController) }
         composable(route = ROUTE_LOCATION) { LocationScreen(navController) }

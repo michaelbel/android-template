@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
-import org.michaelbel.template.R
 import org.michaelbel.template.features.main.model.ScreenData
 import org.michaelbel.template.inappupdate.InAppUpdate
 import org.michaelbel.template.ui.Screen
@@ -95,11 +94,6 @@ class MainViewModel @Inject constructor(
                     org.michaelbel.template.constraintlayout.R.string.title_constraints_guideline
                 ),
                 ScreenData(Screen.Fonts, bundleOf(), org.michaelbel.template.fonts.R.string.title_fonts),
-                ScreenData(
-                    Screen.NavArgs,
-                    bundleOf("firstText" to "Some Text", "secondNumber" to 100),
-                    R.string.title_nav_args
-                ),
                 ScreenData(Screen.Storage, bundleOf(), org.michaelbel.template.storage.R.string.title_storage)
             )
         }
