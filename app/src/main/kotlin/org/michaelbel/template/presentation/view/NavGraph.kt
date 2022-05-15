@@ -1,4 +1,4 @@
-package org.michaelbel.template.ui
+package org.michaelbel.template.presentation.view
 
 import android.os.Bundle
 import androidx.core.os.bundleOf

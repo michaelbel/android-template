@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose
+package org.michaelbel.template.presentation.compose
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -23,7 +23,7 @@ import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
 
 @Composable
-fun HomeScreen(
+fun ComposeScreen(
     navController: NavController
 ) {
     Scaffold(
@@ -40,7 +40,7 @@ private fun Toolbar() {
     SmallTopAppBar(
         title = {
             Text(
-                text = stringResource(R.string.title_home)
+                text = stringResource(R.string.title_compose)
             )
         },
         modifier = Modifier.systemBarsPadding()
@@ -54,15 +54,15 @@ private fun Content(
     val listState: LazyListState = rememberLazyListState()
 
     val list = mapOf(
-        ROUTE_CLIPBOARD to "Clipboard",
-        ROUTE_INTENTS to "Intents",
         ROUTE_AUTH to "Auth",
-        ROUTE_TOAST to "Toast",
-        ROUTE_CONFIG to "Config",
-        ROUTE_IN_APP_REVIEW to "Review",
+        ROUTE_CLIPBOARD to "Clipboard",
         ROUTE_IME to "IME",
+        ROUTE_REVIEW to "Review",
+        ROUTE_INTENTS to "Intents",
         ROUTE_LOCATION to "Location",
-        ROUTE_SERVICE to "Service"
+        ROUTE_CONFIG to "Config",
+        ROUTE_SERVICE to "Service",
+        ROUTE_TOAST to "Toast"
     )
 
     Box(

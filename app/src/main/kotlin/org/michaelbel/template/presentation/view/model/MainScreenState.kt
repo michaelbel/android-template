@@ -1,6 +1,4 @@
-package org.michaelbel.template.features.main
-
-import org.michaelbel.template.features.main.model.ScreenData
+package org.michaelbel.template.presentation.view.model
 
 sealed class MainScreenState {
     data class MainScreen(

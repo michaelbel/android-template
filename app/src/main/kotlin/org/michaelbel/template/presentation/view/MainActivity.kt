@@ -1,4 +1,4 @@
-package org.michaelbel.template.ui
+package org.michaelbel.template.presentation.view
 
 import android.content.Intent
 import android.net.Uri
@@ -12,9 +12,18 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.databinding.ActivityMainBinding
+import org.michaelbel.template.receiver.AirplaneModeReceiver
+import org.michaelbel.template.receiver.BatteryReceiver
+import org.michaelbel.template.receiver.BootReceiver
+import org.michaelbel.template.receiver.CustomReceiver
 
 @AndroidEntryPoint
 class MainActivity: AppCompatActivity() {
+
+    private val customReceiver: CustomReceiver = CustomReceiver()
+    private val airplaneModeReceiver: AirplaneModeReceiver = AirplaneModeReceiver()
+    private val batteryReceiver: BatteryReceiver = BatteryReceiver()
+    private val bootReceiver: BootReceiver = BootReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +33,32 @@ class MainActivity: AppCompatActivity() {
             AndroidViewBinding(ActivityMainBinding::inflate)
         }
         resolveIntent()
+
+        fun send() {
+            val intent = Intent(CustomReceiver.TEMPLATE_ACTION)
+            intent.setPackage("org.michaelbel.template")
+            sendBroadcast(intent)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        registerReceiver(customReceiver, customReceiver.intentFilter)
+        registerReceiver(airplaneModeReceiver, airplaneModeReceiver.intentFilter)
+        registerReceiver(batteryReceiver, batteryReceiver.intentFilter)
+        registerReceiver(bootReceiver, bootReceiver.intentFilter)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        unregisterReceiver(batteryReceiver)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(customReceiver)
+        unregisterReceiver(airplaneModeReceiver)
+        unregisterReceiver(bootReceiver)
     }
 
     override fun onNewIntent(intent: Intent?) {

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="org.michaelbel.template.features.main.MainFragment"
+        android:name="org.michaelbel.template.presentation.view.MainFragment"
         android:label="Main"/>
 
     <fragment
@@ -54,7 +54,7 @@
 
     <fragment
         android:id="@+id/navArgsFragment"
-        android:name="org.michaelbel.template.features.navagrs.NavArgsFragment"
+        android:name="org.michaelbel.template.presentation.navagrs.NavArgsFragment"
         android:label="NavArgs">
 
         <argument

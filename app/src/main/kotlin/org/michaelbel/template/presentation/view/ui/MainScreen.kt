@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.main.ui
+package org.michaelbel.template.presentation.view.ui
 
 import android.content.Context
 import android.content.Intent
@@ -12,7 +12,6 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ListItem
-import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.SnackbarHost
@@ -50,12 +49,11 @@ import com.google.accompanist.insets.ui.Scaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
-import org.michaelbel.template.features.compose.ComposeActivity
-import org.michaelbel.template.features.main.MainScreenState
-import org.michaelbel.template.features.main.MainViewModel
-import org.michaelbel.template.ui.OnNavigationBackClick
-import org.michaelbel.template.ui.Screen
-import org.michaelbel.template.ui.components.HomeBottomSheet
+import org.michaelbel.template.presentation.compose.ComposeActivity
+import org.michaelbel.template.presentation.view.model.MainScreenState
+import org.michaelbel.template.presentation.view.MainViewModel
+import org.michaelbel.template.presentation.view.OnNavigationBackClick
+import org.michaelbel.template.presentation.view.Screen
 import org.michaelbel.template.ui.theme.AppTheme
 
 typealias OnButtonClick = (Screen, Bundle) -> Unit
@@ -101,16 +99,24 @@ fun MainScreen(
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
         topBar = {
             Toolbar(
                 scrollBehavior = scrollBehavior,
-                onNavigationBackClick = { scope.launch { scaffoldState.drawerState.open() } },
-                onMenuClick = { scope.launch { sheetState.show() } }
+                onNavigationBackClick = {
+                    scope.launch { scaffoldState.drawerState.open() }
+                },
+                onMenuClick = {
+                    scope.launch { sheetState.show() }
+                }
             )
         },
         floatingActionButton = {
-            Column(horizontalAlignment = Alignment.End) {
+            Column(
+                horizontalAlignment = Alignment.End
+            ) {
                 Fab {
                     val intent = Intent(context, ComposeActivity::class.java)
                     context.startActivity(intent)
@@ -118,32 +124,24 @@ fun MainScreen(
             }
         },
     ) {
-        ModalBottomSheetLayout(
-            sheetContent = {
-                HomeBottomSheet(
-                    sheetState = sheetState,
-                    scope = scope,
-                    onSortOptionClicked = {},
-                    onSettingsClicked = {}
-                )
-            },
-            sheetState = sheetState
+        LazyColumn(
+            state = listState,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 80.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            LazyColumn(
-                state = listState,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 80.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                items(mainState.list) { screenData ->
-                    ListItem(
-                        text = { Text(text = stringResource(screenData.titleRes)) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onButtonClick(screenData.screen, screenData.args) }
-                    )
-                }
+            items(mainState.list) { screenData ->
+                ListItem(
+                    text = {
+                        Text(
+                            text = stringResource(screenData.titleRes)
+                        )
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { onButtonClick(screenData.screen, screenData.args) }
+                )
             }
         }
     }
@@ -156,7 +154,11 @@ private fun Toolbar(
     onMenuClick: () -> Unit
 ) {
     SmallTopAppBar(
-        title = { Text(text = "Views") },
+        title = {
+            Text(
+                text = "Views"
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
             IconButton(
@@ -164,15 +166,17 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.Menu,
-                    contentDescription = stringResource(R.string.cd_menu)
+                    contentDescription = null
                 )
             }
         },
         actions = {
-            IconButton(onClick = { onMenuClick() }) {
+            IconButton(
+                onClick = { onMenuClick() }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.Settings,
-                    contentDescription = stringResource(R.string.cd_settings)
+                    contentDescription = null
                 )
             }
         },
@@ -185,7 +189,10 @@ private fun Fab(onClick: () -> Unit) {
     FloatingActionButton(
         onClick = onClick,
     ) {
-        Icon(Icons.Filled.Add, "Localized description")
+        Icon(
+            imageVector = Icons.Filled.Add,
+            contentDescription = null
+        )
     }
 }
 
@@ -203,7 +210,9 @@ private fun MainScreenPreview() {
 @Preview
 @Composable
 private fun MainScreenPreviewDark() {
-    AppTheme(darkTheme = true) {
+    AppTheme(
+        darkTheme = true
+    ) {
         MainScreen(
             onUpdateAppClicked = {},
             onButtonClick = { _: Screen, _: Bundle -> }
