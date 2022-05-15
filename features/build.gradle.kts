@@ -22,6 +22,7 @@ dependencies {
     api(project(":features:fonts"))
     api(project(":features:ime"))
     api(project(":features:inappreview"))
+    api(project(":features:inappupdate"))
     api(project(":features:intents"))
     api(project(":features:location"))
     api(project(":features:receiver"))

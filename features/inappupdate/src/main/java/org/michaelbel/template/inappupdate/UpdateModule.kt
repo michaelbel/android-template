@@ -1,4 +1,4 @@
-package org.michaelbel.core.playcore
+package org.michaelbel.template.inappupdate
 
 import android.content.Context
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object PlayModule {
+object UpdateModule {
 
     @Provides
     fun provideAppUpdateManager(

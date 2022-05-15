@@ -16,9 +16,9 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
-import org.michaelbel.core.playcore.inappupdate.InAppUpdate
 import org.michaelbel.template.R
 import org.michaelbel.template.features.main.model.ScreenData
+import org.michaelbel.template.inappupdate.InAppUpdate
 import org.michaelbel.template.ui.Screen
 
 @HiltViewModel

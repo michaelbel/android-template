@@ -25,6 +25,7 @@ include(
     ":features:fonts",
     ":features:ime",
     ":features:inappreview",
+    ":features:inappupdate",
     ":features:intents",
     ":features:location",
     ":features:receiver",

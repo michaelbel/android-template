@@ -1,4 +1,4 @@
-package org.michaelbel.core.playcore.inappupdate
+package org.michaelbel.template.inappupdate
 
 import android.app.Activity
 import com.google.android.play.core.appupdate.AppUpdateInfo
