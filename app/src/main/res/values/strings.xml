@@ -24,9 +24,6 @@
     <!--Nav Args-->
     <string name="title_nav_args">Nav Args</string>
 
-    <!--Network Image-->
-    <string name="title_network_image">Network Image</string>
-
     <!--Social-->
     <string name="title_social">Social</string>
     <string name="sign_in_google">Sign In with Google</string>

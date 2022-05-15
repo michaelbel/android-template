@@ -26,7 +26,6 @@ import org.michaelbel.template.features.compose.ROUTE_CONFIG
 import org.michaelbel.template.features.compose.ROUTE_IME
 import org.michaelbel.template.features.compose.ROUTE_IN_APP_REVIEW
 import org.michaelbel.template.features.compose.ROUTE_LOCATION
-import org.michaelbel.template.features.compose.ROUTE_NETWORK_IMAGE
 import org.michaelbel.template.features.compose.ROUTE_SERVICE
 import org.michaelbel.template.features.compose.ROUTE_SETTINGS_PANEL
 import org.michaelbel.template.features.compose.ROUTE_SOCIAL
@@ -77,7 +76,6 @@ private fun Content(
 
     val list = mapOf(
         ROUTE_CLIPBOARD to ClipboardStrings.title_clipboard,
-        ROUTE_NETWORK_IMAGE to R.string.title_network_image,
         ROUTE_SETTINGS_PANEL to IntentsStrings.title_intents,
         ROUTE_SOCIAL to R.string.title_social,
         ROUTE_SYSTEM to R.string.title_system_services,
