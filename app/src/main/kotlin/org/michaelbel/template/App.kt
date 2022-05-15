@@ -33,7 +33,10 @@ class App: Application(), ImageLoaderFactory {
     }
 
     private fun initAndroidStrictMode() {
-        initStrictMode(enable = BuildConfig.DEBUG, enableDefaults = false) {
+        initStrictMode(
+            enable = BuildConfig.DEBUG,
+            enableDefaults = false
+        ) {
             threadPolicy {
                 resourceMismatches = true
                 customSlowCalls = true
