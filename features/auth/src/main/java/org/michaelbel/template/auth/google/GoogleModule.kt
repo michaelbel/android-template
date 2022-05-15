@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.social
+package org.michaelbel.template.auth.google
 
 import android.content.Context
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -12,20 +12,12 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object GoogleSignInModule {
-
-    //const val CLIENT_SECRET = "rmQ3Ri3-B0ewWESSkhHYY4TG"
+object GoogleModule {
 
     @Provides
-    @GoogleClientId
-    fun provideGoogleClientId(): String = "33042426453-pd3k32g9ns2c73v9npvm6ni82q9kgl3u.apps.googleusercontent.com"
-
-    @Provides
-    fun provideGoogleSignInOptions(
-        @GoogleClientId clientId: String
-    ): GoogleSignInOptions {
+    fun provideGoogleSignInOptions(): GoogleSignInOptions {
         return GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(clientId)
+            .requestIdToken(GOOGLE_CLIENT_ID)
             .requestEmail()
             .requestProfile()
             .build()

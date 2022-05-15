@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.social
+package org.michaelbel.template.auth
 
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -32,22 +32,17 @@ import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKAuthenticationResult
 import com.vk.api.sdk.auth.VKScope
 import org.michaelbel.core.ktx.checkPackageNameValid
-import org.michaelbel.template.R
-import org.michaelbel.template.ui.theme.AppTheme
-
-/**
- * Google SignIn
- * VK Auth
- */
 
 @Composable
-fun SocialScreen(
+fun AuthScreen(
     navController: NavController
 ) {
-    val viewModel: SocialViewModel = hiltViewModel()
+    val viewModel: AuthViewModel = hiltViewModel()
 
     Scaffold(
-        topBar = { Toolbar(navController) }
+        topBar = {
+            Toolbar(navController)
+        }
     ) {
         Content(
             viewModel = viewModel
@@ -60,13 +55,19 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_social)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_social)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = { navController.popBackStack() }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(R.string.cd_back)
+                    contentDescription = null
                 )
             }
         }
@@ -75,7 +76,7 @@ private fun Toolbar(
 
 @Composable
 private fun Content(
-    viewModel: SocialViewModel
+    viewModel: AuthViewModel
 ) {
     val context: Context = LocalContext.current
     val owner: ActivityResultRegistryOwner = context as ActivityResultRegistryOwner
@@ -113,11 +114,15 @@ private fun Content(
         item {
             OutlinedButton(
                 onClick = {
-                    googleSignInContract.launch(viewModel.googleSignInClient.signInIntent)
+                    googleSignInContract.launch(viewModel.googleIntent)
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.sign_in_google)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.sign_in_google)
+                )
+            }
         }
         item {
             OutlinedButton(
@@ -128,7 +133,11 @@ private fun Content(
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.sign_in_vk)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.sign_in_vk)
+                )
+            }
         }
         item {
             OutlinedButton(
@@ -137,7 +146,11 @@ private fun Content(
                 },
                 modifier = Modifier
                     .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) { Text(text = stringResource(R.string.sign_in_facebook)) }
+            ) {
+                Text(
+                    text = stringResource(R.string.sign_in_facebook)
+                )
+            }
         }
     }
 }
@@ -148,11 +161,9 @@ private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    AppTheme {
-        SocialScreen(
-            navController = navController
-        )
-    }
+    AuthScreen(
+        navController = navController
+    )
 }
 
 @Preview
@@ -161,11 +172,7 @@ private fun ScreenPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    AppTheme(
-        darkTheme = true
-    ) {
-        SocialScreen(
-            navController = navController
-        )
-    }
+    AuthScreen(
+        navController = navController
+    )
 }

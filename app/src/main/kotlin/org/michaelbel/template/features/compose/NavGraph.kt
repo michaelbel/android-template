@@ -7,9 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
+import org.michaelbel.template.auth.AuthScreen
 import org.michaelbel.template.clipboard.ClipboardScreen
-import org.michaelbel.template.features.compose.home.HomeScreen
-import org.michaelbel.template.features.compose.social.SocialScreen
 import org.michaelbel.template.ime.ImeScreen
 import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
@@ -21,7 +20,7 @@ import org.michaelbel.template.toast.ToastScreen
 const val ROUTE_HOME = "home"
 const val ROUTE_CLIPBOARD = "clipboard"
 const val ROUTE_INTENTS = "intents"
-const val ROUTE_SOCIAL = "social"
+const val ROUTE_AUTH = "auth"
 const val ROUTE_TOAST = "toast"
 const val ROUTE_CONFIG = "config"
 const val ROUTE_IN_APP_REVIEW = "in_app_review"
@@ -45,7 +44,7 @@ fun Content(
             enterTransition = { fadeIn(animationSpec = tween(200)) }
         ) { ClipboardScreen(navController) }
         composable(route = ROUTE_INTENTS) { IntentsScreen(navController) }
-        composable(route = ROUTE_SOCIAL) { SocialScreen(navController) }
+        composable(route = ROUTE_AUTH) { AuthScreen(navController) }
         composable(route = ROUTE_TOAST) { ToastScreen(navController) }
         composable(route = ROUTE_CONFIG) { RemoteConfigScreen(navController) }
         composable(route = ROUTE_IN_APP_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }

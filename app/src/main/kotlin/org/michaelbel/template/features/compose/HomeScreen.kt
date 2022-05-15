@@ -1,4 +1,4 @@
-package org.michaelbel.template.features.compose.home
+package org.michaelbel.template.features.compose
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -21,24 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.systemBarsPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.features.compose.ROUTE_CLIPBOARD
-import org.michaelbel.template.features.compose.ROUTE_CONFIG
-import org.michaelbel.template.features.compose.ROUTE_IME
-import org.michaelbel.template.features.compose.ROUTE_IN_APP_REVIEW
-import org.michaelbel.template.features.compose.ROUTE_LOCATION
-import org.michaelbel.template.features.compose.ROUTE_SERVICE
-import org.michaelbel.template.features.compose.ROUTE_INTENTS
-import org.michaelbel.template.features.compose.ROUTE_SOCIAL
-import org.michaelbel.template.features.compose.ROUTE_TOAST
-
-typealias ImeStrings = org.michaelbel.template.ime.R.string
-typealias IntentsStrings = org.michaelbel.template.intents.R.string
-typealias ToastStrings = org.michaelbel.template.toast.R.string
-typealias LocationString = org.michaelbel.template.location.R.string
-typealias ServiceStrings = org.michaelbel.template.service.R.string
-typealias ConfigStrings = org.michaelbel.template.remoteconfig.R.string
-typealias ClipboardStrings = org.michaelbel.template.clipboard.R.string
-typealias ReviewStrings = org.michaelbel.template.inappreview.R.string
 
 @Composable
 fun HomeScreen(
@@ -72,15 +54,15 @@ private fun Content(
     val listState: LazyListState = rememberLazyListState()
 
     val list = mapOf(
-        ROUTE_CLIPBOARD to ClipboardStrings.title_clipboard,
-        ROUTE_INTENTS to IntentsStrings.title_intents,
-        ROUTE_SOCIAL to R.string.title_social,
-        ROUTE_TOAST to ToastStrings.title_toast,
-        ROUTE_CONFIG to ConfigStrings.title_remote_config,
-        ROUTE_IN_APP_REVIEW to ReviewStrings.title_in_app_review,
-        ROUTE_IME to ImeStrings.title_ime_actions,
-        ROUTE_LOCATION to LocationString.title_location,
-        ROUTE_SERVICE to ServiceStrings.title_service
+        ROUTE_CLIPBOARD to "Clipboard",
+        ROUTE_INTENTS to "Intents",
+        ROUTE_AUTH to "Auth",
+        ROUTE_TOAST to "Toast",
+        ROUTE_CONFIG to "Config",
+        ROUTE_IN_APP_REVIEW to "Review",
+        ROUTE_IME to "IME",
+        ROUTE_LOCATION to "Location",
+        ROUTE_SERVICE to "Service"
     )
 
     Box(
@@ -93,11 +75,11 @@ private fun Content(
                 .padding(bottom = 80.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            items(list.toList()) { (route, titleRes) ->
+            items(list.toList()) { (route, title) ->
                 ListItem(
                     text = {
                         Text(
-                            text = stringResource(titleRes)
+                            text = title
                         )
                     },
                     modifier = Modifier

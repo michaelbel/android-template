@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_social">Social</string>
+    <string name="sign_in_google">Sign In with Google</string>
+    <string name="sign_in_vk">Sign In with VK</string>
+    <string name="sign_in_facebook">Sign In with Facebook</string>
+</resources>

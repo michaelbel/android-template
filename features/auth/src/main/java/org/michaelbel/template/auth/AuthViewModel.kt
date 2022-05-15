@@ -1,5 +1,6 @@
-package org.michaelbel.template.features.compose.social
+package org.michaelbel.template.auth
 
+import android.content.Intent
 import androidx.activity.result.ActivityResultRegistryOwner
 import androidx.lifecycle.ViewModel
 import com.facebook.CallbackManager
@@ -18,8 +19,8 @@ import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
 
 @HiltViewModel
-class SocialViewModel @Inject constructor(
-    val googleSignInClient: GoogleSignInClient
+class AuthViewModel @Inject constructor(
+    private val googleSignInClient: GoogleSignInClient
 ): ViewModel() {
 
     private val facebookCallbackManager
@@ -41,6 +42,9 @@ class SocialViewModel @Inject constructor(
             onFacebookSuccess(result)
         }
     }
+
+    val googleIntent: Intent
+        get() = googleSignInClient.signInIntent
 
     fun facebookLogin(owner: ActivityResultRegistryOwner) {
         facebookLoginManager.logIn(

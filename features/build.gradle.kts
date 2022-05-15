@@ -17,6 +17,7 @@ android {
 
 dependencies {
     api(project(":features:ads"))
+    api(project(":features:auth"))
     api(project(":features:clipboard"))
     api(project(":features:constraintlayout"))
     api(project(":features:fonts"))

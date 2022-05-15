@@ -11,12 +11,10 @@ import org.michaelbel.template.dependencies.FirebaseAppDistribution
 import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.implementationComposeTestDependencies
-import org.michaelbel.template.dependencies.implementationFacebookDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
-import org.michaelbel.template.dependencies.implementationVkDependencies
 
 plugins {
     // google-services before firebase
@@ -124,10 +122,7 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":features"))
-
     implementationHiltDependencies()
-    implementationFacebookDependencies()
-    implementationVkDependencies()
     implementationStrictModeCompatDependencies()
     implementationTestDependencies()
     implementationJetpackTestDependencies()

@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.core.res.CoreStrings
 
 /**
  * Android 11 Toast Updates: add callback.
@@ -63,7 +62,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(CoreStrings.cd_back)
+                    contentDescription = null
                 )
             }
         }

@@ -29,7 +29,6 @@ import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.michaelbel.core.res.CoreStrings
 
 @Composable
 fun ClipboardScreen(
@@ -88,7 +87,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(CoreStrings.cd_back)
+                    contentDescription = null
                 )
             }
         }

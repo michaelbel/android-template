@@ -20,6 +20,7 @@ include(
     ":core",
     ":features",
     ":features:ads",
+    ":features:auth",
     ":features:clipboard",
     ":features:constraintlayout",
     ":features:fonts",
