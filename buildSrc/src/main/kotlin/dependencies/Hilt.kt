@@ -32,5 +32,6 @@ fun DependencyHandler.implementationHiltDependencies() {
     implementation(HiltAndroid)
     implementation(HiltNavigationCompose)
     implementation(HiltNavigationFragment)
+    implementation(HiltWork)
     kapt(HiltCompiler)
 }

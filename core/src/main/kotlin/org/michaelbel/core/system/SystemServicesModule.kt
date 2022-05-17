@@ -74,6 +74,9 @@ object SystemServicesModule {
     fun provideNotificationService(
         @ApplicationContext context: Context
     ): NotificationManager {
-        return ContextCompat.getSystemService(context, NotificationManager::class.java) as NotificationManager
+        return ContextCompat.getSystemService(
+            context,
+            NotificationManager::class.java
+        ) as NotificationManager
     }
 }

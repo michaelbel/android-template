@@ -56,6 +56,7 @@ private fun Content(
     val list = mapOf(
         ROUTE_AUTH to "Auth",
         ROUTE_CLIPBOARD to "Clipboard",
+        ROUTE_DOWNLOAD_FILE to "Download File",
         ROUTE_IME to "IME",
         ROUTE_REVIEW to "Review",
         ROUTE_INTENTS to "Intents",

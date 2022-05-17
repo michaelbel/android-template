@@ -13,9 +13,8 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.michaelbel.template.R
+import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.presentation.compose.ComposeActivity
-import org.michaelbel.template.presentation.compose.inappreview.ReviewScreen
 import org.michaelbel.template.ui.theme.AppTheme
 
 @RunWith(AndroidJUnit4::class)
@@ -44,7 +43,7 @@ class ReviewScreenTest {
     @Test
     fun screenTest() {
         composeTestRule
-            .onNodeWithText(context.getString(R.string.title_in_app_review))
+            .onNodeWithText("Review")
             .assertIsDisplayed()
     }
 }

@@ -23,6 +23,7 @@ include(
     ":features:auth",
     ":features:clipboard",
     ":features:constraintlayout",
+    ":features:downloadfile",
     ":features:fonts",
     ":features:ime",
     ":features:inappreview",

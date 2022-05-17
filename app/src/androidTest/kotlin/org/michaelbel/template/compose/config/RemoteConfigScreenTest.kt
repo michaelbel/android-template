@@ -13,7 +13,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.michaelbel.template.presentation.compose.ComposeActivity
-import org.michaelbel.template.presentation.compose.config.RemoteConfigScreen
+import org.michaelbel.template.remoteconfig.RemoteConfigScreen
 import org.michaelbel.template.ui.theme.AppTheme
 
 @RunWith(AndroidJUnit4::class)

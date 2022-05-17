@@ -86,7 +86,6 @@ private const val SecurityAppAuthenticatorVersion = "1.0.0-alpha02"
 private const val ShareTargetVersion = "1.2.0-rc01"
 private const val SliceVersion = "1.1.0-alpha02"
 private const val SlidingPanelLayoutVersion = "1.2.0-rc01"
-private const val StartupVersion = "1.1.0"
 private const val SwipeRefreshLayoutVersion = "1.1.0"
 private const val TestCoreVersion = "1.4.0"
 private const val TestEspressoVersion = "3.4.0"
@@ -106,7 +105,6 @@ private const val VersionedParcelableVersion = "1.1.1"
 private const val ViewPager2Version = "1.0.0"
 private const val WebkitVersion = "1.4.0"
 private const val WindowVersion = "1.0.0-rc01"
-private const val WorkVersion = "2.7.1"
 
 private const val Activity = "androidx.activity:activity-ktx:$ActivityVersion"
 private const val ActivityCompose = "androidx.activity:activity-compose:$ActivityVersion"
@@ -227,7 +225,6 @@ private const val SliceBuilders = "androidx.slice:slice-builders-ktx:$SliceVersi
 private const val SliceCore = "androidx.slice:slice-core:$SliceVersion"
 private const val SliceView = "androidx.slice:slice-view:$SliceVersion"
 private const val SlidingPanelLayout = "androidx.slidingpanelayout:slidingpanelayout:$SlidingPanelLayoutVersion"
-private const val Startup = "androidx.startup:startup-runtime:$StartupVersion"
 private const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:$SwipeRefreshLayoutVersion"
 private const val TestCore = "androidx.test:core-ktx:$TestCoreVersion"
 private const val TestEspressoAccessibility = "androidx.test.espresso:espresso-accessibility:$TestEspressoVersion"
@@ -251,10 +248,6 @@ private const val ViewPager2 = "androidx.viewpager2:viewpager2:$ViewPager2Versio
 private const val Webkit = "androidx.webkit:webkit:$WebkitVersion"
 private const val Window = "androidx.window:window:$WindowVersion"
 private const val WindowTesting = "androidx.window:window-testing:$WindowVersion"
-private const val WorkRuntime = "androidx.work:work-runtime-ktx:$WorkVersion"
-private const val WorkGcm = "androidx.work:work-gcm:$WorkVersion"
-private const val WorkMultiprocess = "androidx.work:work-multiprocess:$WorkVersion"
-private const val WorkTesting = "androidx.work:work-testing:$WorkVersion"
 
 fun DependencyHandler.apiJetpackDependencies() {
     api(Activity)
@@ -274,7 +267,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(NavigationUi)
     api(RecyclerView)
     api(ResourceInspection)
-    api(Startup)
     api(ViewPager2)
     api(Window)
     api(WindowTesting)

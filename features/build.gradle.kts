@@ -20,6 +20,7 @@ dependencies {
     api(project(":features:auth"))
     api(project(":features:clipboard"))
     api(project(":features:constraintlayout"))
+    api(project(":features:downloadfile"))
     api(project(":features:fonts"))
     api(project(":features:ime"))
     api(project(":features:inappreview"))

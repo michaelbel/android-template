@@ -16,6 +16,7 @@ import org.michaelbel.template.dependencies.apiMaterialDependencies
 import org.michaelbel.template.dependencies.apiPagingDependencies
 import org.michaelbel.template.dependencies.apiRetrofitDependencies
 import org.michaelbel.template.dependencies.apiRoomDependencies
+import org.michaelbel.template.dependencies.apiStartupDependencies
 import org.michaelbel.template.dependencies.apiTestDependencies
 import org.michaelbel.template.dependencies.apiTimberDependencies
 import org.michaelbel.template.dependencies.apiViewBindingPropertyDelegateDependencies
@@ -90,4 +91,5 @@ dependencies {
     apiChuckerDependencies()
     apiTestDependencies()
     apiViewBindingPropertyDelegateDependencies()
+    apiStartupDependencies()
 }

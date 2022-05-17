@@ -6,6 +6,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import org.michaelbel.template.auth.AuthScreen
 import org.michaelbel.template.clipboard.ClipboardScreen
+import org.michaelbel.template.downloadfile.DownloadFileScreen
 import org.michaelbel.template.ime.ImeScreen
 import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
@@ -17,6 +18,7 @@ import org.michaelbel.template.toast.ToastScreen
 const val ROUTE_COMPOSE = "compose"
 const val ROUTE_AUTH = "auth"
 const val ROUTE_CLIPBOARD = "clipboard"
+const val ROUTE_DOWNLOAD_FILE = "download_file"
 const val ROUTE_IME = "ime"
 const val ROUTE_REVIEW = "review"
 const val ROUTE_INTENTS = "intents"
@@ -36,6 +38,7 @@ fun Content(
     ) {
         composable(route = ROUTE_COMPOSE) { ComposeScreen(navController) }
         composable(route = ROUTE_CLIPBOARD) { ClipboardScreen(navController) }
+        composable(route = ROUTE_DOWNLOAD_FILE) { DownloadFileScreen(navController) }
         composable(route = ROUTE_INTENTS) { IntentsScreen(navController) }
         composable(route = ROUTE_AUTH) { AuthScreen(navController) }
         composable(route = ROUTE_TOAST) { ToastScreen(navController) }

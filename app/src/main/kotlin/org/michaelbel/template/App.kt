@@ -2,21 +2,32 @@ package org.michaelbel.template
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
 import coil.ImageLoader
 import coil.ImageLoaderFactory
 import com.google.android.material.color.DynamicColors
 import com.kirillr.strictmodehelper.kotlin.dsl.initStrictMode
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 import org.michaelbel.core.BuildConfig
 import org.michaelbel.template.ui.utils.UnsplashSizingInterceptor
 
 @HiltAndroidApp
-class App: Application(), ImageLoaderFactory {
+class App: Application(), Configuration.Provider, ImageLoaderFactory {
+
+    @Inject lateinit var workerFactory: HiltWorkerFactory
 
     override fun onCreate() {
         super.onCreate()
         initAppTheme()
-        initAndroidStrictMode()
+        //initAndroidStrictMode()
+    }
+
+    override fun getWorkManagerConfiguration(): Configuration {
+        return Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
     }
 
     override fun newImageLoader(): ImageLoader {
