@@ -21,7 +21,8 @@ class App: Application(), Configuration.Provider, ImageLoaderFactory {
     override fun onCreate() {
         super.onCreate()
         initAppTheme()
-        //initAndroidStrictMode()
+        initAndroidStrictMode()
+        initLeakCanary()
     }
 
     override fun getWorkManagerConfiguration(): Configuration {
@@ -45,7 +46,7 @@ class App: Application(), Configuration.Provider, ImageLoaderFactory {
 
     private fun initAndroidStrictMode() {
         initStrictMode(
-            enable = BuildConfig.DEBUG,
+            enable = BuildConfig.DEBUG && false,
             enableDefaults = false
         ) {
             threadPolicy {
@@ -71,5 +72,9 @@ class App: Application(), Configuration.Provider, ImageLoaderFactory {
                 }
             }
         }
+    }
+
+    private fun initLeakCanary() {
+
     }
 }
