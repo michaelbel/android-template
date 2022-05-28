@@ -15,7 +15,6 @@ import org.michaelbel.template.extensions.testApi
  * @see <a href="https://d.android.com/google/play/installreferrer/library">Play Install Referrer Library</a>
  */
 
-private const val ActivityVersion = "1.4.0"
 private const val AdsIdentifierVersion = "1.0.0-alpha04"
 private const val AnnotationVersion = "1.3.0"
 private const val AnnotationExperimentalVersion = "1.2.0"
@@ -55,7 +54,6 @@ private const val EmojiVersion = "1.1.0"
 private const val Emoji2Version = "1.1.0"
 private const val EnterpriseVersion = "1.1.0"
 private const val ExifinterfaceVersion = "1.3.3"
-private const val FragmentVersion = "1.4.0"
 private const val GlanceVersion = "1.0.0-alpha01"
 private const val GridLayoutVersion = "1.0.0"
 private const val HealthVersion = "1.0.0-alpha03"
@@ -67,9 +65,6 @@ private const val Media2Version = "1.2.0"
 private const val Media3Version = "1.0.0-alpha01"
 private const val MediaRouterVersion = "1.2.5"
 private const val MetricsVersion = "1.0.0-alpha01"
-private const val NavigationVersion = "2.3.5"
-private const val NavigationSafeArgsPluginVersion = "2.5.0-alpha01"
-private const val NavigationComposeVersion = "2.4.0-rc01"
 private const val PaletteVersion = "1.0.0"
 private const val PreferenceVersion = "1.1.1"
 private const val PrintVersion = "1.0.0"
@@ -106,8 +101,6 @@ private const val ViewPager2Version = "1.0.0"
 private const val WebkitVersion = "1.4.0"
 private const val WindowVersion = "1.0.0-rc01"
 
-private const val Activity = "androidx.activity:activity-ktx:$ActivityVersion"
-private const val ActivityCompose = "androidx.activity:activity-compose:$ActivityVersion"
 private const val AdsIdentifier = "androidx.ads:ads-identifier:$AdsIdentifierVersion"
 private const val Annotation = "androidx.annotation:annotation:$AnnotationVersion"
 private const val AnnotationExperimental = "androidx.annotation:annotation-experimental:$AnnotationExperimentalVersion"
@@ -164,8 +157,6 @@ private const val Emoji2ViewsHelper = "androidx.emoji2:emoji2-views-helper:$Emoj
 private const val EnterpriseFeedback = "androidx.enterprise:enterprise-feedback:$EnterpriseVersion"
 private const val EnterpriseFeedbackTesting = "androidx.enterprise:enterprise-feedback-testing:$EnterpriseVersion"
 private const val Exifinterface = "androidx.exifinterface:exifinterface:$ExifinterfaceVersion"
-private const val Fragment = "androidx.fragment:fragment-ktx:$FragmentVersion"
-private const val FragmentTesting = "androidx.fragment:fragment-testing:$FragmentVersion"
 private const val Glance = "androidx.glance:glance:$GlanceVersion"
 private const val GlanceAppWidget = "androidx.glance:glance-appwidget:$GlanceVersion"
 private const val GridLayout = "androidx.gridlayout:gridlayout:$GridLayoutVersion"
@@ -200,12 +191,6 @@ private const val Media3Datasource = "androidx.media3:media3-datasource:$Media3V
 private const val Media3Common = "androidx.media3:media3-common:$Media3Version"
 private const val MediaRouter = "androidx.mediarouter:mediarouter:$MediaRouterVersion"
 private const val Metrics = "androidx.metrics:metrics-performance:$MetricsVersion"
-const val NavigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$NavigationSafeArgsPluginVersion"
-private const val NavigationCompose = "androidx.navigation:navigation-compose:$NavigationComposeVersion"
-private const val NavigationDynamic = "androidx.navigation:navigation-dynamic-features-fragment:$NavigationVersion"
-private const val NavigationFragment = "androidx.navigation:navigation-fragment-ktx:$NavigationVersion"
-private const val NavigationTesting = "androidx.navigation:navigation-testing:$NavigationVersion"
-private const val NavigationUi = "androidx.navigation:navigation-ui-ktx:$NavigationVersion"
 private const val Palette = "androidx.palette:palette-ktx:$PaletteVersion"
 private const val Preference = "androidx.preference:preference-ktx:$PreferenceVersion"
 private const val Print = "androidx.print:print:$PrintVersion"
@@ -250,8 +235,6 @@ private const val Window = "androidx.window:window:$WindowVersion"
 private const val WindowTesting = "androidx.window:window-testing:$WindowVersion"
 
 fun DependencyHandler.apiJetpackDependencies() {
-    api(Activity)
-    api(ActivityCompose)
     api(AppCompat)
     api(Browser)
     api(ConstraintLayoutCompose)
@@ -260,11 +243,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(DataStoreCore)
     api(DataStorePreferences)
     api(DataStorePreferencesCore)
-    api(Fragment)
-    api(NavigationCompose)
-    api(NavigationDynamic)
-    api(NavigationFragment)
-    api(NavigationUi)
     api(RecyclerView)
     api(ResourceInspection)
     api(ViewPager2)
@@ -272,7 +250,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(WindowTesting)
     testApi(TestCore)
     androidTestApi(ArchCoreTesting)
-    androidTestApi(NavigationTesting)
     androidTestApi(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
     androidTestApi(TestCore)
@@ -289,5 +266,4 @@ fun DependencyHandler.implementationJetpackTestDependencies() {
     androidTestImplementation(TestCore)
     androidTestImplementation(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
-    androidTestImplementation(NavigationTesting)
 }

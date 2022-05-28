@@ -13,6 +13,7 @@ import org.michaelbel.template.dependencies.apiJetpackDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
 import org.michaelbel.template.dependencies.apiLifecycleDependencies
 import org.michaelbel.template.dependencies.apiMaterialDependencies
+import org.michaelbel.template.dependencies.apiNavigationDependencies
 import org.michaelbel.template.dependencies.apiPagingDependencies
 import org.michaelbel.template.dependencies.apiRetrofitDependencies
 import org.michaelbel.template.dependencies.apiRoomDependencies
@@ -92,4 +93,5 @@ dependencies {
     apiTestDependencies()
     apiViewBindingPropertyDelegateDependencies()
     apiStartupDependencies()
+    apiNavigationDependencies()
 }

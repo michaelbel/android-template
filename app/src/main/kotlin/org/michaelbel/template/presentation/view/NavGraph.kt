@@ -19,7 +19,6 @@ enum class Screen {
     ConstraintsGuideline,
     Fonts,
     Main,
-    NavArgs,
     Storage
 }
 
@@ -33,7 +32,6 @@ val screensMap: Map<Screen, Int> = mapOf(
     Screen.ConstraintsGuideline to R.id.constraintsGuidelineFragment,
     Screen.Fonts to R.id.fontsFragment,
     Screen.Main to R.id.mainFragment,
-    Screen.NavArgs to R.id.navArgsFragment,
     Screen.Storage to R.id.storageFragment
 )
 

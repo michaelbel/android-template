@@ -13,6 +13,7 @@ import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.implementationComposeTestDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
+import org.michaelbel.template.dependencies.implementationRxDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
 
@@ -127,4 +128,5 @@ dependencies {
     implementationTestDependencies()
     implementationJetpackTestDependencies()
     implementationComposeTestDependencies()
+    implementationRxDependencies()
 }
