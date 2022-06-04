@@ -14,6 +14,7 @@ import org.michaelbel.template.dependencies.implementationComposeTestDependencie
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
 import org.michaelbel.template.dependencies.implementationLeakCanaryDependencies
+import org.michaelbel.template.dependencies.implementationNavigationDependencies
 import org.michaelbel.template.dependencies.implementationRxDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
@@ -131,4 +132,5 @@ dependencies {
     implementationComposeTestDependencies()
     implementationRxDependencies()
     implementationLeakCanaryDependencies()
+    implementationNavigationDependencies()
 }

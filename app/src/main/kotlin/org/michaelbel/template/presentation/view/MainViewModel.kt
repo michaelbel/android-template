@@ -8,11 +8,16 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.rxjava3.core.Observable
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
@@ -27,6 +32,25 @@ class MainViewModel @Inject constructor(
 
     private val screensList = MutableStateFlow<List<ScreenData>>(listOf())
     private val networkLoading = MutableStateFlow(false)
+
+    val observable = Observable.just(1, 2, 3)
+        .map { number: Int -> number * number }
+
+    private val flow: Flow<Int> = flowOf()
+
+    val stateFlow: StateFlow<Int> = flow
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5_000),
+            initialValue = 0
+        )
+
+    val sharedFlow: SharedFlow<Int> = flow
+        .shareIn(
+            scope = viewModelScope,
+            started = SharingStarted.Lazily,
+            replay = 0
+        )
 
     val uiState: StateFlow<MainScreenState> = combine(
         screensList,
@@ -48,6 +72,10 @@ class MainViewModel @Inject constructor(
             updateAvailableMessage = updateAvailable
         }
         setContent()
+
+        observable.subscribe {
+
+        }
     }
 
     @Inject

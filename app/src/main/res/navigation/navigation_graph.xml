@@ -53,25 +53,15 @@
         android:label="Fonts"/>
 
     <fragment
-        android:id="@+id/navArgsFragment"
-        android:name="org.michaelbel.template.presentation.navagrs.NavArgsFragment"
-        android:label="NavArgs">
+        android:id="@+id/storageFragment"
+        android:name="org.michaelbel.template.storage.StorageFragment"
+        android:label="Storage">
 
         <argument
-            android:name="firstText"
-            app:argType="string"
-            app:nullable="true"/>
-
-        <argument
-            android:name="secondNumber"
+            android:name="notificationsCount"
             android:defaultValue="0"
             app:argType="integer"/>
 
     </fragment>
-
-    <fragment
-        android:id="@+id/storageFragment"
-        android:name="org.michaelbel.template.storage.StorageFragment"
-        android:label="Storage"/>
 
 </navigation>

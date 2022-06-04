@@ -1,8 +1,7 @@
-package org.michaelbel.template.inappupdate
+package org.michaelbel.template.downloadfile
 
 import android.content.Context
-import com.google.android.play.core.appupdate.AppUpdateManager
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import androidx.work.WorkManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,12 +10,12 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object UpdateModule {
+object WorkModule {
 
     @Provides
-    fun provideAppUpdateManager(
+    fun provideWorkManager(
         @ApplicationContext context: Context
-    ): AppUpdateManager {
-        return AppUpdateManagerFactory.create(context)
+    ): WorkManager {
+        return WorkManager.getInstance(context)
     }
 }

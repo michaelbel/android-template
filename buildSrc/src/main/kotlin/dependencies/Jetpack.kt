@@ -12,7 +12,6 @@ import org.michaelbel.template.extensions.testApi
  * Jetpack & AndroidX
  *
  * @see <a href="https://d.android.com/jetpack/androidx/releases">AndroidX releases</a>
- * @see <a href="https://d.android.com/google/play/installreferrer/library">Play Install Referrer Library</a>
  */
 
 private const val AdsIdentifierVersion = "1.0.0-alpha04"

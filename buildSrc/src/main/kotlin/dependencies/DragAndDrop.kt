@@ -15,6 +15,6 @@ private const val DragAndDropVersion = "1.0.0"
 
 private const val DragAndDrop = "androidx.draganddrop:draganddrop:$DragAndDropVersion"
 
-fun DependencyHandler.implementationDragAndDropDependency() {
+fun DependencyHandler.implementationDragAndDropDependencies() {
     implementation(DragAndDrop)
 }
