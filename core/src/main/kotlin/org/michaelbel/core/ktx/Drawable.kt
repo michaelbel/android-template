@@ -36,7 +36,10 @@ fun Drawable.toBitmap(): Bitmap {
     return bitmap
 }
 
-fun Context.getTintDrawable(@DrawableRes drawableRes: Int, @ColorRes colorRes: Int): Drawable {
+fun Context.getTintDrawable(
+    @DrawableRes drawableRes: Int,
+    @ColorRes colorRes: Int
+): Drawable {
     val source = ContextCompat.getDrawable(this, drawableRes)?.mutate()
     val wrapped = DrawableCompat.wrap(source as Drawable)
     DrawableCompat.setTint(wrapped, ContextCompat.getColor(this, colorRes))
@@ -48,17 +51,21 @@ fun Drawable.setColor(@ColorInt color: Int) {
         .createBlendModeColorFilterCompat(color, BlendModeCompat.SRC_ATOP)
 }
 
-fun Context.selectableItemBackgroundDrawable(@ColorRes colorRes: Int? = null): Drawable? {
+fun Context.selectableItemBackgroundDrawable(
+    @ColorRes colorRes: Int? = null
+): Drawable? {
     val attrs = intArrayOf(android.R.attr.selectableItemBackground)
     val typedArray = obtainStyledAttributes(attrs)
     val drawableSelectable = typedArray.getDrawable(0)
     typedArray.recycle()
 
     if (colorRes != null) {
-        return LayerDrawable(arrayOf(
-            ColorDrawable(ContextCompat.getColor(this, colorRes)),
-            drawableSelectable
-        ))
+        return LayerDrawable(
+            arrayOf(
+                ColorDrawable(ContextCompat.getColor(this, colorRes)),
+                drawableSelectable
+            )
+        )
     }
 
     return drawableSelectable

@@ -97,7 +97,7 @@ val String.isEmail: Boolean
  */
 val String.mostCommonChar: Char?
     get() {
-        if (length == 0) return null
+        if (this.isEmpty()) return null
         val map = hashMapOf<Char, Int>()
         for (char in toCharArray()) map[char] = (map[char] ?: 0) + 1
         var maxEntry = map.entries.elementAt(0)
