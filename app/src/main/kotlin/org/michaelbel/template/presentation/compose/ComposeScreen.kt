@@ -1,7 +1,6 @@
 package org.michaelbel.template.presentation.compose
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -53,7 +52,7 @@ private fun Content(
 ) {
     val listState: LazyListState = rememberLazyListState()
 
-    val list = mapOf(
+    val list: List<Pair<String, String>> = mapOf(
         ROUTE_AUTH to "Auth",
         ROUTE_CLIPBOARD to "Clipboard",
         ROUTE_DOWNLOAD_FILE to "Download File",
@@ -64,40 +63,36 @@ private fun Content(
         ROUTE_CONFIG to "Config",
         ROUTE_SERVICE to "Service",
         ROUTE_TOAST to "Toast"
-    )
+    ).toList()
 
-    Box(
-        modifier = Modifier.fillMaxSize()
+    LazyColumn(
+        state = listState,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(bottom = 80.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LazyColumn(
-            state = listState,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 80.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            items(list.toList()) { (route, title) ->
-                ListItem(
-                    text = {
-                        Text(
-                            text = title
-                        )
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            navController.navigate(route) {
-                                navController.graph.startDestinationRoute?.let { route ->
-                                    popUpTo(route) {
-                                        saveState = true
-                                    }
+        items(list) { (route, title) ->
+            ListItem(
+                text = {
+                    Text(
+                        text = title
+                    )
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable {
+                        navController.navigate(route) {
+                            navController.graph.startDestinationRoute?.let { route ->
+                                popUpTo(route) {
+                                    saveState = true
                                 }
-                                restoreState = true
-                                launchSingleTop = true
                             }
+                            restoreState = true
+                            launchSingleTop = true
                         }
-                )
-            }
+                    }
+            )
         }
     }
 }
