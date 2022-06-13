@@ -110,6 +110,4 @@ jobs:
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
           format: markdown
-          message: |
-            Changes:  
-            "${{ steps.read_file.outputs.contents }}"
+          message: ${{ steps.read_file.outputs.contents }}
