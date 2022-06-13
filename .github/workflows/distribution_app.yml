@@ -115,5 +115,4 @@ jobs:
           format: markdown
           message: |
             New Artifacts Available in [Repository](https://github.com/${{ github.repository }})!
-            Include Commits:
-            ${{ steps.package.outputs.content }}
+            Include Commits: ${{ steps.package.outputs.content }} done
