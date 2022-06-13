@@ -5,6 +5,10 @@ on:
     branches:
       '**'
   workflow_dispatch:
+  
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   pr:
@@ -14,7 +18,7 @@ jobs:
       KEYSTORE_KEY_PASSWORD: ${{secrets.KEYSTORE_KEY_PASSWORD}}
       KEYSTORE_STORE_PASSWORD: ${{secrets.KEYSTORE_STORE_PASSWORD}}
     
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     timeout-minutes: 30
     
     steps:
@@ -28,12 +32,30 @@ jobs:
           
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
+        
+      - name: Lint
+        run: ./gradlew lint
+        
+      - name: Ktlint
+        run: ./gradlew ktlintCheck
           
       - name: Detekt
         run: ./gradlew detekt
         
+      - name: Spotless
+        run: ./gradlew spotlessCheck
+        
       - name: Unit Tests
         run: ./gradlew testDebugUnitTest
+        
+#      - name: Instrimentation Tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 29
+#          target: default
+#          arch: x86
+#          profile: Nexus 6
+#          script: ./gradlew connectedCheck --stacktrace
         
       - name: Build
         run: ./gradlew compileDebugKotlin
