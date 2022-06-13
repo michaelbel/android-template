@@ -1,0 +1,3 @@
+* Error strings fix
+* Button text color fix
+* Apple login fix
