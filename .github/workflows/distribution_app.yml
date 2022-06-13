@@ -20,11 +20,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
-      
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
@@ -36,7 +31,7 @@ jobs:
           java-version: 1.11
           
       - name: Decode Keystore File
-        id: decode_keystore_file
+#        id: decode_keystore_file
         uses: timheuer/base64-to-file@v1
         with:
           fileName: 'keystore_release.jks'
@@ -52,21 +47,21 @@ jobs:
 #          expose-version-name: 'true'
 #          expose-version-code: 'true'
           
-#      - name: Build Debug Artifacts
-#        run: ./gradlew app:assembleDebug
+      - name: Build Debug Artifacts
+        run: ./gradlew app:assembleDebug
           
-#      - name: Build Release Artifacts
-#        run: ./gradlew app:assembleRelease
+      - name: Build Release Artifacts
+        run: ./gradlew app:assembleRelease
         
-#      - name: Build Bundle Artifacts
-#        run: ./gradlew app:bundleRelease
+      - name: Build Bundle Artifacts
+        run: ./gradlew app:bundleRelease
  
-#      - name: Upload Artifacts to Outputs
-#        uses: actions/upload-artifact@v2
-#        with:
-#          path: |
-#            app/build/outputs/apk
-#            app/build/outputs/bundle
+      - name: Upload Artifacts to Outputs
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            app/build/outputs/apk
+            app/build/outputs/bundle
       
 #     - name: Create GitHub Release
 #       uses: softprops/action-gh-release@v1
@@ -79,21 +74,21 @@ jobs:
 #           app/build/outputs/apk/**/*.apk
 #           app/build/outputs/bundle/**/*.aab
           
-#      - name: Distribute Artifacts via Firebase
-#        run: ./gradlew appDistributionUploadRelease
-#        env:
-#          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Distribute Artifacts via Firebase
+        run: ./gradlew appDistributionUploadRelease
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-#      - name: Create Service Account JSON File
-#        run: echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}' > service_account.json
+      - name: Create Service Account JSON File
+        run: echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}' > service_account.json
         
-#      - name: Upload Bundle to Google Play Console
-#        uses: sokchanbo/android-upload-google-play@v1.0.0
-#        with:
-#          service-account: service_account.json
-#          package-name: org.michaelbel.template
-#          release-file: app/build/outputs/bundle/**/*.aab
-#          track: internal
+      - name: Upload Bundle to Google Play Console
+        uses: sokchanbo/android-upload-google-play@v1.0.0
+        with:
+          service-account: service_account.json
+          package-name: org.michaelbel.template
+          release-file: app/build/outputs/bundle/**/*.aab
+          track: internal
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
@@ -104,7 +99,3 @@ jobs:
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
           message_file: ./releaseNotes.txt
-#          format: markdown
-#          message: |
-#            Commit message: ${{ github.event.commits[0].message }}
-#            Commits: ${{ github.event.commits }}
