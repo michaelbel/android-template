@@ -100,6 +100,9 @@ jobs:
         id: read_file
         with:
           file: ./releaseNotes.txt
+          
+      - name: Set Release Notes as Environment
+        run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $RELEASE_NOTES
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
@@ -109,5 +112,5 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           document: app/build/outputs/apk/**/*.apk
-          format: markdown
-          message: ${{ steps.read_file.outputs.contents }}
+#          format: markdown
+          message: ${{ env.RELEASE_NOTES }}
