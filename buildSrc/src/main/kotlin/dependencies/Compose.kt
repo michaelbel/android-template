@@ -15,9 +15,10 @@ import org.michaelbel.template.extensions.implementation
  * @see <a href="https://d.android.com/jetpack/androidx/releases/compose">Compose</a>
  */
 
-private const val ComposeVersion = "1.1.1"
+private const val ComposeVersion = "1.2.0-beta01"
 
-private const val Material3Version = "1.0.0-SNAPSHOT"
+private const val Material3Version = "1.0.0-alpha11"
+private const val Material3SamplesVersion = "1.0.0-SNAPSHOT"
 private const val MaterialIconsVersion = "1.1.0-SNAPSHOT"
 
 private const val ComposeAnimation = "androidx.compose.animation:animation:$ComposeVersion"
@@ -26,9 +27,9 @@ private const val ComposeCompiler = "androidx.compose.compiler:compiler:$Compose
 private const val ComposeFoundation = "androidx.compose.foundation:foundation:$ComposeVersion"
 private const val ComposeFoundationLayout = "androidx.compose.foundation:foundation-layout:$ComposeVersion"
 private const val ComposeMaterialIconsCore = "androidx.compose.material:material-icons-core-samples:$MaterialIconsVersion"
-private const val ComposeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:$MaterialIconsVersion"
+private const val ComposeMaterialIconsExtended = "androidx.compose.material:material-icons-extended:$ComposeVersion"
 private const val ComposeMaterial3 = "androidx.compose.material3:material3:$Material3Version"
-private const val ComposeMaterial3Samples = "androidx.compose.material3:material3-samples:$Material3Version"
+private const val ComposeMaterial3Samples = "androidx.compose.material3:material3-samples:$Material3SamplesVersion"
 private const val ComposeRuntime = "androidx.compose.runtime:runtime:$ComposeVersion"
 private const val ComposeRuntimeLivedata = "androidx.compose.runtime:runtime-livedata:$ComposeVersion"
 private const val ComposeUi = "androidx.compose.ui:ui:$ComposeVersion"

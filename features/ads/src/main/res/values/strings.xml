@@ -1,0 +1,5 @@
+<resources>
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="title_ads">Ads</string>
+    <string name="show_ad">Show Ad</string>
+</resources>

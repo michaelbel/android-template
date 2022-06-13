@@ -13,12 +13,14 @@ import org.michaelbel.template.dependencies.apiJetpackDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
 import org.michaelbel.template.dependencies.apiLifecycleDependencies
 import org.michaelbel.template.dependencies.apiMaterialDependencies
+import org.michaelbel.template.dependencies.apiNavigationDependencies
 import org.michaelbel.template.dependencies.apiPagingDependencies
-import org.michaelbel.template.dependencies.apiPlayCoreDependencies
 import org.michaelbel.template.dependencies.apiRetrofitDependencies
 import org.michaelbel.template.dependencies.apiRoomDependencies
+import org.michaelbel.template.dependencies.apiStartupDependencies
 import org.michaelbel.template.dependencies.apiTestDependencies
 import org.michaelbel.template.dependencies.apiTimberDependencies
+import org.michaelbel.template.dependencies.apiViewBindingPropertyDelegateDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 
 plugins {
@@ -44,7 +46,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -78,7 +83,6 @@ dependencies {
     apiPagingDependencies()
     apiRoomDependencies()
     apiGooglePlayServicesDependencies()
-    apiPlayCoreDependencies()
     apiMaterialDependencies()
     apiAccompanistDependencies()
     apiFirebaseDependencies()
@@ -87,4 +91,7 @@ dependencies {
     apiTimberDependencies()
     apiChuckerDependencies()
     apiTestDependencies()
+    apiViewBindingPropertyDelegateDependencies()
+    apiStartupDependencies()
+    apiNavigationDependencies()
 }

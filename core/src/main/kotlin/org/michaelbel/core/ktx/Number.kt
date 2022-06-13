@@ -2,6 +2,7 @@
 
 package org.michaelbel.core.ktx
 
+import android.app.Activity
 import android.content.Context
 import android.util.TypedValue
 import java.util.Locale
@@ -14,9 +15,23 @@ fun Number.dp(context: Context): Int = TypedValue.applyDimension(
     context.resources.displayMetrics
 ).roundToInt()
 
+context(Activity)
+val Number.dp: Int
+    get() = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        toFloat(),
+        resources.displayMetrics
+    ).roundToInt()
+
 fun Number.isBetween(int1: Int, int2: Int): Boolean = this in (int1 + 1) until int2
 
 infix fun Number.isBetween(range: IntRange): Boolean = this in range.first until range.last
+
+val Number.isInteger: Boolean
+    get() {
+        val afterDecimal: String = toString().substringAfter('.')
+        return afterDecimal.toInt() == 0
+    }
 
 val Long.formatSize: String
     get() = when {

@@ -11,13 +11,13 @@ import org.michaelbel.template.dependencies.FirebaseAppDistribution
 import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.implementationComposeTestDependencies
-import org.michaelbel.template.dependencies.implementationFacebookDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
+import org.michaelbel.template.dependencies.implementationLeakCanaryDependencies
+import org.michaelbel.template.dependencies.implementationNavigationDependencies
+import org.michaelbel.template.dependencies.implementationRxDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
-import org.michaelbel.template.dependencies.implementationViewBindingPropertyDelegateDependencies
-import org.michaelbel.template.dependencies.implementationVkDependencies
 
 plugins {
     // google-services before firebase
@@ -83,7 +83,10 @@ android {
             isDebuggable = false
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("release")
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
 
             firebaseAppDistribution {
                 appId = FirebaseAppDistribution.MobileSdkAppId
@@ -121,14 +124,13 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    api(project(":features"))
-
+    implementation(project(":features"))
     implementationHiltDependencies()
-    implementationFacebookDependencies()
-    implementationVkDependencies()
-    implementationViewBindingPropertyDelegateDependencies()
     implementationStrictModeCompatDependencies()
     implementationTestDependencies()
     implementationJetpackTestDependencies()
     implementationComposeTestDependencies()
+    implementationRxDependencies()
+    implementationLeakCanaryDependencies()
+    implementationNavigationDependencies()
 }

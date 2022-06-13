@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_remote_config">Remote Config</string>
+    <string name="button_fetch_boolean">Fetch Boolean Value</string>
+    <string name="button_fetch_string">Fetch String Value</string>
+    <string name="button_fetch_number">Fetch Number Value</string>
+</resources>

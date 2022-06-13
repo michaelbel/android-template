@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Day Theme
+
+    Android 12 (API level 31)
+
+    Added:
+    windowSplashScreenBrandingImage
+-->
+
+<resources>
+
+    <style name="Theme.Base.V31" parent="Theme.Base.V27"/>
+
+    <style name="Theme.App" parent="Theme.Base.V31"/>
+
+</resources>

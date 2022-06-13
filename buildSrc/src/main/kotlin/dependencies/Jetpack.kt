@@ -12,10 +12,8 @@ import org.michaelbel.template.extensions.testApi
  * Jetpack & AndroidX
  *
  * @see <a href="https://d.android.com/jetpack/androidx/releases">AndroidX releases</a>
- * @see <a href="https://d.android.com/google/play/installreferrer/library">Play Install Referrer Library</a>
  */
 
-private const val ActivityVersion = "1.4.0"
 private const val AdsIdentifierVersion = "1.0.0-alpha04"
 private const val AnnotationVersion = "1.3.0"
 private const val AnnotationExperimentalVersion = "1.2.0"
@@ -49,21 +47,16 @@ private const val CursorAdapterVersion = "1.0.0"
 private const val CustomViewVersion = "1.1.0"
 private const val DataStoreVersion = "1.0.0"
 private const val DocumentFileVersion = "1.0.1"
-private const val DragAndDropVersion = "1.0.0-alpha02"
 private const val DrawerLayoutVersion = "1.1.1"
 private const val DynamicAnimationVersion = "1.1.0-alpha03"
 private const val EmojiVersion = "1.1.0"
 private const val Emoji2Version = "1.1.0"
 private const val EnterpriseVersion = "1.1.0"
 private const val ExifinterfaceVersion = "1.3.3"
-private const val FragmentVersion = "1.4.0"
 private const val GlanceVersion = "1.0.0-alpha01"
 private const val GridLayoutVersion = "1.0.0"
 private const val HealthVersion = "1.0.0-alpha03"
 private const val HeifWriterVersion = "1.1.0-alpha01"
-private const val HiltNavigationComposeVersion = "1.0.0-rc01"
-private const val HiltNavigationFragmentVersion = "1.0.0"
-private const val HiltWorkVersion = "1.0.0"
 private const val InterpolatorVersion = "1.0.0"
 private const val LoaderVersion = "1.1.0"
 private const val MediaVersion = "1.4.3"
@@ -71,9 +64,6 @@ private const val Media2Version = "1.2.0"
 private const val Media3Version = "1.0.0-alpha01"
 private const val MediaRouterVersion = "1.2.5"
 private const val MetricsVersion = "1.0.0-alpha01"
-private const val NavigationVersion = "2.3.5"
-private const val NavigationSafeArgsPluginVersion = "2.5.0-alpha01"
-private const val NavigationComposeVersion = "2.4.0-rc01"
 private const val PaletteVersion = "1.0.0"
 private const val PreferenceVersion = "1.1.1"
 private const val PrintVersion = "1.0.0"
@@ -90,7 +80,6 @@ private const val SecurityAppAuthenticatorVersion = "1.0.0-alpha02"
 private const val ShareTargetVersion = "1.2.0-rc01"
 private const val SliceVersion = "1.1.0-alpha02"
 private const val SlidingPanelLayoutVersion = "1.2.0-rc01"
-private const val StartupVersion = "1.1.0"
 private const val SwipeRefreshLayoutVersion = "1.1.0"
 private const val TestCoreVersion = "1.4.0"
 private const val TestEspressoVersion = "3.4.0"
@@ -110,10 +99,7 @@ private const val VersionedParcelableVersion = "1.1.1"
 private const val ViewPager2Version = "1.0.0"
 private const val WebkitVersion = "1.4.0"
 private const val WindowVersion = "1.0.0-rc01"
-private const val WorkVersion = "2.7.1"
 
-private const val Activity = "androidx.activity:activity-ktx:$ActivityVersion"
-private const val ActivityCompose = "androidx.activity:activity-compose:$ActivityVersion"
 private const val AdsIdentifier = "androidx.ads:ads-identifier:$AdsIdentifierVersion"
 private const val Annotation = "androidx.annotation:annotation:$AnnotationVersion"
 private const val AnnotationExperimental = "androidx.annotation:annotation-experimental:$AnnotationExperimentalVersion"
@@ -159,7 +145,6 @@ private const val DataStoreCore = "androidx.datastore:datastore-core:$DataStoreV
 private const val DataStorePreferences = "androidx.datastore:datastore-preferences:$DataStoreVersion"
 private const val DataStorePreferencesCore = "androidx.datastore:datastore-preferences-core:$DataStoreVersion"
 private const val DocumentFile = "androidx.documentfile:documentfile:$DocumentFileVersion"
-private const val DragAndDrop = "androidx.draganddrop:draganddrop:$DragAndDropVersion"
 private const val DrawerLayout = "androidx.drawerlayout:drawerlayout:$DrawerLayoutVersion"
 private const val DynamicAnimation = "androidx.dynamicanimation:dynamicanimation-ktx:$DynamicAnimationVersion"
 private const val Emoji = "androidx.emoji:emoji:$EmojiVersion"
@@ -171,16 +156,11 @@ private const val Emoji2ViewsHelper = "androidx.emoji2:emoji2-views-helper:$Emoj
 private const val EnterpriseFeedback = "androidx.enterprise:enterprise-feedback:$EnterpriseVersion"
 private const val EnterpriseFeedbackTesting = "androidx.enterprise:enterprise-feedback-testing:$EnterpriseVersion"
 private const val Exifinterface = "androidx.exifinterface:exifinterface:$ExifinterfaceVersion"
-private const val Fragment = "androidx.fragment:fragment-ktx:$FragmentVersion"
-private const val FragmentTesting = "androidx.fragment:fragment-testing:$FragmentVersion"
 private const val Glance = "androidx.glance:glance:$GlanceVersion"
 private const val GlanceAppWidget = "androidx.glance:glance-appwidget:$GlanceVersion"
 private const val GridLayout = "androidx.gridlayout:gridlayout:$GridLayoutVersion"
 private const val Health = "androidx.health:health-services-client:$HealthVersion"
 private const val Heifwriter = "androidx.heifwriter:heifwriter:$HeifWriterVersion"
-private const val HiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:$HiltNavigationComposeVersion"
-private const val HiltNavigationFragment = "androidx.hilt:hilt-navigation-fragment:$HiltNavigationFragmentVersion"
-private const val HiltWork = "androidx.hilt:hilt-work:$HiltWorkVersion"
 private const val Interpolator = "androidx.interpolator:interpolator:$InterpolatorVersion"
 private const val Loader = "androidx.loader:loader:$LoaderVersion"
 private const val Media = "androidx.media:media:$MediaVersion"
@@ -210,12 +190,6 @@ private const val Media3Datasource = "androidx.media3:media3-datasource:$Media3V
 private const val Media3Common = "androidx.media3:media3-common:$Media3Version"
 private const val MediaRouter = "androidx.mediarouter:mediarouter:$MediaRouterVersion"
 private const val Metrics = "androidx.metrics:metrics-performance:$MetricsVersion"
-const val NavigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$NavigationSafeArgsPluginVersion"
-private const val NavigationCompose = "androidx.navigation:navigation-compose:$NavigationComposeVersion"
-private const val NavigationDynamic = "androidx.navigation:navigation-dynamic-features-fragment:$NavigationVersion"
-private const val NavigationFragment = "androidx.navigation:navigation-fragment-ktx:$NavigationVersion"
-private const val NavigationTesting = "androidx.navigation:navigation-testing:$NavigationVersion"
-private const val NavigationUi = "androidx.navigation:navigation-ui-ktx:$NavigationVersion"
 private const val Palette = "androidx.palette:palette-ktx:$PaletteVersion"
 private const val Preference = "androidx.preference:preference-ktx:$PreferenceVersion"
 private const val Print = "androidx.print:print:$PrintVersion"
@@ -235,7 +209,6 @@ private const val SliceBuilders = "androidx.slice:slice-builders-ktx:$SliceVersi
 private const val SliceCore = "androidx.slice:slice-core:$SliceVersion"
 private const val SliceView = "androidx.slice:slice-view:$SliceVersion"
 private const val SlidingPanelLayout = "androidx.slidingpanelayout:slidingpanelayout:$SlidingPanelLayoutVersion"
-private const val Startup = "androidx.startup:startup-runtime:$StartupVersion"
 private const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:$SwipeRefreshLayoutVersion"
 private const val TestCore = "androidx.test:core-ktx:$TestCoreVersion"
 private const val TestEspressoAccessibility = "androidx.test.espresso:espresso-accessibility:$TestEspressoVersion"
@@ -259,14 +232,8 @@ private const val ViewPager2 = "androidx.viewpager2:viewpager2:$ViewPager2Versio
 private const val Webkit = "androidx.webkit:webkit:$WebkitVersion"
 private const val Window = "androidx.window:window:$WindowVersion"
 private const val WindowTesting = "androidx.window:window-testing:$WindowVersion"
-private const val WorkRuntime = "androidx.work:work-runtime-ktx:$WorkVersion"
-private const val WorkGcm = "androidx.work:work-gcm:$WorkVersion"
-private const val WorkMultiprocess = "androidx.work:work-multiprocess:$WorkVersion"
-private const val WorkTesting = "androidx.work:work-testing:$WorkVersion"
 
 fun DependencyHandler.apiJetpackDependencies() {
-    api(Activity)
-    api(ActivityCompose)
     api(AppCompat)
     api(Browser)
     api(ConstraintLayoutCompose)
@@ -275,23 +242,13 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(DataStoreCore)
     api(DataStorePreferences)
     api(DataStorePreferencesCore)
-    api(Fragment)
-    api(HiltNavigationCompose)
-    api(HiltNavigationFragment)
-    api(HiltWork)
-    api(NavigationCompose)
-    api(NavigationDynamic)
-    api(NavigationFragment)
-    api(NavigationUi)
     api(RecyclerView)
     api(ResourceInspection)
-    api(Startup)
     api(ViewPager2)
     api(Window)
     api(WindowTesting)
     testApi(TestCore)
     androidTestApi(ArchCoreTesting)
-    androidTestApi(NavigationTesting)
     androidTestApi(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
     androidTestApi(TestCore)
@@ -308,5 +265,4 @@ fun DependencyHandler.implementationJetpackTestDependencies() {
     androidTestImplementation(TestCore)
     androidTestImplementation(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
-    androidTestImplementation(NavigationTesting)
 }

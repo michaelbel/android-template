@@ -6,6 +6,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import org.gradle.kotlin.dsl.maven
 import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Google Play services, Material, Play Core
@@ -58,7 +59,7 @@ private const val GoogleServicesPluginVersion = "4.3.10"
 private const val OssLicensesPluginVersion = "0.10.4"
 private const val StrictPluginVersion = "1.2.2"
 
-private const val MaterialVersion = "1.6.0-alpha02"
+private const val MaterialVersion = "1.6.0"
 private const val MaterialComposeThemeAdapterVersion = "1.1.3"
 
 private const val PlayCoreVersion = "1.8.1"
@@ -113,14 +114,21 @@ const val OptExperimentalMaterialApi = "-Xopt-in=androidx.compose.material.Exper
 const val OptExperimentalMaterial3Api = "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api"
 
 fun DependencyHandler.apiGooglePlayServicesDependencies() {
-    api(Ads)
     api(Auth)
     api(Base)
+}
+
+fun DependencyHandler.implementationGooglePlayServicesAdsDependencies() {
+    implementation(Ads)
 }
 
 fun DependencyHandler.apiMaterialDependencies() {
     api(Material)
     api(MaterialComposeThemeAdapter)
+}
+
+fun DependencyHandler.implementationPlayCoreDependency() {
+    implementation(PlayCore)
 }
 
 fun DependencyHandler.apiPlayCoreDependencies() {

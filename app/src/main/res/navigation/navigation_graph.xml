@@ -8,71 +8,60 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="org.michaelbel.template.features.main.MainFragment"
+        android:name="org.michaelbel.template.presentation.view.MainFragment"
         android:label="Main"/>
 
     <fragment
         android:id="@+id/adsFragment"
-        android:name="org.michaelbel.template.features.ads.AdsFragment"
+        android:name="org.michaelbel.template.ads.AdsFragment"
         android:label="Ads"
         tools:layout="@layout/fragment_ads"/>
 
     <fragment
         android:id="@+id/constraintsBaselineFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsBaselineFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsBaselineFragment"
         android:label="ConstrainsBaseline"/>
 
     <fragment
         android:id="@+id/constraintsChainStyleFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsChainsFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsChainsFragment"
         android:label="ConstrainsChainStyle"/>
 
     <fragment
         android:id="@+id/constraintsCircularFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsCircularFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsCircularFragment"
         android:label="ConstrainsCircular"/>
 
     <fragment
         android:id="@+id/constraintsConstrainedWidthFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsConstrainedWidthFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsConstrainedWidthFragment"
         android:label="ConstrainsConstrainedWidth"/>
 
     <fragment
         android:id="@+id/constraintsGoneMarginFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsGoneMarginsFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsGoneMarginsFragment"
         android:label="ConstrainsGoneMargin"/>
 
     <fragment
         android:id="@+id/constraintsGuidelineFragment"
-        android:name="org.michaelbel.template.features.views.constraints.ConstrainsGuidelineFragment"
+        android:name="org.michaelbel.template.constraintlayout.ConstrainsGuidelineFragment"
         android:label="ConstrainsGuideline"/>
 
     <fragment
         android:id="@+id/fontsFragment"
-        android:name="org.michaelbel.template.features.views.fonts.FontsFragment"
+        android:name="org.michaelbel.template.fonts.FontsFragment"
         android:label="Fonts"/>
 
     <fragment
-        android:id="@+id/navArgsFragment"
-        android:name="org.michaelbel.template.features.navagrs.NavArgsFragment"
-        android:label="NavArgs">
+        android:id="@+id/storageFragment"
+        android:name="org.michaelbel.template.storage.StorageFragment"
+        android:label="Storage">
 
         <argument
-            android:name="firstText"
-            app:argType="string"
-            app:nullable="true"/>
-
-        <argument
-            android:name="secondNumber"
+            android:name="notificationsCount"
             android:defaultValue="0"
             app:argType="integer"/>
 
     </fragment>
-
-    <fragment
-        android:id="@+id/insetsFragment"
-        android:name="org.michaelbel.template.features.views.windowinsets.WindowInsetsFragment"
-        android:label="Insets"
-        tools:layout="@layout/fragment_window_insets"/>
 
 </navigation>

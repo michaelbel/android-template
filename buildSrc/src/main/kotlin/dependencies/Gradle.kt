@@ -8,6 +8,6 @@ package org.michaelbel.template.dependencies
  * @see <a href="https://github.com/gradle/gradle">Gradle</a>
  */
 
-private const val GradleVersion = "7.1.1"
+private const val GradleVersion = "7.2.1"
 
 const val Gradle = "com.android.tools.build:gradle:$GradleVersion"

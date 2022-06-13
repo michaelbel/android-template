@@ -1,0 +1,18 @@
+<resources>
+    <string name="title_constraints_baseline">Constraints Baseline</string>
+    <string name="constraints_baseline">Пример позиционирования по линии выравнивания контента элемента.</string>
+    <string name="constraints_baseline_to">Baseline to</string>
+    <string name="constraints_baseline_of">Baseline of</string>
+    <string name="title_constraints_chains">Constraints Chains</string>
+    <string name="constraints_chains">Пример позиционирования элементов цепочкой по центру без использования Guideline.</string>
+    <string name="title_constraints_circular">Constraints Circular</string>
+    <string name="constraints_circular">Пример позиционирования центра виджета относительно центра другого виджета под углом и на расстоянии, что позволяет разместить виджет в круге</string>
+    <string name="title_constraints_constrained_width">Constraints Constrained Width</string>
+    <string name="constraints_constrained_width">Пример ограниченной длины view в зависимости от размера контента.</string>
+    <string name="title_constraints_gone_margins">Constraints Gone Margins</string>
+    <string name="constraints_gone_margins">Пример позиционирования виджета с gone margins. Отступ слева при видимости view1 равен 8dp, при его невидимости 16dp</string>
+    <string name="title_constraints_guideline">Constraints Guideline</string>
+    <string name="constraints_guideline">Пример позиционирования элементов относительно невидимой линии Guideline</string>
+    <string name="title_constraints_flow">Constraints Flow</string>
+    <string name="constraints_flow">Пример позиционирования чепочки, которая переносится на новую строку, если не хватает места</string>
+</resources>

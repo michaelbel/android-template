@@ -8,6 +8,6 @@ package org.michaelbel.template.dependencies
  * @see <a href="https://github.com/detekt/detekt">Detekt</a>
  */
 
-const val DetektVersion = "1.19.0"
+const val DetektVersion = "1.20.0"
 
 const val Detekt = "io.gitlab.arturbosch.detekt"

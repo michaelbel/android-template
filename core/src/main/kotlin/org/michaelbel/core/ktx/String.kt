@@ -97,10 +97,23 @@ val String.isEmail: Boolean
  */
 val String.mostCommonChar: Char?
     get() {
-        if (length == 0) return null
+        if (this.isEmpty()) return null
         val map = hashMapOf<Char, Int>()
         for (char in toCharArray()) map[char] = (map[char] ?: 0) + 1
         var maxEntry = map.entries.elementAt(0)
         for (entry in map) maxEntry = if (entry.value > maxEntry.value) entry else maxEntry
         return maxEntry.key
     }
+
+fun String.takeNumber(countBefore: Int, countAfter: Int): String {
+    val filteredChars = filterIndexed { index, char ->
+        char in "0123456789" || (char == '.' && indexOf('.') == index)
+    }
+    return if(filteredChars.contains('.')) {
+        val beforeDecimal: String = filteredChars.substringBefore('.')
+        val afterDecimal = filteredChars.substringAfter('.')
+        beforeDecimal.take(countBefore) + "." + afterDecimal.take(countAfter)
+    } else {
+        filteredChars.take(countBefore)
+    }
+}

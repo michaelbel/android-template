@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_clipboard">Clipboard</string>
+    <string name="copy_to_clipboard">Copy to Clipboard</string>
+    <string name="paste_from_clipboard">Paste from Clipboard</string>
+    <string name="clear_clipboard">Clear Clipboard</string>
+</resources>

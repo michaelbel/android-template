@@ -2,19 +2,23 @@
 
 package org.michaelbel.core.ktx
 
-import android.app.Activity
 import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Insets
 import android.os.Build
 import android.util.DisplayMetrics
 import android.view.WindowInsets
+import android.view.WindowManager
 import android.view.WindowMetrics
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 
 @Suppress("Deprecation")
-inline val Activity.deviceWidth: Int
+inline val Context.deviceWidth: Int
     get() {
+        val windowManager: WindowManager = ContextCompat
+            .getSystemService(this, WindowManager::class.java) as WindowManager
+
         return if (Build.VERSION.SDK_INT >= 30) {
             val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
             val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(
@@ -29,8 +33,11 @@ inline val Activity.deviceWidth: Int
     }
 
 @Suppress("Deprecation")
-inline val Activity.deviceHeight: Int
+inline val Context.deviceHeight: Int
     get() {
+        val windowManager: WindowManager = ContextCompat
+            .getSystemService(this, WindowManager::class.java) as WindowManager
+
         return if (Build.VERSION.SDK_INT >= 30) {
             val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
             val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(

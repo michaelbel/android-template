@@ -1,6 +1,7 @@
 package org.michaelbel.template.ime
 
 import android.content.Context
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.KeyboardActions
@@ -36,7 +37,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.core.res.CoreStrings
 
 @Composable
 fun ImeScreen(
@@ -72,7 +72,7 @@ private fun Toolbar(
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(CoreStrings.cd_back)
+                    contentDescription = null
                 )
             }
         }
@@ -92,7 +92,9 @@ private fun Content() {
         focusRequester.requestFocus()
     }
 
-    LazyColumn {
+    LazyColumn(
+        modifier = Modifier.fillMaxWidth()
+    ) {
         item {
             TextField(
                 value = firstNameText,

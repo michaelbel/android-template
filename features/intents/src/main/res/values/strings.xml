@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_intents">Intents</string>
+    <string name="share_intent">Share Intent</string>
+    <string name="share_via">Share Via</string>
+    <string name="phone_intent">Phone Intent</string>
+    <string name="email_intent">Email Intent</string>
+    <string name="email_via">Email Via</string>
+    <string name="google_play">Google Play</string>
+    <string name="open_telegram_chat">Telegram Chat</string>
+    <string name="settings_panel">Settings Panel</string>
+    <string name="settings_panel_connectivity">Internet Connectivity</string>
+    <string name="settings_panel_nfc">NFC</string>
+    <string name="settings_panel_volume">Volume</string>
+    <string name="settings_panel_wifi">Wi-Fi</string>
+    <string name="actions">Actions</string>
+    <string name="voice_input">Voice Input</string>
+    <string name="app_settings">App Settings</string>
+    <string name="title_browser">Browser</string>
+    <string name="browser">Browser</string>
+    <string name="start_browser">Start Browser</string>
+    <string name="start_in_app_browser">Start In-App Browser</string>
+</resources>

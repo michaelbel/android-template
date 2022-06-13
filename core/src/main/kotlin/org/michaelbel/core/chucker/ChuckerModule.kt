@@ -15,7 +15,9 @@ import dagger.hilt.components.SingletonComponent
 object ChuckerModule {
 
     @Provides
-    fun provideChuckerInterceptor(@ApplicationContext context: Context): ChuckerInterceptor {
+    fun provideChuckerInterceptor(
+        @ApplicationContext context: Context
+    ): ChuckerInterceptor {
         val chuckerCollector = ChuckerCollector(
             context = context,
             showNotification = true,

@@ -15,5 +15,25 @@ pluginManagement {
     }
 }
 
-include(":app", ":core", ":features", ":features:ime", ":features:toast")
+include(
+    ":app",
+    ":core",
+    ":features",
+    ":features:ads",
+    ":features:auth",
+    ":features:clipboard",
+    ":features:constraintlayout",
+    ":features:downloadfile",
+    ":features:fonts",
+    ":features:ime",
+    ":features:inappreview",
+    ":features:inappupdate",
+    ":features:intents",
+    ":features:location",
+    ":features:receiver",
+    ":features:remoteconfig",
+    ":features:service",
+    ":features:storage",
+    ":features:toast"
+)
 rootProject.name = "android-app-template"

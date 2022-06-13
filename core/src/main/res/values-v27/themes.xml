@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Day Theme
+
+    Android 8.1 (API level 27)
+    Android 9 (API level 28)
+    Android 10 (API level 29)
+    Android 11 (API level 30)
+
+    Added:
+    windowLightNavigationBar
+    navigationBarDividerColor
+-->
+
+<resources>
+
+    <style name="Theme.Base.V27" parent="Theme.Base.V23"/>
+
+    <style name="Theme.App" parent="Theme.Base.V27"/>
+
+</resources>

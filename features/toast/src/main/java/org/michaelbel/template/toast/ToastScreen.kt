@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.core.res.CoreStrings
 
 /**
  * Android 11 Toast Updates: add callback.
@@ -49,13 +48,21 @@ private fun Toolbar(
     navController: NavController
 ) {
     SmallTopAppBar(
-        title = { Text(text = stringResource(R.string.title_toast)) },
+        title = {
+            Text(
+                text = stringResource(R.string.title_toast)
+            )
+        },
         modifier = Modifier.statusBarsPadding(),
         navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
+            IconButton(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = stringResource(CoreStrings.cd_back)
+                    contentDescription = null
                 )
             }
         }
@@ -94,7 +101,9 @@ private fun Content() {
     Box {
         Button(
             onClick = { onShowToast() },
-            modifier = Modifier.align(Alignment.Center).padding(start = 16.dp)
+            modifier = Modifier
+                .align(Alignment.Center)
+                .padding(start = 16.dp)
         ) {
             Text(
                 text = stringResource(R.string.show_toast)

@@ -5,6 +5,7 @@ package org.michaelbel.template.dependencies
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.VersionName
 import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Firebase
@@ -17,14 +18,14 @@ import org.michaelbel.template.extensions.api
  * @see <a href="https://mvnrepository.com/artifact/com.google.firebase/firebase-config">Firebase Config</a>
  */
 
-private const val FirebaseAbtVersion = "21.0.0"
-private const val FirebaseAnalyticsVersion = "20.0.2"
+private const val FirebaseAbtVersion = "21.0.1"
+private const val FirebaseAnalyticsVersion = "21.0.0"
 private const val FirebaseAppDistributionVersion = "3.0.0"
 private const val FirebaseCommonVersion = "20.0.0"
-private const val FirebaseConfigVersion = "21.0.1"
-private const val FirebaseCoreVersion = "20.0.2"
+private const val FirebaseConfigVersion = "21.1.0"
+private const val FirebaseCoreVersion = "21.0.0"
 private const val FirebaseCrashlyticsPluginVersion = "2.8.1"
-private const val FirebaseCrashlyticsVersion = "18.2.6"
+private const val FirebaseCrashlyticsVersion = "18.2.10"
 
 const val FirebaseAppDistributionPlugin = "com.google.firebase:firebase-appdistribution-gradle:$FirebaseAppDistributionVersion"
 const val FirebaseCrashlyticsPlugin = "com.google.firebase:firebase-crashlytics-gradle:$FirebaseCrashlyticsPluginVersion"
@@ -40,9 +41,12 @@ fun DependencyHandler.apiFirebaseDependencies() {
     api(FirebaseAbt)
     api(FirebaseAnalytics)
     api(FirebaseCommon)
-    api(FirebaseConfig)
     api(FirebaseCore)
     api(FirebaseCrashlytics)
+}
+
+fun DependencyHandler.implementationFirebaseConfig() {
+    implementation(FirebaseConfig)
 }
 
 object FirebaseAppDistribution {
