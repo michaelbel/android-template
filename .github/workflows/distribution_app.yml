@@ -45,12 +45,12 @@ jobs:
       - name: Set Decoded File Location as Environment
         run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
         
-      - name: Expose Version Name
-        uses: michpohl/android-expose-version-name-action@v1.0.0
-        with:
-          path: app/build.gradle
-          expose-version-name: 'true'
-          expose-version-code: 'true'
+#      - name: Expose Version Name
+#        uses: michpohl/android-expose-version-name-action@v1.0.0
+#        with:
+#          path: app/build.gradle
+#          expose-version-name: 'true'
+#          expose-version-code: 'true'
           
       - name: Build Debug Artifacts
         run: ./gradlew app:assembleDebug
