@@ -95,15 +95,6 @@ jobs:
 #          release-file: app/build/outputs/bundle/**/*.aab
 #          track: internal
 
-      - name: Read file
-        uses: bfren/read-file@v1
-        id: read_file
-        with:
-          file: ./releaseNotes.txt
-          
-      - name: Set Release Notes as Environment
-        run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $RELEASE_NOTES
-
       - name: Telegram Message
         uses: appleboy/telegram-action@master
         with:
