@@ -95,14 +95,11 @@ jobs:
 #          release-file: app/build/outputs/bundle/**/*.aab
 #          track: internal
 
-      - name: Read Release Notes File
-        id: package
-        uses: juliangruber/read-file-action@v1
+      - name: Read file
+        uses: bfren/read-file@v1
+        id: read_file
         with:
-         path: ./releaseNotes.txt
-  
-      - name: Echo package.json
-        run: echo "${{ steps.package.outputs.content }}"
+          file: ./releaseNotes.txt
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
@@ -114,5 +111,5 @@ jobs:
           document: app/build/outputs/apk/**/*.apk
           format: markdown
           message: |
-            New Artifacts Available in [Repository](https://github.com/${{ github.repository }})!
-            Include Commits: ${{ steps.package.outputs.content }} done
+            Changes:  
+            "${{ steps.read_file.outputs.contents }}"
