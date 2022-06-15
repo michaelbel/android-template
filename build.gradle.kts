@@ -1,16 +1,16 @@
 import Build_gradle.Ktlint
 import Build_gradle.Spotless
 
-typealias Ktlint = org.jlleitschuh.gradle.ktlint.KtlintExtension
-typealias Spotless = com.diffplug.gradle.spotless.SpotlessExtension
+private typealias Ktlint = org.jlleitschuh.gradle.ktlint.KtlintExtension
+private typealias Spotless = com.diffplug.gradle.spotless.SpotlessExtension
 
 plugins {
     id(org.michaelbel.template.dependencies.Ktlint) version org.michaelbel.template.dependencies.KtlintVersion apply false
     id(org.michaelbel.template.dependencies.Detekt) version org.michaelbel.template.dependencies.DetektVersion apply true
     id(org.michaelbel.template.dependencies.Spotless) version org.michaelbel.template.dependencies.SpotlessVersion apply false
-    id("org.jetbrains.kotlin.jvm") version "1.7.0" apply false
-    id("com.android.library") version "7.2.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.7.0" apply false
+    id("org.jetbrains.kotlin.jvm") version org.michaelbel.template.dependencies.KotlinVersion apply false
+    id("com.android.library") version org.michaelbel.template.dependencies.GradleVersion apply false
+    id("org.jetbrains.kotlin.android") version org.michaelbel.template.dependencies.KotlinVersion apply false
 }
 
 buildscript {
