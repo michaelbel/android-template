@@ -17,7 +17,8 @@ import org.michaelbel.template.extensions.testApi
  * @see <a href="https://d.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a>
  */
 
-private const val KotlinVersion = "1.7.0"
+const val KotlinVersion = "1.7.0"
+
 private const val KotlinCoroutinesVersion = "1.6.2"
 private const val KotlinSerializationVersion = "1.3.3"
 private const val KotlinDatetimeVersion = "0.3.3"
