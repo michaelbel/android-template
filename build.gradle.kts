@@ -1,6 +1,5 @@
 import Build_gradle.Ktlint
 import Build_gradle.Spotless
-import org.michaelbel.template.dependencies.mavenMaterial
 
 typealias Ktlint = org.jlleitschuh.gradle.ktlint.KtlintExtension
 typealias Spotless = com.diffplug.gradle.spotless.SpotlessExtension
@@ -9,9 +8,9 @@ plugins {
     id(org.michaelbel.template.dependencies.Ktlint) version org.michaelbel.template.dependencies.KtlintVersion apply false
     id(org.michaelbel.template.dependencies.Detekt) version org.michaelbel.template.dependencies.DetektVersion apply true
     id(org.michaelbel.template.dependencies.Spotless) version org.michaelbel.template.dependencies.SpotlessVersion apply false
-    id("org.jetbrains.kotlin.jvm") version "1.6.21" apply false
+    id("org.jetbrains.kotlin.jvm") version "1.7.0" apply false
     id("com.android.library") version "7.2.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.6.21" apply false
+    id("org.jetbrains.kotlin.android") version "1.7.0" apply false
 }
 
 buildscript {
@@ -37,7 +36,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        mavenMaterial()
+
+        maven("https://androidx.dev/snapshots/builds/7850066/artifacts/repository") // preview material
+        maven("https://androidx.dev/storage/compose-compiler/repository/") // preview kotlin compiler
     }
 }
 
