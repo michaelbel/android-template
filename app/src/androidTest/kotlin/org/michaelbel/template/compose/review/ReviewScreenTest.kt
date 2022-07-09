@@ -14,8 +14,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.michaelbel.template.inappreview.ReviewScreen
-import org.michaelbel.template.presentation.compose.ComposeActivity
-import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.template.ui.compose.ComposeActivity
+import org.michaelbel.template.ui.AppTheme
 
 @RunWith(AndroidJUnit4::class)
 class ReviewScreenTest {

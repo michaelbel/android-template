@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.compose
+package org.michaelbel.template.ui.compose
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
@@ -62,7 +62,8 @@ private fun Content(
         ROUTE_LOCATION to "Location",
         ROUTE_CONFIG to "Config",
         ROUTE_SERVICE to "Service",
-        ROUTE_TOAST to "Toast"
+        ROUTE_TOAST to "Toast",
+        ROUTE_LAZY_LIST to "LazyList"
     ).toList()
 
     LazyColumn(

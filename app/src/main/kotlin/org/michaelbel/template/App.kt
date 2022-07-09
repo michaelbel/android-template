@@ -2,30 +2,19 @@ package org.michaelbel.template
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
-import coil.ImageLoader
-import coil.ImageLoaderFactory
 import com.google.android.material.color.DynamicColors
 import com.kirillr.strictmodehelper.kotlin.dsl.initStrictMode
 import dagger.hilt.android.HiltAndroidApp
 import org.michaelbel.core.BuildConfig
-import org.michaelbel.template.ui.utils.UnsplashSizingInterceptor
 
 @HiltAndroidApp
-class App: Application(), ImageLoaderFactory {
+class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
         initAppTheme()
         initAndroidStrictMode()
         initLeakCanary()
-    }
-
-    override fun newImageLoader(): ImageLoader {
-        return ImageLoader.Builder(this)
-            .componentRegistry {
-                add(UnsplashSizingInterceptor)
-            }
-            .build()
     }
 
     private fun initAppTheme() {
@@ -35,7 +24,7 @@ class App: Application(), ImageLoaderFactory {
 
     private fun initAndroidStrictMode() {
         initStrictMode(
-            enable = BuildConfig.DEBUG && false,
+            enable = BuildConfig.DEBUG,
             enableDefaults = false
         ) {
             threadPolicy {

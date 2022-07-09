@@ -25,7 +25,7 @@
         tools:ignore="AllowBackup,MissingTvBanner,UnusedAttribute">
 
         <activity
-            android:name=".presentation.view.MainActivity"
+            android:name=".ui.view.MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -54,7 +54,7 @@
         </activity>
 
         <activity
-            android:name=".presentation.compose.ComposeActivity"/>
+            android:name=".ui.compose.ComposeActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

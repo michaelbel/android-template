@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.view.ui
+package org.michaelbel.template.ui.view.ui
 
 import android.content.Context
 import android.content.Intent
@@ -49,12 +49,12 @@ import com.google.accompanist.insets.ui.Scaffold
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.michaelbel.template.R
-import org.michaelbel.template.presentation.compose.ComposeActivity
-import org.michaelbel.template.presentation.view.model.MainScreenState
-import org.michaelbel.template.presentation.view.MainViewModel
-import org.michaelbel.template.presentation.view.OnNavigationBackClick
-import org.michaelbel.template.presentation.view.Screen
-import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.ui.compose.ComposeActivity
+import org.michaelbel.template.ui.view.MainViewModel
+import org.michaelbel.template.ui.view.OnNavigationBackClick
+import org.michaelbel.template.ui.view.Screen
+import org.michaelbel.template.ui.view.model.MainScreenState
 
 typealias OnButtonClick = (Screen, Bundle) -> Unit
 

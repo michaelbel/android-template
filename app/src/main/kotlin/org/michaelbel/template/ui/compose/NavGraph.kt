@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.compose
+package org.michaelbel.template.ui.compose
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -14,6 +14,7 @@ import org.michaelbel.template.location.LocationScreen
 import org.michaelbel.template.remoteconfig.RemoteConfigScreen
 import org.michaelbel.template.service.ServiceScreen
 import org.michaelbel.template.toast.ToastScreen
+import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
 
 const val ROUTE_COMPOSE = "compose"
 const val ROUTE_AUTH = "auth"
@@ -26,6 +27,7 @@ const val ROUTE_LOCATION = "location"
 const val ROUTE_CONFIG = "config"
 const val ROUTE_SERVICE = "service"
 const val ROUTE_TOAST = "toast"
+const val ROUTE_LAZY_LIST = "lazyList"
 
 @Composable
 fun Content(
@@ -47,5 +49,6 @@ fun Content(
         composable(route = ROUTE_IME) { ImeScreen(navController) }
         composable(route = ROUTE_LOCATION) { LocationScreen(navController) }
         composable(route = ROUTE_SERVICE) { ServiceScreen(navController) }
+        composable(route = ROUTE_LAZY_LIST) { LazyListScreen(navController) }
     }
 }

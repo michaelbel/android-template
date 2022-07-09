@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.view
+package org.michaelbel.template.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.michaelbel.template.presentation.view.ui.MainScreen
-import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.ui.view.ui.MainScreen
 
 @AndroidEntryPoint
 class MainFragment: Fragment() {

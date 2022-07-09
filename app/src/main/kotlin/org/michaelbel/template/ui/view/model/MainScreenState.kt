@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.view.model
+package org.michaelbel.template.ui.view.model
 
 sealed class MainScreenState {
     data class MainScreen(
