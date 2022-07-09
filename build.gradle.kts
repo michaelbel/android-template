@@ -38,7 +38,6 @@ allprojects {
         mavenCentral()
 
         maven("https://androidx.dev/snapshots/builds/7850066/artifacts/repository") // preview material
-        maven("https://androidx.dev/storage/compose-compiler/repository/") // preview kotlin compiler
     }
 }
 

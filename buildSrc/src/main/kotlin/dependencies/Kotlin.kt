@@ -23,7 +23,7 @@ private const val KotlinCoroutinesVersion = "1.6.2"
 private const val KotlinSerializationVersion = "1.3.3"
 private const val KotlinDatetimeVersion = "0.3.3"
 
-const val KotlinCompilerExtensionVersion = "1.2.0-dev-k1.7.0-53370d83bb1"
+const val KotlinCompilerExtensionVersion = "1.2.0"
 
 const val KotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KotlinVersion"
 const val KotlinSerializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:$KotlinVersion"

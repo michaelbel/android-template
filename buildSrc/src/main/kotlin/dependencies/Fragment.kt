@@ -11,7 +11,7 @@ import org.michaelbel.template.extensions.api
  * @see <a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a>
  */
 
-private const val FragmentVersion = "1.4.1"
+private const val FragmentVersion = "1.5.0"
 
 private const val Fragment = "androidx.fragment:fragment-ktx:$FragmentVersion"
 private const val FragmentTesting = "androidx.fragment:fragment-testing:$FragmentVersion"
