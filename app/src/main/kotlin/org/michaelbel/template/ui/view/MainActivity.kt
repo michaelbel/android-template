@@ -22,6 +22,7 @@ class MainActivity: AppCompatActivity() {
     private val bootReceiver: BootReceiver = BootReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(org.michaelbel.core.R.style.Theme_App)
         super.onCreate(savedInstanceState)
         installSplashScreen()
         WindowCompat.setDecorFitsSystemWindows(window, false)

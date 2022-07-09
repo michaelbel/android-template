@@ -14,8 +14,7 @@ import org.michaelbel.template.extensions.implementation
  * @see <a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a>
  */
 
-private const val NavigationVersion = "2.4.2"
-private const val NavigationComposeVersion = "2.4.0-rc01"
+private const val NavigationVersion = "2.5.0"
 
 private const val NavigationFragment = "androidx.navigation:navigation-fragment-ktx:$NavigationVersion"
 private const val NavigationUi = "androidx.navigation:navigation-ui-ktx:$NavigationVersion"
@@ -24,7 +23,7 @@ private const val NavigationTesting = "androidx.navigation:navigation-testing:$N
 
 const val NavigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$NavigationVersion"
 
-private const val NavigationCompose = "androidx.navigation:navigation-compose:$NavigationComposeVersion"
+private const val NavigationCompose = "androidx.navigation:navigation-compose:$NavigationVersion"
 
 fun DependencyHandler.apiNavigationDependencies() {
     api(NavigationCompose)

@@ -16,6 +16,7 @@ import org.michaelbel.template.extensions.implementation
  */
 
 private const val ComposeVersion = "1.2.0-beta03"
+private const val ComposeCompilerVersion = "1.2.0"
 
 private const val Material3Version = "1.0.0-alpha11"
 private const val Material3SamplesVersion = "1.0.0-SNAPSHOT"
@@ -23,7 +24,7 @@ private const val MaterialIconsVersion = "1.1.0-SNAPSHOT"
 
 private const val ComposeAnimation = "androidx.compose.animation:animation:$ComposeVersion"
 private const val ComposeAnimationCore = "androidx.compose.animation:animation-core:$ComposeVersion"
-private const val ComposeCompiler = "androidx.compose.compiler:compiler:$ComposeVersion"
+private const val ComposeCompiler = "androidx.compose.compiler:compiler:$ComposeCompilerVersion"
 private const val ComposeFoundation = "androidx.compose.foundation:foundation:$ComposeVersion"
 private const val ComposeFoundationLayout = "androidx.compose.foundation:foundation-layout:$ComposeVersion"
 private const val ComposeMaterialIconsCore = "androidx.compose.material:material-icons-core-samples:$MaterialIconsVersion"
