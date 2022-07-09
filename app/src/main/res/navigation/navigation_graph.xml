@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="org.michaelbel.template.presentation.view.MainFragment"
+        android:name="org.michaelbel.template.ui.view.MainFragment"
         android:label="Main"/>
 
     <fragment

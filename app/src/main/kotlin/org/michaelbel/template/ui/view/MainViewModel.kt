@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.view
+package org.michaelbel.template.ui.view
 
 import android.app.Activity
 import androidx.compose.runtime.getValue
@@ -17,8 +17,8 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.inappupdate.InAppUpdate
-import org.michaelbel.template.presentation.view.model.MainScreenState
-import org.michaelbel.template.presentation.view.model.ScreenData
+import org.michaelbel.template.ui.view.model.MainScreenState
+import org.michaelbel.template.ui.view.model.ScreenData
 
 @HiltViewModel
 class MainViewModel @Inject constructor(

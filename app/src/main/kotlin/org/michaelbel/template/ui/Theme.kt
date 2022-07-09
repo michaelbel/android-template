@@ -1,4 +1,4 @@
-package org.michaelbel.template.ui.theme
+package org.michaelbel.template.ui
 
 import android.content.Context
 import android.os.Build

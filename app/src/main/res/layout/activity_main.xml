@@ -9,4 +9,4 @@
     android:layout_height="match_parent"
     app:defaultNavHost="true"
     app:navGraph="@navigation/navigation_graph"
-    tools:context=".presentation.view.MainActivity"/>
+    tools:context=".ui.view.MainActivity"/>

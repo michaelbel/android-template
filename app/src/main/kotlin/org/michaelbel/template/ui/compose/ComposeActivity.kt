@@ -1,4 +1,4 @@
-package org.michaelbel.template.presentation.compose
+package org.michaelbel.template.ui.compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,7 +13,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.template.inappreview.InAppReview
-import org.michaelbel.template.ui.theme.AppTheme
+import org.michaelbel.template.ui.AppTheme
 
 @AndroidEntryPoint
 class ComposeActivity: ComponentActivity() {

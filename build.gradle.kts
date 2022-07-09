@@ -105,7 +105,6 @@ subprojects {
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalComposeUiApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalFoundationApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalMaterialApi
-            freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptExperimentalCoilApi
             freeCompilerArgs = freeCompilerArgs + org.michaelbel.template.dependencies.OptContextReceivers
         }
     }
