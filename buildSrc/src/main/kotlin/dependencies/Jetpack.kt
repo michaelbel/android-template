@@ -14,71 +14,57 @@ import org.michaelbel.template.extensions.testApi
  * @see <a href="https://d.android.com/jetpack/androidx/releases">AndroidX releases</a>
  */
 
-private const val AdsIdentifierVersion = "1.0.0-alpha04"
-private const val AnnotationVersion = "1.3.0"
-private const val AnnotationExperimentalVersion = "1.2.0"
-private const val AppCompatVersion = "1.4.1"
-private const val AppSearchVersion = "1.0.0-alpha04"
-private const val ArchCoreVersion = "2.1.0"
-private const val AsyncLayoutInflaterVersion = "1.0.0"
-private const val AutoFillVersion = "1.1.0"
-private const val BenchmarkVersion = "1.0.0"
-private const val BenchmarkMacroVersion = "1.1.0-beta01"
-private const val BiometricVersion = "1.2.0-alpha04"
 private const val BrowserVersion = "1.4.0"
+
 private const val CameraVersion = "1.0.2"
 private const val CameraVideoVersion = "1.1.0-alpha12"
 private const val CameraViewVersion = "1.0.0-alpha32"
 private const val CameraExtensionsVersion = "1.0.0-alpha32"
+
 private const val CardViewVersion = "1.0.0"
+
 private const val CollectionVersion = "1.2.0"
-private const val ConcurrentVersion = "1.1.0"
+
 private const val ConstraintLayoutVersion = "2.1.3"
 private const val ConstraintLayoutComposeVersion = "1.0.0"
-private const val ContentPagerVersion = "1.0.0"
+
 private const val CoordinatorLayoutVersion = "1.2.0"
+
 private const val CoreVersion = "1.7.0"
 private const val CoreAnimationVersion = "1.0.0-alpha02"
 private const val CoreGoogleShortcutsVersion = "1.0.0"
 private const val CoreRemoteViewsVersion = "1.0.0-alpha01"
 private const val CoreRoleVersion = "1.0.0"
 private const val CoreSplashScreenVersion = "1.0.0-beta01"
-private const val CursorAdapterVersion = "1.0.0"
-private const val CustomViewVersion = "1.1.0"
-private const val DocumentFileVersion = "1.0.1"
+
 private const val DrawerLayoutVersion = "1.1.1"
+
 private const val DynamicAnimationVersion = "1.1.0-alpha03"
+
 private const val EmojiVersion = "1.1.0"
 private const val Emoji2Version = "1.1.0"
-private const val EnterpriseVersion = "1.1.0"
+
 private const val ExifinterfaceVersion = "1.3.3"
+
 private const val GlanceVersion = "1.0.0-alpha01"
+
 private const val GridLayoutVersion = "1.0.0"
-private const val HealthVersion = "1.0.0-alpha03"
-private const val HeifWriterVersion = "1.1.0-alpha01"
-private const val InterpolatorVersion = "1.0.0"
-private const val LoaderVersion = "1.1.0"
+
 private const val MediaVersion = "1.4.3"
 private const val Media2Version = "1.2.0"
 private const val Media3Version = "1.0.0-alpha01"
-private const val MediaRouterVersion = "1.2.5"
-private const val MetricsVersion = "1.0.0-alpha01"
+
 private const val PaletteVersion = "1.0.0"
+
 private const val PreferenceVersion = "1.1.1"
-private const val PrintVersion = "1.0.0"
-private const val ProfileInstallerVersion = "1.2.0-alpha01"
-private const val RecommendationVersion = "1.0.0"
+
 private const val RecyclerViewVersion = "1.2.1"
 private const val RecyclerviewSelectionVersion = "1.1.0"
-private const val RemoteCallbackVersion = "1.0.0-alpha02"
-private const val ResourceInspectionVersion = "1.0.0"
-private const val SecurityCryptoVersion = "1.0.0"
-private const val SecurityIdentityCredentialVersion = "1.0.0-alpha03"
-private const val SecurityAppAuthenticatorVersion = "1.0.0-alpha02"
-private const val ShareTargetVersion = "1.2.0-rc01"
+
 private const val SliceVersion = "1.1.0-alpha02"
-private const val SlidingPanelLayoutVersion = "1.2.0-rc01"
+
 private const val SwipeRefreshLayoutVersion = "1.1.0"
+
 private const val TestCoreVersion = "1.4.0"
 private const val TestEspressoVersion = "3.4.0"
 private const val TestExtJunitVersion = "1.1.3"
@@ -88,34 +74,16 @@ private const val TestOrchestratorVersion = "1.4.1"
 private const val TestRulesVersion = "1.4.0"
 private const val TestRunnerVersion = "1.4.0"
 private const val TestUiAutomatorVersion = "2.2.0"
-private const val TextClassifierVersion = "1.0.0-alpha03"
-private const val TracingVersion = "1.1.0-beta01"
-private const val TransitionVersion = "1.4.1"
+
 private const val VectorDrawableVersion = "1.1.0"
 private const val VectorDrawableSeekableVersion = "1.0.0-alpha02"
-private const val VersionedParcelableVersion = "1.1.1"
+
 private const val ViewPager2Version = "1.0.0"
+
 private const val WebkitVersion = "1.4.0"
+
 private const val WindowVersion = "1.0.0-rc01"
 
-private const val AdsIdentifier = "androidx.ads:ads-identifier:$AdsIdentifierVersion"
-private const val Annotation = "androidx.annotation:annotation:$AnnotationVersion"
-private const val AnnotationExperimental = "androidx.annotation:annotation-experimental:$AnnotationExperimentalVersion"
-private const val AppCompat = "androidx.appcompat:appcompat:$AppCompatVersion"
-private const val AppCompatResources = "androidx.appcompat:appcompat-resources:$AppCompatVersion"
-private const val AppSearch = "androidx.appsearch:appsearch:$AppSearchVersion"
-private const val AppSearchCompiler = "androidx.appsearch:appsearch-compiler:$AppSearchVersion"
-private const val AppSearchLocalStorage = "androidx.appsearch:appsearch-local-storage:$AppSearchVersion"
-private const val AppSearchPlatformStorage = "androidx.appsearch:appsearch-platform-storage:$AppSearchVersion"
-private const val ArchCoreCommon = "androidx.arch.core:core-common:$ArchCoreVersion"
-private const val ArchCoreRuntime = "androidx.arch.core:core-runtime:$ArchCoreVersion"
-private const val ArchCoreTesting = "androidx.arch.core:core-testing:$ArchCoreVersion"
-private const val AsyncLayoutInflater = "androidx.asynclayoutinflater:asynclayoutinflater:$AsyncLayoutInflaterVersion"
-private const val AutoFill = "androidx.autofill:autofill:$AutoFillVersion"
-private const val BenchmarkPlugin = "androidx.benchmark:benchmark-gradle-plugin:$BenchmarkVersion"
-private const val BenchmarkJunit = "androidx.benchmark:benchmark-junit4:$BenchmarkVersion"
-private const val BenchmarkMacro = "androidx.benchmark:benchmark-macro-junit4:$BenchmarkMacroVersion"
-private const val Biometric = "androidx.biometric:biometric-ktx:$BiometricVersion"
 private const val Browser = "androidx.browser:browser:$BrowserVersion"
 private const val CameraCore = "androidx.camera:camera-core:$CameraVersion"
 private const val CameraCamera2 = "androidx.camera:camera-camera2:$CameraVersion"
@@ -125,10 +93,8 @@ private const val CameraView = "androidx.camera:camera-view:$CameraViewVersion"
 private const val CameraExtensions = "androidx.camera:camera-extensions:$CameraExtensionsVersion"
 private const val CardView = "androidx.cardview:cardview:$CardViewVersion"
 private const val Collection = "androidx.collection:collection-ktx:$CollectionVersion"
-private const val Concurrent = "androidx.concurrent:concurrent-futures-ktx:$ConcurrentVersion"
 private const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:$ConstraintLayoutVersion"
 private const val ConstraintLayoutCompose = "androidx.constraintlayout:constraintlayout-compose:$ConstraintLayoutComposeVersion"
-private const val ContentPager = "androidx.contentpager:contentpager:$ContentPagerVersion"
 private const val CoordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:$CoordinatorLayoutVersion"
 private const val Core = "androidx.core:core-ktx:$CoreVersion"
 private const val CoreAnimation = "androidx.core:core-animation:$CoreAnimationVersion"
@@ -137,9 +103,6 @@ private const val CoreGoogleShortcuts = "androidx.core:core-google-shortcuts:$Co
 private const val CoreRemoteViews = "androidx.core:core-remoteviews:$CoreRemoteViewsVersion"
 private const val CoreRole = "androidx.core:core-role:$CoreRoleVersion"
 private const val CoreSplashScreen = "androidx.core:core-splashscreen:$CoreSplashScreenVersion"
-private const val CursorAdapter = "androidx.cursoradapter:cursoradapter:$CursorAdapterVersion"
-private const val CustomView = "androidx.customview:customview:$CustomViewVersion"
-private const val DocumentFile = "androidx.documentfile:documentfile:$DocumentFileVersion"
 private const val DrawerLayout = "androidx.drawerlayout:drawerlayout:$DrawerLayoutVersion"
 private const val DynamicAnimation = "androidx.dynamicanimation:dynamicanimation-ktx:$DynamicAnimationVersion"
 private const val Emoji = "androidx.emoji:emoji:$EmojiVersion"
@@ -148,16 +111,10 @@ private const val EmojiBundled = "androidx.emoji:emoji-bundled:$EmojiVersion"
 private const val Emoji2 = "androidx.emoji2:emoji2:$Emoji2Version"
 private const val Emoji2Views = "androidx.emoji2:emoji2-views:$Emoji2Version"
 private const val Emoji2ViewsHelper = "androidx.emoji2:emoji2-views-helper:$Emoji2Version"
-private const val EnterpriseFeedback = "androidx.enterprise:enterprise-feedback:$EnterpriseVersion"
-private const val EnterpriseFeedbackTesting = "androidx.enterprise:enterprise-feedback-testing:$EnterpriseVersion"
 private const val Exifinterface = "androidx.exifinterface:exifinterface:$ExifinterfaceVersion"
 private const val Glance = "androidx.glance:glance:$GlanceVersion"
 private const val GlanceAppWidget = "androidx.glance:glance-appwidget:$GlanceVersion"
 private const val GridLayout = "androidx.gridlayout:gridlayout:$GridLayoutVersion"
-private const val Health = "androidx.health:health-services-client:$HealthVersion"
-private const val Heifwriter = "androidx.heifwriter:heifwriter:$HeifWriterVersion"
-private const val Interpolator = "androidx.interpolator:interpolator:$InterpolatorVersion"
-private const val Loader = "androidx.loader:loader:$LoaderVersion"
 private const val Media = "androidx.media:media:$MediaVersion"
 private const val Media2Player = "androidx.media2:media2-player:$Media2Version"
 private const val Media2Session = "androidx.media2:media2-session:$Media2Version"
@@ -183,26 +140,13 @@ private const val Media3Datastore = "androidx.media3:media3-database:$Media3Vers
 private const val Media3Decoder = "androidx.media3:media3-decoder:$Media3Version"
 private const val Media3Datasource = "androidx.media3:media3-datasource:$Media3Version"
 private const val Media3Common = "androidx.media3:media3-common:$Media3Version"
-private const val MediaRouter = "androidx.mediarouter:mediarouter:$MediaRouterVersion"
-private const val Metrics = "androidx.metrics:metrics-performance:$MetricsVersion"
 private const val Palette = "androidx.palette:palette-ktx:$PaletteVersion"
 private const val Preference = "androidx.preference:preference-ktx:$PreferenceVersion"
-private const val Print = "androidx.print:print:$PrintVersion"
-private const val ProfileInstaller = "androidx.profileinstaller:profileinstaller:$ProfileInstallerVersion"
-private const val Recommendation = "androidx.recommendation:recommendation:$RecommendationVersion"
 private const val RecyclerView = "androidx.recyclerview:recyclerview:$RecyclerViewVersion"
 private const val RecyclerViewSelection = "androidx.recyclerview:recyclerview-selection:$RecyclerviewSelectionVersion"
-private const val RemoteCallback = "androidx.remotecallback:remotecallback:$RemoteCallbackVersion"
-private const val RemoteCallbackProcessor = "androidx.remotecallback:remotecallback-processor:$RemoteCallbackVersion"
-private const val ResourceInspection = "androidx.resourceinspection:resourceinspection-annotation:$ResourceInspectionVersion"
-private const val SecurityCrypto = "androidx.security:security-crypto:$SecurityCryptoVersion"
-private const val SecurityIdentityCredential = "androidx.security:security-identity-credential:$SecurityIdentityCredentialVersion"
-private const val SecurityAppAuthenticator = "androidx.security:security-app-authenticator:$SecurityAppAuthenticatorVersion"
-private const val ShareTarget = "androidx.sharetarget:sharetarget:$ShareTargetVersion"
 private const val SliceBuilders = "androidx.slice:slice-builders-ktx:$SliceVersion"
 private const val SliceCore = "androidx.slice:slice-core:$SliceVersion"
 private const val SliceView = "androidx.slice:slice-view:$SliceVersion"
-private const val SlidingPanelLayout = "androidx.slidingpanelayout:slidingpanelayout:$SlidingPanelLayoutVersion"
 private const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:$SwipeRefreshLayoutVersion"
 private const val TestCore = "androidx.test:core-ktx:$TestCoreVersion"
 private const val TestEspressoAccessibility = "androidx.test.espresso:espresso-accessibility:$TestEspressoVersion"
@@ -215,31 +159,24 @@ private const val TestOrchestrator = "androidx.test:orchestrator:$TestOrchestrat
 private const val TestRules = "androidx.test:rules:$TestRulesVersion"
 private const val AndroidxTestRunner = "androidx.test:runner:$TestRunnerVersion"
 private const val TestUiAutomator = "androidx.test.uiautomator:uiautomator:$TestUiAutomatorVersion"
-private const val TextClassifier = "androidx.textclassifier:textclassifier:$TextClassifierVersion"
-private const val Tracing = "androidx.tracing:tracing-ktx:$TracingVersion"
-private const val Transition = "androidx.transition:transition-ktx:$TransitionVersion"
 private const val VectorDrawable = "androidx.vectordrawable:vectordrawable:$VectorDrawableVersion"
 private const val VectorDrawableAnimated = "androidx.vectordrawable:vectordrawable-animated:$VectorDrawableVersion"
 private const val VectorDrawableSeekable = "androidx.vectordrawable:vectordrawable-seekable:$VectorDrawableSeekableVersion"
-private const val VersionedParcelable = "androidx.versionedparcelable:versionedparcelable:$VersionedParcelableVersion"
 private const val ViewPager2 = "androidx.viewpager2:viewpager2:$ViewPager2Version"
 private const val Webkit = "androidx.webkit:webkit:$WebkitVersion"
 private const val Window = "androidx.window:window:$WindowVersion"
 private const val WindowTesting = "androidx.window:window-testing:$WindowVersion"
 
 fun DependencyHandler.apiJetpackDependencies() {
-    api(AppCompat)
     api(Browser)
     api(ConstraintLayoutCompose)
     api(Core)
     api(CoreSplashScreen)
     api(RecyclerView)
-    api(ResourceInspection)
     api(ViewPager2)
     api(Window)
     api(WindowTesting)
     testApi(TestCore)
-    androidTestApi(ArchCoreTesting)
     androidTestApi(TestExtJunit)
     androidTestImplementation(TestEspressoCore)
     androidTestApi(TestCore)

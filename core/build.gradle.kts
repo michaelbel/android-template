@@ -1,9 +1,11 @@
+
 import org.michaelbel.template.BuildTools
 import org.michaelbel.template.CompileSdk
 import org.michaelbel.template.MinSdk
 import org.michaelbel.template.TargetSdk
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
+import org.michaelbel.template.dependencies.apiAppcompatDependencies
 import org.michaelbel.template.dependencies.apiChuckerDependencies
 import org.michaelbel.template.dependencies.apiCoilDependencies
 import org.michaelbel.template.dependencies.apiComposeDependencies
@@ -96,4 +98,5 @@ dependencies {
     apiViewBindingPropertyDelegateDependencies()
     apiStartupDependencies()
     apiNavigationDependencies()
+    apiAppcompatDependencies()
 }
