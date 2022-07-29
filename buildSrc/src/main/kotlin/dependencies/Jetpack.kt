@@ -45,7 +45,6 @@ private const val CoreRoleVersion = "1.0.0"
 private const val CoreSplashScreenVersion = "1.0.0-beta01"
 private const val CursorAdapterVersion = "1.0.0"
 private const val CustomViewVersion = "1.1.0"
-private const val DataStoreVersion = "1.0.0"
 private const val DocumentFileVersion = "1.0.1"
 private const val DrawerLayoutVersion = "1.1.1"
 private const val DynamicAnimationVersion = "1.1.0-alpha03"
@@ -140,9 +139,6 @@ private const val CoreRole = "androidx.core:core-role:$CoreRoleVersion"
 private const val CoreSplashScreen = "androidx.core:core-splashscreen:$CoreSplashScreenVersion"
 private const val CursorAdapter = "androidx.cursoradapter:cursoradapter:$CursorAdapterVersion"
 private const val CustomView = "androidx.customview:customview:$CustomViewVersion"
-private const val DataStoreCore = "androidx.datastore:datastore-core:$DataStoreVersion"
-private const val DataStorePreferences = "androidx.datastore:datastore-preferences:$DataStoreVersion"
-private const val DataStorePreferencesCore = "androidx.datastore:datastore-preferences-core:$DataStoreVersion"
 private const val DocumentFile = "androidx.documentfile:documentfile:$DocumentFileVersion"
 private const val DrawerLayout = "androidx.drawerlayout:drawerlayout:$DrawerLayoutVersion"
 private const val DynamicAnimation = "androidx.dynamicanimation:dynamicanimation-ktx:$DynamicAnimationVersion"
@@ -237,9 +233,6 @@ fun DependencyHandler.apiJetpackDependencies() {
     api(ConstraintLayoutCompose)
     api(Core)
     api(CoreSplashScreen)
-    api(DataStoreCore)
-    api(DataStorePreferences)
-    api(DataStorePreferencesCore)
     api(RecyclerView)
     api(ResourceInspection)
     api(ViewPager2)

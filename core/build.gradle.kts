@@ -7,6 +7,7 @@ import org.michaelbel.template.dependencies.apiAccompanistDependencies
 import org.michaelbel.template.dependencies.apiChuckerDependencies
 import org.michaelbel.template.dependencies.apiCoilDependencies
 import org.michaelbel.template.dependencies.apiComposeDependencies
+import org.michaelbel.template.dependencies.apiDataStoreDependencies
 import org.michaelbel.template.dependencies.apiFirebaseDependencies
 import org.michaelbel.template.dependencies.apiGooglePlayServicesDependencies
 import org.michaelbel.template.dependencies.apiJetpackDependencies
@@ -78,6 +79,7 @@ dependencies {
     implementationHiltDependencies()
     apiKotlinDependencies()
     apiJetpackDependencies()
+    apiDataStoreDependencies()
     apiComposeDependencies()
     apiLifecycleDependencies()
     apiPagingDependencies()

@@ -1,4 +1,4 @@
-package org.michaelbel.core.views.appbar
+package org.michaelbel.core.ui.appbar
 
 import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.abs
@@ -6,7 +6,7 @@ import kotlin.math.abs
 @Suppress("unused")
 abstract class AppBarStateChangeListener: AppBarLayout.OnOffsetChangedListener {
 
-    private var currentState = AppBarState.IDLE
+    private var currentState: AppBarState = AppBarState.IDLE
 
     override fun onOffsetChanged(appBarLayout: AppBarLayout, i: Int) {
         when {

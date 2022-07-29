@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package org.michaelbel.core.views.inputfilter
+package org.michaelbel.core.ui.inputfilter
 
 import android.text.InputFilter
 import android.text.Spanned
