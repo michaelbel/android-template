@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
@@ -37,6 +36,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.core.ktx.permissionGranted
 
 /**
  * Settings Panel Intents (Connectivity, NFC, Volume, Wi-Fi)
@@ -125,7 +125,12 @@ private fun Content(
             Text(
                 text = stringResource(R.string.settings_panel),
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             )
         }
         item {
@@ -136,7 +141,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.settings_panel_connectivity)
@@ -151,7 +161,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.settings_panel_nfc)
@@ -166,7 +181,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.settings_panel_volume)
@@ -181,7 +201,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.settings_panel_wifi)
@@ -192,7 +217,12 @@ private fun Content(
             Text(
                 text = stringResource(R.string.actions),
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             )
         }
         item {
@@ -207,7 +237,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.share_intent)
@@ -217,7 +252,7 @@ private fun Content(
         item {
             OutlinedButton(
                 onClick = {
-                    if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    if (context.permissionGranted(Manifest.permission.CALL_PHONE)) {
                         Intent(
                             Intent.ACTION_CALL,
                             Uri.fromParts("tel", "88005553535", null)
@@ -227,7 +262,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.phone_intent)
@@ -248,7 +288,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.email_intent)
@@ -275,7 +320,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.google_play)
@@ -293,7 +343,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.open_telegram_chat)
@@ -315,7 +370,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.voice_input)
@@ -336,7 +396,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 8.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 4.dp,
+                        end = 16.dp,
+                        bottom = 8.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.app_settings)
@@ -347,7 +412,12 @@ private fun Content(
             Text(
                 text = stringResource(R.string.browser),
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             )
         }
         item {
@@ -361,7 +431,12 @@ private fun Content(
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.start_browser)
@@ -381,7 +456,12 @@ private fun Content(
                     resultContract.launch(customTabsIntent.intent)
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
+                    .padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 4.dp
+                    )
             ) {
                 Text(
                     text = stringResource(R.string.start_in_app_browser)
