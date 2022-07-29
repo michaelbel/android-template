@@ -12,20 +12,14 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ListItem
-import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.SnackbarHost
 import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.SnackbarResult
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.rememberModalBottomSheetState
-import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -52,7 +46,6 @@ import org.michaelbel.template.R
 import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.compose.ComposeActivity
 import org.michaelbel.template.ui.view.MainViewModel
-import org.michaelbel.template.ui.view.OnNavigationBackClick
 import org.michaelbel.template.ui.view.Screen
 import org.michaelbel.template.ui.view.model.MainScreenState
 
@@ -65,15 +58,11 @@ fun MainScreen(
 ) {
     val listState: LazyListState = rememberLazyListState()
     val viewModel: MainViewModel = viewModel(MainViewModel::class.java)
-    val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
+    val scrollBehavior: TopAppBarScrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
     val scope: CoroutineScope = rememberCoroutineScope()
-    val scaffoldState = rememberScaffoldState()
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
     val context: Context = LocalContext.current
     val snackBarUpdateVisibleState by rememberUpdatedState(viewModel.updateAvailableMessage)
-    val sheetState = rememberModalBottomSheetState(
-        initialValue = ModalBottomSheetValue.Hidden
-    )
     val mainScreenState by viewModel.uiState.collectAsState()
     val mainState = mainScreenState as MainScreenState.MainScreen
 
@@ -104,13 +93,7 @@ fun MainScreen(
         },
         topBar = {
             Toolbar(
-                scrollBehavior = scrollBehavior,
-                onNavigationBackClick = {
-                    scope.launch { scaffoldState.drawerState.open() }
-                },
-                onMenuClick = {
-                    scope.launch { sheetState.show() }
-                }
+                scrollBehavior = scrollBehavior
             )
         },
         floatingActionButton = {
@@ -128,7 +111,7 @@ fun MainScreen(
             state = listState,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 80.dp),
+                .padding(top = 80.dp, bottom = 80.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             items(mainState.list) { screenData ->
@@ -149,9 +132,7 @@ fun MainScreen(
 
 @Composable
 private fun Toolbar(
-    scrollBehavior: TopAppBarScrollBehavior?,
-    onNavigationBackClick: OnNavigationBackClick,
-    onMenuClick: () -> Unit
+    scrollBehavior: TopAppBarScrollBehavior
 ) {
     SmallTopAppBar(
         title = {
@@ -160,26 +141,6 @@ private fun Toolbar(
             )
         },
         modifier = Modifier.statusBarsPadding(),
-        navigationIcon = {
-            IconButton(
-                onClick = { onNavigationBackClick() }
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Menu,
-                    contentDescription = null
-                )
-            }
-        },
-        actions = {
-            IconButton(
-                onClick = { onMenuClick() }
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Settings,
-                    contentDescription = null
-                )
-            }
-        },
         scrollBehavior = scrollBehavior
     )
 }

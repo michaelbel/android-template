@@ -25,7 +25,7 @@ class MainActivity: AppCompatActivity() {
         setTheme(org.michaelbel.core.R.style.Theme_App)
         super.onCreate(savedInstanceState)
         installSplashScreen()
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
         setContent {
             AndroidViewBinding(ActivityMainBinding::inflate)
         }

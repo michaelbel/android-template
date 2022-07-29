@@ -7,8 +7,6 @@ import androidx.navigation.fragment.findNavController
 import java.security.InvalidParameterException
 import org.michaelbel.template.R
 
-typealias OnNavigationBackClick = () -> Unit
-
 enum class Screen {
     Ads,
     ConstraintsBaseline,
