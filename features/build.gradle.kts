@@ -28,6 +28,7 @@ dependencies {
     api(project(":features:inappupdate"))
     api(project(":features:intents"))
     api(project(":features:location"))
+    api(project(":features:phonecalls"))
     api(project(":features:receiver"))
     api(project(":features:remoteconfig"))
     api(project(":features:service"))
