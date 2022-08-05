@@ -31,6 +31,7 @@ include(
     ":features:inappupdate",
     ":features:intents",
     ":features:location",
+    ":features:phonecalls",
     ":features:receiver",
     ":features:remoteconfig",
     ":features:service",
