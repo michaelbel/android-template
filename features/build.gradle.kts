@@ -22,6 +22,7 @@ dependencies {
     api(project(":features:constraintlayout"))
     api(project(":features:downloadfile"))
     api(project(":features:fonts"))
+    api(project(":features:getcontent"))
     api(project(":features:ime"))
     api(project(":features:inappreview"))
     api(project(":features:inappupdate"))
