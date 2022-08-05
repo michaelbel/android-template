@@ -7,6 +7,7 @@ import com.google.accompanist.navigation.animation.composable
 import org.michaelbel.template.auth.AuthScreen
 import org.michaelbel.template.clipboard.ClipboardScreen
 import org.michaelbel.template.downloadfile.DownloadFileScreen
+import org.michaelbel.template.getcontent.GetContentScreen
 import org.michaelbel.template.ime.ImeScreen
 import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
@@ -28,6 +29,7 @@ const val ROUTE_CONFIG = "config"
 const val ROUTE_SERVICE = "service"
 const val ROUTE_TOAST = "toast"
 const val ROUTE_LAZY_LIST = "lazyList"
+const val ROUTE_GET_CONTENT = "getcontent"
 
 @Composable
 fun Content(
@@ -50,5 +52,6 @@ fun Content(
         composable(route = ROUTE_LOCATION) { LocationScreen(navController) }
         composable(route = ROUTE_SERVICE) { ServiceScreen(navController) }
         composable(route = ROUTE_LAZY_LIST) { LazyListScreen(navController) }
+        composable(route = ROUTE_GET_CONTENT) { GetContentScreen(navController) }
     }
 }

@@ -6,7 +6,7 @@ import android.text.InputFilter
 import android.text.Spanned
 import org.michaelbel.core.BuildConfig
 
-class InputFilterMinMax(
+class RangeInputFilter(
     private val min: Int = 0,
     private val max: Int = 0
 ): InputFilter {

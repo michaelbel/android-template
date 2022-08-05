@@ -25,6 +25,7 @@ include(
     ":features:constraintlayout",
     ":features:downloadfile",
     ":features:fonts",
+    ":features:getcontent",
     ":features:ime",
     ":features:inappreview",
     ":features:inappupdate",
