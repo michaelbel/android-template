@@ -64,7 +64,8 @@ private fun Content(
         ROUTE_SERVICE to "Service",
         ROUTE_TOAST to "Toast",
         ROUTE_LAZY_LIST to "LazyList",
-        ROUTE_GET_CONTENT to "Get Content"
+        ROUTE_GET_CONTENT to "Get Content",
+        ROUTE_PHONE_CALLS to "Phone Calls"
     ).toList()
 
     LazyColumn(

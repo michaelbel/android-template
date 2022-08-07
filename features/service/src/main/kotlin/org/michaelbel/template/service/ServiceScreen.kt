@@ -2,7 +2,6 @@ package org.michaelbel.template.service
 
 import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
 import android.os.Build
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -24,10 +23,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.core.ktx.granted
 
 @Composable
 fun ServiceScreen(
@@ -103,12 +102,7 @@ private fun Content(
             OutlinedButton(
                 onClick = {
                     if (Build.VERSION.SDK_INT <= 28) {
-                        val writeStoragePermissionGranted: Boolean = ContextCompat.checkSelfPermission(
-                            context,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE
-                        ) == PackageManager.PERMISSION_GRANTED
-
-                        if (writeStoragePermissionGranted) {
+                        if (Manifest.permission.WRITE_EXTERNAL_STORAGE.granted(context)) {
                             downloadFile()
                         } else {
                             writeStoragePermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)

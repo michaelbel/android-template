@@ -2,12 +2,10 @@ package org.michaelbel.template.storage
 
 import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
@@ -18,6 +16,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import org.michaelbel.core.analytics.Analytics
+import org.michaelbel.core.ktx.granted
 import org.michaelbel.core.ktx.launchAndRepeatWithViewLifecycle
 import org.michaelbel.template.storage.adapter.GalleryAdapter
 import org.michaelbel.template.storage.databinding.FragmentStorageBinding
@@ -52,14 +51,6 @@ class StorageFragment: Fragment(R.layout.fragment_storage) {
         GalleryAdapter()
     }
 
-    private val readStorageGranted: Boolean
-        get() {
-            return ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ) == PackageManager.PERMISSION_GRANTED
-        }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -75,7 +66,7 @@ class StorageFragment: Fragment(R.layout.fragment_storage) {
             viewModel.imagesList.collect(galleryAdapter::submitList)
         }
 
-        if (readStorageGranted) {
+        if (Manifest.permission.READ_EXTERNAL_STORAGE.granted(requireContext())) {
             binding.queryButton.isGone = true
             viewModel.loadImages()
         } else {

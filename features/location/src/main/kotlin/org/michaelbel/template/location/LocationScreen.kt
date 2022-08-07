@@ -2,7 +2,6 @@ package org.michaelbel.template.location
 
 import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -23,9 +22,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.core.ktx.granted
 
 @Composable
 fun LocationScreen(
@@ -81,12 +80,7 @@ private fun Content() {
     Box {
         Button(
             onClick = {
-                val fineLocationPermissionGranted: Boolean = ContextCompat.checkSelfPermission(
-                    context,
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                ) == PackageManager.PERMISSION_GRANTED
-
-                if (fineLocationPermissionGranted) {
+                if (Manifest.permission.ACCESS_FINE_LOCATION.granted(context)) {
                     Toast.makeText(context, "Fine Location Permission Granted", Toast.LENGTH_SHORT).show()
                 } else {
                     fineLocationPermission.launch(Manifest.permission.ACCESS_FINE_LOCATION)
