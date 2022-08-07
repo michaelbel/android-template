@@ -12,6 +12,7 @@ import org.michaelbel.template.ime.ImeScreen
 import org.michaelbel.template.inappreview.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
 import org.michaelbel.template.location.LocationScreen
+import org.michaelbel.template.phonecalls.PhoneCallsScreen
 import org.michaelbel.template.remoteconfig.RemoteConfigScreen
 import org.michaelbel.template.service.ServiceScreen
 import org.michaelbel.template.toast.ToastScreen
@@ -30,6 +31,7 @@ const val ROUTE_SERVICE = "service"
 const val ROUTE_TOAST = "toast"
 const val ROUTE_LAZY_LIST = "lazyList"
 const val ROUTE_GET_CONTENT = "getcontent"
+const val ROUTE_PHONE_CALLS = "phone_calls"
 
 @Composable
 fun Content(
@@ -53,5 +55,6 @@ fun Content(
         composable(route = ROUTE_SERVICE) { ServiceScreen(navController) }
         composable(route = ROUTE_LAZY_LIST) { LazyListScreen(navController) }
         composable(route = ROUTE_GET_CONTENT) { GetContentScreen(navController) }
+        composable(route = ROUTE_PHONE_CALLS) { PhoneCallsScreen(navController) }
     }
 }

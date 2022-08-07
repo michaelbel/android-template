@@ -36,7 +36,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
-import org.michaelbel.core.ktx.permissionGranted
+import org.michaelbel.core.ktx.granted
 
 /**
  * Settings Panel Intents (Connectivity, NFC, Volume, Wi-Fi)
@@ -252,7 +252,7 @@ private fun Content(
         item {
             OutlinedButton(
                 onClick = {
-                    if (context.permissionGranted(Manifest.permission.CALL_PHONE)) {
+                    if (Manifest.permission.CALL_PHONE.granted(context)) {
                         Intent(
                             Intent.ACTION_CALL,
                             Uri.fromParts("tel", "88005553535", null)
