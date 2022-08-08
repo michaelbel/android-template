@@ -1,7 +1,6 @@
-package org.michaelbel.template.remoteconfig
+package org.michaelbel.template.clipboard.ui
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import android.content.Context
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.SnackbarDuration
@@ -20,23 +19,28 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.michaelbel.template.clipboard.R
+import org.michaelbel.template.clipboard.viewmodel.ClipboardViewModel
 
 @Composable
-fun RemoteConfigScreen(
+fun ClipboardScreen(
     navController: NavController
 ) {
-    val viewModel: RemoteConfigViewModel = hiltViewModel()
+    val viewModel: ClipboardViewModel = hiltViewModel()
     val scope: CoroutineScope = rememberCoroutineScope()
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
+
+    val clipText: String by viewModel.clipText.collectAsState()
 
     val onShowSnackbar: (String) -> Unit = { message ->
         scope.launch {
@@ -47,15 +51,21 @@ fun RemoteConfigScreen(
         }
     }
 
+    if (clipText.isNotEmpty()) {
+        onShowSnackbar(clipText)
+    }
+
     Scaffold(
         topBar = {
             Toolbar(navController)
         }
     ) {
         Content(
-            viewModel = viewModel,
-            snackbarHostState = snackbarHostState,
-            onShowSnackbar = onShowSnackbar
+            viewModel = viewModel
+        )
+
+        SnackbarHost(
+            hostState = snackbarHostState
         )
     }
 }
@@ -67,7 +77,7 @@ private fun Toolbar(
     SmallTopAppBar(
         title = {
             Text(
-                text = stringResource(R.string.title_remote_config)
+                text = stringResource(R.string.title_clipboard)
             )
         },
         modifier = Modifier.statusBarsPadding(),
@@ -88,64 +98,69 @@ private fun Toolbar(
 
 @Composable
 private fun Content(
-    viewModel: RemoteConfigViewModel,
-    snackbarHostState: SnackbarHostState,
-    onShowSnackbar: (String) -> Unit
+    viewModel: ClipboardViewModel
 ) {
-    val remoteParam: Any? by viewModel.customRemoteParam.collectAsState()
-
-    if (remoteParam != null) {
-        onShowSnackbar(remoteParam.toString())
-    }
-
-    Box(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        LazyColumn {
-            item {
-                OutlinedButton(
-                    onClick = {
-                        viewModel.takeBooleanParam()
-                    },
-                    modifier = Modifier
-                        .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 4.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.button_fetch_boolean)
-                    )
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = {
-                        viewModel.takeStringParam()
-                    },
-                    modifier = Modifier
-                        .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.button_fetch_string)
-                    )
-                }
-            }
-            item {
-                OutlinedButton(
-                    onClick = {
-                        viewModel.takeNumberParam()
-                    },
-                    modifier = Modifier
-                        .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 16.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.button_fetch_number)
-                    )
-                }
+    LazyColumn {
+        item {
+            OutlinedButton(
+                onClick = {
+                    viewModel.copyText()
+                },
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 4.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.copy_to_clipboard)
+                )
             }
         }
-
-        SnackbarHost(
-            hostState = snackbarHostState,
-            modifier = Modifier.align(Alignment.BottomCenter)
-        )
+        item {
+            OutlinedButton(
+                onClick = {
+                    viewModel.pasteText()
+                },
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.paste_from_clipboard)
+                )
+            }
+        }
+        item {
+            OutlinedButton(
+                onClick = {
+                    viewModel.clearClipboard()
+                },
+                modifier = Modifier
+                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+            ) {
+                Text(
+                    text = stringResource(R.string.clear_clipboard)
+                )
+            }
+        }
     }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    ClipboardScreen(
+        navController = navController
+    )
+}
+
+@Preview
+@Composable
+private fun ScreenPreviewDark() {
+    val context: Context = LocalContext.current
+    val navController = NavController(context)
+
+    ClipboardScreen(
+        navController = navController
+    )
 }

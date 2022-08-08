@@ -1,20 +1,22 @@
-package org.michaelbel.template.storage
+package org.michaelbel.template.storage.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.michaelbel.core.coroutines.IoDispatcher
 import org.michaelbel.template.storage.data.MediaExtractor
 import org.michaelbel.template.storage.data.MediaStoreImage
 
 @HiltViewModel
 class StorageViewModel @Inject constructor(
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
     private val mediaExtractor: MediaExtractor
 ): ViewModel() {
 
@@ -22,7 +24,7 @@ class StorageViewModel @Inject constructor(
     val imagesList: StateFlow<List<MediaStoreImage>> = imagesListFlow.asStateFlow()
 
     fun loadImages() = viewModelScope.launch {
-        val images: List<MediaStoreImage> = withContext(Dispatchers.IO) {
+        val images: List<MediaStoreImage> = withContext(ioDispatcher) {
             mediaExtractor.queryImages()
         }
         imagesListFlow.value = images

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.core.analytics
 
 import androidx.core.os.bundleOf

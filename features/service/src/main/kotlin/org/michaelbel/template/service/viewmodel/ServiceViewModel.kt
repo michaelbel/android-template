@@ -1,4 +1,4 @@
-package org.michaelbel.template.service
+package org.michaelbel.template.service.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

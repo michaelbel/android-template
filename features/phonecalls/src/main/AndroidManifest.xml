@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="org.michaelbel.template.phonecalls">
+    package="org.michaelbel.template.phonecalls"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
 
 </manifest>

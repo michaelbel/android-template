@@ -20,6 +20,7 @@ import org.michaelbel.core.ktx.granted
 import org.michaelbel.core.ktx.launchAndRepeatWithViewLifecycle
 import org.michaelbel.template.storage.adapter.GalleryAdapter
 import org.michaelbel.template.storage.databinding.FragmentStorageBinding
+import org.michaelbel.template.storage.viewmodel.StorageViewModel
 
 @AndroidEntryPoint
 class StorageFragment: Fragment(R.layout.fragment_storage) {

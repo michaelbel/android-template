@@ -12,3 +12,17 @@ fun String.granted(context: Context): Boolean {
         this
     ) == PackageManager.PERMISSION_GRANTED
 }
+
+fun String.notGranted(context: Context): Boolean {
+    return ContextCompat.checkSelfPermission(
+        context,
+        this
+    ) != PackageManager.PERMISSION_GRANTED
+}
+
+fun String.denied(context: Context): Boolean {
+    return ContextCompat.checkSelfPermission(
+        context,
+        this
+    ) == PackageManager.PERMISSION_DENIED
+}

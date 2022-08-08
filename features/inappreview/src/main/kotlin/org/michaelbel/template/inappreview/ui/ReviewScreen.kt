@@ -1,4 +1,4 @@
-package org.michaelbel.template.inappreview
+package org.michaelbel.template.inappreview.ui
 
 import android.content.Context
 import android.content.res.Configuration
@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
+import org.michaelbel.template.inappreview.R
 
 @Composable
 fun ReviewScreen(
@@ -48,7 +49,8 @@ private fun Toolbar(
         title = {
             Text(stringResource(R.string.title_in_app_review))
         },
-        modifier = Modifier.statusBarsPadding(),
+        modifier = Modifier
+            .statusBarsPadding(),
         navigationIcon = {
             IconButton(
                 onClick = {
@@ -70,7 +72,8 @@ private fun Content(
     onButtonClick: () -> Unit
 ) {
     Box(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .fillMaxSize()
     ) {
         LazyColumn {
             item {

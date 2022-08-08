@@ -1,4 +1,4 @@
-package org.michaelbel.template.remoteconfig
+package org.michaelbel.template.remoteconfig.di
 
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig

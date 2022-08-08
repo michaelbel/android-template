@@ -5,16 +5,16 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import org.michaelbel.template.auth.AuthScreen
-import org.michaelbel.template.clipboard.ClipboardScreen
+import org.michaelbel.template.clipboard.ui.ClipboardScreen
 import org.michaelbel.template.downloadfile.DownloadFileScreen
 import org.michaelbel.template.getcontent.GetContentScreen
 import org.michaelbel.template.ime.ImeScreen
-import org.michaelbel.template.inappreview.ReviewScreen
+import org.michaelbel.template.inappreview.ui.ReviewScreen
 import org.michaelbel.template.intents.IntentsScreen
 import org.michaelbel.template.location.LocationScreen
-import org.michaelbel.template.phonecalls.PhoneCallsScreen
-import org.michaelbel.template.remoteconfig.RemoteConfigScreen
-import org.michaelbel.template.service.ServiceScreen
+import org.michaelbel.template.phonecalls.ui.PhoneCallsScreen
+import org.michaelbel.template.remoteconfig.ui.RemoteConfigScreen
+import org.michaelbel.template.service.ui.ServiceScreen
 import org.michaelbel.template.toast.ToastScreen
 import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
 
