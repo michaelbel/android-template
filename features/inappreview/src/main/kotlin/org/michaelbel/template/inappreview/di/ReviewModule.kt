@@ -1,4 +1,4 @@
-package org.michaelbel.template.inappreview
+package org.michaelbel.template.inappreview.di
 
 import android.content.Context
 import com.google.android.play.core.review.ReviewManager

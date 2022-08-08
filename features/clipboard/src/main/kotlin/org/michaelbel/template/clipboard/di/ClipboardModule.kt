@@ -1,4 +1,4 @@
-package org.michaelbel.template.clipboard
+package org.michaelbel.template.clipboard.di
 
 import android.content.ClipboardManager
 import android.content.Context

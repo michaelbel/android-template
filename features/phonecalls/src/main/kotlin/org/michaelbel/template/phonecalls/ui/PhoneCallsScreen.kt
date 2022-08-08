@@ -1,23 +1,31 @@
-package org.michaelbel.template.service
+package org.michaelbel.template.phonecalls.ui
 
 import android.Manifest
 import android.content.Context
-import android.os.Build
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -27,16 +35,21 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.insets.statusBarsPadding
 import org.michaelbel.core.ktx.granted
+import org.michaelbel.template.phonecalls.viewmodel.PhoneCallsViewModel
+import org.michaelbel.template.phonecalls.R
+import org.michaelbel.template.phonecalls.model.PhoneCallLog
 
 @Composable
-fun ServiceScreen(
+fun PhoneCallsScreen(
     navController: NavController
 ) {
-    val viewModel: ServiceViewModel = hiltViewModel()
+    val viewModel: PhoneCallsViewModel = hiltViewModel()
 
     Scaffold(
         topBar = {
-            Toolbar(navController)
+            Toolbar(
+                navController = navController
+            )
         }
     ) {
         Content(viewModel)
@@ -50,7 +63,7 @@ private fun Toolbar(
     SmallTopAppBar(
         title = {
             Text(
-                text = stringResource(R.string.title_service)
+                text = stringResource(R.string.title_phone_calls)
             )
         },
         modifier = Modifier.statusBarsPadding(),
@@ -71,64 +84,55 @@ private fun Toolbar(
 
 @Composable
 private fun Content(
-    viewModel: ServiceViewModel
+    viewModel: PhoneCallsViewModel
 ) {
     val context: Context = LocalContext.current
 
-    fun downloadFile() {
-        val url = "https://sample-videos.com/audio/mp3/wave.mp3"
-        viewModel.downloadFile(url)
-
-        //val directoryPath: String = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
-        //val fileName = SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.getDefault()).format(Date()) + ".mp3"
-        //val urlOfTheFile = "https://sample-videos.com/audio/mp3/wave.mp3"
-        //DownloadManagerMy.initDownload(context, urlOfTheFile, directoryPath, fileName)
+    var permissionGranted: Boolean by remember {
+        mutableStateOf(Manifest.permission.READ_CALL_LOG.granted(context))
     }
 
-    val writeStoragePermission = rememberLauncherForActivityResult(
+    val readCallLogsPermission = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { granted: Boolean ->
+        permissionGranted = granted
         if (granted) {
-            downloadFile()
-        } else {
-            Toast.makeText(context, "Access Denied", Toast.LENGTH_SHORT).show()
+            viewModel.readCallLog()
         }
     }
 
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth()
+    val logs: List<PhoneCallLog> by viewModel.logs.collectAsState()
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(bottom = 80.dp)
     ) {
-        item {
-            OutlinedButton(
+        if (logs.isNotEmpty()) {
+            val listState: LazyListState = rememberLazyListState()
+
+            LazyColumn(
+                state = listState,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                items(logs) { log: PhoneCallLog ->
+                    PhoneLogLayout(log)
+                }
+            }
+        } else {
+            Button(
                 onClick = {
-                    if (Build.VERSION.SDK_INT <= 28) {
-                        if (Manifest.permission.WRITE_EXTERNAL_STORAGE.granted(context)) {
-                            downloadFile()
-                        } else {
-                            writeStoragePermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        }
+                    if (permissionGranted) {
+                        viewModel.readCallLog()
                     } else {
-                        downloadFile()
+                        readCallLogsPermission.launch(Manifest.permission.READ_CALL_LOG)
                     }
                 },
                 modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
+                    .align(Alignment.Center)
             ) {
                 Text(
-                    text = stringResource(R.string.download_file)
-                )
-            }
-        }
-        item {
-            OutlinedButton(
-                onClick = {
-
-                },
-                modifier = Modifier
-                    .padding(start = 16.dp, top = 4.dp, end = 16.dp, bottom = 4.dp)
-            ) {
-                Text(
-                    text = stringResource(R.string.play_music)
+                    text = "Read Call Log"
                 )
             }
         }
@@ -141,7 +145,7 @@ private fun ScreenPreview() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    ServiceScreen(
+    PhoneCallsScreen(
         navController = navController
     )
 }
@@ -152,7 +156,7 @@ private fun ScreenPreviewDark() {
     val context: Context = LocalContext.current
     val navController = NavController(context)
 
-    ServiceScreen(
+    PhoneCallsScreen(
         navController = navController
     )
 }

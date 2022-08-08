@@ -1,4 +1,4 @@
-package org.michaelbel.template.remoteconfig
+package org.michaelbel.template.remoteconfig.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -25,7 +25,9 @@ class RemoteConfigViewModel @Inject constructor(
     }
 
     fun takeBooleanParam() = viewModelScope.launch {
-        val customParam: Boolean = firebaseRemoteConfig.getBoolean(REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM)
+        val customParam: Boolean = firebaseRemoteConfig.getBoolean(
+            REMOTE_CONFIG_CUSTOM_BOOLEAN_PARAM
+        )
         _customRemoteParam.emit(customParam)
     }
 

@@ -1,4 +1,4 @@
-package org.michaelbel.template.clipboard
+package org.michaelbel.template.clipboard.viewmodel
 
 import android.content.ClipData
 import android.content.ClipDescription
