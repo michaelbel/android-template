@@ -6,6 +6,9 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.androidTestApi
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.testApi
+import org.michaelbel.template.extensions.implementation
+import org.michaelbel.template.extensions.testImplementation
+import org.michaelbel.template.extensions.androidTestImplementation
 
 /**
  * Kotlin
@@ -39,12 +42,18 @@ const val OptExperimentalSerializationApi = "-Xopt-in=kotlinx.serialization.Expe
 const val RequiresOptIn = "-Xopt-in=kotlin.RequiresOptIn"
 const val OptContextReceivers = "-Xcontext-receivers"
 
+fun DependencyHandler.implementationKotlinDependencies() {
+    implementation(KotlinCoroutinesCore)
+    implementation(KotlinCoroutinesAndroid)
+    implementation(KotlinSerialization)
+    testImplementation(KotlinCoroutinesTest)
+    androidTestImplementation(KotlinCoroutinesTest)
+}
+
 fun DependencyHandler.apiKotlinDependencies() {
     api(KotlinCoroutinesCore)
     api(KotlinCoroutinesAndroid)
     api(KotlinSerialization)
-
     testApi(KotlinCoroutinesTest)
-
     androidTestApi(KotlinCoroutinesTest)
 }

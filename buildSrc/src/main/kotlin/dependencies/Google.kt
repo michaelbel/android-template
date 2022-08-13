@@ -7,10 +7,9 @@ import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.implementation
 
 /**
- * Google Play services, Material, Play Core
+ * Google Play services, Play Core
  *
  * @see <a href="https://developers.google.com/android/guides/setup">Set up Google Play services</a>
- * @see <a href="https://github.com/material-components/material-components-android/releases">Material</a>
  * @see <a href="https://d.android.com/reference/com/google/android/play/core/release-notes">Play Core</a>
  */
 
@@ -57,9 +56,6 @@ private const val GoogleServicesPluginVersion = "4.3.10"
 private const val OssLicensesPluginVersion = "0.10.4"
 private const val StrictPluginVersion = "1.2.2"
 
-private const val MaterialVersion = "1.6.0"
-private const val MaterialComposeThemeAdapterVersion = "1.1.3"
-
 private const val PlayCoreVersion = "1.8.1"
 
 private const val Ads = "com.google.android.gms:play-services-ads:$GmsAds"
@@ -103,26 +99,15 @@ private const val Wearable = "com.google.android.gms:play-services-wearable:$Gms
 
 const val GoogleServicesPlugin = "com.google.gms:google-services:$GoogleServicesPluginVersion"
 
-private const val Material = "com.google.android.material:material:$MaterialVersion"
-private const val MaterialComposeThemeAdapter = "com.google.android.material:compose-theme-adapter:$MaterialComposeThemeAdapterVersion"
-
 private const val PlayCore = "com.google.android.play:core-ktx:$PlayCoreVersion"
-
-const val OptExperimentalMaterialApi = "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"
-const val OptExperimentalMaterial3Api = "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api"
-
-fun DependencyHandler.apiGooglePlayServicesDependencies() {
-    api(Auth)
-    api(Base)
-}
 
 fun DependencyHandler.implementationGooglePlayServicesAdsDependencies() {
     implementation(Ads)
 }
 
-fun DependencyHandler.apiMaterialDependencies() {
-    api(Material)
-    api(MaterialComposeThemeAdapter)
+fun DependencyHandler.apiGooglePlayServicesDependencies() {
+    api(Auth)
+    api(Base)
 }
 
 fun DependencyHandler.implementationPlayCoreDependency() {

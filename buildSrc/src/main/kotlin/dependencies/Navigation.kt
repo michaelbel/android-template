@@ -25,18 +25,18 @@ const val NavigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-g
 
 private const val NavigationCompose = "androidx.navigation:navigation-compose:$NavigationVersion"
 
-fun DependencyHandler.apiNavigationDependencies() {
-    api(NavigationCompose)
-    api(NavigationDynamic)
-    api(NavigationFragment)
-    api(NavigationUi)
-    androidTestApi(NavigationTesting)
-}
-
 fun DependencyHandler.implementationNavigationDependencies() {
     implementation(NavigationCompose)
     implementation(NavigationDynamic)
     implementation(NavigationFragment)
     implementation(NavigationUi)
     androidTestImplementation(NavigationTesting)
+}
+
+fun DependencyHandler.apiNavigationDependencies() {
+    api(NavigationCompose)
+    api(NavigationDynamic)
+    api(NavigationFragment)
+    api(NavigationUi)
+    androidTestApi(NavigationTesting)
 }

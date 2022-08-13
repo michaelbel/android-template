@@ -35,10 +35,16 @@ private const val TestRules = "androidx.test:rules:$TestRulesVersion"
 private const val AndroidxTestRunner = "androidx.test:runner:$TestRunnerVersion"
 private const val TestUiAutomator = "androidx.test.uiautomator:uiautomator:$TestUiAutomatorVersion"
 
+fun DependencyHandler.implementationJetpackTestDependencies() {
+    androidTestImplementation(TestCore)
+    androidTestImplementation(TestExtJunit)
+    androidTestImplementation(TestEspressoCore)
+}
+
 fun DependencyHandler.apiJetpackTestDependencies() {
     testApi(TestCore)
     androidTestApi(TestExtJunit)
-    androidTestImplementation(TestEspressoCore)
+    androidTestApi(TestEspressoCore)
     androidTestApi(TestCore)
     androidTestApi(AndroidxTestRunner)
     androidTestApi(TestExtTruth)
@@ -47,10 +53,4 @@ fun DependencyHandler.apiJetpackTestDependencies() {
     androidTestApi(TestEspressoIntents)
     androidTestApi(TestUiAutomator)
     androidTestApi(TestRules)
-}
-
-fun DependencyHandler.implementationJetpackTestDependencies() {
-    androidTestImplementation(TestCore)
-    androidTestImplementation(TestExtJunit)
-    androidTestImplementation(TestEspressoCore)
 }

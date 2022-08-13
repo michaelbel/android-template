@@ -4,6 +4,7 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Google Accompanist
@@ -31,6 +32,14 @@ private const val AccompanistPlaceholder = "com.google.accompanist:accompanist-p
 private const val AccompanistPlaceholderMaterial = "com.google.accompanist:accompanist-placeholder-material:$AccompanistVersion"
 private const val AccompanistSystemUiController = "com.google.accompanist:accompanist-systemuicontroller:$AccompanistVersion"
 private const val AccompanistSwipeRefresh = "com.google.accompanist:accompanist-swiperefresh:$AccompanistVersion"
+
+fun DependencyHandler.implementationAccompanistDependencies() {
+    implementation(AccompanistAppCompat)
+    implementation(AccompanistDrawablePainter)
+    implementation(AccompanistInsets)
+    implementation(AccompanistInsetsUi)
+    implementation(AccompanistNavigationAnimation)
+}
 
 fun DependencyHandler.apiAccompanistDependencies() {
     api(AccompanistAppCompat)

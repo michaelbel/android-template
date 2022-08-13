@@ -6,6 +6,8 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.ksp
 import org.michaelbel.template.extensions.testApi
+import org.michaelbel.template.extensions.implementation
+import org.michaelbel.template.extensions.testImplementation
 
 /**
  * Room
@@ -20,6 +22,14 @@ private const val RoomCompiler = "androidx.room:room-compiler:$RoomVersion"
 private const val RoomPaging = "androidx.room:room-paging:$RoomVersion"
 private const val RoomRuntime = "androidx.room:room-runtime:$RoomVersion"
 private const val RoomTesting = "androidx.room:room-testing:$RoomVersion"
+
+fun DependencyHandler.implementationRoomDependencies() {
+    implementation(Room)
+    implementation(RoomPaging)
+    implementation(RoomRuntime)
+    ksp(RoomCompiler)
+    testImplementation(RoomTesting)
+}
 
 fun DependencyHandler.apiRoomDependencies() {
     api(Room)
