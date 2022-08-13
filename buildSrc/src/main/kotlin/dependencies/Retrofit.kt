@@ -4,6 +4,7 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Retrofit
@@ -20,6 +21,12 @@ private const val OkhttpLoggingInterceptorVersion = "5.0.0-alpha.2"
 private const val Retrofit = "com.squareup.retrofit2:retrofit:$RetrofitVersion"
 private const val RetrofitConverterSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$RetrofitConverterSerializationVersion"
 private const val OkhttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$OkhttpLoggingInterceptorVersion"
+
+fun DependencyHandler.implementationRetrofitDependencies() {
+    implementation(Retrofit)
+    implementation(RetrofitConverterSerialization)
+    implementation(OkhttpLoggingInterceptor)
+}
 
 fun DependencyHandler.apiRetrofitDependencies() {
     api(Retrofit)

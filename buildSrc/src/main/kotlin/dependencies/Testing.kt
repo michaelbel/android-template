@@ -39,14 +39,14 @@ private const val KaspressoCompose = "com.kaspersky.android-components:kaspresso
 const val TestRunner = "androidx.test.runner.AndroidJUnitRunner"
 const val BenchmarkRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
 
+fun DependencyHandler.implementationTestDependencies() {
+    testImplementation(Junit)
+}
+
 fun DependencyHandler.apiTestDependencies() {
     testApi(Junit)
     testApi(Mockk)
     testApi(Mockito)
     testApi(Robolectric)
     androidTestApi(Truth)
-}
-
-fun DependencyHandler.implementationTestDependencies() {
-    testImplementation(Junit)
 }
