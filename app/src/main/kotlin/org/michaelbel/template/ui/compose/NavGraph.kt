@@ -19,7 +19,7 @@ import org.michaelbel.template.toast.ToastScreen
 import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
 
 const val ROUTE_COMPOSE = "compose"
-const val ROUTE_AUTH = "auth"
+const val ROUTE_ADS = "ads"
 const val ROUTE_CLIPBOARD = "clipboard"
 const val ROUTE_DOWNLOAD_FILE = "download_file"
 const val ROUTE_IME = "ime"
@@ -46,7 +46,7 @@ fun Content(
         composable(route = ROUTE_CLIPBOARD) { ClipboardScreen(navController) }
         composable(route = ROUTE_DOWNLOAD_FILE) { DownloadFileScreen(navController) }
         composable(route = ROUTE_INTENTS) { IntentsScreen(navController) }
-        composable(route = ROUTE_AUTH) { AuthScreen(navController) }
+        composable(route = ROUTE_ADS) { AuthScreen(navController) }
         composable(route = ROUTE_TOAST) { ToastScreen(navController) }
         composable(route = ROUTE_CONFIG) { RemoteConfigScreen(navController) }
         composable(route = ROUTE_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
