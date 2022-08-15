@@ -52,20 +52,20 @@ private fun Content(
 ) {
     val listState: LazyListState = rememberLazyListState()
 
-    val list: List<Pair<String, String>> = mapOf(
-        ROUTE_AUTH to "Auth",
-        ROUTE_CLIPBOARD to "Clipboard",
-        ROUTE_DOWNLOAD_FILE to "Download File",
-        ROUTE_IME to "IME",
-        ROUTE_REVIEW to "Review",
-        ROUTE_INTENTS to "Intents",
-        ROUTE_LOCATION to "Location",
-        ROUTE_CONFIG to "Config",
-        ROUTE_SERVICE to "Service",
-        ROUTE_TOAST to "Toast",
-        ROUTE_LAZY_LIST to "LazyList",
-        ROUTE_GET_CONTENT to "Get Content",
-        ROUTE_PHONE_CALLS to "Phone Calls"
+    val list: List<Pair<String, Int>> = mapOf(
+        ROUTE_ADS to R.string.title_ads,
+        ROUTE_CLIPBOARD to R.string.title_clipboard,
+        ROUTE_DOWNLOAD_FILE to R.string.title_storage,
+        ROUTE_IME to R.string.title_ime_actions,
+        ROUTE_REVIEW to R.string.title_in_app_review,
+        ROUTE_INTENTS to R.string.title_intents,
+        ROUTE_LOCATION to R.string.title_location,
+        ROUTE_CONFIG to R.string.title_remote_config,
+        ROUTE_SERVICE to R.string.title_service,
+        ROUTE_TOAST to R.string.title_toast,
+        ROUTE_LAZY_LIST to R.string.title_lazy_list,
+        ROUTE_GET_CONTENT to R.string.title_get_content,
+        ROUTE_PHONE_CALLS to R.string.title_phone_calls
     ).toList()
 
     LazyColumn(
@@ -79,7 +79,7 @@ private fun Content(
             ListItem(
                 text = {
                     Text(
-                        text = title
+                        text = stringResource(title)
                     )
                 },
                 modifier = Modifier
