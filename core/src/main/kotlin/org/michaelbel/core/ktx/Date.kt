@@ -4,6 +4,7 @@ package org.michaelbel.core.ktx
 
 import java.util.Calendar
 import java.util.Date
+import java.util.concurrent.TimeUnit
 
 var Date.calendar: Calendar
     get() = Calendar.getInstance().apply { time = this@calendar }
@@ -25,3 +26,7 @@ val Date.isTomorrow: Boolean
         return tomorrow.get(Calendar.YEAR) == calendar.get(Calendar.YEAR) &&
                 tomorrow.get(Calendar.DAY_OF_YEAR) == calendar.get(Calendar.DAY_OF_YEAR)
     }
+
+fun diffBetweenDates(date1: Date, date2: Date): Long {
+    return TimeUnit.MILLISECONDS.toMinutes(date1.time - date2.time)
+}
