@@ -16,10 +16,14 @@ import org.michaelbel.template.extensions.implementation
 
 private const val RetrofitVersion = "2.9.0"
 private const val RetrofitConverterSerializationVersion = "0.8.0"
+
 private const val OkhttpLoggingInterceptorVersion = "5.0.0-alpha.2"
 
 private const val Retrofit = "com.squareup.retrofit2:retrofit:$RetrofitVersion"
+private const val RetrofitConverterGson = "com.squareup.retrofit2:converter-gson:$RetrofitVersion"
 private const val RetrofitConverterSerialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$RetrofitConverterSerializationVersion"
+private const val RetrofitAdapterRxjava = "com.squareup.retrofit2:adapter-rxjava2:$RetrofitVersion"
+
 private const val OkhttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$OkhttpLoggingInterceptorVersion"
 
 fun DependencyHandler.implementationRetrofitDependencies() {
