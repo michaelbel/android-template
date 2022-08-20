@@ -13,7 +13,7 @@ import org.michaelbel.template.extensions.implementation
  * @see <a href="https://d.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a>
  */
 
-private const val LifecycleVersion = "2.5.0"
+private const val LifecycleVersion = "2.5.1"
 
 private const val LifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:$LifecycleVersion"
 private const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$LifecycleVersion"
