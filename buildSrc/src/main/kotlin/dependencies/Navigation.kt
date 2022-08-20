@@ -14,7 +14,7 @@ import org.michaelbel.template.extensions.implementation
  * @see <a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a>
  */
 
-private const val NavigationVersion = "2.5.0"
+private const val NavigationVersion = "2.5.1"
 
 private const val NavigationFragment = "androidx.navigation:navigation-fragment-ktx:$NavigationVersion"
 private const val NavigationUi = "androidx.navigation:navigation-ui-ktx:$NavigationVersion"

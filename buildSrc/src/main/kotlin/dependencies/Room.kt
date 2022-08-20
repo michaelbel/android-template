@@ -15,7 +15,7 @@ import org.michaelbel.template.extensions.testImplementation
  * @see <a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a>
  */
 
-private const val RoomVersion = "2.4.2"
+private const val RoomVersion = "2.4.3"
 
 private const val Room = "androidx.room:room-ktx:$RoomVersion"
 private const val RoomCompiler = "androidx.room:room-compiler:$RoomVersion"
