@@ -57,12 +57,6 @@ android {
     }
 }
 
-kotlin {
-    sourceSets.debug {
-        kotlin.srcDir("build/generated/ksp/debug/kotlin")
-    }
-}
-
 dependencies {
     implementationHiltDependencies()
     apiKotlinDependencies()
