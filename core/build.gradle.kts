@@ -1,7 +1,6 @@
-import org.michaelbel.template.BuildTools
+@file:Suppress("UnstableApiUsage")
+
 import org.michaelbel.template.CompileSdk
-import org.michaelbel.template.MinSdk
-import org.michaelbel.template.TargetSdk
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
 import org.michaelbel.template.dependencies.apiAppcompatDependencies
@@ -14,7 +13,6 @@ import org.michaelbel.template.dependencies.apiCoreDependencies
 import org.michaelbel.template.dependencies.apiDataStoreDependencies
 import org.michaelbel.template.dependencies.apiFirebaseDependencies
 import org.michaelbel.template.dependencies.apiGooglePlayServicesDependencies
-import org.michaelbel.template.dependencies.apiWindowDependencies
 import org.michaelbel.template.dependencies.apiJetpackTestDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
 import org.michaelbel.template.dependencies.apiLifecycleDependencies
@@ -29,6 +27,7 @@ import org.michaelbel.template.dependencies.apiTestDependencies
 import org.michaelbel.template.dependencies.apiTimberDependencies
 import org.michaelbel.template.dependencies.apiViewBindingPropertyDelegateDependencies
 import org.michaelbel.template.dependencies.apiViewPager2Dependencies
+import org.michaelbel.template.dependencies.apiWindowDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 
 plugins {
@@ -43,27 +42,9 @@ plugins {
 
 android {
     compileSdk = CompileSdk
-    buildToolsVersion = BuildTools
 
     defaultConfig {
-        minSdk = MinSdk
-        targetSdk = TargetSdk
         testInstrumentationRunner = TestRunner
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
     }
 
     testOptions {
