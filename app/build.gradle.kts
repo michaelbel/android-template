@@ -124,6 +124,20 @@ android {
     }
 }
 
+tasks.register("prepareReleaseNotes") {
+    doLast {
+        exec {
+            workingDir(rootDir)
+            executable("./scripts/gitlog.sh")
+        }
+    }
+}
+
+afterEvaluate {
+    tasks.findByName("assembleDebug")?.finalizedBy("prepareReleaseNotes")
+    tasks.findByName("assembleRelease")?.finalizedBy("prepareReleaseNotes")
+}
+
 dependencies {
     implementation(project(":core"))
     implementation(project(":features"))
