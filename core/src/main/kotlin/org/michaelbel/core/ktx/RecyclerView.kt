@@ -3,12 +3,22 @@
 package org.michaelbel.core.ktx
 
 import android.content.Context
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 val RecyclerView.ViewHolder.context: Context
     get() = itemView.context
+
+val RecyclerView.linearLayoutManager: LinearLayoutManager
+    get() = layoutManager as LinearLayoutManager
+
+val RecyclerView.gridLayoutManager: GridLayoutManager
+    get() = layoutManager as GridLayoutManager
+
+val RecyclerView.staggeredGridLayoutManager: StaggeredGridLayoutManager
+    get() = layoutManager as StaggeredGridLayoutManager
 
 /**
  * Моментальный скролл списка до n-го элемента сверху [RecyclerView],
@@ -29,12 +39,10 @@ fun RecyclerView.smartScrollToTop() {
 
     when (layoutManager) {
         is LinearLayoutManager -> {
-            val lm: LinearLayoutManager = layoutManager as LinearLayoutManager
-            scrollLambda(lm.findLastVisibleItemPosition())
+            scrollLambda(linearLayoutManager.findLastVisibleItemPosition())
         }
         is StaggeredGridLayoutManager -> {
-            val lm: StaggeredGridLayoutManager = layoutManager as StaggeredGridLayoutManager
-            val visiblePositions: IntArray = lm.findLastVisibleItemPositions(null)
+            val visiblePositions: IntArray = staggeredGridLayoutManager.findLastVisibleItemPositions(null)
             scrollLambda(visiblePositions.maxOrNull() ?: 0)
         }
         else -> { /* not implemented */ }
