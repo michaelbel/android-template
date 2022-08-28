@@ -10,7 +10,9 @@ interface CustomAnimationListener: Animation.AnimationListener {
     override fun onAnimationRepeat(animation: Animation?) {}
 }
 
-inline fun Animation.doOnEnd(crossinline action: (animation: Animation?) -> Unit) {
+inline fun Animation.doOnEnd(
+    crossinline action: (animation: Animation?) -> Unit
+) {
     setAnimationListener(object: CustomAnimationListener {
         override fun onAnimationEnd(animation: Animation?) {
             action(animation)
