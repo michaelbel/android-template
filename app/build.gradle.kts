@@ -47,6 +47,7 @@ val gitVersion: Int by lazy {
 }
 
 android {
+    namespace = "org.michaelbel.template"
     compileSdk = CompileSdk
     buildToolsVersion = BuildTools
 
@@ -94,7 +95,7 @@ android {
                 appId = FirebaseAppDistribution.MobileSdkAppId
                 artifactType = FirebaseAppDistribution.ArtifactType
                 testers = FirebaseAppDistribution.Testers
-                releaseNotes = FirebaseAppDistribution.ReleaseNotes
+                releaseNotesFile="$rootProject.rootDir/releaseNotes.txt"
             }
         }
         debug {

@@ -13,6 +13,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.inappupdate"
     compileSdk = CompileSdk
 
     composeOptions {

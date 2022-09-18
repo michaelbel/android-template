@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * DragAndDrop
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/draganddrop">DragAndDrop</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/draganddrop">DragAndDrop</a>
  */
 
 private const val DragAndDropVersion = "1.0.0"

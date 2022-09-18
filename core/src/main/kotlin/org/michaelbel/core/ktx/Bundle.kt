@@ -3,6 +3,7 @@
 package org.michaelbel.core.ktx
 
 import android.app.Activity
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import kotlin.reflect.KProperty
@@ -27,4 +28,20 @@ inline fun <F, reified T> argumentDelegate(
 
 interface LazyProvider<A, T> {
     operator fun provideDelegate(thisRef: A, prop: KProperty<*>): Lazy<T>
+}
+
+inline fun <reified T> Bundle.requireParcelable(key: String): T {
+    return if (Build.VERSION.SDK_INT >= 33) {
+        getParcelable(key, T::class.java) as T
+    } else {
+        requireNotNull(getParcelable(key))
+    }
+}
+
+inline fun <reified T> Bundle.requireSerializable(key: String): T {
+    return if (Build.VERSION.SDK_INT >= 33) {
+        getParcelable(key, T::class.java) as T
+    } else {
+        requireNotNull(getSerializable(key)) as T
+    }
 }

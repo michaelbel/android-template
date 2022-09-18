@@ -13,6 +13,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.ads"
     compileSdk = CompileSdk
 
     composeOptions {

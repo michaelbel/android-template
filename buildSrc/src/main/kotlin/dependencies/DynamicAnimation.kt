@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * DynamicAnimation
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/dynamicanimation">DynamicAnimation</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/dynamicanimation">DynamicAnimation</a>
  */
 
 private const val DynamicAnimationVersion = "1.1.0-alpha03"

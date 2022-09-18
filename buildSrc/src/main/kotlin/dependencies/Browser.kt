@@ -9,7 +9,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Browser
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/browser">Browser</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/browser">Browser</a>
  */
 
 private const val BrowserVersion = "1.4.0"

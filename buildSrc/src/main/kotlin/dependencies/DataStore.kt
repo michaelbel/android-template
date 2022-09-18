@@ -9,7 +9,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * DataStore
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/datastore">DataStore</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/datastore">DataStore</a>
  */
 
 private const val DataStoreVersion = "1.0.0"

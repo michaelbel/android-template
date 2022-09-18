@@ -17,8 +17,11 @@ pluginManagement {
 
 include(
     ":app",
+
     ":core",
+
     ":features",
+
     ":features:ads",
     ":features:auth",
     ":features:clipboard",
@@ -38,4 +41,5 @@ include(
     ":features:storage",
     ":features:toast"
 )
+
 rootProject.name = "android-app-template"

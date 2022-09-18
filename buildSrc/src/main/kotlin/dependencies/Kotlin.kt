@@ -4,11 +4,11 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.androidTestApi
-import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.testApi
-import org.michaelbel.template.extensions.implementation
-import org.michaelbel.template.extensions.testImplementation
 import org.michaelbel.template.extensions.androidTestImplementation
+import org.michaelbel.template.extensions.api
+import org.michaelbel.template.extensions.implementation
+import org.michaelbel.template.extensions.testApi
+import org.michaelbel.template.extensions.testImplementation
 
 /**
  * Kotlin
@@ -20,13 +20,12 @@ import org.michaelbel.template.extensions.androidTestImplementation
  * @see <a href="https://d.android.com/jetpack/androidx/releases/compose-kotlin">Compose to Kotlin Compatibility Map</a>
  */
 
-const val KotlinVersion = "1.7.10"
+const val KotlinVersion = "1.7.20"
+const val KotlinCompilerExtensionVersion = "1.3.2"
 
 private const val KotlinCoroutinesVersion = "1.6.4"
 private const val KotlinSerializationVersion = "1.4.0"
 private const val KotlinDatetimeVersion = "0.4.0"
-
-const val KotlinCompilerExtensionVersion = "1.3.0"
 
 const val KotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KotlinVersion"
 const val KotlinSerializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:$KotlinVersion"

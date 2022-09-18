@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Glance
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/glance">Glance</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/glance">Glance</a>
  */
 
 private const val GlanceVersion = "1.0.0-alpha03"

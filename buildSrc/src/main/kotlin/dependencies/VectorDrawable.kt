@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * VectorDrawable
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable">VectorDrawable</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/vectordrawable">VectorDrawable</a>
  */
 
 private const val VectorDrawableVersion = "1.1.0"

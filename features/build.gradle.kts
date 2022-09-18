@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.features"
     compileSdk = CompileSdk
 }
 

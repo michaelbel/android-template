@@ -1,5 +1,6 @@
 package org.michaelbel.template.phonecalls.ui
 
+import android.provider.CallLog
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
@@ -7,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.michaelbel.template.phonecalls.model.CallType
 import org.michaelbel.template.phonecalls.model.PhoneCallLog
 
 @Composable
@@ -22,7 +22,7 @@ fun PhoneLogLayout(
             text = "Number: ${log.number}"
         )
         Text(
-            text = "Type: ${log.type.text}"
+            text = "Type: ${log.type}"
         )
         Text(
             text = "Date: ${log.date}"
@@ -38,7 +38,7 @@ fun PhoneLogLayout(
 private fun ScreenPreview() {
     val phoneLog = PhoneCallLog(
         number = "+78005553535",
-        type = CallType.INCOMING,
+        type = CallLog.Calls.INCOMING_TYPE,
         date = "Fri Aug 05 21:22:37 GMT+03:00 2022",
         duration = 112
     )

@@ -3,7 +3,6 @@
 package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
-import org.michaelbel.template.VersionName
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.implementation
 
@@ -68,5 +67,4 @@ object FirebaseAppDistribution {
     const val ArtifactType = "APK"
     const val Testers = "michaelbel24865@gmail.com"
     const val Groups = "qa"
-    const val ReleaseNotes = "Release $VersionName"
 }

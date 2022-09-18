@@ -12,6 +12,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.service"
     compileSdk = CompileSdk
 
     composeOptions {

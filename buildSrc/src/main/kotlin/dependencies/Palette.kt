@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Palette
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/palette">Palette</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/palette">Palette</a>
  */
 
 private const val PaletteVersion = "1.0.0"

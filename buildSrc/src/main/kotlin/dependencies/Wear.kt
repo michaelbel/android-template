@@ -7,6 +7,8 @@ package org.michaelbel.template.dependencies
  *
  * Build apps for the wrist with Wear OS
  *
+ * Updated September 7, 2022
+ *
  * @see <a href="https://wearos.google.com">Wear OS</a>
  * @see <a href="https://d.android.com/wear">Wear for developers</a>
  *
@@ -21,8 +23,8 @@ private const val WearInputVersion = "1.1.0"
 private const val WearOngoingVersion = "1.0.0"
 private const val WearPhoneInteractionsVersion = "1.0.1"
 private const val WearRemoteInteractionsVersion = "1.0.0"
-private const val WearComposeVersion = "1.0.0"
-private const val WearTilesVersion = "1.0.0"
+private const val WearComposeVersion = "1.0.2"
+private const val WearTilesVersion = "1.1.0"
 private const val WearWatchfaceVersion = "1.1.0"
 
 private const val Wear = "androidx.wear:wear:$WearVersion"

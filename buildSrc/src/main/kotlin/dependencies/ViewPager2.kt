@@ -9,7 +9,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * ViewPager2
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/viewpager2">ViewPager2</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/viewpager2">ViewPager2</a>
  */
 
 private const val ViewPager2Version = "1.0.0"

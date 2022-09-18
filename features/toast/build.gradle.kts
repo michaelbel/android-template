@@ -12,6 +12,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.toast"
     compileSdk = CompileSdk
 
     composeOptions {

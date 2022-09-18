@@ -9,7 +9,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Arch Core
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/arch-core">Arch Core</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/arch-core">Arch Core</a>
  */
 
 private const val ArchCoreVersion = "2.1.0"

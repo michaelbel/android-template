@@ -5,7 +5,7 @@ package org.michaelbel.template.dependencies
 /**
  * Media
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/media">Media</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/media">Media</a>
  */
 
 private const val MediaVersion = "1.6.0"

@@ -13,6 +13,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.remoteconfig"
     compileSdk = CompileSdk
 
     composeOptions {

@@ -10,7 +10,7 @@ import org.michaelbel.template.extensions.testApi
 /**
  * Test
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/test">Test</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/test">Test</a>
  */
 
 private const val TestCoreVersion = "1.4.0"

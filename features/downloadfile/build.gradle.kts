@@ -14,6 +14,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.downloadfile"
     compileSdk = CompileSdk
 
     composeOptions {

@@ -7,10 +7,8 @@ import android.provider.CallLog
 import androidx.annotation.RequiresPermission
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Date
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import org.michaelbel.core.ktx.denied
-import org.michaelbel.template.phonecalls.model.CallType
 import org.michaelbel.template.phonecalls.model.PhoneCallLog
 
 class PhoneCallsManager @Inject constructor(
@@ -37,29 +35,22 @@ class PhoneCallsManager @Inject constructor(
 
         while (cursor.moveToNext()) {
             val number: String = cursor.getString(numberIndex)
-            val type: String = cursor.getString(typeIndex)
+            val type: Int = cursor.getString(typeIndex).toInt()
             val date: String = cursor.getString(dateIndex)
             val duration: String = cursor.getString(durationIndex)
 
-            val callDate: Date = Date(date.toLong())
-            val currentDate: Date = Date()
+            val isOutgoing: Boolean = type == CallLog.Calls.OUTGOING_TYPE
 
-            val toMinutes: Long = TimeUnit.MILLISECONDS.toMinutes(currentDate.time - callDate.time)
-
-            val callType: CallType = when (type.toInt()) {
-                CallLog.Calls.INCOMING_TYPE -> CallType.INCOMING
-                CallLog.Calls.OUTGOING_TYPE -> CallType.OUTGOING
-                else -> CallType.MISSED
-            }
-
-            items.add(
-                PhoneCallLog(
-                    number = number,
-                    type = callType,
-                    date = Date(date.toLong()).toString(),
-                    duration = duration.toInt()
+            if (isOutgoing) {
+                items.add(
+                    PhoneCallLog(
+                        number = number,
+                        type = type,
+                        date = Date(date.toLong()).toString(),
+                        duration = duration.toInt()
+                    )
                 )
-            )
+            }
         }
         cursor.close()
 

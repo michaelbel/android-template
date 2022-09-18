@@ -1,6 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
 import org.michaelbel.template.CompileSdk
+import org.michaelbel.template.MinSdk
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
 import org.michaelbel.template.dependencies.apiAppcompatDependencies
@@ -37,13 +38,15 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
     kotlin("android")
     kotlin("kapt")
-    id("com.google.devtools.ksp") version "1.7.10-1.0.6"
+    id("com.google.devtools.ksp") version "1.7.20-1.0.6"
 }
 
 android {
+    namespace = "org.michaelbel.core"
     compileSdk = CompileSdk
 
     defaultConfig {
+        minSdk = MinSdk
         testInstrumentationRunner = TestRunner
     }
 

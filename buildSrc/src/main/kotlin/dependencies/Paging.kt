@@ -11,7 +11,7 @@ import org.michaelbel.template.extensions.testImplementation
 /**
  * Jetpack Paging
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/paging">Paging</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/paging">Paging</a>
  */
 
 private const val PagingVersion = "3.1.1"

@@ -15,6 +15,7 @@ plugins {
 }
 
 android {
+    namespace = "org.michaelbel.template.auth"
     compileSdk = CompileSdk
 
     composeOptions {

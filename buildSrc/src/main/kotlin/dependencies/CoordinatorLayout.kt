@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * CoordinatorLayout
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/coordinatorlayout">CoordinatorLayout</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/coordinatorlayout">CoordinatorLayout</a>
  */
 
 private const val CoordinatorLayoutVersion = "1.2.0"

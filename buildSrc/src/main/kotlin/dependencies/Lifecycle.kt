@@ -5,7 +5,6 @@ package org.michaelbel.template.dependencies
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.kapt
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Lifecycle
@@ -22,14 +21,6 @@ private const val LifecycleViewModelCompose = "androidx.lifecycle:lifecycle-view
 private const val LifecycleViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$LifecycleVersion"
 private const val LifecycleService = "androidx.lifecycle:lifecycle-service:$LifecycleVersion"
 private const val LifecycleProcess = "androidx.lifecycle:lifecycle-process:$LifecycleVersion"
-
-fun DependencyHandler.implementationLifecycleDependencies() {
-    implementation(LifecycleCommon)
-    implementation(LifecycleRuntime)
-    implementation(LifecycleViewModel)
-    implementation(LifecycleViewModelSavedState)
-    kapt(LifecycleCommon)
-}
 
 fun DependencyHandler.apiLifecycleDependencies() {
     api(LifecycleCommon)
