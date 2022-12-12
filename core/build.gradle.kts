@@ -2,6 +2,7 @@
 
 import org.michaelbel.template.CompileSdk
 import org.michaelbel.template.MinSdk
+import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
 import org.michaelbel.template.dependencies.apiAppcompatDependencies
@@ -55,8 +56,13 @@ android {
         unitTests.isReturnDefaultValues = true
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = KotlinCompilerExtensionVersion
+    }
+
     buildFeatures {
         buildConfig = true
+        compose = true
     }
 }
 
