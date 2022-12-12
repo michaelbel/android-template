@@ -113,11 +113,6 @@ android {
         kotlinCompilerExtensionVersion = KotlinCompilerExtensionVersion
     }
 
-    testOptions {
-        unitTests.isIncludeAndroidResources = true
-        unitTests.isReturnDefaultValues = true
-    }
-
     buildFeatures {
         compose = true
         viewBinding = true
