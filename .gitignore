@@ -17,3 +17,4 @@ local.properties
 /workspace.xml
 /buildSrc/build/
 /feature/ads/build/
+/feature/constraintlayout/build/
