@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import org.michaelbel.template.CompileSdk
-import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.implementationHiltDependencies
 import org.michaelbel.template.dependencies.implementationNotificationDslDependencies
 import org.michaelbel.template.dependencies.implementationWorkDependencies
@@ -15,10 +13,14 @@ plugins {
 
 android {
     namespace = "org.michaelbel.template.downloadfile"
-    compileSdk = CompileSdk
+
+    defaultConfig {
+        compileSdk = libs.versions.compile.sdk.get().toInt()
+        minSdk = libs.versions.min.sdk.get().toInt()
+    }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = KotlinCompilerExtensionVersion
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.compiler.extension.get()
     }
 
     buildFeatures {

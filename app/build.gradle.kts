@@ -3,14 +3,7 @@
 import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
-import org.michaelbel.template.ApplicationId
-import org.michaelbel.template.BuildTools
-import org.michaelbel.template.CompileSdk
-import org.michaelbel.template.MinSdk
-import org.michaelbel.template.TargetSdk
-import org.michaelbel.template.VersionName
 import org.michaelbel.template.dependencies.FirebaseAppDistribution
-import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.implementationComposeTestDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
@@ -48,15 +41,14 @@ val gitVersion: Int by lazy {
 
 android {
     namespace = "org.michaelbel.template"
-    compileSdk = CompileSdk
-    buildToolsVersion = BuildTools
+    compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
-        applicationId = ApplicationId
-        minSdk = MinSdk
-        targetSdk = TargetSdk
+        applicationId = "org.michaelbel.template"
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.target.sdk.get().toInt()
         versionCode = gitVersion
-        versionName = VersionName
+        versionName = "1.0.0"
         testInstrumentationRunner = TestRunner
         setProperty("archivesBaseName", "template-v-$versionName($versionCode)")
     }
@@ -110,7 +102,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = KotlinCompilerExtensionVersion
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.compiler.extension.get()
     }
 
     buildFeatures {

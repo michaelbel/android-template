@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import org.michaelbel.template.CompileSdk
-import org.michaelbel.template.MinSdk
 import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.apiAccompanistDependencies
@@ -44,10 +42,10 @@ plugins {
 
 android {
     namespace = "org.michaelbel.core"
-    compileSdk = CompileSdk
 
     defaultConfig {
-        minSdk = MinSdk
+        compileSdk = libs.versions.compile.sdk.get().toInt()
+        minSdk = libs.versions.min.sdk.get().toInt()
         testInstrumentationRunner = TestRunner
     }
 
