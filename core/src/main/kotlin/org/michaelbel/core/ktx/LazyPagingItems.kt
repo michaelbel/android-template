@@ -28,3 +28,7 @@ val <T: Any> LazyPagingItems<T>.isPagingFailure: Boolean
 
 val <T: Any> LazyPagingItems<T>.throwable: Throwable
     get() = (loadState.refresh as LoadState.Error).error
+
+fun <T: Any> LazyPagingItems<T>.getOrNull(index: Int): T? {
+    return if (index < 0 || index > itemCount) null else get(index)
+}
