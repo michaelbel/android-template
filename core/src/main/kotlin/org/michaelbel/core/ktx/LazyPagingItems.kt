@@ -30,5 +30,9 @@ val <T: Any> LazyPagingItems<T>.throwable: Throwable
     get() = (loadState.refresh as LoadState.Error).error
 
 fun <T: Any> LazyPagingItems<T>.getOrNull(index: Int): T? {
-    return if (index < 0 || index > itemCount) null else get(index)
+    return if (index < 0 || index >= itemCount) null else get(index)
+}
+
+fun <T: Any> LazyPagingItems<T>.firstOrNull(): T? {
+    return if (isEmpty) null else get(0)
 }
