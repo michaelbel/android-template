@@ -10,6 +10,10 @@ import android.util.DisplayMetrics
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.WindowMetrics
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 
@@ -62,3 +66,15 @@ inline val Context.isRTL: Boolean
 
 inline val Context.isLTR: Boolean
     get() = resources.configuration.layoutDirection == ViewCompat.LAYOUT_DIRECTION_LTR
+
+inline val screenWidthDp: Dp
+    @Composable get() {
+        val configuration: Configuration = LocalConfiguration.current
+        return configuration.screenWidthDp.dp
+    }
+
+inline val screenHeightDp: Dp
+    @Composable get() {
+        val configuration: Configuration = LocalConfiguration.current
+        return configuration.screenWidthDp.dp
+    }
