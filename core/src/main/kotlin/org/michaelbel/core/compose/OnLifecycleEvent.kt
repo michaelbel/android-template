@@ -26,3 +26,14 @@ fun OnLifecycleEvent(
         }
     }
 }
+
+@Composable
+fun OnResume(
+    onResume: () -> Unit
+) {
+    OnLifecycleEvent(
+        onEvent = { _, event ->
+            onResume().takeIf { event == Lifecycle.Event.ON_RESUME }
+        }
+    )
+}
