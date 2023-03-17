@@ -10,6 +10,9 @@ import java.util.concurrent.TimeUnit
 
 private const val DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss"
 
+val Long.calendar: Calendar
+    get() = Calendar.getInstance().apply { timeInMillis = this@calendar }
+
 var Date.calendar: Calendar
     get() = Calendar.getInstance().apply { time = this@calendar }
     set(value) {

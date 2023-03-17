@@ -23,3 +23,7 @@ val Int.secondsToTime2: String
         val seconds: String = (this % SECONDS_IN_MINUTE).toString().padStart(2, '0')
         return "$hours:$minutes:$seconds"
     }
+
+fun isTimePasses(interval: Long, expireTime: Long, currentTime: Long): Boolean {
+    return (currentTime - expireTime) >= interval
+}
