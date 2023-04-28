@@ -7,12 +7,11 @@ import android.os.Build
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import org.michaelbel.core.analytics.Analytics
+import javax.inject.Inject
 
 @HiltViewModel
 class ClipboardViewModel @Inject constructor(
@@ -21,11 +20,6 @@ class ClipboardViewModel @Inject constructor(
 
     private val _clipText: MutableStateFlow<String> = MutableStateFlow("")
     val clipText: StateFlow<String> = _clipText.asStateFlow()
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen("ClipboardScreen")
-    }
 
     fun copyText() {
         val clip: ClipData = ClipData.newPlainText("simple text", "Hello, World!")

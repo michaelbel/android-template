@@ -16,7 +16,6 @@ import com.vk.api.sdk.auth.VKAccessToken
 import com.vk.api.sdk.exceptions.VKAuthException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import org.michaelbel.core.analytics.Analytics
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
@@ -52,11 +51,6 @@ class AuthViewModel @Inject constructor(
             facebookCallbackManager,
             listOf("public_profile", "email")
         )
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen("SocialScreen")
     }
 
     fun onGoogleSignInSuccess(account: GoogleSignInAccount) {

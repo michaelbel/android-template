@@ -8,17 +8,16 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.template.inappupdate.InAppUpdate
 import org.michaelbel.template.ui.view.model.MainScreenState
 import org.michaelbel.template.ui.view.model.ScreenData
+import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
@@ -48,11 +47,6 @@ class MainViewModel @Inject constructor(
             updateAvailableMessage = updateAvailable
         }
         setContent()
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(MainFragment::class.simpleName)
     }
 
     fun startUpdateFlow(activity: Activity) {

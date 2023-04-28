@@ -7,8 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
-import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.constraintlayout.databinding.FragmentConstraintsGuidelineBinding
@@ -28,10 +26,5 @@ class ConstrainsGuidelineFragment: Fragment(R.layout.fragment_constraints_guidel
         binding.toolbar.setNavigationOnClickListener {
             findNavController().popBackStack()
         }
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(this::class.simpleName)
     }
 }

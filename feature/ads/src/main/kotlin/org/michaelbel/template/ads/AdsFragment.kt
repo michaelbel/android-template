@@ -15,12 +15,10 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Locale
-import javax.inject.Inject
-import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.ads.databinding.FragmentAdsBinding
+import java.util.Locale
 
 @AndroidEntryPoint
 class AdsFragment: Fragment(R.layout.fragment_ads) {
@@ -90,11 +88,6 @@ class AdsFragment: Fragment(R.layout.fragment_ads) {
                 }
             }
         }
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(AdsFragment::class.simpleName)
     }
 
     private fun loadInterstitialAd() {

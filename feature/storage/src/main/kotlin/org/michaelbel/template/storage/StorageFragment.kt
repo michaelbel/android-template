@@ -14,8 +14,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
-import org.michaelbel.core.analytics.Analytics
 import org.michaelbel.core.ktx.granted
 import org.michaelbel.core.ktx.launchAndRepeatWithViewLifecycle
 import org.michaelbel.template.storage.adapter.GalleryAdapter
@@ -73,10 +71,5 @@ class StorageFragment: Fragment(R.layout.fragment_storage) {
         } else {
             binding.queryButton.isVisible = true
         }
-    }
-
-    @Inject
-    fun trackScreen(analytics: Analytics) {
-        analytics.trackScreen(this::class.simpleName)
     }
 }
