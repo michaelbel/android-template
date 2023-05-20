@@ -22,6 +22,9 @@ var Date.calendar: Calendar
 val Date.isToday: Boolean
     get() = calendar.isToday
 
+val Date.isYesterday: Boolean
+    get() = calendar.isYesterday
+
 val Date.isTomorrow: Boolean
     get() = calendar.isTomorrow
 
@@ -40,3 +43,9 @@ val String.datetimeToCalendar: Calendar
         calendar.time = date
         return calendar
     }
+
+val Pair<Date, Date>.areSameDays: Boolean
+    get() = (first.calendar to second.calendar).areSameDays
+
+val Pair<Date, Date>.areDifferentDays: Boolean
+    get() = (first.calendar to second.calendar).areDifferentDays
