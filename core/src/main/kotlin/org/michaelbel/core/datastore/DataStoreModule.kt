@@ -11,12 +11,10 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataStoreModule {
+internal object DataStoreModule {
 
     @Provides
     fun provideDataStore(
         @ApplicationContext context: Context
-    ): DataStore<Preferences> {
-        return context.dataStore
-    }
+    ): DataStore<Preferences> = context.dataStore
 }
