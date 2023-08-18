@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
-        android:name=".App"
+        android:name=".TemplateApp"
         android:allowBackup="true"
         android:appCategory="productivity"
         android:icon="@mipmap/ic_launcher"

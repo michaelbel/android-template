@@ -44,6 +44,13 @@ val String.datetimeToCalendar: Calendar
         return calendar
     }
 
+val String.datetimeToDate: Date
+    get() {
+        val simpleDateFormat = SimpleDateFormat(DATE_TIME_FORMAT, Locale.getDefault())
+        val date: Date? = simpleDateFormat.parse(this)
+        return requireNotNull(date)
+    }
+
 val Pair<Date, Date>.areSameDays: Boolean
     get() = (first.calendar to second.calendar).areSameDays
 

@@ -105,10 +105,6 @@ private const val PlayCore = "com.google.android.play:core-ktx:$PlayCoreVersion"
 private const val PlayCoreReview = "com.google.android.play:review-ktx:$PlayCoreReviewVersion"
 private const val PlayCoreUpdate = "com.google.android.play:app-update-ktx:$PlayCoreUpdateVersion"
 
-fun DependencyHandler.implementationGooglePlayServicesAdsDependencies() {
-    implementation(Ads)
-}
-
 fun DependencyHandler.apiGooglePlayServicesDependencies() {
     api(Auth)
     api(Base)

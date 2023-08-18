@@ -53,7 +53,6 @@ private fun Content(
     val listState: LazyListState = rememberLazyListState()
 
     val list: List<Pair<String, Int>> = mapOf(
-        ROUTE_ADS to R.string.title_ads,
         ROUTE_CLIPBOARD to R.string.title_clipboard,
         ROUTE_DOWNLOAD_FILE to R.string.title_storage,
         ROUTE_IME to R.string.title_ime_actions,

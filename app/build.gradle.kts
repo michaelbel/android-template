@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import java.io.FileInputStream
-import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
 import org.michaelbel.template.dependencies.FirebaseAppDistribution
 import org.michaelbel.template.dependencies.TestRunner
@@ -13,6 +11,8 @@ import org.michaelbel.template.dependencies.implementationNavigationDependencies
 import org.michaelbel.template.dependencies.implementationRxDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
+import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     // google-services before firebase
@@ -128,7 +128,6 @@ afterEvaluate {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":feature:ads"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:clipboard"))
     implementation(project(":feature:constraintlayout"))
