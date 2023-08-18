@@ -136,7 +136,6 @@ dependencies {
     implementation(project(":feature:getcontent"))
     implementation(project(":feature:ime"))
     implementation(project(":feature:inappreview"))
-    implementation(project(":feature:inappupdate"))
     implementation(project(":feature:intents"))
     implementation(project(":feature:location"))
     implementation(project(":feature:phonecalls"))

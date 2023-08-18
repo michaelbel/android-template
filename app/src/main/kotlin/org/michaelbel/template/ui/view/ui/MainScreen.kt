@@ -12,10 +12,8 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ListItem
-import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.SnackbarHost
 import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.SnackbarResult
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.FloatingActionButton
@@ -28,8 +26,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -40,9 +36,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.insets.statusBarsPadding
 import com.google.accompanist.insets.ui.Scaffold
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import org.michaelbel.template.R
 import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.compose.ComposeActivity
 import org.michaelbel.template.ui.view.MainViewModel
@@ -53,38 +46,15 @@ typealias OnButtonClick = (Screen, Bundle) -> Unit
 
 @Composable
 fun MainScreen(
-    onUpdateAppClicked: () -> Unit,
     onButtonClick: OnButtonClick
 ) {
     val listState: LazyListState = rememberLazyListState()
     val viewModel: MainViewModel = viewModel(MainViewModel::class.java)
     val scrollBehavior: TopAppBarScrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
-    val scope: CoroutineScope = rememberCoroutineScope()
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
     val context: Context = LocalContext.current
-    val snackBarUpdateVisibleState by rememberUpdatedState(viewModel.updateAvailableMessage)
     val mainScreenState by viewModel.uiState.collectAsState()
     val mainState = mainScreenState as MainScreenState.MainScreen
-
-    val onShowSnackbar: (String, String) -> Unit = { message, actionLabel ->
-        scope.launch {
-            val snackBarResult = snackbarHostState.showSnackbar(
-                message = message,
-                actionLabel = actionLabel,
-                duration = SnackbarDuration.Long
-            )
-            if (snackBarResult == SnackbarResult.ActionPerformed) {
-                onUpdateAppClicked()
-            }
-        }
-    }
-
-    if (snackBarUpdateVisibleState) {
-        onShowSnackbar(
-            stringResource(R.string.message_in_app_update_new_version_available),
-            stringResource(R.string.action_update)
-        )
-    }
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -162,7 +132,6 @@ private fun Fab(onClick: () -> Unit) {
 private fun MainScreenPreview() {
     AppTheme {
         MainScreen(
-            onUpdateAppClicked = {},
             onButtonClick = { _: Screen, _: Bundle -> }
         )
     }
@@ -175,7 +144,6 @@ private fun MainScreenPreviewDark() {
         darkTheme = true
     ) {
         MainScreen(
-            onUpdateAppClicked = {},
             onButtonClick = { _: Screen, _: Bundle -> }
         )
     }

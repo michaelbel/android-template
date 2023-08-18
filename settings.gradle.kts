@@ -28,7 +28,6 @@ include(
     ":feature:getcontent",
     ":feature:ime",
     ":feature:inappreview",
-    ":feature:inappupdate",
     ":feature:intents",
     ":feature:location",
     ":feature:phonecalls",

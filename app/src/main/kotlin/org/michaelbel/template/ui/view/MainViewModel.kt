@@ -1,9 +1,5 @@
 package org.michaelbel.template.ui.view
 
-import android.app.Activity
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,15 +10,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import org.michaelbel.template.inappupdate.InAppUpdate
 import org.michaelbel.template.ui.view.model.MainScreenState
 import org.michaelbel.template.ui.view.model.ScreenData
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
-    private val inAppUpdate: InAppUpdate
-): ViewModel() {
+class MainViewModel @Inject constructor(): ViewModel() {
 
     private val screensList = MutableStateFlow<List<ScreenData>>(listOf())
     private val networkLoading = MutableStateFlow(false)
@@ -40,17 +33,8 @@ class MainViewModel @Inject constructor(
         initialValue = MainScreenState.Empty
     )
 
-    var updateAvailableMessage: Boolean by mutableStateOf(false)
-
     init {
-        inAppUpdate.onUpdateAvailableListener = { updateAvailable ->
-            updateAvailableMessage = updateAvailable
-        }
         setContent()
-    }
-
-    fun startUpdateFlow(activity: Activity) {
-        inAppUpdate.startUpdateFlow(activity)
     }
 
     private fun setContent() {
