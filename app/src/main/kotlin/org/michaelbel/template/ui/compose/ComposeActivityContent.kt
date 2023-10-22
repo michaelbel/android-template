@@ -22,82 +22,56 @@ import org.michaelbel.template.ui.TemplateTheme
 import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
 import org.michaelbel.template.ui.compose.list.ListScreen
 
-const val ROUTE_COMPOSE = "list"
-const val ROUTE_ADS = "auth"
-const val ROUTE_CLIPBOARD = "clipboard"
-const val ROUTE_DOWNLOAD_FILE = "download_file"
-const val ROUTE_IME = "ime"
-const val ROUTE_REVIEW = "review"
-const val ROUTE_INTENTS = "intents"
-const val ROUTE_LOCATION = "location"
-const val ROUTE_CONFIG = "config"
-const val ROUTE_SERVICE = "service"
-const val ROUTE_TOAST = "toast"
-const val ROUTE_LAZY_LIST = "lazyList"
-const val ROUTE_GET_CONTENT = "getcontent"
-const val ROUTE_PHONE_CALLS = "phone_calls"
-
 @Composable
 fun ComposeActivityContent(
     onNavigateBack: () -> Unit
 ) {
     val navController: NavHostController = rememberAnimatedNavController()
 
-    NavContent(
-        navController = navController,
-        onNavigateBack = onNavigateBack
-    )
-}
-
-@Composable
-private fun NavContent(
-    navController: NavHostController,
-    onNavigateBack: () -> Unit
-) {
     AnimatedNavHost(
         navController = navController,
-        startDestination = ROUTE_COMPOSE
+        startDestination = "list"
     ) {
-        composable(route = ROUTE_COMPOSE) {
+        composable(route = "list") {
             ListScreen(navController, onNavigateBack)
         }
-        composable(route = ROUTE_CLIPBOARD) {
+        composable(route = "clipboard") {
             ClipboardScreen(navController)
         }
-        composable(route = ROUTE_DOWNLOAD_FILE) {
+        composable(route = "download_file") {
             DownloadFileScreen(navController)
         }
-        composable(route = ROUTE_INTENTS) {
+        composable(route = "intents") {
             IntentsScreen(navController)
         }
-        composable(route = ROUTE_ADS) {
+        composable(route = "auth") {
             AuthScreen(navController)
         }
-        composable(route = ROUTE_TOAST) {
+        composable(route = "toast") {
             ToastScreen(navController)
         }
-        composable(route = ROUTE_CONFIG) {
+        composable(route = "config") {
             RemoteConfigScreen(navController)
         }
-        composable(route = ROUTE_REVIEW) {
+        composable(route = "review") {
             ReviewScreen(navController, {})
         }
-        composable(route = ROUTE_IME) {
+        composable(route = "ime") {
             ImeScreen(navController)
         }
-        composable(route = ROUTE_LOCATION) {
+        composable(route = "location") {
             LocationScreen(navController)
         }
-        composable(route = ROUTE_SERVICE) {
+        composable(route = "service") {
             ServiceScreen(navController)
         }
-        composable(route = ROUTE_LAZY_LIST) {
+        composable(route = "lazyList") {
             LazyListScreen(navController)
         }
-        composable(route = ROUTE_GET_CONTENT) {
+        composable(route = "getcontent") {
             GetContentScreen(navController)
         }
-        composable(route = ROUTE_PHONE_CALLS) {
+        composable(route = "phone_calls") {
             PhoneCallsScreen(navController)
         }
     }
