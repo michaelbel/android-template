@@ -127,6 +127,7 @@ afterEvaluate {
 }
 
 dependencies {
+    //implementation(libs.androidx.compose.foundation.layout)
     implementation(project(":core"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:clipboard"))
