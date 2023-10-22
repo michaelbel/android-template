@@ -22,6 +22,7 @@ fun MainActivityContent(
     modifier: Modifier = Modifier
 ) {
     val context: Context = LocalContext.current
+
     Scaffold(
         modifier = modifier.fillMaxSize()
     ) { paddingValues ->

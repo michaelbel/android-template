@@ -1,7 +1,6 @@
 package org.michaelbel.template.ui.view.ui
 
 import android.os.Bundle
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -9,7 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.ListItem
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
@@ -19,7 +18,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
@@ -60,20 +58,18 @@ fun MainScreen(
             state = listState,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(paddingValues),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(paddingValues)
         ) {
             items(mainState.list) { screenData ->
-                ListItem(
-                    text = {
-                        Text(
-                            text = stringResource(screenData.titleRes)
-                        )
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onButtonClick(screenData.screen, screenData.args) }
-                )
+                Button(
+                    onClick = {
+                        onButtonClick(screenData.screen, screenData.args)
+                    }
+                ) {
+                    Text(
+                        text = stringResource(screenData.titleRes)
+                    )
+                }
             }
         }
     }
