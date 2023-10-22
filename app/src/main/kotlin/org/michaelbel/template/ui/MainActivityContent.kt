@@ -1,4 +1,4 @@
-package org.michaelbel.template
+package org.michaelbel.template.ui
 
 import android.content.Context
 import android.content.Intent
@@ -14,8 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import org.michaelbel.template.compose.ComposeActivity
-import org.michaelbel.template.view.ViewActivity
+import org.michaelbel.template.ui.compose.ComposeActivity
+import org.michaelbel.template.ui.view.ViewActivity
 
 @Composable
 fun MainActivityContent(

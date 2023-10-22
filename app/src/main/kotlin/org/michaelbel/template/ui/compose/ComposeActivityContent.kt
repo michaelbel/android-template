@@ -1,4 +1,4 @@
-package org.michaelbel.template.compose
+package org.michaelbel.template.ui.compose
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -8,8 +8,8 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import org.michaelbel.template.auth.AuthScreen
 import org.michaelbel.template.clipboard.ui.ClipboardScreen
-import org.michaelbel.template.compose.lazylist.LazyListScreen
-import org.michaelbel.template.compose.list.ListScreen
+import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
+import org.michaelbel.template.ui.compose.list.ListScreen
 import org.michaelbel.template.downloadfile.DownloadFileScreen
 import org.michaelbel.template.getcontent.GetContentScreen
 import org.michaelbel.template.ime.ImeScreen
@@ -20,7 +20,7 @@ import org.michaelbel.template.phonecalls.ui.PhoneCallsScreen
 import org.michaelbel.template.remoteconfig.ui.RemoteConfigScreen
 import org.michaelbel.template.service.ui.ServiceScreen
 import org.michaelbel.template.toast.ToastScreen
-import org.michaelbel.template.TemplateTheme
+import org.michaelbel.template.ui.TemplateTheme
 
 const val ROUTE_COMPOSE = "compose"
 const val ROUTE_ADS = "ads"

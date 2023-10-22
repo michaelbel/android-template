@@ -1,4 +1,4 @@
-package org.michaelbel.template.view
+package org.michaelbel.template.ui.view
 
 import android.os.Bundle
 import androidx.activity.compose.setContent

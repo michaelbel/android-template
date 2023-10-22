@@ -1,11 +1,11 @@
-package org.michaelbel.template.compose
+package org.michaelbel.template.ui.compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
-import org.michaelbel.template.TemplateTheme
+import org.michaelbel.template.ui.TemplateTheme
 
 @AndroidEntryPoint
 class ComposeActivity: ComponentActivity() {

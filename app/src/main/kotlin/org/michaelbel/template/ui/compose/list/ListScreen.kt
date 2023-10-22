@@ -1,4 +1,4 @@
-package org.michaelbel.template.compose.list
+package org.michaelbel.template.ui.compose.list
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -20,18 +20,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import org.michaelbel.template.R
-import org.michaelbel.template.compose.ROUTE_CLIPBOARD
-import org.michaelbel.template.compose.ROUTE_CONFIG
-import org.michaelbel.template.compose.ROUTE_DOWNLOAD_FILE
-import org.michaelbel.template.compose.ROUTE_GET_CONTENT
-import org.michaelbel.template.compose.ROUTE_IME
-import org.michaelbel.template.compose.ROUTE_INTENTS
-import org.michaelbel.template.compose.ROUTE_LAZY_LIST
-import org.michaelbel.template.compose.ROUTE_LOCATION
-import org.michaelbel.template.compose.ROUTE_PHONE_CALLS
-import org.michaelbel.template.compose.ROUTE_REVIEW
-import org.michaelbel.template.compose.ROUTE_SERVICE
-import org.michaelbel.template.compose.ROUTE_TOAST
+import org.michaelbel.template.ui.compose.ROUTE_CLIPBOARD
+import org.michaelbel.template.ui.compose.ROUTE_CONFIG
+import org.michaelbel.template.ui.compose.ROUTE_DOWNLOAD_FILE
+import org.michaelbel.template.ui.compose.ROUTE_GET_CONTENT
+import org.michaelbel.template.ui.compose.ROUTE_IME
+import org.michaelbel.template.ui.compose.ROUTE_INTENTS
+import org.michaelbel.template.ui.compose.ROUTE_LAZY_LIST
+import org.michaelbel.template.ui.compose.ROUTE_LOCATION
+import org.michaelbel.template.ui.compose.ROUTE_PHONE_CALLS
+import org.michaelbel.template.ui.compose.ROUTE_REVIEW
+import org.michaelbel.template.ui.compose.ROUTE_SERVICE
+import org.michaelbel.template.ui.compose.ROUTE_TOAST
 
 @Composable
 fun ListScreen(

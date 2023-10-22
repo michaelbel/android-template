@@ -7,37 +7,37 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="org.michaelbel.template.view.main.MainFragment"
+        android:name="org.michaelbel.template.ui.view.main.MainFragment"
         android:label="Main"/>
 
     <fragment
         android:id="@+id/constraintsBaselineFragment"
-        android:name="org.michaelbel.template.view.constraints.ConstrainsBaselineFragment"
+        android:name="org.michaelbel.template.ui.view.constraints.ConstrainsBaselineFragment"
         android:label="ConstrainsBaseline"/>
 
     <fragment
         android:id="@+id/constraintsChainStyleFragment"
-        android:name="org.michaelbel.template.view.constraints.ConstrainsChainsFragment"
+        android:name="org.michaelbel.template.ui.view.constraints.ConstrainsChainsFragment"
         android:label="ConstrainsChainStyle"/>
 
     <fragment
         android:id="@+id/constraintsCircularFragment"
-        android:name="org.michaelbel.template.view.constraints.ConstrainsCircularFragment"
+        android:name="org.michaelbel.template.ui.view.constraints.ConstrainsCircularFragment"
         android:label="ConstrainsCircular"/>
 
     <fragment
         android:id="@+id/constraintsConstrainedWidthFragment"
-        android:name="org.michaelbel.template.view.constraints.ConstrainsConstrainedWidthFragment"
+        android:name="org.michaelbel.template.ui.view.constraints.ConstrainsConstrainedWidthFragment"
         android:label="ConstrainsConstrainedWidth"/>
 
     <fragment
         android:id="@+id/constraintsGoneMarginFragment"
-        android:name="org.michaelbel.template.view.constraints.ConstrainsGoneMarginsFragment"
+        android:name="org.michaelbel.template.ui.view.constraints.ConstrainsGoneMarginsFragment"
         android:label="ConstrainsGoneMargin"/>
 
     <fragment
         android:id="@+id/constraintsGuidelineFragment"
-        android:name="org.michaelbel.template.view.constraints.ConstrainsGuidelineFragment"
+        android:name="org.michaelbel.template.ui.view.constraints.ConstrainsGuidelineFragment"
         android:label="ConstrainsGuideline"/>
 
     <fragment

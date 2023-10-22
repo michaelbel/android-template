@@ -1,4 +1,4 @@
-package org.michaelbel.template.view.constraints
+package org.michaelbel.template.ui.view.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -10,12 +10,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsChainsBinding
+import org.michaelbel.template.databinding.FragmentConstraintsGoneMarginsBinding
 
 @AndroidEntryPoint
-class ConstrainsChainsFragment: Fragment(R.layout.fragment_constraints_chains) {
+class ConstrainsGoneMarginsFragment: Fragment(R.layout.fragment_constraints_gone_margins) {
 
-    private val binding: FragmentConstraintsChainsBinding by viewBinding()
+    private val binding: FragmentConstraintsGoneMarginsBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

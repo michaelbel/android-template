@@ -1,4 +1,4 @@
-package org.michaelbel.template.compose.lazylist
+package org.michaelbel.template.ui.compose.lazylist
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth

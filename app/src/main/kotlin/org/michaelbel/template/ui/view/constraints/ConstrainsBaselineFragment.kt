@@ -1,4 +1,4 @@
-package org.michaelbel.template.view.constraints
+package org.michaelbel.template.ui.view.constraints
 
 import android.os.Bundle
 import android.view.View
@@ -10,12 +10,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.core.ktx.doOnApplyWindowInsets
 import org.michaelbel.core.ktx.topPadding
 import org.michaelbel.template.R
-import org.michaelbel.template.databinding.FragmentConstraintsFlowBinding
+import org.michaelbel.template.databinding.FragmentConstraintsBaselineBinding
 
 @AndroidEntryPoint
-class ConstrainsFlowFragment: Fragment(R.layout.fragment_constraints_flow) {
+class ConstrainsBaselineFragment: Fragment(R.layout.fragment_constraints_baseline) {
 
-    private val binding: FragmentConstraintsFlowBinding by viewBinding()
+    private val binding: FragmentConstraintsBaselineBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

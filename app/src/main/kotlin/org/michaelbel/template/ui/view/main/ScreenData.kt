@@ -1,8 +1,7 @@
-package org.michaelbel.template.view.main
+package org.michaelbel.template.ui.view.main
 
 import android.os.Bundle
 import androidx.annotation.StringRes
-import org.michaelbel.template.view.main.Screen
 
 data class ScreenData(
     val screen: Screen,

@@ -1,4 +1,4 @@
-package org.michaelbel.template.view.main
+package org.michaelbel.template.ui.view.main
 
 import android.os.Bundle
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +27,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import org.michaelbel.template.TemplateTheme
+import org.michaelbel.template.ui.TemplateTheme
 
 typealias OnButtonClick = (Screen, Bundle) -> Unit
 
