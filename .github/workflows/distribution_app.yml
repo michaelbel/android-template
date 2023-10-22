@@ -74,21 +74,21 @@ jobs:
 #           app/build/outputs/apk/**/*.apk
 #           app/build/outputs/bundle/**/*.aab
           
-      - name: Distribute Artifacts via Firebase
-        run: ./gradlew appDistributionUploadRelease
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+#      - name: Distribute Artifacts via Firebase
+#        run: ./gradlew appDistributionUploadRelease
+#        env:
+#          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
       - name: Create Service Account JSON File
         run: echo '${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}' > service_account.json
         
-      - name: Upload Bundle to Google Play Console
-        uses: sokchanbo/android-upload-google-play@v1.0.0
-        with:
-          service-account: service_account.json
-          package-name: org.michaelbel.template
-          release-file: app/build/outputs/bundle/**/*.aab
-          track: internal
+#      - name: Upload Bundle to Google Play Console
+#        uses: sokchanbo/android-upload-google-play@v1.0.0
+#        with:
+#          service-account: service_account.json
+#          package-name: org.michaelbel.template
+#          release-file: app/build/outputs/bundle/**/*.aab
+#          track: internal
 
       - name: Telegram Message
         uses: appleboy/telegram-action@master
