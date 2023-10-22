@@ -26,13 +26,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.os.bundleOf
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.michaelbel.template.ui.TemplateTheme
 
-typealias OnButtonClick = (Screen, Bundle) -> Unit
+typealias OnButtonClick = (Int, Bundle) -> Unit
 
 @Composable
-fun MainScreen(
+fun MainFragmentContent(
     onNavigateBack: () -> Unit,
     onButtonClick: OnButtonClick
 ) {
@@ -72,14 +73,14 @@ fun MainScreen(
                 .fillMaxWidth()
                 .padding(paddingValues)
         ) {
-            items(mainState.list) { screenData ->
+            items(mainState.list) { destination ->
                 Button(
                     onClick = {
-                        onButtonClick(screenData.screen, screenData.args)
+                        onButtonClick(destination.fragmentId, bundleOf())
                     }
                 ) {
                     Text(
-                        text = stringResource(screenData.titleRes)
+                        text = stringResource(destination.titleRes)
                     )
                 }
             }
@@ -89,11 +90,11 @@ fun MainScreen(
 
 @Preview
 @Composable
-private fun MainScreenPreview() {
+private fun MainFragmentContentPreview() {
     TemplateTheme {
-        MainScreen(
+        MainFragmentContent(
             onNavigateBack = {},
-            onButtonClick = { _: Screen, _: Bundle -> }
+            onButtonClick = { _: Int, _: Bundle -> }
         )
     }
 }

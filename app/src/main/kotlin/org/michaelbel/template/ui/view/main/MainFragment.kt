@@ -4,16 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.IdRes
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import org.michaelbel.template.ui.TemplateTheme
 
 @AndroidEntryPoint
 class MainFragment: Fragment() {
-
-    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,12 +21,12 @@ class MainFragment: Fragment() {
     ): View = ComposeView(inflater.context).apply {
         setContent {
             TemplateTheme {
-                MainScreen({ requireActivity().finish() }, ::navigate)
+                MainFragmentContent({ requireActivity().finish() }, ::navigateTo)
             }
         }
     }
 
-    private fun navigate(to: Screen, args: Bundle) {
-        navigate(to, Screen.Main, args)
+    private fun navigateTo(@IdRes toId: Int, args: Bundle) {
+        findNavController().navigate(toId, args)
     }
 }
