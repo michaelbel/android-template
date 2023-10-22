@@ -14,12 +14,10 @@ sealed class Destination(
     ): Destination(titleRes)
 
     data class Composable(
+        val route: String,
         @StringRes override val titleRes: Int
     ): Destination(titleRes)
 }
-
-val fragmentMain: Destination
-    get() = Destination.Fragment(R.id.mainFragment)
 
 val fragmentsItems: List<Destination.Fragment>
     get() {
@@ -56,5 +54,24 @@ val fragmentsItems: List<Destination.Fragment>
                 R.id.storageFragment,
                 org.michaelbel.template.storage.R.string.title_storage
             )
+        )
+    }
+
+val composableItems: List<Destination.Composable>
+    get() {
+        return listOf(
+            Destination.Composable("auth", R.string.title_social),
+            Destination.Composable("download_file", R.string.title_storage),
+            Destination.Composable("clipboard", R.string.title_clipboard),
+            Destination.Composable("ime", R.string.title_ime_actions),
+            Destination.Composable("review", R.string.title_in_app_review),
+            Destination.Composable("intents", R.string.title_intents),
+            Destination.Composable("location", R.string.title_location),
+            Destination.Composable("config", R.string.title_remote_config),
+            Destination.Composable("service", R.string.title_service),
+            Destination.Composable("toast", R.string.title_toast),
+            Destination.Composable("lazyList", R.string.title_lazy_list),
+            Destination.Composable("getcontent", R.string.title_get_content),
+            Destination.Composable("phone_calls", R.string.title_phone_calls),
         )
     }

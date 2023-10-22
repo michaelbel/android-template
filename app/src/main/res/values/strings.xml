@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Template</string>
+
     <string name="title_constraints_baseline">Constraints Baseline</string>
     <string name="title_constraints_chains">Constraints Chains</string>
     <string name="title_constraints_circular">Constraints Circular</string>

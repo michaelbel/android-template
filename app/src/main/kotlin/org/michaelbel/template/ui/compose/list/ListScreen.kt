@@ -20,18 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import org.michaelbel.template.R
-import org.michaelbel.template.ui.compose.ROUTE_CLIPBOARD
-import org.michaelbel.template.ui.compose.ROUTE_CONFIG
-import org.michaelbel.template.ui.compose.ROUTE_DOWNLOAD_FILE
-import org.michaelbel.template.ui.compose.ROUTE_GET_CONTENT
-import org.michaelbel.template.ui.compose.ROUTE_IME
-import org.michaelbel.template.ui.compose.ROUTE_INTENTS
-import org.michaelbel.template.ui.compose.ROUTE_LAZY_LIST
-import org.michaelbel.template.ui.compose.ROUTE_LOCATION
-import org.michaelbel.template.ui.compose.ROUTE_PHONE_CALLS
-import org.michaelbel.template.ui.compose.ROUTE_REVIEW
-import org.michaelbel.template.ui.compose.ROUTE_SERVICE
-import org.michaelbel.template.ui.compose.ROUTE_TOAST
+import org.michaelbel.template.ui.composableItems
 
 @Composable
 fun ListScreen(
@@ -62,28 +51,13 @@ fun ListScreen(
     ) { paddingValues ->
         val listState: LazyListState = rememberLazyListState()
 
-        val list: List<Pair<String, Int>> = mapOf(
-            ROUTE_CLIPBOARD to R.string.title_clipboard,
-            ROUTE_DOWNLOAD_FILE to R.string.title_storage,
-            ROUTE_IME to R.string.title_ime_actions,
-            ROUTE_REVIEW to R.string.title_in_app_review,
-            ROUTE_INTENTS to R.string.title_intents,
-            ROUTE_LOCATION to R.string.title_location,
-            ROUTE_CONFIG to R.string.title_remote_config,
-            ROUTE_SERVICE to R.string.title_service,
-            ROUTE_TOAST to R.string.title_toast,
-            ROUTE_LAZY_LIST to R.string.title_lazy_list,
-            ROUTE_GET_CONTENT to R.string.title_get_content,
-            ROUTE_PHONE_CALLS to R.string.title_phone_calls
-        ).toList()
-
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues),
             state = listState
         ) {
-            items(list) { (route, title) ->
+            items(composableItems) { (route, title) ->
                 Button(
                     onClick = {
                         navController.navigate(route) {

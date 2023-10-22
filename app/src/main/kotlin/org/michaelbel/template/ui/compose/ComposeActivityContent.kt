@@ -8,8 +8,6 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import org.michaelbel.template.auth.AuthScreen
 import org.michaelbel.template.clipboard.ui.ClipboardScreen
-import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
-import org.michaelbel.template.ui.compose.list.ListScreen
 import org.michaelbel.template.downloadfile.DownloadFileScreen
 import org.michaelbel.template.getcontent.GetContentScreen
 import org.michaelbel.template.ime.ImeScreen
@@ -21,9 +19,11 @@ import org.michaelbel.template.remoteconfig.ui.RemoteConfigScreen
 import org.michaelbel.template.service.ui.ServiceScreen
 import org.michaelbel.template.toast.ToastScreen
 import org.michaelbel.template.ui.TemplateTheme
+import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
+import org.michaelbel.template.ui.compose.list.ListScreen
 
-const val ROUTE_COMPOSE = "compose"
-const val ROUTE_ADS = "ads"
+const val ROUTE_COMPOSE = "list"
+const val ROUTE_ADS = "auth"
 const val ROUTE_CLIPBOARD = "clipboard"
 const val ROUTE_DOWNLOAD_FILE = "download_file"
 const val ROUTE_IME = "ime"
