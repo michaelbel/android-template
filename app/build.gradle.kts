@@ -131,7 +131,6 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:clipboard"))
-    implementation(project(":feature:constraintlayout"))
     implementation(project(":feature:downloadfile"))
     implementation(project(":feature:fonts"))
     implementation(project(":feature:getcontent"))

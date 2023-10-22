@@ -22,7 +22,6 @@ include(
 
     ":feature:auth",
     ":feature:clipboard",
-    ":feature:constraintlayout",
     ":feature:downloadfile",
     ":feature:fonts",
     ":feature:getcontent",
