@@ -10,6 +10,10 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ListItem
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
@@ -22,16 +26,27 @@ import org.michaelbel.template.R
 
 @Composable
 fun ComposeScreen(
-    navController: NavController
+    navController: NavController,
+    onNavigateBack: () -> Unit
 ) {
     Scaffold(
         topBar = {
             SmallTopAppBar(
-                modifier = Modifier.statusBarsPadding(),
                 title = {
                     Text(
                         text = stringResource(R.string.title_compose)
                     )
+                },
+                modifier = Modifier.statusBarsPadding(),
+                navigationIcon = {
+                    IconButton(
+                        onClick = onNavigateBack
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack,
+                            contentDescription = null
+                        )
+                    }
                 }
             )
         }

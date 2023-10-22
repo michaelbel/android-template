@@ -34,15 +34,16 @@ const val ROUTE_GET_CONTENT = "getcontent"
 const val ROUTE_PHONE_CALLS = "phone_calls"
 
 @Composable
-fun Content(
-    navController: NavHostController
+fun NavContent(
+    navController: NavHostController,
+    onNavigateBack: () -> Unit
 ) {
     AnimatedNavHost(
         navController = navController,
         startDestination = ROUTE_COMPOSE
     ) {
         composable(route = ROUTE_COMPOSE) {
-            ComposeScreen(navController)
+            ComposeScreen(navController, onNavigateBack)
         }
         composable(route = ROUTE_CLIPBOARD) {
             ClipboardScreen(navController)

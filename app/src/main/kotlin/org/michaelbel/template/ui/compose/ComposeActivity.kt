@@ -16,7 +16,9 @@ class ComposeActivity: ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             TemplateTheme {
-                ComposeActivityScreen()
+                ComposeActivityScreen(
+                    onNavigateBack = ::finish
+                )
             }
         }
     }

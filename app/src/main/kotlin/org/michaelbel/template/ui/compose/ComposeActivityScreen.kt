@@ -7,11 +7,14 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import org.michaelbel.template.ui.TemplateTheme
 
 @Composable
-fun ComposeActivityScreen() {
+fun ComposeActivityScreen(
+    onNavigateBack: () -> Unit
+) {
     val navController: NavHostController = rememberAnimatedNavController()
 
-    ComposeScreen(
-        navController = navController
+    NavContent(
+        navController = navController,
+        onNavigateBack = onNavigateBack
     )
 }
 
@@ -19,6 +22,8 @@ fun ComposeActivityScreen() {
 @Composable
 private fun ComposeActivityScreenPreview() {
     TemplateTheme {
-        ComposeActivityScreen()
+        ComposeActivityScreen(
+            onNavigateBack = {}
+        )
     }
 }
