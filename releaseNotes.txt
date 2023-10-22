@@ -1,3 +1,32 @@
+* Update project
+* Update project
+* Bump org.jetbrains.kotlinx:kotlinx-serialization-json (#238)
+* Bump com.google.firebase:firebase-analytics-ktx from 21.2.0 to 21.4.0 (#235)
+* Bump io.gitlab.arturbosch.detekt from 1.22.0 to 1.23.1 (#231)
+* Bump hilt from 2.44.2 to 2.48.1 (#225)
+* Bump androidx.core:core-ktx from 1.9.0 to 1.12.0 (#243)
+* Bump com.google.android.gms:play-services-base from 18.1.0 to 18.2.0 (#242)
+* Bump com.diffplug.spotless from 6.12.0 to 6.22.0 (#241)
+* Bump com.google.android.material:material from 1.6.0 to 1.10.0 (#240)
+* Bump androidx-navigation from 2.5.3 to 2.7.4 (#239)
+* Bump androidx.core:core-splashscreen from 1.0.0 to 1.0.1 (#237)
+* Bump kotlin-coroutines from 1.6.4 to 1.7.3 (#236)
+* Bump com.google.firebase.crashlytics from 2.9.2 to 2.9.9 (#232)
+* Bump androidx.test.espresso:espresso-core from 3.5.0 to 3.5.1 (#229)
+* Bump com.google.gms.google-services from 4.3.14 to 4.4.0 (#227)
+* Bump androidx.test.ext:junit-ktx from 1.1.4 to 1.1.5 (#219)
+* Bump com.google.android.gms:play-services-ads from 21.3.0 to 22.4.0 (#233)
+* Bump chucker from 3.5.2 to 4.0.0 (#228)
+* Bump io.coil-kt:coil-compose from 2.2.2 to 2.4.0 (#230)
+* Bump com.google.firebase.appdistribution from 3.1.1 to 4.0.0 (#214)
+* Bump com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter (#211)
+* Bump accompanist from 0.28.0 to 0.30.1 (#209)
+* Update project
+* Merge branch 'master' into develop
+* Develop (#216)
+* Merge branch 'master' into develop
+* Update project
+* Develop (#208)
 * Merge branch 'master' into develop
 * Update project
 * Update project
