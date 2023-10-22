@@ -13,12 +13,8 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
-private val LightColorScheme = lightColorScheme()
-
-private val DarkColorScheme = darkColorScheme()
-
 @RequiresApi(31)
-fun Context.dynamicColorScheme(darkTheme: Boolean): ColorScheme {
+private fun Context.dynamicColorScheme(darkTheme: Boolean): ColorScheme {
     return if (darkTheme) {
         dynamicDarkColorScheme(this)
     } else {
@@ -27,24 +23,22 @@ fun Context.dynamicColorScheme(darkTheme: Boolean): ColorScheme {
 }
 
 @Composable
-fun AppTheme(
+fun TemplateTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    dynamicColors: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val context: Context = LocalContext.current
+    val dynamicColorsAvailable: Boolean = Build.VERSION.SDK_INT >= 31
 
-    val appColorScheme: ColorScheme = if (Build.VERSION.SDK_INT >= 31) {
+    val colorScheme = if (dynamicColorsAvailable && dynamicColors) {
         context.dynamicColorScheme(darkTheme)
     } else {
-        if (darkTheme) {
-            DarkColorScheme
-        } else {
-            LightColorScheme
-        }
+        if (darkTheme) darkColorScheme() else lightColorScheme()
     }
 
     MaterialTheme(
-        colorScheme = appColorScheme,
+        colorScheme = colorScheme,
         content = content
     )
 }

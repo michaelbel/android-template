@@ -35,8 +35,7 @@ const val ROUTE_PHONE_CALLS = "phone_calls"
 
 @Composable
 fun Content(
-    navController: NavHostController,
-    onReviewButtonClick: () -> Unit
+    navController: NavHostController
 ) {
     AnimatedNavHost(
         navController = navController,
@@ -64,7 +63,7 @@ fun Content(
             RemoteConfigScreen(navController)
         }
         composable(route = ROUTE_REVIEW) {
-            ReviewScreen(navController, onReviewButtonClick)
+            ReviewScreen(navController, {})
         }
         composable(route = ROUTE_IME) {
             ImeScreen(navController)

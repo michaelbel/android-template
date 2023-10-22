@@ -12,9 +12,9 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.michaelbel.template.ui.compose.ComposeActivity
 import org.michaelbel.template.remoteconfig.ui.RemoteConfigScreen
-import org.michaelbel.template.ui.AppTheme
+import org.michaelbel.template.ui.TemplateTheme
+import org.michaelbel.template.ui.compose.ComposeActivity
 
 @RunWith(AndroidJUnit4::class)
 class RemoteConfigScreenTest {
@@ -42,7 +42,7 @@ class RemoteConfigScreenTest {
     @Before
     fun setup() {
         composeTestRule.setContent {
-            AppTheme {
+            TemplateTheme {
                 RemoteConfigScreen(navController)
             }
         }

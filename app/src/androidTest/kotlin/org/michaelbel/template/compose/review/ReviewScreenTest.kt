@@ -14,8 +14,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.michaelbel.template.inappreview.ui.ReviewScreen
+import org.michaelbel.template.ui.TemplateTheme
 import org.michaelbel.template.ui.compose.ComposeActivity
-import org.michaelbel.template.ui.AppTheme
 
 @RunWith(AndroidJUnit4::class)
 class ReviewScreenTest {
@@ -34,7 +34,7 @@ class ReviewScreenTest {
     @Before
     fun setup() {
         composeTestRule.setContent {
-            AppTheme {
+            TemplateTheme {
                 ReviewScreen(navController, onReviewButtonClick)
             }
         }

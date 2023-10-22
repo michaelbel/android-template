@@ -3,15 +3,14 @@ package org.michaelbel.template.ui.view
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
-import org.michaelbel.template.databinding.ActivityMainBinding
 import org.michaelbel.template.receiver.AirplaneModeReceiver
 import org.michaelbel.template.receiver.BatteryReceiver
 import org.michaelbel.template.receiver.BootReceiver
 import org.michaelbel.template.receiver.CustomReceiver
+import org.michaelbel.template.ui.TemplateTheme
 
 @AndroidEntryPoint
 class MainActivity: AppCompatActivity() {
@@ -25,9 +24,11 @@ class MainActivity: AppCompatActivity() {
         setTheme(org.michaelbel.core.R.style.Theme_App)
         super.onCreate(savedInstanceState)
         installSplashScreen()
-        WindowCompat.setDecorFitsSystemWindows(window, true)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            AndroidViewBinding(ActivityMainBinding::inflate)
+            TemplateTheme {
+                MainActivityContent()
+            }
         }
 
         /*fun sendBroadcast() {

@@ -41,7 +41,10 @@
         </activity>
 
         <activity
-            android:name=".ui.compose.ComposeActivity"/>
+            android:name=".ui.view.ViewActivity" />
+
+        <activity
+            android:name=".ui.compose.ComposeActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
