@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * AppSearch
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/appsearch">AppSearch</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/appsearch">AppSearch</a>
  */
 
 private const val AppSearchVersion = "1.0.0-alpha04"

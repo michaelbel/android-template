@@ -5,7 +5,7 @@ package org.michaelbel.template.dependencies
 /**
  * Camera
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/camera">Camera</a>
  */
 
 private const val CameraxVersion = "1.2.0-alpha04"

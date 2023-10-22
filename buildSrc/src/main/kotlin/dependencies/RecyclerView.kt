@@ -9,7 +9,7 @@ import org.michaelbel.template.extensions.api
 /**
  * RecyclerView
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/recyclerview">RecyclerView</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/recyclerview">RecyclerView</a>
  */
 
 private const val RecyclerViewVersion = "1.2.1"

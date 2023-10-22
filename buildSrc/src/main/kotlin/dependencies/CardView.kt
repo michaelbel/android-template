@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * CardView
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/cardview">CardView</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/cardview">CardView</a>
  */
 
 private const val CardViewVersion = "1.0.0"

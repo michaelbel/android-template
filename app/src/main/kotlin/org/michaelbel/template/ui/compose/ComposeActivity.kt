@@ -3,12 +3,10 @@ package org.michaelbel.template.ui.compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavHostController
-import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -25,10 +23,8 @@ class ComposeActivity: ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            ProvideWindowInsets {
-                AppTheme {
-                    ComposeActivityScreen(::launchReviewFlow)
-                }
+            AppTheme {
+                ComposeActivityScreen(::launchReviewFlow)
             }
         }
     }
@@ -44,12 +40,10 @@ private fun ComposeActivityScreen(
 ) {
     val navController: NavHostController = rememberAnimatedNavController()
 
-    Scaffold {
-        Content(
-            navController = navController,
-            onReviewButtonClick = onReviewButtonClick
-        )
-    }
+    Content(
+        navController = navController,
+        onReviewButtonClick = onReviewButtonClick
+    )
 }
 
 @Preview

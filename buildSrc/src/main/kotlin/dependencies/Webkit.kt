@@ -8,10 +8,11 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Webkit
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a>
+ * Updated August 24, 2022
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/webkit">Webkit</a>
  */
 
-private const val WebkitVersion = "1.4.0"
+private const val WebkitVersion = "1.5.0"
 
 private const val Webkit = "androidx.webkit:webkit:$WebkitVersion"
 

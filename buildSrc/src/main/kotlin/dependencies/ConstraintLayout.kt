@@ -9,7 +9,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * ConstraintLayout
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/constraintlayout">ConstraintLayout</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/constraintlayout">ConstraintLayout</a>
  */
 
 private const val ConstraintLayoutVersion = "2.1.4"

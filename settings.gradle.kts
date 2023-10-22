@@ -17,25 +17,25 @@ pluginManagement {
 
 include(
     ":app",
+
     ":core",
-    ":features",
-    ":features:ads",
-    ":features:auth",
-    ":features:clipboard",
-    ":features:constraintlayout",
-    ":features:downloadfile",
-    ":features:fonts",
-    ":features:getcontent",
-    ":features:ime",
-    ":features:inappreview",
-    ":features:inappupdate",
-    ":features:intents",
-    ":features:location",
-    ":features:phonecalls",
-    ":features:receiver",
-    ":features:remoteconfig",
-    ":features:service",
-    ":features:storage",
-    ":features:toast"
+
+    ":feature:auth",
+    ":feature:clipboard",
+    ":feature:constraintlayout",
+    ":feature:downloadfile",
+    ":feature:fonts",
+    ":feature:getcontent",
+    ":feature:ime",
+    ":feature:inappreview",
+    ":feature:intents",
+    ":feature:location",
+    ":feature:phonecalls",
+    ":feature:receiver",
+    ":feature:remoteconfig",
+    ":feature:service",
+    ":feature:storage",
+    ":feature:toast"
 )
+
 rootProject.name = "android-app-template"

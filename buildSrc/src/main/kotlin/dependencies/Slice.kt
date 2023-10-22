@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Slice
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/slice">Slice</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/slice">Slice</a>
  */
 
 private const val SliceVersion = "1.1.0-alpha02"

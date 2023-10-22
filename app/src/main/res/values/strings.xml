@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Template</string>
-    <string name="message_in_app_update_new_version_available">New version is available</string>
-    <string name="action_update">Update</string>
     <string name="title_compose">Compose</string>
     <string name="title_lazy_list">Lazy List</string>
 </resources>

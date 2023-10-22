@@ -1,16 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
-import java.io.FileInputStream
-import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
-import org.michaelbel.template.ApplicationId
-import org.michaelbel.template.BuildTools
-import org.michaelbel.template.CompileSdk
-import org.michaelbel.template.MinSdk
-import org.michaelbel.template.TargetSdk
-import org.michaelbel.template.VersionName
 import org.michaelbel.template.dependencies.FirebaseAppDistribution
-import org.michaelbel.template.dependencies.KotlinCompilerExtensionVersion
 import org.michaelbel.template.dependencies.TestRunner
 import org.michaelbel.template.dependencies.implementationComposeTestDependencies
 import org.michaelbel.template.dependencies.implementationHiltDependencies
@@ -20,6 +11,8 @@ import org.michaelbel.template.dependencies.implementationNavigationDependencies
 import org.michaelbel.template.dependencies.implementationRxDependencies
 import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
 import org.michaelbel.template.dependencies.implementationTestDependencies
+import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     // google-services before firebase
@@ -47,15 +40,15 @@ val gitVersion: Int by lazy {
 }
 
 android {
-    compileSdk = CompileSdk
-    buildToolsVersion = BuildTools
+    namespace = "org.michaelbel.template"
+    compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
-        applicationId = ApplicationId
-        minSdk = MinSdk
-        targetSdk = TargetSdk
+        applicationId = "org.michaelbel.template"
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.target.sdk.get().toInt()
         versionCode = gitVersion
-        versionName = VersionName
+        versionName = "1.0.0"
         testInstrumentationRunner = TestRunner
         setProperty("archivesBaseName", "template-v-$versionName($versionCode)")
     }
@@ -94,7 +87,7 @@ android {
                 appId = FirebaseAppDistribution.MobileSdkAppId
                 artifactType = FirebaseAppDistribution.ArtifactType
                 testers = FirebaseAppDistribution.Testers
-                releaseNotes = FirebaseAppDistribution.ReleaseNotes
+                releaseNotesFile="$rootProject.rootDir/releaseNotes.txt"
             }
         }
         debug {
@@ -109,12 +102,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = KotlinCompilerExtensionVersion
-    }
-
-    testOptions {
-        unitTests.isIncludeAndroidResources = true
-        unitTests.isReturnDefaultValues = true
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.compiler.extension.get()
     }
 
     buildFeatures {
@@ -140,7 +128,22 @@ afterEvaluate {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":features"))
+    implementation(project(":feature:auth"))
+    implementation(project(":feature:clipboard"))
+    implementation(project(":feature:constraintlayout"))
+    implementation(project(":feature:downloadfile"))
+    implementation(project(":feature:fonts"))
+    implementation(project(":feature:getcontent"))
+    implementation(project(":feature:ime"))
+    implementation(project(":feature:inappreview"))
+    implementation(project(":feature:intents"))
+    implementation(project(":feature:location"))
+    implementation(project(":feature:phonecalls"))
+    implementation(project(":feature:receiver"))
+    implementation(project(":feature:remoteconfig"))
+    implementation(project(":feature:service"))
+    implementation(project(":feature:storage"))
+    implementation(project(":feature:toast"))
     implementationHiltDependencies()
     implementationStrictModeCompatDependencies()
     implementationTestDependencies()

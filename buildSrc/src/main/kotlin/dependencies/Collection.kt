@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Collection
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/collection">Collection</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/collection">Collection</a>
  */
 
 private const val CollectionVersion = "1.2.0"

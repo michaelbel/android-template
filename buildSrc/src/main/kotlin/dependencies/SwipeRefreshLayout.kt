@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * SwipeRefreshLayout
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout">SwipeRefreshLayout</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/swiperefreshlayout">SwipeRefreshLayout</a>
  */
 
 private const val SwipeRefreshLayoutVersion = "1.1.0"

@@ -2,10 +2,13 @@
 
 package org.michaelbel.core.ktx
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Point
 import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
@@ -108,4 +111,23 @@ fun View.toBitmapDrawable(): BitmapDrawable {
     draw(canvas)
 
     return BitmapDrawable(resources, bitmap)
+}
+
+@SuppressLint("ClickableViewAccessibility")
+fun View.setOnClickListenerWithPoint(action: (View, Point) -> Unit) {
+    val coordinates = Point()
+    val screenPosition = IntArray(2)
+    setOnTouchListener { v, event ->
+        if (event.action == MotionEvent.ACTION_DOWN) {
+            v.getLocationOnScreen(screenPosition)
+            coordinates.set(
+                event.x.toInt() + screenPosition[0],
+                event.y.toInt() + screenPosition[1]
+            )
+        }
+        false
+    }
+    setOnClickListener { view ->
+        action.invoke(view, coordinates)
+    }
 }

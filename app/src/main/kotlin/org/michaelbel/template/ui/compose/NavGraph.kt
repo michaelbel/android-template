@@ -42,19 +42,47 @@ fun Content(
         navController = navController,
         startDestination = ROUTE_COMPOSE
     ) {
-        composable(route = ROUTE_COMPOSE) { ComposeScreen(navController) }
-        composable(route = ROUTE_CLIPBOARD) { ClipboardScreen(navController) }
-        composable(route = ROUTE_DOWNLOAD_FILE) { DownloadFileScreen(navController) }
-        composable(route = ROUTE_INTENTS) { IntentsScreen(navController) }
-        composable(route = ROUTE_ADS) { AuthScreen(navController) }
-        composable(route = ROUTE_TOAST) { ToastScreen(navController) }
-        composable(route = ROUTE_CONFIG) { RemoteConfigScreen(navController) }
-        composable(route = ROUTE_REVIEW) { ReviewScreen(navController, onReviewButtonClick) }
-        composable(route = ROUTE_IME) { ImeScreen(navController) }
-        composable(route = ROUTE_LOCATION) { LocationScreen(navController) }
-        composable(route = ROUTE_SERVICE) { ServiceScreen(navController) }
-        composable(route = ROUTE_LAZY_LIST) { LazyListScreen(navController) }
-        composable(route = ROUTE_GET_CONTENT) { GetContentScreen(navController) }
-        composable(route = ROUTE_PHONE_CALLS) { PhoneCallsScreen(navController) }
+        composable(route = ROUTE_COMPOSE) {
+            ComposeScreen(navController)
+        }
+        composable(route = ROUTE_CLIPBOARD) {
+            ClipboardScreen(navController)
+        }
+        composable(route = ROUTE_DOWNLOAD_FILE) {
+            DownloadFileScreen(navController)
+        }
+        composable(route = ROUTE_INTENTS) {
+            IntentsScreen(navController)
+        }
+        composable(route = ROUTE_ADS) {
+            AuthScreen(navController)
+        }
+        composable(route = ROUTE_TOAST) {
+            ToastScreen(navController)
+        }
+        composable(route = ROUTE_CONFIG) {
+            RemoteConfigScreen(navController)
+        }
+        composable(route = ROUTE_REVIEW) {
+            ReviewScreen(navController, onReviewButtonClick)
+        }
+        composable(route = ROUTE_IME) {
+            ImeScreen(navController)
+        }
+        composable(route = ROUTE_LOCATION) {
+            LocationScreen(navController)
+        }
+        composable(route = ROUTE_SERVICE) {
+            ServiceScreen(navController)
+        }
+        composable(route = ROUTE_LAZY_LIST) {
+            LazyListScreen(navController)
+        }
+        composable(route = ROUTE_GET_CONTENT) {
+            GetContentScreen(navController)
+        }
+        composable(route = ROUTE_PHONE_CALLS) {
+            PhoneCallsScreen(navController)
+        }
     }
 }

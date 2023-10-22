@@ -12,7 +12,7 @@ import org.michaelbel.template.extensions.testImplementation
 /**
  * Room
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/room">Room</a>
  */
 
 private const val RoomVersion = "2.4.3"

@@ -23,13 +23,9 @@ class MainFragment: Fragment() {
     ): View = ComposeView(inflater.context).apply {
         setContent {
             AppTheme {
-                MainScreen(::onAppUpdateClick, ::navigate)
+                MainScreen(::navigate)
             }
         }
-    }
-
-    private fun onAppUpdateClick() {
-        viewModel.startUpdateFlow(requireActivity())
     }
 
     private fun navigate(to: Screen, args: Bundle) {

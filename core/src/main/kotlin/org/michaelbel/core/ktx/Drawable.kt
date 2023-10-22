@@ -3,12 +3,16 @@
 package org.michaelbel.core.ktx
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
+import android.graphics.drawable.RippleDrawable
+import android.graphics.drawable.TransitionDrawable
+import android.view.View
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
@@ -16,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import org.michaelbel.core.R
 
 fun Drawable.toBitmap(): Bitmap {
     if (this is BitmapDrawable) {
@@ -69,4 +74,44 @@ fun Context.selectableItemBackgroundDrawable(
     }
 
     return drawableSelectable
+}
+
+fun Context.selectableItemBackgroundBorderlessDrawable(
+    @ColorRes colorRes: Int? = null
+): Drawable? {
+    val attrs = intArrayOf(R.attr.selectableItemBackgroundBorderless)
+    val typedArray = obtainStyledAttributes(attrs)
+    val drawableSelectable = typedArray.getDrawable(0)
+    typedArray.recycle()
+
+    if (colorRes != null) {
+        return LayerDrawable(arrayOf(
+            ColorDrawable(ContextCompat.getColor(this, colorRes)),
+            drawableSelectable
+        ))
+    }
+
+    return drawableSelectable
+}
+
+fun Context.selectableItemBackgroundDrawable(
+    transitionDrawable: TransitionDrawable
+): Drawable {
+    val attrs = intArrayOf(R.attr.selectableItemBackground)
+    val typedArray = obtainStyledAttributes(attrs)
+    val drawableSelectable = typedArray.getDrawable(0)
+    typedArray.recycle()
+    return LayerDrawable(arrayOf(transitionDrawable, drawableSelectable))
+}
+
+fun Context.selectableItemRippleDrawable(
+    view: View,
+    @ColorRes rippleColor: Int
+): RippleDrawable {
+    val rippleDrawable = view.background as RippleDrawable
+    val states = arrayOf(intArrayOf(android.R.attr.state_enabled))
+    val colors = intArrayOf(ContextCompat.getColor(this, rippleColor))
+    val colorStateList = ColorStateList(states, colors)
+    rippleDrawable.setColor(colorStateList)
+    return rippleDrawable
 }

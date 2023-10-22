@@ -8,7 +8,7 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Preference
  *
- * @see <a href="https://developer.android.com/jetpack/androidx/releases/preference">Preference</a>
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/preference">Preference</a>
  */
 
 private const val PreferenceVersion = "1.2.0"

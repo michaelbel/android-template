@@ -7,16 +7,17 @@ import org.michaelbel.template.extensions.androidTestApi
 import org.michaelbel.template.extensions.androidTestImplementation
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.debugApi
-import org.michaelbel.template.extensions.implementation
 import org.michaelbel.template.extensions.debugImplementation
+import org.michaelbel.template.extensions.implementation
 
 /**
  * Jetpack Compose
  *
+ * Updated September 7, 2022
  * @see <a href="https://d.android.com/jetpack/androidx/releases/compose">Compose</a>
  */
 
-private const val ComposeCompilerVersion = "1.3.0"
+private const val ComposeCompilerVersion = "1.3.1"
 private const val ComposeAnimationVersion = "1.2.1"
 private const val ComposeFoundationVersion = "1.2.1"
 private const val ComposeMaterialVersion = "1.2.1"

@@ -9,10 +9,11 @@ import org.michaelbel.template.extensions.implementation
 /**
  * Core
  *
- * @see <a href="https://d.android.com/jetpack/androidx/releases">AndroidX releases</a>
+ * Updated September 7, 2022
+ * @see <a href="https://d.android.com/jetpack/androidx/releases/core">Core releases</a>
  */
 
-private const val CoreVersion = "1.8.0"
+private const val CoreVersion = "1.9.0"
 private const val CoreRoleVersion = "1.0.0"
 private const val CoreAnimationVersion = "1.0.0-beta01"
 private const val CorePerformance = "1.0.0-alpha02"
