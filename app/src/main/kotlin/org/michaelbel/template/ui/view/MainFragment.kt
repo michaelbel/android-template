@@ -23,7 +23,7 @@ class MainFragment: Fragment() {
     ): View = ComposeView(inflater.context).apply {
         setContent {
             TemplateTheme {
-                MainScreen(::navigate)
+                MainScreen({ requireActivity().finish() }, ::navigate)
             }
         }
     }

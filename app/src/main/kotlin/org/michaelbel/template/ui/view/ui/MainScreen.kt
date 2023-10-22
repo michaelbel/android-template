@@ -8,7 +8,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
@@ -32,6 +36,7 @@ typealias OnButtonClick = (Screen, Bundle) -> Unit
 
 @Composable
 fun MainScreen(
+    onNavigateBack: () -> Unit,
     onButtonClick: OnButtonClick
 ) {
     val listState: LazyListState = rememberLazyListState()
@@ -50,6 +55,16 @@ fun MainScreen(
                     )
                 },
                 modifier = Modifier.statusBarsPadding(),
+                navigationIcon = {
+                    IconButton(
+                        onClick = onNavigateBack
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack,
+                            contentDescription = null
+                        )
+                    }
+                },
                 scrollBehavior = scrollBehavior
             )
         }
@@ -80,6 +95,7 @@ fun MainScreen(
 private fun MainScreenPreview() {
     TemplateTheme {
         MainScreen(
+            onNavigateBack = {},
             onButtonClick = { _: Screen, _: Bundle -> }
         )
     }
