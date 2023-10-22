@@ -1,3 +1,4 @@
+* Update project
 * Bump org.jetbrains.kotlinx:kotlinx-serialization-json (#238)
 * Bump com.google.firebase:firebase-analytics-ktx from 21.2.0 to 21.4.0 (#235)
 * Bump io.gitlab.arturbosch.detekt from 1.22.0 to 1.23.1 (#231)
