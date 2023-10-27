@@ -1,6 +1,3 @@
-# Compose to Kotlin Compatibility Map:
-# https://d.android.com/jetpack/androidx/releases/compose-kotlin
-
 [versions]
 min-sdk = "21"
 compile-sdk = "33"
