@@ -1,3 +1,11 @@
+* Bump org.jetbrains.kotlinx:kotlinx-serialization-json (#248)
+* Bump com.google.firebase:firebase-crashlytics-ktx from 18.5.0 to 18.5.1 (#250)
+* Bump com.google.firebase.appdistribution from 4.0.0 to 4.0.1 (#251)
+* Update project
+* Merge remote-tracking branch 'origin/develop' into develop
+* Bump com.google.firebase:firebase-analytics-ktx from 21.3.0 to 21.4.0 (#249)
+* Bump io.gitlab.arturbosch.detekt from 1.22.0 to 1.23.1 (#247)
+* Update project
 * Update project
 * Update project
 * Update project
