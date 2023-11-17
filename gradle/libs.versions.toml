@@ -15,7 +15,7 @@ play-services-base = "18.2.0"
 
 firebase-analytics = "21.4.0"
 firebase-appdistribution = "4.0.1"
-firebase-config = "21.5.0"
+firebase-config = "21.6.0"
 firebase-crashlytics-plugin = "2.9.9"
 firebase-crashlytics = "18.5.1"
 
