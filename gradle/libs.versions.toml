@@ -19,7 +19,7 @@ firebase-config = "21.5.0"
 firebase-crashlytics-plugin = "2.9.9"
 firebase-crashlytics = "18.5.1"
 
-androidx-activity = "1.8.0"
+androidx-activity = "1.8.2"
 androidx-appcompat = "1.6.1"
 androidx-compose-foundation = "1.5.4"
 androidx-compose-runtime = "1.5.4"
