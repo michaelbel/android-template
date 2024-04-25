@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.androidTestApi
-import org.michaelbel.template.extensions.androidTestImplementation
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.implementation
 
@@ -27,11 +26,9 @@ const val NavigationSafeArgsPlugin = "androidx.navigation:navigation-safe-args-g
 private const val NavigationCompose = "androidx.navigation:navigation-compose:$NavigationVersion"
 
 fun DependencyHandler.implementationNavigationDependencies() {
-    implementation(NavigationCompose)
-    implementation(NavigationDynamic)
-    implementation(NavigationFragment)
-    implementation(NavigationUi)
-    androidTestImplementation(NavigationTesting)
+    implementation("androidx.navigation:navigation-compose:2.5.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
 }
 
 fun DependencyHandler.apiNavigationDependencies() {

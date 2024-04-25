@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Firebase
@@ -42,24 +41,12 @@ private const val FirebaseCore = "com.google.firebase:firebase-core:$FirebaseCor
 private const val FirebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:$FirebaseCrashlyticsVersion"
 private const val FirebaseMessaging = "com.google.firebase:firebase-messaging:$FirebaseMessagingVersion"
 
-fun DependencyHandler.implementationFirebaseDependencies() {
-    implementation(FirebaseAbt)
-    implementation(FirebaseAnalytics)
-    implementation(FirebaseCommon)
-    implementation(FirebaseCore)
-    implementation(FirebaseCrashlytics)
-}
-
 fun DependencyHandler.apiFirebaseDependencies() {
     api(FirebaseAbt)
     api(FirebaseAnalytics)
     api(FirebaseCommon)
     api(FirebaseCore)
     api(FirebaseCrashlytics)
-}
-
-fun DependencyHandler.implementationFirebaseConfig() {
-    implementation(FirebaseConfig)
 }
 
 object FirebaseAppDistribution {

@@ -24,5 +24,4 @@ fun DependencyHandler.implementationWindowDependencies() {
 
 fun DependencyHandler.apiWindowDependencies() {
     api(Window)
-    api(WindowTesting)
 }

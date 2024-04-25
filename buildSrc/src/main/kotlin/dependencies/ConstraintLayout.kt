@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
 
 /**
  * ConstraintLayout
@@ -17,11 +16,6 @@ private const val ConstraintLayoutComposeVersion = "1.0.1"
 
 private const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:$ConstraintLayoutVersion"
 private const val ConstraintLayoutCompose = "androidx.constraintlayout:constraintlayout-compose:$ConstraintLayoutComposeVersion"
-
-fun DependencyHandler.implementationConstraintLayoutDependencies() {
-    implementation(ConstraintLayout)
-    implementation(ConstraintLayoutCompose)
-}
 
 fun DependencyHandler.apiConstraintLayoutDependencies() {
     api(ConstraintLayout)

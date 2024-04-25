@@ -4,11 +4,8 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.androidTestApi
-import org.michaelbel.template.extensions.androidTestImplementation
 import org.michaelbel.template.extensions.api
 import org.michaelbel.template.extensions.debugApi
-import org.michaelbel.template.extensions.debugImplementation
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Jetpack Compose
@@ -54,23 +51,6 @@ const val OptExperimentalAnimationApi = "-Xopt-in=androidx.compose.animation.Exp
 const val OptExperimentalComposeUiApi = "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi"
 const val OptExperimentalFoundationApi = "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
 
-fun DependencyHandler.implementationComposeDependencies() {
-    implementation(ComposeCompiler)
-    implementation(ComposeFoundation)
-    implementation(ComposeFoundationLayout)
-    implementation(ComposeMaterialIconsCore)
-    implementation(ComposeMaterialIconsExtended)
-    implementation(ComposeMaterial3)
-    implementation(ComposeMaterial3Samples)
-    implementation(ComposeRuntime)
-    implementation(ComposeRuntimeLivedata)
-    implementation(ComposeUi)
-    implementation(ComposeUiViewBinding)
-    implementation(ComposeUiTooling)
-    debugImplementation(ComposeUiTestManifest)
-    androidTestImplementation(ComposeUiTest)
-}
-
 fun DependencyHandler.apiComposeDependencies() {
     api(ComposeCompiler)
     api(ComposeFoundation)
@@ -86,9 +66,4 @@ fun DependencyHandler.apiComposeDependencies() {
     api(ComposeUiTooling)
     debugApi(ComposeUiTestManifest)
     androidTestApi(ComposeUiTest)
-}
-
-fun DependencyHandler.implementationComposeTestDependencies() {
-    androidTestImplementation(ComposeUiTest)
-    implementation(ComposeUiTestManifest)
 }

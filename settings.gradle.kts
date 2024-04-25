@@ -17,24 +17,8 @@ pluginManagement {
 
 include(
     ":app",
-
     ":core",
-
-    ":feature:auth",
-    ":feature:clipboard",
-    ":feature:downloadfile",
-    ":feature:fonts",
-    ":feature:getcontent",
-    ":feature:ime",
-    ":feature:inappreview",
-    ":feature:intents",
-    ":feature:location",
-    ":feature:phonecalls",
-    ":feature:receiver",
-    ":feature:remoteconfig",
-    ":feature:service",
-    ":feature:storage",
-    ":feature:toast"
+    ":feature:feature1"
 )
 
-rootProject.name = "android-app-template"
+rootProject.name = "template"

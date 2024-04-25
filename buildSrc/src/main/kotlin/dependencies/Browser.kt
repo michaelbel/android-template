@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Browser
@@ -15,10 +14,6 @@ import org.michaelbel.template.extensions.implementation
 private const val BrowserVersion = "1.4.0"
 
 private const val Browser = "androidx.browser:browser:$BrowserVersion"
-
-fun DependencyHandler.implementationBrowserDependencies() {
-    implementation(Browser)
-}
 
 fun DependencyHandler.apiBrowserDependencies() {
     api(Browser)

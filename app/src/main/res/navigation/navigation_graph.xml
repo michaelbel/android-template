@@ -40,21 +40,4 @@
         android:name="org.michaelbel.template.ui.view.constraints.ConstrainsGuidelineFragment"
         android:label="ConstrainsGuideline"/>
 
-    <fragment
-        android:id="@+id/fontsFragment"
-        android:name="org.michaelbel.template.fonts.FontsFragment"
-        android:label="Fonts"/>
-
-    <fragment
-        android:id="@+id/storageFragment"
-        android:name="org.michaelbel.template.storage.StorageFragment"
-        android:label="Storage">
-
-        <argument
-            android:name="notificationsCount"
-            android:defaultValue="0"
-            app:argType="integer"/>
-
-    </fragment>
-
 </navigation>

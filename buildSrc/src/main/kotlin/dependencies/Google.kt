@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Google Play services, Play Core
@@ -108,12 +107,4 @@ private const val PlayCoreUpdate = "com.google.android.play:app-update-ktx:$Play
 fun DependencyHandler.apiGooglePlayServicesDependencies() {
     api(Auth)
     api(Base)
-}
-
-fun DependencyHandler.implementationPlayCoreDependency() {
-    implementation(PlayCore)
-}
-
-fun DependencyHandler.apiPlayCoreDependencies() {
-    api(PlayCore)
 }

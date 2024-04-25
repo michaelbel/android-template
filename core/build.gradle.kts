@@ -13,7 +13,6 @@ import org.michaelbel.template.dependencies.apiCoreDependencies
 import org.michaelbel.template.dependencies.apiDataStoreDependencies
 import org.michaelbel.template.dependencies.apiFirebaseDependencies
 import org.michaelbel.template.dependencies.apiGooglePlayServicesDependencies
-import org.michaelbel.template.dependencies.apiJetpackTestDependencies
 import org.michaelbel.template.dependencies.apiKotlinDependencies
 import org.michaelbel.template.dependencies.apiLifecycleDependencies
 import org.michaelbel.template.dependencies.apiMaterialDependencies
@@ -28,13 +27,13 @@ import org.michaelbel.template.dependencies.apiTimberDependencies
 import org.michaelbel.template.dependencies.apiViewBindingPropertyDelegateDependencies
 import org.michaelbel.template.dependencies.apiViewPager2Dependencies
 import org.michaelbel.template.dependencies.apiWindowDependencies
-import org.michaelbel.template.dependencies.implementationHiltDependencies
+import org.michaelbel.template.extensions.implementation
+import org.michaelbel.template.extensions.kapt
 
 plugins {
     id("com.android.library")
     id("kotlinx-serialization")
     id("dagger.hilt.android.plugin")
-    id("io.gitlab.arturbosch.detekt")
     kotlin("android")
     kotlin("kapt")
     id("com.google.devtools.ksp") version "1.7.20-1.0.6"
@@ -65,7 +64,8 @@ android {
 }
 
 dependencies {
-    implementationHiltDependencies()
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.44")
     apiKotlinDependencies()
     apiWindowDependencies()
     apiDataStoreDependencies()
@@ -90,6 +90,5 @@ dependencies {
     apiConstraintLayoutDependencies()
     apiCoreDependencies()
     apiRecyclerViewDependencies()
-    apiJetpackTestDependencies()
     apiViewPager2Dependencies()
 }

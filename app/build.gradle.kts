@@ -1,29 +1,20 @@
 @file:Suppress("UnstableApiUsage")
 
+import java.io.FileInputStream
+import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
 import org.michaelbel.template.dependencies.FirebaseAppDistribution
 import org.michaelbel.template.dependencies.TestRunner
-import org.michaelbel.template.dependencies.implementationComposeTestDependencies
-import org.michaelbel.template.dependencies.implementationHiltDependencies
-import org.michaelbel.template.dependencies.implementationJetpackTestDependencies
-import org.michaelbel.template.dependencies.implementationLeakCanaryDependencies
-import org.michaelbel.template.dependencies.implementationNavigationDependencies
-import org.michaelbel.template.dependencies.implementationRxDependencies
-import org.michaelbel.template.dependencies.implementationStrictModeCompatDependencies
-import org.michaelbel.template.dependencies.implementationTestDependencies
-import java.io.FileInputStream
-import java.util.Properties
+import org.michaelbel.template.extensions.implementation
+import org.michaelbel.template.extensions.kapt
 
 plugins {
-    // google-services before firebase
-    // kotlin kapt before hilt and safeargs
     id("com.android.application")
     id("kotlin-parcelize")
     id("kotlinx-serialization")
     id("com.google.gms.google-services")
     id("com.google.firebase.appdistribution")
     id("com.google.firebase.crashlytics")
-    id("io.gitlab.arturbosch.detekt")
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
@@ -127,29 +118,11 @@ afterEvaluate {
 }
 
 dependencies {
-    //implementation(libs.androidx.compose.foundation.layout)
     implementation(project(":core"))
-    implementation(project(":feature:auth"))
-    implementation(project(":feature:clipboard"))
-    implementation(project(":feature:downloadfile"))
-    implementation(project(":feature:fonts"))
-    implementation(project(":feature:getcontent"))
-    implementation(project(":feature:ime"))
-    implementation(project(":feature:inappreview"))
-    implementation(project(":feature:intents"))
-    implementation(project(":feature:location"))
-    implementation(project(":feature:phonecalls"))
-    implementation(project(":feature:receiver"))
-    implementation(project(":feature:remoteconfig"))
-    implementation(project(":feature:service"))
-    implementation(project(":feature:storage"))
-    implementation(project(":feature:toast"))
-    implementationHiltDependencies()
-    implementationStrictModeCompatDependencies()
-    implementationTestDependencies()
-    implementationJetpackTestDependencies()
-    implementationComposeTestDependencies()
-    implementationRxDependencies()
-    implementationLeakCanaryDependencies()
-    implementationNavigationDependencies()
+    implementation(project(":feature:feature1"))
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.44")
+    implementation("androidx.navigation:navigation-compose:2.5.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
 }

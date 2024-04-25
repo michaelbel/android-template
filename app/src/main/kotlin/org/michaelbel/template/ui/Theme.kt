@@ -28,8 +28,8 @@ fun TemplateTheme(
     dynamicColors: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val context: Context = LocalContext.current
-    val dynamicColorsAvailable: Boolean = Build.VERSION.SDK_INT >= 31
+    val context = LocalContext.current
+    val dynamicColorsAvailable = Build.VERSION.SDK_INT >= 31
 
     val colorScheme = if (dynamicColorsAvailable && dynamicColors) {
         context.dynamicColorScheme(darkTheme)

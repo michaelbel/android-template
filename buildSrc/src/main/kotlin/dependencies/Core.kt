@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Core
@@ -29,11 +28,6 @@ private const val CorePerfomance = "androidx.core:core-performance:1.0.0-alpha02
 private const val CoreGoogleShortcuts = "androidx.core:core-google-shortcuts:$CoreGoogleShortcutsVersion"
 private const val CoreRemoteViews = "androidx.core:core-remoteviews:$CoreRemoteViewsVersion"
 private const val CoreSplashScreen = "androidx.core:core-splashscreen:$CoreSplashScreenVersion"
-
-fun DependencyHandler.implementationCoreDependencies() {
-    implementation(Core)
-    implementation(CoreSplashScreen)
-}
 
 fun DependencyHandler.apiCoreDependencies() {
     api(Core)

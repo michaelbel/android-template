@@ -4,7 +4,6 @@ package org.michaelbel.template.dependencies
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.michaelbel.template.extensions.api
-import org.michaelbel.template.extensions.implementation
 
 /**
  * Google Accompanist
@@ -22,7 +21,6 @@ private const val AccompanistAppCompat = "com.google.accompanist:accompanist-app
 private const val AccompanistDrawablePainter = "com.google.accompanist:accompanist-drawablepainter:$AccompanistVersion"
 private const val AccompanistInsets = "com.google.accompanist:accompanist-insets:$AccompanistVersion"
 private const val AccompanistInsetsUi = "com.google.accompanist:accompanist-insets-ui:$AccompanistVersion"
-private const val AccompanistFlowLayout = "com.google.accompanist:accompanist-flowlayout:$AccompanistVersion"
 private const val AccompanistNavigationAnimation = "com.google.accompanist:accompanist-navigation-animation:$AccompanistVersion"
 private const val AccompanistNavigationMaterial = "com.google.accompanist:accompanist-navigation-material:$AccompanistVersion"
 private const val AccompanistPager = "com.google.accompanist:accompanist-pager:$AccompanistVersion"
@@ -32,14 +30,6 @@ private const val AccompanistPlaceholder = "com.google.accompanist:accompanist-p
 private const val AccompanistPlaceholderMaterial = "com.google.accompanist:accompanist-placeholder-material:$AccompanistVersion"
 private const val AccompanistSystemUiController = "com.google.accompanist:accompanist-systemuicontroller:$AccompanistVersion"
 private const val AccompanistSwipeRefresh = "com.google.accompanist:accompanist-swiperefresh:$AccompanistVersion"
-
-fun DependencyHandler.implementationAccompanistDependencies() {
-    implementation(AccompanistAppCompat)
-    implementation(AccompanistDrawablePainter)
-    implementation(AccompanistInsets)
-    implementation(AccompanistInsetsUi)
-    implementation(AccompanistNavigationAnimation)
-}
 
 fun DependencyHandler.apiAccompanistDependencies() {
     api(AccompanistAppCompat)
