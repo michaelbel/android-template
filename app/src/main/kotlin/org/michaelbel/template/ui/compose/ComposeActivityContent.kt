@@ -9,7 +9,6 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import org.michaelbel.template.auth.AuthScreen
 import org.michaelbel.template.ui.TemplateTheme
 import org.michaelbel.template.ui.compose.lazylist.LazyListScreen
 import org.michaelbel.template.ui.compose.list.ListScreen
@@ -26,9 +25,6 @@ fun ComposeActivityContent(
     ) {
         composable(route = "list") {
             ListScreen(navController, onNavigateBack)
-        }
-        composable(route = "auth") {
-            AuthScreen(navController)
         }
         composable(route = "lazyList") {
             LazyListScreen(navController)

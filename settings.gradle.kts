@@ -17,8 +17,7 @@ pluginManagement {
 
 include(
     ":app",
-    ":core",
-    ":feature:feature1"
+    ":core"
 )
 
 rootProject.name = "template"

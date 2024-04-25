@@ -119,7 +119,6 @@ afterEvaluate {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":feature:feature1"))
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-compiler:2.44")
     implementation("androidx.navigation:navigation-compose:2.5.2")
