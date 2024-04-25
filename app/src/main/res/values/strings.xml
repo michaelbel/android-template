@@ -1,14 +1,3 @@
 <resources>
     <string name="app_name">Template</string>
-
-    <string name="title_constraints_baseline">Constraints Baseline</string>
-    <string name="title_constraints_chains">Constraints Chains</string>
-    <string name="title_constraints_circular">Constraints Circular</string>
-    <string name="title_constraints_constrained_width">Constraints Constrained Width</string>
-    <string name="title_constraints_flow">Constraints Flow</string>
-    <string name="title_constraints_gone_margins">Constraints Gone Margins</string>
-    <string name="title_constraints_guideline">Constraints Guideline</string>
-
-    <string name="title_compose">Compose</string>
-    <string name="title_lazy_list">Lazy List</string>
 </resources>

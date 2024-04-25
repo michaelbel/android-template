@@ -38,6 +38,7 @@ dependencies {
     api(libs.androidx.compose.ui)
     api(libs.androidx.constraintlayout.compose)
     api(libs.androidx.core.splashscreen)
+    api(libs.androidx.fragment.compose)
     api(libs.androidx.lifecycle.runtime.compose)
     api(libs.androidx.paging.compose)
     api(libs.androidx.navigation.compose)

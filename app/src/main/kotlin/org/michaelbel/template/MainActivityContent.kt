@@ -29,11 +29,19 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.fragment.compose.AndroidFragment
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 import org.michaelbel.template.ui.TemplateTheme
+import org.michaelbel.template.view.ConstrainsBaselineFragment
+import org.michaelbel.template.view.ConstrainsChainsFragment
+import org.michaelbel.template.view.ConstrainsCircularFragment
+import org.michaelbel.template.view.ConstrainsConstrainedWidthFragment
+import org.michaelbel.template.view.ConstrainsFlowFragment
+import org.michaelbel.template.view.ConstrainsGoneMarginsFragment
+import org.michaelbel.template.view.ConstrainsGuidelineFragment
 
 @Composable
 internal fun MainActivityContent(
@@ -116,7 +124,8 @@ internal fun MainActivityContent(
         ) { innerPadding ->
             NavHost(
                 navController = navHostController,
-                startDestination = selectedRoute
+                startDestination = selectedRoute,
+                modifier = Modifier.padding(innerPadding)
             ) {
                 composable("compose") {
                     Column(
@@ -136,18 +145,131 @@ internal fun MainActivityContent(
                     }
                 }
                 composable("view") {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
+                    val viewNavHostController = rememberNavController()
+
+                    NavHost(
+                        navController = viewNavHostController,
+                        startDestination = "view-home"
                     ) {
-                        Button(
-                            onClick = {}
-                        ) {
-                            Text(
-                                text = "View"
+                        composable("view-home") {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(innerPadding),
+                                verticalArrangement = Arrangement.Center,
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("baseline")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Baseline"
+                                    )
+                                }
+
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("chains")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Chains"
+                                    )
+                                }
+
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("circular")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Circular"
+                                    )
+                                }
+
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("width")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Width"
+                                    )
+                                }
+
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("flow")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Flow"
+                                    )
+                                }
+
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("gone")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Gone"
+                                    )
+                                }
+
+                                Button(
+                                    onClick = {
+                                        viewNavHostController.navigate("guideline")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Guideline"
+                                    )
+                                }
+                            }
+                        }
+                        composable("baseline") {
+                            AndroidFragment(
+                                clazz = ConstrainsBaselineFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        composable("chains") {
+                            AndroidFragment(
+                                clazz = ConstrainsChainsFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        composable("circular") {
+                            AndroidFragment(
+                                clazz = ConstrainsCircularFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        composable("width") {
+                            AndroidFragment(
+                                clazz = ConstrainsConstrainedWidthFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        composable("flow") {
+                            AndroidFragment(
+                                clazz = ConstrainsFlowFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        composable("gone") {
+                            AndroidFragment(
+                                clazz = ConstrainsGoneMarginsFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                        composable("guideline") {
+                            AndroidFragment(
+                                clazz = ConstrainsGuidelineFragment::class.java,
+                                modifier = Modifier.fillMaxSize()
                             )
                         }
                     }
