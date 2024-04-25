@@ -1,7 +1,9 @@
 @file:Suppress("unused")
+@file:SuppressLint("ModifierFactoryUnreferencedReceiver")
 
 package org.michaelbel.core.ktx
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.runtime.remember

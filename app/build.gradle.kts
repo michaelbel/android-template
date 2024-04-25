@@ -3,25 +3,13 @@
 import java.io.FileInputStream
 import java.util.Properties
 import org.apache.commons.io.output.ByteArrayOutputStream
-import org.michaelbel.template.dependencies.FirebaseAppDistribution
-import org.michaelbel.template.dependencies.TestRunner
-import org.michaelbel.template.extensions.implementation
-import org.michaelbel.template.extensions.kapt
 
 plugins {
-    id("com.android.application")
-    id("kotlin-parcelize")
-    id("kotlinx-serialization")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.appdistribution")
-    id("com.google.firebase.crashlytics")
-    kotlin("android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
-    id("androidx.navigation.safeargs.kotlin")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
-val gitVersion: Int by lazy {
+private val gitCommitsCount: Int by lazy {
     val stdout = ByteArrayOutputStream()
     rootProject.exec {
         commandLine("git", "rev-list", "--count", "HEAD")
@@ -38,10 +26,9 @@ android {
         applicationId = "org.michaelbel.template"
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
-        versionCode = gitVersion
+        versionCode = gitCommitsCount
         versionName = "1.0.0"
-        testInstrumentationRunner = TestRunner
-        setProperty("archivesBaseName", "template-v-$versionName($versionCode)")
+        setProperty("archivesBaseName", "Template-v$versionName($versionCode)")
     }
 
     signingConfigs {
@@ -73,13 +60,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-
-            firebaseAppDistribution {
-                appId = FirebaseAppDistribution.MobileSdkAppId
-                artifactType = FirebaseAppDistribution.ArtifactType
-                testers = FirebaseAppDistribution.Testers
-                releaseNotesFile="$rootProject.rootDir/releaseNotes.txt"
-            }
         }
         debug {
             isDebuggable = true
@@ -88,12 +68,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.jdk.get().toInt())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.jdk.get().toInt())
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlin.compiler.extension.get()
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
     }
 
     buildFeatures {
@@ -119,9 +99,4 @@ afterEvaluate {
 
 dependencies {
     implementation(project(":core"))
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-compiler:2.44")
-    implementation("androidx.navigation:navigation-compose:2.5.2")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
 }

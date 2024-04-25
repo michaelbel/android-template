@@ -11,7 +11,6 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.graphics.drawable.RippleDrawable
-import android.graphics.drawable.TransitionDrawable
 import android.view.View
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
@@ -20,7 +19,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import org.michaelbel.core.R
 
 fun Drawable.toBitmap(): Bitmap {
     if (this is BitmapDrawable) {
@@ -76,7 +74,7 @@ fun Context.selectableItemBackgroundDrawable(
     return drawableSelectable
 }
 
-fun Context.selectableItemBackgroundBorderlessDrawable(
+/*fun Context.selectableItemBackgroundBorderlessDrawable(
     @ColorRes colorRes: Int? = null
 ): Drawable? {
     val attrs = intArrayOf(R.attr.selectableItemBackgroundBorderless)
@@ -92,9 +90,9 @@ fun Context.selectableItemBackgroundBorderlessDrawable(
     }
 
     return drawableSelectable
-}
+}*/
 
-fun Context.selectableItemBackgroundDrawable(
+/*fun Context.selectableItemBackgroundDrawable(
     transitionDrawable: TransitionDrawable
 ): Drawable {
     val attrs = intArrayOf(R.attr.selectableItemBackground)
@@ -102,7 +100,7 @@ fun Context.selectableItemBackgroundDrawable(
     val drawableSelectable = typedArray.getDrawable(0)
     typedArray.recycle()
     return LayerDrawable(arrayOf(transitionDrawable, drawableSelectable))
-}
+}*/
 
 fun Context.selectableItemRippleDrawable(
     view: View,

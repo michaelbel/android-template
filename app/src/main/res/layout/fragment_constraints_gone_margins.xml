@@ -19,7 +19,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIcon="@drawable/ic_arrow_back_24"
             app:title="@string/title_constraints_gone_margins"/>
 
     </com.google.android.material.appbar.AppBarLayout>
