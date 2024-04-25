@@ -1,4 +1,0 @@
-<resources>
-    <bool name="tablet">false</bool>
-    <bool name="darkTheme">true</bool>
-</resources>

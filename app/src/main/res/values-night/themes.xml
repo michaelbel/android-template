@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Night Theme
-
-    Android 5 (API level 21)
-    Android 5.1 (API level 22)
--->
-
 <resources>
 
-    <style name="Theme.Base.Starting.V21" parent="Theme.SplashScreen">
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/Background</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen_icon</item>
         <item name="windowSplashScreenAnimationDuration">500</item>
         <item name="postSplashScreenTheme">@style/Theme.App</item>
         <item name="android:statusBarColor">@color/Background</item>
         <item name="android:navigationBarColor">@color/Background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarDividerColor">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/splash_screen_branding_layer_list</item>
     </style>
-
-    <style name="Theme.App.Starting" parent="Theme.Base.Starting.V21"/>
 
 </resources>
