@@ -28,7 +28,7 @@ android {
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionCode = gitCommitsCount
-        versionName = "1.0.0"
+        versionName = "1.0"
         setProperty("archivesBaseName", "Template-v$versionName($versionCode)")
     }
 
@@ -57,10 +57,7 @@ android {
             isDebuggable = false
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("release")
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         debug {
             isDebuggable = true
@@ -69,14 +66,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(libs.versions.jdk.get().toInt())
-        targetCompatibility = JavaVersion.toVersion(libs.versions.jdk.get().toInt())
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.jdk.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.jdk.get())
     }
 
     buildFeatures {
+        buildConfig = true
         compose = true
         viewBinding = true
-        buildConfig = true
     }
 }
 
