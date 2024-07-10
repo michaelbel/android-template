@@ -42,5 +42,4 @@ dependencies {
     api(libs.androidx.navigation.fragment.ktx)
     api(libs.androidx.transition.ktx)
     api(libs.google.material)
-    api(libs.viewbindingpropertydelegate)
 }
