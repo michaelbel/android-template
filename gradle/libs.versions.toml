@@ -8,26 +8,29 @@ kotlin = "2.0.0"
 kotlinx-coroutines = "1.8.1"
 kotlinx-datetime = "0.6.0"
 kotlinx-serialization-json = "1.7.1"
-google-ksp = "2.0.0-1.0.22"
+google-ksp = "2.0.0-1.0.23"
 google-services = "4.4.2"
 google-services-base = "18.5.0"
 google-services-instantapps = "18.1.0"
-google-play-core-ktx = "1.8.1"
 google-material = "1.12.0"
 google-material-compose-theme-adapter = "1.2.1"
 google-firebase-analytics-ktx = "22.0.2"
 google-firebase-appdistribution = "5.0.0"
 google-firebase-config-ktx = "22.0.0"
 google-firebase-crashlytics-plugin = "3.0.2"
-google-firebase-crashlytics-ktx = "19.0.2"
+google-firebase-crashlytics-ktx = "19.0.3"
 google-firebase-messaging-ktx = "24.0.0"
+google-play-asset-delivery-ktx = "2.2.2"
+google-play-delivery-ktx = "2.1.0"
+google-play-review-ktx = "2.0.1"
+google-play-app-update-ktx = "2.1.0"
 androidx-appcompat = "1.7.0"
 androidx-activity = "1.9.0"
 androidx-autofill = "1.1.0"
 androidx-benchmark = "1.2.4"
 androidx-biometric-ktx = "1.2.0-alpha05"
 androidx-browser = "1.8.0"
-androidx-collection = "1.4.0"
+androidx-collection = "1.4.1"
 androidx-compose-animation = "1.6.8"
 androidx-compose-foundation = "1.6.8"
 androidx-compose-runtime = "1.6.8"
@@ -58,7 +61,7 @@ androidx-test-uiautomator = "2.3.0"
 androidx-test-espresso = "3.6.1"
 androidx-test-espresso-device = "1.0.1"
 androidx-work = "2.9.0"
-compose-navigation = "2.8.0-alpha02"
+compose-navigation = "2.8.0-alpha08"
 compose-viewmodel = "2.8.0"
 detekt = "1.23.6"
 coil = "2.6.0"
@@ -89,7 +92,10 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 google-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "google-services-base" }
 google-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-services-instantapps" }
-google-play-core-ktx = { module = "com.google.android.play:core-ktx", version.ref = "google-play-core-ktx" }
+google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery-ktx" }
+google-play-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-delivery-ktx" }
+google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review-ktx" }
+google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update-ktx" }
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 google-material-compose-theme-adapter = { module = "com.google.android.material:compose-theme-adapter", version.ref = "google-material-compose-theme-adapter" }
 google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "google-firebase-analytics-ktx" }
