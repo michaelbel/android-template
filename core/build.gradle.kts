@@ -33,6 +33,7 @@ dependencies {
     api(libs.androidx.compose.material3)
     api(libs.androidx.compose.runtime)
     api(libs.androidx.compose.ui)
+    api(libs.androidx.compose.ui.tooling)
     api(libs.androidx.constraintlayout.compose)
     api(libs.androidx.core.splashscreen)
     api(libs.androidx.fragment.compose)
