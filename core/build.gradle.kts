@@ -8,17 +8,18 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+kotlin {
+    compilerOptions {
+        jvmToolchain(libs.versions.jdk.get().toInt())
+    }
+}
+
 android {
     namespace = "org.michaelbel.template.core"
 
     defaultConfig {
         compileSdk = libs.versions.compile.sdk.get().toInt()
         minSdk = libs.versions.min.sdk.get().toInt()
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(libs.versions.jdk.get())
-        targetCompatibility = JavaVersion.toVersion(libs.versions.jdk.get())
     }
 
     buildFeatures {

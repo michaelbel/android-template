@@ -19,6 +19,12 @@ private val gitCommitsCount: Int by lazy {
     stdout.toString().trim().toInt()
 }
 
+kotlin {
+    compilerOptions {
+        jvmToolchain(libs.versions.jdk.get().toInt())
+    }
+}
+
 android {
     namespace = "org.michaelbel.template"
     compileSdk = libs.versions.compile.sdk.get().toInt()
@@ -65,15 +71,14 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(libs.versions.jdk.get())
-        targetCompatibility = JavaVersion.toVersion(libs.versions.jdk.get())
-    }
-
     buildFeatures {
         buildConfig = true
         compose = true
     }
+}
+
+dependencies {
+    implementation(project(":core"))
 }
 
 tasks.register("prepareReleaseNotes") {
@@ -88,8 +93,4 @@ tasks.register("prepareReleaseNotes") {
 afterEvaluate {
     tasks.findByName("assembleDebug")?.finalizedBy("prepareReleaseNotes")
     tasks.findByName("assembleRelease")?.finalizedBy("prepareReleaseNotes")
-}
-
-dependencies {
-    implementation(project(":core"))
 }
