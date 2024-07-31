@@ -34,6 +34,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
+import org.michaelbel.template.compose.ContextualScreen
 import org.michaelbel.template.ui.TemplateTheme
 import org.michaelbel.template.view.ConstrainsBaselineFragment
 import org.michaelbel.template.view.ConstrainsChainsFragment
@@ -128,18 +129,34 @@ internal fun MainActivityContent(
                 modifier = Modifier.padding(innerPadding)
             ) {
                 composable("compose") {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
+                    val composeNavHostController = rememberNavController()
+
+                    NavHost(
+                        navController = composeNavHostController,
+                        startDestination = "compose-home"
                     ) {
-                        Button(
-                            onClick = {}
-                        ) {
-                            Text(
-                                text = "Compose"
+                        composable("compose-home") {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(innerPadding),
+                                verticalArrangement = Arrangement.Center,
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Button(
+                                    onClick = {
+                                        composeNavHostController.navigate("contextual")
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Contextual"
+                                    )
+                                }
+                            }
+                        }
+                        composable("contextual") {
+                            ContextualScreen(
+                                modifier = Modifier.fillMaxSize()
                             )
                         }
                     }
