@@ -14,4 +14,4 @@ dependencyResolutionManagement {
     }
 }
 include(":app", ":core")
-rootProject.name = "template"
+rootProject.name = "android-template"
