@@ -4,10 +4,12 @@ compile-sdk = "35"
 target-sdk = "34"
 jdk = "17"
 agp = "8.4.2"
+
 kotlin = "2.0.20"
 kotlinx-coroutines = "1.9.0-RC"
 kotlinx-datetime = "0.6.1"
 kotlinx-serialization-json = "1.7.1"
+
 google-ksp = "2.0.20-1.0.24"
 google-services = "4.4.2"
 google-services-base = "18.5.0"
@@ -24,6 +26,7 @@ google-play-asset-delivery-ktx = "2.2.2"
 google-play-delivery-ktx = "2.1.0"
 google-play-review-ktx = "2.0.1"
 google-play-app-update-ktx = "2.1.0"
+
 androidx-appcompat = "1.7.0"
 androidx-activity = "1.9.1"
 androidx-autofill = "1.1.0"
@@ -46,7 +49,7 @@ androidx-lifecycle = "2.8.4"
 androidx-lifecycle-viewmodel = "2.8.4"
 androidx-glance = "1.1.0"
 androidx-fragment = "1.8.2"
-androidx-media3 = "1.4.0"
+androidx-media3 = "1.4.1"
 androidx-navigation = "2.7.7"
 androidx-palette-ktx = "1.0.0"
 androidx-paging = "3.3.2"
@@ -61,13 +64,13 @@ androidx-test-uiautomator = "2.3.0"
 androidx-test-espresso = "3.6.1"
 androidx-test-espresso-device = "1.0.1"
 androidx-work = "2.9.1"
+
 detekt = "1.23.6"
 coil = "2.7.0"
 okhttp = "4.12.0"
 chucker = "4.0.0"
 timber = "5.0.1"
 junit = "4.13.2"
-flaker = "0.1.2"
 ktor = "2.3.12"
 robolectric = "4.13"
 mockito = "5.11.0"
@@ -86,6 +89,7 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+
 google-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "google-services-base" }
 google-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-services-instantapps" }
 google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery-ktx" }
@@ -98,6 +102,7 @@ google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analyti
 google-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx", version.ref = "google-firebase-config-ktx" }
 google-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "google-firebase-crashlytics-ktx" }
 google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "google-firebase-messaging-ktx" }
+
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-appcompat-resources = { module = "androidx.appcompat:appcompat-resources", version.ref = "androidx-appcompat" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
@@ -181,14 +186,13 @@ androidx-test-espresso-idling-resource = { module = "androidx.test.espresso:espr
 androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "androidx-test-uiautomator" }
 androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "androidx-work" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work" }
+
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 chucker-library-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 junit = { module = "junit:junit", version.ref = "junit" }
-flaker-android-okhttp = { module = "io.github.rotbolt:flaker-android-okhttp", version.ref = "flaker" }
-flaker-android-okhttp-noop = { module = "io.github.rotbolt:flaker-android-okhttp-noop", version.ref = "flaker" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
