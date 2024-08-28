@@ -11,7 +11,6 @@ import androidx.compose.material.icons.outlined.Build
 import androidx.compose.material.icons.outlined.Phone
 import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -29,23 +28,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.fragment.compose.AndroidFragment
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
-import org.michaelbel.template.compose.ContextualScreen
 import org.michaelbel.template.ui.TemplateTheme
-import org.michaelbel.template.view.ConstrainsBaselineFragment
-import org.michaelbel.template.view.ConstrainsChainsFragment
-import org.michaelbel.template.view.ConstrainsCircularFragment
-import org.michaelbel.template.view.ConstrainsConstrainedWidthFragment
-import org.michaelbel.template.view.ConstrainsFlowFragment
-import org.michaelbel.template.view.ConstrainsGoneMarginsFragment
-import org.michaelbel.template.view.ConstrainsGuidelineFragment
 
 @Composable
-internal fun MainActivityContent(
+fun MainActivityContent(
     modifier: Modifier = Modifier
 ) {
     val navHostController = rememberNavController()
@@ -60,7 +50,7 @@ internal fun MainActivityContent(
                 TopAppBar(
                     title = {
                         Text(
-                            text = "Template"
+                            text = "Android Template"
                         )
                     }
                 )
@@ -143,21 +133,10 @@ internal fun MainActivityContent(
                                 verticalArrangement = Arrangement.Center,
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                Button(
-                                    onClick = {
-                                        composeNavHostController.navigate("contextual")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Contextual"
-                                    )
-                                }
+                                Text(
+                                    text = "Compose Screen"
+                                )
                             }
-                        }
-                        composable("contextual") {
-                            ContextualScreen(
-                                modifier = Modifier.fillMaxSize()
-                            )
                         }
                     }
                 }
@@ -176,118 +155,10 @@ internal fun MainActivityContent(
                                 verticalArrangement = Arrangement.Center,
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("baseline")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Baseline"
-                                    )
-                                }
-
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("chains")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Chains"
-                                    )
-                                }
-
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("circular")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Circular"
-                                    )
-                                }
-
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("width")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Width"
-                                    )
-                                }
-
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("flow")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Flow"
-                                    )
-                                }
-
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("gone")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Gone"
-                                    )
-                                }
-
-                                Button(
-                                    onClick = {
-                                        viewNavHostController.navigate("guideline")
-                                    }
-                                ) {
-                                    Text(
-                                        text = "Guideline"
-                                    )
-                                }
+                                Text(
+                                    text = "View Screen"
+                                )
                             }
-                        }
-                        composable("baseline") {
-                            AndroidFragment(
-                                clazz = ConstrainsBaselineFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
-                        }
-                        composable("chains") {
-                            AndroidFragment(
-                                clazz = ConstrainsChainsFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
-                        }
-                        composable("circular") {
-                            AndroidFragment(
-                                clazz = ConstrainsCircularFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
-                        }
-                        composable("width") {
-                            AndroidFragment(
-                                clazz = ConstrainsConstrainedWidthFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
-                        }
-                        composable("flow") {
-                            AndroidFragment(
-                                clazz = ConstrainsFlowFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
-                        }
-                        composable("gone") {
-                            AndroidFragment(
-                                clazz = ConstrainsGoneMarginsFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
-                        }
-                        composable("guideline") {
-                            AndroidFragment(
-                                clazz = ConstrainsGuidelineFragment::class.java,
-                                modifier = Modifier.fillMaxSize()
-                            )
                         }
                     }
                 }
