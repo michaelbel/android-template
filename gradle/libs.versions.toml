@@ -26,25 +26,60 @@ google-play-asset-delivery-ktx = "2.2.2"
 google-play-delivery-ktx = "2.1.0"
 google-play-review-ktx = "2.0.1"
 google-play-app-update-ktx = "2.1.0"
+google-guava = "33.0.0-android"
 
-androidx-appcompat = "1.7.0"
 androidx-activity = "1.9.1"
+androidx-ads = "1.0.0-alpha05"
+androidx-annotation = "1.8.2"
+androidx-annotation-experimental = "1.4.1"
+androidx-appcompat = "1.7.0"
+androidx-appsearch = "1.1.0-alpha04"
+androidx-arch-core = "2.2.0"
+androidx-asynclayoutinflater = "1.0.0"
 androidx-autofill = "1.1.0"
 androidx-benchmark = "1.3.0"
-androidx-biometric-ktx = "1.2.0-alpha05"
+androidx-biometric = "1.2.0-alpha05"
+androidx-bluetooth = "1.0.0-alpha02"
 androidx-browser = "1.8.0"
+androidx-car-app = "1.4.0"
+androidx-camera = "1.4.0-rc01"
+androidx-camera-viewfinder = "1.4.0-alpha07"
+androidx-cardview = "1.0.0"
 androidx-collection = "1.4.3"
 androidx-compose-animation = "1.6.8"
 androidx-compose-foundation = "1.6.8"
 androidx-compose-runtime = "1.6.8"
 androidx-compose-ui = "1.6.8"
-androidx-compose-material-icons-extended = "1.6.8"
+androidx-compose-material = "1.6.8"
 androidx-compose-material3 = "1.2.1"
+androidx-concurrent = "1.2.0"
+androidx-constraintlayout = "2.1.4"
 androidx-constraintlayout-compose = "1.0.1"
-androidx-core-ktx = "1.13.1"
+androidx-contentpager = "1.0.0"
+androidx-coordinatorlayout = "1.2.0"
+androidx-core = "1.13.1"
+androidx-core-animation = "1.0.0"
+androidx-core-google-shortcuts = "1.1.0"
+androidx-core-performance = "1.0.0"
+androidx-core-remoteviews = "1.1.0"
+androidx-core-role = "1.0.0"
 androidx-core-splashscreen = "1.0.1"
+androidx-core-location = "1.0.0-alpha02"
+androidx-core-i18n = "1.0.0-alpha02"
+androidx-core-telecom = "1.0.0-alpha03"
+androidx-core-uwb = "1.0.0-alpha08"
+androidx-credentials = "1.5.0-alpha04"
+androidx-credentials-e2ee = "1.0.0-alpha02"
+androidx-cursoradapter = "1.0.0"
+androidx-customview = "1.1.0"
+androidx-customview-poolingcontainer = "1.0.0"
 androidx-datastore = "1.1.1"
-androidx-datastore-core-okio-jvm = "1.1.1"
+androidx-documentfile = "1.0.1"
+androidx-draganddrop = "1.0.0"
+androidx-drawerlayout = "1.2.0"
+androidx-dynamicanimation = "1.1.0-alpha03"
+androidx-emoji = "1.1.0"
+androidx-emoji2 = "1.4.0"
 androidx-lifecycle = "2.8.4"
 androidx-lifecycle-viewmodel = "2.8.4"
 androidx-glance = "1.1.0"
@@ -102,20 +137,54 @@ google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analyti
 google-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx", version.ref = "google-firebase-config-ktx" }
 google-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "google-firebase-crashlytics-ktx" }
 google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "google-firebase-messaging-ktx" }
+google-guava = { module = "com.google.guava:guava", version.ref = "google-guava" }
 
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-ads-identifier = { module = "androidx.ads:ads-identifier", version.ref = "androidx-ads" }
+androidx-ads-identifier-provider = { module = "androidx.ads:ads-identifier-provider", version.ref = "androidx-ads" }
+androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidx-annotation" }
+androidx-annotation-experimental = { module = "androidx.annotation:annotation-experimental", version.ref = "androidx-annotation-experimental" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-appcompat-resources = { module = "androidx.appcompat:appcompat-resources", version.ref = "androidx-appcompat" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-appsearch = { module = "androidx.appsearch:appsearch", version.ref = "androidx-appsearch" }
+androidx-appsearch-compiler = { module = "androidx.appsearch:appsearch-compiler", version.ref = "androidx-appsearch" }
+androidx-appsearch-local-storage = { module = "androidx.appsearch:appsearch-local-storage", version.ref = "androidx-appsearch" }
+androidx-appsearch-platform-storage = { module = "androidx.appsearch:appsearch-platform-storage", version.ref = "androidx-appsearch" }
+androidx-arch-core-common = { module = "androidx.arch.core:core-common", version.ref = "androidx-arch-core" }
+androidx-arch-core-runtime = { module = "androidx.arch.core:core-runtime", version.ref = "androidx-arch-core" }
+androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidx-arch-core" }
+androidx-asynclayoutinflater = { module = "androidx.asynclayoutinflater:asynclayoutinflater", version.ref = "androidx-asynclayoutinflater" }
+androidx-asynclayoutinflater-appcompat = { module = "androidx.asynclayoutinflater:asynclayoutinflater-appcompat", version.ref = "androidx-asynclayoutinflater" }
 androidx-autofill = { module = "androidx.autofill:autofill", version.ref = "androidx-autofill" }
-androidx-benchmark-junit = { module = "androidx.benchmark:benchmark-junit4", version.ref = "androidx-benchmark" }
-androidx-benchmark-macro-junit = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "androidx-benchmark" }
-androidx-biometric-ktx = { module = "androidx.biometric:biometric-ktx", version.ref = "androidx-biometric-ktx" }
+androidx-benchmark-junit4 = { module = "androidx.benchmark:benchmark-junit4", version.ref = "androidx-benchmark" }
+androidx-benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "androidx-benchmark" }
+androidx-biometric-ktx = { module = "androidx.biometric:biometric-ktx", version.ref = "androidx-biometric" }
+androidx-bluetooth = { module = "androidx.bluetooth:bluetooth", version.ref = "androidx-bluetooth" }
+androidx-bluetooth-testing = { module = "androidx.bluetooth:bluetooth-testing", version.ref = "androidx-bluetooth" }
 androidx-browser = { module = "androidx.browser:browser", version.ref = "androidx-browser" }
+androidx-car-app = { module = "androidx.car.app:app", version.ref = "androidx-car-app" }
+androidx-car-app-projected = { module = "androidx.car.app:app-projected", version.ref = "androidx-car-app" }
+androidx-car-app-automotive = { module = "androidx.car.app:app-automotive", version.ref = "androidx-car-app" }
+androidx-car-app-testing = { module = "androidx.car.app:app-testing", version.ref = "androidx-car-app" }
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "androidx-camera" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "androidx-camera" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "androidx-camera" }
+androidx-camera-video = { module = "androidx.camera:camera-video", version.ref = "androidx-camera" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "androidx-camera" }
+androidx-camera-mlkit-vision = { module = "androidx.camera:camera-mlkit-vision", version.ref = "androidx-camera" }
+androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "androidx-camera" }
+androidx-camera-effects = { module = "androidx.camera:camera-effects", version.ref = "androidx-camera" }
+androidx-camera-viewfinder = { module = "androidx.camera:camera-viewfinder", version.ref = "androidx-camera-viewfinder" }
+androidx-camera-viewfinder-core = { module = "androidx.camera:camera-viewfinder-core", version.ref = "androidx-camera-viewfinder" }
+androidx-camera-viewfinder-compose = { module = "androidx.camera:camera-viewfinder-compose", version.ref = "androidx-camera-viewfinder" }
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "androidx-cardview" }
 androidx-collection = { module = "androidx.collection:collection", version.ref = "androidx-collection" }
 androidx-compose-animation = { module = "androidx.compose.animation:animation", version.ref = "androidx-compose-animation" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose-foundation" }
 androidx-compose-foundation-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "androidx-compose-foundation" }
-androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-compose-material-icons-extended" }
+androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx-compose-material" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-compose-material" }
 androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx-compose-material3" }
 androidx-compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "androidx-compose-runtime" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose-ui" }
@@ -123,13 +192,50 @@ androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", versi
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "androidx-compose-ui" }
+androidx-concurrent-futures-ktx = { module = "androidx.concurrent:concurrent-futures-ktx", version.ref = "androidx-concurrent" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-constraintlayout-core = { module = "androidx.constraintlayout:constraintlayout-core", version.ref = "androidx-constraintlayout" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidx-constraintlayout-compose" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
+androidx-constraintlayout-compose-android = { module = "androidx.constraintlayout:constraintlayout-compose-android", version.ref = "androidx-constraintlayout-compose" }
+androidx-contentpager = { module = "androidx.contentpager:contentpager", version.ref = "androidx-contentpager" }
+androidx-coordinatorlayout = { module = "androidx.coordinatorlayout:coordinatorlayout", version.ref = "androidx-coordinatorlayout" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-core-animation = { module = "androidx.core:core-animation", version.ref = "androidx-core-animation" }
+androidx-core-animation-testing = { module = "androidx.core:core-animation-testing", version.ref = "androidx-core-animation" }
+androidx-core-google-shortcuts = { module = "androidx.core:core-google-shortcuts", version.ref = "androidx-core-google-shortcuts" }
+androidx-core-performance = { module = "androidx.core:core-performance", version.ref = "androidx-core-performance" }
+androidx-core-remoteviews = { module = "androidx.core:core-remoteviews", version.ref = "androidx-core-remoteviews" }
+androidx-core-role = { module = "androidx.core:core-role", version.ref = "androidx-core-role" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "androidx-core-splashscreen" }
+androidx-core-location-altitude = { module = "androidx.core:core-location-altitude", version.ref = "androidx-core-location" }
+androidx-core-location-altitude-external-protobuf = { module = "androidx.core:core-location-altitude-external-protobuf", version.ref = "androidx-core-location" }
+androidx-core-location-altitude-proto = { module = "androidx.core:core-location-altitude-proto", version.ref = "androidx-core-location" }
+androidx-core-i18n = { module = "androidx.core:core-i18n", version.ref = "androidx-core-i18n" }
+androidx-core-telecom = { module = "androidx.core:core-telecom", version.ref = "androidx-core-telecom" }
+androidx-core-uwb = { module = "androidx.core.uwb:uwb", version.ref = "androidx-core-uwb" }
+#noinspection CredentialDependency
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "androidx-credentials" }
+androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "androidx-credentials" }
+androidx-credentials-e2ee = { module = "androidx.credentials:credentials-e2ee", version.ref = "androidx-credentials-e2ee" }
+androidx-cursoradapter = { module = "androidx.credentials:cursoradapter", version.ref = "androidx-cursoradapter" }
+androidx-customview = { module = "androidx.customview:customview", version.ref = "androidx-customview" }
+androidx-customview-poolingcontainer = { module = "androidx.customview:customview-poolingcontainer", version.ref = "androidx-customview-poolingcontainer" }
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "androidx-datastore" }
 androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "androidx-datastore" }
-androidx-datastore-core-okio-jvm = { module = "androidx.datastore:datastore-core-okio-jvm", version.ref = "androidx-datastore-core-okio-jvm" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-datastore" }
 androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "androidx-datastore" }
+androidx-documentfile = { module = "androidx.documentfile:documentfile", version.ref = "androidx-documentfile" }
+androidx-draganddrop = { module = "androidx.draganddrop:draganddrop", version.ref = "androidx-draganddrop" }
+androidx-drawerlayout = { module = "androidx.drawerlayout:drawerlayout", version.ref = "androidx-drawerlayout" }
+androidx-dynamicanimation-ktx = { module = "androidx.dynamicanimation:dynamicanimation-ktx", version.ref = "androidx-dynamicanimation" }
+androidx-emoji = { module = "androidx.emoji:emoji", version.ref = "androidx-emoji" }
+androidx-emoji-appcompat = { module = "androidx.emoji:emoji-appcompat", version.ref = "androidx-emoji" }
+androidx-emoji-bundled = { module = "androidx.emoji:emoji-bundled", version.ref = "androidx-emoji" }
+androidx-emoji2 = { module = "androidx.emoji2:emoji2", version.ref = "androidx-emoji2" }
+androidx-emoji2-views = { module = "androidx.emoji2:emoji2-views", version.ref = "androidx-emoji2" }
+androidx-emoji2-helper = { module = "androidx.emoji2:emoji2-helper", version.ref = "androidx-emoji2" }
+androidx-emoji2-emojipicker = { module = "androidx.emoji2:emoji2-emojipicker", version.ref = "androidx-emoji2" }
+# https://d.android.com/jetpack/androidx/explorer
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "androidx-glance" }
 androidx-fragment-compose = { module = "androidx.fragment:fragment-compose", version.ref = "androidx-fragment" }
 androidx-glance-material3 = { module = "androidx.glance:glance-material3", version.ref = "androidx-glance" }
