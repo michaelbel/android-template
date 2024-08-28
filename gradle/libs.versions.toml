@@ -3,7 +3,7 @@ min-sdk = "31"
 compile-sdk = "35"
 target-sdk = "34"
 jdk = "17"
-agp = "8.4.2"
+agp = "8.5.2"
 
 kotlin = "2.0.20"
 kotlinx-coroutines = "1.9.0-RC"
@@ -80,10 +80,31 @@ androidx-drawerlayout = "1.2.0"
 androidx-dynamicanimation = "1.1.0-alpha03"
 androidx-emoji = "1.1.0"
 androidx-emoji2 = "1.4.0"
+androidx-enterprise = "1.1.0"
+androidx-exifinterface = "1.3.7"
+androidx-fragment = "1.8.2"
+androidx-games-activity = "3.0.5"
+androidx-games-controller = "2.0.2"
+androidx-games-frame-pacing = "2.1.2"
+androidx-games-memory-advice = "2.0.1"
+androidx-games-text-input = "3.0.4"
+androidx-games-performance-tuner = "2.0.0"
+androidx-glance = "1.1.0"
+androidx-glance-wear = "1.0.0-alpha05"
+androidx-graphics-core = "1.0.0"
+androidx-graphics-path = "1.0.1"
+androidx-graphics-shapes = "1.0.0"
+androidx-gridlayout = "1.0.0"
+androidx-health = "1.0.0-rc02"
+androidx-health-connect = "1.1.0-alpha07"
+androidx-heifwriter = "1.1.0-alpha02"
+androidx-hilt = "1.2.0"
+androidx-input = "1.0.0-beta04"
+androidx-interpolator = "1.0.0"
+androidx-javascriptengine = "1.0.0-beta01"
+androidx-jetifier = "1.0.0-beta10"
 androidx-lifecycle = "2.8.4"
 androidx-lifecycle-viewmodel = "2.8.4"
-androidx-glance = "1.1.0"
-androidx-fragment = "1.8.2"
 androidx-media3 = "1.4.1"
 androidx-navigation = "2.7.7"
 androidx-palette-ktx = "1.0.0"
@@ -235,10 +256,49 @@ androidx-emoji2 = { module = "androidx.emoji2:emoji2", version.ref = "androidx-e
 androidx-emoji2-views = { module = "androidx.emoji2:emoji2-views", version.ref = "androidx-emoji2" }
 androidx-emoji2-helper = { module = "androidx.emoji2:emoji2-helper", version.ref = "androidx-emoji2" }
 androidx-emoji2-emojipicker = { module = "androidx.emoji2:emoji2-emojipicker", version.ref = "androidx-emoji2" }
-# https://d.android.com/jetpack/androidx/explorer
-androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "androidx-glance" }
+androidx-enterprise-feedback = { module = "androidx.enterprise:enterprise-feedback", version.ref = "androidx-enterprise" }
+androidx-enterprise-feedback-testing = { module = "androidx.enterprise:enterprise-feedback-testing", version.ref = "androidx-enterprise" }
+androidx-exifinterface = { module = "androidx.exifinterface:exifinterface", version.ref = "androidx-exifinterface" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment" }
 androidx-fragment-compose = { module = "androidx.fragment:fragment-compose", version.ref = "androidx-fragment" }
+androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "androidx-fragment" }
+androidx-games-activity = { module = "androidx.games:games-activity", version.ref = "androidx-games-activity" }
+androidx-games-controller = { module = "androidx.games:games-controller", version.ref = "androidx-games-controller" }
+androidx-games-frame-pacing = { module = "androidx.games:games-frame-pacing", version.ref = "androidx-games-frame-pacing" }
+androidx-games-memory-advice = { module = "androidx.games:games-memory-advice", version.ref = "androidx-games-memory-advice" }
+androidx-games-performance-tuner = { module = "androidx.games:games-performance-tuner", version.ref = "androidx-games-performance-tuner" }
+androidx-games-text-input = { module = "androidx.games:games-text-input", version.ref = "androidx-games-text-input" }
+androidx-glance = { module = "androidx.glance:glance", version.ref = "androidx-glance" }
+androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "androidx-glance" }
+androidx-glance-appwidget-external-protobuf = { module = "androidx.glance:glance-appwidget-external-protobuf", version.ref = "androidx-glance" }
+androidx-glance-appwidget-preview = { module = "androidx.glance:glance-appwidget-preview", version.ref = "androidx-glance" }
+androidx-glance-appwidget-proto = { module = "androidx.glance:glance-appwidget-proto", version.ref = "androidx-glance" }
+androidx-glance-appwidget-testing = { module = "androidx.glance:glance-appwidget-testing", version.ref = "androidx-glance" }
+androidx-glance-material = { module = "androidx.glance:glance-material", version.ref = "androidx-glance" }
 androidx-glance-material3 = { module = "androidx.glance:glance-material3", version.ref = "androidx-glance" }
+androidx-glance-preview = { module = "androidx.glance:glance-preview", version.ref = "androidx-glance" }
+androidx-glance-testing = { module = "androidx.glance:glance-testing", version.ref = "androidx-glance" }
+androidx-glance-wear-tiles = { module = "androidx.glance:glance-wear-tiles", version.ref = "androidx-glance-wear" }
+androidx-graphics-core = { module = "androidx.graphics:graphics-core", version.ref = "androidx-graphics-core" }
+androidx-graphics-path = { module = "androidx.graphics:graphics-path", version.ref = "androidx-graphics-path" }
+androidx-graphics-shapes = { module = "androidx.graphics:graphics-shapes", version.ref = "androidx-graphics-shapes" }
+androidx-gridlayout = { module = "androidx.gridlayout:gridlayout", version.ref = "androidx-gridlayout" }
+androidx-health-services-client = { module = "androidx.health:health-services-client", version.ref = "androidx-health" }
+androidx-health-connect-client = { module = "androidx.health.connect:connect-client", version.ref = "androidx-health-connect" }
+androidx-heifwriter = { module = "androidx.heifwriter:heifwriter", version.ref = "androidx-heifwriter" }
+androidx-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "androidx-hilt" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt" }
+androidx-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "androidx-hilt" }
+androidx-hilt-navigation = { module = "androidx.hilt:hilt-navigation", version.ref = "androidx-hilt" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidx-hilt" }
+androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "androidx-hilt" }
+androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "androidx-hilt" }
+androidx-input-motionprediction = { module = "androidx.input:input-motionprediction", version.ref = "androidx-input" }
+androidx-interpolator = { module = "androidx.interpolator:interpolator", version.ref = "androidx-interpolator" }
+androidx-javascriptengine = { module = "androidx.javascriptengine:javascriptengine", version.ref = "androidx-javascriptengine" }
+androidx-jetifier-core = { module = "androidx.jetifier:jetifier-core", version.ref = "androidx-jetifier" }
+androidx-jetifier-processor = { module = "androidx.jetifier:jetifier-processor", version.ref = "androidx-jetifier" }
+# https://developer.android.com/jetpack/androidx/explorer
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle-viewmodel" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
