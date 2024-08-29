@@ -26,7 +26,7 @@ google-play-asset-delivery-ktx = "2.2.2"
 google-play-delivery-ktx = "2.1.0"
 google-play-review-ktx = "2.0.1"
 google-play-app-update-ktx = "2.1.0"
-google-guava = "33.0.0-android"
+google-guava = "33.3.0-android"
 
 androidx-activity = "1.9.1"
 androidx-ads = "1.0.0-alpha05"
