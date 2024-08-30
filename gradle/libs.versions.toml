@@ -1,9 +1,9 @@
 [versions]
 min-sdk = "31"
 compile-sdk = "35"
-target-sdk = "34"
+target-sdk = "35"
 jdk = "17"
-agp = "8.5.2"
+agp = "8.6.0"
 
 kotlin = "2.0.20"
 kotlinx-coroutines = "1.9.0-RC"
