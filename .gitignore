@@ -1,46 +1,17 @@
-*.iml
+# Kotlin
+.kotlin
+
+# Gradle
 .gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-/shelf/
-/workspace.xml
-/buildSrc/build/
-/feature/ads/build/
-/feature/constraintlayout/build/
-/test-reports/connected/.html
-/test-reports/connected/css/base-style.css
-/.idea/codeStyles/codeStyleConfig.xml
-/.idea/compiler.xml
-/test-results/connected/Redmi Note 8T - 12/cpuinfo
-/test-reports/connected/default-package.html
-/.idea/deploymentTargetDropDown.xml
-/test-results/connected/Redmi Note 8T - 12/device-info.pb
-/.idea/gradle.xml
-/test-reports/connected/index.html
-/.idea/jarRepositories.xml
-/config/keystore.properties
+build
+build-cache
+generated
+
+# Idea
+.idea
+
 /config/keystore_release.jks
-/.idea/kotlinc.xml
-/.idea/kotlinScripting.xml
-/test-results/connected/Redmi Note 8T - 12/meminfo
-/.idea/misc.xml
-/.idea/codeStyles/Project.xml
-/.idea/inspectionProfiles/Project_Default.xml
-/test-reports/connected/js/report.js
-/test-reports/connected/css/style.css
-/test-results/connected/TEST-Redmi Note 8T - 12-app-.xml
-/test-results/connected/Redmi Note 8T - 12/test-result.pb
-/test-results/connected/Redmi Note 8T - 12/test-result.textproto
-/test-results/connected/Redmi Note 8T - 12/testlog/test-results.log
-/.idea/vcs.xml
+/config/keystore.properties
+
+local.properties
+releaseNotes.txt

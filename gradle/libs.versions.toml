@@ -103,14 +103,26 @@ androidx-input = "1.0.0-beta04"
 androidx-interpolator = "1.0.0"
 androidx-javascriptengine = "1.0.0-beta01"
 androidx-jetifier = "1.0.0-beta10"
+androidx-leanback = "1.1.0"
+androidx-leanback-paging = "1.0.0"
+androidx-leanback-grid = "1.0.0"
+androidx-leanback-tab = "1.0.0"
 androidx-lifecycle = "2.8.4"
-androidx-lifecycle-viewmodel = "2.8.4"
+androidx-lint = "30.0.1"
+androidx-loader = "1.1.0"
+androidx-localbroadcastmanager = "1.1.0"
 androidx-media3 = "1.4.1"
+androidx-mediarouter = "1.7.0"
+androidx-metrics = "1.0.0-beta01"
 androidx-navigation = "2.7.7"
-androidx-palette-ktx = "1.0.0"
 androidx-paging = "3.3.2"
-androidx-pdf-viewer = "1.0.0-alpha01"
-androidx-profile-installer = "1.3.1"
+androidx-palette = "1.0.0"
+androidx-pdf = "1.0.0-alpha01"
+androidx-percentlayout = "1.0.0"
+androidx-preference = "1.2.1"
+androidx-print = "1.1.0-beta01"
+androidx-profileinstaller = "1.3.1"
+
 androidx-room = "2.6.1"
 androidx-startup = "1.1.1"
 androidx-transition = "1.5.1"
@@ -298,11 +310,28 @@ androidx-interpolator = { module = "androidx.interpolator:interpolator", version
 androidx-javascriptengine = { module = "androidx.javascriptengine:javascriptengine", version.ref = "androidx-javascriptengine" }
 androidx-jetifier-core = { module = "androidx.jetifier:jetifier-core", version.ref = "androidx-jetifier" }
 androidx-jetifier-processor = { module = "androidx.jetifier:jetifier-processor", version.ref = "androidx-jetifier" }
-# https://developer.android.com/jetpack/androidx/explorer
-androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle-viewmodel" }
+androidx-leanback = { module = "androidx.leanback:leanback", version.ref = "androidx-leanback" }
+androidx-leanback-preference = { module = "androidx.leanback:leanback-preference", version.ref = "androidx-leanback" }
+androidx-leanback-paging = { module = "androidx.leanback:leanback-paging", version.ref = "androidx-leanback-paging" }
+androidx-leanback-grid = { module = "androidx.leanback:leanback-grid", version.ref = "androidx-leanback-grid" }
+androidx-leanback-tab = { module = "androidx.leanback:leanback-tab", version.ref = "androidx-leanback-tab" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata-core-ktx = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-service = { module = "androidx.lifecycle:lifecycle-service", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-reactivestreams-ktx = { module = "androidx.lifecycle:lifecycle-reactivestreams-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-lint-checks = { module = "androidx.lint:lint-checks", version.ref = "androidx-lint" }
+androidx-lint-api = { module = "androidx.lint:lint-api", version.ref = "androidx-lint" }
+androidx-lint-core = { module = "androidx.lint:lint-core", version.ref = "androidx-lint" }
+androidx-lint-annotations = { module = "androidx.lint:lint-annotations", version.ref = "androidx-lint" }
+androidx-lint-gradle = { module = "androidx.lint:lint-gradle", version.ref = "androidx-lint" }
+androidx-loader-loader = { module = "androidx.loader:loader", version.ref = "androidx-loader" }
+androidx-loader-loader-testing = { module = "androidx.loader:loader-testing", version.ref = "androidx-loader" }
+androidx-localbroadcastmanager = { module = "androidx.localbroadcastmanager:localbroadcastmanager", version.ref = "androidx-localbroadcastmanager" }
 androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "androidx-media3" }
 androidx-media3-exoplayer-dash = { module = "androidx.media3:media3-exoplayer-dash", version.ref = "androidx-media3" }
 androidx-media3-exoplayer-hls = { module = "androidx.media3:media3-exoplayer-hls", version.ref = "androidx-media3" }
@@ -329,13 +358,30 @@ androidx-media3-database = { module = "androidx.media3:media3-database", version
 androidx-media3-decoder = { module = "androidx.media3:media3-decoder", version.ref = "androidx-media3" }
 androidx-media3-datasource = { module = "androidx.media3:media3-datasource", version.ref = "androidx-media3" }
 androidx-media3-common = { module = "androidx.media3:media3-common", version.ref = "androidx-media3" }
+androidx-mediarouter = { module = "androidx.mediarouter:mediarouter", version.ref = "androidx-mediarouter" }
+androidx-metrics = { module = "androidx.metrics:metrics-performance", version.ref = "androidx-metrics" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
-androidx-palette-ktx = { module = "androidx.palette:palette-ktx", version.ref = "androidx-palette-ktx" }
+androidx-navigation-fragment-compose = { module = "androidx.navigation:navigation-fragment-compose", version.ref = "androidx-navigation" }
+androidx-navigation-runtime-ktx = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-common = { module = "androidx.navigation:navigation-common", version.ref = "androidx-navigation" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx-navigation" }
+androidx-navigation-dynamic-features-fragment = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "androidx-navigation" }
+androidx-paging-guava = { module = "androidx.paging:paging-guava", version.ref = "androidx-paging" }
+androidx-paging-rxjava2 = { module = "androidx.paging:paging-rxjava2", version.ref = "androidx-paging" }
+androidx-paging-rxjava3 = { module = "androidx.paging:paging-rxjava3", version.ref = "androidx-paging" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "androidx-paging" }
-androidx-pdf-viewer = { module = "androidx.pdf:pdf-viewer", version.ref = "androidx-pdf-viewer" }
-androidx-pdf-viewer-fragment = { module = "androidx.pdf:pdf-viewer-fragment", version.ref = "androidx-pdf-viewer" }
-androidx-profile-installer = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profile-installer" }
+androidx-paging-common-ktx = { module = "androidx.paging:paging-common-ktx", version.ref = "androidx-paging" }
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "androidx-paging" }
+androidx-palette-ktx = { module = "androidx.palette:palette-ktx", version.ref = "androidx-palette" }
+androidx-pdf-viewer = { module = "androidx.pdf:pdf-viewer", version.ref = "androidx-pdf" }
+androidx-pdf-viewer-fragment = { module = "androidx.pdf:pdf-viewer-fragment", version.ref = "androidx-pdf" }
+androidx-percentlayout = { module = "androidx.percentlayout:percentlayout", version.ref = "androidx-percentlayout" }
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidx-preference" }
+androidx-print = { module = "androidx.print:print", version.ref = "androidx-print" }
+androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profileinstaller" }
+# https://developer.android.com/jetpack/androidx/explorer
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
