@@ -1,8 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+import org.apache.commons.io.output.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.util.Properties
-import org.apache.commons.io.output.ByteArrayOutputStream
 
 plugins {
     alias(libs.plugins.android.application)
@@ -85,7 +85,7 @@ tasks.register("prepareReleaseNotes") {
     doLast {
         exec {
             workingDir(rootDir)
-            executable("./scripts/gitlog.sh")
+            executable("./.github/scripts/gitlog.sh")
         }
     }
 }
