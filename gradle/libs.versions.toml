@@ -99,6 +99,7 @@ androidx-health = "1.0.0-rc02"
 androidx-health-connect = "1.1.0-alpha08"
 androidx-heifwriter = "1.1.0-alpha02"
 androidx-hilt = "1.2.0"
+androidx-hilt-lifecycle = "1.0.0-alpha03"
 androidx-input = "1.0.0-beta04"
 androidx-interpolator = "1.0.0"
 androidx-javascriptengine = "1.0.0-beta01"
@@ -339,7 +340,7 @@ androidx-health-connect-client = { module = "androidx.health.connect:connect-cli
 androidx-heifwriter = { module = "androidx.heifwriter:heifwriter", version.ref = "androidx-heifwriter" }
 androidx-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "androidx-hilt" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt" }
-androidx-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "androidx-hilt" }
+androidx-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "androidx-hilt-lifecycle" }
 androidx-hilt-navigation = { module = "androidx.hilt:hilt-navigation", version.ref = "androidx-hilt" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidx-hilt" }
 androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "androidx-hilt" }

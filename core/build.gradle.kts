@@ -172,7 +172,7 @@ dependencies {
     api(libs.androidx.heifwriter)
     api(libs.androidx.hilt.common)
     ksp(libs.androidx.hilt.compiler)
-    //api(libs.androidx.hilt.lifecycle.viewmodel)
+    api(libs.androidx.hilt.lifecycle.viewmodel)
     api(libs.androidx.hilt.navigation)
     api(libs.androidx.hilt.navigation.compose)
     api(libs.androidx.hilt.navigation.fragment)
