@@ -306,7 +306,6 @@ androidx-emoji-appcompat = { module = "androidx.emoji:emoji-appcompat", version.
 androidx-emoji-bundled = { module = "androidx.emoji:emoji-bundled", version.ref = "androidx-emoji" }
 androidx-emoji2 = { module = "androidx.emoji2:emoji2", version.ref = "androidx-emoji2" }
 androidx-emoji2-views = { module = "androidx.emoji2:emoji2-views", version.ref = "androidx-emoji2" }
-androidx-emoji2-helper = { module = "androidx.emoji2:emoji2-helper", version.ref = "androidx-emoji2" }
 androidx-emoji2-emojipicker = { module = "androidx.emoji2:emoji2-emojipicker", version.ref = "androidx-emoji2" }
 androidx-enterprise-feedback = { module = "androidx.enterprise:enterprise-feedback", version.ref = "androidx-enterprise" }
 androidx-enterprise-feedback-testing = { module = "androidx.enterprise:enterprise-feedback-testing", version.ref = "androidx-enterprise" }

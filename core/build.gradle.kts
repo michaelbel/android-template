@@ -139,7 +139,6 @@ dependencies {
     api(libs.androidx.emoji.bundled)
     api(libs.androidx.emoji2)
     api(libs.androidx.emoji2.views)
-    //api(libs.androidx.emoji2.helper)
     api(libs.androidx.emoji2.emojipicker)
     api(libs.androidx.enterprise.feedback)
     api(libs.androidx.enterprise.feedback.testing)
@@ -147,7 +146,7 @@ dependencies {
     api(libs.androidx.fragment.ktx)
     api(libs.androidx.fragment.compose)
     api(libs.androidx.fragment.testing)
-    //api(libs.androidx.games.activity) dublicate class
+    //api(libs.androidx.games.activity) duplicate class
     api(libs.androidx.games.controller)
     api(libs.androidx.games.frame.pacing)
     api(libs.androidx.games.memory.advice)
