@@ -109,6 +109,7 @@ androidx-leanback-grid = "1.0.0-alpha03"
 androidx-leanback-tab = "1.1.0-beta01"
 androidx-lifecycle = "2.8.5"
 androidx-lint = "30.0.1"
+androidx-lint-gradle = "1.0.0-alpha02"
 androidx-loader = "1.1.0"
 androidx-localbroadcastmanager = "1.1.0"
 androidx-media3 = "1.4.1"
@@ -365,7 +366,7 @@ androidx-lint-checks = { module = "androidx.lint:lint-checks", version.ref = "an
 androidx-lint-api = { module = "androidx.lint:lint-api", version.ref = "androidx-lint" }
 androidx-lint-core = { module = "androidx.lint:lint-core", version.ref = "androidx-lint" }
 androidx-lint-annotations = { module = "androidx.lint:lint-annotations", version.ref = "androidx-lint" }
-androidx-lint-gradle = { module = "androidx.lint:lint-gradle", version.ref = "androidx-lint" }
+androidx-lint-gradle = { module = "androidx.lint:lint-gradle", version.ref = "androidx-lint-gradle" }
 androidx-loader-loader = { module = "androidx.loader:loader", version.ref = "androidx-loader" }
 androidx-loader-loader-testing = { module = "androidx.loader:loader-testing", version.ref = "androidx-loader" }
 androidx-localbroadcastmanager = { module = "androidx.localbroadcastmanager:localbroadcastmanager", version.ref = "androidx-localbroadcastmanager" }
@@ -567,6 +568,7 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }

@@ -195,10 +195,10 @@ dependencies {
     api(libs.androidx.lifecycle.reactivestreams.ktx)
     api(libs.androidx.lifecycle.runtime.compose)
     lintChecks(libs.androidx.lint.checks)
-    //api(libs.androidx.lint.api)
-    //api(libs.androidx.lint.core)
-    //api(libs.androidx.lint.annotations)
-    //api(libs.androidx.lint.gradle)
+    //api(libs.androidx.lint.api) not found
+    //api(libs.androidx.lint.core) not found
+    //api(libs.androidx.lint.annotations) not found
+    lintChecks(libs.androidx.lint.gradle)
     api(libs.androidx.loader.loader)
     //api(libs.androidx.loader.loader.testing)
     api(libs.androidx.localbroadcastmanager)
