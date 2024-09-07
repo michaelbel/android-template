@@ -180,7 +180,7 @@ dependencies {
     api(libs.androidx.input.motionprediction)
     api(libs.androidx.interpolator)
     api(libs.androidx.javascriptengine)
-    //api(libs.androidx.leanback)
+    api(libs.androidx.leanback)
     //api(libs.androidx.leanback.preference)
     //api(libs.androidx.leanback.paging)
     //api(libs.androidx.leanback.grid)
