@@ -194,7 +194,7 @@ dependencies {
     api(libs.androidx.lifecycle.process)
     api(libs.androidx.lifecycle.reactivestreams.ktx)
     api(libs.androidx.lifecycle.runtime.compose)
-    //api(libs.androidx.lint.checks)
+    lintChecks(libs.androidx.lint.checks)
     //api(libs.androidx.lint.api)
     //api(libs.androidx.lint.core)
     //api(libs.androidx.lint.annotations)
