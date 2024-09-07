@@ -86,7 +86,7 @@ dependencies {
     api(libs.androidx.camera.effects)
     api(libs.androidx.camera.viewfinder)
     api(libs.androidx.camera.viewfinder.core)
-    //api(libs.androidx.camera.viewfinder.compose)
+    api(libs.androidx.camera.viewfinder.compose)
     api(libs.androidx.cardview)
     api(libs.androidx.collection)
     api(libs.androidx.compose.animation)

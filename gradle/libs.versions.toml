@@ -43,6 +43,7 @@ androidx-browser = "1.8.0"
 androidx-car-app = "1.4.0"
 androidx-camera = "1.4.0-rc01"
 androidx-camera-viewfinder = "1.4.0-alpha07"
+androidx-camera-viewfinder-compose = "1.0.0-alpha02"
 androidx-cardview = "1.0.0"
 androidx-collection = "1.4.3"
 androidx-compose-animation = "1.7.0"
@@ -251,7 +252,7 @@ androidx-camera-extensions = { module = "androidx.camera:camera-extensions", ver
 androidx-camera-effects = { module = "androidx.camera:camera-effects", version.ref = "androidx-camera" }
 androidx-camera-viewfinder = { module = "androidx.camera:camera-viewfinder", version.ref = "androidx-camera-viewfinder" }
 androidx-camera-viewfinder-core = { module = "androidx.camera:camera-viewfinder-core", version.ref = "androidx-camera-viewfinder" }
-androidx-camera-viewfinder-compose = { module = "androidx.camera:camera-viewfinder-compose", version.ref = "androidx-camera-viewfinder" }
+androidx-camera-viewfinder-compose = { module = "androidx.camera:camera-viewfinder-compose", version.ref = "androidx-camera-viewfinder-compose" }
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "androidx-cardview" }
 androidx-collection = { module = "androidx.collection:collection", version.ref = "androidx-collection" }
 androidx-compose-animation = { module = "androidx.compose.animation:animation", version.ref = "androidx-compose-animation" }
