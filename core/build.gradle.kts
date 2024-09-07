@@ -117,7 +117,7 @@ dependencies {
     api(libs.androidx.core.location.altitude)
     api(libs.androidx.core.location.altitude.external.protobuf)
     api(libs.androidx.core.location.altitude.proto)
-    //api(libs.androidx.core.i18n)
+    api(libs.androidx.core.i18n)
     api(libs.androidx.core.telecom)
     api(libs.androidx.core.uwb)
     api(libs.androidx.credentials)
