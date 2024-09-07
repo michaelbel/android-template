@@ -103,7 +103,6 @@ androidx-hilt-lifecycle = "1.0.0-alpha03"
 androidx-input = "1.0.0-beta04"
 androidx-interpolator = "1.0.0"
 androidx-javascriptengine = "1.0.0-beta01"
-androidx-jetifier = "1.0.0-beta10"
 androidx-leanback = "1.1.0"
 androidx-leanback-paging = "1.0.0"
 androidx-leanback-grid = "1.0.0"
@@ -348,8 +347,6 @@ androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "androi
 androidx-input-motionprediction = { module = "androidx.input:input-motionprediction", version.ref = "androidx-input" }
 androidx-interpolator = { module = "androidx.interpolator:interpolator", version.ref = "androidx-interpolator" }
 androidx-javascriptengine = { module = "androidx.javascriptengine:javascriptengine", version.ref = "androidx-javascriptengine" }
-androidx-jetifier-core = { module = "androidx.jetifier:jetifier-core", version.ref = "androidx-jetifier" }
-androidx-jetifier-processor = { module = "androidx.jetifier:jetifier-processor", version.ref = "androidx-jetifier" }
 androidx-leanback = { module = "androidx.leanback:leanback", version.ref = "androidx-leanback" }
 androidx-leanback-preference = { module = "androidx.leanback:leanback-preference", version.ref = "androidx-leanback" }
 androidx-leanback-paging = { module = "androidx.leanback:leanback-paging", version.ref = "androidx-leanback-paging" }
