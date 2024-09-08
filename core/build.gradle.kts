@@ -254,7 +254,7 @@ dependencies {
     api(libs.androidx.recyclerview)
     api(libs.androidx.recyclerview.selection)
     api(libs.androidx.remotecallback)
-    //api(libs.androidx.resourceinspection.annotation)
+    api(libs.androidx.resourceinspection.annotation)
     api(libs.androidx.room.ktx)
     api(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
