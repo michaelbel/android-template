@@ -268,7 +268,7 @@ dependencies {
     api(libs.androidx.security.state)
     api(libs.androidx.sharetarget)
     api(libs.androidx.slice.core)
-    //api(libs.androidx.slice.builders.ktx)
+    api(libs.androidx.slice.builders.ktx)
     api(libs.androidx.slice.view)
     api(libs.androidx.slidingpanelayout)
     api(libs.androidx.sqlite.ktx)
