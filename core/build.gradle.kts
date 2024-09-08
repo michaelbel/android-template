@@ -31,11 +31,20 @@ android {
 
 dependencies {
     api(libs.kotlin.reflect)
+    api(libs.kotlin.test)
+    api(libs.kotlin.test.junit)
     api(libs.kotlinx.coroutines.core)
     api(libs.kotlinx.coroutines.android)
+    api(libs.kotlinx.coroutines.play.services)
     api(libs.kotlinx.coroutines.test)
     api(libs.kotlinx.datetime)
     api(libs.kotlinx.serialization.json)
+    api(libs.kotlinx.serialization.cbor)
+    api(libs.kotlinx.serialization.properties)
+    api(libs.kotlinx.serialization.hocon)
+    api(libs.kotlinx.io)
+    api(libs.kotlinx.collections.immutable)
+    api(libs.kotlinx.atomicfu)
 
     api(libs.google.services.base)
     api(libs.google.services.instantapps)
