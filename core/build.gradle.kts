@@ -261,7 +261,7 @@ dependencies {
     api(libs.androidx.room.paging)
     api(libs.androidx.room.testing)
     api(libs.androidx.savedstate.ktx)
-    //api(libs.androidx.security.crypto.ktx)
+    api(libs.androidx.security.crypto.ktx)
     api(libs.androidx.security.app.authenticator)
     api(libs.androidx.security.app.authenticator.testing)
     //api(libs.androidx.security.identity.credential)
