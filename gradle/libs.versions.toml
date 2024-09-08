@@ -132,7 +132,8 @@ androidx-room = "2.6.1"
 androidx-savedstate = "1.2.1"
 androidx-security-crypto = "1.1.0-alpha06"
 androidx-security-app-authenticator = "1.0.0-beta01"
-androidx-security-identity-credential = "1.0.0-alpha04"
+androidx-security-state = "1.0.0-alpha04"
+androidx-security-identity-credential = "1.0.0-alpha03"
 androidx-sharetarget = "1.2.0"
 androidx-slice = "1.1.0-alpha02"
 androidx-slidingpanelayout = "1.2.0"
@@ -433,7 +434,7 @@ androidx-security-crypto-ktx = { module = "androidx.security:security-crypto-ktx
 androidx-security-app-authenticator = { module = "androidx.security:security-app-authenticator", version.ref = "androidx-security-app-authenticator" }
 androidx-security-app-authenticator-testing = { module = "androidx.security:security-app-authenticator-testing", version.ref = "androidx-security-app-authenticator" }
 androidx-security-identity-credential = { module = "androidx.security:security-identity-credential", version.ref = "androidx-security-identity-credential" }
-androidx-security-state = { module = "androidx.security:security-state", version.ref = "androidx-security-identity-credential" }
+androidx-security-state = { module = "androidx.security:security-state", version.ref = "androidx-security-state" }
 androidx-sharetarget = { module = "androidx.sharetarget:sharetarget", version.ref = "androidx-sharetarget" }
 androidx-slice-core = { module = "androidx.slice:slice-core", version.ref = "androidx-slice" }
 androidx-slice-builders-ktx = { module = "androidx.slice:slice-builders-ktx", version.ref = "androidx-slice" }
