@@ -15,20 +15,135 @@ kotlinx-atomicfu = "0.25.0"
 
 google-ksp = "2.0.20-1.0.25"
 google-services = "4.4.2"
-google-services-base = "18.5.0"
-google-services-instantapps = "18.1.0"
+
+google-gms-services-base = "18.5.0"
+google-gms-play-services = "23.3.0"
+
+google-play-ai-delivery = "1.0.0"
+google-play-app-update = "2.1.0"
+google-play-asset-delivery = "2.2.2"
+google-play-core = "1.0.0"
+google-play-feature-delivery = "2.1.0"
+google-play-grouping = "1.0.0"
+google-play-integrity = "1.0.0"
+google-play-review = "2.0.1"
+
 google-material = "1.12.0"
 google-material-compose-theme-adapter = "1.2.1"
-google-firebase-analytics-ktx = "22.1.0"
+
+google-firebase-abt = "x.y.z"
+google-firebase-ads = "x.y.z"
+google-firebase-ads-lite = "x.y.z"
+google-firebase-analytics = "22.1.0"
+google-firebase-analytics-impl = "x.y.z"
+google-firebase-analytics-impl-license = "x.y.z"
+google-firebase-analytics-ktx = "x.y.z"
+google-firebase-analytics-license = "x.y.z"
+google-firebase-annotations = "x.y.z"
+google-firebase-appcheck = "x.y.z"
+google-firebase-appcheck-debug = "x.y.z"
+google-firebase-appcheck-debug-testing = "x.y.z"
+google-firebase-appcheck-interop = "x.y.z"
+google-firebase-appcheck-ktx = "x.y.z"
+google-firebase-appcheck-playintegrity = "x.y.z"
+google-firebase-appcheck-safetynet = "x.y.z"
 google-firebase-appdistribution = "5.0.0"
-google-firebase-config-ktx = "22.0.0"
+google-firebase-appdistribution-api = "x.y.z"
+google-firebase-appdistribution-api-ktx = "x.y.z"
+google-firebase-appdistribution-gradle = "x.y.z"
+google-firebase-appdistribution-ktx = "x.y.z"
+google-firebase-appindexing = "x.y.z"
+google-firebase-appindexing-license = "x.y.z"
+google-firebase-auth = "x.y.z"
+google-firebase-auth-common = "x.y.z"
+google-firebase-auth-impl = "x.y.z"
+google-firebase-auth-interop = "x.y.z"
+google-firebase-auth-ktx = "x.y.z"
+google-firebase-auth-license = "x.y.z"
+google-firebase-auth-module = "x.y.z"
+google-firebase-bom = "x.y.z"
+google-firebase-common = "x.y.z"
+google-firebase-common-ktx = "x.y.z"
+google-firebase-common-license = "x.y.z"
+google-firebase-components = "x.y.z"
+google-firebase-config = "22.0.0"
+google-firebase-config-interop = "x.y.z"
+google-firebase-config-ktx = "x.y.z"
+google-firebase-config-license = "x.y.z"
+google-firebase-core = "x.y.z"
+google-firebase-crash = "x.y.z"
+google-firebase-crash-license = "x.y.z"
 google-firebase-crashlytics-plugin = "3.0.2"
-google-firebase-crashlytics-ktx = "19.0.3"
-google-firebase-messaging-ktx = "24.0.1"
-google-play-asset-delivery-ktx = "2.2.2"
-google-play-delivery-ktx = "2.1.0"
-google-play-review-ktx = "2.0.1"
-google-play-app-update-ktx = "2.1.0"
+google-firebase-crashlytics = "19.0.3"
+google-firebase-crashlytics-buildtools = "x.y.z"
+google-firebase-crashlytics-gradle = "x.y.z"
+google-firebase-crashlytics-ktx = "x.y.z"
+google-firebase-crashlytics-ndk = "x.y.z"
+google-firebase-database = "x.y.z"
+google-firebase-database-collection = "x.y.z"
+google-firebase-database-connection = "x.y.z"
+google-firebase-database-connection-license = "x.y.z"
+google-firebase-database-ktx = "x.y.z"
+google-firebase-database-license = "x.y.z"
+google-firebase-dataconnect = "x.y.z"
+google-firebase-datatransport = "x.y.z"
+google-firebase-dynamic-links = "x.y.z"
+google-firebase-dynamic-links-ktx = "x.y.z"
+google-firebase-dynamic-links-license = "x.y.z"
+google-firebase-dynamic-module-support = "x.y.z"
+google-firebase-encoders = "x.y.z"
+google-firebase-encoders-json = "x.y.z"
+google-firebase-encoders-proto = "x.y.z"
+google-firebase-firestore = "x.y.z"
+google-firebase-firestore-ktx = "x.y.z"
+google-firebase-functions = "x.y.z"
+google-firebase-functions-ktx = "x.y.z"
+google-firebase-functions-license = "x.y.z"
+google-firebase-iid = "x.y.z"
+google-firebase-iid-interop = "x.y.z"
+google-firebase-iid-license = "x.y.z"
+google-firebase-inappmessaging = "x.y.z"
+google-firebase-inappmessaging-display = "x.y.z"
+google-firebase-inappmessaging-display-ktx = "x.y.z"
+google-firebase-inappmessaging-ktx = "x.y.z"
+google-firebase-installations = "x.y.z"
+google-firebase-installations-interop = "x.y.z"
+google-firebase-installations-ktx = "x.y.z"
+google-firebase-invites = "x.y.z"
+google-firebase-measurement-connector = "x.y.z"
+google-firebase-measurement-connector-impl = "x.y.z"
+google-firebase-messaging = "24.0.1"
+google-firebase-messaging-directboot = "x.y.z"
+google-firebase-messaging-ktx = "x.y.z"
+google-firebase-messaging-license = "x.y.z"
+google-firebase-ml-common = "x.y.z"
+google-firebase-ml-model-interpreter = "x.y.z"
+google-firebase-ml-modeldownloader = "x.y.z"
+google-firebase-ml-modeldownloader-ktx = "x.y.z"
+google-firebase-ml-natural-language = "x.y.z"
+google-firebase-ml-natural-language-language-id-model = "x.y.z"
+google-firebase-ml-natural-language-smart-reply = "x.y.z"
+google-firebase-ml-natural-language-smart-reply-model = "x.y.z"
+google-firebase-ml-natural-language-translate = "x.y.z"
+google-firebase-ml-natural-language-translate-model = "x.y.z"
+google-firebase-ml-vision = "x.y.z"
+google-firebase-ml-vision-automl = "x.y.z"
+google-firebase-ml-vision-barcode-model = "x.y.z"
+google-firebase-ml-vision-face-model = "x.y.z"
+google-firebase-ml-vision-image-label-model = "x.y.z"
+google-firebase-ml-vision-internal-vkp = "x.y.z"
+google-firebase-ml-vision-object-detection-model = "x.y.z"
+google-firebase-perf = "x.y.z"
+google-firebase-perf-ktx = "x.y.z"
+google-firebase-perf-license = "x.y.z"
+google-firebase-plugins = "x.y.z"
+google-firebase-sessions = "x.y.z"
+google-firebase-storage = "x.y.z"
+google-firebase-storage-common = "x.y.z"
+google-firebase-storage-common-license = "x.y.z"
+google-firebase-storage-ktx = "x.y.z"
+google-firebase-storage-license = "x.y.z"
+google-firebase-vertexai = "x.y.z"
 
 androidx-activity = "1.9.2"
 androidx-ads = "1.0.0-alpha05"
@@ -218,18 +333,277 @@ kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io", version.ref = "kotli
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections" }
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
 
-google-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "google-services-base" }
-google-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-services-instantapps" }
-google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery-ktx" }
-google-play-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-delivery-ktx" }
-google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review-ktx" }
-google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update-ktx" }
+google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads-license = { module = "com.google.android.gms:play-services-ads-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads-lite = { module = "com.google.android.gms:play-services-ads-lite", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads-lite-license = { module = "com.google.android.gms:play-services-ads-lite-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-afs-native = { module = "com.google.android.gms:play-services-afs-native", version.ref = "google-gms-play-services" }
+google-gms-play-services-all-wear = { module = "com.google.android.gms:play-services-all-wear", version.ref = "google-gms-play-services" }
+google-gms-play-services-analytics = { module = "com.google.android.gms:play-services-analytics", version.ref = "google-gms-play-services" }
+google-gms-play-services-analytics-impl = { module = "com.google.android.gms:play-services-analytics-impl", version.ref = "google-gms-play-services" }
+google-gms-play-services-analytics-impl-license = { module = "com.google.android.gms:play-services-analytics-impl-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-analytics-license = { module = "com.google.android.gms:play-services-analytics-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-appindex = { module = "com.google.android.gms:play-services-appindex", version.ref = "google-gms-play-services" }
+google-gms-play-services-appindexing = { module = "com.google.android.gms:play-services-appindexing", version.ref = "google-gms-play-services" }
+google-gms-play-services-appinvite = { module = "com.google.android.gms:play-services-appinvite", version.ref = "google-gms-play-services" }
+google-gms-play-services-appinvite-license = { module = "com.google.android.gms:play-services-appinvite-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-appsearch = { module = "com.google.android.gms:play-services-appsearch", version.ref = "google-gms-play-services" }
+google-gms-play-services-appset = { module = "com.google.android.gms:play-services-appset", version.ref = "google-gms-play-services" }
+google-gms-play-services-appstate = { module = "com.google.android.gms:play-services-appstate", version.ref = "google-gms-play-services" }
+google-gms-play-services-audience = { module = "com.google.android.gms:play-services-audience", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth-api-phone = { module = "com.google.android.gms:play-services-auth-api-phone", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth-api-phone-license = { module = "com.google.android.gms:play-services-auth-api-phone-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth-base = { module = "com.google.android.gms:play-services-auth-base", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth-base-license = { module = "com.google.android.gms:play-services-auth-base-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth-blockstore = { module = "com.google.android.gms:play-services-auth-blockstore", version.ref = "google-gms-play-services" }
+google-gms-play-services-auth-license = { module = "com.google.android.gms:play-services-auth-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-awareness = { module = "com.google.android.gms:play-services-awareness", version.ref = "google-gms-play-services" }
+google-gms-play-services-awareness-license = { module = "com.google.android.gms:play-services-awareness-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "google-gms-play-services" }
+google-gms-play-services-base-license = { module = "com.google.android.gms:play-services-base-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-base-testing = { module = "com.google.android.gms:play-services-base-testing", version.ref = "google-gms-play-services" }
+google-gms-play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "google-gms-play-services" }
+google-gms-play-services-basement-license = { module = "com.google.android.gms:play-services-basement-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-cast = { module = "com.google.android.gms:play-services-cast", version.ref = "google-gms-play-services" }
+google-gms-play-services-cast-framework = { module = "com.google.android.gms:play-services-cast-framework", version.ref = "google-gms-play-services" }
+google-gms-play-services-cast-framework-license = { module = "com.google.android.gms:play-services-cast-framework-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-cast-license = { module = "com.google.android.gms:play-services-cast-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-cast-tv = { module = "com.google.android.gms:play-services-cast-tv", version.ref = "google-gms-play-services" }
+google-gms-play-services-clearcut = { module = "com.google.android.gms:play-services-clearcut", version.ref = "google-gms-play-services" }
+google-gms-play-services-cloud-messaging = { module = "com.google.android.gms:play-services-cloud-messaging", version.ref = "google-gms-play-services" }
+google-gms-play-services-code-scanner = { module = "com.google.android.gms:play-services-code-scanner", version.ref = "google-gms-play-services" }
+google-gms-play-services-contextmanager = { module = "com.google.android.gms:play-services-contextmanager", version.ref = "google-gms-play-services" }
+google-gms-play-services-cronet = { module = "com.google.android.gms:play-services-cronet", version.ref = "google-gms-play-services" }
+google-gms-play-services-device-posture = { module = "com.google.android.gms:play-services-device-posture", version.ref = "google-gms-play-services" }
+google-gms-play-services-deviceperformance = { module = "com.google.android.gms:play-services-deviceperformance", version.ref = "google-gms-play-services" }
+google-gms-play-services-drive = { module = "com.google.android.gms:play-services-drive", version.ref = "google-gms-play-services" }
+google-gms-play-services-drive-license = { module = "com.google.android.gms:play-services-drive-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-dtdi = { module = "com.google.android.gms:play-services-dtdi", version.ref = "google-gms-play-services" }
+google-gms-play-services-fido = { module = "com.google.android.gms:play-services-fido", version.ref = "google-gms-play-services" }
+google-gms-play-services-fido-license = { module = "com.google.android.gms:play-services-fido-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-fitness = { module = "com.google.android.gms:play-services-fitness", version.ref = "google-gms-play-services" }
+google-gms-play-services-fitness-license = { module = "com.google.android.gms:play-services-fitness-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-flags = { module = "com.google.android.gms:play-services-flags", version.ref = "google-gms-play-services" }
+google-gms-play-services-games = { module = "com.google.android.gms:play-services-games", version.ref = "google-gms-play-services" }
+google-gms-play-services-games-license = { module = "com.google.android.gms:play-services-games-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-games-v2 = { module = "com.google.android.gms:play-services-games-v2", version.ref = "google-gms-play-services" }
+google-gms-play-services-games-v2-native-c = { module = "com.google.android.gms:play-services-games-v2-native-c", version.ref = "google-gms-play-services" }
+google-gms-play-services-gass = { module = "com.google.android.gms:play-services-gass", version.ref = "google-gms-play-services" }
+google-gms-play-services-gass-license = { module = "com.google.android.gms:play-services-gass-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-gcm = { module = "com.google.android.gms:play-services-gcm", version.ref = "google-gms-play-services" }
+google-gms-play-services-gcm-license = { module = "com.google.android.gms:play-services-gcm-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-gni-native-c = { module = "com.google.android.gms:play-services-gni-native-c", version.ref = "google-gms-play-services" }
+google-gms-play-services-home = { module = "com.google.android.gms:play-services-home", version.ref = "google-gms-play-services" }
+google-gms-play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "google-gms-play-services" }
+google-gms-play-services-identity-credentials = { module = "com.google.android.gms:play-services-identity-credentials", version.ref = "google-gms-play-services" }
+google-gms-play-services-identity-license = { module = "com.google.android.gms:play-services-identity-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-iid = { module = "com.google.android.gms:play-services-iid", version.ref = "google-gms-play-services" }
+google-gms-play-services-iid-license = { module = "com.google.android.gms:play-services-iid-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-gms-play-services" }
+google-gms-play-services-instantapps-license = { module = "com.google.android.gms:play-services-instantapps-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-gms-play-services" }
+google-gms-play-services-location-license = { module = "com.google.android.gms:play-services-location-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "google-gms-play-services" }
+google-gms-play-services-maps-license = { module = "com.google.android.gms:play-services-maps-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-measurement = { module = "com.google.android.gms:play-services-measurement", version.ref = "google-gms-play-services" }
+google-gms-play-services-measurement-api = { module = "com.google.android.gms:play-services-measurement-api", version.ref = "google-gms-play-services" }
+google-gms-play-services-measurement-base = { module = "com.google.android.gms:play-services-measurement-base", version.ref = "google-gms-play-services" }
+google-gms-play-services-measurement-impl = { module = "com.google.android.gms:play-services-measurement-impl", version.ref = "google-gms-play-services" }
+google-gms-play-services-measurement-sdk = { module = "com.google.android.gms:play-services-measurement-sdk", version.ref = "google-gms-play-services" }
+google-gms-play-services-measurement-sdk-api = { module = "com.google.android.gms:play-services-measurement-sdk-api", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-barcode-scanning = { module = "com.google.android.gms:play-services-mlkit-barcode-scanning", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-face-detection = { module = "com.google.android.gms:play-services-mlkit-face-detection", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-image-labeling = { module = "com.google.android.gms:play-services-mlkit-image-labeling", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-image-labeling-custom = { module = "com.google.android.gms:play-services-mlkit-image-labeling-custom", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-language-id = { module = "com.google.android.gms:play-services-mlkit-language-id", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-smart-reply = { module = "com.google.android.gms:play-services-mlkit-smart-reply", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-subject-segmentation = { module = "com.google.android.gms:play-services-mlkit-subject-segmentation", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-text-recognition-chinese = { module = "com.google.android.gms:play-services-mlkit-text-recognition-chinese", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-text-recognition-common = { module = "com.google.android.gms:play-services-mlkit-text-recognition-common", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-text-recognition-devanagari = { module = "com.google.android.gms:play-services-mlkit-text-recognition-devanagari", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-text-recognition-japanese = { module = "com.google.android.gms:play-services-mlkit-text-recognition-japanese", version.ref = "google-gms-play-services" }
+google-gms-play-services-mlkit-text-recognition-korean = { module = "com.google.android.gms:play-services-mlkit-text-recognition-korean", version.ref = "google-gms-play-services" }
+google-gms-play-services-nearby = { module = "com.google.android.gms:play-services-nearby", version.ref = "google-gms-play-services" }
+google-gms-play-services-nearby-license = { module = "com.google.android.gms:play-services-nearby-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "google-gms-play-services" }
+google-gms-play-services-oss-licenses-license = { module = "com.google.android.gms:play-services-oss-licenses-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-pal = { module = "com.google.android.gms:play-services-pal", version.ref = "google-gms-play-services" }
+google-gms-play-services-panorama = { module = "com.google.android.gms:play-services-panorama", version.ref = "google-gms-play-services" }
+google-gms-play-services-panorama-license = { module = "com.google.android.gms:play-services-panorama-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-password-complexity = { module = "com.google.android.gms:play-services-password-complexity", version.ref = "google-gms-play-services" }
+google-gms-play-services-pay = { module = "com.google.android.gms:play-services-pay", version.ref = "google-gms-play-services" }
+google-gms-play-services-phenotype = { module = "com.google.android.gms:play-services-phenotype", version.ref = "google-gms-play-services" }
+google-gms-play-services-places = { module = "com.google.android.gms:play-services-places", version.ref = "google-gms-play-services" }
+google-gms-play-services-places-license = { module = "com.google.android.gms:play-services-places-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-places-placereport = { module = "com.google.android.gms:play-services-places-placereport", version.ref = "google-gms-play-services" }
+google-gms-play-services-plus = { module = "com.google.android.gms:play-services-plus", version.ref = "google-gms-play-services" }
+google-gms-play-services-plus-license = { module = "com.google.android.gms:play-services-plus-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-recaptcha = { module = "com.google.android.gms:play-services-recaptcha", version.ref = "google-gms-play-services" }
+google-gms-play-services-recaptchabase = { module = "com.google.android.gms:play-services-recaptchabase", version.ref = "google-gms-play-services" }
+google-gms-play-services-safetynet = { module = "com.google.android.gms:play-services-safetynet", version.ref = "google-gms-play-services" }
+google-gms-play-services-safetynet-license = { module = "com.google.android.gms:play-services-safetynet-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-stats = { module = "com.google.android.gms:play-services-stats", version.ref = "google-gms-play-services" }
+google-gms-play-services-streamprotect = { module = "com.google.android.gms:play-services-streamprotect", version.ref = "google-gms-play-services" }
+google-gms-play-services-tagmanager = { module = "com.google.android.gms:play-services-tagmanager", version.ref = "google-gms-play-services" }
+google-gms-play-services-tagmanager-api = { module = "com.google.android.gms:play-services-tagmanager-api", version.ref = "google-gms-play-services" }
+google-gms-play-services-tagmanager-api-license = { module = "com.google.android.gms:play-services-tagmanager-api-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-tagmanager-license = { module = "com.google.android.gms:play-services-tagmanager-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-tagmanager-v4-impl = { module = "com.google.android.gms:play-services-tagmanager-v4-impl", version.ref = "google-gms-play-services" }
+google-gms-play-services-tagmanager-v4-impl-license = { module = "com.google.android.gms:play-services-tagmanager-v4-impl-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-tasks = { module = "com.google.android.gms:play-services-tasks", version.ref = "google-gms-play-services" }
+google-gms-play-services-tasks-license = { module = "com.google.android.gms:play-services-tasks-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-tasks-native-c = { module = "com.google.android.gms:play-services-tasks-native-c", version.ref = "google-gms-play-services" }
+google-gms-play-services-tflite-acceleration-service = { module = "com.google.android.gms:play-services-tflite-acceleration-service", version.ref = "google-gms-play-services" }
+google-gms-play-services-tflite-gpu = { module = "com.google.android.gms:play-services-tflite-gpu", version.ref = "google-gms-play-services" }
+google-gms-play-services-tflite-impl = { module = "com.google.android.gms:play-services-tflite-impl", version.ref = "google-gms-play-services" }
+google-gms-play-services-tflite-java = { module = "com.google.android.gms:play-services-tflite-java", version.ref = "google-gms-play-services" }
+google-gms-play-services-tflite-support = { module = "com.google.android.gms:play-services-tflite-support", version.ref = "google-gms-play-services" }
+google-gms-play-services-threadnetwork = { module = "com.google.android.gms:play-services-threadnetwork", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision = { module = "com.google.android.gms:play-services-vision", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision-common = { module = "com.google.android.gms:play-services-vision-common", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision-common-license = { module = "com.google.android.gms:play-services-vision-common-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision-face-contour-internal = { module = "com.google.android.gms:play-services-vision-face-contour-internal", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision-image-label = { module = "com.google.android.gms:play-services-vision-image-label", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision-image-labeling-internal = { module = "com.google.android.gms:play-services-vision-image-labeling-internal", version.ref = "google-gms-play-services" }
+google-gms-play-services-vision-license = { module = "com.google.android.gms:play-services-vision-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-wallet = { module = "com.google.android.gms:play-services-wallet", version.ref = "google-gms-play-services" }
+google-gms-play-services-wallet-license = { module = "com.google.android.gms:play-services-wallet-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "google-gms-play-services" }
+google-gms-play-services-wearable-license = { module = "com.google.android.gms:play-services-wearable-license", version.ref = "google-gms-play-services" }
+
+google-play-ai-delivery = { module = "com.google.android.play:ai-delivery", version.ref = "google-play-ai-delivery" }
+google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update" }
+google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery" }
+google-play-core-common = { module = "com.google.android.play:core-common", version.ref = "google-play-core" }
+google-play-core-ktx = { module = "com.google.android.play:core-ktx", version.ref = "google-play-core" }
+google-play-feature-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-feature-delivery" }
+google-play-grouping = { module = "com.google.android.play:grouping", version.ref = "google-play-grouping" }
+google-play-integrity = { module = "com.google.android.play:integrity", version.ref = "google-play-integrity" }
+google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review" }
+
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 google-material-compose-theme-adapter = { module = "com.google.android.material:compose-theme-adapter", version.ref = "google-material-compose-theme-adapter" }
-google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "google-firebase-analytics-ktx" }
-google-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx", version.ref = "google-firebase-config-ktx" }
-google-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "google-firebase-crashlytics-ktx" }
-google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "google-firebase-messaging-ktx" }
+google-material-compose-theme-adapter3 = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "google-material-compose-theme-adapter" }
+google-material-compose-theme-core = { module = "com.google.android.material:compose-theme-adapter-core", version.ref = "google-material-compose-theme-adapter" }
+
+google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
+google-firebase-ads = { module = "com.google.firebase:firebase-ads", version.ref = "google-firebase-ads" }
+google-firebase-ads-lite = { module = "com.google.firebase:firebase-ads-lite", version.ref = "google-firebase-ads-lite" }
+google-firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "google-firebase-analytics" }
+google-firebase-analytics-impl = { module = "com.google.firebase:firebase-analytics-impl", version.ref = "google-firebase-analytics-impl" }
+google-firebase-analytics-impl-license = { module = "com.google.firebase:firebase-analytics-impl-license", version.ref = "google-firebase-analytics-impl-license" }
+google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "google-firebase-analytics" }
+google-firebase-analytics-license = { module = "com.google.firebase:firebase-analytics-license", version.ref = "google-firebase-analytics-license" }
+google-firebase-annotations = { module = "com.google.firebase:firebase-annotations", version.ref = "google-firebase-annotations" }
+google-firebase-appcheck = { module = "com.google.firebase:firebase-appcheck", version.ref = "google-firebase-appcheck" }
+google-firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug", version.ref = "google-firebase-appcheck-debug" }
+google-firebase-appcheck-debug-testing = { module = "com.google.firebase:firebase-appcheck-debug-testing", version.ref = "google-firebase-appcheck-debug-testing" }
+google-firebase-appcheck-interop = { module = "com.google.firebase:firebase-appcheck-interop", version.ref = "google-firebase-appcheck-interop" }
+google-firebase-appcheck-ktx = { module = "com.google.firebase:firebase-appcheck-ktx", version.ref = "google-firebase-appcheck-ktx" }
+google-firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity", version.ref = "google-firebase-appcheck-playintegrity" }
+google-firebase-appcheck-safetynet = { module = "com.google.firebase:firebase-appcheck-safetynet", version.ref = "google-firebase-appcheck-safetynet" }
+google-firebase-appdistribution = { module = "com.google.firebase:firebase-appdistribution", version.ref = "google-firebase-appdistribution" }
+google-firebase-appdistribution-api = { module = "com.google.firebase:firebase-appdistribution-api", version.ref = "google-firebase-appdistribution-api" }
+google-firebase-appdistribution-api-ktx = { module = "com.google.firebase:firebase-appdistribution-api-ktx", version.ref = "google-firebase-appdistribution-api-ktx" }
+google-firebase-appdistribution-gradle = { module = "com.google.firebase:firebase-appdistribution-gradle", version.ref = "google-firebase-appdistribution-gradle" }
+google-firebase-appdistribution-ktx = { module = "com.google.firebase:firebase-appdistribution-ktx", version.ref = "google-firebase-appdistribution-ktx" }
+google-firebase-appindexing = { module = "com.google.firebase:firebase-appindexing", version.ref = "google-firebase-appindexing" }
+google-firebase-appindexing-license = { module = "com.google.firebase:firebase-appindexing-license", version.ref = "google-firebase-appindexing-license" }
+google-firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "google-firebase-auth" }
+google-firebase-auth-common = { module = "com.google.firebase:firebase-auth-common", version.ref = "google-firebase-auth-common" }
+google-firebase-auth-impl = { module = "com.google.firebase:firebase-auth-impl", version.ref = "google-firebase-auth-impl" }
+google-firebase-auth-interop = { module = "com.google.firebase:firebase-auth-interop", version.ref = "google-firebase-auth-interop" }
+google-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "google-firebase-auth-ktx" }
+google-firebase-auth-license = { module = "com.google.firebase:firebase-auth-license", version.ref = "google-firebase-auth-license" }
+google-firebase-auth-module = { module = "com.google.firebase:firebase-auth-module", version.ref = "google-firebase-auth-module" }
+google-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "google-firebase-bom" }
+google-firebase-common = { module = "com.google.firebase:firebase-common", version.ref = "google-firebase-common" }
+google-firebase-common-ktx = { module = "com.google.firebase:firebase-common-ktx", version.ref = "google-firebase-common-ktx" }
+google-firebase-common-license = { module = "com.google.firebase:firebase-common-license", version.ref = "google-firebase-common-license" }
+google-firebase-components = { module = "com.google.firebase:firebase-components", version.ref = "google-firebase-components" }
+google-firebase-config = { module = "com.google.firebase:firebase-config", version.ref = "google-firebase-config" }
+google-firebase-config-interop = { module = "com.google.firebase:firebase-config-interop", version.ref = "google-firebase-config-interop" }
+google-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx", version.ref = "google-firebase-config" }
+google-firebase-config-license = { module = "com.google.firebase:firebase-config-license", version.ref = "google-firebase-config-license" }
+google-firebase-core = { module = "com.google.firebase:firebase-core", version.ref = "google-firebase-core" }
+google-firebase-crash = { module = "com.google.firebase:firebase-crash", version.ref = "google-firebase-crash" }
+google-firebase-crash-license = { module = "com.google.firebase:firebase-crash-license", version.ref = "google-firebase-crash-license" }
+google-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics", version.ref = "google-firebase-crashlytics" }
+google-firebase-crashlytics-buildtools = { module = "com.google.firebase:firebase-crashlytics-buildtools", version.ref = "google-firebase-crashlytics-buildtools" }
+google-firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "google-firebase-crashlytics-gradle" }
+google-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "google-firebase-crashlytics" }
+google-firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk", version.ref = "google-firebase-crashlytics-ndk" }
+google-firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "google-firebase-database" }
+google-firebase-database-collection = { module = "com.google.firebase:firebase-database-collection", version.ref = "google-firebase-database-collection" }
+google-firebase-database-connection = { module = "com.google.firebase:firebase-database-connection", version.ref = "google-firebase-database-connection" }
+google-firebase-database-connection-license = { module = "com.google.firebase:firebase-database-connection-license", version.ref = "google-firebase-database-connection-license" }
+google-firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version.ref = "google-firebase-database-ktx" }
+google-firebase-database-license = { module = "com.google.firebase:firebase-database-license", version.ref = "google-firebase-database-license" }
+google-firebase-dataconnect = { module = "com.google.firebase:firebase-dataconnect", version.ref = "google-firebase-dataconnect" }
+google-firebase-datatransport = { module = "com.google.firebase:firebase-datatransport", version.ref = "google-firebase-datatransport" }
+google-firebase-dynamic-links = { module = "com.google.firebase:firebase-dynamic-links", version.ref = "google-firebase-dynamic-links" }
+google-firebase-dynamic-links-ktx = { module = "com.google.firebase:firebase-dynamic-links-ktx", version.ref = "google-firebase-dynamic-links-ktx" }
+google-firebase-dynamic-links-license = { module = "com.google.firebase:firebase-dynamic-links-license", version.ref = "google-firebase-dynamic-links-license" }
+google-firebase-dynamic-module-support = { module = "com.google.firebase:firebase-dynamic-module-support", version.ref = "google-firebase-dynamic-module-support" }
+google-firebase-encoders = { module = "com.google.firebase:firebase-encoders", version.ref = "google-firebase-encoders" }
+google-firebase-encoders-json = { module = "com.google.firebase:firebase-encoders-json", version.ref = "google-firebase-encoders-json" }
+google-firebase-encoders-proto = { module = "com.google.firebase:firebase-encoders-proto", version.ref = "google-firebase-encoders-proto" }
+google-firebase-firestore = { module = "com.google.firebase:firebase-firestore", version.ref = "google-firebase-firestore" }
+google-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "google-firebase-firestore-ktx" }
+google-firebase-functions = { module = "com.google.firebase:firebase-functions", version.ref = "google-firebase-functions" }
+google-firebase-functions-ktx = { module = "com.google.firebase:firebase-functions-ktx", version.ref = "google-firebase-functions-ktx" }
+google-firebase-functions-license = { module = "com.google.firebase:firebase-functions-license", version.ref = "google-firebase-functions-license" }
+google-firebase-iid = { module = "com.google.firebase:firebase-iid", version.ref = "google-firebase-iid" }
+google-firebase-iid-interop = { module = "com.google.firebase:firebase-iid-interop", version.ref = "google-firebase-iid-interop" }
+google-firebase-iid-license = { module = "com.google.firebase:firebase-iid-license", version.ref = "google-firebase-iid-license" }
+google-firebase-inappmessaging = { module = "com.google.firebase:firebase-inappmessaging", version.ref = "google-firebase-inappmessaging" }
+google-firebase-inappmessaging-display = { module = "com.google.firebase:firebase-inappmessaging-display", version.ref = "google-firebase-inappmessaging-display" }
+google-firebase-inappmessaging-display-ktx = { module = "com.google.firebase:firebase-inappmessaging-display-ktx", version.ref = "google-firebase-inappmessaging-display-ktx" }
+google-firebase-inappmessaging-ktx = { module = "com.google.firebase:firebase-inappmessaging-ktx", version.ref = "google-firebase-inappmessaging-ktx" }
+google-firebase-installations = { module = "com.google.firebase:firebase-installations", version.ref = "google-firebase-installations" }
+google-firebase-installations-interop = { module = "com.google.firebase:firebase-installations-interop", version.ref = "google-firebase-installations-interop" }
+google-firebase-installations-ktx = { module = "com.google.firebase:firebase-installations-ktx", version.ref = "google-firebase-installations-ktx" }
+google-firebase-invites = { module = "com.google.firebase:firebase-invites", version.ref = "google-firebase-invites" }
+google-firebase-measurement-connector = { module = "com.google.firebase:firebase-measurement-connector", version.ref = "google-firebase-measurement-connector" }
+google-firebase-measurement-connector-impl = { module = "com.google.firebase:firebase-measurement-connector-impl", version.ref = "google-firebase-measurement-connector-impl" }
+google-firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "google-firebase-messaging" }
+google-firebase-messaging-directboot = { module = "com.google.firebase:firebase-messaging-directboot", version.ref = "google-firebase-messaging-directboot" }
+google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "google-firebase-messaging" }
+google-firebase-messaging-license = { module = "com.google.firebase:firebase-messaging-license", version.ref = "google-firebase-messaging-license" }
+google-firebase-ml-common = { module = "com.google.firebase:firebase-ml-common", version.ref = "google-firebase-ml-common" }
+google-firebase-ml-model-interpreter = { module = "com.google.firebase:firebase-ml-model-interpreter", version.ref = "google-firebase-ml-model-interpreter" }
+google-firebase-ml-modeldownloader = { module = "com.google.firebase:firebase-ml-modeldownloader", version.ref = "google-firebase-ml-modeldownloader" }
+google-firebase-ml-modeldownloader-ktx = { module = "com.google.firebase:firebase-ml-modeldownloader-ktx", version.ref = "google-firebase-ml-modeldownloader-ktx" }
+google-firebase-ml-natural-language = { module = "com.google.firebase:firebase-ml-natural-language", version.ref = "google-firebase-ml-natural-language" }
+google-firebase-ml-natural-language-language-id-model = { module = "com.google.firebase:firebase-ml-natural-language-language-id-model", version.ref = "google-firebase-ml-natural-language-language-id-model" }
+google-firebase-ml-natural-language-smart-reply = { module = "com.google.firebase:firebase-ml-natural-language-smart-reply", version.ref = "google-firebase-ml-natural-language-smart-reply" }
+google-firebase-ml-natural-language-smart-reply-model = { module = "com.google.firebase:firebase-ml-natural-language-smart-reply-model", version.ref = "google-firebase-ml-natural-language-smart-reply-model" }
+google-firebase-ml-natural-language-translate = { module = "com.google.firebase:firebase-ml-natural-language-translate", version.ref = "google-firebase-ml-natural-language-translate" }
+google-firebase-ml-natural-language-translate-model = { module = "com.google.firebase:firebase-ml-natural-language-translate-model", version.ref = "google-firebase-ml-natural-language-translate-model" }
+google-firebase-ml-vision = { module = "com.google.firebase:firebase-ml-vision", version.ref = "google-firebase-ml-vision" }
+google-firebase-ml-vision-automl = { module = "com.google.firebase:firebase-ml-vision-automl", version.ref = "google-firebase-ml-vision-automl" }
+google-firebase-ml-vision-barcode-model = { module = "com.google.firebase:firebase-ml-vision-barcode-model", version.ref = "google-firebase-ml-vision-barcode-model" }
+google-firebase-ml-vision-face-model = { module = "com.google.firebase:firebase-ml-vision-face-model", version.ref = "google-firebase-ml-vision-face-model" }
+google-firebase-ml-vision-image-label-model = { module = "com.google.firebase:firebase-ml-vision-image-label-model", version.ref = "google-firebase-ml-vision-image-label-model" }
+google-firebase-ml-vision-internal-vkp = { module = "com.google.firebase:firebase-ml-vision-internal-vkp", version.ref = "google-firebase-ml-vision-internal-vkp" }
+google-firebase-ml-vision-object-detection-model = { module = "com.google.firebase:firebase-ml-vision-object-detection-model", version.ref = "google-firebase-ml-vision-object-detection-model" }
+google-firebase-perf = { module = "com.google.firebase:firebase-perf", version.ref = "google-firebase-perf" }
+google-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx", version.ref = "google-firebase-perf-ktx" }
+google-firebase-perf-license = { module = "com.google.firebase:firebase-perf-license", version.ref = "google-firebase-perf-license" }
+google-firebase-plugins = { module = "com.google.firebase:firebase-plugins", version.ref = "google-firebase-plugins" }
+google-firebase-sessions = { module = "com.google.firebase:firebase-sessions", version.ref = "google-firebase-sessions" }
+google-firebase-storage = { module = "com.google.firebase:firebase-storage", version.ref = "google-firebase-storage" }
+google-firebase-storage-common = { module = "com.google.firebase:firebase-storage-common", version.ref = "google-firebase-storage-common" }
+google-firebase-storage-common-license = { module = "com.google.firebase:firebase-storage-common-license", version.ref = "google-firebase-storage-common-license" }
+google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx", version.ref = "google-firebase-storage-ktx" }
+google-firebase-storage-license = { module = "com.google.firebase:firebase-storage-license", version.ref = "google-firebase-storage-license" }
+google-firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "google-firebase-vertexai" }
 
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
