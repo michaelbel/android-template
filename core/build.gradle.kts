@@ -46,6 +46,8 @@ dependencies {
     api(libs.kotlinx.collections.immutable)
     api(libs.kotlinx.atomicfu)
 
+    //api(libs.google.gms.play.services.ads)
+
     //api(libs.google.services.base)
     //api(libs.google.services.instantapps)
     //api(libs.google.play.asset.delivery.ktx)
