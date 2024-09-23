@@ -46,7 +46,7 @@ dependencies {
     api(libs.kotlinx.collections.immutable)
     api(libs.kotlinx.atomicfu)
 
-    //api(libs.google.gms.play.services.ads)
+    //api(libs.google.gms.play.services.ads) need manifest params
 
     //api(libs.google.services.base)
     //api(libs.google.services.instantapps)

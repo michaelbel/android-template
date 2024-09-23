@@ -16,9 +16,9 @@ kotlinx-atomicfu = "0.25.0"
 google-ksp = "2.0.20-1.0.25"
 google-services = "4.4.2"
 
-google-gms-services-base = "18.5.0"
 google-gms-play-services = "1.0.0"
-google-gms-play-services-ads = "1.0.0"
+google-gms-play-services-ads = "23.3.0"
+google-gms-play-services-ads-identifier = "18.1.0"
 
 google-play-ai-delivery = "1.0.0"
 google-play-app-update = "2.1.0"
@@ -317,7 +317,7 @@ turbine = "1.1.0"
 barista = "4.3.0"
 kotest = "5.8.1"
 koin = "3.5.6"
-okio = "3.9.0"
+okio = "3.9.1"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
@@ -337,9 +337,9 @@ kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collec
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
 
 google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services" }
-google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services" }
-google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services" }
-google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services-ads" }
+google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services-ads" }
+google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services-ads-identifier" }
 google-gms-play-services-ads-license = { module = "com.google.android.gms:play-services-ads-license", version.ref = "google-gms-play-services" }
 google-gms-play-services-ads-lite = { module = "com.google.android.gms:play-services-ads-lite", version.ref = "google-gms-play-services" }
 google-gms-play-services-ads-lite-license = { module = "com.google.android.gms:play-services-ads-lite-license", version.ref = "google-gms-play-services" }
