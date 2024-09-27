@@ -20,13 +20,13 @@ google-gms-play-services = "1.0.0"
 google-gms-play-services-ads = "23.3.0"
 google-gms-play-services-ads-identifier = "18.1.0"
 
-google-play-ai-delivery = "1.0.0"
+#google-play-ai-delivery = "x.y.z"
 google-play-app-update = "2.1.0"
 google-play-asset-delivery = "2.2.2"
-google-play-core = "1.0.0"
+#google-play-core = "1.0.0"
 google-play-feature-delivery = "2.1.0"
-google-play-grouping = "1.0.0"
-google-play-integrity = "1.0.0"
+#google-play-grouping = "1.0.0"
+#google-play-integrity = "1.0.0"
 google-play-review = "2.0.1"
 
 google-material = "1.12.0"
@@ -480,14 +480,14 @@ google-gms-play-services-wallet-license = { module = "com.google.android.gms:pla
 google-gms-play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "google-gms-play-services" }
 google-gms-play-services-wearable-license = { module = "com.google.android.gms:play-services-wearable-license", version.ref = "google-gms-play-services" }
 
-google-play-ai-delivery = { module = "com.google.android.play:ai-delivery", version.ref = "google-play-ai-delivery" }
+#google-play-ai-delivery = { module = "com.google.android.play:ai-delivery", version.ref = "google-play-ai-delivery" }
 google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update" }
 google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery" }
-google-play-core-common = { module = "com.google.android.play:core-common", version.ref = "google-play-core" }
-google-play-core-ktx = { module = "com.google.android.play:core-ktx", version.ref = "google-play-core" }
+#google-play-core-common = { module = "com.google.android.play:core-common", version.ref = "google-play-core" }
+#google-play-core-ktx = { module = "com.google.android.play:core-ktx", version.ref = "google-play-core" }
 google-play-feature-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-feature-delivery" }
-google-play-grouping = { module = "com.google.android.play:grouping", version.ref = "google-play-grouping" }
-google-play-integrity = { module = "com.google.android.play:integrity", version.ref = "google-play-integrity" }
+#google-play-grouping = { module = "com.google.android.play:grouping", version.ref = "google-play-grouping" }
+#google-play-integrity = { module = "com.google.android.play:integrity", version.ref = "google-play-integrity" }
 google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review" }
 
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }

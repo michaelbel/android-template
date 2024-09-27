@@ -46,20 +46,21 @@ dependencies {
     api(libs.kotlinx.collections.immutable)
     api(libs.kotlinx.atomicfu)
 
-    //api(libs.google.gms.play.services.ads) need manifest params
+    api(libs.google.play.app.update.ktx)
+    api(libs.google.play.asset.delivery.ktx)
+    api(libs.google.play.feature.delivery.ktx)
+    api(libs.google.play.review.ktx)
 
-    //api(libs.google.services.base)
-    //api(libs.google.services.instantapps)
-    //api(libs.google.play.asset.delivery.ktx)
-    //api(libs.google.play.delivery.ktx)
-    //api(libs.google.play.review.ktx)
-    //api(libs.google.play.app.update.ktx)
     api(libs.google.material)
     api(libs.google.material.compose.theme.adapter)
     api(libs.google.firebase.analytics.ktx)
     api(libs.google.firebase.config.ktx)
     api(libs.google.firebase.crashlytics.ktx)
     api(libs.google.firebase.messaging.ktx)
+
+    //api(libs.google.gms.play.services.ads) need manifest params
+    //api(libs.google.services.base)
+    //api(libs.google.services.instantapps)
 
     api(libs.androidx.activity.ktx)
     api(libs.androidx.activity.compose)
