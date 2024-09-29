@@ -16,9 +16,12 @@ kotlinx-atomicfu = "0.25.0"
 google-ksp = "2.0.20-1.0.25"
 google-services = "4.4.2"
 
-google-gms-play-services = "1.0.0"
+google-gms-play-services2 = "12.0.1" # rename
 google-gms-play-services-ads = "23.3.0"
 google-gms-play-services-ads-identifier = "18.1.0"
+google-gms-play-services-afs = "19.1.0"
+
+google-gms-play-services = "1.0.0"
 
 #google-play-ai-delivery = "x.y.z"
 google-play-app-update = "2.1.0"
@@ -336,14 +339,15 @@ kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io", version.ref = "kotli
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections" }
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
 
-google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services" }
+google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services2" }
 google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services-ads-identifier" }
-google-gms-play-services-ads-license = { module = "com.google.android.gms:play-services-ads-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-ads-lite = { module = "com.google.android.gms:play-services-ads-lite", version.ref = "google-gms-play-services" }
-google-gms-play-services-ads-lite-license = { module = "com.google.android.gms:play-services-ads-lite-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-afs-native = { module = "com.google.android.gms:play-services-afs-native", version.ref = "google-gms-play-services" }
+google-gms-play-services-ads-license = { module = "com.google.android.gms:play-services-ads-license", version.ref = "google-gms-play-services-ads" }
+google-gms-play-services-ads-lite = { module = "com.google.android.gms:play-services-ads-lite", version.ref = "google-gms-play-services-ads" }
+google-gms-play-services-ads-lite-license = { module = "com.google.android.gms:play-services-ads-lite-license", version.ref = "google-gms-play-services-ads" }
+google-gms-play-services-afs-native = { module = "com.google.android.gms:play-services-afs-native", version.ref = "google-gms-play-services-afs" }
+
 google-gms-play-services-all-wear = { module = "com.google.android.gms:play-services-all-wear", version.ref = "google-gms-play-services" }
 google-gms-play-services-analytics = { module = "com.google.android.gms:play-services-analytics", version.ref = "google-gms-play-services" }
 google-gms-play-services-analytics-impl = { module = "com.google.android.gms:play-services-analytics-impl", version.ref = "google-gms-play-services" }
