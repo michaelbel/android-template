@@ -54,6 +54,11 @@ dependencies {
     //api(libs.google.gms.play.services.ads.lite)
     //api(libs.google.gms.play.services.ads.lite.license)
     api(libs.google.gms.play.services.afs.native)
+    //api(libs.google.gms.play.services.all.wear)
+    api(libs.google.gms.play.services.analytics)
+    api(libs.google.gms.play.services.analytics.impl)
+    api(libs.google.gms.play.services.analytics.impl.license)
+    api(libs.google.gms.play.services.analytics.license)
 
     api(libs.google.play.app.update.ktx)
     api(libs.google.play.asset.delivery.ktx)
