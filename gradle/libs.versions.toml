@@ -23,6 +23,7 @@ google-gms-play-services-afs = "19.1.0"
 google-gms-play-services-all-wear = "15.0.1"
 google-gms-play-services-analytics = "18.1.0"
 google-gms-play-services-analytics-licence = "12.0.1"
+google-gms-play-services-appindex = "16.2.0"
 
 google-gms-play-services = "1.0.0"
 
@@ -356,7 +357,8 @@ google-gms-play-services-analytics-impl = { module = "com.google.android.gms:pla
 google-gms-play-services-analytics-impl-license = { module = "com.google.android.gms:play-services-analytics-impl-license", version.ref = "google-gms-play-services-analytics-licence" }
 google-gms-play-services-analytics-license = { module = "com.google.android.gms:play-services-analytics-license", version.ref = "google-gms-play-services-analytics-licence" }
 
-google-gms-play-services-appindex = { module = "com.google.android.gms:play-services-appindex", version.ref = "google-gms-play-services" }
+google-gms-play-services-appindex = { module = "com.google.android.gms:play-services-appindex", version.ref = "google-gms-play-services-appindex" }
+
 google-gms-play-services-appindexing = { module = "com.google.android.gms:play-services-appindexing", version.ref = "google-gms-play-services" }
 google-gms-play-services-appinvite = { module = "com.google.android.gms:play-services-appinvite", version.ref = "google-gms-play-services" }
 google-gms-play-services-appinvite-license = { module = "com.google.android.gms:play-services-appinvite-license", version.ref = "google-gms-play-services" }
