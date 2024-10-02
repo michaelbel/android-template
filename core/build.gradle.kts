@@ -60,6 +60,8 @@ dependencies {
     api(libs.google.gms.play.services.analytics.impl.license)
     api(libs.google.gms.play.services.analytics.license)
     api(libs.google.gms.play.services.appindex)
+    //api(libs.google.gms.play.services.appindexing)
+    api(libs.google.gms.play.services.appinvite)
 
     api(libs.google.play.app.update.ktx)
     api(libs.google.play.asset.delivery.ktx)
