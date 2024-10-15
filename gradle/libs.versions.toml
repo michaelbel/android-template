@@ -230,6 +230,7 @@ androidx-health-connect = "1.1.0-alpha09"
 androidx-heifwriter = "1.1.0-alpha03"
 androidx-hilt = "1.2.0"
 androidx-hilt-lifecycle = "1.0.0-alpha03"
+androidx-ink = "1.0.0-alpha01"
 androidx-input = "1.0.0-beta05"
 androidx-interpolator = "1.0.0"
 androidx-javascriptengine = "1.0.0-beta01"
@@ -750,6 +751,12 @@ androidx-hilt-navigation = { module = "androidx.hilt:hilt-navigation", version.r
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidx-hilt" }
 androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "androidx-hilt" }
 androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "androidx-hilt" }
+androidx-ink-authoring = { module = "androidx.ink:ink-authoring", version.ref = "androidx-ink" }
+androidx-ink-brush = { module = "androidx.ink:ink-brush", version.ref = "androidx-ink" }
+androidx-ink-geometry = { module = "androidx.ink:ink-geometry", version.ref = "androidx-ink" }
+androidx-ink-nativeloader = { module = "androidx.ink:ink-nativeloader", version.ref = "androidx-ink" }
+androidx-ink-rendering = { module = "androidx.ink:ink-rendering", version.ref = "androidx-ink" }
+androidx-ink-strokes = { module = "androidx.ink:ink-strokes", version.ref = "androidx-ink" }
 androidx-input-motionprediction = { module = "androidx.input:input-motionprediction", version.ref = "androidx-input" }
 androidx-interpolator = { module = "androidx.interpolator:interpolator", version.ref = "androidx-interpolator" }
 androidx-javascriptengine = { module = "androidx.javascriptengine:javascriptengine", version.ref = "androidx-javascriptengine" }
