@@ -6,7 +6,7 @@ jdk = "17"
 agp = "8.7.1"
 
 kotlin = "2.0.20"
-kotlinx-coroutines = "1.9.0-RC"
+kotlinx-coroutines = "1.9.0"
 kotlinx-datetime = "0.6.1"
 kotlinx-serialization = "1.7.3"
 kotlinx-io = "0.1.16"
@@ -41,119 +41,80 @@ google-play-review = "2.0.1"
 google-material = "1.12.0"
 google-material-compose-theme-adapter = "1.2.1"
 
-google-firebase-abt = "x.y.z"
-google-firebase-ads = "x.y.z"
-google-firebase-ads-lite = "x.y.z"
+google-firebase-abt = "22.0.0"
+google-firebase-ads = "23.4.0"
 google-firebase-analytics = "22.1.2"
-google-firebase-analytics-impl = "x.y.z"
-google-firebase-analytics-impl-license = "x.y.z"
-google-firebase-analytics-ktx = "x.y.z"
-google-firebase-analytics-license = "x.y.z"
-google-firebase-annotations = "x.y.z"
-google-firebase-appcheck = "x.y.z"
-google-firebase-appcheck-debug = "x.y.z"
-google-firebase-appcheck-debug-testing = "x.y.z"
-google-firebase-appcheck-interop = "x.y.z"
-google-firebase-appcheck-ktx = "x.y.z"
-google-firebase-appcheck-playintegrity = "x.y.z"
-google-firebase-appcheck-safetynet = "x.y.z"
+google-firebase-analytics-impl = "16.3.0"
+google-firebase-analytics-ktx = "1.0.0"
+google-firebase-annotations = "16.2.0"
+google-firebase-appcheck = "18.0.0"
+google-firebase-appcheck-interop = "17.1.0"
+google-firebase-appcheck-safetynet = "16.1.2"
 google-firebase-appdistribution = "5.0.0"
-google-firebase-appdistribution-api = "x.y.z"
-google-firebase-appdistribution-api-ktx = "x.y.z"
-google-firebase-appdistribution-gradle = "x.y.z"
-google-firebase-appdistribution-ktx = "x.y.z"
-google-firebase-appindexing = "x.y.z"
-google-firebase-appindexing-license = "x.y.z"
-google-firebase-auth = "x.y.z"
-google-firebase-auth-common = "x.y.z"
-google-firebase-auth-impl = "x.y.z"
-google-firebase-auth-interop = "x.y.z"
-google-firebase-auth-ktx = "x.y.z"
-google-firebase-auth-license = "x.y.z"
-google-firebase-auth-module = "x.y.z"
-google-firebase-bom = "x.y.z"
-google-firebase-common = "x.y.z"
-google-firebase-common-ktx = "x.y.z"
-google-firebase-common-license = "x.y.z"
-google-firebase-components = "x.y.z"
+google-firebase-appdistribution-api = "1.0.0"
+google-firebase-appdistribution-api-ktx = "1.0.0"
+google-firebase-appdistribution-ktx = "1.0.0"
+google-firebase-appindexing = "20.0.0"
+google-firebase-auth = "23.0.0"
+google-firebase-auth-common = "9.8.0"
+google-firebase-auth-impl = "16.1.0"
+google-firebase-auth-interop = "20.0.0"
+google-firebase-common = "21.0.0"
+google-firebase-components = "18.0.1"
 google-firebase-config = "22.0.0"
-google-firebase-config-interop = "x.y.z"
-google-firebase-config-ktx = "x.y.z"
-google-firebase-config-license = "x.y.z"
-google-firebase-core = "x.y.z"
-google-firebase-crash = "x.y.z"
-google-firebase-crash-license = "x.y.z"
+google-firebase-config-interop = "16.0.1"
+google-firebase-config-ktx = "1.0.0"
+google-firebase-core = "21.1.1"
+google-firebase-crash = "16.2.1"
 google-firebase-crashlytics-plugin = "3.0.2"
 google-firebase-crashlytics = "19.2.0"
-google-firebase-crashlytics-buildtools = "x.y.z"
-google-firebase-crashlytics-gradle = "x.y.z"
-google-firebase-crashlytics-ktx = "x.y.z"
-google-firebase-crashlytics-ndk = "x.y.z"
-google-firebase-database = "x.y.z"
-google-firebase-database-collection = "x.y.z"
-google-firebase-database-connection = "x.y.z"
-google-firebase-database-connection-license = "x.y.z"
-google-firebase-database-ktx = "x.y.z"
-google-firebase-database-license = "x.y.z"
-google-firebase-dataconnect = "x.y.z"
-google-firebase-datatransport = "x.y.z"
-google-firebase-dynamic-links = "x.y.z"
-google-firebase-dynamic-links-ktx = "x.y.z"
-google-firebase-dynamic-links-license = "x.y.z"
-google-firebase-dynamic-module-support = "x.y.z"
-google-firebase-encoders = "x.y.z"
-google-firebase-encoders-json = "x.y.z"
-google-firebase-encoders-proto = "x.y.z"
-google-firebase-firestore = "x.y.z"
-google-firebase-firestore-ktx = "x.y.z"
-google-firebase-functions = "x.y.z"
-google-firebase-functions-ktx = "x.y.z"
-google-firebase-functions-license = "x.y.z"
-google-firebase-iid = "x.y.z"
-google-firebase-iid-interop = "x.y.z"
-google-firebase-iid-license = "x.y.z"
-google-firebase-inappmessaging = "x.y.z"
-google-firebase-inappmessaging-display = "x.y.z"
-google-firebase-inappmessaging-display-ktx = "x.y.z"
-google-firebase-inappmessaging-ktx = "x.y.z"
-google-firebase-installations = "x.y.z"
-google-firebase-installations-interop = "x.y.z"
-google-firebase-installations-ktx = "x.y.z"
-google-firebase-invites = "x.y.z"
-google-firebase-measurement-connector = "x.y.z"
-google-firebase-measurement-connector-impl = "x.y.z"
+google-firebase-crashlytics-ktx = "1.0.0"
+google-firebase-database = "21.0.0"
+google-firebase-database-collection = "18.0.1"
+google-firebase-database-connection = "16.0.2"
+google-firebase-dataconnect = "1.0.0"
+google-firebase-datatransport = "19.0.0"
+google-firebase-dynamic-links = "22.1.0"
+google-firebase-dynamic-module-support = "1.0.0"
+google-firebase-encoders = "17.0.0"
+google-firebase-encoders-json = "18.0.1"
+google-firebase-encoders-proto = "16.0.0"
+google-firebase-firestore = "25.1.0"
+google-firebase-functions = "21.0.0"
+google-firebase-iid = "21.1.0"
+google-firebase-iid-interop = "17.1.0"
+google-firebase-inappmessaging = "21.0.0"
+google-firebase-installations = "18.0.0"
+google-firebase-installations-interop = "17.2.0"
+google-firebase-invites = "17.0.0"
+google-firebase-measurement-connector = "20.0.1"
+google-firebase-measurement-connector-impl = "17.0.5"
 google-firebase-messaging = "24.0.2"
-google-firebase-messaging-directboot = "x.y.z"
-google-firebase-messaging-ktx = "x.y.z"
-google-firebase-messaging-license = "x.y.z"
-google-firebase-ml-common = "x.y.z"
-google-firebase-ml-model-interpreter = "x.y.z"
-google-firebase-ml-modeldownloader = "x.y.z"
-google-firebase-ml-modeldownloader-ktx = "x.y.z"
-google-firebase-ml-natural-language = "x.y.z"
-google-firebase-ml-natural-language-language-id-model = "x.y.z"
-google-firebase-ml-natural-language-smart-reply = "x.y.z"
-google-firebase-ml-natural-language-smart-reply-model = "x.y.z"
-google-firebase-ml-natural-language-translate = "x.y.z"
-google-firebase-ml-natural-language-translate-model = "x.y.z"
-google-firebase-ml-vision = "x.y.z"
-google-firebase-ml-vision-automl = "x.y.z"
-google-firebase-ml-vision-barcode-model = "x.y.z"
-google-firebase-ml-vision-face-model = "x.y.z"
-google-firebase-ml-vision-image-label-model = "x.y.z"
-google-firebase-ml-vision-internal-vkp = "x.y.z"
-google-firebase-ml-vision-object-detection-model = "x.y.z"
-google-firebase-perf = "x.y.z"
-google-firebase-perf-ktx = "x.y.z"
-google-firebase-perf-license = "x.y.z"
-google-firebase-plugins = "x.y.z"
-google-firebase-sessions = "x.y.z"
-google-firebase-storage = "x.y.z"
-google-firebase-storage-common = "x.y.z"
-google-firebase-storage-common-license = "x.y.z"
-google-firebase-storage-ktx = "x.y.z"
-google-firebase-storage-license = "x.y.z"
-google-firebase-vertexai = "x.y.z"
+google-firebase-messaging-directboot = "24.0.2"
+google-firebase-messaging-ktx = "1.0.0"
+google-firebase-ml-common = "22.1.2"
+google-firebase-ml-model-interpreter = "22.0.4"
+google-firebase-ml-modeldownloader = "25.0.0"
+google-firebase-ml-natural-language = "22.0.1"
+google-firebase-ml-natural-language-language-id-model = "20.0.8"
+google-firebase-ml-natural-language-smart-reply = "18.0.8"
+google-firebase-ml-natural-language-smart-reply-model = "20.0.8"
+google-firebase-ml-natural-language-translate = "22.0.2"
+google-firebase-ml-natural-language-translate-model = "20.0.9"
+google-firebase-ml-vision = "24.1.0"
+google-firebase-ml-vision-automl = "18.0.6"
+google-firebase-ml-vision-barcode-model = "16.1.2"
+google-firebase-ml-vision-face-model = "20.0.2"
+google-firebase-ml-vision-image-label-model = "20.0.2"
+google-firebase-ml-vision-internal-vkp = "17.0.2"
+google-firebase-ml-vision-object-detection-model = "19.0.6"
+google-firebase-perf = "21.0.1"
+google-firebase-plugins = "2.0.0"
+google-firebase-sessions = "2.0.5"
+google-firebase-storage = "21.0.1"
+google-firebase-storage-common = "17.0.0"
+google-firebase-vertexai = "1.0.0"
+google-firebase-license = "12.0.1"
 
 androidx-activity = "1.9.2"
 androidx-ads = "1.0.0-alpha05"
@@ -330,6 +291,7 @@ koin = "3.5.6"
 okio = "3.9.1"
 
 [libraries]
+#region kotlin
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -345,6 +307,7 @@ kotlinx-serialization-hocon = { module = "org.jetbrains.kotlinx:kotlinx-serializ
 kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io", version.ref = "kotlinx-io" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections" }
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
+#endregion
 
 google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services2" }
 google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services-ads" }
@@ -506,94 +469,77 @@ google-material-compose-theme-adapter = { module = "com.google.android.material:
 google-material-compose-theme-adapter3 = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "google-material-compose-theme-adapter" }
 google-material-compose-theme-core = { module = "com.google.android.material:compose-theme-adapter-core", version.ref = "google-material-compose-theme-adapter" }
 
+#region firebase
 google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
 google-firebase-ads = { module = "com.google.firebase:firebase-ads", version.ref = "google-firebase-ads" }
-google-firebase-ads-lite = { module = "com.google.firebase:firebase-ads-lite", version.ref = "google-firebase-ads-lite" }
-google-firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "google-firebase-analytics" }
+google-firebase-ads-lite = { module = "com.google.firebase:firebase-ads-lite", version.ref = "google-firebase-ads" }
 google-firebase-analytics-impl = { module = "com.google.firebase:firebase-analytics-impl", version.ref = "google-firebase-analytics-impl" }
-google-firebase-analytics-impl-license = { module = "com.google.firebase:firebase-analytics-impl-license", version.ref = "google-firebase-analytics-impl-license" }
+google-firebase-analytics-impl-license = { module = "com.google.firebase:firebase-analytics-impl-license", version.ref = "google-firebase-license" }
 google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "google-firebase-analytics" }
-google-firebase-analytics-license = { module = "com.google.firebase:firebase-analytics-license", version.ref = "google-firebase-analytics-license" }
+google-firebase-analytics-license = { module = "com.google.firebase:firebase-analytics-license", version.ref = "google-firebase-license" }
 google-firebase-annotations = { module = "com.google.firebase:firebase-annotations", version.ref = "google-firebase-annotations" }
-google-firebase-appcheck = { module = "com.google.firebase:firebase-appcheck", version.ref = "google-firebase-appcheck" }
-google-firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug", version.ref = "google-firebase-appcheck-debug" }
-google-firebase-appcheck-debug-testing = { module = "com.google.firebase:firebase-appcheck-debug-testing", version.ref = "google-firebase-appcheck-debug-testing" }
+google-firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug", version.ref = "google-firebase-appcheck" }
+google-firebase-appcheck-debug-testing = { module = "com.google.firebase:firebase-appcheck-debug-testing", version.ref = "google-firebase-appcheck" }
 google-firebase-appcheck-interop = { module = "com.google.firebase:firebase-appcheck-interop", version.ref = "google-firebase-appcheck-interop" }
-google-firebase-appcheck-ktx = { module = "com.google.firebase:firebase-appcheck-ktx", version.ref = "google-firebase-appcheck-ktx" }
-google-firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity", version.ref = "google-firebase-appcheck-playintegrity" }
+google-firebase-appcheck-ktx = { module = "com.google.firebase:firebase-appcheck-ktx", version.ref = "google-firebase-appcheck" }
+google-firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity", version.ref = "google-firebase-appcheck" }
 google-firebase-appcheck-safetynet = { module = "com.google.firebase:firebase-appcheck-safetynet", version.ref = "google-firebase-appcheck-safetynet" }
-google-firebase-appdistribution = { module = "com.google.firebase:firebase-appdistribution", version.ref = "google-firebase-appdistribution" }
-google-firebase-appdistribution-api = { module = "com.google.firebase:firebase-appdistribution-api", version.ref = "google-firebase-appdistribution-api" }
 google-firebase-appdistribution-api-ktx = { module = "com.google.firebase:firebase-appdistribution-api-ktx", version.ref = "google-firebase-appdistribution-api-ktx" }
-google-firebase-appdistribution-gradle = { module = "com.google.firebase:firebase-appdistribution-gradle", version.ref = "google-firebase-appdistribution-gradle" }
+google-firebase-appdistribution-gradle = { module = "com.google.firebase:firebase-appdistribution-gradle", version.ref = "google-firebase-appdistribution" }
 google-firebase-appdistribution-ktx = { module = "com.google.firebase:firebase-appdistribution-ktx", version.ref = "google-firebase-appdistribution-ktx" }
 google-firebase-appindexing = { module = "com.google.firebase:firebase-appindexing", version.ref = "google-firebase-appindexing" }
-google-firebase-appindexing-license = { module = "com.google.firebase:firebase-appindexing-license", version.ref = "google-firebase-appindexing-license" }
-google-firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "google-firebase-auth" }
+google-firebase-appindexing-license = { module = "com.google.firebase:firebase-appindexing-license", version.ref = "google-firebase-license" }
 google-firebase-auth-common = { module = "com.google.firebase:firebase-auth-common", version.ref = "google-firebase-auth-common" }
 google-firebase-auth-impl = { module = "com.google.firebase:firebase-auth-impl", version.ref = "google-firebase-auth-impl" }
 google-firebase-auth-interop = { module = "com.google.firebase:firebase-auth-interop", version.ref = "google-firebase-auth-interop" }
-google-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "google-firebase-auth-ktx" }
-google-firebase-auth-license = { module = "com.google.firebase:firebase-auth-license", version.ref = "google-firebase-auth-license" }
-google-firebase-auth-module = { module = "com.google.firebase:firebase-auth-module", version.ref = "google-firebase-auth-module" }
-google-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "google-firebase-bom" }
-google-firebase-common = { module = "com.google.firebase:firebase-common", version.ref = "google-firebase-common" }
-google-firebase-common-ktx = { module = "com.google.firebase:firebase-common-ktx", version.ref = "google-firebase-common-ktx" }
-google-firebase-common-license = { module = "com.google.firebase:firebase-common-license", version.ref = "google-firebase-common-license" }
+google-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "google-firebase-auth" }
+google-firebase-auth-license = { module = "com.google.firebase:firebase-auth-license", version.ref = "google-firebase-license" }
+google-firebase-auth-module = { module = "com.google.firebase:firebase-auth-module", version.ref = "google-firebase-auth-common" }
+google-firebase-common-ktx = { module = "com.google.firebase:firebase-common-ktx", version.ref = "google-firebase-common" }
+google-firebase-common-license = { module = "com.google.firebase:firebase-common-license", version.ref = "google-firebase-license" }
 google-firebase-components = { module = "com.google.firebase:firebase-components", version.ref = "google-firebase-components" }
-google-firebase-config = { module = "com.google.firebase:firebase-config", version.ref = "google-firebase-config" }
 google-firebase-config-interop = { module = "com.google.firebase:firebase-config-interop", version.ref = "google-firebase-config-interop" }
 google-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx", version.ref = "google-firebase-config" }
-google-firebase-config-license = { module = "com.google.firebase:firebase-config-license", version.ref = "google-firebase-config-license" }
+google-firebase-config-license = { module = "com.google.firebase:firebase-config-license", version.ref = "google-firebase-license" }
 google-firebase-core = { module = "com.google.firebase:firebase-core", version.ref = "google-firebase-core" }
 google-firebase-crash = { module = "com.google.firebase:firebase-crash", version.ref = "google-firebase-crash" }
-google-firebase-crash-license = { module = "com.google.firebase:firebase-crash-license", version.ref = "google-firebase-crash-license" }
-google-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics", version.ref = "google-firebase-crashlytics" }
-google-firebase-crashlytics-buildtools = { module = "com.google.firebase:firebase-crashlytics-buildtools", version.ref = "google-firebase-crashlytics-buildtools" }
-google-firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "google-firebase-crashlytics-gradle" }
+google-firebase-crash-license = { module = "com.google.firebase:firebase-crash-license", version.ref = "google-firebase-license" }
+google-firebase-crashlytics-buildtools = { module = "com.google.firebase:firebase-crashlytics-buildtools", version.ref = "google-firebase-crashlytics-plugin" }
+google-firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "google-firebase-crashlytics-plugin" }
 google-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "google-firebase-crashlytics" }
-google-firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk", version.ref = "google-firebase-crashlytics-ndk" }
-google-firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "google-firebase-database" }
+google-firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk", version.ref = "google-firebase-crashlytics" }
 google-firebase-database-collection = { module = "com.google.firebase:firebase-database-collection", version.ref = "google-firebase-database-collection" }
 google-firebase-database-connection = { module = "com.google.firebase:firebase-database-connection", version.ref = "google-firebase-database-connection" }
-google-firebase-database-connection-license = { module = "com.google.firebase:firebase-database-connection-license", version.ref = "google-firebase-database-connection-license" }
-google-firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version.ref = "google-firebase-database-ktx" }
-google-firebase-database-license = { module = "com.google.firebase:firebase-database-license", version.ref = "google-firebase-database-license" }
+google-firebase-database-connection-license = { module = "com.google.firebase:firebase-database-connection-license", version.ref = "google-firebase-license" }
+google-firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version.ref = "google-firebase-database" }
+google-firebase-database-license = { module = "com.google.firebase:firebase-database-license", version.ref = "google-firebase-license" }
 google-firebase-dataconnect = { module = "com.google.firebase:firebase-dataconnect", version.ref = "google-firebase-dataconnect" }
 google-firebase-datatransport = { module = "com.google.firebase:firebase-datatransport", version.ref = "google-firebase-datatransport" }
-google-firebase-dynamic-links = { module = "com.google.firebase:firebase-dynamic-links", version.ref = "google-firebase-dynamic-links" }
-google-firebase-dynamic-links-ktx = { module = "com.google.firebase:firebase-dynamic-links-ktx", version.ref = "google-firebase-dynamic-links-ktx" }
-google-firebase-dynamic-links-license = { module = "com.google.firebase:firebase-dynamic-links-license", version.ref = "google-firebase-dynamic-links-license" }
+google-firebase-dynamic-links-ktx = { module = "com.google.firebase:firebase-dynamic-links-ktx", version.ref = "google-firebase-dynamic-links" }
+google-firebase-dynamic-links-license = { module = "com.google.firebase:firebase-dynamic-links-license", version.ref = "google-firebase-license" }
 google-firebase-dynamic-module-support = { module = "com.google.firebase:firebase-dynamic-module-support", version.ref = "google-firebase-dynamic-module-support" }
 google-firebase-encoders = { module = "com.google.firebase:firebase-encoders", version.ref = "google-firebase-encoders" }
 google-firebase-encoders-json = { module = "com.google.firebase:firebase-encoders-json", version.ref = "google-firebase-encoders-json" }
 google-firebase-encoders-proto = { module = "com.google.firebase:firebase-encoders-proto", version.ref = "google-firebase-encoders-proto" }
-google-firebase-firestore = { module = "com.google.firebase:firebase-firestore", version.ref = "google-firebase-firestore" }
-google-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "google-firebase-firestore-ktx" }
-google-firebase-functions = { module = "com.google.firebase:firebase-functions", version.ref = "google-firebase-functions" }
-google-firebase-functions-ktx = { module = "com.google.firebase:firebase-functions-ktx", version.ref = "google-firebase-functions-ktx" }
-google-firebase-functions-license = { module = "com.google.firebase:firebase-functions-license", version.ref = "google-firebase-functions-license" }
+google-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "google-firebase-firestore" }
+google-firebase-functions-ktx = { module = "com.google.firebase:firebase-functions-ktx", version.ref = "google-firebase-functions" }
+google-firebase-functions-license = { module = "com.google.firebase:firebase-functions-license", version.ref = "google-firebase-license" }
 google-firebase-iid = { module = "com.google.firebase:firebase-iid", version.ref = "google-firebase-iid" }
 google-firebase-iid-interop = { module = "com.google.firebase:firebase-iid-interop", version.ref = "google-firebase-iid-interop" }
-google-firebase-iid-license = { module = "com.google.firebase:firebase-iid-license", version.ref = "google-firebase-iid-license" }
-google-firebase-inappmessaging = { module = "com.google.firebase:firebase-inappmessaging", version.ref = "google-firebase-inappmessaging" }
-google-firebase-inappmessaging-display = { module = "com.google.firebase:firebase-inappmessaging-display", version.ref = "google-firebase-inappmessaging-display" }
-google-firebase-inappmessaging-display-ktx = { module = "com.google.firebase:firebase-inappmessaging-display-ktx", version.ref = "google-firebase-inappmessaging-display-ktx" }
-google-firebase-inappmessaging-ktx = { module = "com.google.firebase:firebase-inappmessaging-ktx", version.ref = "google-firebase-inappmessaging-ktx" }
-google-firebase-installations = { module = "com.google.firebase:firebase-installations", version.ref = "google-firebase-installations" }
+google-firebase-iid-license = { module = "com.google.firebase:firebase-iid-license", version.ref = "google-firebase-license" }
+google-firebase-inappmessaging-display-ktx = { module = "com.google.firebase:firebase-inappmessaging-display-ktx", version.ref = "google-firebase-inappmessaging" }
+google-firebase-inappmessaging-ktx = { module = "com.google.firebase:firebase-inappmessaging-ktx", version.ref = "google-firebase-inappmessaging" }
 google-firebase-installations-interop = { module = "com.google.firebase:firebase-installations-interop", version.ref = "google-firebase-installations-interop" }
-google-firebase-installations-ktx = { module = "com.google.firebase:firebase-installations-ktx", version.ref = "google-firebase-installations-ktx" }
+google-firebase-installations-ktx = { module = "com.google.firebase:firebase-installations-ktx", version.ref = "google-firebase-installations" }
 google-firebase-invites = { module = "com.google.firebase:firebase-invites", version.ref = "google-firebase-invites" }
 google-firebase-measurement-connector = { module = "com.google.firebase:firebase-measurement-connector", version.ref = "google-firebase-measurement-connector" }
 google-firebase-measurement-connector-impl = { module = "com.google.firebase:firebase-measurement-connector-impl", version.ref = "google-firebase-measurement-connector-impl" }
-google-firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "google-firebase-messaging" }
 google-firebase-messaging-directboot = { module = "com.google.firebase:firebase-messaging-directboot", version.ref = "google-firebase-messaging-directboot" }
 google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "google-firebase-messaging" }
-google-firebase-messaging-license = { module = "com.google.firebase:firebase-messaging-license", version.ref = "google-firebase-messaging-license" }
+google-firebase-messaging-license = { module = "com.google.firebase:firebase-messaging-license", version.ref = "google-firebase-license" }
 google-firebase-ml-common = { module = "com.google.firebase:firebase-ml-common", version.ref = "google-firebase-ml-common" }
 google-firebase-ml-model-interpreter = { module = "com.google.firebase:firebase-ml-model-interpreter", version.ref = "google-firebase-ml-model-interpreter" }
-google-firebase-ml-modeldownloader = { module = "com.google.firebase:firebase-ml-modeldownloader", version.ref = "google-firebase-ml-modeldownloader" }
-google-firebase-ml-modeldownloader-ktx = { module = "com.google.firebase:firebase-ml-modeldownloader-ktx", version.ref = "google-firebase-ml-modeldownloader-ktx" }
+google-firebase-ml-modeldownloader-ktx = { module = "com.google.firebase:firebase-ml-modeldownloader-ktx", version.ref = "google-firebase-ml-modeldownloader" }
 google-firebase-ml-natural-language = { module = "com.google.firebase:firebase-ml-natural-language", version.ref = "google-firebase-ml-natural-language" }
 google-firebase-ml-natural-language-language-id-model = { module = "com.google.firebase:firebase-ml-natural-language-language-id-model", version.ref = "google-firebase-ml-natural-language-language-id-model" }
 google-firebase-ml-natural-language-smart-reply = { module = "com.google.firebase:firebase-ml-natural-language-smart-reply", version.ref = "google-firebase-ml-natural-language-smart-reply" }
@@ -606,19 +552,19 @@ google-firebase-ml-vision-barcode-model = { module = "com.google.firebase:fireba
 google-firebase-ml-vision-face-model = { module = "com.google.firebase:firebase-ml-vision-face-model", version.ref = "google-firebase-ml-vision-face-model" }
 google-firebase-ml-vision-image-label-model = { module = "com.google.firebase:firebase-ml-vision-image-label-model", version.ref = "google-firebase-ml-vision-image-label-model" }
 google-firebase-ml-vision-internal-vkp = { module = "com.google.firebase:firebase-ml-vision-internal-vkp", version.ref = "google-firebase-ml-vision-internal-vkp" }
-google-firebase-ml-vision-object-detection-model = { module = "com.google.firebase:firebase-ml-vision-object-detection-model", version.ref = "google-firebase-ml-vision-object-detection-model" }
-google-firebase-perf = { module = "com.google.firebase:firebase-perf", version.ref = "google-firebase-perf" }
-google-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx", version.ref = "google-firebase-perf-ktx" }
-google-firebase-perf-license = { module = "com.google.firebase:firebase-perf-license", version.ref = "google-firebase-perf-license" }
+google-firebase-ml-vision-objectdetection-model = { module = "com.google.firebase:firebase-ml-vision-object-detection-model", version.ref = "google-firebase-ml-vision-object-detection-model" }
+google-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx", version.ref = "google-firebase-perf" }
+google-firebase-perf-license = { module = "com.google.firebase:firebase-perf-license", version.ref = "google-firebase-license" }
 google-firebase-plugins = { module = "com.google.firebase:firebase-plugins", version.ref = "google-firebase-plugins" }
 google-firebase-sessions = { module = "com.google.firebase:firebase-sessions", version.ref = "google-firebase-sessions" }
-google-firebase-storage = { module = "com.google.firebase:firebase-storage", version.ref = "google-firebase-storage" }
 google-firebase-storage-common = { module = "com.google.firebase:firebase-storage-common", version.ref = "google-firebase-storage-common" }
-google-firebase-storage-common-license = { module = "com.google.firebase:firebase-storage-common-license", version.ref = "google-firebase-storage-common-license" }
-google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx", version.ref = "google-firebase-storage-ktx" }
-google-firebase-storage-license = { module = "com.google.firebase:firebase-storage-license", version.ref = "google-firebase-storage-license" }
+google-firebase-storage-common-license = { module = "com.google.firebase:firebase-storage-common-license", version.ref = "google-firebase-license" }
+google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx", version.ref = "google-firebase-storage" }
+google-firebase-storage-license = { module = "com.google.firebase:firebase-storage-license", version.ref = "google-firebase-license" }
 google-firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "google-firebase-vertexai" }
+#endregion
 
+#region androidx
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-ads-identifier = { module = "androidx.ads:ads-identifier", version.ref = "androidx-ads" }
@@ -941,6 +887,7 @@ androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work" }
 androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "androidx-work" }
 androidx-work-gcm = { module = "androidx.work:work-gcm", version.ref = "androidx-work" }
+#endregion
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
