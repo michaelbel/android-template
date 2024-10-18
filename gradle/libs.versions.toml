@@ -26,16 +26,13 @@ google-gms-play-services-analytics-licence = "12.0.1"
 google-gms-play-services-appindex = "16.2.0"
 google-gms-play-services-appindexing = "9.8.0"
 google-gms-play-services-appinvite = "18.0.0"
+google-gms-play-services-license = "12.0.1"
 
 google-gms-play-services = "1.0.0"
 
-#google-play-ai-delivery = "x.y.z"
 google-play-app-update = "2.1.0"
 google-play-asset-delivery = "2.2.2"
-#google-play-core = "1.0.0"
 google-play-feature-delivery = "2.1.0"
-#google-play-grouping = "1.0.0"
-#google-play-integrity = "1.0.0"
 google-play-review = "2.0.1"
 
 google-material = "1.12.0"
@@ -320,13 +317,13 @@ google-gms-play-services-afs-native = { module = "com.google.android.gms:play-se
 google-gms-play-services-all-wear = { module = "com.google.android.gms:play-services-all-wear", version.ref = "google-gms-play-services-all-wear" }
 google-gms-play-services-analytics = { module = "com.google.android.gms:play-services-analytics", version.ref = "google-gms-play-services-analytics" }
 google-gms-play-services-analytics-impl = { module = "com.google.android.gms:play-services-analytics-impl", version.ref = "google-gms-play-services-analytics" }
-google-gms-play-services-analytics-impl-license = { module = "com.google.android.gms:play-services-analytics-impl-license", version.ref = "google-gms-play-services-analytics-licence" }
-google-gms-play-services-analytics-license = { module = "com.google.android.gms:play-services-analytics-license", version.ref = "google-gms-play-services-analytics-licence" }
+google-gms-play-services-analytics-impl-license = { module = "com.google.android.gms:play-services-analytics-impl-license", version.ref = "google-gms-play-services-license" }
+google-gms-play-services-analytics-license = { module = "com.google.android.gms:play-services-analytics-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-appindex = { module = "com.google.android.gms:play-services-appindex", version.ref = "google-gms-play-services-appindex" }
 google-gms-play-services-appindexing = { module = "com.google.android.gms:play-services-appindexing", version.ref = "google-gms-play-services-appindexing" }
 google-gms-play-services-appinvite = { module = "com.google.android.gms:play-services-appinvite", version.ref = "google-gms-play-services-appinvite" }
+google-gms-play-services-appinvite-license = { module = "com.google.android.gms:play-services-appinvite-license", version.ref = "google-gms-play-services-license" }
 
-google-gms-play-services-appinvite-license = { module = "com.google.android.gms:play-services-appinvite-license", version.ref = "google-gms-play-services" }
 google-gms-play-services-appsearch = { module = "com.google.android.gms:play-services-appsearch", version.ref = "google-gms-play-services" }
 google-gms-play-services-appset = { module = "com.google.android.gms:play-services-appset", version.ref = "google-gms-play-services" }
 google-gms-play-services-appstate = { module = "com.google.android.gms:play-services-appstate", version.ref = "google-gms-play-services" }
@@ -454,21 +451,18 @@ google-gms-play-services-wallet-license = { module = "com.google.android.gms:pla
 google-gms-play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "google-gms-play-services" }
 google-gms-play-services-wearable-license = { module = "com.google.android.gms:play-services-wearable-license", version.ref = "google-gms-play-services" }
 
-#google-play-ai-delivery = { module = "com.google.android.play:ai-delivery", version.ref = "google-play-ai-delivery" }
+#region google-play
 google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update" }
 google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery" }
-#google-play-core-common = { module = "com.google.android.play:core-common", version.ref = "google-play-core" }
-#google-play-core-ktx = { module = "com.google.android.play:core-ktx", version.ref = "google-play-core" }
 google-play-feature-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-feature-delivery" }
-#google-play-grouping = { module = "com.google.android.play:grouping", version.ref = "google-play-grouping" }
-#google-play-integrity = { module = "com.google.android.play:integrity", version.ref = "google-play-integrity" }
 google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review" }
-
+#endregion
+#region google-material
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 google-material-compose-theme-adapter = { module = "com.google.android.material:compose-theme-adapter", version.ref = "google-material-compose-theme-adapter" }
 google-material-compose-theme-adapter3 = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "google-material-compose-theme-adapter" }
 google-material-compose-theme-core = { module = "com.google.android.material:compose-theme-adapter-core", version.ref = "google-material-compose-theme-adapter" }
-
+#endregion
 #region firebase
 google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
 google-firebase-ads = { module = "com.google.firebase:firebase-ads", version.ref = "google-firebase-ads" }
@@ -563,7 +557,6 @@ google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-k
 google-firebase-storage-license = { module = "com.google.firebase:firebase-storage-license", version.ref = "google-firebase-license" }
 google-firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "google-firebase-vertexai" }
 #endregion
-
 #region androidx
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
