@@ -17,7 +17,6 @@ google-ksp = "2.0.20-1.0.25"
 google-services = "4.4.2"
 google-gson = "2.11.0"
 
-google-gms-play-services = "12.0.1"
 google-gms-play-services-ads = "23.4.0"
 google-gms-play-services-ads-identifier = "18.1.0"
 google-gms-play-services-afs = "19.1.0"
@@ -401,7 +400,6 @@ kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collec
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
 #endregion
 #region google-play-services
-google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services" }
 google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services-ads-identifier" }
@@ -1012,7 +1010,7 @@ koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
 #endregion
-#region test
+
 junit = { module = "junit:junit", version.ref = "junit" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
@@ -1027,7 +1025,6 @@ kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest"
 kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso" }
 kaspresso-allure-support = { module = "com.kaspersky.android-components:kaspresso-allure-support", version.ref = "kaspresso" }
 kaspresso-compose-support = { module = "com.kaspersky.android-components:kaspresso-compose-support", version.ref = "kaspresso" }
-#endregion
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
