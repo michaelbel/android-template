@@ -16,7 +16,7 @@ kotlinx-atomicfu = "0.25.0"
 google-ksp = "2.0.20-1.0.25"
 google-services = "4.4.2"
 
-google-gms-play-services2 = "12.0.1" # rename
+google-gms-play-services = "12.0.1"
 google-gms-play-services-ads = "23.4.0"
 google-gms-play-services-ads-identifier = "18.1.0"
 google-gms-play-services-afs = "19.1.0"
@@ -28,12 +28,137 @@ google-gms-play-services-appindexing = "9.8.0"
 google-gms-play-services-appinvite = "18.0.0"
 google-gms-play-services-license = "12.0.1"
 
-google-gms-play-services = "1.0.0"
+google-gms-play-services-appsearch = "16.0.1"
+google-gms-play-services-appset = "16.1.0"
+google-gms-play-services-appstate = "8.4.0"
+google-gms-play-services-audience = "17.0.0"
+google-gms-play-services-auth = "21.2.0"
+google-gms-play-services-auth-api-phone = "18.1.0"
+google-gms-play-services-auth-api-phone-license = "12.0.1"
+google-gms-play-services-auth-base = "18.0.13"
+google-gms-play-services-auth-base-license = "12.0.1"
+google-gms-play-services-auth-blockstore = "16.4.0"
+google-gms-play-services-auth-license = "11.4.2"
+google-gms-play-services-awareness = "19.1.0"
+google-gms-play-services-awareness-license = "12.0.1"
+google-gms-play-services-base = "18.5.0"
+google-gms-play-services-base-license = "12.0.1"
+google-gms-play-services-base-testing = "16.1.0"
+google-gms-play-services-basement = "18.4.0"
+google-gms-play-services-basement-license = "12.0.1"
+google-gms-play-services-cast = "21.5.0"
+google-gms-play-services-cast-framework = "21.5.0"
+google-gms-play-services-cast-framework-license = "12.0.1"
+google-gms-play-services-cast-license = "12.0.1"
+google-gms-play-services-cast-tv = "21.1.0"
+google-gms-play-services-clearcut = "17.0.0"
+google-gms-play-services-cloud-messaging = "17.3.0"
+google-gms-play-services-code-scanner = "16.1.0"
+google-gms-play-services-contextmanager = "9.4.0"
+google-gms-play-services-cronet = "18.1.0"
+google-gms-play-services-device-posture = "16.1.1"
+google-gms-play-services-deviceperformance = "16.1.0"
+google-gms-play-services-drive = "17.0.0"
+google-gms-play-services-drive-license = "12.0.1"
+google-gms-play-services-dtdi = "1.0.0"
+google-gms-play-services-fido = "21.1.0"
+google-gms-play-services-fido-license = "12.0.1"
+google-gms-play-services-fitness = "21.2.0"
+google-gms-play-services-fitness-license = "12.0.1"
+google-gms-play-services-flags = "18.1.0"
+google-gms-play-services-games = "23.2.0"
+google-gms-play-services-games-license = "12.0.1"
+google-gms-play-services-games-v2 = "20.1.2"
+google-gms-play-services-games-v2-native-c = "1.0.0"
+google-gms-play-services-gass = "20.0.0"
+google-gms-play-services-gass-license = "12.0.1"
+google-gms-play-services-gcm = "17.0.0"
+google-gms-play-services-gcm-license = "12.0.1"
+google-gms-play-services-gni-native-c = "1.0.0"
+google-gms-play-services-home = "16.0.0"
+google-gms-play-services-identity = "18.1.0"
+google-gms-play-services-identity-credentials = "1.0.0"
+google-gms-play-services-identity-license = "12.0.1"
+google-gms-play-services-iid = "17.0.0"
+google-gms-play-services-iid-license = "12.0.1"
+google-gms-play-services-instantapps = "18.1.0"
+google-gms-play-services-instantapps-license = "12.0.1"
+google-gms-play-services-location = "21.3.0"
+google-gms-play-services-location-license = "12.0.1"
+google-gms-play-services-maps = "19.0.0"
+google-gms-play-services-maps-license = "12.0.1"
+google-gms-play-services-measurement = "22.1.2"
+google-gms-play-services-measurement-api = "22.1.2"
+google-gms-play-services-measurement-base = "22.1.2"
+google-gms-play-services-measurement-impl = "22.1.2"
+google-gms-play-services-measurement-sdk = "22.1.2"
+google-gms-play-services-measurement-sdk-api = "22.1.2"
+google-gms-play-services-mlkit-barcode-scanning = "18.3.1"
+google-gms-play-services-mlkit-document-scanner = "1.0.0"
+google-gms-play-services-mlkit-face-detection = "17.1.0"
+google-gms-play-services-mlkit-image-labeling = "16.0.8"
+google-gms-play-services-mlkit-image-labeling-custom = "1.0.0"
+google-gms-play-services-mlkit-language-id = "17.0.0"
+google-gms-play-services-mlkit-smart-reply = "1.0.0"
+google-gms-play-services-mlkit-subject-segmentation = "1.0.0"
+google-gms-play-services-mlkit-text-recognition = "19.0.1"
+google-gms-play-services-mlkit-text-recognition-chinese = "16.0.1"
+google-gms-play-services-mlkit-text-recognition-common = "19.1.0"
+google-gms-play-services-mlkit-text-recognition-devanagari = "16.0.1"
+google-gms-play-services-mlkit-text-recognition-japanese = "16.0.1"
+google-gms-play-services-mlkit-text-recognition-korean = "16.0.1"
+google-gms-play-services-nearby = "19.3.0"
+google-gms-play-services-nearby-license = "12.0.1"
+google-gms-play-services-oss-licenses = "17.1.0"
+google-gms-play-services-oss-licenses-license = "12.0.1"
+google-gms-play-services-pal = "20.3.0"
+google-gms-play-services-panorama = "17.1.0"
+google-gms-play-services-panorama-license = "12.0.1"
+google-gms-play-services-password-complexity = "18.1.0"
+google-gms-play-services-pay = "16.5.0"
+google-gms-play-services-phenotype = "17.0.0"
+google-gms-play-services-places = "17.1.0"
+google-gms-play-services-places-license = "12.0.1"
+google-gms-play-services-places-placereport = "1.0.0"
+google-gms-play-services-plus = "17.0.0"
+google-gms-play-services-plus-license = "12.0.1"
+google-gms-play-services-recaptcha = "17.1.0"
+google-gms-play-services-recaptchabase = "16.1.0"
+google-gms-play-services-safetynet = "18.1.0"
+google-gms-play-services-safetynet-license = "12.0.1"
+google-gms-play-services-stats = "17.1.0"
+google-gms-play-services-streamprotect = "16.1.0"
+google-gms-play-services-tagmanager = "18.1.0"
+google-gms-play-services-tagmanager-api = "18.1.0"
+google-gms-play-services-tagmanager-api-license = "12.0.1"
+google-gms-play-services-tagmanager-license = "12.0.1"
+google-gms-play-services-tagmanager-v4-impl = "18.1.0"
+google-gms-play-services-tagmanager-v4-impl-license = "12.0.1"
+google-gms-play-services-tasks = "18.2.0"
+google-gms-play-services-tasks-license = "12.0.1"
+google-gms-play-services-tasks-native-c = "1.0.0"
+google-gms-play-services-tflite-acceleration-service = "1.0.0"
+google-gms-play-services-tflite-gpu = "16.2.0"
+google-gms-play-services-tflite-impl = "16.1.0"
+google-gms-play-services-tflite-java = "16.1.0"
+google-gms-play-services-tflite-support = "16.1.0"
+google-gms-play-services-threadnetwork = "16.2.1"
+google-gms-play-services-vision = "20.1.3"
+google-gms-play-services-vision-common = "19.1.3"
+google-gms-play-services-vision-common-license = "12.0.1"
+google-gms-play-services-vision-face-contour-internal = "16.1.0"
+google-gms-play-services-vision-image-label = "18.1.1"
+google-gms-play-services-vision-image-labeling-internal = "16.1.0"
+google-gms-play-services-vision-license = "12.0.1"
+google-gms-play-services-wallet = "19.4.0"
+google-gms-play-services-wallet-license = "12.0.1"
+google-gms-play-services-wearable = "18.2.0"
+google-gms-play-services-wearable-license = "12.0.1"
 
 google-play-app-update = "2.1.0"
 google-play-asset-delivery = "2.2.2"
 google-play-feature-delivery = "2.1.0"
-google-play-review = "2.0.1"
+google-play-review = "2.0.2"
 
 google-material = "1.12.0"
 google-material-compose-theme-adapter = "1.2.1"
@@ -113,30 +238,30 @@ google-firebase-storage-common = "17.0.0"
 google-firebase-vertexai = "1.0.0"
 google-firebase-license = "12.0.1"
 
-androidx-activity = "1.9.2"
+androidx-activity = "1.9.3"
 androidx-ads = "1.0.0-alpha05"
-androidx-annotation = "1.8.2"
+androidx-annotation = "1.9.0"
 androidx-annotation-experimental = "1.4.1"
 androidx-appcompat = "1.7.0"
-androidx-appsearch = "1.1.0-alpha05"
+androidx-appsearch = "1.1.0-alpha06"
 androidx-arch-core = "2.2.0"
 androidx-asynclayoutinflater = "1.0.0"
 androidx-autofill = "1.1.0"
-androidx-benchmark = "1.3.2"
+androidx-benchmark = "1.3.3"
 androidx-biometric = "1.2.0-alpha05"
 androidx-bluetooth = "1.0.0-alpha02"
 androidx-browser = "1.8.0"
 androidx-car-app = "1.4.0"
-androidx-camera = "1.4.0-rc03"
+androidx-camera = "1.4.0-rc04"
 androidx-camera-viewfinder = "1.4.0-alpha07"
 androidx-camera-viewfinder-compose = "1.0.0-alpha02"
 androidx-cardview = "1.0.0"
 androidx-collection = "1.4.4"
-androidx-compose-animation = "1.7.3"
-androidx-compose-foundation = "1.7.3"
-androidx-compose-runtime = "1.7.3"
-androidx-compose-ui = "1.7.3"
-androidx-compose-material = "1.7.3"
+androidx-compose-animation = "1.7.4"
+androidx-compose-foundation = "1.7.4"
+androidx-compose-runtime = "1.7.4"
+androidx-compose-ui = "1.7.4"
+androidx-compose-material = "1.7.4"
 androidx-compose-material3 = "1.3.0"
 androidx-compose-material3-adaptive = "1.0.0"
 androidx-compose-material3-adaptive-navigation-suite = "1.3.0"
@@ -152,11 +277,11 @@ androidx-core-performance = "1.0.0"
 androidx-core-remoteviews = "1.1.0"
 androidx-core-role = "1.0.0"
 androidx-core-splashscreen = "1.0.1"
-androidx-core-location = "1.0.0-alpha02"
+androidx-core-location = "1.0.0-alpha03"
 androidx-core-i18n = "1.0.0-alpha01"
 androidx-core-telecom = "1.0.0-alpha03"
-androidx-core-uwb = "1.0.0-alpha08"
-androidx-credentials = "1.5.0-alpha05"
+androidx-core-uwb = "1.0.0-alpha09"
+androidx-credentials = "1.5.0-alpha06"
 androidx-credentials-e2ee = "1.0.0-alpha02"
 androidx-cursoradapter = "1.0.0"
 androidx-customview = "1.1.0"
@@ -177,14 +302,14 @@ androidx-games-frame-pacing = "2.1.2"
 androidx-games-memory-advice = "2.0.1"
 androidx-games-text-input = "3.0.4"
 androidx-games-performance-tuner = "2.0.0"
-androidx-glance = "1.1.0"
+androidx-glance = "1.1.1"
 androidx-glance-wear = "1.0.0-alpha05"
-androidx-graphics-core = "1.0.1"
+androidx-graphics-core = "1.0.2"
 androidx-graphics-path = "1.0.1"
 androidx-graphics-shapes = "1.0.1"
 androidx-gridlayout = "1.0.0"
 androidx-health = "1.0.0-rc02"
-androidx-health-connect = "1.1.0-alpha09"
+androidx-health-connect = "1.1.0-alpha10"
 androidx-heifwriter = "1.1.0-alpha03"
 androidx-hilt = "1.2.0"
 androidx-hilt-lifecycle = "1.0.0-alpha03"
@@ -204,7 +329,7 @@ androidx-localbroadcastmanager = "1.1.0"
 androidx-media3 = "1.4.1"
 androidx-mediarouter = "1.7.0"
 androidx-metrics = "1.0.0-beta01"
-androidx-navigation = "2.8.2"
+androidx-navigation = "2.8.3"
 androidx-paging = "3.3.2"
 androidx-palette = "1.0.0"
 androidx-pdf = "1.0.0-alpha03"
@@ -238,7 +363,7 @@ androidx-test-ext-junit = "1.2.1"
 androidx-test-ext-junit-gtest = "1.0.0-alpha02"
 androidx-test-ext-truth = "1.6.0"
 androidx-test-monitor = "1.7.2"
-androidx-test-orchestrator = "1.5.0"
+androidx-test-orchestrator = "1.5.1"
 androidx-test-runner = "1.6.2"
 androidx-test-rules = "1.6.1"
 androidx-test-services = "1.5.0"
@@ -261,9 +386,9 @@ androidx-wear-ongoing = "1.0.0"
 androidx-wear-phone-interactions = "1.0.1"
 androidx-wear-remote-interactions = "1.0.0"
 androidx-wear-compose = "1.4.0"
-androidx-wear-compose-material3 = "1.0.0-alpha26"
-androidx-wear-protolayout = "1.2.0"
-androidx-wear-tiles = "1.4.0"
+androidx-wear-compose-material3 = "1.0.0-alpha27"
+androidx-wear-protolayout = "1.2.1"
+androidx-wear-tiles = "1.4.1"
 androidx-wear-watchface = "1.2.1"
 androidx-webkit = "1.12.1"
 androidx-window = "1.3.0"
@@ -306,7 +431,7 @@ kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collec
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
 #endregion
 
-google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services2" }
+google-gms-play-services = { module = "com.google.android.gms:play-services", version.ref = "google-gms-play-services" }
 google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services-ads-identifier" }
@@ -324,132 +449,132 @@ google-gms-play-services-appindexing = { module = "com.google.android.gms:play-s
 google-gms-play-services-appinvite = { module = "com.google.android.gms:play-services-appinvite", version.ref = "google-gms-play-services-appinvite" }
 google-gms-play-services-appinvite-license = { module = "com.google.android.gms:play-services-appinvite-license", version.ref = "google-gms-play-services-license" }
 
-google-gms-play-services-appsearch = { module = "com.google.android.gms:play-services-appsearch", version.ref = "google-gms-play-services" }
-google-gms-play-services-appset = { module = "com.google.android.gms:play-services-appset", version.ref = "google-gms-play-services" }
-google-gms-play-services-appstate = { module = "com.google.android.gms:play-services-appstate", version.ref = "google-gms-play-services" }
-google-gms-play-services-audience = { module = "com.google.android.gms:play-services-audience", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth-api-phone = { module = "com.google.android.gms:play-services-auth-api-phone", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth-api-phone-license = { module = "com.google.android.gms:play-services-auth-api-phone-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth-base = { module = "com.google.android.gms:play-services-auth-base", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth-base-license = { module = "com.google.android.gms:play-services-auth-base-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth-blockstore = { module = "com.google.android.gms:play-services-auth-blockstore", version.ref = "google-gms-play-services" }
-google-gms-play-services-auth-license = { module = "com.google.android.gms:play-services-auth-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-awareness = { module = "com.google.android.gms:play-services-awareness", version.ref = "google-gms-play-services" }
-google-gms-play-services-awareness-license = { module = "com.google.android.gms:play-services-awareness-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "google-gms-play-services" }
-google-gms-play-services-base-license = { module = "com.google.android.gms:play-services-base-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-base-testing = { module = "com.google.android.gms:play-services-base-testing", version.ref = "google-gms-play-services" }
-google-gms-play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "google-gms-play-services" }
-google-gms-play-services-basement-license = { module = "com.google.android.gms:play-services-basement-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-cast = { module = "com.google.android.gms:play-services-cast", version.ref = "google-gms-play-services" }
-google-gms-play-services-cast-framework = { module = "com.google.android.gms:play-services-cast-framework", version.ref = "google-gms-play-services" }
-google-gms-play-services-cast-framework-license = { module = "com.google.android.gms:play-services-cast-framework-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-cast-license = { module = "com.google.android.gms:play-services-cast-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-cast-tv = { module = "com.google.android.gms:play-services-cast-tv", version.ref = "google-gms-play-services" }
-google-gms-play-services-clearcut = { module = "com.google.android.gms:play-services-clearcut", version.ref = "google-gms-play-services" }
-google-gms-play-services-cloud-messaging = { module = "com.google.android.gms:play-services-cloud-messaging", version.ref = "google-gms-play-services" }
-google-gms-play-services-code-scanner = { module = "com.google.android.gms:play-services-code-scanner", version.ref = "google-gms-play-services" }
-google-gms-play-services-contextmanager = { module = "com.google.android.gms:play-services-contextmanager", version.ref = "google-gms-play-services" }
-google-gms-play-services-cronet = { module = "com.google.android.gms:play-services-cronet", version.ref = "google-gms-play-services" }
-google-gms-play-services-device-posture = { module = "com.google.android.gms:play-services-device-posture", version.ref = "google-gms-play-services" }
-google-gms-play-services-deviceperformance = { module = "com.google.android.gms:play-services-deviceperformance", version.ref = "google-gms-play-services" }
-google-gms-play-services-drive = { module = "com.google.android.gms:play-services-drive", version.ref = "google-gms-play-services" }
-google-gms-play-services-drive-license = { module = "com.google.android.gms:play-services-drive-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-dtdi = { module = "com.google.android.gms:play-services-dtdi", version.ref = "google-gms-play-services" }
-google-gms-play-services-fido = { module = "com.google.android.gms:play-services-fido", version.ref = "google-gms-play-services" }
-google-gms-play-services-fido-license = { module = "com.google.android.gms:play-services-fido-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-fitness = { module = "com.google.android.gms:play-services-fitness", version.ref = "google-gms-play-services" }
-google-gms-play-services-fitness-license = { module = "com.google.android.gms:play-services-fitness-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-flags = { module = "com.google.android.gms:play-services-flags", version.ref = "google-gms-play-services" }
-google-gms-play-services-games = { module = "com.google.android.gms:play-services-games", version.ref = "google-gms-play-services" }
-google-gms-play-services-games-license = { module = "com.google.android.gms:play-services-games-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-games-v2 = { module = "com.google.android.gms:play-services-games-v2", version.ref = "google-gms-play-services" }
-google-gms-play-services-games-v2-native-c = { module = "com.google.android.gms:play-services-games-v2-native-c", version.ref = "google-gms-play-services" }
-google-gms-play-services-gass = { module = "com.google.android.gms:play-services-gass", version.ref = "google-gms-play-services" }
-google-gms-play-services-gass-license = { module = "com.google.android.gms:play-services-gass-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-gcm = { module = "com.google.android.gms:play-services-gcm", version.ref = "google-gms-play-services" }
-google-gms-play-services-gcm-license = { module = "com.google.android.gms:play-services-gcm-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-gni-native-c = { module = "com.google.android.gms:play-services-gni-native-c", version.ref = "google-gms-play-services" }
-google-gms-play-services-home = { module = "com.google.android.gms:play-services-home", version.ref = "google-gms-play-services" }
-google-gms-play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "google-gms-play-services" }
-google-gms-play-services-identity-credentials = { module = "com.google.android.gms:play-services-identity-credentials", version.ref = "google-gms-play-services" }
-google-gms-play-services-identity-license = { module = "com.google.android.gms:play-services-identity-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-iid = { module = "com.google.android.gms:play-services-iid", version.ref = "google-gms-play-services" }
-google-gms-play-services-iid-license = { module = "com.google.android.gms:play-services-iid-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-gms-play-services" }
-google-gms-play-services-instantapps-license = { module = "com.google.android.gms:play-services-instantapps-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-gms-play-services" }
-google-gms-play-services-location-license = { module = "com.google.android.gms:play-services-location-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "google-gms-play-services" }
-google-gms-play-services-maps-license = { module = "com.google.android.gms:play-services-maps-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-measurement = { module = "com.google.android.gms:play-services-measurement", version.ref = "google-gms-play-services" }
-google-gms-play-services-measurement-api = { module = "com.google.android.gms:play-services-measurement-api", version.ref = "google-gms-play-services" }
-google-gms-play-services-measurement-base = { module = "com.google.android.gms:play-services-measurement-base", version.ref = "google-gms-play-services" }
-google-gms-play-services-measurement-impl = { module = "com.google.android.gms:play-services-measurement-impl", version.ref = "google-gms-play-services" }
-google-gms-play-services-measurement-sdk = { module = "com.google.android.gms:play-services-measurement-sdk", version.ref = "google-gms-play-services" }
-google-gms-play-services-measurement-sdk-api = { module = "com.google.android.gms:play-services-measurement-sdk-api", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-barcode-scanning = { module = "com.google.android.gms:play-services-mlkit-barcode-scanning", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-face-detection = { module = "com.google.android.gms:play-services-mlkit-face-detection", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-image-labeling = { module = "com.google.android.gms:play-services-mlkit-image-labeling", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-image-labeling-custom = { module = "com.google.android.gms:play-services-mlkit-image-labeling-custom", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-language-id = { module = "com.google.android.gms:play-services-mlkit-language-id", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-smart-reply = { module = "com.google.android.gms:play-services-mlkit-smart-reply", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-subject-segmentation = { module = "com.google.android.gms:play-services-mlkit-subject-segmentation", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-text-recognition-chinese = { module = "com.google.android.gms:play-services-mlkit-text-recognition-chinese", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-text-recognition-common = { module = "com.google.android.gms:play-services-mlkit-text-recognition-common", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-text-recognition-devanagari = { module = "com.google.android.gms:play-services-mlkit-text-recognition-devanagari", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-text-recognition-japanese = { module = "com.google.android.gms:play-services-mlkit-text-recognition-japanese", version.ref = "google-gms-play-services" }
-google-gms-play-services-mlkit-text-recognition-korean = { module = "com.google.android.gms:play-services-mlkit-text-recognition-korean", version.ref = "google-gms-play-services" }
-google-gms-play-services-nearby = { module = "com.google.android.gms:play-services-nearby", version.ref = "google-gms-play-services" }
-google-gms-play-services-nearby-license = { module = "com.google.android.gms:play-services-nearby-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "google-gms-play-services" }
-google-gms-play-services-oss-licenses-license = { module = "com.google.android.gms:play-services-oss-licenses-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-pal = { module = "com.google.android.gms:play-services-pal", version.ref = "google-gms-play-services" }
-google-gms-play-services-panorama = { module = "com.google.android.gms:play-services-panorama", version.ref = "google-gms-play-services" }
-google-gms-play-services-panorama-license = { module = "com.google.android.gms:play-services-panorama-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-password-complexity = { module = "com.google.android.gms:play-services-password-complexity", version.ref = "google-gms-play-services" }
-google-gms-play-services-pay = { module = "com.google.android.gms:play-services-pay", version.ref = "google-gms-play-services" }
-google-gms-play-services-phenotype = { module = "com.google.android.gms:play-services-phenotype", version.ref = "google-gms-play-services" }
-google-gms-play-services-places = { module = "com.google.android.gms:play-services-places", version.ref = "google-gms-play-services" }
-google-gms-play-services-places-license = { module = "com.google.android.gms:play-services-places-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-places-placereport = { module = "com.google.android.gms:play-services-places-placereport", version.ref = "google-gms-play-services" }
-google-gms-play-services-plus = { module = "com.google.android.gms:play-services-plus", version.ref = "google-gms-play-services" }
-google-gms-play-services-plus-license = { module = "com.google.android.gms:play-services-plus-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-recaptcha = { module = "com.google.android.gms:play-services-recaptcha", version.ref = "google-gms-play-services" }
-google-gms-play-services-recaptchabase = { module = "com.google.android.gms:play-services-recaptchabase", version.ref = "google-gms-play-services" }
-google-gms-play-services-safetynet = { module = "com.google.android.gms:play-services-safetynet", version.ref = "google-gms-play-services" }
-google-gms-play-services-safetynet-license = { module = "com.google.android.gms:play-services-safetynet-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-stats = { module = "com.google.android.gms:play-services-stats", version.ref = "google-gms-play-services" }
-google-gms-play-services-streamprotect = { module = "com.google.android.gms:play-services-streamprotect", version.ref = "google-gms-play-services" }
-google-gms-play-services-tagmanager = { module = "com.google.android.gms:play-services-tagmanager", version.ref = "google-gms-play-services" }
-google-gms-play-services-tagmanager-api = { module = "com.google.android.gms:play-services-tagmanager-api", version.ref = "google-gms-play-services" }
-google-gms-play-services-tagmanager-api-license = { module = "com.google.android.gms:play-services-tagmanager-api-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-tagmanager-license = { module = "com.google.android.gms:play-services-tagmanager-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-tagmanager-v4-impl = { module = "com.google.android.gms:play-services-tagmanager-v4-impl", version.ref = "google-gms-play-services" }
-google-gms-play-services-tagmanager-v4-impl-license = { module = "com.google.android.gms:play-services-tagmanager-v4-impl-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-tasks = { module = "com.google.android.gms:play-services-tasks", version.ref = "google-gms-play-services" }
-google-gms-play-services-tasks-license = { module = "com.google.android.gms:play-services-tasks-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-tasks-native-c = { module = "com.google.android.gms:play-services-tasks-native-c", version.ref = "google-gms-play-services" }
-google-gms-play-services-tflite-acceleration-service = { module = "com.google.android.gms:play-services-tflite-acceleration-service", version.ref = "google-gms-play-services" }
-google-gms-play-services-tflite-gpu = { module = "com.google.android.gms:play-services-tflite-gpu", version.ref = "google-gms-play-services" }
-google-gms-play-services-tflite-impl = { module = "com.google.android.gms:play-services-tflite-impl", version.ref = "google-gms-play-services" }
-google-gms-play-services-tflite-java = { module = "com.google.android.gms:play-services-tflite-java", version.ref = "google-gms-play-services" }
-google-gms-play-services-tflite-support = { module = "com.google.android.gms:play-services-tflite-support", version.ref = "google-gms-play-services" }
-google-gms-play-services-threadnetwork = { module = "com.google.android.gms:play-services-threadnetwork", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision = { module = "com.google.android.gms:play-services-vision", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision-common = { module = "com.google.android.gms:play-services-vision-common", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision-common-license = { module = "com.google.android.gms:play-services-vision-common-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision-face-contour-internal = { module = "com.google.android.gms:play-services-vision-face-contour-internal", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision-image-label = { module = "com.google.android.gms:play-services-vision-image-label", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision-image-labeling-internal = { module = "com.google.android.gms:play-services-vision-image-labeling-internal", version.ref = "google-gms-play-services" }
-google-gms-play-services-vision-license = { module = "com.google.android.gms:play-services-vision-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-wallet = { module = "com.google.android.gms:play-services-wallet", version.ref = "google-gms-play-services" }
-google-gms-play-services-wallet-license = { module = "com.google.android.gms:play-services-wallet-license", version.ref = "google-gms-play-services" }
-google-gms-play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "google-gms-play-services" }
-google-gms-play-services-wearable-license = { module = "com.google.android.gms:play-services-wearable-license", version.ref = "google-gms-play-services" }
+google-gms-play-services-appsearch = { module = "com.google.android.gms:play-services-appsearch", version.ref = "google-gms-play-services-appsearch" }
+google-gms-play-services-appset = { module = "com.google.android.gms:play-services-appset", version.ref = "google-gms-play-services-appset" }
+google-gms-play-services-appstate = { module = "com.google.android.gms:play-services-appstate", version.ref = "google-gms-play-services-appstate" }
+google-gms-play-services-audience = { module = "com.google.android.gms:play-services-audience", version.ref = "google-gms-play-services-audience" }
+google-gms-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "google-gms-play-services-auth" }
+google-gms-play-services-auth-api-phone = { module = "com.google.android.gms:play-services-auth-api-phone", version.ref = "google-gms-play-services-auth-api-phone" }
+google-gms-play-services-auth-api-phone-license = { module = "com.google.android.gms:play-services-auth-api-phone-license", version.ref = "google-gms-play-services-auth-api-phone-license" }
+google-gms-play-services-auth-base = { module = "com.google.android.gms:play-services-auth-base", version.ref = "google-gms-play-services-auth-base" }
+google-gms-play-services-auth-base-license = { module = "com.google.android.gms:play-services-auth-base-license", version.ref = "google-gms-play-services-auth-base-license" }
+google-gms-play-services-auth-blockstore = { module = "com.google.android.gms:play-services-auth-blockstore", version.ref = "google-gms-play-services-auth-blockstore" }
+google-gms-play-services-auth-license = { module = "com.google.android.gms:play-services-auth-license", version.ref = "google-gms-play-services-auth-license" }
+google-gms-play-services-awareness = { module = "com.google.android.gms:play-services-awareness", version.ref = "google-gms-play-services-awareness" }
+google-gms-play-services-awareness-license = { module = "com.google.android.gms:play-services-awareness-license", version.ref = "google-gms-play-services-awareness-license" }
+google-gms-play-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "google-gms-play-services-base" }
+google-gms-play-services-base-license = { module = "com.google.android.gms:play-services-base-license", version.ref = "google-gms-play-services-base-license" }
+google-gms-play-services-base-testing = { module = "com.google.android.gms:play-services-base-testing", version.ref = "google-gms-play-services-base-testing" }
+google-gms-play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "google-gms-play-services-basement" }
+google-gms-play-services-basement-license = { module = "com.google.android.gms:play-services-basement-license", version.ref = "google-gms-play-services-basement-license" }
+google-gms-play-services-cast = { module = "com.google.android.gms:play-services-cast", version.ref = "google-gms-play-services-cast" }
+google-gms-play-services-cast-framework = { module = "com.google.android.gms:play-services-cast-framework", version.ref = "google-gms-play-services-cast-framework" }
+google-gms-play-services-cast-framework-license = { module = "com.google.android.gms:play-services-cast-framework-license", version.ref = "google-gms-play-services-cast-framework-license" }
+google-gms-play-services-cast-license = { module = "com.google.android.gms:play-services-cast-license", version.ref = "google-gms-play-services-cast-license" }
+google-gms-play-services-cast-tv = { module = "com.google.android.gms:play-services-cast-tv", version.ref = "google-gms-play-services-cast-tv" }
+google-gms-play-services-clearcut = { module = "com.google.android.gms:play-services-clearcut", version.ref = "google-gms-play-services-clearcut" }
+google-gms-play-services-cloud-messaging = { module = "com.google.android.gms:play-services-cloud-messaging", version.ref = "google-gms-play-services-cloud-messaging" }
+google-gms-play-services-code-scanner = { module = "com.google.android.gms:play-services-code-scanner", version.ref = "google-gms-play-services-code-scanner" }
+google-gms-play-services-contextmanager = { module = "com.google.android.gms:play-services-contextmanager", version.ref = "google-gms-play-services-contextmanager" }
+google-gms-play-services-cronet = { module = "com.google.android.gms:play-services-cronet", version.ref = "google-gms-play-services-cronet" }
+google-gms-play-services-device-posture = { module = "com.google.android.gms:play-services-device-posture", version.ref = "google-gms-play-services-device-posture" }
+google-gms-play-services-deviceperformance = { module = "com.google.android.gms:play-services-deviceperformance", version.ref = "google-gms-play-services-deviceperformance" }
+google-gms-play-services-drive = { module = "com.google.android.gms:play-services-drive", version.ref = "google-gms-play-services-drive" }
+google-gms-play-services-drive-license = { module = "com.google.android.gms:play-services-drive-license", version.ref = "google-gms-play-services-drive-license" }
+google-gms-play-services-dtdi = { module = "com.google.android.gms:play-services-dtdi", version.ref = "google-gms-play-services-dtdi" }
+google-gms-play-services-fido = { module = "com.google.android.gms:play-services-fido", version.ref = "google-gms-play-services-fido" }
+google-gms-play-services-fido-license = { module = "com.google.android.gms:play-services-fido-license", version.ref = "google-gms-play-services-fido-license" }
+google-gms-play-services-fitness = { module = "com.google.android.gms:play-services-fitness", version.ref = "google-gms-play-services-fitness" }
+google-gms-play-services-fitness-license = { module = "com.google.android.gms:play-services-fitness-license", version.ref = "google-gms-play-services-fitness-license" }
+google-gms-play-services-flags = { module = "com.google.android.gms:play-services-flags", version.ref = "google-gms-play-services-flags" }
+google-gms-play-services-games = { module = "com.google.android.gms:play-services-games", version.ref = "google-gms-play-services-games" }
+google-gms-play-services-games-license = { module = "com.google.android.gms:play-services-games-license", version.ref = "google-gms-play-services-games-license" }
+google-gms-play-services-games-v2 = { module = "com.google.android.gms:play-services-games-v2", version.ref = "google-gms-play-services-games-v2" }
+google-gms-play-services-games-v2-native-c = { module = "com.google.android.gms:play-services-games-v2-native-c", version.ref = "google-gms-play-services-games-v2-native-c" }
+google-gms-play-services-gass = { module = "com.google.android.gms:play-services-gass", version.ref = "google-gms-play-services-gass" }
+google-gms-play-services-gass-license = { module = "com.google.android.gms:play-services-gass-license", version.ref = "google-gms-play-services-gass-license" }
+google-gms-play-services-gcm = { module = "com.google.android.gms:play-services-gcm", version.ref = "google-gms-play-services-gcm" }
+google-gms-play-services-gcm-license = { module = "com.google.android.gms:play-services-gcm-license", version.ref = "google-gms-play-services-gcm-license" }
+google-gms-play-services-gni-native-c = { module = "com.google.android.gms:play-services-gni-native-c", version.ref = "google-gms-play-services-gni-native-c" }
+google-gms-play-services-home = { module = "com.google.android.gms:play-services-home", version.ref = "google-gms-play-services-home" }
+google-gms-play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "google-gms-play-services-identity" }
+google-gms-play-services-identity-credentials = { module = "com.google.android.gms:play-services-identity-credentials", version.ref = "google-gms-play-services-identity-credentials" }
+google-gms-play-services-identity-license = { module = "com.google.android.gms:play-services-identity-license", version.ref = "google-gms-play-services-identity-license" }
+google-gms-play-services-iid = { module = "com.google.android.gms:play-services-iid", version.ref = "google-gms-play-services-iid" }
+google-gms-play-services-iid-license = { module = "com.google.android.gms:play-services-iid-license", version.ref = "google-gms-play-services-iid-license" }
+google-gms-play-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-gms-play-services-instantapps" }
+google-gms-play-services-instantapps-license = { module = "com.google.android.gms:play-services-instantapps-license", version.ref = "google-gms-play-services-instantapps-license" }
+google-gms-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-gms-play-services-location" }
+google-gms-play-services-location-license = { module = "com.google.android.gms:play-services-location-license", version.ref = "google-gms-play-services-location-license" }
+google-gms-play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "google-gms-play-services-maps" }
+google-gms-play-services-maps-license = { module = "com.google.android.gms:play-services-maps-license", version.ref = "google-gms-play-services-maps-license" }
+google-gms-play-services-measurement = { module = "com.google.android.gms:play-services-measurement", version.ref = "google-gms-play-services-measurement" }
+google-gms-play-services-measurement-api = { module = "com.google.android.gms:play-services-measurement-api", version.ref = "google-gms-play-services-measurement-api" }
+google-gms-play-services-measurement-base = { module = "com.google.android.gms:play-services-measurement-base", version.ref = "google-gms-play-services-measurement-base" }
+google-gms-play-services-measurement-impl = { module = "com.google.android.gms:play-services-measurement-impl", version.ref = "google-gms-play-services-measurement-impl" }
+google-gms-play-services-measurement-sdk = { module = "com.google.android.gms:play-services-measurement-sdk", version.ref = "google-gms-play-services-measurement-sdk" }
+google-gms-play-services-measurement-sdk-api = { module = "com.google.android.gms:play-services-measurement-sdk-api", version.ref = "google-gms-play-services-measurement-sdk-api" }
+google-gms-play-services-mlkit-barcode-scanning = { module = "com.google.android.gms:play-services-mlkit-barcode-scanning", version.ref = "google-gms-play-services-mlkit-barcode-scanning" }
+google-gms-play-services-mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "google-gms-play-services-mlkit-document-scanner" }
+google-gms-play-services-mlkit-face-detection = { module = "com.google.android.gms:play-services-mlkit-face-detection", version.ref = "google-gms-play-services-mlkit-face-detection" }
+google-gms-play-services-mlkit-image-labeling = { module = "com.google.android.gms:play-services-mlkit-image-labeling", version.ref = "google-gms-play-services-mlkit-image-labeling" }
+google-gms-play-services-mlkit-image-labeling-custom = { module = "com.google.android.gms:play-services-mlkit-image-labeling-custom", version.ref = "google-gms-play-services-mlkit-image-labeling-custom" }
+google-gms-play-services-mlkit-language-id = { module = "com.google.android.gms:play-services-mlkit-language-id", version.ref = "google-gms-play-services-mlkit-language-id" }
+google-gms-play-services-mlkit-smart-reply = { module = "com.google.android.gms:play-services-mlkit-smart-reply", version.ref = "google-gms-play-services-mlkit-smart-reply" }
+google-gms-play-services-mlkit-subject-segmentation = { module = "com.google.android.gms:play-services-mlkit-subject-segmentation", version.ref = "google-gms-play-services-mlkit-subject-segmentation" }
+google-gms-play-services-mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "google-gms-play-services-mlkit-text-recognition" }
+google-gms-play-services-mlkit-text-recognition-chinese = { module = "com.google.android.gms:play-services-mlkit-text-recognition-chinese", version.ref = "google-gms-play-services-mlkit-text-recognition-chinese" }
+google-gms-play-services-mlkit-text-recognition-common = { module = "com.google.android.gms:play-services-mlkit-text-recognition-common", version.ref = "google-gms-play-services-mlkit-text-recognition-common" }
+google-gms-play-services-mlkit-text-recognition-devanagari = { module = "com.google.android.gms:play-services-mlkit-text-recognition-devanagari", version.ref = "google-gms-play-services-mlkit-text-recognition-devanagari" }
+google-gms-play-services-mlkit-text-recognition-japanese = { module = "com.google.android.gms:play-services-mlkit-text-recognition-japanese", version.ref = "google-gms-play-services-mlkit-text-recognition-japanese" }
+google-gms-play-services-mlkit-text-recognition-korean = { module = "com.google.android.gms:play-services-mlkit-text-recognition-korean", version.ref = "google-gms-play-services-mlkit-text-recognition-korean" }
+google-gms-play-services-nearby = { module = "com.google.android.gms:play-services-nearby", version.ref = "google-gms-play-services-nearby" }
+google-gms-play-services-nearby-license = { module = "com.google.android.gms:play-services-nearby-license", version.ref = "google-gms-play-services-nearby-license" }
+google-gms-play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "google-gms-play-services-oss-licenses" }
+google-gms-play-services-oss-licenses-license = { module = "com.google.android.gms:play-services-oss-licenses-license", version.ref = "google-gms-play-services-oss-licenses-license" }
+google-gms-play-services-pal = { module = "com.google.android.gms:play-services-pal", version.ref = "google-gms-play-services-pal" }
+google-gms-play-services-panorama = { module = "com.google.android.gms:play-services-panorama", version.ref = "google-gms-play-services-panorama" }
+google-gms-play-services-panorama-license = { module = "com.google.android.gms:play-services-panorama-license", version.ref = "google-gms-play-services-panorama-license" }
+google-gms-play-services-password-complexity = { module = "com.google.android.gms:play-services-password-complexity", version.ref = "google-gms-play-services-password-complexity" }
+google-gms-play-services-pay = { module = "com.google.android.gms:play-services-pay", version.ref = "google-gms-play-services-pay" }
+google-gms-play-services-phenotype = { module = "com.google.android.gms:play-services-phenotype", version.ref = "google-gms-play-services-phenotype" }
+google-gms-play-services-places = { module = "com.google.android.gms:play-services-places", version.ref = "google-gms-play-services-places" }
+google-gms-play-services-places-license = { module = "com.google.android.gms:play-services-places-license", version.ref = "google-gms-play-services-places-license" }
+google-gms-play-services-places-placereport = { module = "com.google.android.gms:play-services-placereport", version.ref = "google-gms-play-services-places-placereport" }
+google-gms-play-services-plus = { module = "com.google.android.gms:play-services-plus", version.ref = "google-gms-play-services-plus" }
+google-gms-play-services-plus-license = { module = "com.google.android.gms:play-services-plus-license", version.ref = "google-gms-play-services-plus-license" }
+google-gms-play-services-recaptcha = { module = "com.google.android.gms:play-services-recaptcha", version.ref = "google-gms-play-services-recaptcha" }
+google-gms-play-services-recaptchabase = { module = "com.google.android.gms:play-services-recaptchabase", version.ref = "google-gms-play-services-recaptchabase" }
+google-gms-play-services-safetynet = { module = "com.google.android.gms:play-services-safetynet", version.ref = "google-gms-play-services-safetynet" }
+google-gms-play-services-safetynet-license = { module = "com.google.android.gms:play-services-safetynet-license", version.ref = "google-gms-play-services-safetynet-license" }
+google-gms-play-services-stats = { module = "com.google.android.gms:play-services-stats", version.ref = "google-gms-play-services-stats" }
+google-gms-play-services-streamprotect = { module = "com.google.android.gms:play-services-streamprotect", version.ref = "google-gms-play-services-streamprotect" }
+google-gms-play-services-tagmanager = { module = "com.google.android.gms:play-services-tagmanager", version.ref = "google-gms-play-services-tagmanager" }
+google-gms-play-services-tagmanager-api = { module = "com.google.android.gms:play-services-tagmanager-api", version.ref = "google-gms-play-services-tagmanager-api" }
+google-gms-play-services-tagmanager-api-license = { module = "com.google.android.gms:play-services-tagmanager-api-license", version.ref = "google-gms-play-services-tagmanager-api-license" }
+google-gms-play-services-tagmanager-license = { module = "com.google.android.gms:play-services-tagmanager-license", version.ref = "google-gms-play-services-tagmanager-license" }
+google-gms-play-services-tagmanager-v4-impl = { module = "com.google.android.gms:play-services-tagmanager-v4-impl", version.ref = "google-gms-play-services-tagmanager-v4-impl" }
+google-gms-play-services-tagmanager-v4-impl-license = { module = "com.google.android.gms:play-services-tagmanager-v4-impl-license", version.ref = "google-gms-play-services-tagmanager-v4-impl-license" }
+google-gms-play-services-tasks = { module = "com.google.android.gms:play-services-tasks", version.ref = "google-gms-play-services-tasks" }
+google-gms-play-services-tasks-license = { module = "com.google.android.gms:play-services-tasks-license", version.ref = "google-gms-play-services-tasks-license" }
+google-gms-play-services-tasks-native-c = { module = "com.google.android.gms:play-services-tasks-native-c", version.ref = "google-gms-play-services-tasks-native-c" }
+google-gms-play-services-tflite-acceleration-service = { module = "com.google.android.gms:play-services-tflite-acceleration-service", version.ref = "google-gms-play-services-tflite-acceleration-service" }
+google-gms-play-services-tflite-gpu = { module = "com.google.android.gms:play-services-tflite-gpu", version.ref = "google-gms-play-services-tflite-gpu" }
+google-gms-play-services-tflite-impl = { module = "com.google.android.gms:play-services-tflite-impl", version.ref = "google-gms-play-services-tflite-impl" }
+google-gms-play-services-tflite-java = { module = "com.google.android.gms:play-services-tflite-java", version.ref = "google-gms-play-services-tflite-java" }
+google-gms-play-services-tflite-support = { module = "com.google.android.gms:play-services-tflite-support", version.ref = "google-gms-play-services-tflite-support" }
+google-gms-play-services-threadnetwork = { module = "com.google.android.gms:play-services-threadnetwork", version.ref = "google-gms-play-services-threadnetwork" }
+google-gms-play-services-vision = { module = "com.google.android.gms:play-services-vision", version.ref = "google-gms-play-services-vision" }
+google-gms-play-services-vision-common = { module = "com.google.android.gms:play-services-vision-common", version.ref = "google-gms-play-services-vision-common" }
+google-gms-play-services-vision-common-license = { module = "com.google.android.gms:play-services-vision-common-license", version.ref = "google-gms-play-services-vision-common-license" }
+google-gms-play-services-vision-face-contour-internal = { module = "com.google.android.gms:play-services-vision-face-contour-internal", version.ref = "google-gms-play-services-vision-face-contour-internal" }
+google-gms-play-services-vision-image-label = { module = "com.google.android.gms:play-services-vision-image-label", version.ref = "google-gms-play-services-vision-image-label" }
+google-gms-play-services-vision-image-labeling-internal = { module = "com.google.android.gms:play-services-vision-image-labeling-internal", version.ref = "google-gms-play-services-vision-image-labeling-internal" }
+google-gms-play-services-vision-license = { module = "com.google.android.gms:play-services-vision-license", version.ref = "google-gms-play-services-vision-license" }
+google-gms-play-services-wallet = { module = "com.google.android.gms:play-services-wallet", version.ref = "google-gms-play-services-wallet" }
+google-gms-play-services-wallet-license = { module = "com.google.android.gms:play-services-wallet-license", version.ref = "google-gms-play-services-wallet-license" }
+google-gms-play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "google-gms-play-services-wearable" }
+google-gms-play-services-wearable-license = { module = "com.google.android.gms:play-services-wearable-license", version.ref = "google-gms-play-services-wearable-license" }
 
 #region google-play
 google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update" }
