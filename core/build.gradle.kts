@@ -294,7 +294,7 @@ dependencies {
     api(libs.google.firebase.storage.common.license)
     api(libs.google.firebase.storage.ktx)
     api(libs.google.firebase.storage.license)
-    //api(libs.google.firebase.vertexai)
+    api(libs.google.firebase.vertexai)
 
     api(libs.androidx.activity.ktx)
     api(libs.androidx.activity.compose)
