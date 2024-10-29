@@ -16,7 +16,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.michaelbel.template.core"
+    namespace = "org.michaelbel.template.core" // Replace with your own namespace
 
     defaultConfig {
         compileSdk = libs.versions.compile.sdk.get().toInt()
@@ -313,8 +313,8 @@ dependencies {
     api(libs.androidx.arch.core.testing)
     api(libs.androidx.asynclayoutinflater)
     api(libs.androidx.autofill)
-    api(libs.androidx.benchmark.junit4)
-    api(libs.androidx.benchmark.macro.junit4)
+    //api(libs.androidx.benchmark.junit4)
+    //api(libs.androidx.benchmark.macro.junit4)
     api(libs.androidx.biometric.ktx)
     api(libs.androidx.bluetooth)
     //api(libs.androidx.bluetooth.testing) min sdk 33
@@ -450,11 +450,11 @@ dependencies {
     api(libs.androidx.lifecycle.process)
     api(libs.androidx.lifecycle.reactivestreams.ktx)
     api(libs.androidx.lifecycle.runtime.compose)
-    lintChecks(libs.androidx.lint.checks)
+    //lintChecks(libs.androidx.lint.checks)
     //api(libs.androidx.lint.api) not found
     //api(libs.androidx.lint.core) not found
     //api(libs.androidx.lint.annotations) not found
-    lintChecks(libs.androidx.lint.gradle)
+    //lintChecks(libs.androidx.lint.gradle)
     api(libs.androidx.loader.loader)
     //api(libs.androidx.loader.loader.testing)
     api(libs.androidx.localbroadcastmanager)

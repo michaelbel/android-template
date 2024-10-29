@@ -1,14 +1,17 @@
-name: Check PR
+name: Check Commit CI
 
 on:
+  push:
+    paths-ignore:
+      - '**.md'
   pull_request:
-    branches:
-      '**'
+    paths-ignore:
+      - '**.md'
   workflow_dispatch:
   
 concurrency:
   group: environment-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   pr:
@@ -25,10 +28,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       
-      - name: Setup JDK 11
+      - name: Setup JDK 21
         uses: actions/setup-java@v1
         with:
-          java-version: 1.11
+          java-version: 1.21
           
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
