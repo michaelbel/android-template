@@ -6,6 +6,10 @@ Android App Template
 
 This Android app template provides a foundation for quickly starting development. It includes pre-configured dependencies, code samples, and project structure, simplifying the creation and setup of new applications. The template helps reduce configuration time and allows developers to focus on implementing functionality, ensuring a smooth start.
 
+<div style="display: flex; justify-content: flex-start;">
+    <img src=".github/pics/img.png" width="33%" alt="Project Image">
+</div>
+
 ## Features
 - [x] Included all Kotlin dependencies
 - [x] Included all Google Play Services dependencies
