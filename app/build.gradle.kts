@@ -2,6 +2,7 @@
 
 import org.apache.commons.io.output.ByteArrayOutputStream
 import java.io.FileInputStream
+import java.nio.charset.Charset
 import java.util.Properties
 
 plugins {
@@ -16,7 +17,7 @@ private val gitCommitsCount: Int by lazy {
         commandLine("git", "rev-list", "--count", "HEAD")
         standardOutput = stdout
     }
-    stdout.toString().trim().toInt()
+    stdout.toString(Charset.defaultCharset()).trim().toInt()
 }
 
 kotlin {
