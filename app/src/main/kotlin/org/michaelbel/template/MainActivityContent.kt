@@ -2,14 +2,24 @@
 
 package org.michaelbel.template
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Build
+import androidx.compose.material.icons.automirrored.outlined.Chat
+import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Phone
-import androidx.compose.material.icons.outlined.Refresh
+import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -28,6 +38,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -39,7 +53,7 @@ fun MainActivityContent(
     modifier: Modifier = Modifier
 ) {
     val navHostController = rememberNavController()
-    var selectedRoute by remember { mutableStateOf("compose") }
+    var selectedRoute by remember { mutableStateOf("home") }
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 
@@ -58,33 +72,73 @@ fun MainActivityContent(
             bottomBar = {
                 BottomAppBar {
                     NavigationBarItem(
-                        selected = selectedRoute == "compose",
-                        onClick = { selectedRoute = "compose" },
+                        selected = selectedRoute == "home",
+                        onClick = { selectedRoute = "home" },
                         icon = {
                            Icon(
-                               imageVector = Icons.Outlined.Refresh,
+                               imageVector = Icons.Outlined.Home,
                                contentDescription = null
                            )
                         },
                         label = {
                             Text(
-                                text = "Compose"
+                                text = "Home"
                             )
                         }
                     )
 
                     NavigationBarItem(
-                        selected = selectedRoute == "view",
-                        onClick = { selectedRoute = "view" },
+                        selected = selectedRoute == "chat",
+                        onClick = { selectedRoute = "chat" },
+                        icon = {
+                            BadgedBox(
+                                badge = {
+                                    this@BottomAppBar.AnimatedVisibility(
+                                        visible = selectedRoute != "chat",
+                                        enter = fadeIn(),
+                                        exit = fadeOut()
+                                    ) {
+                                        Box(
+                                            contentAlignment = Alignment.Center,
+                                            modifier = Modifier
+                                                .size(24.dp)
+                                                .background(color = Color.Red, shape = CircleShape)
+                                        ) {
+                                            Text(
+                                                text = "12",
+                                                color = Color.White,
+                                                fontSize = 12.sp,
+                                                fontWeight = FontWeight.Medium
+                                            )
+                                        }
+                                    }
+                                }
+                            ) {
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Outlined.Chat,
+                                    contentDescription = null
+                                )
+                            }
+                        },
+                        label = {
+                            Text(
+                                text = "Chat"
+                            )
+                        }
+                    )
+
+                    NavigationBarItem(
+                        selected = selectedRoute == "settings",
+                        onClick = { selectedRoute = "settings" },
                         icon = {
                             Icon(
-                                imageVector = Icons.Outlined.Build,
+                                imageVector = Icons.Outlined.Settings,
                                 contentDescription = null
                             )
                         },
                         label = {
                             Text(
-                                text = "View"
+                                text = "Settings"
                             )
                         }
                     )
@@ -100,8 +154,8 @@ fun MainActivityContent(
                     onClick = {
                         coroutineScope.launch {
                             snackbarHostState.showSnackbar(
-                                message = "How do you do?",
-                                actionLabel = "Ok"
+                                message = "Single-line snackbar with action",
+                                actionLabel = "Action"
                             )
                         }
                     }
@@ -118,48 +172,36 @@ fun MainActivityContent(
                 startDestination = selectedRoute,
                 modifier = Modifier.padding(innerPadding)
             ) {
-                composable("compose") {
-                    val composeNavHostController = rememberNavController()
-
-                    NavHost(
-                        navController = composeNavHostController,
-                        startDestination = "compose-home"
+                composable("home") {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
                     ) {
-                        composable("compose-home") {
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .padding(innerPadding),
-                                verticalArrangement = Arrangement.Center,
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                Text(
-                                    text = "Compose Screen"
-                                )
-                            }
-                        }
+                        Text(
+                            text = "Home"
+                        )
                     }
                 }
-                composable("view") {
-                    val viewNavHostController = rememberNavController()
-
-                    NavHost(
-                        navController = viewNavHostController,
-                        startDestination = "view-home"
+                composable("chat") {
+                    Row(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        composable("view-home") {
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .padding(innerPadding),
-                                verticalArrangement = Arrangement.Center,
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                Text(
-                                    text = "View Screen"
-                                )
-                            }
-                        }
+                        Text(
+                            text = "Chat"
+                        )
+                    }
+                }
+                composable("settings") {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "Settings"
+                        )
                     }
                 }
             }
