@@ -57,11 +57,6 @@ fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat) -> Wind
     ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets -> block(v, insets) }
 }
 
-/**
- * Задать действие по событию onGlobalLayout, снимающееся после первого срабатывания
- *
- * @param onGlobalLayoutAction действие, происходящее при событии onGlobalLayout
- */
 fun View.setOnGlobalLayoutListenerSingle(onGlobalLayoutAction: () -> Unit) {
     viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
         override fun onGlobalLayout() {
@@ -71,9 +66,6 @@ fun View.setOnGlobalLayoutListenerSingle(onGlobalLayoutAction: () -> Unit) {
     })
 }
 
-/**
- * Найти дочернее представление по координатам во время нажатия на экран.
- */
 fun findViewAtPosition(parent: View, x: Int, y: Int): View? {
     if (parent is ViewGroup) {
         val viewGroup: ViewGroup = parent

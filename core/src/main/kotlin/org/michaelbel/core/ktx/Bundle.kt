@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "UnusedReceiverParameter")
 
 package org.michaelbel.core.ktx
 

@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "UnusedReceiverParameter")
 
 package org.michaelbel.core.entity
 
@@ -102,7 +102,7 @@ fun <T> Either<T>.takeOrNull(): T? = when (this) {
  * Transform the success result by applying a function to it to another Either
  * ```kotlin
  * useCase.getData()
- *     .flatMap { Reaction.of { "Flatmapped data" } }
+ *     .flatMap { Reaction.of { "FlatMapped data" } }
  * ```
  */
 inline fun <T, R> Either<T>.flatMap(f: (T) -> Either<R>) = try {

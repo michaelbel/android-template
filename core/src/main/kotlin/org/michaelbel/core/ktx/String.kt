@@ -31,21 +31,12 @@ fun Context.loadProperty(fileName: String, key: String): String? {
     }
 }
 
-/**
- * Валидация текста на наличие только латиницы и кириллицы.
- */
 inline val CharSequence.isTextOnly: Boolean
     get() = isNotEmpty() && isNotBlank() && matches("[a-zA-Zа-яА-я]+".toRegex())
 
-/**
- * Проверка валидность URL.
- */
 inline val String.isUrlValid: Boolean
     get() = PatternsCompat.WEB_URL.matcher(this).matches()
 
-/**
- * Splits by spaces, newlines, and tabs only
- */
 val String.camelCased: String
     get() {
         val split = lowercase().split(' ', '\n', '\t').toMutableList()

@@ -20,10 +20,6 @@ val RecyclerView.gridLayoutManager: GridLayoutManager
 val RecyclerView.staggeredGridLayoutManager: StaggeredGridLayoutManager
     get() = layoutManager as StaggeredGridLayoutManager
 
-/**
- * Моментальный скролл списка до n-го элемента сверху [RecyclerView],
- * а затем плавный скролл до первого.
- */
 fun RecyclerView.smartScrollToTop() {
     val smoothScrollCount = 10
     val scrollLambda = { lastVisiblePosition: Int ->
