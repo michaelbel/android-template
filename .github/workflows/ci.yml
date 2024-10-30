@@ -35,11 +35,11 @@ jobs:
 
       - name: extract version name
         id: version_name
-        run: echo "VERSION_NAME=$(grep 'versionName' app/build.gradle.kts | awk '{print $3}' | tr -d '\"')" >> $GITHUB_ENV
+        run: echo "VERSION_NAME=$(sed -n 's/.*versionName[ ]*=[ ]*\"\\(.*\\)\".*/\\1/p' app/build.gradle.kts)" >> $GITHUB_ENV
 
       - name: extract version code
         id: version_code
-        run: echo "VERSION_CODE=$(grep 'versionCode' app/build.gradle.kts | awk '{print $3}')" >> $GITHUB_ENV
+        run: echo "VERSION_CODE=$(sed -n 's/.*versionCode[ ]*=[ ]*\\([0-9]*\\).*/\\1/p' app/build.gradle.kts)" >> $GITHUB_ENV
 
       - name: cache gradle dependencies
         uses: actions/cache@v3
