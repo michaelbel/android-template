@@ -102,6 +102,18 @@ tasks.register("prepareReleaseNotes") {
     }
 }
 
+tasks.register("printVersionName") {
+    doLast {
+        println(android.defaultConfig.versionName)
+    }
+}
+
+tasks.register("printVersionCode") {
+    doLast {
+        println(android.defaultConfig.versionCode)
+    }
+}
+
 afterEvaluate {
     tasks.findByName("assembleDebug")?.finalizedBy("prepareReleaseNotes")
     tasks.findByName("assembleRelease")?.finalizedBy("prepareReleaseNotes")
