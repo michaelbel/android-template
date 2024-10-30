@@ -59,14 +59,17 @@ jobs:
           path: |
             app/build/outputs/apk
 
-      - name: Run printVersionName task and capture output
+      - name: expose version name
         id: version_name
         run: |
           VERSION_NAME=$(./gradlew printVersionName -q)
           echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
 
-      - name: Display version name
-        run: echo "The application version name is $VERSION_NAME"
+      - name: expose version code
+        id: version_name
+        run: |
+          VERSION_CODE=$(./gradlew printVersionCode -q)
+          echo "VERSION_CODE=VERSION_CODE" >> $GITHUB_ENV
 
       - name: send telegram message
         uses: appleboy/telegram-action@master
@@ -77,7 +80,7 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           message: |
-            ✅ *${{ env.VERSION_NAME }}(${ env.VERSION_NAME })*
+            ✅ *${{ env.VERSION_NAME }}(${{ env.VERSION_CODE }})*
             *Ветка:* ${{ github.ref_name }}
             *Коммит:* ${{ github.sha }}
           document: app/build/outputs/apk/**/*.apk
