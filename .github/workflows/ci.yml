@@ -69,7 +69,7 @@ jobs:
         id: version_code
         run: |
           VERSION_CODE=$(./gradlew printVersionCode -q)
-          echo "VERSION_CODE=VERSION_CODE" >> $GITHUB_ENV
+          echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
       - name: send telegram message
         uses: appleboy/telegram-action@master

@@ -32,7 +32,7 @@ android {
         applicationId = "org.michaelbel.template" // Replace with your own applicationId
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
-        versionCode = 1234//gitCommitsCount
+        versionCode = gitCommitsCount
         versionName = "1.0"
         setProperty("archivesBaseName", "Template-v$versionName($versionCode)") // Replace with your own app's name
     }
@@ -110,7 +110,7 @@ tasks.register("printVersionName") {
 
 tasks.register("printVersionCode") {
     doLast {
-        println(android.defaultConfig.versionCode)
+        println(android.defaultConfig.versionCode.toString())
     }
 }
 
