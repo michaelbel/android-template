@@ -26,15 +26,6 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
-
-      - name: Run printVersionName task and capture output
-        id: version_name
-        run: |
-          VERSION_NAME=$(./gradlew printVersionName -q)
-          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
-
-      - name: Display version name
-        run: echo "The application version name is $VERSION_NAME"
       
       - name: setup jdk 21
         uses: actions/setup-java@v4
@@ -67,6 +58,15 @@ jobs:
         with:
           path: |
             app/build/outputs/apk
+
+      - name: Run printVersionName task and capture output
+        id: version_name
+        run: |
+          VERSION_NAME=$(./gradlew printVersionName -q)
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
+
+      - name: Display version name
+        run: echo "The application version name is $VERSION_NAME"
 
       - name: send telegram message
         uses: appleboy/telegram-action@master
