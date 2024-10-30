@@ -32,12 +32,23 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+
+      - name: cash gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      - name: cache gradle wrapper
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/wrapper
+          key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
           
       - name: make gradlew executable
         run: chmod +x ./gradlew
-        
-#      - name: compile debug kotlin
-#        run: ./gradlew compileDebugKotlin
 
       - name: build debug artifact
         run: ./gradlew app:assembleDebug
