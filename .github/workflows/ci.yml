@@ -33,7 +33,7 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: cash gradle dependencies
+      - name: cache gradle dependencies
         uses: actions/cache@v3
         with:
           path: ~/.gradle/caches
@@ -66,5 +66,5 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_notification: false
           disable_web_page_preview: true
+          message: ✅ **Версия(Сборка)** \n Ветка
           document: app/build/outputs/apk/**/*.apk
-#          message_file: ./releaseNotes.txt
