@@ -91,7 +91,7 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           message: |
-            ✅ *${{ ANDROID_VERSION_NAME }}(${{ ANDROID_VERSION_CODE }})*
+            ✅ *${ANDROID_VERSION_NAME}(${ANDROID_VERSION_CODE})*
             *Ветка:* ${{ github.ref_name }}
             *Коммит:* ${{ github.sha }}
           document: app/build/outputs/apk/**/*.apk
