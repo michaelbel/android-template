@@ -46,7 +46,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
-import org.michaelbel.template.ui.TemplateTheme
+import org.michaelbel.template.ui.AppTheme
 
 @Composable
 fun MainActivityContent(
@@ -57,7 +57,7 @@ fun MainActivityContent(
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 
-    TemplateTheme {
+    AppTheme {
         Scaffold(
             modifier = modifier,
             topBar = {
