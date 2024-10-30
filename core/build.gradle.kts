@@ -643,6 +643,7 @@ dependencies {
     ksp(libs.kotlin.inject.compiler.ksp)
     api(libs.koin.android)
     api(libs.koin.androidx.compose)
+    api(libs.koin.androidx.workmanager)
     api(libs.koin.core)
     testApi(libs.koin.test)
     testApi(libs.koin.test.junit4)

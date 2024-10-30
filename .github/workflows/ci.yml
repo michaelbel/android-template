@@ -36,14 +36,24 @@ jobs:
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
         
-#      - name: Lint
-#        run: ./gradlew lint
-          
-#      - name: Detekt
-#        run: ./gradlew detekt
-        
-#      - name: Unit Tests
-#        run: ./gradlew testDebugUnitTest
-        
-      - name: Build
-        run: ./gradlew compileDebugKotlin
+#      - name: Build
+#        run: ./gradlew compileDebugKotlin
+
+      - name: Build Debug Artifacts
+        run: ./gradlew app:assembleDebug
+
+      - name: Upload Artifacts to Outputs
+        uses: actions/upload-artifact@v2
+        with:
+          path: |
+            app/build/outputs/apk
+
+      - name: Telegram Message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_notification: false
+          disable_web_page_preview: true
+          document: app/build/outputs/apk/**/*.apk
+#          message_file: ./releaseNotes.txt
