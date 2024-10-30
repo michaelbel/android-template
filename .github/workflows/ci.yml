@@ -68,8 +68,7 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           message: |
-            ✅ **Версия(Сборка)**
-            Ветка: ${{ github.ref_name }}
-            
-            Коммит: ${{ github.event.commits[0] }}
+            ✅ *Версия(Сборка)*
+            *Ветка:* ${{ github.ref_name }}
+            *Коммит:* ${{ github.sha }}
           document: app/build/outputs/apk/**/*.apk
