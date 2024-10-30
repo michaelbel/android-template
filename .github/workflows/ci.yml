@@ -33,14 +33,6 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: extract version name
-        id: version_name
-        run: echo "VERSION_NAME=$(sed -n 's/.*versionName[ ]*=[ ]*\"\\(.*\\)\".*/\\1/p' app/build.gradle.kts)" >> $GITHUB_ENV
-
-      - name: extract version code
-        id: version_code
-        run: echo "VERSION_CODE=$(sed -n 's/.*versionCode[ ]*=[ ]*\\([0-9]*\\).*/\\1/p' app/build.gradle.kts)" >> $GITHUB_ENV
-
       - name: cache gradle dependencies
         uses: actions/cache@v3
         with:
@@ -67,8 +59,22 @@ jobs:
           path: |
             app/build/outputs/apk
 
+      - name: Extract version name
+        run: |
+          export VERSION_NAME=$(sed -n 's/.*versionName[ ]*=[ ]*\"\\(.*\\)\".*/\\1/p' app/build.gradle.kts)
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
+
+      - name: Extract version code
+        run: |
+           export VERSION_CODE=$(sed -n 's/.*versionCode[ ]*=[ ]*\\([0-9]*\\).*/\\1/p' app/build.gradle.kts)
+           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
+
       - name: Use version info in text
-        run: echo "The application version is ${VERSION_NAME} and the build number is ${VERSION_CODE}."
+        env:
+          VERSION_NAME: ${{ env.VERSION_NAME }}
+          VERSION_CODE: ${{ env.VERSION_CODE }}
+        run: |
+          echo "The application version is $VERSION_NAME and the build number is $VERSION_CODE."
 
       - name: send telegram message
         uses: appleboy/telegram-action@master
