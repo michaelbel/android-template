@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-    api(libs.kotlin.reflect)
+    /*api(libs.kotlin.reflect)
     api(libs.kotlin.test)
     api(libs.kotlin.test.junit)
     api(libs.kotlinx.coroutines.core)
@@ -192,10 +192,10 @@ dependencies {
     api(libs.google.play.app.update.ktx)
     api(libs.google.play.asset.delivery.ktx)
     api(libs.google.play.feature.delivery.ktx)
-    api(libs.google.play.review.ktx)
+    api(libs.google.play.review.ktx)*/
 
     api(libs.google.material)
-    api(libs.google.material.compose.theme.adapter)
+    /*api(libs.google.material.compose.theme.adapter)
     //api(libs.google.material.compose.theme.adapter3)
     //api(libs.google.material.compose.theme.core)
     api(libs.google.gson)
@@ -294,14 +294,14 @@ dependencies {
     api(libs.google.firebase.storage.license)
     api(libs.google.firebase.vertexai)
 
-    api(libs.androidx.activity.ktx)
+    api(libs.androidx.activity.ktx)*/
     api(libs.androidx.activity.compose)
-    api(libs.androidx.ads.identifier)
+    /*api(libs.androidx.ads.identifier)
     api(libs.androidx.ads.identifier.provider)
     api(libs.androidx.annotation)
-    api(libs.androidx.annotation.experimental)
+    api(libs.androidx.annotation.experimental)*/
     api(libs.androidx.appcompat)
-    api(libs.androidx.appcompat.resources)
+    /*api(libs.androidx.appcompat.resources)
     api(libs.androidx.appsearch)
     ksp(libs.androidx.appsearch.compiler)
     api(libs.androidx.appsearch.local.storage)
@@ -333,36 +333,36 @@ dependencies {
     api(libs.androidx.camera.viewfinder.compose)
     api(libs.androidx.cardview)
     api(libs.androidx.collection)
-    api(libs.androidx.compose.animation)
+    api(libs.androidx.compose.animation)*/
     api(libs.androidx.compose.foundation)
     api(libs.androidx.compose.foundation.layout)
     api(libs.androidx.compose.material)
     api(libs.androidx.compose.material.icons.extended)
     api(libs.androidx.compose.material3)
-    api(libs.androidx.compose.material3.adaptive)
+    /*api(libs.androidx.compose.material3.adaptive)
     api(libs.androidx.compose.material3.adaptive.layout)
     api(libs.androidx.compose.material3.adaptive.navigation)
-    api(libs.androidx.compose.material3.adaptive.navigation.suite)
+    api(libs.androidx.compose.material3.adaptive.navigation.suite)*/
     api(libs.androidx.compose.runtime)
     api(libs.androidx.compose.ui)
     api(libs.androidx.compose.ui.tooling)
-    api(libs.androidx.compose.ui.test.junit4)
+    /*api(libs.androidx.compose.ui.test.junit4)
     api(libs.androidx.compose.ui.test.manifest)
     api(libs.androidx.compose.ui.util)
     api(libs.androidx.concurrent.futures.ktx)
     api(libs.androidx.constraintlayout)
     api(libs.androidx.constraintlayout.compose)
     api(libs.androidx.contentpager)
-    api(libs.androidx.coordinatorlayout)
+    api(libs.androidx.coordinatorlayout)*/
     api(libs.androidx.core.ktx)
-    api(libs.androidx.core.animation)
+    /*api(libs.androidx.core.animation)
     api(libs.androidx.core.animation.testing)
     api(libs.androidx.core.google.shortcuts)
     api(libs.androidx.core.performance)
     api(libs.androidx.core.remoteviews)
-    api(libs.androidx.core.role)
+    api(libs.androidx.core.role)*/
     api(libs.androidx.core.splashscreen)
-    api(libs.androidx.core.location.altitude)
+    /*api(libs.androidx.core.location.altitude)
     api(libs.androidx.core.location.altitude.external.protobuf)
     api(libs.androidx.core.location.altitude.proto)
     api(libs.androidx.core.i18n)
@@ -442,9 +442,9 @@ dependencies {
     api(libs.androidx.lifecycle.runtime)
     api(libs.androidx.lifecycle.livedata)
     api(libs.androidx.lifecycle.livedata.core.ktx)
-    api(libs.androidx.lifecycle.viewmodel.ktx)
+    api(libs.androidx.lifecycle.viewmodel.ktx)*/
     api(libs.androidx.lifecycle.viewmodel.compose)
-    api(libs.androidx.lifecycle.service)
+    /*api(libs.androidx.lifecycle.service)
     api(libs.androidx.lifecycle.process)
     api(libs.androidx.lifecycle.reactivestreams.ktx)
     api(libs.androidx.lifecycle.runtime.compose)
@@ -483,19 +483,19 @@ dependencies {
     api(libs.androidx.media3.datasource)
     api(libs.androidx.media3.common)
     api(libs.androidx.mediarouter)
-    api(libs.androidx.metrics)
+    api(libs.androidx.metrics)*/
     api(libs.androidx.navigation.compose)
-    api(libs.androidx.navigation.fragment.ktx)
+    /*api(libs.androidx.navigation.fragment.ktx)
     api(libs.androidx.navigation.fragment.compose)
-    api(libs.androidx.navigation.runtime.ktx)
-    api(libs.androidx.navigation.ui.ktx)
+    api(libs.androidx.navigation.runtime.ktx)*/
+    /*api(libs.androidx.navigation.ui.ktx)
     api(libs.androidx.navigation.common)
     api(libs.androidx.navigation.testing)
     api(libs.androidx.navigation.dynamic.features.fragment)
     api(libs.androidx.paging.rxjava2)
-    api(libs.androidx.paging.rxjava3)
+    api(libs.androidx.paging.rxjava3)*/
     api(libs.androidx.paging.compose)
-    api(libs.androidx.paging.common.ktx)
+    /*api(libs.androidx.paging.common.ktx)
     api(libs.androidx.paging.runtime.ktx)
     api(libs.androidx.palette.ktx)
     //api(libs.androidx.pdf.viewer) minSdkVersion 35
@@ -646,5 +646,5 @@ dependencies {
     api(libs.koin.androidx.workmanager)
     api(libs.koin.core)
     testApi(libs.koin.test)
-    testApi(libs.koin.test.junit4)
+    testApi(libs.koin.test.junit4)*/
 }
