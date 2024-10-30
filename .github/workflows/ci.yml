@@ -27,14 +27,14 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v4
 
-      - name: expose version name
+      - name: Run printVersionName task and capture output
+        id: version_name
         run: |
-          echo "::set-output name=VERSION_NAME::$(${{github.workspace}}/gradlew -q printVersionName)"
-        id: android_version
+          VERSION_NAME=$(./gradlew printVersionName -q)
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
 
-      - name: set version name as env
-        run: |
-          echo "version_name=${{steps.android_version.outputs.VERSION_NAME}}" >> $GITHUB_ENV
+      - name: Display version name
+        run: echo "The application version name is $VERSION_NAME"
       
       - name: setup jdk 21
         uses: actions/setup-java@v4
@@ -77,7 +77,7 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           message: |
-            ✅ *${{env.version_name}}($ANDROID_VERSION_CODE)*
+            ✅ *$$VERSION_NAME({$VERSION_NAME})*
             *Ветка:* ${{ github.ref_name }}
             *Коммит:* ${{ github.sha }}
           document: app/build/outputs/apk/**/*.apk
