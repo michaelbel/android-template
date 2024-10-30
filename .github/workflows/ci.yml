@@ -65,23 +65,6 @@ jobs:
           path: |
             app/build/outputs/apk
 
-      - name: Extract version name
-        run: |
-          export VERSION_NAME=$(sed -n 's/.*versionName[ ]*=[ ]*\"\\(.*\\)\".*/\\1/p' app/build.gradle.kts)
-          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
-
-      - name: Extract version code
-        run: |
-           export VERSION_CODE=$(sed -n 's/.*versionCode[ ]*=[ ]*\\([0-9]*\\).*/\\1/p' app/build.gradle.kts)
-           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
-
-      - name: Use version info in text
-        env:
-          VERSION_NAME: ${{ env.VERSION_NAME }}
-          VERSION_CODE: ${{ env.VERSION_CODE }}
-        run: |
-          echo "The application version is $VERSION_NAME and the build number is $VERSION_CODE."
-
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
@@ -91,7 +74,11 @@ jobs:
           disable_notification: false
           disable_web_page_preview: true
           message: |
+            ✅ *${{env.ANDROID_VERSION_NAME}}(${{env.ANDROID_VERSION_CODE}})*
+            ✅ *${{ANDROID_VERSION_NAME}}(${{ANDROID_VERSION_CODE}})*
             ✅ *${ANDROID_VERSION_NAME}(${ANDROID_VERSION_CODE})*
+            ✅ *${env.ANDROID_VERSION_NAME}(${env.ANDROID_VERSION_CODE})*
+            ✅ *$ANDROID_VERSION_NAME($ANDROID_VERSION_CODE)*
             *Ветка:* ${{ github.ref_name }}
             *Коммит:* ${{ github.sha }}
           document: app/build/outputs/apk/**/*.apk
