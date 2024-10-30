@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.Chat
+import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Phone
 import androidx.compose.material.icons.outlined.Settings
@@ -115,7 +115,7 @@ fun MainActivityContent(
                                 }
                             ) {
                                 Icon(
-                                    imageVector = Icons.AutoMirrored.Outlined.Chat,
+                                    imageVector = Icons.Outlined.Email,
                                     contentDescription = null
                                 )
                             }
