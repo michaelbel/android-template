@@ -67,6 +67,9 @@ jobs:
           path: |
             app/build/outputs/apk
 
+      - name: Use version info in text
+        run: echo "The application version is ${VERSION_NAME} and the build number is ${VERSION_CODE}."
+
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
