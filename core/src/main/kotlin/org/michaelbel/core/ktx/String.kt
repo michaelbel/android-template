@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "ObsoleteSdkInt")
 
 package org.michaelbel.core.ktx
 
@@ -12,7 +12,6 @@ import java.util.Properties
 
 fun String.append(text: String): String = "$this$text"
 
-@Suppress("Deprecation")
 inline val String.fromHtml: Spanned
     get() = if (Build.VERSION.SDK_INT >= 24) {
         Html.fromHtml(this, HtmlCompat.FROM_HTML_MODE_LEGACY)
@@ -58,34 +57,18 @@ val String.containsLetters: Boolean
 val String.containsNumbers: Boolean
     get() = matches(".*[0-9].*".toRegex())
 
-/**
- * Does not allow whitespace or symbols
- * Allows empty string
- */
 val String.isAlphanumeric: Boolean
     get() = matches("^[a-zA-Z0-9]*$".toRegex())
 
-/**
- * Does not allow whitespace or symbols
- * Allows empty string
- */
 val String.isAlphabetic: Boolean
     get() = matches("^[a-zA-Z]*$".toRegex())
 
-/**
- * Does not allow whitespace or symbols
- * Allows empty string
- */
 val String.isNumeric: Boolean
     get() = matches("^[0-9]*$".toRegex())
 
 val String.isEmail: Boolean
     get() = matches(PatternsCompat.EMAIL_ADDRESS.toRegex())
 
-/**
- * If there is more than one most common character,
- * this returns the character that occurred first in the String
- */
 val String.mostCommonChar: Char?
     get() {
         if (this.isEmpty()) return null

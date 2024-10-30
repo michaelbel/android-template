@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package org.michaelbel.core.ktx
 
 import android.app.Application

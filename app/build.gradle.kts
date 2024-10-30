@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage")
-
 import org.apache.commons.io.output.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.nio.charset.Charset

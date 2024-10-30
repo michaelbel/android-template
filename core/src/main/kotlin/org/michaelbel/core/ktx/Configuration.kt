@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("unused", "ObsoleteSdkInt")
 
 package org.michaelbel.core.ktx
 
@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 
-@Suppress("Deprecation")
 inline val Context.deviceWidth: Int
     get() {
         val windowManager: WindowManager = ContextCompat
@@ -25,9 +24,7 @@ inline val Context.deviceWidth: Int
 
         return if (Build.VERSION.SDK_INT >= 30) {
             val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
-            val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(
-                WindowInsets.Type.systemBars()
-            )
+            val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
             windowMetrics.bounds.width() - insets.left - insets.right
         } else {
             val displayMetrics = DisplayMetrics()
@@ -36,7 +33,6 @@ inline val Context.deviceWidth: Int
         }
     }
 
-@Suppress("Deprecation")
 inline val Context.deviceHeight: Int
     get() {
         val windowManager: WindowManager = ContextCompat
@@ -44,9 +40,7 @@ inline val Context.deviceHeight: Int
 
         return if (Build.VERSION.SDK_INT >= 30) {
             val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
-            val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(
-                WindowInsets.Type.systemBars()
-            )
+            val insets: Insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
             windowMetrics.bounds.height() - insets.top - insets.bottom
         } else {
             val displayMetrics = DisplayMetrics()
