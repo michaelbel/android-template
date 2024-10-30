@@ -43,7 +43,7 @@ jobs:
         run: ./gradlew app:assembleDebug
 
       - name: Upload Artifacts to Outputs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: |
             app/build/outputs/apk
