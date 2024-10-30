@@ -70,5 +70,6 @@ jobs:
           message: |
             ✅ *Версия(Сборка)*
             *Ветка:* ${{ github.ref_name }}
-            *Коммит:* ${{ github.sha::7 }}
+            *Коммит:* ${{ github.sha }}
+            *Коммит2:* ${GITHUB_SHA::7}
           document: app/build/outputs/apk/**/*.apk
