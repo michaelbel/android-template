@@ -18,3 +18,11 @@ This Android app template provides a foundation for quickly starting development
 - [x] Included all Firebase dependencies
 - [x] Included all AndroidX dependencies
 - [ ] Included all popular third-party dependencies
+
+## Configure
+* In the current `readme.md` file, update the project name, badges, description, and screenshot.
+* In `settings.gradle.kts`, update `rootProject.name`.
+* Rename the application package.
+* In the `build.gradle` file of the core module, update the `namespace`.
+* In the `build.gradle` file of the app module, update the `namespace`, `applicationId`, and `archivesBaseName`. If a release version is needed, add a `keystore.properties` file in the `config` directory.
+* In `strings.xml`, update `app_name`.
