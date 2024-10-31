@@ -80,7 +80,7 @@ jobs:
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
         run: |
-          MESSAGE="✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b> <pre>\n</pre> <b>Ветка:</b> ${{ github.ref_name }} <pre>\n</pre> <b>Коммит:</b> ${{ github.sha }}"
+          MESSAGE="✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b> </br> <b>Ветка:</b> ${{ github.ref_name }} </br> <b>Коммит:</b> ${{ github.sha }}"
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
             -F document="@${{ env.APK_PATH }}" \
