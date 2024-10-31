@@ -87,4 +87,4 @@ jobs:
             -F document="@${{ env.APK_PATH }}" \
             -F caption="$MESSAGE" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="Markdown"
+            -F parse_mode="MarkdownV2"
