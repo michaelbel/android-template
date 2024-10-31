@@ -71,16 +71,34 @@ jobs:
           VERSION_CODE=$(./gradlew printVersionCode -q)
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
+      - name: expose apk path
+        run: |
+          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
+
       - name: send telegram message
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          disable_notification: false
-          disable_web_page_preview: true
-          message: |
-            ✅ *${{ env.VERSION_NAME }}(${{ env.VERSION_CODE }})*
-            *Ветка:* ${{ github.ref_name }}
-            *Коммит:* ${{ github.sha }}
-          document: app/build/outputs/apk/**/*.apk
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+        run: |
+          MESSAGE="✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*\n*Ветка:* ${{ github.ref_name }}\n*Коммит:* ${{ github.sha }}"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.APK_PATH }}" \
+            -F caption="$MESSAGE" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="Markdown"
+
+#      - name: send telegram message
+#        uses: appleboy/telegram-action@master
+#        with:
+#          to: ${{ secrets.TELEGRAM_TO_ID }}
+#          token: ${{ secrets.TELEGRAM_TOKEN }}
+#          format: markdown
+#          disable_notification: false
+#          disable_web_page_preview: true
+#          message: |
+#            ✅ *${{ env.VERSION_NAME }}(${{ env.VERSION_CODE }})*
+#            *Ветка:* ${{ github.ref_name }}
+#            *Коммит:* ${{ github.sha }}
+#          document: app/build/outputs/apk/**/*.apk
