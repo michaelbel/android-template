@@ -1,6 +1,6 @@
+
 import org.apache.commons.io.output.ByteArrayOutputStream
 import java.io.FileInputStream
-import java.nio.charset.Charset
 import java.util.Properties
 
 plugins {
@@ -15,7 +15,7 @@ private val gitCommitsCount: Int by lazy {
         commandLine("git", "rev-list", "--count", "HEAD")
         standardOutput = stdout
     }
-    stdout.toString(Charset.defaultCharset()).trim().toInt()
+    stdout.toString(/*Charset.defaultCharset()*/).trim().toInt()
 }
 
 kotlin {
@@ -33,7 +33,7 @@ android {
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionCode = gitCommitsCount
-        versionName = "1.0"
+        versionName = "1.0.0"
         setProperty("archivesBaseName", "Template-v$versionName($versionCode)") // Replace with your own app's name
     }
 
