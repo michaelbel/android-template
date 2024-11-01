@@ -31,6 +31,7 @@ dependencies {
     api(libs.google.material)
     api(libs.androidx.activity.compose)
     api(libs.androidx.appcompat)
+    api(libs.androidx.compose.foundation)
     api(libs.androidx.compose.foundation.layout)
     api(libs.androidx.compose.material)
     api(libs.androidx.compose.material3)
