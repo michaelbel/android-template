@@ -79,13 +79,13 @@ jobs:
       - name: List all APK files
         run: |
           echo "Найденные файлы APK:"
-          for apk in $(find android-template/app/build/outputs/apk -name '*.apk'); do
+          for apk in $(find app/build/outputs/apk -name '*.apk'); do
             echo "$apk"
           done
 
       - name: expose apk path
         run: |
-          echo "APK_PATH=$(find android-template/app/build/outputs/apk -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
 
       - name: expose short commit sha
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
