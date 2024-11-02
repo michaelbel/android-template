@@ -52,8 +52,11 @@ jobs:
       - name: make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: build debug artifact
-        run: ./gradlew clean assembleDebug
+      - name: assemble debug artifact
+        run: ./gradlew assembleDebug
+
+      - name: assemble release artifact
+        run: ./gradlew assembleRelease
 
       - name: upload artifacts to outputs
         uses: actions/upload-artifact@v4
