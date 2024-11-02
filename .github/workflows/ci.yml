@@ -70,15 +70,16 @@ jobs:
           VERSION_CODE=$(./gradlew printVersionCode -q)
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
-      - name: expose apk path
-        run: |
-          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
+#      - name: expose apk path
+#        run: |
+#          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
 
       - name: send telegram message
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          APK: app/build/outputs/apk/**/*.apk
           MESSAGE: |
             ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
             <b>Ветка:</b> ${{ github.ref_name }}
@@ -86,7 +87,7 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
-            -F document="@${{ env.APK_PATH }}" \
+            -F document="@${{ env.APK }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
