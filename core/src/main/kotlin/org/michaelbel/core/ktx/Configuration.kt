@@ -3,6 +3,7 @@
 package org.michaelbel.core.ktx
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.graphics.Insets
 import android.os.Build
@@ -71,4 +72,23 @@ inline val screenHeightDp: Dp
     @Composable get() {
         val configuration: Configuration = LocalConfiguration.current
         return configuration.screenWidthDp.dp
+    }
+
+inline val Context.versionName: String?
+    get() = try {
+        packageManager.getPackageInfo(packageName, 0).versionName
+    } catch (e: PackageManager.NameNotFoundException) {
+        null
+    }
+
+inline val Context.versionCode: Long?
+    get() = try {
+        if (Build.VERSION.SDK_INT >= 28) {
+            packageManager.getPackageInfo(packageName, 0).longVersionCode
+        } else {
+            @Suppress("deprecation")
+            packageManager.getPackageInfo(packageName, 0).versionCode.toLong()
+        }
+    } catch (e: PackageManager.NameNotFoundException) {
+        null
     }
