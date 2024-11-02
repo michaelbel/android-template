@@ -53,7 +53,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: build debug artifact
-        run: ./gradlew app:assembleDebug
+        run: ./gradlew clean assembleDebug
 
       - name: upload artifacts to outputs
         uses: actions/upload-artifact@v4
@@ -75,7 +75,7 @@ jobs:
 
       - name: expose apk path
         run: |
-          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' -type f -exec stat -c '%Y %n' {} + | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
 
       - name: expose short commit sha
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
