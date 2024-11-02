@@ -12,7 +12,7 @@ plugins {
 
 private val gitCommitsCount: Int by lazy {
     val stdout = ByteArrayOutputStream()
-    rootProject.exec {
+    exec {
         commandLine("git", "rev-list", "--count", "HEAD")
         standardOutput = stdout
     }

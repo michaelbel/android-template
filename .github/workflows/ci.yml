@@ -20,7 +20,7 @@ jobs:
       KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
       KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
       KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
       - name: checkout repo
