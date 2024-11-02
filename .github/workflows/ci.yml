@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: |
-            android-template/app/build/outputs/apk
+            app/build/outputs/apk
 
       - name: expose version name
         id: version_name
