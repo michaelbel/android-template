@@ -78,7 +78,7 @@ jobs:
 
       - name: expose apk path
         run: |
-          echo "APK_PATH=$(find android-template/app/build/outputs/apk/**/**/*.apk)" >> $GITHUB_ENV
+          echo "APK_PATH=android-template/app/build/outputs/apk/**/**/*.apk" >> $GITHUB_ENV
 
       - name: expose short commit sha
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
