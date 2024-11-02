@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # клонирует репозиторий с историей коммитов
       
       - name: setup jdk 21
         uses: actions/setup-java@v4
@@ -76,9 +78,9 @@ jobs:
           VERSION_CODE=$(./gradlew printVersionCode -q)
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
-      - name: List all APK files
+      - name: list all apk files
         run: |
-          echo "Найденные файлы APK:"
+          echo "APKs:"
           for apk in $(find app/build/outputs/apk -name '*.apk'); do
             echo "$apk"
           done
