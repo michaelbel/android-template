@@ -58,7 +58,8 @@ fun Bitmap.contrastBitmap(contrast: Float): Bitmap {
         0F, 0F, contrast, 0F,
         0F, 0F, 0F, 0F,
         contrast, 0F, 0F, 0F,
-        0F, 0F, 1F, 0F)
+        0F, 0F, 1F, 0F
+    )
 
     val colorMatrix = ColorMatrix().apply {
         setSaturation(0F)
