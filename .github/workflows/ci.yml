@@ -74,6 +74,9 @@ jobs:
 #        run: |
 #          echo "APK_PATH=$(find app/build/outputs/apk -name '*.apk' | head -n 1)" >> $GITHUB_ENV
 
+      - name: Get short commit SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
       - name: send telegram message
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -84,6 +87,7 @@ jobs:
             ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
             <b>Ветка:</b> ${{ github.ref_name }}
             <b>Коммит:</b> ${{ github.sha }}
+            <b>Коммит коротыш:</b> ${{ env.SHORT_SHA }}
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
