@@ -49,10 +49,16 @@ fun <T> Either<T>.successOr(fallback: T): T {
 val Either<*>.failure: Boolean
     get() = this is Either.Failure
 
-val <T> Either<T>.data: T?
+val <T> Either<T>.data: T
+    get() = (this as Either.Success).value
+
+val <T> Either<T>.dataOrNull: T?
     get() = (this as? Either.Success)?.value
 
-val <T> Either<T>.throwable: Throwable?
+val <T> Either<T>.throwable: Throwable
+    get() = (this as Either.Failure).exception
+
+val <T> Either<T>.throwableOrNull: Throwable?
     get() = (this as? Either.Failure)?.exception
 
 /**

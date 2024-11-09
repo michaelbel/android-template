@@ -3,17 +3,24 @@
 package org.michaelbel.core.ktx
 
 import android.content.Context
-import android.graphics.Color
 import androidx.annotation.ArrayRes
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
+import androidx.compose.ui.graphics.Color
 import kotlin.math.floor
 import kotlin.math.roundToInt
+import android.graphics.Color as AndroidColor
 
 inline val Int.toHexColor: String
     get() = String.format("#%06X", 0xFFFFFF and this)
+
+inline val String.androidColor: Int
+    get() = AndroidColor.parseColor(this)
+
+inline val String.composeColor: Color
+    get() = Color(androidColor)
 
 fun Context.getAttrColor(@AttrRes colorAttr: Int): Int {
     var color = 0
@@ -47,11 +54,11 @@ fun Context.getColorArray(@ArrayRes arrayRes: Int): IntArray? {
 
 @ColorInt
 fun adjustAlpha(@ColorInt color: Int, @FloatRange(from = 0.00, to = 1.00) factor: Float): Int {
-    val alpha = (Color.alpha(color) * factor).roundToInt()
-    val red = Color.red(color)
-    val green = Color.green(color)
-    val blue = Color.blue(color)
-    return Color.argb(alpha, red, green, blue)
+    val alpha = (AndroidColor.alpha(color) * factor).roundToInt()
+    val red = AndroidColor.red(color)
+    val green = AndroidColor.green(color)
+    val blue = AndroidColor.blue(color)
+    return AndroidColor.argb(alpha, red, green, blue)
 }
 
 @ColorInt
