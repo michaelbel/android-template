@@ -1,8 +1,8 @@
 package org.michaelbel.template
 
 import org.michaelbel.core.viewmodel.BaseViewModel
-import org.michaelbel.template.repository.AppRepository
+import org.michaelbel.template.interactor.AppInteractor
 
 class MainViewModel(
-    private val appRepository: AppRepository
+    private val appInteractor: AppInteractor
 ): BaseViewModel()
