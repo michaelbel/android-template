@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.template
+package org.michaelbel.template.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -46,10 +46,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
-import org.michaelbel.template.ui.AppTheme
+import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.template.MainViewModel
 
 @Composable
 fun MainActivityContent(
+    viewModel: MainViewModel = koinViewModel(),
     modifier: Modifier = Modifier
 ) {
     val navHostController = rememberNavController()

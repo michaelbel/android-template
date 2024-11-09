@@ -48,7 +48,9 @@ dependencies {
     api(libs.androidx.compose.ui.tooling)
     api(libs.androidx.core.ktx)
     api(libs.androidx.core.splashscreen)
+    api(libs.androidx.datastore.preferences)
     api(libs.androidx.lifecycle.viewmodel.compose)
     api(libs.androidx.navigation.compose)
     api(libs.androidx.paging.compose)
+    api(libs.koin.androidx.compose)
 }
