@@ -1,8 +1,8 @@
 package org.michaelbel.template
 
 import org.michaelbel.core.viewmodel.BaseViewModel
-import org.michaelbel.template.datastore.AppPreferences
+import org.michaelbel.template.repository.AppRepository
 
 class MainViewModel(
-    private val appPreferences: AppPreferences
+    private val appRepository: AppRepository
 ): BaseViewModel()

@@ -6,6 +6,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 import org.michaelbel.template.datastore.AppPreferences
+import org.michaelbel.template.repository.AppRepository
 
 val appModule = module {
     single<AppPreferences> {
@@ -15,5 +16,6 @@ val appModule = module {
         )
         AppPreferences(dataStore)
     }
+    single<AppRepository> { AppRepository(get()) }
     viewModelOf(::MainViewModel)
 }
