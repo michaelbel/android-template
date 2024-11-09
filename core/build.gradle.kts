@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    api(libs.kotlinx.serialization.json)
     api(libs.google.material)
     api(libs.androidx.activity.compose)
     api(libs.androidx.appcompat)
@@ -53,4 +54,10 @@ dependencies {
     api(libs.androidx.navigation.compose)
     api(libs.androidx.paging.compose)
     api(libs.koin.androidx.compose)
+    api(libs.ktor.client.okhttp)
+    api(libs.ktor.serialization.kotlinx.json)
+    api(libs.ktor.client.content.negotiation)
+    api(libs.okhttp.logging.interceptor)
+    debugApi(libs.chucker.library)
+    releaseApi(libs.chucker.library.no.op)
 }
