@@ -8,6 +8,8 @@ import org.koin.dsl.module
 import org.michaelbel.template.datastore.AppPreferences
 import org.michaelbel.template.interactor.AppInteractor
 import org.michaelbel.template.repository.AppRepository
+import org.michaelbel.template.room.AppDao
+import org.michaelbel.template.room.AppDatabase
 
 val appModule = module {
     single<AppPreferences> {
@@ -17,7 +19,11 @@ val appModule = module {
         )
         AppPreferences(dataStore)
     }
-    single<AppRepository> { AppRepository(get()) }
+    single<AppDao> {
+        val appDatabase = AppDatabase.getInstance(androidContext())
+        appDatabase.appDao()
+    }
+    single<AppRepository> { AppRepository(get(), get()) }
     single<AppInteractor> { AppInteractor(get()) }
     viewModelOf(::MainViewModel)
 }
