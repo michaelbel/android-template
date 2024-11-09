@@ -15,15 +15,23 @@ kotlin {
 
 android {
     namespace = "org.michaelbel.template.core" // Replace with your own namespace
+    compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
-        compileSdk = libs.versions.compile.sdk.get().toInt()
         minSdk = libs.versions.min.sdk.get().toInt()
     }
 
     buildFeatures {
+        resValues = true
+        shaders = false
+        aidl = false
+        renderScript = false
         buildConfig = true
         compose = true
+    }
+
+    kotlinOptions {
+        allWarningsAsErrors = false
     }
 }
 

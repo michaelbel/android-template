@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
 
+        <profileable
+            android:shell="true"
+            android:enabled="true" />
+
     </application>
 
 </manifest>

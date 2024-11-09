@@ -1,4 +1,3 @@
-
 import org.apache.commons.io.output.ByteArrayOutputStream
 import java.io.FileInputStream
 import java.nio.charset.Charset
@@ -20,9 +19,7 @@ private val gitCommitsCount: Int by lazy {
 }
 
 kotlin {
-    compilerOptions {
-        jvmToolchain(libs.versions.jdk.get().toInt())
-    }
+    jvmToolchain(libs.versions.jdk.get().toInt())
 }
 
 android {
@@ -75,12 +72,14 @@ android {
         release {
             isDebuggable = false
             isMinifyEnabled = true
+            isShrinkResources = true
             signingConfig = if (signingConfigs.findByName("release") != null) signingConfigs.getByName("release") else null
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         debug {
             isDebuggable = true
             isMinifyEnabled = false
+            isShrinkResources = false
             applicationIdSuffix = ".debug"
         }
     }
