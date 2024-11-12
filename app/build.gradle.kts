@@ -32,8 +32,8 @@ android {
         applicationId = "org.michaelbel.template" // Replace with your own applicationId
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
-        versionCode = gitCommitsCount
         versionName = "1.0.0"
+        versionCode = gitCommitsCount
         setProperty("archivesBaseName", "Template-v$versionName($versionCode)") // Replace with your own app's name
     }
 
