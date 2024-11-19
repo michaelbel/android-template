@@ -34,7 +34,6 @@ android {
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionName = "1.0.0"
         versionCode = gitCommitsCount
-        setProperty("archivesBaseName", "Template-v$versionName($versionCode)") // Replace with your own app's name
     }
 
     signingConfigs {
@@ -96,6 +95,10 @@ dependencies {
     implementation(project(":core"))
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+}
+
+base {
+    archivesName.set("Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 tasks.register("prepareReleaseNotes") {

@@ -51,8 +51,8 @@ import org.michaelbel.template.MainViewModel
 
 @Composable
 fun MainActivityContent(
-    viewModel: MainViewModel = koinViewModel(),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: MainViewModel = koinViewModel()
 ) {
     val navHostController = rememberNavController()
     var selectedRoute by remember { mutableStateOf("home") }

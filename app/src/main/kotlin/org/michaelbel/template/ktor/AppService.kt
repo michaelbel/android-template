@@ -9,9 +9,7 @@ class AppService(
     private val httpClient: HttpClient
 ) {
 
-    suspend fun getAppResponse(
-        id: Int
-    ): AppResponse {
+    suspend fun getAppResponse(id: Int): AppResponse {
         return httpClient.get("route/$id") {
             parameter("key", "1234")
         }.body()
