@@ -112,7 +112,7 @@ jobs:
         run: |
           echo "DEBUG_APK_PATH=$(find app/build/outputs/apk/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
           echo "RELEASE_APK_PATH=$(find app/build/outputs/apk/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
-          echo "BUNDLE_APK_PATH=$(find app/build/outputs/bundle/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "BUNDLE_APK_PATH=$(find app/build/outputs/bundle/release -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
 
       - name: send telegram message debug
         env:
