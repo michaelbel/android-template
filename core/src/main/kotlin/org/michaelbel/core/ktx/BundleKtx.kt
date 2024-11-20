@@ -18,13 +18,14 @@ inline fun <reified T> Fragment.argumentDelegate(): LazyProvider<Fragment, T> {
 
 inline fun <F, reified T> argumentDelegate(
     crossinline provideArguments: (F) -> Bundle?
-): LazyProvider<F, T> =
-        object: LazyProvider<F, T> {
-            override fun provideDelegate(thisRef: F, prop: KProperty<*>): Lazy<T> = lazy {
-                val bundle: Bundle? = provideArguments(thisRef)
-                bundle?.get(prop.name) as T
-            }
+): LazyProvider<F, T> {
+    return object: LazyProvider<F, T> {
+        override fun provideDelegate(thisRef: F, prop: KProperty<*>): Lazy<T> = lazy {
+            val bundle: Bundle? = provideArguments(thisRef)
+            bundle?.get(prop.name) as T
         }
+    }
+}
 
 interface LazyProvider<A, T> {
     operator fun provideDelegate(thisRef: A, prop: KProperty<*>): Lazy<T>

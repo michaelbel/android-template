@@ -86,7 +86,6 @@ inline val Context.versionCode: Long?
         if (Build.VERSION.SDK_INT >= 28) {
             packageManager.getPackageInfo(packageName, 0).longVersionCode
         } else {
-            @Suppress("deprecation")
             packageManager.getPackageInfo(packageName, 0).versionCode.toLong()
         }
     } catch (e: PackageManager.NameNotFoundException) {

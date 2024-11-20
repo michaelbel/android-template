@@ -18,6 +18,7 @@ import okio.Path.Companion.toPath
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
+import org.michaelbel.core.dispatchers.di.dispatchersKoinModule
 import org.michaelbel.template.datastore.AppPreferences
 import org.michaelbel.template.interactor.AppInteractor
 import org.michaelbel.template.ktor.AppService
@@ -26,6 +27,7 @@ import org.michaelbel.template.room.AppDao
 import org.michaelbel.template.room.AppDatabase
 
 val appModule = module {
+    includes(dispatchersKoinModule)
     single<AppPreferences> {
         val dataStore = PreferenceDataStoreFactory.createWithPath(
             migrations = emptyList(),
@@ -76,6 +78,6 @@ val appModule = module {
         AppService(ktorHttpClient)
     }
     single<AppRepository> { AppRepository(get(), get(), get()) }
-    single<AppInteractor> { AppInteractor(get()) }
+    single<AppInteractor> { AppInteractor(get(), get()) }
     viewModelOf(::MainViewModel)
 }

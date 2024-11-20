@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.graphics.drawable.RippleDrawable
+import android.graphics.drawable.TransitionDrawable
 import android.view.View
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
@@ -74,10 +75,10 @@ fun Context.selectableItemBackgroundDrawable(
     return drawableSelectable
 }
 
-/*fun Context.selectableItemBackgroundBorderlessDrawable(
+fun Context.selectableItemBackgroundBorderlessDrawable(
     @ColorRes colorRes: Int? = null
 ): Drawable? {
-    val attrs = intArrayOf(R.attr.selectableItemBackgroundBorderless)
+    val attrs = intArrayOf(android.R.attr.selectableItemBackgroundBorderless)
     val typedArray = obtainStyledAttributes(attrs)
     val drawableSelectable = typedArray.getDrawable(0)
     typedArray.recycle()
@@ -90,17 +91,17 @@ fun Context.selectableItemBackgroundDrawable(
     }
 
     return drawableSelectable
-}*/
+}
 
-/*fun Context.selectableItemBackgroundDrawable(
+fun Context.selectableItemBackgroundDrawable(
     transitionDrawable: TransitionDrawable
 ): Drawable {
-    val attrs = intArrayOf(R.attr.selectableItemBackground)
+    val attrs = intArrayOf(android.R.attr.selectableItemBackground)
     val typedArray = obtainStyledAttributes(attrs)
     val drawableSelectable = typedArray.getDrawable(0)
     typedArray.recycle()
     return LayerDrawable(arrayOf(transitionDrawable, drawableSelectable))
-}*/
+}
 
 fun Context.selectableItemRippleDrawable(
     view: View,
