@@ -46,6 +46,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.template.MainViewModel
 
@@ -55,7 +56,7 @@ fun MainActivityContent(
     viewModel: MainViewModel = koinViewModel()
 ) {
     val navHostController = rememberNavController()
-    var selectedRoute by remember { mutableStateOf("home") }
+    var selectedRoute by remember { mutableStateOf<Navigation>(Navigation.Home) }
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 
@@ -74,8 +75,8 @@ fun MainActivityContent(
             bottomBar = {
                 BottomAppBar {
                     NavigationBarItem(
-                        selected = selectedRoute == "home",
-                        onClick = { selectedRoute = "home" },
+                        selected = selectedRoute == Navigation.Home,
+                        onClick = { selectedRoute = Navigation.Home },
                         icon = {
                            Icon(
                                imageVector = Icons.Outlined.Home,
@@ -90,13 +91,13 @@ fun MainActivityContent(
                     )
 
                     NavigationBarItem(
-                        selected = selectedRoute == "chat",
-                        onClick = { selectedRoute = "chat" },
+                        selected = selectedRoute == Navigation.Chat,
+                        onClick = { selectedRoute = Navigation.Chat },
                         icon = {
                             BadgedBox(
                                 badge = {
                                     this@BottomAppBar.AnimatedVisibility(
-                                        visible = selectedRoute != "chat",
+                                        visible = selectedRoute != Navigation.Chat,
                                         enter = fadeIn(),
                                         exit = fadeOut()
                                     ) {
@@ -130,8 +131,8 @@ fun MainActivityContent(
                     )
 
                     NavigationBarItem(
-                        selected = selectedRoute == "settings",
-                        onClick = { selectedRoute = "settings" },
+                        selected = selectedRoute == Navigation.Settings,
+                        onClick = { selectedRoute = Navigation.Settings },
                         icon = {
                             Icon(
                                 imageVector = Icons.Outlined.Settings,
@@ -174,7 +175,7 @@ fun MainActivityContent(
                 startDestination = selectedRoute,
                 modifier = Modifier.padding(innerPadding)
             ) {
-                composable("home") {
+                composable<Navigation.Home> {
                     Box(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
@@ -184,7 +185,7 @@ fun MainActivityContent(
                         )
                     }
                 }
-                composable("chat") {
+                composable<Navigation.Chat> {
                     Row(
                         modifier = Modifier.fillMaxSize(),
                         horizontalArrangement = Arrangement.Center,
@@ -195,7 +196,7 @@ fun MainActivityContent(
                         )
                     }
                 }
-                composable("settings") {
+                composable<Navigation.Settings> {
                     Column(
                         modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,
@@ -209,4 +210,16 @@ fun MainActivityContent(
             }
         }
     }
+}
+
+sealed interface Navigation {
+
+    @Serializable
+    object Home: Navigation
+
+    @Serializable
+    object Chat: Navigation
+
+    @Serializable
+    object Settings: Navigation
 }
