@@ -11,23 +11,20 @@ import kotlinx.coroutines.flow.map
 class AppPreferences(
     private val dataStore: DataStore<Preferences>
 ) {
-    val usernameFlow: Flow<String?>
-        get() = dataStore.data.map { preferences -> preferences[PREFERENCE_USERNAME_KEY] }
+    fun <T> valueFlow(key: PreferenceKey<T>, default: T): Flow<T> {
+        return dataStore.data.map { preferences -> preferences[key.preferenceKey] ?: default }
+    }
 
-    suspend fun username(): String {
-        return dataStore.data.first()[PREFERENCE_USERNAME_KEY].orEmpty()
+    suspend fun <T> getValue(key: PreferenceKey<T>): T? {
+        return dataStore.data.first()[key.preferenceKey]
     }
 
     suspend fun <T> setValue(key: PreferenceKey<T>, value: T) {
-        dataStore.edit { preferences ->
-            preferences[key.preferenceKey] = value
-        }
+        dataStore.edit { preferences -> preferences[key.preferenceKey] = value }
     }
 
     suspend fun <T> removeValue(key: PreferenceKey<T>) {
-        dataStore.edit { preferences ->
-            preferences.remove(key.preferenceKey)
-        }
+        dataStore.edit { preferences -> preferences.remove(key.preferenceKey) }
     }
 
     companion object {
