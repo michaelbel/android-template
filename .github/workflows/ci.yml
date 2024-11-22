@@ -62,9 +62,6 @@ jobs:
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
-
-      - name: clean outputs directory
-        run: rm -rf app/build/outputs/*
           
       - name: make gradlew executable
         run: chmod +x ./gradlew
@@ -80,39 +77,39 @@ jobs:
         run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
 
       - name: assemble debug artifact
-        run: ./gradlew assembleDebug
+        run: ./gradlew mobile:assembleDebug
 
       - name: assemble release artifact
-        run: ./gradlew assembleRelease
+        run: ./gradlew mobile:assembleRelease
 
       - name: bundle release artifact
-        run: ./gradlew bundleRelease
+        run: ./gradlew mobile:bundleRelease
 
       - name: upload artifacts to outputs
         uses: actions/upload-artifact@v4
         with:
           path: |
-            app/build/outputs/apk/debug
-            app/build/outputs/apk/release
-            app/build/outputs/bundle/release
+            mobile/build/outputs/apk/debug
+            mobile/build/outputs/apk/release
+            mobile/build/outputs/bundle/release
 
       - name: expose version name
         id: version_name
         run: |
-          VERSION_NAME=$(./gradlew printVersionName -q)
+          VERSION_NAME=$(./gradlew mobile:printVersionName -q)
           echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
 
       - name: expose version code
         id: version_code
         run: |
-          VERSION_CODE=$(./gradlew printVersionCode -q)
+          VERSION_CODE=$(./gradlew mobile:printVersionCode -q)
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
 
       - name: expose artifacts
         run: |
-          echo "DEBUG_APK_PATH=$(find app/build/outputs/apk/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
-          echo "RELEASE_APK_PATH=$(find app/build/outputs/apk/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
-          echo "BUNDLE_APK_PATH=$(find app/build/outputs/bundle/release -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "DEBUG_APK_PATH=$(find mobile/build/outputs/apk/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "RELEASE_APK_PATH=$(find mobile/build/outputs/apk/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "BUNDLE_APK_PATH=$(find mobile/build/outputs/bundle/release -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
 
       - name: send telegram message debug
         env:
