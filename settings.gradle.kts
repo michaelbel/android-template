@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 }
 include(
     ":mobile",
+    ":wear",
     ":core"
 )
 rootProject.name = "android-template" // todo Replace with your own app’s name

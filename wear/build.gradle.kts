@@ -95,6 +95,14 @@ dependencies {
     implementation(project(":core"))
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+
+    implementation(libs.androidx.wear.compose.foundation)
+    implementation(libs.androidx.wear.compose.material3)
+    implementation(libs.androidx.wear.compose.navigation)
+    implementation(libs.androidx.wear.compose.ui.tooling)
+    implementation(libs.google.horologist.composables)
+    implementation(libs.google.horologist.compose.layout)
+    implementation(libs.google.horologist.compose.material)
 }
 
 base {

@@ -16,6 +16,7 @@ kotlinx-atomicfu = "0.26.0"
 google-ksp = "2.0.21-1.0.27"
 google-services = "4.4.2"
 google-gson = "2.11.0"
+google-horologist = "0.6.20"
 
 google-gms-play-services-ads = "23.5.0"
 google-gms-play-services-ads-identifier = "18.1.0"
@@ -550,6 +551,15 @@ google-material-compose-theme-adapter = { module = "com.google.android.material:
 google-material-compose-theme-adapter3 = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "google-material-compose-theme-adapter" }
 google-material-compose-theme-core = { module = "com.google.android.material:compose-theme-adapter-core", version.ref = "google-material-compose-theme-adapter" }
 google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
+google-horologist-audio-ui = { module = "com.google.android.horologist:horologist-audio-ui", version.ref = "google-horologist" }
+google-horologist-composables = { module = "com.google.android.horologist:horologist-composables", version.ref = "google-horologist" }
+google-horologist-compose-layout = { module = "com.google.android.horologist:horologist-compose-layout", version.ref = "google-horologist" }
+google-horologist-compose-material = { module = "com.google.android.horologist:horologist-compose-material", version.ref = "google-horologist" }
+google-horologist-compose-tools = { module = "com.google.android.horologist:horologist-compose-tools", version.ref = "google-horologist" }
+google-horologist-images-coil = { module = "com.google.android.horologist:horologist-images-coil", version.ref = "google-horologist" }
+google-horologist-media-data = { module = "com.google.android.horologist:horologist-media-data", version.ref = "google-horologist" }
+google-horologist-media-ui = { module = "com.google.android.horologist:horologist-media-ui", version.ref = "google-horologist" }
+google-horologist-roboscreenshots = { module = "com.google.android.horologist:horologist-roboscreenshots", version.ref = "google-horologist" }
 #endregion
 #region firebase
 google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
