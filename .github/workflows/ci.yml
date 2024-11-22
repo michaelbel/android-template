@@ -18,27 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       SHORT_SHA: ${{ steps.expose_sha.outputs.short_sha }}
-      KEYSTORE_FILE_PATH: ${{ steps.set_keystore_path.outputs.keystore_path }}
     steps:
       - name: expose short commit sha
         id: expose_sha
         run: |
           SHORT_SHA=${GITHUB_SHA::7}
           echo "short_sha=$SHORT_SHA" >> $GITHUB_ENV
-          echo "SHORT_SHA=$SHORT_SHA" >> $GITHUB_OUTPUT
-
-      - name: decode keystore file
-        id: decode_keystore_file
-        uses: timheuer/base64-to-file@v1
-        with:
-          fileName: 'keystore_release.jks'
-          encodedString: ${{ secrets.KEYSTORE_FILE }}
-
-      - name: set decoded file location as environment and output
-        id: set_keystore_path
-        run: |
-          echo "keystore_path=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
-          echo "keystore_path=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_OUTPUT  
+          echo "SHORT_SHA=$SHORT_SHA" >> $GITHUB_OUTPUT 
 
   build-mobile:
     if: ${{ vars.MOBILE_BUILD_ENABLED == 'true' }}
@@ -46,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      KEYSTORE_FILE: ${{ needs.job-common.outputs.KEYSTORE_FILE_PATH }}
+      KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
       KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
       KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
       KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
@@ -79,6 +65,16 @@ jobs:
           
       - name: make gradlew executable
         run: chmod +x ./gradlew
+
+      - name: decode keystore file
+        id: decode_keystore_file
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore_release.jks'
+          encodedString: ${{ secrets.KEYSTORE_FILE }}
+
+      - name: set decoded file location as environment
+        run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
 
       - name: assemble debug artifact
         run: ./gradlew mobile:assembleDebug
@@ -172,7 +168,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      KEYSTORE_FILE: ${{ needs.job-common.outputs.KEYSTORE_FILE_PATH }}
+      KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
       KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
       KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
       KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
@@ -205,6 +201,16 @@ jobs:
 
       - name: make gradlew executable
         run: chmod +x ./gradlew
+
+      - name: decode keystore file
+        id: decode_keystore_file
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore_release.jks'
+          encodedString: ${{ secrets.KEYSTORE_FILE }}
+
+      - name: set decoded file location as environment
+        run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
 
       - name: assemble debug artifact
         run: ./gradlew wear:assembleDebug
