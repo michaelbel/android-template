@@ -6,6 +6,11 @@ Android App Template
 
 This Android app template provides a foundation for quickly starting development across Mobile, Wear, TV, and Auto platforms. It includes pre-configured dependencies, code samples, and project structure, simplifying the creation and setup of new applications. The template helps reduce configuration time and allows developers to focus on implementing functionality, ensuring a smooth start.
 
+[![android-mobile](https://img.shields.io/badge/mobile-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-wear](https://img.shields.io/badge/wear-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-tv](https://img.shields.io/badge/tv-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-auto](https://img.shields.io/badge/auto-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+
 <div>
     <img src=".github/pics/img.png" width="33%" alt="Project Image">
 </div>
