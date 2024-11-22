@@ -95,11 +95,11 @@ dependencies {
     implementation(project(":core"))
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
-    implementation(libs.google.horologist.compose.material)
+    implementation(libs.androidx.tv.material)
 }
 
 base {
-    archivesName.set("Wear-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
+    archivesName.set("TV-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 tasks.register("printVersionName") {

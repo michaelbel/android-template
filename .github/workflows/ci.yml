@@ -299,3 +299,140 @@ jobs:
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
+
+  build-tv:
+    if: ${{ vars.TV_BUILD_ENABLED == 'true' }}
+    needs: job-common
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
+      KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
+      KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
+      KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
+      SHORT_SHA: ${{ needs.job-common.outputs.SHORT_SHA }}
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # клонирует репозиторий с историей коммитов
+
+      - name: setup jdk 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: cache gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/caches
+          key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      - name: cache gradle wrapper
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/wrapper
+          key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
+
+      - name: make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: decode keystore file
+        id: decode_keystore_file
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore_release.jks'
+          encodedString: ${{ secrets.KEYSTORE_FILE }}
+
+      - name: set decoded file location as environment
+        run: echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
+
+      - name: assemble debug artifact
+        run: ./gradlew tv:assembleDebug
+
+      - name: assemble release artifact
+        run: ./gradlew tv:assembleRelease
+
+      - name: bundle release artifact
+        run: ./gradlew tv:bundleRelease
+
+      - name: upload artifacts to outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: wear-build-${{ github.run_id }}
+          path: |
+            tv/build/outputs/apk/debug
+            tv/build/outputs/apk/release
+            tv/build/outputs/bundle/release
+
+      - name: expose version name
+        id: version_name
+        run: |
+          VERSION_NAME=$(./gradlew tv:printVersionName -q)
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
+
+      - name: expose version code
+        id: version_code
+        run: |
+          VERSION_CODE=$(./gradlew tv:printVersionCode -q)
+          echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_ENV
+
+      - name: expose artifacts
+        run: |
+          echo "DEBUG_APK_PATH=$(find tv/build/outputs/apk/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "RELEASE_APK_PATH=$(find tv/build/outputs/apk/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "BUNDLE_APK_PATH=$(find tv/build/outputs/bundle/release -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+
+      - name: send telegram message debug
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          MESSAGE: |
+            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
+            <b>Ветка:</b> ${{ github.ref_name }}
+            <b>Коммит:</b> <code>${{ env.SHORT_SHA }}</code>
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.DEBUG_APK_PATH }}" \
+            -F caption="${{ env.MESSAGE }}" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="HTML"
+
+      - name: send telegram message release
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          MESSAGE: |
+            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
+            <b>Ветка:</b> ${{ github.ref_name }}
+            <b>Коммит:</b> <code>${{ env.SHORT_SHA }}</code>
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.RELEASE_APK_PATH }}" \
+            -F caption="${{ env.MESSAGE }}" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="HTML"
+
+      - name: send telegram message bundle
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          MESSAGE: |
+            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
+            <b>Ветка:</b> ${{ github.ref_name }}
+            <b>Коммит:</b> <code>${{ env.SHORT_SHA }}</code>
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.BUNDLE_APK_PATH }}" \
+            -F caption="${{ env.MESSAGE }}" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="HTML"
