@@ -94,12 +94,11 @@ android {
 dependencies {
     implementation(project(":core"))
     api(libs.androidx.room.ktx)
-    implementation(libs.androidx.compose.material3.windowsize)
     ksp(libs.androidx.room.compiler)
 }
 
 base {
-    archivesName.set("Mobile-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
+    archivesName.set("Auto-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 tasks.register("printVersionName") {
