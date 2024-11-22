@@ -4,7 +4,7 @@ Android App Template
 [![workflow-status](https://img.shields.io/github/actions/workflow/status/michaelbel/android-template/ci.yml?style=for-the-badge&logo=github&labelColor=3F464F)](https://github.com/michaelbel/android-template/actions)
 [![last-commit](https://img.shields.io/github/last-commit/michaelbel/android-template?style=for-the-badge&logo=github&labelColor=3F464F)](https://github.com/michaelbel/android-template/commits)
 
-This Android app template provides a foundation for quickly starting development. It includes pre-configured dependencies, code samples, and project structure, simplifying the creation and setup of new applications. The template helps reduce configuration time and allows developers to focus on implementing functionality, ensuring a smooth start.
+This Android app template provides a foundation for quickly starting development across Mobile, Wear, TV, and Auto platforms. It includes pre-configured dependencies, code samples, and project structure, simplifying the creation and setup of new applications. The template helps reduce configuration time and allows developers to focus on implementing functionality, ensuring a smooth start.
 
 <div>
     <img src=".github/pics/img.png" width="33%" alt="Project Image">
