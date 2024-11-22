@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
+      KEYSTORE_FILE: ${{ needs.job-common.outputs.KEYSTORE_FILE_PATH }}
       KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
       KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
       KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
@@ -71,7 +71,7 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: cache gradle wrapper
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
@@ -171,7 +171,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
+      KEYSTORE_FILE: ${{ needs.job-common.outputs.KEYSTORE_FILE_PATH }}
       KEYSTORE_KEY_ALIAS: ${{ secrets.KEYSTORE_KEY_ALIAS }}
       KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_KEY_PASSWORD }}
       KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_STORE_PASSWORD }}
@@ -197,7 +197,7 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: cache gradle wrapper
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
