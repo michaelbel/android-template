@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       SHORT_SHA: ${{ steps.expose_sha.outputs.short_sha }}
-      KEYSTORE_FILE_PATH: ${{ steps.decode_keystore_file.outputs.filePath }}
+      KEYSTORE_FILE_PATH: ${{ steps.set_keystore_path.outputs.keystore_path }}
     steps:
       - name: expose short commit sha
         id: expose_sha
@@ -34,10 +34,11 @@ jobs:
           fileName: 'keystore_release.jks'
           encodedString: ${{ secrets.KEYSTORE_FILE }}
 
-      - name: set decoded file location as environment
+      - name: set decoded file location as environment and output
+        id: set_keystore_path
         run: |
-          echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
-          echo "KEYSTORE_FILE=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_OUTPUT     
+          echo "keystore_path=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_ENV
+          echo "keystore_path=${{ steps.decode_keystore_file.outputs.filePath }}" >> $GITHUB_OUTPUT  
 
   build-mobile:
     if: ${{ vars.MOBILE_BUILD_ENABLED == 'true' }}
