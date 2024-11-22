@@ -362,7 +362,7 @@ jobs:
       - name: upload artifacts to outputs
         uses: actions/upload-artifact@v4
         with:
-          name: wear-build-${{ github.run_id }}
+          name: tv-build-${{ github.run_id }}
           path: |
             tv/build/outputs/apk/debug
             tv/build/outputs/apk/release
