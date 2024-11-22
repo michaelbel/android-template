@@ -215,11 +215,11 @@ fun MainActivityContent(
 sealed interface Navigation {
 
     @Serializable
-    object Home: Navigation
+    data object Home: Navigation
 
     @Serializable
-    object Chat: Navigation
+    data object Chat: Navigation
 
     @Serializable
-    object Settings: Navigation
+    data object Settings: Navigation
 }
