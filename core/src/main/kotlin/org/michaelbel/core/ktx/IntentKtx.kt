@@ -6,6 +6,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
+import android.speech.RecognizerIntent
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.runtime.Composable
 import androidx.core.net.toUri
 
 fun Context.navigateToAppSetting() {
@@ -33,4 +37,26 @@ fun Context.navigateToAppNotificationSettings() {
         }
     }
     startActivity(intent)
+}
+
+@Composable
+fun rememberSpeechRecognitionLauncher(onInputText: (String) -> Unit): () -> Unit {
+    val speechRecognizeContract = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { activityResult ->
+        val data = activityResult.data
+        val spokenText = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)?.let { results ->
+            results[0]
+        }
+        if (!spokenText.isNullOrEmpty()) {
+            onInputText(spokenText)
+        }
+    }
+
+    return {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        }
+        speechRecognizeContract.launch(intent)
+    }
 }
