@@ -36,6 +36,7 @@ fun Context.navigateToAppNotificationSettings() {
             intent.putExtra("app_uid", applicationInfo.uid)
         }
     }
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     startActivity(intent)
 }
 
