@@ -13,7 +13,7 @@ kotlinx-io = "0.1.16"
 kotlinx-collections = "0.3.8"
 kotlinx-atomicfu = "0.26.0"
 
-google-ksp = "2.0.21-1.0.28"
+google-ksp = "2.1.0-1.0.29"
 google-services = "4.4.2"
 google-gson = "2.11.0"
 google-horologist = "0.6.20"
