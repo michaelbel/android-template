@@ -16,7 +16,7 @@ import kotlinx.serialization.json.Json
 import okhttp3.logging.HttpLoggingInterceptor
 import okio.Path.Companion.toPath
 import org.koin.android.ext.koin.androidContext
-import org.koin.androidx.viewmodel.dsl.viewModelOf
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 import org.michaelbel.core.dispatchers.di.dispatchersKoinModule
 import org.michaelbel.template.datastore.AppPreferences
