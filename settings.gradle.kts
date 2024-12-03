@@ -21,3 +21,5 @@ include(
     ":core"
 )
 rootProject.name = "android-template" // todo Replace with your own app’s name
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

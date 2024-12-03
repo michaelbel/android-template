@@ -92,7 +92,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation(projects.core)
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     implementation(libs.google.horologist.compose.material)

@@ -92,7 +92,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation(projects.core)
     api(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.material3.windowsize)
     ksp(libs.androidx.room.compiler)
