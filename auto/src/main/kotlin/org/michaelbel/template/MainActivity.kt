@@ -2,7 +2,6 @@ package org.michaelbel.template
 
 import android.os.Bundle
 import android.view.Window
-import android.view.WindowManager
 import android.view.WindowManager.LayoutParams
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,8 +24,8 @@ class MainActivity: ComponentActivity() {
     }
 }
 
-fun Window.updateAttributes(block: WindowManager.LayoutParams.() -> Unit) {
-    val layoutParams = WindowManager.LayoutParams()
+fun Window.updateAttributes(block: LayoutParams.() -> Unit) {
+    val layoutParams = LayoutParams()
     layoutParams.copyFrom(this.attributes)
     layoutParams.apply(block)
     this.attributes = layoutParams
