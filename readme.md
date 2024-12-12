@@ -36,6 +36,25 @@ This Android app template provides a foundation for quickly starting development
 <div>
     <img src=".github/pics/desktop.png" width="99%" alt="Desktop Image">
 </div>
+<br/>
+
+**Wear**
+<div>
+    <img src=".github/pics/wear.png" width="33%" alt="Wear Image">
+</div>
+<br/>
+
+**TV**
+<div>
+    <img src=".github/pics/tv.png" width="99%" alt="TV Image">
+</div>
+<br/>
+
+**Auto**
+<div>
+    <img src=".github/pics/auto.png" width="99%" alt="Auto Image">
+</div>
+<br/>
 
 ## Features
 - [x] Included all Kotlin dependencies
