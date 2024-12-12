@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
@@ -41,6 +42,7 @@ import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
 import androidx.compose.material3.PermanentDrawerSheet
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -61,9 +63,7 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.Measurable
 import androidx.compose.ui.layout.MeasurePolicy
 import androidx.compose.ui.layout.layoutId
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
 import androidx.compose.ui.unit.sp
@@ -76,7 +76,6 @@ import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.core.ktx.navigationSuiteType
 import org.michaelbel.template.MainViewModel
-import org.michaelbel.template.R
 
 @Composable
 fun MainActivityContent(
@@ -187,19 +186,28 @@ fun MainActivityContent(
                                 verticalArrangement = Arrangement.spacedBy(4.dp)
                             ) {
                                 FloatingActionButton(
-                                    onClick = {},
-                                    modifier = Modifier.padding(top = 8.dp, bottom = 32.dp),
+                                    onClick = {
+                                        coroutineScope.launch {
+                                            snackbarHostState.showSnackbar(
+                                                message = "Single-line snackbar with action",
+                                                actionLabel = "Action",
+                                                duration = SnackbarDuration.Short
+                                            )
+                                        }
+                                    },
+                                    modifier = Modifier
+                                        .statusBarsPadding()
+                                        .padding(top = 16.dp),
                                     containerColor = MaterialTheme.colorScheme.tertiaryContainer,
                                     contentColor = MaterialTheme.colorScheme.onTertiaryContainer
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Edit,
-                                        contentDescription = null,
-                                        modifier = Modifier.size(18.dp)
+                                        contentDescription = null
                                     )
                                 }
-                                Spacer(Modifier.height(8.dp)) // NavigationRailHeaderPadding
-                                Spacer(Modifier.height(4.dp)) // NavigationRailVerticalPadding
+
+                                Spacer(Modifier.height(16.dp))
 
                                 NavigationRailItem(
                                     selected = selectedRoute == Navigation.Home,
@@ -208,11 +216,6 @@ fun MainActivityContent(
                                         Icon(
                                             imageVector = Icons.Outlined.Home,
                                             contentDescription = null
-                                        )
-                                    },
-                                    label = {
-                                        Text(
-                                            text = "Home"
                                         )
                                     }
                                 )
@@ -249,11 +252,6 @@ fun MainActivityContent(
                                                 contentDescription = null
                                             )
                                         }
-                                    },
-                                    label = {
-                                        Text(
-                                            text = "Chat"
-                                        )
                                     }
                                 )
 
@@ -264,11 +262,6 @@ fun MainActivityContent(
                                         Icon(
                                             imageVector = Icons.Outlined.Settings,
                                             contentDescription = null
-                                        )
-                                    },
-                                    label = {
-                                        Text(
-                                            text = "Settings"
                                         )
                                     }
                                 )
@@ -290,18 +283,19 @@ fun MainActivityContent(
                                         horizontalAlignment = Alignment.Start,
                                         verticalArrangement = Arrangement.spacedBy(4.dp)
                                     ) {
-                                        Text(
-                                            modifier = Modifier
-                                                .padding(16.dp),
-                                            text = stringResource(id = R.string.app_name).uppercase(),
-                                            style = MaterialTheme.typography.titleMedium,
-                                            color = MaterialTheme.colorScheme.primary
-                                        )
                                         ExtendedFloatingActionButton(
-                                            onClick = { /*TODO*/ },
+                                            onClick = {
+                                                coroutineScope.launch {
+                                                    snackbarHostState.showSnackbar(
+                                                        message = "Single-line snackbar with action",
+                                                        actionLabel = "Action",
+                                                        duration = SnackbarDuration.Short
+                                                    )
+                                                }
+                                            },
                                             modifier = Modifier
                                                 .fillMaxWidth()
-                                                .padding(top = 8.dp, bottom = 40.dp),
+                                                .statusBarsPadding(),
                                             containerColor = MaterialTheme.colorScheme.tertiaryContainer,
                                             contentColor = MaterialTheme.colorScheme.onTertiaryContainer
                                         ) {
@@ -310,10 +304,10 @@ fun MainActivityContent(
                                                 contentDescription = null,
                                                 modifier = Modifier.size(24.dp)
                                             )
+
                                             Text(
                                                 text = "Compose",
-                                                modifier = Modifier.weight(1f),
-                                                textAlign = TextAlign.Center
+                                                modifier = Modifier.padding(start = 8.dp),
                                             )
                                         }
                                     }
@@ -422,21 +416,31 @@ fun MainActivityContent(
                     )
                 },
                 floatingActionButton = {
-                    FloatingActionButton(
-                        onClick = {
-                            coroutineScope.launch {
-                                snackbarHostState.showSnackbar(
-                                    message = "Single-line snackbar with action",
-                                    actionLabel = "Action"
-                                )
-                            }
-                        },
-                        modifier = Modifier.offset(y = 16.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.Outlined.Edit,
-                            contentDescription = null
-                        )
+                    if (navigationSuiteType == NavigationSuiteType.NavigationBar) {
+                        ExtendedFloatingActionButton(
+                            onClick = {
+                                coroutineScope.launch {
+                                    snackbarHostState.showSnackbar(
+                                        message = "Single-line snackbar with action",
+                                        actionLabel = "Action",
+                                        duration = SnackbarDuration.Short
+                                    )
+                                }
+                            },
+                            modifier = Modifier.offset(y = 16.dp),
+                            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
+                        ) {
+                            Icon(
+                                imageVector = Icons.Outlined.Edit,
+                                contentDescription = null
+                            )
+
+                            Text(
+                                text = "Compose",
+                                modifier = Modifier.padding(start = 8.dp)
+                            )
+                        }
                     }
                 }
             ) { innerPadding ->
