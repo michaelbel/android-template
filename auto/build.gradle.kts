@@ -91,14 +91,14 @@ android {
     }
 }
 
+base {
+    archivesName.set("Auto-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
+}
+
 dependencies {
     implementation(projects.core)
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
-}
-
-base {
-    archivesName.set("Auto-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 tasks.register("printVersionName") {

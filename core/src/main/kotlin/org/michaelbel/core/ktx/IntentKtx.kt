@@ -10,6 +10,8 @@ import android.speech.RecognizerIntent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
 import androidx.core.net.toUri
 
 fun Context.navigateToAppSetting() {
@@ -38,6 +40,40 @@ fun Context.navigateToAppNotificationSettings() {
     }
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     startActivity(intent)
+}
+
+@Composable
+fun rememberNavigateToAppSettings(): () -> Unit {
+    val context = LocalContext.current
+    val appSettingsContract = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
+    val intent = Intent(
+        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+        "package:${context.packageName}".toUri()
+    ).apply {
+        addCategory(Intent.CATEGORY_DEFAULT)
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    }
+    return remember { { appSettingsContract.launch(intent) } }
+}
+
+@Composable
+fun rememberNavigateToAppNotificationSettings(): () -> Unit {
+    val context = LocalContext.current
+    val appSettingsContract = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
+    val intent = Intent()
+    when {
+        Build.VERSION.SDK_INT >= 26 -> {
+            intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+            intent.putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+        }
+        else -> {
+            intent.action = "android.settings.APP_NOTIFICATION_SETTINGS"
+            intent.putExtra("app_package", context.packageName)
+            intent.putExtra("app_uid", context.applicationInfo.uid)
+        }
+    }
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    return remember { { appSettingsContract.launch(intent) } }
 }
 
 @Composable

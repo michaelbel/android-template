@@ -91,15 +91,15 @@ android {
     }
 }
 
+base {
+    archivesName.set("TV-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
+}
+
 dependencies {
     implementation(projects.core)
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.tv.material)
-}
-
-base {
-    archivesName.set("TV-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 tasks.register("printVersionName") {
