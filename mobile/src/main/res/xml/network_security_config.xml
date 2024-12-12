@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Настройки для всех доменов -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">example.com</domain>
+        <trust-anchors>
+            <!-- Использовать сертификаты системы -->
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Разрешить небезопасный трафик для конкретного домена -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">insecure.example.com</domain>
+    </domain-config>
+
+    <!-- Общая политика: разрешить только HTTPS -->
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

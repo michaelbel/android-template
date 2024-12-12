@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <!-- Указать правила для резервного копирования (backup) -->
+    <cloud-backup>
+        <!-- Включить пользовательские данные -->
+        <include domain="file" path="user_data/" />
+    </cloud-backup>
+
+    <!-- Указать правила для переноса данных (device transfer) -->
+    <device-transfer>
+        <!-- Включить важные настройки -->
+        <include domain="sharedpref" path="important_prefs.xml" />
+    </device-transfer>
+</data-extraction-rules>

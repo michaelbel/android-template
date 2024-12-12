@@ -34,6 +34,7 @@ android {
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionName = "1.0.0"
         versionCode = gitCommitsCount
+        //setProperty("archivesBaseName", "SimpleApp-v$versionName($versionCode)")
     }
 
     signingConfigs {
@@ -85,10 +86,25 @@ android {
         }
     }
 
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("free") {
+            dimension = "version"
+        }
+        create("paid") {
+            dimension = "version"
+        }
+    }
+
     buildFeatures {
         buildConfig = true
         compose = true
     }
+}
+
+base {
+    archivesName.set("Mobile-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 dependencies {
@@ -96,10 +112,6 @@ dependencies {
     api(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.material3.windowsize)
     ksp(libs.androidx.room.compiler)
-}
-
-base {
-    archivesName.set("Mobile-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
 }
 
 tasks.register("printVersionName") {
