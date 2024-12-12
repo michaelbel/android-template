@@ -2,8 +2,11 @@
 
 package org.michaelbel.core.ktx
 
+import android.Manifest
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.provider.Settings
 import android.speech.RecognizerIntent
@@ -12,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 
 fun Context.navigateToAppSetting() {
@@ -95,5 +99,32 @@ fun rememberSpeechRecognitionLauncher(onInputText: (String) -> Unit): () -> Unit
             putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
         }
         speechRecognizeContract.launch(intent)
+    }
+}
+
+@Composable
+fun rememberRequestCameraPermission(
+    onGranted: () -> Unit
+): () -> Unit {
+    val context = LocalContext.current
+    val navigateToAppSettings = rememberNavigateToAppSettings()
+    val cameraPermissionContract = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        val shouldRequest = (context as Activity).shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)
+        when {
+            granted -> onGranted()
+            !granted && !shouldRequest -> navigateToAppSettings()
+        }
+    }
+    return remember {
+        {
+            when {
+                ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED -> {
+                    cameraPermissionContract.launch(Manifest.permission.CAMERA)
+                }
+                else -> onGranted()
+            }
+        }
     }
 }
