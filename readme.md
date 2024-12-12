@@ -14,18 +14,25 @@ This Android app template provides a foundation for quickly starting development
 [![android-tv](https://img.shields.io/badge/tv-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-auto](https://img.shields.io/badge/auto-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 
+**Phone**
 <div>
     <img src=".github/pics/phone.png" width="33%" alt="Phone Image">
 </div>
+<br/>
 
+**Foldable**
 <div>
     <img src=".github/pics/foldable.png" width="66%" alt="Foldable Image">
 </div>
+<br/>
 
+**Tablet**
 <div>
-    <img src=".github/pics/tablet.png" width="66%" alt="Tablet Image">
+    <img src=".github/pics/tablet.png" width="82%" alt="Tablet Image">
 </div>
+<br/>
 
+**Desktop**
 <div>
     <img src=".github/pics/desktop.png" width="99%" alt="Desktop Image">
 </div>
