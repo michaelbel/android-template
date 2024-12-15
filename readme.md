@@ -38,7 +38,7 @@ This Android app template provides a foundation for quickly starting development
 </div>
 <br/>
 
-**Wear**
+**Wear OS**
 <div>
     <img src=".github/pics/wear.png" width="33%" alt="Wear Image">
 </div>
@@ -50,7 +50,7 @@ This Android app template provides a foundation for quickly starting development
 </div>
 <br/>
 
-**Auto**
+**Automotive**
 <div>
     <img src=".github/pics/auto.png" width="99%" alt="Auto Image">
 </div>
@@ -61,6 +61,8 @@ This Android app template provides a foundation for quickly starting development
 - [x] Included all Google Play Services dependencies
 - [x] Included all Google Play dependencies
 - [x] Included all Google Material dependencies
+- [x] Included all Google Horologist dependencies
+- [x] Included all Google MLKit dependencies
 - [x] Included all Firebase dependencies
 - [x] Included all AndroidX dependencies
 - [x] Included all popular third-party dependencies

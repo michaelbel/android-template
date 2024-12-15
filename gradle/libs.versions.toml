@@ -14,9 +14,26 @@ kotlinx-collections = "0.3.8"
 kotlinx-atomicfu = "0.26.1"
 
 google-ksp = "2.1.0-1.0.29"
+google-hilt = "2.53.1"
 google-services = "4.4.2"
 google-gson = "2.11.0"
 google-horologist = "0.6.20"
+google-zxing = "3.4.1"
+google-mlkit-text-recognition = "16.0.1"
+google-mlkit-face-detection = "16.1.7"
+google-mlkit-face-mesh-detection = "16.0.0-beta3"
+google-mlkit-pose-detection = "18.0.0-beta5"
+google-mlkit-segmentation-selfie = "16.0.0-beta6"
+google-mlkit-barcode-scanning = "17.3.0"
+google-mlkit-image-labeling = "17.0.9"
+google-mlkit-image-labeling-custom = "17.0.3"
+google-mlkit-object-detection = "17.0.2"
+google-mlkit-linkfirebase = "17.0.0"
+google-mlkit-digital-ink-recognition = "18.1.0"
+google-mlkit-language-id = "17.0.6"
+google-mlkit-translate = "17.0.3"
+google-mlkit-smart-reply = "17.0.4"
+google-mlkit-entity-extraction = "16.0.0-beta5"
 
 google-gms-play-services-ads = "23.6.0"
 google-gms-play-services-ads-identifier = "18.2.0"
@@ -239,6 +256,7 @@ androidx-core-location = "1.0.0-alpha03"
 androidx-core-i18n = "1.0.0-alpha01"
 androidx-core-telecom = "1.0.0-beta01"
 androidx-core-uwb = "1.0.0-alpha10"
+androidx-core-viewtree = "1.0.0-alpha01"
 androidx-credentials = "1.5.0-beta01"
 androidx-credentials-e2ee = "1.0.0-alpha02"
 androidx-cursoradapter = "1.0.0"
@@ -352,6 +370,7 @@ androidx-webkit = "1.12.1"
 androidx-window = "1.3.0"
 androidx-window-extensions-core = "1.0.0"
 androidx-work = "2.10.0"
+androidx-xr = "1.0.0-alpha01"
 
 detekt = "1.23.7"
 ktor = "3.0.2"
@@ -387,6 +406,7 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-guava = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-guava", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
@@ -546,12 +566,13 @@ google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-deliv
 google-play-feature-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-feature-delivery" }
 google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review" }
 #endregion
-#region google
+#region google material
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 google-material-compose-theme-adapter = { module = "com.google.android.material:compose-theme-adapter", version.ref = "google-material-compose-theme-adapter" }
 google-material-compose-theme-adapter3 = { module = "com.google.android.material:compose-theme-adapter-3", version.ref = "google-material-compose-theme-adapter" }
 google-material-compose-theme-core = { module = "com.google.android.material:compose-theme-adapter-core", version.ref = "google-material-compose-theme-adapter" }
-google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
+#endregion
+#region google horologist
 google-horologist-audio-ui = { module = "com.google.android.horologist:horologist-audio-ui", version.ref = "google-horologist" }
 google-horologist-composables = { module = "com.google.android.horologist:horologist-composables", version.ref = "google-horologist" }
 google-horologist-compose-layout = { module = "com.google.android.horologist:horologist-compose-layout", version.ref = "google-horologist" }
@@ -561,6 +582,35 @@ google-horologist-images-coil = { module = "com.google.android.horologist:horolo
 google-horologist-media-data = { module = "com.google.android.horologist:horologist-media-data", version.ref = "google-horologist" }
 google-horologist-media-ui = { module = "com.google.android.horologist:horologist-media-ui", version.ref = "google-horologist" }
 google-horologist-roboscreenshots = { module = "com.google.android.horologist:horologist-roboscreenshots", version.ref = "google-horologist" }
+#endregion
+#region google mlkit
+google-mlkit-text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "google-mlkit-text-recognition" }
+google-mlkit-text-recognition-chinese = { module = "com.google.mlkit:text-recognition-chinese", version.ref = "google-mlkit-text-recognition" }
+google-mlkit-text-recognition-devanagari = { module = "com.google.mlkit:text-recognition-devanagari", version.ref = "google-mlkit-text-recognition" }
+google-mlkit-text-recognition-japanese = { module = "com.google.mlkit:text-recognition-japanese", version.ref = "google-mlkit-text-recognition" }
+google-mlkit-text-recognition-korean = { module = "com.google.mlkit:text-recognition-korean", version.ref = "google-mlkit-text-recognition" }
+google-mlkit-face-detection = { module = "com.google.mlkit:face-detection", version.ref = "google-mlkit-face-detection" }
+google-mlkit-face-mesh-detection = { module = "com.google.mlkit:face-mesh-detection", version.ref = "google-mlkit-face-mesh-detection" }
+google-mlkit-pose-detection = { module = "com.google.mlkit:pose-detection", version.ref = "google-mlkit-pose-detection" }
+google-mlkit-pose-detection-accurate = { module = "com.google.mlkit:pose-detection-accurate", version.ref = "google-mlkit-pose-detection" }
+google-mlkit-segmentation-selfie = { module = "com.google.mlkit:segmentation-selfie", version.ref = "google-mlkit-segmentation-selfie" }
+google-mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "google-mlkit-barcode-scanning" }
+google-mlkit-image-labeling = { module = "com.google.mlkit:image-labeling", version.ref = "google-mlkit-image-labeling" }
+google-mlkit-image-labeling-custom = { module = "com.google.mlkit:image-labeling-custom", version.ref = "google-mlkit-image-labeling-custom" }
+google-mlkit-object-detection = { module = "com.google.mlkit:object-detection", version.ref = "google-mlkit-object-detection" }
+google-mlkit-object-detection-custom = { module = "com.google.mlkit:object-detection-custom", version.ref = "google-mlkit-object-detection" }
+google-mlkit-linkfirebase = { module = "com.google.mlkit:linkfirebase", version.ref = "google-mlkit-linkfirebase" }
+google-mlkit-digital-ink-recognition = { module = "com.google.mlkit:digital-ink-recognition", version.ref = "google-mlkit-digital-ink-recognition" }
+google-mlkit-language-id = { module = "com.google.mlkit:language-id", version.ref = "google-mlkit-language-id" }
+google-mlkit-translate = { module = "com.google.mlkit:translate", version.ref = "google-mlkit-translate" }
+google-mlkit-smart-reply = { module = "com.google.mlkit:smart-reply", version.ref = "google-mlkit-smart-reply" }
+google-mlkit-entity-extraction = { module = "com.google.mlkit:entity-extraction", version.ref = "google-mlkit-entity-extraction" }
+#endregion
+#region google
+google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "google-hilt" }
+google-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "google-hilt" }
+google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
+google-zxing = { module = "com.google.zxing:core", version.ref = "google-zxing" }
 #endregion
 #region firebase
 google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
@@ -732,6 +782,7 @@ androidx-core-location-altitude-proto = { module = "androidx.core:core-location-
 androidx-core-i18n = { module = "androidx.core:core-i18n", version.ref = "androidx-core-i18n" }
 androidx-core-telecom = { module = "androidx.core:core-telecom", version.ref = "androidx-core-telecom" }
 androidx-core-uwb = { module = "androidx.core.uwb:uwb", version.ref = "androidx-core-uwb" }
+androidx-core-viewtree = { module = "androidx.core:core-viewtree", version.ref = "androidx-core-viewtree" }
 #noinspection CredentialDependency
 androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "androidx-credentials" }
 androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "androidx-credentials" }
@@ -980,6 +1031,14 @@ androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work" }
 androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "androidx-work" }
 androidx-work-gcm = { module = "androidx.work:work-gcm", version.ref = "androidx-work" }
+androidx-xr-arcore = { module = "androidx.xr.arcore:arcore", version.ref = "androidx-xr" }
+androidx-xr-compose = { module = "androidx.xr.compose:compose", version.ref = "androidx-xr" }
+androidx-xr-compose-testing = { module = "androidx.xr.compose:compose-testing", version.ref = "androidx-xr" }
+androidx-xr-compose-material3 = { module = "androidx.xr.compose.material3:material3", version.ref = "androidx-xr" }
+androidx-xr-runtime = { module = "androidx.xr.runtime:runtime", version.ref = "androidx-xr" }
+androidx-xr-runtime-testing = { module = "androidx.xr.runtime:runtime-testing", version.ref = "androidx-xr" }
+androidx-xr-scenecore = { module = "androidx.xr.scenecore:scenecore", version.ref = "androidx-xr" }
+androidx-xr-scenecore-testing = { module = "androidx.xr.scenecore:scenecore-testing", version.ref = "androidx-xr" }
 #endregion
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
@@ -1041,6 +1100,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "google-ksp" }
+google-hilt = { id = "com.google.dagger.hilt.android", version.ref = "google-hilt" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 google-firebase-appdistribution = { id = "com.google.firebase.appdistribution", version.ref = "google-firebase-appdistribution" }
 google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "google-firebase-crashlytics-plugin" }
