@@ -62,6 +62,7 @@ dependencies {
     api(libs.ktor.serialization.kotlinx.json)
     api(libs.ktor.client.content.negotiation)
     api(libs.okhttp.logging.interceptor)
+    api(libs.coil.compose)
     debugApi(libs.chucker.library)
     releaseApi(libs.chucker.library.no.op)
 }
