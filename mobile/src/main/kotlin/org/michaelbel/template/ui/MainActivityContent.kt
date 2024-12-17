@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
+import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,6 +31,7 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -63,6 +67,7 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.Measurable
 import androidx.compose.ui.layout.MeasurePolicy
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
@@ -72,10 +77,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowHeightSizeClass
 import kotlinx.coroutines.launch
-import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.core.ktx.isLandscape
 import org.michaelbel.core.ktx.navigationSuiteType
 import org.michaelbel.template.MainViewModel
+import org.michaelbel.template.ui.details.DetailsScreen
+import org.michaelbel.template.ui.list.ListScreen
 
 @Composable
 fun MainActivityContent(
@@ -93,6 +100,7 @@ fun MainActivityContent(
         WindowHeightSizeClass.EXPANDED -> ReplyNavigationContentPosition.CENTER
         else -> ReplyNavigationContentPosition.TOP
     }
+    val layoutDirection = LocalLayoutDirection.current
 
     AppTheme {
         NavigationSuiteScaffoldLayout(
@@ -119,46 +127,6 @@ fun MainActivityContent(
                             )
 
                             NavigationBarItem(
-                                selected = selectedRoute == Navigation.Chat,
-                                onClick = { selectedRoute = Navigation.Chat },
-                                icon = {
-                                    BadgedBox(
-                                        badge = {
-                                            this@NavigationBar.AnimatedVisibility(
-                                                visible = selectedRoute != Navigation.Chat,
-                                                enter = fadeIn(),
-                                                exit = fadeOut()
-                                            ) {
-                                                Box(
-                                                    contentAlignment = Alignment.Center,
-                                                    modifier = Modifier
-                                                        .size(24.dp)
-                                                        .background(color = Color.Red, shape = CircleShape)
-                                                ) {
-                                                    Text(
-                                                        text = "12",
-                                                        color = Color.White,
-                                                        fontSize = 12.sp,
-                                                        fontWeight = FontWeight.Medium
-                                                    )
-                                                }
-                                            }
-                                        }
-                                    ) {
-                                        Icon(
-                                            imageVector = Icons.Outlined.Email,
-                                            contentDescription = null
-                                        )
-                                    }
-                                },
-                                label = {
-                                    Text(
-                                        text = "Chat"
-                                    )
-                                }
-                            )
-
-                            NavigationBarItem(
                                 selected = selectedRoute == Navigation.Settings,
                                 onClick = { selectedRoute = Navigation.Settings },
                                 icon = {
@@ -170,6 +138,22 @@ fun MainActivityContent(
                                 label = {
                                     Text(
                                         text = "Settings"
+                                    )
+                                }
+                            )
+
+                            NavigationBarItem(
+                                selected = selectedRoute == Navigation.About,
+                                onClick = { selectedRoute = Navigation.About },
+                                icon = {
+                                    Icon(
+                                        imageVector = Icons.Outlined.Info,
+                                        contentDescription = null
+                                    )
+                                },
+                                label = {
+                                    Text(
+                                        text = "About"
                                     )
                                 }
                             )
@@ -221,13 +205,13 @@ fun MainActivityContent(
                                 )
 
                                 NavigationRailItem(
-                                    selected = selectedRoute == Navigation.Chat,
-                                    onClick = { selectedRoute = Navigation.Chat },
+                                    selected = selectedRoute == Navigation.About,
+                                    onClick = { selectedRoute = Navigation.About },
                                     icon = {
                                         BadgedBox(
                                             badge = {
                                                 this@Column.AnimatedVisibility(
-                                                    visible = selectedRoute != Navigation.Chat,
+                                                    visible = selectedRoute != Navigation.About,
                                                     enter = fadeIn(),
                                                     exit = fadeOut()
                                                 ) {
@@ -335,13 +319,13 @@ fun MainActivityContent(
                                         )
 
                                         NavigationDrawerItem(
-                                            selected = selectedRoute == Navigation.Chat,
-                                            onClick = { selectedRoute = Navigation.Chat },
+                                            selected = selectedRoute == Navigation.About,
+                                            onClick = { selectedRoute = Navigation.About },
                                             icon = {
                                                 BadgedBox(
                                                     badge = {
                                                         this@Column.AnimatedVisibility(
-                                                            visible = selectedRoute != Navigation.Chat,
+                                                            visible = selectedRoute != Navigation.About,
                                                             enter = fadeIn(),
                                                             exit = fadeOut()
                                                         ) {
@@ -447,28 +431,25 @@ fun MainActivityContent(
                 NavHost(
                     navController = navHostController,
                     startDestination = selectedRoute,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .padding(
+                            start = innerPadding.calculateStartPadding(layoutDirection),
+                            top = innerPadding.calculateTopPadding(),
+                            end = innerPadding.calculateEndPadding(layoutDirection),
+                            bottom = 0.dp
+                        )
+                        .fillMaxSize()
                 ) {
                     composable<Navigation.Home> {
-                        Box(
-                            modifier = Modifier.fillMaxSize(),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = "Home"
-                            )
-                        }
+                        ListScreen(
+                            onClick = { navHostController.navigate(Navigation.Details(it)) },
+                            modifier = if (isLandscape) Modifier.displayCutoutPadding() else Modifier
+                        )
                     }
-                    composable<Navigation.Chat> {
-                        Row(
-                            modifier = Modifier.fillMaxSize(),
-                            horizontalArrangement = Arrangement.Center,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                text = "Chat"
-                            )
-                        }
+                    composable<Navigation.Details> {
+                        DetailsScreen(
+                            modifier = if (isLandscape) Modifier.displayCutoutPadding() else Modifier
+                        )
                     }
                     composable<Navigation.Settings> {
                         Column(
@@ -481,23 +462,21 @@ fun MainActivityContent(
                             )
                         }
                     }
+                    composable<Navigation.About> {
+                        Row(
+                            modifier = Modifier.fillMaxSize(),
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "About"
+                            )
+                        }
+                    }
                 }
-                innerPadding.toString()
             }
         }
     }
-}
-
-sealed interface Navigation {
-
-    @Serializable
-    data object Home: Navigation
-
-    @Serializable
-    data object Chat: Navigation
-
-    @Serializable
-    data object Settings: Navigation
 }
 
 fun navigationMeasurePolicy(

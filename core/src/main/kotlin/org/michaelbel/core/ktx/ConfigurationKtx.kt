@@ -56,6 +56,12 @@ inline val Context.isPortrait: Boolean
 inline val Context.isLandscape: Boolean
     get() = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
+inline val isPortrait: Boolean
+    @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
+
+inline val isLandscape: Boolean
+    @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+
 inline val Context.isRTL: Boolean
     get() = resources.configuration.layoutDirection == ViewCompat.LAYOUT_DIRECTION_RTL
 

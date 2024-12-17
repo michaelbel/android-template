@@ -2,19 +2,19 @@
   {
     "id": 1,
     "name": "European wild boar",
-    "description": "The **European wild boar** (*Sus scrofa*) is a large, robust animal native to forests across Europe. It has coarse, dark grey or brown fur, strong tusks, and a muscular build. Wild boars are omnivorous, feeding on roots, acorns, fruits, and small animals. They are highly adaptable and known for their strength and resilience.",
+    "description": "The European wild boar (Sus scrofa) is a large, robust animal native to forests across Europe. It has coarse, dark grey or brown fur, strong tusks, and a muscular build. Wild boars are omnivorous, feeding on roots, acorns, fruits, and small animals. They are highly adaptable and known for their strength and resilience.",
     "picture": "https://i.ibb.co/ZmrM0rH/europe-boar.webp"
   },
   {
     "id": 2,
     "name": "Siberian wild boar",
-    "description": "The **Siberian wild boar** (*Sus scrofa sibiricus*) is a large and robust subspecies adapted to the harsh climates of Siberia. It has thick, dark fur with dense undercoat for insulation, powerful tusks, and a muscular build. Known for its resilience, it thrives in snowy forests and survives extreme cold, feeding on roots, acorns, and small animals.",
+    "description": "The Siberian wild boar (Sus scrofa sibiricus) is a large and robust subspecies adapted to the harsh climates of Siberia. It has thick, dark fur with dense undercoat for insulation, powerful tusks, and a muscular build. Known for its resilience, it thrives in snowy forests and survives extreme cold, feeding on roots, acorns, and small animals.",
     "picture": "https://i.ibb.co/QffjPmL/siberian-boar.webp"
   },
   {
     "id": 3,
     "name": "Central Asian wild boar",
-    "description": "The **Central Asian wild boar** (*Sus scrofa nigripes*) is a subspecies of wild boar native to Central Asia, including Kazakhstan, Uzbekistan, and surrounding regions. It has a lighter build compared to its Siberian relatives, with shorter fur and well-developed tusks. Adapted to arid and semi-arid environments, it feeds on roots, plants, and small animals, displaying remarkable endurance in harsh conditions.",
+    "description": "The Central Asian wild boar (Sus scrofa nigripes) is a subspecies of wild boar native to Central Asia, including Kazakhstan, Uzbekistan, and surrounding regions. It has a lighter build compared to its Siberian relatives, with shorter fur and well-developed tusks. Adapted to arid and semi-arid environments, it feeds on roots, plants, and small animals, displaying remarkable endurance in harsh conditions.",
     "picture": "https://i.ibb.co/xfBHnH7/central-asian-boar.webp"
   }
 ]
