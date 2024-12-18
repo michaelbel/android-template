@@ -41,6 +41,13 @@ This Android app template provides a foundation for quickly starting development
 </div>
 <br/>
 
+**Tablet (landscape)**
+<div>
+    <img src=".github/pics/tablet-landscape.png" width="74%" alt="Tablet landscape image">
+    <img src=".github/pics/tablet-landscape-details.png" width="74%" alt="Tablet landscape image">
+</div>
+<br/>
+
 **Desktop**
 <div>
     <img src=".github/pics/desktop.png" width="99%" alt="Desktop Image">
