@@ -18,12 +18,15 @@ sealed interface AppNavigation {
 
 sealed interface TabNavigation {
 
+    @Parcelize
     @Serializable
-    data object Home: TabNavigation
+    data object Home: TabNavigation, Parcelable
 
+    @Parcelize
     @Serializable
-    data object Settings: TabNavigation
+    data object Settings: TabNavigation, Parcelable
 
+    @Parcelize
     @Serializable
-    data object About: TabNavigation
+    data object About: TabNavigation, Parcelable
 }
