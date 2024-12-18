@@ -57,6 +57,7 @@ dependencies {
     api(libs.androidx.lifecycle.viewmodel.compose)
     api(libs.androidx.navigation.compose)
     api(libs.androidx.paging.compose)
+    api(libs.androidx.window)
     api(libs.koin.androidx.compose)
     api(libs.ktor.client.okhttp)
     api(libs.ktor.serialization.kotlinx.json)

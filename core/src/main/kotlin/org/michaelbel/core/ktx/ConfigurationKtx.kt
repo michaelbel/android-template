@@ -1,4 +1,4 @@
-@file:Suppress("unused", "ObsoleteSdkInt")
+@file:Suppress("unused", "ObsoleteSdkInt", "RestrictedApi")
 
 package org.michaelbel.core.ktx
 
@@ -13,10 +13,16 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.WindowMetrics
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import androidx.window.layout.FoldingFeature
+import androidx.window.layout.WindowInfoTracker
+import androidx.window.layout.WindowLayoutInfo
 
 inline val Context.deviceWidth: Int
     get() {
@@ -111,7 +117,15 @@ inline val isLandscape: Boolean
     @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
 
 inline val isTabletPortrait: Boolean
-    @Composable get() = isPortrait && screenWidth >= 600
+    @Composable get() = !isFoldable() && isPortrait && screenWidth >= 600
 
 inline val isTabletLandscape: Boolean
-    @Composable get() = isLandscape && screenWidth >= 1200
+    @Composable get() = !isFoldable() && isLandscape && screenWidth >= 1200
+
+@Composable
+fun isFoldable(): Boolean {
+    val context = LocalContext.current
+    val windowLayoutInfo = remember { WindowInfoTracker.getOrCreate(context).windowLayoutInfo(context) }
+    val foldableState = windowLayoutInfo.collectAsState(initial = WindowLayoutInfo(emptyList()))
+    return foldableState.value.displayFeatures.any { it is FoldingFeature }
+}
