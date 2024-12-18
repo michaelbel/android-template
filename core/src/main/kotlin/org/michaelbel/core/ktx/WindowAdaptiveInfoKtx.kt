@@ -15,8 +15,8 @@ inline val navigationSuiteType: NavigationSuiteType
         val density = LocalDensity.current
         val windowSize = with(density) { currentWindowSize().toSize().toDpSize() }
         return when {
-            adaptiveInfo.windowPosture.isTabletop -> NavigationSuiteType.NavigationBar
-            adaptiveInfo.windowSizeClass.isCompact -> NavigationSuiteType.NavigationBar
+            adaptiveInfo.windowPosture.isTabletop && isPortrait -> NavigationSuiteType.NavigationBar
+            adaptiveInfo.windowSizeClass.isCompact && isPortrait -> NavigationSuiteType.NavigationBar
             adaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.EXPANDED && windowSize.width >= 1200.dp -> NavigationSuiteType.NavigationDrawer
             else -> NavigationSuiteType.NavigationRail
         }

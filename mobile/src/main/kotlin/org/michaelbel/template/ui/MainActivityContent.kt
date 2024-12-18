@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3AdaptiveApi::class)
 
 package org.michaelbel.template.ui
 
@@ -9,15 +9,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
-import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -50,8 +49,12 @@ import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+import androidx.compose.material3.adaptive.layout.AnimatedPane
+import androidx.compose.material3.adaptive.layout.ListDetailPaneScaffold
+import androidx.compose.material3.adaptive.layout.ListDetailPaneScaffoldRole
+import androidx.compose.material3.adaptive.navigation.rememberListDetailPaneScaffoldNavigator
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldLayout
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
 import androidx.compose.runtime.Composable
@@ -78,18 +81,23 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowHeightSizeClass
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.isLandscape
+import org.michaelbel.core.ktx.displayCutoutPaddingIfLandscape
+import org.michaelbel.core.ktx.isPortrait
 import org.michaelbel.core.ktx.navigationSuiteType
 import org.michaelbel.template.MainViewModel
+import org.michaelbel.template.ui.about.AboutScreen
 import org.michaelbel.template.ui.details.DetailsScreen
+import org.michaelbel.template.ui.details2.DetailsScreen2
+import org.michaelbel.template.ui.details2.empty.DetailsEmptyScreen
 import org.michaelbel.template.ui.list.ListScreen
+import org.michaelbel.template.ui.settings.SettingsScreen
 
 @Composable
 fun MainActivityContent(
     viewModel: MainViewModel = koinViewModel()
 ) {
     val navHostController = rememberNavController()
-    var selectedRoute by remember { mutableStateOf<Navigation>(Navigation.Home) }
+    var selectedTabRoute by remember { mutableStateOf<TabNavigation>(TabNavigation.Home) }
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 
@@ -102,379 +110,376 @@ fun MainActivityContent(
     }
     val layoutDirection = LocalLayoutDirection.current
 
-    AppTheme {
-        NavigationSuiteScaffoldLayout(
-            navigationSuite = {
-                when (navigationSuiteType) {
-                    NavigationSuiteType.NavigationBar -> {
-                        NavigationBar(
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            NavigationBarItem(
-                                selected = selectedRoute == Navigation.Home,
-                                onClick = { selectedRoute = Navigation.Home },
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Outlined.Home,
-                                        contentDescription = null
-                                    )
-                                },
-                                label = {
-                                    Text(
-                                        text = "Home"
-                                    )
-                                }
-                            )
+    val listDetailPaneScaffoldNavigator = rememberListDetailPaneScaffoldNavigator<AppNavigation.Details>()
 
-                            NavigationBarItem(
-                                selected = selectedRoute == Navigation.Settings,
-                                onClick = { selectedRoute = Navigation.Settings },
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Outlined.Settings,
-                                        contentDescription = null
-                                    )
-                                },
-                                label = {
-                                    Text(
-                                        text = "Settings"
-                                    )
-                                }
-                            )
-
-                            NavigationBarItem(
-                                selected = selectedRoute == Navigation.About,
-                                onClick = { selectedRoute = Navigation.About },
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Outlined.Info,
-                                        contentDescription = null
-                                    )
-                                },
-                                label = {
-                                    Text(
-                                        text = "About"
-                                    )
-                                }
-                            )
-                        }
-                    }
-                    NavigationSuiteType.NavigationRail -> {
-                        NavigationRail(
-                            modifier = Modifier.fillMaxHeight(),
-                            containerColor = MaterialTheme.colorScheme.inverseOnSurface
-                        ) {
-                            Column(
-                                modifier = Modifier.layoutId(LayoutType.HEADER),
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.spacedBy(4.dp)
+    NavHost(
+        navController = navHostController,
+        startDestination = AppNavigation.Main,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        composable<AppNavigation.Main> {
+            NavigationSuiteScaffoldLayout(
+                navigationSuite = {
+                    when (navigationSuiteType) {
+                        NavigationSuiteType.NavigationBar -> {
+                            NavigationBar(
+                                modifier = Modifier.fillMaxWidth()
                             ) {
-                                FloatingActionButton(
-                                    onClick = {
-                                        coroutineScope.launch {
-                                            snackbarHostState.showSnackbar(
-                                                message = "Single-line snackbar with action",
-                                                actionLabel = "Action",
-                                                duration = SnackbarDuration.Short
-                                            )
-                                        }
-                                    },
-                                    modifier = Modifier
-                                        .statusBarsPadding()
-                                        .padding(top = 16.dp),
-                                    containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                                    contentColor = MaterialTheme.colorScheme.onTertiaryContainer
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Default.Edit,
-                                        contentDescription = null
-                                    )
-                                }
-
-                                Spacer(Modifier.height(16.dp))
-
-                                NavigationRailItem(
-                                    selected = selectedRoute == Navigation.Home,
-                                    onClick = { selectedRoute = Navigation.Home },
+                                NavigationBarItem(
+                                    selected = selectedTabRoute == TabNavigation.Home,
+                                    onClick = { selectedTabRoute = TabNavigation.Home },
                                     icon = {
                                         Icon(
                                             imageVector = Icons.Outlined.Home,
                                             contentDescription = null
                                         )
+                                    },
+                                    label = {
+                                        Text(
+                                            text = "Home"
+                                        )
                                     }
                                 )
 
-                                NavigationRailItem(
-                                    selected = selectedRoute == Navigation.About,
-                                    onClick = { selectedRoute = Navigation.About },
-                                    icon = {
-                                        BadgedBox(
-                                            badge = {
-                                                this@Column.AnimatedVisibility(
-                                                    visible = selectedRoute != Navigation.About,
-                                                    enter = fadeIn(),
-                                                    exit = fadeOut()
-                                                ) {
-                                                    Box(
-                                                        contentAlignment = Alignment.Center,
-                                                        modifier = Modifier
-                                                            .size(24.dp)
-                                                            .background(color = Color.Red, shape = CircleShape)
-                                                    ) {
-                                                        Text(
-                                                            text = "12",
-                                                            color = Color.White,
-                                                            fontSize = 12.sp,
-                                                            fontWeight = FontWeight.Medium
-                                                        )
-                                                    }
-                                                }
-                                            }
-                                        ) {
-                                            Icon(
-                                                imageVector = Icons.Outlined.Email,
-                                                contentDescription = null
-                                            )
-                                        }
-                                    }
-                                )
-
-                                NavigationRailItem(
-                                    selected = selectedRoute == Navigation.Settings,
-                                    onClick = { selectedRoute = Navigation.Settings },
+                                NavigationBarItem(
+                                    selected = selectedTabRoute == TabNavigation.Settings,
+                                    onClick = { selectedTabRoute = TabNavigation.Settings },
                                     icon = {
                                         Icon(
                                             imageVector = Icons.Outlined.Settings,
                                             contentDescription = null
                                         )
+                                    },
+                                    label = {
+                                        Text(
+                                            text = "Settings"
+                                        )
+                                    }
+                                )
+
+                                NavigationBarItem(
+                                    selected = selectedTabRoute == TabNavigation.About,
+                                    onClick = { selectedTabRoute = TabNavigation.About },
+                                    icon = {
+                                        Icon(
+                                            imageVector = Icons.Outlined.Info,
+                                            contentDescription = null
+                                        )
+                                    },
+                                    label = {
+                                        Text(
+                                            text = "About"
+                                        )
                                     }
                                 )
                             }
                         }
-                    }
-                    NavigationSuiteType.NavigationDrawer -> {
-                        PermanentDrawerSheet(
-                            modifier = Modifier.sizeIn(minWidth = 200.dp, maxWidth = 300.dp),
-                            drawerContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
-                        ) {
-                            Layout(
+                        NavigationSuiteType.NavigationRail -> {
+                            NavigationRail(
                                 modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.surfaceContainerHigh)
-                                    .padding(16.dp),
-                                content = {
-                                    Column(
-                                        modifier = Modifier.layoutId(LayoutType.HEADER),
-                                        horizontalAlignment = Alignment.Start,
-                                        verticalArrangement = Arrangement.spacedBy(4.dp)
+                                    .displayCutoutPaddingIfLandscape()
+                                    .fillMaxHeight(),
+                                containerColor = MaterialTheme.colorScheme.inverseOnSurface
+                            ) {
+                                Column(
+                                    modifier = Modifier.layoutId(LayoutType.HEADER),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                                ) {
+                                    FloatingActionButton(
+                                        onClick = {
+                                            coroutineScope.launch {
+                                                snackbarHostState.showSnackbar(
+                                                    message = "Single-line snackbar with action",
+                                                    actionLabel = "Action",
+                                                    duration = SnackbarDuration.Short
+                                                )
+                                            }
+                                        },
+                                        modifier = Modifier
+                                            .statusBarsPadding()
+                                            .padding(top = 16.dp),
+                                        containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                                        contentColor = MaterialTheme.colorScheme.onTertiaryContainer
                                     ) {
-                                        ExtendedFloatingActionButton(
-                                            onClick = {
-                                                coroutineScope.launch {
-                                                    snackbarHostState.showSnackbar(
-                                                        message = "Single-line snackbar with action",
-                                                        actionLabel = "Action",
-                                                        duration = SnackbarDuration.Short
-                                                    )
-                                                }
-                                            },
-                                            modifier = Modifier
-                                                .fillMaxWidth()
-                                                .statusBarsPadding(),
-                                            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                                            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
-                                        ) {
-                                            Icon(
-                                                imageVector = Icons.Default.Edit,
-                                                contentDescription = null,
-                                                modifier = Modifier.size(24.dp)
-                                            )
-
-                                            Text(
-                                                text = "Compose",
-                                                modifier = Modifier.padding(start = 8.dp),
-                                            )
-                                        }
+                                        Icon(
+                                            imageVector = Icons.Default.Edit,
+                                            contentDescription = null
+                                        )
                                     }
 
-                                    Column(
-                                        modifier = Modifier
-                                            .layoutId(LayoutType.CONTENT)
-                                            .verticalScroll(rememberScrollState()),
-                                        horizontalAlignment = Alignment.CenterHorizontally,
-                                    ) {
-                                        NavigationDrawerItem(
-                                            selected = selectedRoute == Navigation.Home,
-                                            onClick = { selectedRoute = Navigation.Home },
-                                            icon = {
+                                    Spacer(Modifier.height(16.dp))
+
+                                    NavigationRailItem(
+                                        selected = selectedTabRoute == TabNavigation.Home,
+                                        onClick = { selectedTabRoute = TabNavigation.Home },
+                                        icon = {
+                                            Icon(
+                                                imageVector = Icons.Outlined.Home,
+                                                contentDescription = null
+                                            )
+                                        }
+                                    )
+
+                                    NavigationRailItem(
+                                        selected = selectedTabRoute == TabNavigation.Settings,
+                                        onClick = { selectedTabRoute = TabNavigation.Settings },
+                                        icon = {
+                                            Icon(
+                                                imageVector = Icons.Outlined.Settings,
+                                                contentDescription = null
+                                            )
+                                        }
+                                    )
+
+                                    NavigationRailItem(
+                                        selected = selectedTabRoute == TabNavigation.About,
+                                        onClick = { selectedTabRoute = TabNavigation.About },
+                                        icon = {
+                                            Icon(
+                                                imageVector = Icons.Outlined.Info,
+                                                contentDescription = null
+                                            )
+                                        }
+                                    )
+                                }
+                            }
+                        }
+                        NavigationSuiteType.NavigationDrawer -> {
+                            PermanentDrawerSheet(
+                                modifier = Modifier.sizeIn(minWidth = 200.dp, maxWidth = 300.dp),
+                                drawerContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+                            ) {
+                                Layout(
+                                    modifier = Modifier
+                                        .background(MaterialTheme.colorScheme.surfaceContainerHigh)
+                                        .padding(16.dp),
+                                    content = {
+                                        Column(
+                                            modifier = Modifier.layoutId(LayoutType.HEADER),
+                                            horizontalAlignment = Alignment.Start,
+                                            verticalArrangement = Arrangement.spacedBy(4.dp)
+                                        ) {
+                                            ExtendedFloatingActionButton(
+                                                onClick = {
+                                                    coroutineScope.launch {
+                                                        snackbarHostState.showSnackbar(
+                                                            message = "Single-line snackbar with action",
+                                                            actionLabel = "Action",
+                                                            duration = SnackbarDuration.Short
+                                                        )
+                                                    }
+                                                },
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .statusBarsPadding(),
+                                                containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                                                contentColor = MaterialTheme.colorScheme.onTertiaryContainer
+                                            ) {
                                                 Icon(
-                                                    imageVector = Icons.Outlined.Home,
-                                                    contentDescription = null
+                                                    imageVector = Icons.Default.Edit,
+                                                    contentDescription = null,
+                                                    modifier = Modifier.size(24.dp)
                                                 )
-                                            },
-                                            label = {
+
                                                 Text(
-                                                    text = "Home"
+                                                    text = "Compose",
+                                                    modifier = Modifier.padding(start = 8.dp),
                                                 )
                                             }
-                                        )
+                                        }
 
-                                        NavigationDrawerItem(
-                                            selected = selectedRoute == Navigation.About,
-                                            onClick = { selectedRoute = Navigation.About },
-                                            icon = {
-                                                BadgedBox(
-                                                    badge = {
-                                                        this@Column.AnimatedVisibility(
-                                                            visible = selectedRoute != Navigation.About,
-                                                            enter = fadeIn(),
-                                                            exit = fadeOut()
-                                                        ) {
-                                                            Box(
-                                                                contentAlignment = Alignment.Center,
-                                                                modifier = Modifier
-                                                                    .size(24.dp)
-                                                                    .background(color = Color.Red, shape = CircleShape)
-                                                            ) {
-                                                                Text(
-                                                                    text = "12",
-                                                                    color = Color.White,
-                                                                    fontSize = 12.sp,
-                                                                    fontWeight = FontWeight.Medium
-                                                                )
-                                                            }
-                                                        }
-                                                    }
-                                                ) {
+                                        Column(
+                                            modifier = Modifier
+                                                .layoutId(LayoutType.CONTENT)
+                                                .verticalScroll(rememberScrollState()),
+                                            horizontalAlignment = Alignment.CenterHorizontally,
+                                        ) {
+                                            NavigationDrawerItem(
+                                                selected = selectedTabRoute == TabNavigation.Home,
+                                                onClick = { selectedTabRoute = TabNavigation.Home },
+                                                icon = {
                                                     Icon(
-                                                        imageVector = Icons.Outlined.Email,
+                                                        imageVector = Icons.Outlined.Home,
                                                         contentDescription = null
                                                     )
+                                                },
+                                                label = {
+                                                    Text(
+                                                        text = "Home"
+                                                    )
                                                 }
-                                            },
-                                            label = {
-                                                Text(
-                                                    text = "Chat"
-                                                )
-                                            }
-                                        )
+                                            )
 
-                                        NavigationDrawerItem(
-                                            selected = selectedRoute == Navigation.Settings,
-                                            onClick = { selectedRoute = Navigation.Settings },
-                                            icon = {
-                                                Icon(
-                                                    imageVector = Icons.Outlined.Settings,
-                                                    contentDescription = null
-                                                )
-                                            },
-                                            label = {
-                                                Text(
-                                                    text = "Settings"
-                                                )
-                                            }
+                                            NavigationDrawerItem(
+                                                selected = selectedTabRoute == TabNavigation.About,
+                                                onClick = { selectedTabRoute = TabNavigation.About },
+                                                icon = {
+                                                    BadgedBox(
+                                                        badge = {
+                                                            this@Column.AnimatedVisibility(
+                                                                visible = selectedTabRoute != TabNavigation.About,
+                                                                enter = fadeIn(),
+                                                                exit = fadeOut()
+                                                            ) {
+                                                                Box(
+                                                                    contentAlignment = Alignment.Center,
+                                                                    modifier = Modifier
+                                                                        .size(24.dp)
+                                                                        .background(color = Color.Red, shape = CircleShape)
+                                                                ) {
+                                                                    Text(
+                                                                        text = "12",
+                                                                        color = Color.White,
+                                                                        fontSize = 12.sp,
+                                                                        fontWeight = FontWeight.Medium
+                                                                    )
+                                                                }
+                                                            }
+                                                        }
+                                                    ) {
+                                                        Icon(
+                                                            imageVector = Icons.Outlined.Email,
+                                                            contentDescription = null
+                                                        )
+                                                    }
+                                                },
+                                                label = {
+                                                    Text(
+                                                        text = "Chat"
+                                                    )
+                                                }
+                                            )
+
+                                            NavigationDrawerItem(
+                                                selected = selectedTabRoute == TabNavigation.Settings,
+                                                onClick = { selectedTabRoute = TabNavigation.Settings },
+                                                icon = {
+                                                    Icon(
+                                                        imageVector = Icons.Outlined.Settings,
+                                                        contentDescription = null
+                                                    )
+                                                },
+                                                label = {
+                                                    Text(
+                                                        text = "Settings"
+                                                    )
+                                                }
+                                            )
+                                        }
+                                    },
+                                    measurePolicy = navigationMeasurePolicy(navContentPosition)
+                                )
+                            }
+                        }
+                    }
+                },
+                layoutType = navigationSuiteType
+            ) {
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    snackbarHost = {
+                        SnackbarHost(
+                            hostState = snackbarHostState
+                        )
+                    },
+                    floatingActionButton = {
+                        if (navigationSuiteType == NavigationSuiteType.NavigationBar) {
+                            ExtendedFloatingActionButton(
+                                onClick = {
+                                    coroutineScope.launch {
+                                        snackbarHostState.showSnackbar(
+                                            message = "Single-line snackbar with action",
+                                            actionLabel = "Action",
+                                            duration = SnackbarDuration.Short
                                         )
                                     }
                                 },
-                                measurePolicy = navigationMeasurePolicy(navContentPosition)
-                            )
+                                modifier = Modifier.offset(y = 16.dp),
+                                containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                                contentColor = MaterialTheme.colorScheme.onTertiaryContainer
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Outlined.Edit,
+                                    contentDescription = null
+                                )
+
+                                Text(
+                                    text = "Compose",
+                                    modifier = Modifier.padding(start = 8.dp)
+                                )
+                            }
                         }
                     }
-                }
-            },
-            layoutType = navigationSuiteType
-        ) {
-            Scaffold(
-                modifier = Modifier.fillMaxSize(),
-                topBar = {
-                    TopAppBar(
-                        title = {
-                            Text(
-                                text = "Android Template"
+                ) { innerPadding ->
+                    val tabsNavHostController = rememberNavController()
+
+                    NavHost(
+                        navController = tabsNavHostController,
+                        startDestination = selectedTabRoute,
+                        modifier = Modifier
+                            .padding(
+                                start = innerPadding.calculateStartPadding(layoutDirection),
+                                top = 0.dp,
+                                end = innerPadding.calculateEndPadding(layoutDirection),
+                                bottom = 0.dp
                             )
-                        }
-                    )
-                },
-                snackbarHost = {
-                    SnackbarHost(
-                        hostState = snackbarHostState
-                    )
-                },
-                floatingActionButton = {
-                    if (navigationSuiteType == NavigationSuiteType.NavigationBar) {
-                        ExtendedFloatingActionButton(
-                            onClick = {
-                                coroutineScope.launch {
-                                    snackbarHostState.showSnackbar(
-                                        message = "Single-line snackbar with action",
-                                        actionLabel = "Action",
-                                        duration = SnackbarDuration.Short
+                            .fillMaxSize()
+                    ) {
+                        composable<TabNavigation.Home> {
+                            when {
+                                isPortrait -> {
+                                    ListScreen(
+                                        onClick = { navHostController.navigate(AppNavigation.Details(it)) }
                                     )
                                 }
-                            },
-                            modifier = Modifier.offset(y = 16.dp),
-                            containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                            contentColor = MaterialTheme.colorScheme.onTertiaryContainer
-                        ) {
-                            Icon(
-                                imageVector = Icons.Outlined.Edit,
-                                contentDescription = null
-                            )
-
-                            Text(
-                                text = "Compose",
-                                modifier = Modifier.padding(start = 8.dp)
-                            )
+                                else -> {
+                                    ListDetailPaneScaffold(
+                                        directive = listDetailPaneScaffoldNavigator.scaffoldDirective,
+                                        value = listDetailPaneScaffoldNavigator.scaffoldValue,
+                                        listPane = {
+                                            AnimatedPane(
+                                                modifier = Modifier
+                                                    .navigationBarsPadding()
+                                                    .fillMaxWidth(0.4F)
+                                            ) {
+                                                ListScreen(
+                                                    onClick = { listDetailPaneScaffoldNavigator.navigateTo(ListDetailPaneScaffoldRole.Detail, AppNavigation.Details(it)) }
+                                                )
+                                            }
+                                        },
+                                        detailPane = {
+                                            AnimatedPane(
+                                                modifier = Modifier.fillMaxWidth(0.6F)
+                                            ) {
+                                                when {
+                                                    listDetailPaneScaffoldNavigator.currentDestination?.content != null -> {
+                                                        DetailsScreen2(
+                                                            id = listDetailPaneScaffoldNavigator.currentDestination?.content?.id!!
+                                                        )
+                                                    }
+                                                    else -> {
+                                                        DetailsEmptyScreen()
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    )
+                                }
+                            }
                         }
-                    }
-                }
-            ) { innerPadding ->
-                NavHost(
-                    navController = navHostController,
-                    startDestination = selectedRoute,
-                    modifier = Modifier
-                        .padding(
-                            start = innerPadding.calculateStartPadding(layoutDirection),
-                            top = innerPadding.calculateTopPadding(),
-                            end = innerPadding.calculateEndPadding(layoutDirection),
-                            bottom = 0.dp
-                        )
-                        .fillMaxSize()
-                ) {
-                    composable<Navigation.Home> {
-                        ListScreen(
-                            onClick = { navHostController.navigate(Navigation.Details(it)) },
-                            modifier = if (isLandscape) Modifier.displayCutoutPadding() else Modifier
-                        )
-                    }
-                    composable<Navigation.Details> {
-                        DetailsScreen(
-                            modifier = if (isLandscape) Modifier.displayCutoutPadding() else Modifier
-                        )
-                    }
-                    composable<Navigation.Settings> {
-                        Column(
-                            modifier = Modifier.fillMaxSize(),
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Text(
-                                text = "Settings"
-                            )
+                        composable<TabNavigation.Settings> {
+                            SettingsScreen()
                         }
-                    }
-                    composable<Navigation.About> {
-                        Row(
-                            modifier = Modifier.fillMaxSize(),
-                            horizontalArrangement = Arrangement.Center,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                text = "About"
-                            )
+                        composable<TabNavigation.About> {
+                            AboutScreen()
                         }
                     }
                 }
             }
+        }
+        composable<AppNavigation.Details> {
+            DetailsScreen()
         }
     }
 }

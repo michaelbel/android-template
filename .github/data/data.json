@@ -16,5 +16,17 @@
     "name": "Central Asian wild boar",
     "description": "The Central Asian wild boar (Sus scrofa nigripes) is a subspecies of wild boar native to Central Asia, including Kazakhstan, Uzbekistan, and surrounding regions. It has a lighter build compared to its Siberian relatives, with shorter fur and well-developed tusks. Adapted to arid and semi-arid environments, it feeds on roots, plants, and small animals, displaying remarkable endurance in harsh conditions.",
     "picture": "https://i.ibb.co/xfBHnH7/central-asian-boar.webp"
+  },
+  {
+    "id": 4,
+    "name": "Indian wild boar.",
+    "description": "The Indian wild boar (*Sus scrofa cristatus*) is a subspecies of wild pig native to South Asia. It has a robust body, dark gray to black coloration, and a distinctive mane of coarse hair along its back. Found in forests, grasslands, and agricultural areas, it is known for its adaptability and plays a key role in the ecosystem as a forager.",
+    "picture": "https://i.ibb.co/SNdTNcW/Indian-wild-boar.webp"
+  },
+  {
+    "id": 5,
+    "name": "Pygmy hog",
+    "description": "The pygmy hog (*Porcula salvania*) is the smallest and rarest wild pig, found in the grasslands of northeastern India and Nepal. It is critically endangered, with a compact body, dark brown coloration, and short legs, adapted to dense vegetation.",
+    "picture": "https://i.ibb.co/kBmgqJg/pygmy-hog.webp"
   }
 ]

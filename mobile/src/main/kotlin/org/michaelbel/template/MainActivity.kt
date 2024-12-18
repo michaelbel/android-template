@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.MainActivityContent
 
 class MainActivity: AppCompatActivity() {
@@ -14,7 +15,9 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MainActivityContent()
+            AppTheme {
+                MainActivityContent()
+            }
         }
     }
 }
