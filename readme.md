@@ -21,6 +21,13 @@ This Android app template provides a foundation for quickly starting development
 </div>
 <br/>
 
+**Phone (landscape)**
+<div>
+    <img src=".github/pics/phone-landscape.png" width="66%" alt="Phone landscape image">
+    <img src=".github/pics/phone-landscape-details.png" width="66%" alt="Phone landscape image">
+</div>
+<br/>
+
 **Foldable**
 <div>
     <img src=".github/pics/foldable.png" width="66%" alt="Foldable Image">
