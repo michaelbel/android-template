@@ -8,6 +8,7 @@ import android.content.res.Configuration
 import android.graphics.Insets
 import android.os.Build
 import android.util.DisplayMetrics
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.WindowMetrics
@@ -16,7 +17,6 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 
 inline val Context.deviceWidth: Int
     get() {
@@ -29,7 +29,7 @@ inline val Context.deviceWidth: Int
             windowMetrics.bounds.width() - insets.left - insets.right
         } else {
             val displayMetrics = DisplayMetrics()
-            windowManager.defaultDisplay.getMetrics(displayMetrics)
+            display.getMetrics(displayMetrics)
             displayMetrics.widthPixels
         }
     }
@@ -45,7 +45,7 @@ inline val Context.deviceHeight: Int
             windowMetrics.bounds.height() - insets.top - insets.bottom
         } else {
             val displayMetrics = DisplayMetrics()
-            windowManager.defaultDisplay.getMetrics(displayMetrics)
+            display.getMetrics(displayMetrics)
             displayMetrics.heightPixels
         }
     }
@@ -63,10 +63,10 @@ inline val isLandscape: Boolean
     @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
 
 inline val Context.isRTL: Boolean
-    get() = resources.configuration.layoutDirection == ViewCompat.LAYOUT_DIRECTION_RTL
+    get() = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 
 inline val Context.isLTR: Boolean
-    get() = resources.configuration.layoutDirection == ViewCompat.LAYOUT_DIRECTION_LTR
+    get() = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR
 
 inline val screenWidthDp: Dp
     @Composable get() {
