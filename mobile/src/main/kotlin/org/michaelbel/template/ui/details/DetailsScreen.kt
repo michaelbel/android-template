@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package org.michaelbel.template.ui.details
 
 import androidx.compose.foundation.layout.Column
@@ -12,9 +14,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -27,13 +35,33 @@ import org.michaelbel.core.ktx.isPortrait
 
 @Composable
 fun DetailsScreen(
+    navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailsViewModel = koinViewModel()
 ) {
     val appEntity by viewModel.appEntity.collectAsStateWithLifecycle()
 
     Scaffold(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize(),
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = appEntity.name
+                    )
+                },
+                navigationIcon = {
+                    IconButton(
+                        onClick = navigateBack
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+                            contentDescription = null
+                        )
+                    }
+                }
+            )
+        }
     ) { innerPadding ->
         when {
             isPortrait -> {
@@ -52,17 +80,10 @@ fun DetailsScreen(
                     )
 
                     Text(
-                        text = appEntity.name,
-                        style = MaterialTheme.typography.headlineMedium,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp)
-                    )
-
-                    Text(
                         text = appEntity.description,
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+                        modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp)
                     )
                 }
             }
@@ -80,7 +101,7 @@ fun DetailsScreen(
                         modifier = Modifier
                             .padding(start = 16.dp)
                             .fillMaxWidth(0.5F)
-                            .fillMaxHeight(0.7F)
+                            .fillMaxHeight(0.9F)
                     )
 
                     Column(
@@ -89,17 +110,10 @@ fun DetailsScreen(
                             .verticalScroll(rememberScrollState())
                     ) {
                         Text(
-                            text = appEntity.name,
-                            style = MaterialTheme.typography.headlineMedium,
-                            color = MaterialTheme.colorScheme.onSurface,
-                            modifier = Modifier.padding(horizontal = 16.dp)
-                        )
-
-                        Text(
                             text = appEntity.description,
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onSurface,
-                            modifier = Modifier.padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 16.dp)
+                            modifier = Modifier.padding(horizontal = 16.dp)
                         )
                     }
                 }

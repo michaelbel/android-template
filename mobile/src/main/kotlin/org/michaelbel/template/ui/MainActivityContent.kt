@@ -482,7 +482,9 @@ fun MainActivityContent(
             }
         }
         composable<AppNavigation.Details> {
-            DetailsScreen()
+            DetailsScreen(
+                navigateBack = navHostController::popBackStack
+            )
         }
     }
 }
