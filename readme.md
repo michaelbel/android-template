@@ -6,9 +6,9 @@ Android App Template
 
 This Android app template provides a foundation for quickly starting development across Mobile, Wear, TV, and Auto platforms. It includes pre-configured dependencies, code samples, and project structure, simplifying the creation and setup of new applications. The template helps reduce configuration time and allows developers to focus on implementing functionality, ensuring a smooth start.
 
-[![android-mobile](https://img.shields.io/badge/mobile-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-tablet](https://img.shields.io/badge/tablet-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-phone](https://img.shields.io/badge/phone-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-foldable](https://img.shields.io/badge/foldable-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-tablet](https://img.shields.io/badge/tablet-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-desktop](https://img.shields.io/badge/desktop-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-wear](https://img.shields.io/badge/wear-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-tv](https://img.shields.io/badge/tv-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
@@ -34,9 +34,10 @@ This Android app template provides a foundation for quickly starting development
 </div>
 <br/>
 
-**Tablet**
+**Tablet (portrait)**
 <div>
-    <img src=".github/pics/tablet.png" width="82%" alt="Tablet Image">
+    <img src=".github/pics/tablet-portrait.png" width="48%" alt="Tablet portrait image">
+    <img src=".github/pics/tablet-portrait-details.png" width="48%" alt="Tablet portrait image">
 </div>
 <br/>
 
