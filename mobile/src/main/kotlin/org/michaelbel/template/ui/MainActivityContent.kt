@@ -2,12 +2,8 @@
 
 package org.michaelbel.template.ui
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -26,16 +22,13 @@ import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FloatingActionButton
@@ -69,16 +62,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.Measurable
 import androidx.compose.ui.layout.MeasurePolicy
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.offset
-import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -250,8 +240,8 @@ fun MainActivityContent(
                         }
                         NavigationSuiteType.NavigationDrawer -> {
                             PermanentDrawerSheet(
-                                modifier = Modifier.sizeIn(minWidth = 200.dp, maxWidth = 300.dp),
-                                drawerContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+                                modifier = Modifier.sizeIn(minWidth = 200.dp, maxWidth = 200.dp),
+                                drawerContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh
                             ) {
                                 Layout(
                                     modifier = Modifier
@@ -274,8 +264,8 @@ fun MainActivityContent(
                                                     }
                                                 },
                                                 modifier = Modifier
-                                                    .fillMaxWidth()
-                                                    .statusBarsPadding(),
+                                                    .statusBarsPadding()
+                                                    .fillMaxWidth(),
                                                 containerColor = MaterialTheme.colorScheme.tertiaryContainer,
                                                 contentColor = MaterialTheme.colorScheme.onTertiaryContainer
                                             ) {
@@ -315,46 +305,6 @@ fun MainActivityContent(
                                             )
 
                                             NavigationDrawerItem(
-                                                selected = selectedTabRoute == TabNavigation.About,
-                                                onClick = { selectedTabRoute = TabNavigation.About },
-                                                icon = {
-                                                    BadgedBox(
-                                                        badge = {
-                                                            this@Column.AnimatedVisibility(
-                                                                visible = selectedTabRoute != TabNavigation.About,
-                                                                enter = fadeIn(),
-                                                                exit = fadeOut()
-                                                            ) {
-                                                                Box(
-                                                                    contentAlignment = Alignment.Center,
-                                                                    modifier = Modifier
-                                                                        .size(24.dp)
-                                                                        .background(color = Color.Red, shape = CircleShape)
-                                                                ) {
-                                                                    Text(
-                                                                        text = "12",
-                                                                        color = Color.White,
-                                                                        fontSize = 12.sp,
-                                                                        fontWeight = FontWeight.Medium
-                                                                    )
-                                                                }
-                                                            }
-                                                        }
-                                                    ) {
-                                                        Icon(
-                                                            imageVector = Icons.Outlined.Email,
-                                                            contentDescription = null
-                                                        )
-                                                    }
-                                                },
-                                                label = {
-                                                    Text(
-                                                        text = "Chat"
-                                                    )
-                                                }
-                                            )
-
-                                            NavigationDrawerItem(
                                                 selected = selectedTabRoute == TabNavigation.Settings,
                                                 onClick = { selectedTabRoute = TabNavigation.Settings },
                                                 icon = {
@@ -366,6 +316,22 @@ fun MainActivityContent(
                                                 label = {
                                                     Text(
                                                         text = "Settings"
+                                                    )
+                                                }
+                                            )
+
+                                            NavigationDrawerItem(
+                                                selected = selectedTabRoute == TabNavigation.About,
+                                                onClick = { selectedTabRoute = TabNavigation.About },
+                                                icon = {
+                                                    Icon(
+                                                        imageVector = Icons.Outlined.Info,
+                                                        contentDescription = null
+                                                    )
+                                                },
+                                                label = {
+                                                    Text(
+                                                        text = "About"
                                                     )
                                                 }
                                             )
