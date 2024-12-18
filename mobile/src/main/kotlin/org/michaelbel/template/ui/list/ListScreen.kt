@@ -55,7 +55,7 @@ fun ListScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Mobile Template"
+                        text = "Phone Template"
                     )
                 }
             )
@@ -110,7 +110,7 @@ fun ListElement(
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(if (isTabletPortrait) 440.dp else 220.dp)
+                    .height(if (isTabletPortrait) 400.dp else 220.dp)
                     .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
             )
 

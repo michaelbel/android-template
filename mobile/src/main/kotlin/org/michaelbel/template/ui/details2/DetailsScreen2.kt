@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.core.ktx.isTabletLandscape
 
 @Composable
 fun DetailsScreen2(
@@ -46,7 +47,7 @@ fun DetailsScreen2(
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(220.dp)
+                        .height(if (isTabletLandscape) 400.dp else 220.dp)
                 )
             }
             item {

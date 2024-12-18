@@ -400,7 +400,8 @@ fun MainActivityContent(
                             when {
                                 navigationSuiteType == NavigationSuiteType.NavigationBar || (navigationSuiteType == NavigationSuiteType.NavigationRail && isTabletPortrait) -> {
                                     ListScreen(
-                                        onClick = { navHostController.navigate(AppNavigation.Details(it)) }
+                                        onClick = { navHostController.navigate(AppNavigation.Details(it)) },
+                                        modifier = if (isTabletPortrait) Modifier.navigationBarsPadding() else Modifier
                                     )
                                 }
                                 else -> {

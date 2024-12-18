@@ -77,7 +77,7 @@ fun DetailsScreen(
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(if (isTabletPortrait) 440.dp else 220.dp)
+                            .height(if (isTabletPortrait) 400.dp else 220.dp)
                     )
 
                     Text(

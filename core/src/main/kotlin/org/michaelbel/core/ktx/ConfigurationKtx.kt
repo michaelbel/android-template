@@ -112,3 +112,6 @@ inline val isLandscape: Boolean
 
 inline val isTabletPortrait: Boolean
     @Composable get() = isPortrait && screenWidth >= 600
+
+inline val isTabletLandscape: Boolean
+    @Composable get() = isLandscape && screenWidth >= 1200
