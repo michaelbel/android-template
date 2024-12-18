@@ -32,6 +32,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.core.ktx.isPortrait
+import org.michaelbel.core.ktx.isTabletPortrait
 
 @Composable
 fun DetailsScreen(
@@ -76,7 +77,7 @@ fun DetailsScreen(
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(220.dp)
+                            .height(if (isTabletPortrait) 440.dp else 220.dp)
                     )
 
                     Text(

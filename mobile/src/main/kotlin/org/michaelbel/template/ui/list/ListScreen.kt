@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.core.ktx.isTabletPortrait
 import org.michaelbel.template.room.AppEntity
 import org.michaelbel.template.ui.AppTheme
 
@@ -109,7 +110,7 @@ fun ListElement(
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(220.dp)
+                    .height(if (isTabletPortrait) 440.dp else 220.dp)
                     .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
             )
 

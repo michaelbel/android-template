@@ -75,6 +75,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowHeightSizeClass
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.core.ktx.isTabletPortrait
 import org.michaelbel.core.ktx.navigationSuiteType
 import org.michaelbel.template.MainViewModel
 import org.michaelbel.template.ui.about.AboutScreen
@@ -396,8 +397,8 @@ fun MainActivityContent(
                             .fillMaxSize()
                     ) {
                         composable<TabNavigation.Home> {
-                            when (navigationSuiteType) {
-                                NavigationSuiteType.NavigationBar -> {
+                            when {
+                                navigationSuiteType == NavigationSuiteType.NavigationBar || (navigationSuiteType == NavigationSuiteType.NavigationRail && isTabletPortrait) -> {
                                     ListScreen(
                                         onClick = { navHostController.navigate(AppNavigation.Details(it)) }
                                     )

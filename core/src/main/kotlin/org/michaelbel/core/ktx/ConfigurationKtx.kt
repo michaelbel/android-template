@@ -56,29 +56,11 @@ inline val Context.isPortrait: Boolean
 inline val Context.isLandscape: Boolean
     get() = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
-inline val isPortrait: Boolean
-    @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
-
-inline val isLandscape: Boolean
-    @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
-
 inline val Context.isRTL: Boolean
     get() = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 
 inline val Context.isLTR: Boolean
     get() = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR
-
-inline val screenWidthDp: Dp
-    @Composable get() {
-        val configuration: Configuration = LocalConfiguration.current
-        return configuration.screenWidthDp.dp
-    }
-
-inline val screenHeightDp: Dp
-    @Composable get() {
-        val configuration: Configuration = LocalConfiguration.current
-        return configuration.screenWidthDp.dp
-    }
 
 inline val Context.versionName: String?
     get() = try {
@@ -97,3 +79,36 @@ inline val Context.versionCode: Long?
     } catch (e: PackageManager.NameNotFoundException) {
         null
     }
+
+inline val screenWidth: Int
+    @Composable get() {
+        val configuration = LocalConfiguration.current
+        return configuration.screenWidthDp
+    }
+
+inline val screenHeight: Int
+    @Composable get() {
+        val configuration = LocalConfiguration.current
+        return configuration.screenWidthDp
+    }
+
+inline val screenWidthDp: Dp
+    @Composable get() {
+        val configuration: Configuration = LocalConfiguration.current
+        return configuration.screenWidthDp.dp
+    }
+
+inline val screenHeightDp: Dp
+    @Composable get() {
+        val configuration: Configuration = LocalConfiguration.current
+        return configuration.screenWidthDp.dp
+    }
+
+inline val isPortrait: Boolean
+    @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
+
+inline val isLandscape: Boolean
+    @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+inline val isTabletPortrait: Boolean
+    @Composable get() = isPortrait && screenWidth >= 600

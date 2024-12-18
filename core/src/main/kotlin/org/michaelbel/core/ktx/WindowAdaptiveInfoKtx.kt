@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
-import androidx.window.core.layout.WindowWidthSizeClass
 
 inline val navigationSuiteType: NavigationSuiteType
     @Composable get() {
@@ -17,7 +16,7 @@ inline val navigationSuiteType: NavigationSuiteType
         return when {
             adaptiveInfo.windowPosture.isTabletop && isPortrait -> NavigationSuiteType.NavigationBar
             adaptiveInfo.windowSizeClass.isCompact && isPortrait -> NavigationSuiteType.NavigationBar
-            adaptiveInfo.windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.EXPANDED && windowSize.width >= 1200.dp -> NavigationSuiteType.NavigationDrawer
+            adaptiveInfo.windowSizeClass.isExpanded && windowSize.width >= 1200.dp -> NavigationSuiteType.NavigationDrawer
             else -> NavigationSuiteType.NavigationRail
         }
     }
