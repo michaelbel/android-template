@@ -10,8 +10,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
+import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +24,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
@@ -81,7 +84,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowHeightSizeClass
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.displayCutoutPaddingIfLandscape
 import org.michaelbel.core.ktx.isPortrait
 import org.michaelbel.core.ktx.navigationSuiteType
 import org.michaelbel.template.MainViewModel
@@ -115,7 +117,9 @@ fun MainActivityContent(
     NavHost(
         navController = navHostController,
         startDestination = AppNavigation.Main,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .windowInsetsPadding(WindowInsets.displayCutout)
+            .fillMaxSize()
     ) {
         composable<AppNavigation.Main> {
             NavigationSuiteScaffoldLayout(
@@ -177,7 +181,6 @@ fun MainActivityContent(
                         NavigationSuiteType.NavigationRail -> {
                             NavigationRail(
                                 modifier = Modifier
-                                    .displayCutoutPaddingIfLandscape()
                                     .fillMaxHeight(),
                                 containerColor = MaterialTheme.colorScheme.inverseOnSurface
                             ) {

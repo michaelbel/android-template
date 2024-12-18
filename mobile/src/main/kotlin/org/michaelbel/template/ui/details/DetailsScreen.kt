@@ -2,11 +2,14 @@ package org.michaelbel.template.ui.details
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
@@ -20,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.displayCutoutPaddingIfLandscape
 import org.michaelbel.core.ktx.isPortrait
 
 @Composable
@@ -38,7 +40,6 @@ fun DetailsScreen(
                 Column(
                     modifier = Modifier
                         .padding(innerPadding)
-                        .displayCutoutPaddingIfLandscape()
                         .fillMaxSize()
                 ) {
                     AsyncImage(
@@ -69,7 +70,7 @@ fun DetailsScreen(
                 Row(
                     modifier = Modifier
                         .padding(innerPadding)
-                        .displayCutoutPaddingIfLandscape()
+                        .windowInsetsPadding(WindowInsets.displayCutout)
                         .fillMaxSize()
                 ) {
                     AsyncImage(
@@ -77,6 +78,7 @@ fun DetailsScreen(
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
+                            .padding(start = 16.dp)
                             .fillMaxWidth(0.5F)
                             .fillMaxHeight(0.7F)
                     )
