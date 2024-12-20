@@ -12,13 +12,17 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.WindowMetrics
+import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+import androidx.compose.material3.adaptive.currentWindowSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.toSize
 import androidx.core.content.ContextCompat
 import androidx.window.layout.FoldingFeature
 import androidx.window.layout.WindowInfoTracker
@@ -100,15 +104,32 @@ inline val screenHeight: Int
 
 inline val screenWidthDp: Dp
     @Composable get() {
-        val configuration: Configuration = LocalConfiguration.current
+        val configuration = LocalConfiguration.current
         return configuration.screenWidthDp.dp
     }
 
 inline val screenHeightDp: Dp
     @Composable get() {
-        val configuration: Configuration = LocalConfiguration.current
+        val configuration = LocalConfiguration.current
         return configuration.screenWidthDp.dp
     }
+
+inline val screenWidthPx: Float
+    @Composable get() {
+        val density = LocalDensity.current
+        val screenWidthPx = with(density) { screenWidthDp.toPx() }
+        return screenWidthPx
+    }
+
+inline val screenHeightPx: Float
+    @Composable get() {
+        val density = LocalDensity.current
+        val screenHeightPx = with(density) { screenHeightDp.toPx() }
+        return screenHeightPx
+    }
+
+inline val aspectRatio: Float
+    @Composable get() = screenWidthPx / screenHeightPx
 
 inline val isPortrait: Boolean
     @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
@@ -121,6 +142,14 @@ inline val isTabletPortrait: Boolean
 
 inline val isTabletLandscape: Boolean
     @Composable get() = !isFoldable() && isLandscape && screenWidth >= 1200
+
+inline val isDesktop: Boolean
+    @Composable get() {
+        val adaptiveInfo = currentWindowAdaptiveInfo()
+        val density = LocalDensity.current
+        val windowSize = with(density) { currentWindowSize().toSize().toDpSize() }
+        return adaptiveInfo.windowSizeClass.isExpanded && windowSize.width >= 1920.dp
+    }
 
 @Composable
 fun isFoldable(): Boolean {
