@@ -2,7 +2,6 @@
 
 package org.michaelbel.template.ui
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -79,7 +78,6 @@ import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.core.ktx.isDesktop
 import org.michaelbel.core.ktx.isTabletPortrait
 import org.michaelbel.core.ktx.navigationSuiteType
-import org.michaelbel.core.ktx.screenWidthDp
 import org.michaelbel.template.MainViewModel
 import org.michaelbel.template.ui.about.AboutScreen
 import org.michaelbel.template.ui.details.DetailsScreen
@@ -243,7 +241,6 @@ fun MainActivityContent(
                             }
                         }
                         NavigationSuiteType.NavigationDrawer -> {
-                            Log.e("2", "screenWidthDp = $screenWidthDp")
                             PermanentDrawerSheet(
                                 modifier = Modifier.sizeIn(
                                     minWidth = 200.dp,
