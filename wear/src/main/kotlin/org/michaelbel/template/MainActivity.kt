@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.MainActivityContent
 
 class MainActivity: ComponentActivity() {
@@ -12,7 +13,9 @@ class MainActivity: ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         setContent {
-            MainActivityContent()
+            AppTheme {
+                MainActivityContent()
+            }
         }
     }
 }

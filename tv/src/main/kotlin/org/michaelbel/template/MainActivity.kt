@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.tv.material3.Surface
+import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.MainActivityContent
 
 class MainActivity: ComponentActivity() {
@@ -20,7 +21,9 @@ class MainActivity: ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 shape = RectangleShape
             ) {
-                MainActivityContent()
+                AppTheme {
+                    MainActivityContent()
+                }
             }
         }
     }

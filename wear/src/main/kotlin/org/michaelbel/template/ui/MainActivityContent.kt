@@ -35,63 +35,61 @@ fun MainActivityContent(
     val navController = rememberSwipeDismissableNavController()
     val navHostState = rememberSwipeDismissableNavHostState()
 
-    WearAppTheme {
-        AppScaffold {
-            SwipeDismissableNavHost(
-                startDestination = Navigation.Home.route,
-                navController = navController,
-                modifier = Modifier.background(Color.Transparent),
-                state = navHostState
+    AppScaffold {
+        SwipeDismissableNavHost(
+            startDestination = Navigation.Home.route,
+            navController = navController,
+            modifier = Modifier.background(Color.Transparent),
+            state = navHostState
+        ) {
+            composable(
+                route = Navigation.Home.route
             ) {
-                composable(
-                    route = Navigation.Home.route
-                ) {
-                    ScreenScaffold {
-                        Box(
-                            modifier = Modifier.fillMaxSize(),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Chip(
-                                label = "Navigate to Chat",
-                                onClick = { navController.navigate(Navigation.Chat.route) },
-                                modifier = Modifier.padding(horizontal = 16.dp),
-                                icon = Icons.Outlined.MailOutline.asPaintable()
-                            )
-                        }
+                ScreenScaffold {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Chip(
+                            label = "Navigate to Chat",
+                            onClick = { navController.navigate(Navigation.Chat.route) },
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                            icon = Icons.Outlined.MailOutline.asPaintable()
+                        )
                     }
                 }
-                composable(
-                    route = Navigation.Chat.route
-                ) {
-                    ScreenScaffold {
-                        Box(
-                            modifier = Modifier.fillMaxSize(),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Chip(
-                                label = "Navigate to Settings",
-                                onClick = { navController.navigate(Navigation.Settings.route) },
-                                modifier = Modifier.padding(horizontal = 16.dp),
-                                icon = Icons.Outlined.Settings.asPaintable()
-                            )
-                        }
+            }
+            composable(
+                route = Navigation.Chat.route
+            ) {
+                ScreenScaffold {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Chip(
+                            label = "Navigate to Settings",
+                            onClick = { navController.navigate(Navigation.Settings.route) },
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                            icon = Icons.Outlined.Settings.asPaintable()
+                        )
                     }
                 }
-                composable(
-                    route = Navigation.Settings.route
-                ) {
-                    ScreenScaffold {
-                        Box(
-                            modifier = Modifier.fillMaxSize(),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Chip(
-                                label = "Navigate to Home",
-                                onClick = { navController.navigate(Navigation.Home.route) },
-                                modifier = Modifier.padding(horizontal = 16.dp),
-                                icon = Icons.Outlined.Home.asPaintable()
-                            )
-                        }
+            }
+            composable(
+                route = Navigation.Settings.route
+            ) {
+                ScreenScaffold {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Chip(
+                            label = "Navigate to Home",
+                            onClick = { navController.navigate(Navigation.Home.route) },
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                            icon = Icons.Outlined.Home.asPaintable()
+                        )
                     }
                 }
             }

@@ -7,7 +7,7 @@ import androidx.tv.material3.darkColorScheme
 import androidx.tv.material3.lightColorScheme
 
 @Composable
-fun TvAppTheme(
+fun AppTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(

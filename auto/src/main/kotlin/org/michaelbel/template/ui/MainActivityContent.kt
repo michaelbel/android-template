@@ -60,152 +60,150 @@ fun MainActivityContent(
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 
-    TvAppTheme {
-        Scaffold(
-            modifier = modifier,
-            topBar = {
-                TopAppBar(
-                    title = {
-                        Text(
-                            text = "Android Template"
+    Scaffold(
+        modifier = modifier,
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Auto Template"
+                    )
+                }
+            )
+        },
+        bottomBar = {
+            BottomAppBar {
+                NavigationBarItem(
+                    selected = selectedRoute == Navigation.Home,
+                    onClick = { selectedRoute = Navigation.Home },
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Home,
+                            contentDescription = null
                         )
-                    }
-                )
-            },
-            bottomBar = {
-                BottomAppBar {
-                    NavigationBarItem(
-                        selected = selectedRoute == Navigation.Home,
-                        onClick = { selectedRoute = Navigation.Home },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.Home,
-                                contentDescription = null
-                            )
-                        },
-                        label = {
-                            Text(
-                                text = "Home"
-                            )
-                        }
-                    )
-
-                    NavigationBarItem(
-                        selected = selectedRoute == Navigation.Chat,
-                        onClick = { selectedRoute = Navigation.Chat },
-                        icon = {
-                            BadgedBox(
-                                badge = {
-                                    this@BottomAppBar.AnimatedVisibility(
-                                        visible = selectedRoute != Navigation.Chat,
-                                        enter = fadeIn(),
-                                        exit = fadeOut()
-                                    ) {
-                                        Box(
-                                            contentAlignment = Alignment.Center,
-                                            modifier = Modifier
-                                                .size(24.dp)
-                                                .background(color = Color.Red, shape = CircleShape)
-                                        ) {
-                                            Text(
-                                                text = "12",
-                                                color = Color.White,
-                                                fontSize = 12.sp,
-                                                fontWeight = FontWeight.Medium
-                                            )
-                                        }
-                                    }
-                                }
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Outlined.Email,
-                                    contentDescription = null
-                                )
-                            }
-                        },
-                        label = {
-                            Text(
-                                text = "Chat"
-                            )
-                        }
-                    )
-
-                    NavigationBarItem(
-                        selected = selectedRoute == Navigation.Settings,
-                        onClick = { selectedRoute = Navigation.Settings },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Outlined.Settings,
-                                contentDescription = null
-                            )
-                        },
-                        label = {
-                            Text(
-                                text = "Settings"
-                            )
-                        }
-                    )
-                }
-            },
-            snackbarHost = {
-                SnackbarHost(
-                    hostState = snackbarHostState
-                )
-            },
-            floatingActionButton = {
-                FloatingActionButton(
-                    onClick = {
-                        coroutineScope.launch {
-                            snackbarHostState.showSnackbar(
-                                message = "Single-line snackbar with action",
-                                actionLabel = "Action"
-                            )
-                        }
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Phone,
-                        contentDescription = null
-                    )
-                }
-            }
-        ) { innerPadding ->
-            NavHost(
-                navController = navHostController,
-                startDestination = selectedRoute,
-                modifier = Modifier.padding(innerPadding)
-            ) {
-                composable<Navigation.Home> {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
+                    },
+                    label = {
                         Text(
                             text = "Home"
                         )
                     }
-                }
-                composable<Navigation.Chat> {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                )
+
+                NavigationBarItem(
+                    selected = selectedRoute == Navigation.Chat,
+                    onClick = { selectedRoute = Navigation.Chat },
+                    icon = {
+                        BadgedBox(
+                            badge = {
+                                this@BottomAppBar.AnimatedVisibility(
+                                    visible = selectedRoute != Navigation.Chat,
+                                    enter = fadeIn(),
+                                    exit = fadeOut()
+                                ) {
+                                    Box(
+                                        contentAlignment = Alignment.Center,
+                                        modifier = Modifier
+                                            .size(24.dp)
+                                            .background(color = Color.Red, shape = CircleShape)
+                                    ) {
+                                        Text(
+                                            text = "12",
+                                            color = Color.White,
+                                            fontSize = 12.sp,
+                                            fontWeight = FontWeight.Medium
+                                        )
+                                    }
+                                }
+                            }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Outlined.Email,
+                                contentDescription = null
+                            )
+                        }
+                    },
+                    label = {
                         Text(
                             text = "Chat"
                         )
                     }
-                }
-                composable<Navigation.Settings> {
-                    Column(
-                        modifier = Modifier.fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
+                )
+
+                NavigationBarItem(
+                    selected = selectedRoute == Navigation.Settings,
+                    onClick = { selectedRoute = Navigation.Settings },
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Settings,
+                            contentDescription = null
+                        )
+                    },
+                    label = {
                         Text(
                             text = "Settings"
                         )
                     }
+                )
+            }
+        },
+        snackbarHost = {
+            SnackbarHost(
+                hostState = snackbarHostState
+            )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(
+                            message = "Single-line snackbar with action",
+                            actionLabel = "Action"
+                        )
+                    }
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.Phone,
+                    contentDescription = null
+                )
+            }
+        }
+    ) { innerPadding ->
+        NavHost(
+            navController = navHostController,
+            startDestination = selectedRoute,
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            composable<Navigation.Home> {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "Home"
+                    )
+                }
+            }
+            composable<Navigation.Chat> {
+                Row(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "Chat"
+                    )
+                }
+            }
+            composable<Navigation.Settings> {
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "Settings"
+                    )
                 }
             }
         }

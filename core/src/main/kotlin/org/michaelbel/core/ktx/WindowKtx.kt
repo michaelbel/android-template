@@ -4,6 +4,7 @@ package org.michaelbel.core.ktx
 
 import android.os.Build
 import android.view.Window
+import android.view.WindowManager.LayoutParams
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -30,4 +31,11 @@ fun Window.setNavigationBarDividerColorRes(@ColorRes colorResId: Int) {
     if (Build.VERSION.SDK_INT >= 28) {
         navigationBarDividerColor = ContextCompat.getColor(context, colorResId)
     }
+}
+
+fun Window.updateAttributes(block: LayoutParams.() -> Unit) {
+    val layoutParams = LayoutParams()
+    layoutParams.copyFrom(attributes)
+    layoutParams.apply(block)
+    attributes = layoutParams
 }

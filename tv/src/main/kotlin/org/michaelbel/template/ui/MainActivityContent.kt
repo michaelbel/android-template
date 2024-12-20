@@ -20,45 +20,43 @@ fun MainActivityContent(
 ) {
     val navController = rememberNavController()
 
-    TvAppTheme {
-        NavHost(
-            navController = navController,
-            startDestination = Navigation.Home.route
-        ) {
-            composable(Navigation.Home.route) {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+    NavHost(
+        navController = navController,
+        startDestination = Navigation.Home.route
+    ) {
+        composable(Navigation.Home.route) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(
+                    onClick = { navController.navigate(Navigation.Chat.route) }
                 ) {
-                    Button(
-                        onClick = { navController.navigate(Navigation.Chat.route) }
-                    ) {
-                        Text("Navigate to Chat")
-                    }
+                    Text("Navigate to Chat")
                 }
             }
-            composable(Navigation.Chat.route) {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+        }
+        composable(Navigation.Chat.route) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(
+                    onClick = { navController.navigate(Navigation.Settings.route) }
                 ) {
-                    Button(
-                        onClick = { navController.navigate(Navigation.Settings.route) }
-                    ) {
-                        Text("Navigate to Settings")
-                    }
+                    Text("Navigate to Settings")
                 }
             }
-            composable(Navigation.Settings.route) {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+        }
+        composable(Navigation.Settings.route) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(
+                    onClick = { navController.navigate(Navigation.Home.route) }
                 ) {
-                    Button(
-                        onClick = { navController.navigate(Navigation.Home.route) }
-                    ) {
-                        Text("Navigate to Home")
-                    }
+                    Text("Navigate to Home")
                 }
             }
         }

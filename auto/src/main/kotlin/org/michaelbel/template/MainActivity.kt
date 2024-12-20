@@ -1,12 +1,13 @@
 package org.michaelbel.template
 
 import android.os.Bundle
-import android.view.Window
 import android.view.WindowManager.LayoutParams
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import org.michaelbel.core.ktx.updateAttributes
+import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.MainActivityContent
 
 class MainActivity: ComponentActivity() {
@@ -19,14 +20,9 @@ class MainActivity: ComponentActivity() {
             layoutInDisplayCutoutMode = LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT
         }
         setContent {
-            MainActivityContent()
+            AppTheme {
+                MainActivityContent()
+            }
         }
     }
-}
-
-fun Window.updateAttributes(block: LayoutParams.() -> Unit) {
-    val layoutParams = LayoutParams()
-    layoutParams.copyFrom(this.attributes)
-    layoutParams.apply(block)
-    this.attributes = layoutParams
 }
