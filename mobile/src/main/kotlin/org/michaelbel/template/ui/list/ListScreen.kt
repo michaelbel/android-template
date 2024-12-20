@@ -55,7 +55,7 @@ fun ListScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Foldable Template"
+                        text = "Android Template"
                     )
                 }
             )
