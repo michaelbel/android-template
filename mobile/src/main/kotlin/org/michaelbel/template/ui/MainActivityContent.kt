@@ -438,7 +438,8 @@ fun MainActivityContent(
                                                     }
                                                 }
                                             }
-                                        }
+                                        },
+                                        modifier = Modifier.fillMaxWidth()
                                     )
                                 }
                             }
@@ -462,7 +463,7 @@ fun MainActivityContent(
 }
 
 fun navigationMeasurePolicy(
-    navigationContentPosition: ReplyNavigationContentPosition,
+    navigationContentPosition: ReplyNavigationContentPosition
 ): MeasurePolicy {
     return MeasurePolicy { measurables, constraints ->
         lateinit var headerMeasurable: Measurable
@@ -501,9 +502,11 @@ fun navigationMeasurePolicy(
 }
 
 enum class ReplyNavigationContentPosition {
-    TOP, CENTER
+    TOP,
+    CENTER
 }
 
 enum class LayoutType {
-    HEADER, CONTENT
+    HEADER,
+    CONTENT
 }
