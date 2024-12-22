@@ -18,6 +18,7 @@ include(
     ":wear",
     ":tv",
     ":auto",
+    ":xr",
     ":core"
 )
 rootProject.name = "android-template" // todo Replace with your own app’s name

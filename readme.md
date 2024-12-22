@@ -73,6 +73,11 @@ This Android app template provides a foundation for quickly starting development
 </div>
 <br/>
 
+**XR**
+<div>
+    <img src=".github/pics/xr.png" width="99%" alt="XR Image">
+</div>
+
 ## Features
 - [x] Included all Kotlin dependencies
 - [x] Included all Google Play Services dependencies
