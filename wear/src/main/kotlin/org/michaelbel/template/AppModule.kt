@@ -25,6 +25,8 @@ import org.michaelbel.template.ktor.AppService
 import org.michaelbel.template.repository.AppRepository
 import org.michaelbel.template.room.AppDao
 import org.michaelbel.template.room.AppDatabase
+import org.michaelbel.template.ui.list.ListViewModel
+import org.michaelbel.template.ui.details.DetailsViewModel
 
 val appModule = module {
     includes(dispatchersKoinModule)
@@ -80,4 +82,6 @@ val appModule = module {
     single<AppRepository> { AppRepository(get(), get(), get()) }
     single<AppInteractor> { AppInteractor(get(), get()) }
     viewModelOf(::MainViewModel)
+    viewModelOf(::ListViewModel)
+    viewModelOf(::DetailsViewModel)
 }

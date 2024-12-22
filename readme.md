@@ -56,7 +56,8 @@ This Android app template provides a foundation for quickly starting development
 
 **Wear OS**
 <div>
-    <img src=".github/pics/wear.png" width="33%" alt="Wear Image">
+    <img src=".github/pics/wearos.png" width="33%" alt="WearOS Image">
+    <img src=".github/pics/wearos-details.png" width="33%" alt="WearOS Image">
 </div>
 <br/>
 
