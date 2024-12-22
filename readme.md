@@ -69,7 +69,7 @@ This Android app template provides a foundation for quickly starting development
 
 **Automotive**
 <div>
-    <img src=".github/pics/auto.png" width="99%" alt="Auto Image">
+    <img src=".github/pics/automotive.png" width="66%" alt="Automotive Image">
 </div>
 <br/>
 
