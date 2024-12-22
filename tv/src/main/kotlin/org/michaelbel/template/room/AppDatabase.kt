@@ -17,7 +17,7 @@ abstract class AppDatabase: RoomDatabase() {
     abstract fun appDao(): AppDao
 
     companion object {
-        const val DATABASE_NAME = "app.db"
+        private const val DATABASE_NAME = "app.db"
         const val DATABASE_VERSION = 1
 
         @Volatile
