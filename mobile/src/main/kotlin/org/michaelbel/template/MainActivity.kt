@@ -13,7 +13,7 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge() // Отключить для десктопа
         setContent {
             AppTheme {
                 MainActivityContent()

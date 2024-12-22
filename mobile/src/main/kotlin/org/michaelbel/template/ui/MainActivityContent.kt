@@ -416,7 +416,7 @@ fun MainActivityContent(
                                             AnimatedPane(
                                                 modifier = Modifier
                                                     .navigationBarsPadding()
-                                                    .fillMaxWidth(0.4F)
+                                                    .then(if (isDesktop) Modifier.preferredWidth(600.dp) else Modifier.fillMaxWidth(0.4F))
                                             ) {
                                                 ListScreen(
                                                     onClick = { listDetailPaneScaffoldNavigator.navigateTo(ListDetailPaneScaffoldRole.Detail, AppNavigation.Details(it)) }
@@ -425,7 +425,7 @@ fun MainActivityContent(
                                         },
                                         detailPane = {
                                             AnimatedPane(
-                                                modifier = Modifier.fillMaxWidth(0.6F)
+                                                modifier = Modifier.then(if (isDesktop) Modifier else Modifier.fillMaxWidth(0.6F))
                                             ) {
                                                 when {
                                                     listDetailPaneScaffoldNavigator.currentDestination?.content != null -> {
