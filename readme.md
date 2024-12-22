@@ -13,6 +13,7 @@ This Android app template provides a foundation for quickly starting development
 [![android-wear](https://img.shields.io/badge/wear-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-tv](https://img.shields.io/badge/tv-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 [![android-auto](https://img.shields.io/badge/auto-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-xr](https://img.shields.io/badge/xr-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 
 **Phone (portrait)**
 <div>
