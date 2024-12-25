@@ -7,6 +7,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import android.speech.RecognizerIntent
@@ -44,6 +45,32 @@ fun Context.navigateToAppNotificationSettings() {
     }
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     startActivity(intent)
+}
+
+fun Context.navigateToShareText(text: String, title: String) {
+    Intent().apply {
+        type = "text/plain"
+        action = Intent.ACTION_SEND
+        putExtra(Intent.EXTRA_TEXT, text)
+    }.also { intent: Intent ->
+        startActivity(Intent.createChooser(intent, title))
+    }
+}
+
+fun Context.navigateToImageUri(uri: Uri) {
+    Intent(Intent.ACTION_VIEW).apply {
+        setDataAndType(uri, "image/jpg")
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+    }.also { intent ->
+        startActivity(intent)
+    }
+}
+
+@Composable
+fun rememberNavigateToDeveloperSettings(): () -> Unit {
+    val appSettingsContract = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
+    return remember { { appSettingsContract.launch(Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS)) } }
 }
 
 @Composable
