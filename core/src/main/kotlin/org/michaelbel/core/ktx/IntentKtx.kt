@@ -128,3 +128,34 @@ fun rememberRequestCameraPermission(
         }
     }
 }
+
+@Composable
+fun rememberRequestNotificationPermission(
+    onGranted: () -> Unit
+): () -> Unit {
+    if (Build.VERSION.SDK_INT >= 33) {
+        val context = LocalContext.current
+        val navigateToAppSettings = rememberNavigateToAppSettings()
+        val cameraPermissionContract = rememberLauncherForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { granted ->
+            val shouldRequest = (context as Activity).shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)
+            when {
+                granted -> onGranted()
+                !granted && !shouldRequest -> navigateToAppSettings()
+            }
+        }
+        return remember {
+            {
+                when {
+                    ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED -> {
+                        cameraPermissionContract.launch(Manifest.permission.POST_NOTIFICATIONS)
+                    }
+                    else -> onGranted()
+                }
+            }
+        }
+    } else {
+        return {}
+    }
+}
