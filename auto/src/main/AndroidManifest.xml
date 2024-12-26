@@ -8,9 +8,9 @@
     <application
         android:name=".App"
         android:appCategory="productivity"
-        android:banner="@mipmap/ic_launcher"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:banner="@drawable/ic_launcher"
+        android:icon="@drawable/ic_launcher"
+        android:roundIcon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.App.Starting"
         android:enableOnBackInvokedCallback="true"
