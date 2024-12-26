@@ -12,12 +12,17 @@ plugins {
 }
 
 private val gitCommitsCount: Int by lazy {
-    val stdout = ByteArrayOutputStream()
-    exec {
-        commandLine("git", "rev-list", "--count", "HEAD")
-        standardOutput = stdout
+    when {
+        System.getProperty("os.name").contains("Windows", ignoreCase = true) -> 1
+        else -> {
+            val stdout = ByteArrayOutputStream()
+            exec {
+                commandLine("git", "rev-list", "--count", "HEAD")
+                standardOutput = stdout
+            }
+            stdout.toString(Charset.defaultCharset()).trim().toInt()
+        }
     }
-    stdout.toString(Charset.defaultCharset()).trim().toInt()
 }
 
 kotlin {
@@ -30,7 +35,7 @@ android {
 
     defaultConfig {
         applicationId = "org.michaelbel.template" // Replace with your own applicationId
-        minSdk = 32
+        minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionName = "1.0.0"
         versionCode = gitCommitsCount
