@@ -40,7 +40,6 @@ android {
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionName = "1.0.0"
         versionCode = gitCommitsCount
-        //setProperty("archivesBaseName", "SimpleApp-v$versionName($versionCode)")
     }
 
     signingConfigs {
