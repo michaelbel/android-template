@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun DetailsEmptyScreen(
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
 ) {
 
     Scaffold(
