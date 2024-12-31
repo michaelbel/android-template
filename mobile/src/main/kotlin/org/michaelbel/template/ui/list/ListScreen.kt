@@ -78,7 +78,7 @@ fun ListScreen(
             items(entities) { entity ->
                 ListElement(
                     entity = entity,
-                    onCLick = onClick
+                    onClick = onClick
                 )
             }
         }
@@ -88,7 +88,7 @@ fun ListScreen(
 @Composable
 fun ListElement(
     entity: AppEntity,
-    onCLick: (Int) -> Unit
+    onClick: (Int) -> Unit
 ) {
     Card(
         modifier = Modifier
@@ -101,7 +101,7 @@ fun ListElement(
     ) {
         Column(
             modifier = Modifier
-                .clickable { onCLick(entity.id) }
+                .clickable(onClick = { onClick(entity.id) })
                 .fillMaxWidth()
         ) {
             AsyncImage(
@@ -132,7 +132,7 @@ private fun ListElementPreview() {
     AppTheme {
         ListElement(
             entity = AppEntity(0, "", "", ""),
-            onCLick = {}
+            onClick = {}
         )
     }
 }
