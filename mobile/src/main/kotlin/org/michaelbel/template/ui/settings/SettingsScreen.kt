@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun SettingsScreen(
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
