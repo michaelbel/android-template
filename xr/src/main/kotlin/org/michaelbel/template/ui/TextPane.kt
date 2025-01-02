@@ -11,7 +11,9 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun TextPane(text: String, modifier: Modifier = Modifier) {
-    Surface(modifier = modifier.fillMaxSize()) {
+    Surface(
+        modifier = modifier.fillMaxSize()
+    ) {
         Text(text = text, modifier = Modifier.padding(16.dp))
     }
 }
