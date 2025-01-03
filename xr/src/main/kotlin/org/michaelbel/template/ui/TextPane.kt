@@ -10,7 +10,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun TextPane(text: String, modifier: Modifier = Modifier) {
+fun TextPane(
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Surface(
         modifier = modifier.fillMaxSize()
     ) {
