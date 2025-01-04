@@ -17,7 +17,10 @@ fun TextPane(
     Surface(
         modifier = modifier.fillMaxSize()
     ) {
-        Text(text = text, modifier = Modifier.padding(16.dp))
+        Text(
+            text = text,
+            modifier = Modifier.padding(16.dp)
+        )
     }
 }
 
