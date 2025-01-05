@@ -28,6 +28,9 @@ fun TextPane(
 @Preview
 private fun MyLayOutPreview() {
     AppTheme {
-        TextPane(modifier = Modifier, text = "Primary")
+        TextPane(
+            modifier = Modifier,
+            text = "Primary"
+        )
     }
 }
