@@ -11,6 +11,7 @@ import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import android.speech.RecognizerIntent
+import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
@@ -134,11 +135,12 @@ fun rememberRequestCameraPermission(
     onGranted: () -> Unit
 ): () -> Unit {
     val context = LocalContext.current
+    val activity = LocalActivity.current as Activity
     val navigateToAppSettings = rememberNavigateToAppSettings()
     val cameraPermissionContract = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { granted ->
-        val shouldRequest = (context as Activity).shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)
+        val shouldRequest = activity.shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)
         when {
             granted -> onGranted()
             !granted && !shouldRequest -> navigateToAppSettings()
@@ -162,11 +164,12 @@ fun rememberRequestNotificationPermission(
 ): () -> Unit {
     if (Build.VERSION.SDK_INT >= 33) {
         val context = LocalContext.current
+        val activity = LocalActivity.current as Activity
         val navigateToAppSettings = rememberNavigateToAppSettings()
         val cameraPermissionContract = rememberLauncherForActivityResult(
             ActivityResultContracts.RequestPermission()
         ) { granted ->
-            val shouldRequest = (context as Activity).shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)
+            val shouldRequest = activity.shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)
             when {
                 granted -> onGranted()
                 !granted && !shouldRequest -> navigateToAppSettings()
