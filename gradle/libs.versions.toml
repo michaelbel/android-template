@@ -140,7 +140,7 @@ google-material-compose-theme-adapter = "1.2.1"
 
 google-firebase-abt = "22.0.0"
 google-firebase-ads = "23.6.0"
-google-firebase-analytics = "22.1.2"
+google-firebase-analytics = "22.2.0"
 google-firebase-analytics-impl = "16.3.0"
 google-firebase-analytics-ktx = "1.0.0"
 google-firebase-annotations = "16.2.0"
