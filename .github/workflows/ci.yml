@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   job-common:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       SHORT_SHA: ${{ steps.expose_sha.outputs.short_sha }}
     steps:
@@ -29,7 +29,7 @@ jobs:
   build-mobile:
     if: ${{ vars.MOBILE_BUILD_ENABLED == 'true' }}
     needs: job-common
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
       KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
@@ -166,7 +166,7 @@ jobs:
   build-wear:
     if: ${{ vars.WEAR_BUILD_ENABLED == 'true' }}
     needs: job-common
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
       KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
@@ -303,7 +303,7 @@ jobs:
   build-tv:
     if: ${{ vars.TV_BUILD_ENABLED == 'true' }}
     needs: job-common
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
       KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
@@ -440,7 +440,7 @@ jobs:
   build-auto:
     if: ${{ vars.AUTO_BUILD_ENABLED == 'true' }}
     needs: job-common
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
       KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
