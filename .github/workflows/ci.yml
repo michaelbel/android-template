@@ -90,9 +90,12 @@ jobs:
         with:
           name: mobile-build-${{ github.run_id }}
           path: |
-            mobile/build/outputs/apk/debug
-            mobile/build/outputs/apk/release
-            mobile/build/outputs/bundle/release
+            mobile/build/outputs/apk/free/debug
+            mobile/build/outputs/apk/paid/debug
+            mobile/build/outputs/apk/free/release
+            mobile/build/outputs/apk/paid/release
+            mobile/build/outputs/bundle/freeRelease
+            mobile/build/outputs/bundle/paidRelease
 
       - name: expose version name
         id: version_name
@@ -108,11 +111,14 @@ jobs:
 
       - name: expose artifacts
         run: |
-          echo "DEBUG_APK_PATH=$(find mobile/build/outputs/apk/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
-          echo "RELEASE_APK_PATH=$(find mobile/build/outputs/apk/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
-          echo "BUNDLE_APK_PATH=$(find mobile/build/outputs/bundle/release -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "FREE_DEBUG_APK_PATH=$(find mobile/build/outputs/apk/free/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "PAID_DEBUG_APK_PATH=$(find mobile/build/outputs/apk/paid/debug -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "FREE_RELEASE_APK_PATH=$(find mobile/build/outputs/apk/free/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "PAID_RELEASE_APK_PATH=$(find mobile/build/outputs/apk/paid/release -name '*.apk' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "FREE_BUNDLE_APK_PATH=$(find mobile/build/outputs/bundle/freeRelease -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
+          echo "PAID_BUNDLE_APK_PATH=$(find mobile/build/outputs/bundle/paidRelease -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
 
-      - name: send telegram message debug
+      - name: send telegram message free debug
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -124,12 +130,12 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
-            -F document="@${{ env.DEBUG_APK_PATH }}" \
+            -F document="@${{ env.FREE_DEBUG_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
 
-      - name: send telegram message release
+      - name: send telegram message paid debug
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -141,12 +147,12 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
-            -F document="@${{ env.RELEASE_APK_PATH }}" \
+            -F document="@${{ env.PAID_DEBUG_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"
+            -F parse_mode="HTML"          
 
-      - name: send telegram message bundle
+      - name: send telegram message free release
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -158,10 +164,61 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
-            -F document="@${{ env.BUNDLE_APK_PATH }}" \
+            -F document="@${{ env.FREE_RELEASE_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
+
+      - name: send telegram message paid release
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          MESSAGE: |
+            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
+            <b>Ветка:</b> ${{ github.ref_name }}
+            <b>Коммит:</b> <code>${{ env.SHORT_SHA }}</code>
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.PAID_RELEASE_APK_PATH }}" \
+            -F caption="${{ env.MESSAGE }}" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="HTML"          
+
+      - name: send telegram message free bundle
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          MESSAGE: |
+            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
+            <b>Ветка:</b> ${{ github.ref_name }}
+            <b>Коммит:</b> <code>${{ env.SHORT_SHA }}</code>
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.FREE_BUNDLE_APK_PATH }}" \
+            -F caption="${{ env.MESSAGE }}" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="HTML"
+
+      - name: send telegram message paid bundle
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          MESSAGE: |
+            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
+            <b>Ветка:</b> ${{ github.ref_name }}
+            <b>Коммит:</b> <code>${{ env.SHORT_SHA }}</code>
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
+            -F chat_id="${CHAT_ID}" \
+            -F document="@${{ env.PAID_BUNDLE_APK_PATH }}" \
+            -F caption="${{ env.MESSAGE }}" \
+            -F message_thread_id="${THREAD_ID}" \
+            -F parse_mode="HTML"          
 
   build-wear:
     if: ${{ vars.WEAR_BUILD_ENABLED == 'true' }}
