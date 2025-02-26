@@ -386,7 +386,7 @@ timber = "5.0.1"
 coil = "2.7.0"
 cicerone = "7.1"
 lottie = "6.5.2"
-viewbindingpropertydelegate = "1.5.9"
+vbpd = "2.0.4"
 leakcanary = "2.14"
 kotlin-inject = "0.7.2"
 koin = "4.0.2"
@@ -1090,8 +1090,8 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
-viewbindingpropertydelegate-full = { module = "com.github.kirich1409:viewbindingpropertydelegate-full", version.ref = "viewbindingpropertydelegate" }
-viewbindingpropertydelegate-noreflection = { module = "com.github.kirich1409:viewbindingpropertydelegate-noreflection", version.ref = "viewbindingpropertydelegate" }
+vbpd = { module = "dev.androidbroadcast.vbpd:vbpd", version.ref = "vbpd" }
+vbpd-reflection = { module = "dev.androidbroadcast.vbpd:vbpd-reflection", version.ref = "vbpd" }
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
 kotlin-inject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlin-inject" }
 kotlin-inject-compiler-ksp = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlin-inject" }
