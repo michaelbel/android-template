@@ -38,8 +38,8 @@ android {
         applicationId = "org.michaelbel.template" // Replace with your own applicationId
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
-        versionName = "1.0.0"
         versionCode = gitCommitsCount
+        versionName = "1.0.0"
     }
 
     signingConfigs {
