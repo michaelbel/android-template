@@ -9,6 +9,8 @@ import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
 import androidx.compose.ui.graphics.Color
+import androidx.core.content.withStyledAttributes
+import androidx.core.graphics.toColorInt
 import kotlin.math.floor
 import kotlin.math.roundToInt
 import android.graphics.Color as AndroidColor
@@ -16,20 +18,17 @@ import android.graphics.Color as AndroidColor
 inline val Int.toHexColor: String
     get() = String.format("#%06X", 0xFFFFFF and this)
 
-inline val String.androidColor: Int
-    get() = AndroidColor.parseColor(this)
-
 inline val String.composeColor: Color
-    get() = Color(androidColor)
+    get() = Color(this.toColorInt())
 
 fun Context.getAttrColor(@AttrRes colorAttr: Int): Int {
     var color = 0
     val attrs = intArrayOf(colorAttr)
 
     return try {
-        val typedArray = obtainStyledAttributes(attrs)
-        color = typedArray.getColor(0, 0)
-        typedArray.recycle()
+        withStyledAttributes(null, attrs) {
+            color = getColor(0, 0)
+        }
         color
     } catch (e: Exception) {
         color
