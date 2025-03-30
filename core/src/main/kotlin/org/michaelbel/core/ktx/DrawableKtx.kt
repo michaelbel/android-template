@@ -7,7 +7,6 @@ import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.graphics.drawable.RippleDrawable
@@ -19,7 +18,9 @@ import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
+import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.graphics.drawable.toDrawable
 
 fun Drawable.toBitmap(): Bitmap {
     if (this is BitmapDrawable) {
@@ -27,9 +28,9 @@ fun Drawable.toBitmap(): Bitmap {
     }
 
     val bitmap = if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
-        Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+        createBitmap(1, 1)
     } else {
-        Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888)
+        createBitmap(intrinsicWidth, intrinsicHeight)
     }
 
     Canvas(bitmap).apply {
@@ -66,7 +67,7 @@ fun Context.selectableItemBackgroundDrawable(
     if (colorRes != null) {
         return LayerDrawable(
             arrayOf(
-                ColorDrawable(ContextCompat.getColor(this, colorRes)),
+                ContextCompat.getColor(this, colorRes).toDrawable(),
                 drawableSelectable
             )
         )
@@ -85,7 +86,7 @@ fun Context.selectableItemBackgroundBorderlessDrawable(
 
     if (colorRes != null) {
         return LayerDrawable(arrayOf(
-            ColorDrawable(ContextCompat.getColor(this, colorRes)),
+            ContextCompat.getColor(this, colorRes).toDrawable(),
             drawableSelectable
         ))
     }
