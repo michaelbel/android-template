@@ -19,6 +19,18 @@ google-services = "4.4.2"
 google-gson = "2.11.0"
 google-horologist = "0.6.20"
 google-zxing = "3.4.1"
+
+google-ar-core = "1.48.0"
+google-ar-impress = "0.0.2"
+google-ar-sceneform = "1.17.1"
+
+google-filament = "1.57.1"
+google-filament-gltfio-android-lite = "1.23.1"
+google-filament-filamat-android-lite = "1.44.0"
+google-filament-filamat-utils-android-lite = "1.20.5"
+google-filament-android-full = "1.4.5"
+google-filament-android-debug = "1.42.2"
+
 google-mlkit-text-recognition = "16.0.1"
 google-mlkit-face-detection = "16.1.7"
 google-mlkit-face-mesh-detection = "16.0.0-beta3"
@@ -631,6 +643,29 @@ google-mlkit-translate = { module = "com.google.mlkit:translate", version.ref = 
 google-mlkit-smart-reply = { module = "com.google.mlkit:smart-reply", version.ref = "google-mlkit-smart-reply" }
 google-mlkit-entity-extraction = { module = "com.google.mlkit:entity-extraction", version.ref = "google-mlkit-entity-extraction" }
 #endregion
+#region google-ar
+google-ar-core = { module = "com.google.ar:core", version.ref = "google-ar-core" }
+google-ar-impress = { module = "com.google.ar:impress", version.ref = "google-ar-impress" }
+google-ar-sceneform-ux-sceneform-ux = { module = "com.google.ar.sceneform.ux:sceneform-ux", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-core = { module = "com.google.ar.sceneform:core", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-base = { module = "com.google.ar.sceneform:sceneform-base", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-assets = { module = "com.google.ar.sceneform:assets", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-animation = { module = "com.google.ar.sceneform:animation", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-rendering = { module = "com.google.ar.sceneform:rendering", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-filament-android = { module = "com.google.ar.sceneform:filament-android", version.ref = "google-ar-sceneform" }
+google-ar-sceneform-plugin = { module = "com.google.ar.sceneform:plugin", version.ref = "google-ar-sceneform" }
+#endregion
+#region google-filament
+google-filament-android = { module = "com.google.android.filament:filament-android", version.ref = "google-filament" }
+google-filament-gltfio-android = { module = "com.google.android.filament:gltfio-android", version.ref = "google-filament" }
+google-filament-utils-android = { module = "com.google.android.filament:filament-utils-android", version.ref = "google-filament" }
+google-filament-filamat-android = { module = "com.google.android.filament:filamat-android", version.ref = "google-filament" }
+google-filament-gltfio-android-lite = { module = "com.google.android.filament:gltfio-android-lite", version.ref = "google-filament-gltfio-android-lite" }
+google-filament-filamat-android-lite = { module = "com.google.android.filament:filamat-android-lite", version.ref = "google-filament-filamat-android-lite" }
+google-filament-filamat-utils-android-lite = { module = "com.google.android.filament:filament-utils-android-lite", version.ref = "google-filament-filamat-utils-android-lite" }
+google-filament-android-full = { module = "com.google.android.filament:filamat-android-full", version.ref = "google-filament-android-full" }
+google-filament-android-debug = { module = "com.google.android.filament:filament-android-debug", version.ref = "google-filament-android-debug" }
+#endregion
 #region google
 google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "google-hilt" }
 google-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "google-hilt" }
@@ -1066,55 +1101,77 @@ androidx-xr-runtime-testing = { module = "androidx.xr.runtime:runtime-testing", 
 androidx-xr-scenecore = { module = "androidx.xr.scenecore:scenecore", version.ref = "androidx-xr" }
 androidx-xr-scenecore-testing = { module = "androidx.xr.scenecore:scenecore-testing", version.ref = "androidx-xr" }
 #endregion
-
+#region ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
+#endregion
+#region okhttp
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-mockwebserver = { module = "com.squareup.okhttp3:okhttp-mockwebserver", version.ref = "okhttp" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+#endregion
+#region moshi
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+#endregion
+#region chucker
 chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 chucker-library-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
+#endregion
+#region rxjava3
 rxjava3 = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava3" }
 rxjava3-rxkotlin = { module = "io.reactivex.rxjava3:rxkotlin", version.ref = "rxjava3-rxkotlin" }
 rxjava3-rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxjava3-rxandroid" }
-timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
-cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
-lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
-vbpd = { module = "dev.androidbroadcast.vbpd:vbpd", version.ref = "vbpd" }
-vbpd-reflection = { module = "dev.androidbroadcast.vbpd:vbpd-reflection", version.ref = "vbpd" }
-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
-kotlin-inject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlin-inject" }
-kotlin-inject-compiler-ksp = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlin-inject" }
+#endregion
+#region koin
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
-junit = { module = "junit:junit", version.ref = "junit" }
-robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
-mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+#endregion
+#region kotlin-inject
+kotlin-inject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlin-inject" }
+kotlin-inject-compiler-ksp = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlin-inject" }
+#endregion
+#region vbpd
+vbpd = { module = "dev.androidbroadcast.vbpd:vbpd", version.ref = "vbpd" }
+vbpd-reflection = { module = "dev.androidbroadcast.vbpd:vbpd-reflection", version.ref = "vbpd" }
+#endregion
+#region mockk
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockk" }
-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
-barista = { module = "com.adevinta.android:barista", version.ref = "barista" }
+#endregion
+#region kotest
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+#endregion
+#region kaspresso
 kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso" }
 kaspresso-allure-support = { module = "com.kaspersky.android-components:kaspresso-allure-support", version.ref = "kaspresso" }
 kaspresso-compose-support = { module = "com.kaspersky.android-components:kaspresso-compose-support", version.ref = "kaspresso" }
+#endregion
+
+okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+junit = { module = "junit:junit", version.ref = "junit" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+barista = { module = "com.adevinta.android:barista", version.ref = "barista" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
