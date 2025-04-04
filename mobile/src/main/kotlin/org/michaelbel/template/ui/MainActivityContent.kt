@@ -419,7 +419,11 @@ fun MainActivityContent(
                                                     .then(if (isDesktop) Modifier.preferredWidth(600.dp) else Modifier.fillMaxWidth(0.4F))
                                             ) {
                                                 ListScreen(
-                                                    onClick = { listDetailPaneScaffoldNavigator.navigateTo(ListDetailPaneScaffoldRole.Detail, AppNavigation.Details(it)) }
+                                                    onClick = {
+                                                        coroutineScope.launch {
+                                                            listDetailPaneScaffoldNavigator.navigateTo(ListDetailPaneScaffoldRole.Detail, AppNavigation.Details(it))
+                                                        }
+                                                    }
                                                 )
                                             }
                                         },
@@ -428,9 +432,9 @@ fun MainActivityContent(
                                                 modifier = Modifier.then(if (isDesktop) Modifier else Modifier.fillMaxWidth(0.6F))
                                             ) {
                                                 when {
-                                                    listDetailPaneScaffoldNavigator.currentDestination?.content != null -> {
+                                                    listDetailPaneScaffoldNavigator.currentDestination?.contentKey != null -> {
                                                         DetailsScreen2(
-                                                            id = listDetailPaneScaffoldNavigator.currentDestination?.content?.id!!
+                                                            id = listDetailPaneScaffoldNavigator.currentDestination?.contentKey?.id!!
                                                         )
                                                     }
                                                     else -> {
