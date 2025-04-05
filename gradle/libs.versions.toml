@@ -19,6 +19,8 @@ google-services = "4.4.2"
 google-gson = "2.11.0"
 google-horologist = "0.6.20"
 google-zxing = "3.4.1"
+google-ai = "0.9.0"
+google-protobuf = "1.0.0"
 
 google-ar-core = "1.48.0"
 google-ar-impress = "0.0.2"
@@ -412,6 +414,7 @@ turbine = "1.2.0"
 barista = "4.3.0"
 kotest = "5.8.1"
 tensorflow-lite = "2.17.0"
+jetbrains-dokka = "2.0.0"
 
 androidx-compose-bom = "2025.03.01"
 androidx-compose-bom-beta = "2025.03.01"
@@ -673,6 +676,8 @@ google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref =
 google-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "google-hilt" }
 google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
 google-zxing = { module = "com.google.zxing:core", version.ref = "google-zxing" }
+google-ai-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "google-ai" }
+google-protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "google-protobuf" }
 #endregion
 #region firebase
 google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
@@ -1165,9 +1170,19 @@ kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref
 kaspresso-allure-support = { module = "com.kaspersky.android-components:kaspresso-allure-support", version.ref = "kaspresso" }
 kaspresso-compose-support = { module = "com.kaspersky.android-components:kaspresso-compose-support", version.ref = "kaspresso" }
 #endregion
+#retrofit
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+retrofit-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+retrofit-converter-protobuf = { module = "com.squareup.retrofit2:converter-protobuf", version.ref = "retrofit" }
+retrofit-converter-wire = { module = "com.squareup.retrofit2:converter-wire", version.ref = "retrofit" }
+retrofit-converter-simplexml = { module = "com.squareup.retrofit2:converter-simplexml", version.ref = "retrofit" }
+retrofit-converter-jaxb = { module = "com.squareup.retrofit2:converter-jaxb", version.ref = "retrofit" }
+retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
+#endretrofit
 
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
@@ -1179,6 +1194,7 @@ mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 barista = { module = "com.adevinta.android:barista", version.ref = "barista" }
 tensorflow-lite = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflow-lite" }
+jetbrains-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "jetbrains-dokka" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
