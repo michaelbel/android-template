@@ -47,7 +47,7 @@ google-mlkit-digital-ink-recognition = "18.1.0"
 google-mlkit-language-id = "17.0.6"
 google-mlkit-translate = "17.0.3"
 google-mlkit-smart-reply = "17.0.4"
-google-mlkit-entity-extraction = "16.0.0-beta5"
+google-mlkit-entity-extraction = "16.0.0-beta6"
 
 google-gms-play-services-ads = "24.2.0"
 google-gms-play-services-ads-identifier = "18.2.0"
