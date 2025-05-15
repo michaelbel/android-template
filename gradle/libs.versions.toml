@@ -23,7 +23,7 @@ google-ai = "0.9.0"
 google-protobuf = "4.30.1"
 
 google-ar-core = "1.48.0"
-google-ar-impress = "0.0.2"
+google-ar-impress = "0.0.3"
 google-ar-sceneform = "1.17.1"
 
 google-filament = "1.57.1"
