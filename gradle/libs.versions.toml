@@ -19,7 +19,8 @@ google-services = "4.4.2"
 google-gson = "2.13.1"
 google-horologist = "0.6.20"
 google-zxing = "3.4.1"
-google-ai = "0.9.0"
+google-ai-generativeai = "0.9.0"
+google-ai-edge = "0.0.1-exp02"
 google-protobuf = "4.30.1"
 
 google-ar-core = "1.49.0"
@@ -313,6 +314,7 @@ androidx-leanback-paging = "1.1.0"
 androidx-leanback-grid = "1.0.0"
 androidx-leanback-tab = "1.1.0"
 androidx-lifecycle = "2.9.0"
+androidx-lifecycle-viewmodel-navigation3 = "1.0.0-SNAPSHOT"
 androidx-lint = "30.0.1"
 androidx-lint-gradle = "1.0.0-alpha05"
 androidx-loader = "1.1.0"
@@ -321,6 +323,7 @@ androidx-media3 = "1.7.1"
 androidx-mediarouter = "1.7.0"
 androidx-metrics = "1.0.0-beta02"
 androidx-navigation = "2.9.0"
+androidx-navigation3 = "1.0.0-SNAPSHOT"
 androidx-paging = "3.3.6"
 androidx-palette = "1.0.0"
 androidx-pdf = "1.0.0-alpha09"
@@ -399,6 +402,7 @@ rxjava3-rxkotlin = "3.0.1"
 rxjava3-rxandroid = "3.0.2"
 timber = "5.0.1"
 coil = "2.7.0"
+coil3 = "3.2.0"
 cicerone = "7.1"
 lottie = "6.5.2"
 vbpd = "2.0.4"
@@ -416,6 +420,7 @@ barista = "4.3.0"
 kotest = "5.8.1"
 tensorflow-lite = "2.17.0"
 jetbrains-dokka = "2.0.0"
+android-compose-screenshot = "0.0.1-alpha09"
 
 androidx-compose-bom = "2025.05.01"
 androidx-compose-bom-beta = "2025.05.01"
@@ -672,12 +677,17 @@ google-filament-filamat-utils-android-lite = { module = "com.google.android.fila
 google-filament-android-full = { module = "com.google.android.filament:filamat-android-full", version.ref = "google-filament-android-full" }
 google-filament-android-debug = { module = "com.google.android.filament:filament-android-debug", version.ref = "google-filament-android-debug" }
 #endregion
-#region google
+#region google-ai
+google-ai-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "google-ai-generativeai" }
+google-ai-edge = { module = "com.google.ai.edge.aicore:aicore", version.ref = "google-ai-edge" }
+#endregion
+#region google-hilt
 google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "google-hilt" }
 google-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "google-hilt" }
+#endregion
+#region google
 google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
 google-zxing = { module = "com.google.zxing:core", version.ref = "google-zxing" }
-google-ai-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "google-ai" }
 google-protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "google-protobuf" }
 #endregion
 #region firebase
@@ -928,6 +938,7 @@ androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata"
 androidx-lifecycle-livedata-core-ktx = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "androidx-lifecycle-viewmodel-navigation3" }
 androidx-lifecycle-service = { module = "androidx.lifecycle:lifecycle-service", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-reactivestreams-ktx = { module = "androidx.lifecycle:lifecycle-reactivestreams-ktx", version.ref = "androidx-lifecycle" }
@@ -977,6 +988,8 @@ androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx",
 androidx-navigation-common = { module = "androidx.navigation:navigation-common", version.ref = "androidx-navigation" }
 androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx-navigation" }
 androidx-navigation-dynamic-features-fragment = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "androidx-navigation" }
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "androidx-navigation3" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "androidx-navigation3" }
 androidx-paging-rxjava2 = { module = "androidx.paging:paging-rxjava2", version.ref = "androidx-paging" }
 androidx-paging-rxjava3 = { module = "androidx.paging:paging-rxjava3", version.ref = "androidx-paging" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "androidx-paging" }
@@ -1171,7 +1184,7 @@ kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref
 kaspresso-allure-support = { module = "com.kaspersky.android-components:kaspresso-allure-support", version.ref = "kaspresso" }
 kaspresso-compose-support = { module = "com.kaspersky.android-components:kaspresso-compose-support", version.ref = "kaspresso" }
 #endregion
-#retrofit
+#region retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 retrofit-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "retrofit" }
@@ -1182,11 +1195,15 @@ retrofit-converter-simplexml = { module = "com.squareup.retrofit2:converter-simp
 retrofit-converter-jaxb = { module = "com.squareup.retrofit2:converter-jaxb", version.ref = "retrofit" }
 retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
 retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
-#endretrofit
+#endregion
+#region coil
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coil3-compose-http = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil3" }
+coil3-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coil3" }
+#endregion
 
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
@@ -1204,6 +1221,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
+android-compose-screenshot = { id = "com.android.compose.screenshot", version.ref = "android-compose-screenshot" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
