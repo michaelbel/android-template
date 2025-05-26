@@ -6,4 +6,13 @@ plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.kotlin.parcelize) apply false
     alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.detekt)
+}
+
+detekt {
+    config.setFrom("$projectDir/config/detekt/detekt.yml")
+}
+
+subprojects {
+    apply(plugin = "io.gitlab.arturbosch.detekt")
 }

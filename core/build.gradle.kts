@@ -66,4 +66,8 @@ dependencies {
     api(libs.coil.compose)
     debugApi(libs.chucker.library)
     releaseApi(libs.chucker.library.no.op)
+    detektPlugins(libs.kode.detekt.rules.compose)
+    detektPlugins(libs.twitter.compose.rules.detekt)
+    detektPlugins(libs.nlopez.compose.rules.detekt)
+    detektPlugins(libs.vk.vkompose.detekt)
 }
