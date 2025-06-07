@@ -330,6 +330,7 @@ androidx-palette = "1.0.0"
 androidx-pdf = "1.0.0-alpha09"
 androidx-percentlayout = "1.0.0"
 androidx-preference = "1.2.1"
+androidx-photopicker = "1.0.0-alpha01"
 androidx-print = "1.1.0"
 androidx-profileinstaller = "1.4.1"
 androidx-recommendation = "1.0.0"
@@ -430,7 +431,7 @@ android-compose-screenshot = "0.0.1-alpha10"
 androidx-compose-bom = "2025.06.00"
 androidx-compose-bom-beta = "2025.06.00"
 androidx-compose-bom-alpha = "2025.06.00"
-google-firebase-bom = "33.14.0"
+google-firebase-bom = "33.15.0"
 kotlin-bom = "2.1.10"
 kotlinx-coroutines-bom = "1.10.2"
 okhttp-bom = "5.0.0-alpha.15"
@@ -1005,6 +1006,8 @@ androidx-palette-ktx = { module = "androidx.palette:palette-ktx", version.ref = 
 androidx-pdf-viewer = { module = "androidx.pdf:pdf-viewer", version.ref = "androidx-pdf" }
 androidx-pdf-viewer-fragment = { module = "androidx.pdf:pdf-viewer-fragment", version.ref = "androidx-pdf" }
 androidx-percentlayout = { module = "androidx.percentlayout:percentlayout", version.ref = "androidx-percentlayout" }
+androidx-photopicker = { module = "androidx.photopicker:photopicker", version.ref = "androidx-photopicker" }
+androidx-photopicker-compose = { module = "androidx.photopicker:photopicker-compose", version.ref = "androidx-photopicker" }
 androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidx-preference" }
 androidx-print = { module = "androidx.print:print", version.ref = "androidx-print" }
 androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profileinstaller" }
