@@ -4,6 +4,7 @@ package org.michaelbel.core.ktx
 
 import android.Manifest
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,6 +12,7 @@ import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import android.speech.RecognizerIntent
+import android.widget.Toast
 import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -65,6 +67,29 @@ fun Context.navigateToImageUri(uri: Uri) {
         addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
     }.also { intent ->
         startActivity(intent)
+    }
+}
+
+fun Context.navigateToYandexMapsRoute(latitude: Double, longitude: Double) {
+    try {
+        val intent = Intent("ru.yandex.yandexmaps.action.BUILD_ROUTE_ON_MAP").apply {
+            putExtra("lat_to", latitude.toFloat())
+            putExtra("lon_to", longitude.toFloat())
+        }
+        startActivity(intent)
+    } catch (e: ActivityNotFoundException) {
+        Toast.makeText(this, "Приложение Яндекс.Карты не установлено", Toast.LENGTH_SHORT).show()
+    }
+}
+
+fun Context.navigateToYandexMapsRoute(address: String) {
+    try {
+        val intent = Intent("ru.yandex.yandexmaps.action.SEARCH_ON_MAP").apply {
+            putExtra("text", address)
+        }
+        startActivity(intent)
+    } catch (e: ActivityNotFoundException) {
+        Toast.makeText(this, "Приложение Яндекс.Карты не установлено", Toast.LENGTH_SHORT).show()
     }
 }
 
