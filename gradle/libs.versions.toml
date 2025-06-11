@@ -1,7 +1,7 @@
 [versions]
 min-sdk = "32"
-compile-sdk = "35"
-target-sdk = "35"
+compile-sdk = "36"
+target-sdk = "36"
 jdk = "21"
 agp = "8.10.1"
 
@@ -51,7 +51,7 @@ google-mlkit-translate = "17.0.3"
 google-mlkit-smart-reply = "17.0.4"
 google-mlkit-entity-extraction = "16.0.0-beta6"
 
-google-gms-play-services-ads = "24.3.0"
+google-gms-play-services-ads = "24.4.0"
 google-gms-play-services-ads-identifier = "18.2.0"
 google-gms-play-services-afs = "19.1.0"
 google-gms-play-services-all-wear = "15.0.1"
