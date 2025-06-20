@@ -364,6 +364,7 @@ androidx-test-runner = "1.6.2"
 androidx-test-rules = "1.6.1"
 androidx-test-services = "1.5.0"
 androidx-test-uiautomator = "2.3.0"
+androidx-test-uiautomator-shell = "1.0.0-alpha01"
 androidx-textclassifier = "1.0.0-alpha04"
 androidx-tracing = "1.3.0"
 androidx-transition = "1.6.0"
@@ -1052,6 +1053,7 @@ androidx-test-monitor = { module = "androidx.test:monitor", version.ref = "andro
 androidx-test-services-storage = { module = "androidx.test.services:storage", version.ref = "androidx-test-services" }
 androidx-test-services-test-services = { module = "androidx.test.services:test-services", version.ref = "androidx-test-services" }
 androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "androidx-test-uiautomator" }
+androidx-test-uiautomator-shell = { module = "androidx.test.uiautomator:uiautomator-shell", version.ref = "androidx-test-uiautomator-shell" }
 androidx-textclassifier = { module = "androidx.textclassifier:textclassifier", version.ref = "androidx-textclassifier" }
 androidx-tracing = { module = "androidx.tracing:tracing-ktx", version.ref = "androidx-tracing" }
 androidx-transition-ktx = { module = "androidx.transition:transition-ktx", version.ref = "androidx-transition" }
