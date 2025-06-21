@@ -30,7 +30,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.michaelbel.template" // Replace with your own namespace
+    namespace = "org.michaelbel.template" // fixme Replace with your own namespace
     compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
