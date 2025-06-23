@@ -97,7 +97,7 @@ android {
 }
 
 base {
-    archivesName.set("Auto-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
+    archivesName.set("Auto-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // fixme Replace with your own app's name
 }
 
 dependencies {
