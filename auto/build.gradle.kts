@@ -106,14 +106,5 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 }
 
-tasks.register("printVersionName") {
-    doLast {
-        println(android.defaultConfig.versionName)
-    }
-}
-
-tasks.register("printVersionCode") {
-    doLast {
-        println(android.defaultConfig.versionCode.toString())
-    }
-}
+tasks.register("printVersionName") { doLast { println(android.defaultConfig.versionName) } }
+tasks.register("printVersionCode") { doLast { println(android.defaultConfig.versionCode.toString()) } }
