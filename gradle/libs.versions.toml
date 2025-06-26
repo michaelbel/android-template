@@ -431,7 +431,7 @@ android-compose-screenshot = "0.0.1-alpha10"
 
 androidx-compose-bom = "2025.06.01"
 androidx-compose-bom-beta = "2025.06.01"
-androidx-compose-bom-alpha = "2025.06.00"
+androidx-compose-bom-alpha = "2025.06.01"
 google-firebase-bom = "33.15.0"
 kotlin-bom = "2.1.10"
 kotlinx-coroutines-bom = "1.10.2"

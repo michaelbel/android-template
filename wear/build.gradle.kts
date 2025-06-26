@@ -30,11 +30,11 @@ kotlin {
 }
 
 android {
-    namespace = "org.michaelbel.template" // Replace with your own namespace
+    namespace = "org.michaelbel.template" // fixme Replace with your own namespace
     compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
-        applicationId = "org.michaelbel.template" // Replace with your own applicationId
+        applicationId = "org.michaelbel.template" // fixme Replace with your own applicationId
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionCode = gitCommitsCount
@@ -97,7 +97,7 @@ android {
 }
 
 base {
-    archivesName.set("Wear-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // Replace with your own app's name
+    archivesName.set("Wear-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // fixme Replace with your own app's name
 }
 
 dependencies {
@@ -107,14 +107,5 @@ dependencies {
     implementation(libs.google.horologist.compose.material)
 }
 
-tasks.register("printVersionName") {
-    doLast {
-        println(android.defaultConfig.versionName)
-    }
-}
-
-tasks.register("printVersionCode") {
-    doLast {
-        println(android.defaultConfig.versionCode.toString())
-    }
-}
+tasks.register("printVersionName") { doLast { println(android.defaultConfig.versionName) } }
+tasks.register("printVersionCode") { doLast { println(android.defaultConfig.versionCode.toString()) } }
