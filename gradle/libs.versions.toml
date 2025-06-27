@@ -3,7 +3,7 @@ min-sdk = "32"
 compile-sdk = "36"
 target-sdk = "36"
 jdk = "21"
-agp = "8.10.1"
+agp = "8.11.0"
 
 kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"

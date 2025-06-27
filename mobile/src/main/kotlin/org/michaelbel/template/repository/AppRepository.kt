@@ -28,6 +28,6 @@ class AppRepository(
                 picture = it.picture
             )
         }
-        appDao.insertEntities(appEntities)
+        appDao.upsertEntities(appEntities)
     }
 }
