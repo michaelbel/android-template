@@ -1,6 +1,6 @@
-import org.apache.commons.io.output.ByteArrayOutputStream
+
 import java.io.FileInputStream
-import java.nio.charset.Charset
+import java.nio.charset.StandardCharsets
 import java.util.Properties
 
 plugins {
@@ -12,16 +12,16 @@ plugins {
 }
 
 private val gitCommitsCount: Int by lazy {
-    when {
-        System.getProperty("os.name").contains("Windows", ignoreCase = true) -> 1
-        else -> {
-            val stdout = ByteArrayOutputStream()
-            exec {
-                commandLine("git", "rev-list", "--count", "HEAD")
-                standardOutput = stdout
-            }
-            stdout.toString(Charset.defaultCharset()).trim().toInt()
+    try {
+        val isWindows = System.getProperty("os.name").contains("Windows", ignoreCase = true)
+        val processBuilder = when {
+            isWindows -> ProcessBuilder("cmd", "/c", "git", "rev-list", "--count", "HEAD")
+            else -> ProcessBuilder("git", "rev-list", "--count", "HEAD")
         }
+        processBuilder.redirectErrorStream(true)
+        processBuilder.start().inputStream.bufferedReader(StandardCharsets.UTF_8).readLine().trim().toInt()
+    } catch (_: Exception) {
+        1
     }
 }
 
