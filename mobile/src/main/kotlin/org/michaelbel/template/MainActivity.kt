@@ -14,10 +14,6 @@ class MainActivity: ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge() // Отключить для десктопа
-        setContent {
-            AppTheme {
-                MainActivityContent()
-            }
-        }
+        setContent { AppTheme { MainActivityContent() } }
     }
 }
