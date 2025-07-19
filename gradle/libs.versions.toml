@@ -7,7 +7,7 @@ agp = "8.11.1"
 
 kotlin = "2.2.0"
 kotlinx-coroutines = "1.10.2"
-kotlinx-datetime = "0.7.0"
+kotlinx-datetime = "0.7.1"
 kotlinx-serialization = "1.9.0"
 kotlinx-io = "0.1.16"
 kotlinx-collections = "0.4.0"
@@ -1021,6 +1021,7 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "androidx-room" }
+androidx-room-sqlite-wrapper = { module = "androidx.room:room-sqlite-wrapper", version.ref = "androidx-room" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room" }
 androidx-savedstate-ktx = { module = "androidx.savedstate:savedstate-ktx", version.ref = "androidx-savedstate" }
 androidx-security-crypto-ktx = { module = "androidx.security:security-crypto-ktx", version.ref = "androidx-security-crypto" }
