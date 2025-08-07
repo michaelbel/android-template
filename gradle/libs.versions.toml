@@ -390,7 +390,7 @@ androidx-wear-watchface = "1.2.1"
 androidx-webkit = "1.14.0"
 androidx-window = "1.4.0"
 androidx-window-extensions-core = "1.0.0"
-androidx-work = "2.10.2"
+androidx-work = "2.10.3"
 androidx-xr = "1.0.0-alpha08"
 
 detekt = "1.23.8"
