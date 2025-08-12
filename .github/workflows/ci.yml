@@ -79,11 +79,11 @@ jobs:
       - name: assemble debug artifact
         run: ./gradlew mobile:assembleDebug
 
-      - name: assemble release artifact
-        run: ./gradlew mobile:assembleRelease
+#      - name: assemble release artifact
+#        run: ./gradlew mobile:assembleRelease
 
-      - name: bundle release artifact
-        run: ./gradlew mobile:bundleRelease
+#      - name: bundle release artifact
+#        run: ./gradlew mobile:bundleRelease
 
       - name: upload artifacts to outputs
         uses: actions/upload-artifact@v4
