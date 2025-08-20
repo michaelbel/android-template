@@ -43,6 +43,13 @@ android {
     }
 
     signingConfigs {
+        getByName("debug") {
+            keyAlias = "template"
+            keyPassword = "password"
+            storeFile = rootProject.file("config/debug-key.jks")
+            storePassword = "password"
+        }
+
         val keystoreProperties = Properties()
         val keystorePropertiesFile: File = rootProject.file("config/keystore.properties")
         if (keystorePropertiesFile.exists()) {
@@ -87,6 +94,7 @@ android {
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
+            signingConfig = signingConfigs.getByName("debug")
             applicationIdSuffix = ".debug"
         }
     }
