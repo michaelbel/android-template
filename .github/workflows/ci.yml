@@ -79,11 +79,13 @@ jobs:
       - name: assemble debug artifact
         run: ./gradlew mobile:assembleDebug
 
-#      - name: assemble release artifact
-#        run: ./gradlew mobile:assembleRelease
+      - name: assemble release artifact
+        if: false
+        run: ./gradlew mobile:assembleRelease
 
-#      - name: bundle release artifact
-#        run: ./gradlew mobile:bundleRelease
+      - name: bundle release artifact
+        if: false
+        run: ./gradlew mobile:bundleRelease
 
       - name: upload artifacts to outputs
         uses: actions/upload-artifact@v4
@@ -145,6 +147,7 @@ jobs:
             -F parse_mode="HTML"          
 
       - name: send telegram message free release
+        if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -162,6 +165,7 @@ jobs:
             -F parse_mode="HTML"
 
       - name: send telegram message paid release
+        if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -179,6 +183,7 @@ jobs:
             -F parse_mode="HTML"          
 
       - name: send telegram message free bundle
+        if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -196,6 +201,7 @@ jobs:
             -F parse_mode="HTML"
 
       - name: send telegram message paid bundle
+        if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
