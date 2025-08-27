@@ -128,7 +128,7 @@ jobs:
             -F document="@${{ env.FREE_DEBUG_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"
+            -F parse_mode="Markdown"
 
       - name: telegram notify paid debug
         env:
@@ -146,7 +146,7 @@ jobs:
             -F document="@${{ env.PAID_DEBUG_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"          
+            -F parse_mode="Markdown"          
 
       - name: telegram notify free release
         if: false
@@ -165,7 +165,7 @@ jobs:
             -F document="@${{ env.FREE_RELEASE_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"
+            -F parse_mode="Markdown"
 
       - name: telegram notify paid release
         if: false
@@ -184,7 +184,7 @@ jobs:
             -F document="@${{ env.PAID_RELEASE_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"          
+            -F parse_mode="Markdown"          
 
       - name: telegram notify free bundle
         if: false
@@ -203,7 +203,7 @@ jobs:
             -F document="@${{ env.FREE_BUNDLE_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"
+            -F parse_mode="Markdown"
 
       - name: telegram notify paid bundle
         if: false
@@ -222,7 +222,7 @@ jobs:
             -F document="@${{ env.PAID_BUNDLE_APK_PATH }}" \
             -F caption="${{ env.MESSAGE }}" \
             -F message_thread_id="${THREAD_ID}" \
-            -F parse_mode="HTML"          
+            -F parse_mode="Markdown"          
 
   build-wear:
     if: ${{ vars.WEAR_BUILD_ENABLED == 'true' }}
