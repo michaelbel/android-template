@@ -112,15 +112,16 @@ jobs:
           echo "FREE_BUNDLE_APK_PATH=$(find mobile/build/outputs/bundle/freeRelease -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
           echo "PAID_BUNDLE_APK_PATH=$(find mobile/build/outputs/bundle/paidRelease -name '*.aab' -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2)" >> $GITHUB_ENV
 
-      - name: send telegram message free debug
+      - name: telegram notify free debug
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
           MESSAGE: |
-            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
-            <b>Branch:</b> <code>${{ github.ref_name }}</code>
-            <b>Commit:</b> <code>${{ env.SHORT_SHA }}</code>
+            ✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*
+            *Repo:* [${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})
+            *Branch:* [${{ github.ref_name }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }})
+            *Commit:* [${{ env.SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
@@ -129,15 +130,16 @@ jobs:
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
 
-      - name: send telegram message paid debug
+      - name: telegram notify paid debug
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
           MESSAGE: |
-            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
-            <b>Branch:</b> <code>${{ github.ref_name }}</code>
-            <b>Commit:</b> <code>${{ env.SHORT_SHA }}</code>
+            ✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*
+            *Repo:* [${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})
+            *Branch:* [${{ github.ref_name }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }})
+            *Commit:* [${{ env.SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
@@ -146,16 +148,17 @@ jobs:
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"          
 
-      - name: send telegram message free release
+      - name: telegram notify free release
         if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
           MESSAGE: |
-            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
-            <b>Branch:</b> <code>${{ github.ref_name }}</code>
-            <b>Commit:</b> <code>${{ env.SHORT_SHA }}</code>
+            ✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*
+            *Repo:* [${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})
+            *Branch:* [${{ github.ref_name }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }})
+            *Commit:* [${{ env.SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
@@ -164,16 +167,17 @@ jobs:
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
 
-      - name: send telegram message paid release
+      - name: telegram notify paid release
         if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
           MESSAGE: |
-            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
-            <b>Branch:</b> <code>${{ github.ref_name }}</code>
-            <b>Commit:</b> <code>${{ env.SHORT_SHA }}</code>
+            ✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*
+            *Repo:* [${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})
+            *Branch:* [${{ github.ref_name }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }})
+            *Commit:* [${{ env.SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
@@ -182,16 +186,17 @@ jobs:
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"          
 
-      - name: send telegram message free bundle
+      - name: telegram notify free bundle
         if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
           MESSAGE: |
-            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
-            <b>Branch:</b> <code>${{ github.ref_name }}</code>
-            <b>Commit:</b> <code>${{ env.SHORT_SHA }}</code>
+            ✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*
+            *Repo:* [${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})
+            *Branch:* [${{ github.ref_name }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }})
+            *Commit:* [${{ env.SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
@@ -200,16 +205,17 @@ jobs:
             -F message_thread_id="${THREAD_ID}" \
             -F parse_mode="HTML"
 
-      - name: send telegram message paid bundle
+      - name: telegram notify paid bundle
         if: false
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
           MESSAGE: |
-            ✅ <b>${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})</b>
-            <b>Branch:</b> <code>${{ github.ref_name }}</code>
-            <b>Commit:</b> <code>${{ env.SHORT_SHA }}</code>
+            ✅ *${{ env.VERSION_NAME }} (${{ env.VERSION_CODE }})*
+            *Repo:* [${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})
+            *Branch:* [${{ github.ref_name }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }})
+            *Commit:* [${{ env.SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendDocument" \
             -F chat_id="${CHAT_ID}" \
