@@ -233,6 +233,7 @@ androidx-ads = "1.0.0-alpha05"
 androidx-annotation = "1.9.1"
 androidx-annotation-experimental = "1.5.1"
 androidx-appcompat = "1.7.1"
+androidx-appfunctions = "1.0.0-alpha03"
 androidx-appsearch = "1.1.0"
 androidx-arch-core = "2.2.0"
 androidx-asynclayoutinflater = "1.1.0"
@@ -799,6 +800,9 @@ androidx-annotation = { module = "androidx.annotation:annotation", version.ref =
 androidx-annotation-experimental = { module = "androidx.annotation:annotation-experimental", version.ref = "androidx-annotation-experimental" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-appcompat-resources = { module = "androidx.appcompat:appcompat-resources", version.ref = "androidx-appcompat" }
+androidx-appfunctions = { module = "androidx.appfunctions:appfunctions", version.ref = "androidx-appfunctions" }
+androidx-appfunctions-service = { module = "androidx.appfunctions:appfunctions-service", version.ref = "androidx-appfunctions" }
+androidx-appfunctions-compiler = { module = "androidx.appfunctions:appfunctions-compiler", version.ref = "androidx-appfunctions" }
 androidx-appsearch = { module = "androidx.appsearch:appsearch", version.ref = "androidx-appsearch" }
 androidx-appsearch-compiler = { module = "androidx.appsearch:appsearch-compiler", version.ref = "androidx-appsearch" }
 androidx-appsearch-local-storage = { module = "androidx.appsearch:appsearch-local-storage", version.ref = "androidx-appsearch" }
