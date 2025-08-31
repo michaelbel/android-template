@@ -10,9 +10,7 @@ class AppInteractor(
     private val appDispatchers: AppDispatchers,
     private val appRepository: AppRepository
 ) {
-    fun entitiesFlow(): Flow<List<AppEntity>> {
-        return appRepository.entitiesFlow()
-    }
+    val entitiesFlow: Flow<List<AppEntity>> = appRepository.entitiesFlow
 
     fun entityFlow(id: Int): Flow<AppEntity> {
         return appRepository.entityFlow(id)

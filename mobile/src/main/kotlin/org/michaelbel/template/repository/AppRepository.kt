@@ -11,9 +11,7 @@ class AppRepository(
     private val appDao: AppDao,
     private val appService: AppService
 ) {
-    fun entitiesFlow(): Flow<List<AppEntity>> {
-        return appDao.entitiesFlow()
-    }
+    val entitiesFlow: Flow<List<AppEntity>> = appDao.entitiesFlow()
 
     fun entityFlow(id: Int): Flow<AppEntity> {
         return appDao.entityFlow(id)

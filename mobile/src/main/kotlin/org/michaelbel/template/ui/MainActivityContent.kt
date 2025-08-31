@@ -72,7 +72,6 @@ import androidx.compose.ui.unit.offset
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.window.core.layout.WindowHeightSizeClass
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.core.ktx.isDesktop
@@ -94,16 +93,12 @@ fun MainActivityContent(
     var selectedTabRoute by rememberSaveable { mutableStateOf<TabNavigation>(TabNavigation.Home) }
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
-
     val adaptiveInfo = currentWindowAdaptiveInfo()
-    val navContentPosition = when (adaptiveInfo.windowSizeClass.windowHeightSizeClass) {
-        WindowHeightSizeClass.COMPACT -> ReplyNavigationContentPosition.TOP
-        WindowHeightSizeClass.MEDIUM,
-        WindowHeightSizeClass.EXPANDED -> ReplyNavigationContentPosition.CENTER
+    val navContentPosition = when {
+        adaptiveInfo.windowSizeClass.isHeightAtLeastBreakpoint(480) -> ReplyNavigationContentPosition.CENTER
         else -> ReplyNavigationContentPosition.TOP
     }
     val layoutDirection = LocalLayoutDirection.current
-
     val listDetailPaneScaffoldNavigator = rememberListDetailPaneScaffoldNavigator<AppNavigation.Details>()
 
     NavHost(
@@ -485,21 +480,12 @@ fun navigationMeasurePolicy(
             constraints.offset(vertical = -headerPlaceable.height)
         )
         layout(constraints.maxWidth, constraints.maxHeight) {
-            // Place the header, this goes at the top
             headerPlaceable.placeRelative(0, 0)
-
-            // Determine how much space is not taken up by the content
             val nonContentVerticalSpace = constraints.maxHeight - contentPlaceable.height
-
             val contentPlaceableY = when (navigationContentPosition) {
-                // Figure out the place we want to place the content, with respect to the
-                // parent (ignoring the header for now)
                 ReplyNavigationContentPosition.TOP -> 0
                 ReplyNavigationContentPosition.CENTER -> nonContentVerticalSpace / 2
-            }
-                // And finally, make sure we don't overlap with the header.
-                .coerceAtLeast(headerPlaceable.height)
-
+            }.coerceAtLeast(headerPlaceable.height)
             contentPlaceable.placeRelative(0, contentPlaceableY)
         }
     }

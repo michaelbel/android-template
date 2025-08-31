@@ -28,7 +28,6 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
-import androidx.window.core.layout.WindowWidthSizeClass
 import androidx.xr.compose.platform.LocalSpatialCapabilities
 import androidx.xr.compose.spatial.Subspace
 import androidx.xr.compose.subspace.SpatialColumn
@@ -143,10 +142,9 @@ private fun NonSpatialTwoPaneLayout(
             .systemBarsPadding()
     ) {
         Spacer(Modifier.height(16.dp))
-        if (windowSizeClass.windowWidthSizeClass == WindowWidthSizeClass.COMPACT) {
-            TopAndBottomPaneLayout(primaryPane, secondaryPane)
-        } else {
-            SideBySidePaneLayout(primaryPane, secondaryPane)
+        when {
+            windowSizeClass.isWidthAtLeastBreakpoint(600) -> SideBySidePaneLayout(primaryPane, secondaryPane)
+            else -> TopAndBottomPaneLayout(primaryPane, secondaryPane)
         }
     }
 }
@@ -201,8 +199,8 @@ private fun TopAndBottomPaneLayout(
 
 @Composable
 private fun PrimaryContent(
-    id: Int? = null,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    id: Int? = null
 ) {
     when {
         id != null -> {

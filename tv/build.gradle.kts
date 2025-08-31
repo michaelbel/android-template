@@ -1,4 +1,3 @@
-
 import java.io.FileInputStream
 import java.nio.charset.StandardCharsets
 import java.util.Properties

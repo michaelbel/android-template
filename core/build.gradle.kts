@@ -10,6 +10,7 @@ plugins {
 kotlin {
     compilerOptions {
         jvmToolchain(libs.versions.jdk.get().toInt())
+        allWarningsAsErrors.set(false)
     }
 }
 
@@ -28,10 +29,6 @@ android {
         renderScript = false
         buildConfig = true
         compose = true
-    }
-
-    kotlinOptions {
-        allWarningsAsErrors = false
     }
 }
 

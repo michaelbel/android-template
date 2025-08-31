@@ -12,7 +12,7 @@ class ListViewModel(
     private val appInteractor: AppInteractor
 ): BaseViewModel() {
 
-    val appEntities: StateFlow<List<AppEntity>> = appInteractor.entitiesFlow()
+    val appEntities: StateFlow<List<AppEntity>> = appInteractor.entitiesFlow
         .stateIn(
             scope = this,
             started = SharingStarted.Lazily,

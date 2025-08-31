@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,6 +31,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.tv.material3.Icon
 import androidx.tv.material3.Text
+import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.template.MainViewModel
 import org.michaelbel.template.ui.details2.DetailsScreen2
@@ -43,6 +45,7 @@ fun MainActivityContent(
     val navHostController = rememberNavController()
     var selectedRoute by remember { mutableStateOf<TabNavigation>(TabNavigation.Home) }
     val listDetailPaneScaffoldNavigator = rememberListDetailPaneScaffoldNavigator<AppNavigation.Details>()
+    val scope = rememberCoroutineScope()
 
     NavigationSuiteScaffold(
         navigationSuiteItems = {
@@ -93,19 +96,22 @@ fun MainActivityContent(
                                 .fillMaxWidth(0.5F)
                         ) {
                             ListScreen(
-                                onClick = { listDetailPaneScaffoldNavigator.navigateTo(
-                                    ListDetailPaneScaffoldRole.Detail, AppNavigation.Details(it)) }
+                                onClick = {
+                                    scope.launch {
+                                        listDetailPaneScaffoldNavigator.navigateTo(ListDetailPaneScaffoldRole.Detail, AppNavigation.Details(it))
+                                    }
+                                }
                             )
                         }
                     },
                     detailPane = {
                         AnimatedPane(
-                            modifier = Modifier.fillMaxWidth(0.5F)
+                            modifier = Modifier.fillMaxWidth(.5F)
                         ) {
                             when {
-                                listDetailPaneScaffoldNavigator.currentDestination?.content != null -> {
+                                listDetailPaneScaffoldNavigator.currentDestination?.contentKey != null -> {
                                     DetailsScreen2(
-                                        id = listDetailPaneScaffoldNavigator.currentDestination?.content?.id!!
+                                        id = listDetailPaneScaffoldNavigator.currentDestination?.contentKey?.id!!
                                     )
                                 }
                                 else -> {
