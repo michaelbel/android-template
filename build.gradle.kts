@@ -10,7 +10,7 @@ plugins {
 }
 
 detekt {
-    config.setFrom("$projectDir/config/detekt/detekt.yml")
+    config.setFrom("$projectDir/.github/detekt.yml")
 }
 
 subprojects {

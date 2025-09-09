@@ -46,12 +46,12 @@ android {
         getByName("debug") {
             keyAlias = "template"
             keyPassword = "password"
-            storeFile = rootProject.file("config/debug-key.jks")
+            storeFile = rootProject.file(".github/debug-key.jks")
             storePassword = "password"
         }
 
         val keystoreProperties = Properties()
-        val keystorePropertiesFile: File = rootProject.file("config/keystore.properties")
+        val keystorePropertiesFile: File = rootProject.file(".github/keystore.properties")
         if (keystorePropertiesFile.exists()) {
             keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 
