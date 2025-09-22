@@ -9,6 +9,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.coroutines.cancellation.CancellationException
+
+inline fun <R> runCatchingCancellable(block: () -> R): Result<R> {
+    return try {
+        Result.success(value = block())
+    } catch (ce: CancellationException) {
+        throw ce
+    } catch (e: Exception) {
+        Result.failure(exception = e)
+    }
+}
 
 suspend inline fun <T> withIO(
     noinline block: suspend CoroutineScope.() -> T
