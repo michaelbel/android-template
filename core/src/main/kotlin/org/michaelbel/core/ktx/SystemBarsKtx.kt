@@ -4,18 +4,21 @@ package org.michaelbel.core.ktx
 
 import android.content.Context
 import android.util.TypedValue
+import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-inline val Context.statusBarHeight: Int
-    get() {
-        val resId = resources.getIdentifier("status_bar_height", "dimen", "android")
-        return if (resId > 0) resources.getDimensionPixelSize(resId) else 0
-    }
+fun View.statusBarHeightPx(): Int {
+    val insets = ViewCompat.getRootWindowInsets(this)
+    val top = insets?.getInsets(WindowInsetsCompat.Type.statusBars())?.top ?: 0
+    return top
+}
 
-inline val Context.navigationBarHeight: Int
-    get() {
-        val resId = resources.getIdentifier("navigation_bar_height", "dimen", "android")
-        return if (resId > 0) resources.getDimensionPixelSize(resId) else 0
-    }
+fun View.navigationBarHeightPx(): Int {
+    val insets = ViewCompat.getRootWindowInsets(this)
+    val bottom = insets?.getInsets(WindowInsetsCompat.Type.navigationBars())?.bottom ?: 0
+    return bottom
+}
 
 inline val Context.actionBarHeight: Int
     get() {

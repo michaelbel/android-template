@@ -1,3 +1,5 @@
+@file:Suppress("UnusedReceiverParameter")
+
 package org.michaelbel.core.placeholder.material3
 
 import androidx.compose.animation.core.FiniteAnimationSpec

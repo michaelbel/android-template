@@ -19,10 +19,6 @@ class MainActivity: ComponentActivity() {
         window.updateAttributes {
             layoutInDisplayCutoutMode = LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT
         }
-        setContent {
-            AppTheme {
-                MainActivityContent()
-            }
-        }
+        setContent { AppTheme { MainActivityContent() } }
     }
 }

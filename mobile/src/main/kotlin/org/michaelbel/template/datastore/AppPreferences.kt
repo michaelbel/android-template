@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package org.michaelbel.template.datastore
 
 import androidx.datastore.core.DataStore

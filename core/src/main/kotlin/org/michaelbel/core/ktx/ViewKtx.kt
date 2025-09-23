@@ -3,7 +3,6 @@
 package org.michaelbel.core.ktx
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Point
 import android.graphics.Rect
@@ -12,6 +11,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
+import androidx.core.graphics.createBitmap
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
@@ -96,13 +97,13 @@ fun View.toBitmapDrawable(): BitmapDrawable {
     measure(measureSpec, measureSpec)
     layout(0, 0, measuredWidth, measuredHeight)
 
-    val bitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888)
+    val bitmap = createBitmap(measuredWidth, measuredHeight)
     val canvas = Canvas(bitmap)
 
     background?.draw(canvas)
     draw(canvas)
 
-    return BitmapDrawable(resources, bitmap)
+    return bitmap.toDrawable(resources)
 }
 
 @SuppressLint("ClickableViewAccessibility")

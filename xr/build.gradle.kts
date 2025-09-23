@@ -101,14 +101,18 @@ base {
 
 dependencies {
     implementation(projects.core)
-    api(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.xr.arcore)
     implementation(libs.androidx.xr.compose)
     implementation(libs.androidx.xr.compose.material3)
     implementation(libs.androidx.xr.runtime)
     implementation(libs.androidx.xr.scenecore)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 }
 
-tasks.register("printVersionName") { doLast { println(android.defaultConfig.versionName) } }
-tasks.register("printVersionCode") { doLast { println(android.defaultConfig.versionCode.toString()) } }
+tasks.register("printVersion") {
+    doLast {
+        println("VERSION_NAME=${android.defaultConfig.versionName}")
+        println("VERSION_CODE=${android.defaultConfig.versionCode}")
+    }
+}

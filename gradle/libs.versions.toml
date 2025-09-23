@@ -15,7 +15,7 @@ kotlinx-atomicfu = "0.29.0"
 kotlinx-binary-compatibility = "0.18.1"
 
 google-ksp = "2.2.20-2.0.3"
-google-hilt = "2.57.1"
+google-hilt = "2.57.2"
 google-services = "4.4.3"
 google-gson = "2.13.2"
 google-horologist = "0.7.15"
@@ -25,10 +25,10 @@ google-ai-edge = "0.0.1-exp02"
 google-protobuf = "4.32.1"
 
 google-ar-core = "1.50.0"
-google-ar-impress = "0.0.5"
+google-ar-impress = "0.0.6"
 google-ar-sceneform = "1.17.1"
 
-google-filament = "1.65.0"
+google-filament = "1.65.2"
 google-filament-gltfio-android-lite = "1.23.1"
 google-filament-filamat-android-lite = "1.44.0"
 google-filament-filamat-utils-android-lite = "1.20.5"
@@ -65,14 +65,14 @@ google-gms-play-services-appset = "16.1.0"
 google-gms-play-services-appstate = "8.4.0"
 google-gms-play-services-audience = "17.0.0"
 google-gms-play-services-auth = "21.4.0"
-google-gms-play-services-auth-api-phone = "18.2.0"
+google-gms-play-services-auth-api-phone = "18.3.0"
 google-gms-play-services-auth-base = "18.3.0"
 google-gms-play-services-auth-blockstore = "16.4.0"
 google-gms-play-services-auth-license = "11.4.2"
 google-gms-play-services-awareness = "19.1.0"
-google-gms-play-services-base = "18.8.0"
+google-gms-play-services-base = "18.9.0"
 google-gms-play-services-base-testing = "16.2.0"
-google-gms-play-services-basement = "18.8.0"
+google-gms-play-services-basement = "18.9.0"
 google-gms-play-services-cast = "22.1.0"
 google-gms-play-services-cast-tv = "21.1.1"
 google-gms-play-services-clearcut = "17.0.0"
@@ -100,7 +100,7 @@ google-gms-play-services-location = "21.3.0"
 google-gms-play-services-maps = "19.2.0"
 google-gms-play-services-measurement = "23.0.0"
 google-gms-play-services-mlkit-barcode-scanning = "18.3.1"
-google-gms-play-services-mlkit-document-scanner = "1.0.0"
+google-gms-play-services-mlkit-document-scanner = "16.0.0"
 google-gms-play-services-mlkit-face-detection = "17.1.0"
 google-gms-play-services-mlkit-image-labeling = "16.0.8"
 google-gms-play-services-mlkit-image-labeling-custom = "1.0.0"
@@ -142,7 +142,7 @@ google-gms-play-services-vision-common = "19.1.3"
 google-gms-play-services-vision-face-contour-internal = "16.1.0"
 google-gms-play-services-vision-image-label = "18.1.1"
 google-gms-play-services-vision-image-labeling-internal = "16.1.0"
-google-gms-play-services-wallet = "19.4.0"
+google-gms-play-services-wallet = "19.5.0"
 google-gms-play-services-wearable = "19.0.0"
 
 google-play-app-update = "2.1.0"
@@ -228,6 +228,27 @@ google-firebase-storage-common = "17.0.0"
 google-firebase-vertexai = "16.5.0"
 google-firebase-license = "12.0.1"
 
+hms-base = "6.13.0.303"
+hms-ui = "6.13.0.303"
+hms-log = "6.13.0.303"
+hms-hatool = "6.13.0.303"
+hms-availableupdate = "6.13.0.303"
+hms-update = "6.13.0.303"
+hms-push = "6.13.0.300"
+hms-ads-identifier = "3.4.80.303"
+hms-ads-lite = "13.4.80.303"
+hms-iap = "6.16.6.301"
+hms-hwid = "6.14.0.300"
+hms-opendevice = "6.13.0.300"
+hms-hianalytics = "6.12.0.301"
+hms-maps = "6.11.2.301"
+hms-location = "6.0.0.302"
+hms-site = "6.2.0.301"
+hms-scan = "2.12.0.301"
+hms-stats = "6.13.0.303"
+hms-network-grs = "8.0.1.313"
+huawei-security = "2.0.0.300"
+
 androidx-activity = "1.11.0"
 androidx-ads = "1.0.0-alpha05"
 androidx-annotation = "1.9.1"
@@ -250,14 +271,14 @@ androidx-camera-viewfinder = "1.4.0-alpha07"
 androidx-camera-viewfinder-compose = "1.0.0-alpha02"
 androidx-cardview = "1.0.0"
 androidx-collection = "1.5.0"
-androidx-compose-animation = "1.9.1"
-androidx-compose-foundation = "1.9.1"
-androidx-compose-runtime = "1.9.1"
-androidx-compose-ui = "1.9.1"
-androidx-compose-material = "1.9.1"
-androidx-compose-material3 = "1.3.2"
+androidx-compose-animation = "1.9.2"
+androidx-compose-foundation = "1.9.2"
+androidx-compose-runtime = "1.9.2"
+androidx-compose-ui = "1.9.2"
+androidx-compose-material = "1.9.2"
+androidx-compose-material3 = "1.4.0"
 androidx-compose-material3-adaptive = "1.1.0"
-androidx-compose-material3-window-size = "1.3.2"
+androidx-compose-material3-window-size = "1.4.0"
 androidx-concurrent = "1.3.0"
 androidx-constraintlayout = "2.2.1"
 androidx-constraintlayout-compose = "1.1.1"
@@ -265,7 +286,7 @@ androidx-contentpager = "1.0.0"
 androidx-coordinatorlayout = "1.3.0"
 androidx-core = "1.17.0"
 androidx-core-animation = "1.0.0"
-androidx-core-backported = "1.0.0-alpha01"
+androidx-core-backported = "1.0.0-beta01"
 androidx-core-google-shortcuts = "1.1.0"
 androidx-core-performance = "1.0.0"
 androidx-core-remoteviews = "1.1.0"
@@ -305,7 +326,7 @@ androidx-graphics-shapes = "1.0.1"
 androidx-gridlayout = "1.1.0"
 androidx-health = "1.0.0"
 androidx-health-connect = "1.1.0-rc03"
-androidx-heifwriter = "1.1.0-rc01"
+androidx-heifwriter = "1.1.0-rc02"
 androidx-hilt = "1.3.0"
 androidx-hilt-lifecycle = "1.3.0"
 androidx-ink = "1.0.0-alpha06"
@@ -323,9 +344,9 @@ androidx-loader = "1.1.0"
 androidx-localbroadcastmanager = "1.1.0"
 androidx-media3 = "1.8.0"
 androidx-mediarouter = "1.8.1"
-androidx-metrics = "1.0.0-beta04"
-androidx-navigation = "2.9.4"
-androidx-navigation3 = "1.0.0-alpha09"
+androidx-metrics = "1.0.0-rc01"
+androidx-navigation = "2.9.5"
+androidx-navigation3 = "1.0.0-alpha10"
 androidx-paging = "3.3.6"
 androidx-palette = "1.0.0"
 androidx-pdf = "1.0.0-alpha10"
@@ -339,17 +360,18 @@ androidx-recyclerview = "1.4.0"
 androidx-recyclerview-selection = "1.2.0"
 androidx-remotecallback = "1.0.0-alpha02"
 androidx-resourceinspection = "1.0.1"
-androidx-room = "2.8.0"
+androidx-room = "2.8.1"
 androidx-savedstate = "1.3.3"
 androidx-security-crypto = "1.1.0"
 androidx-security-app-authenticator = "1.0.0"
 androidx-security-state = "1.0.0-beta01"
+androidx-security-state-provider = "1.0.0-alpha01"
 androidx-security-identity-credential = "1.0.0-alpha03"
 androidx-sharetarget = "1.2.0"
 androidx-slice = "1.1.0-alpha02"
 androidx-slice-builders = "1.0.0-alpha08"
 androidx-slidingpanelayout = "1.2.0"
-androidx-sqlite = "2.6.0"
+androidx-sqlite = "2.6.1"
 androidx-startup = "1.2.0"
 androidx-swiperefreshlayout = "1.1.0"
 androidx-test-annotation = "1.0.1"
@@ -366,6 +388,7 @@ androidx-test-rules = "1.7.0"
 androidx-test-services = "1.6.0"
 androidx-test-uiautomator = "2.3.0"
 androidx-test-uiautomator-shell = "1.0.0-alpha02"
+androidx-text = "1.0.0-alpha01"
 androidx-textclassifier = "1.0.0-alpha04"
 androidx-tracing = "1.3.0"
 androidx-transition = "1.6.0"
@@ -383,15 +406,15 @@ androidx-wear-input-testing = "1.2.0"
 androidx-wear-ongoing = "1.1.0"
 androidx-wear-phone-interactions = "1.1.0"
 androidx-wear-remote-interactions = "1.1.0"
-androidx-wear-compose = "1.5.1"
-androidx-wear-compose-material3 = "1.5.1"
+androidx-wear-compose = "1.5.2"
+androidx-wear-compose-material3 = "1.5.2"
 androidx-wear-protolayout = "1.3.0"
 androidx-wear-tiles = "1.5.0"
 androidx-wear-watchface = "1.2.1"
 androidx-webkit = "1.14.0"
-androidx-window = "1.4.0"
+androidx-window = "1.5.0"
 androidx-window-extensions-core = "1.0.0"
-androidx-work = "2.10.4"
+androidx-work = "2.10.5"
 androidx-xr = "1.0.0-alpha11"
 
 detekt = "1.23.8"
@@ -405,24 +428,24 @@ okhttp = "5.1.0"
 retrofit = "3.0.0"
 chucker = "4.2.0"
 moshi = "1.15.2"
-rxjava3 = "3.1.11"
+rxjava3 = "3.1.12"
 rxjava3-rxkotlin = "3.0.1"
 rxjava3-rxandroid = "3.0.2"
 timber = "5.0.1"
 coil = "2.7.0"
 coil3 = "3.3.0"
 cicerone = "7.1"
-lottie = "6.6.9"
+lottie = "6.6.10"
 vbpd = "2.0.4"
 leakcanary = "2.14"
 kotlin-inject = "0.8.0"
 koin = "4.1.1"
-koin-annotations = "2.1.0"
+koin-annotations = "2.2.0"
 junit = "4.13.2"
 robolectric = "4.16"
 mockito = "5.20.0"
 kaspresso = "1.6.0"
-mockk = "1.14.5"
+mockk = "1.14.6"
 turbine = "1.2.1"
 barista = "4.3.0"
 kotest = "6.0.3"
@@ -430,16 +453,16 @@ tensorflow-lite = "2.17.0"
 jetbrains-dokka = "2.0.0"
 android-compose-screenshot = "0.0.1-alpha11"
 
-androidx-compose-bom = "2025.09.00"
-androidx-compose-bom-beta = "2025.09.00"
-androidx-compose-bom-alpha = "2025.09.00"
+androidx-compose-bom = "2025.09.01"
+androidx-compose-bom-beta = "2025.09.01"
+androidx-compose-bom-alpha = "2025.09.01"
 google-firebase-bom = "34.3.0"
 kotlin-bom = "2.2.0"
 kotlinx-coroutines-bom = "1.10.2"
 okhttp-bom = "5.1.0"
 koin-bom = "4.1.1"
-koin-annotations-bom = "2.1.0"
-junit-bom = "5.13.4"
+koin-annotations-bom = "2.2.0"
+junit-bom = "6.0.0"
 mockito-bom = "5.20.0"
 
 [libraries]
@@ -791,6 +814,37 @@ google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-k
 google-firebase-storage-license = { module = "com.google.firebase:firebase-storage-license", version.ref = "google-firebase-license" }
 google-firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "google-firebase-vertexai" }
 #endregion
+#region huawei
+hms-base = { module = "com.huawei.hms:base", version.ref = "hms-base" }
+hms-ui = { module = "com.huawei.hms:ui", version.ref = "hms-ui" }
+hms-log = { module = "com.huawei.hms:log", version.ref = "hms-log" }
+hms-hatool = { module = "com.huawei.hms:hatool", version.ref = "hms-hatool" }
+hms-availableupdate = { module = "com.huawei.hms:availableupdate", version.ref = "hms-availableupdate" }
+hms-update = { module = "com.huawei.hms:update", version.ref = "hms-update" }
+hms-push = { module = "com.huawei.hms:push", version.ref = "hms-push" }
+hms-ads-identifier = { module = "com.huawei.hms:ads-identifier", version.ref = "hms-ads-identifier" }
+hms-ads-lite = { module = "com.huawei.hms:ads-lite", version.ref = "hms-ads-lite" }
+hms-ads-consent = { module = "com.huawei.hms:ads-consent", version.ref = "hms-ads-identifier" }
+hms-ads-installreferrer = { module = "com.huawei.hms:ads-installreferrer", version.ref = "hms-ads-identifier" }
+hms-iap = { module = "com.huawei.hms:iap", version.ref = "hms-iap" }
+hms-hwid = { module = "com.huawei.hms:hwid", version.ref = "hms-hwid" }
+hms-opendevice = { module = "com.huawei.hms:opendevice", version.ref = "hms-opendevice" }
+hms-hianalytics = { module = "com.huawei.hms:hianalytics", version.ref = "hms-hianalytics" }
+hms-hianalytics-core = { module = "com.huawei.hms:hianalytics-core", version.ref = "hms-hianalytics" }
+hms-hianalytics-framework = { module = "com.huawei.hms:hianalytics-framework", version.ref = "hms-hianalytics" }
+hms-hianalytics-element = { module = "com.huawei.hms:hianalytics-element", version.ref = "hms-hianalytics" }
+hms-stats = { module = "com.huawei.hms:stats", version.ref = "hms-stats" }
+hms-maps = { module = "com.huawei.hms:maps", version.ref = "hms-maps" }
+hms-location = { module = "com.huawei.hms:location", version.ref = "hms-location" }
+hms-site = { module = "com.huawei.hms:site", version.ref = "hms-site" }
+hms-scan = { module = "com.huawei.hms:scan", version.ref = "hms-scan" }
+hms-network-grs = { module = "com.huawei.hms:network-grs", version.ref = "hms-network-grs" }
+hms-network-common = { module = "com.huawei.hms:network-common", version.ref = "hms-network-grs" }
+hms-network-framework-compat = { module = "com.huawei.hms:network-framework-compat", version.ref = "hms-network-grs" }
+huawei-security-base = { module = "com.huawei.android.hms:security-base", version.ref = "huawei-security" }
+huawei-security-ssl = { module = "com.huawei.android.hms:security-ssl", version.ref = "huawei-security" }
+huawei-security-encrypt = { module = "com.huawei.android.hms:security-encrypt", version.ref = "huawei-security" }
+#endregion
 #region androidx
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
@@ -1033,6 +1087,7 @@ androidx-security-app-authenticator = { module = "androidx.security:security-app
 androidx-security-app-authenticator-testing = { module = "androidx.security:security-app-authenticator-testing", version.ref = "androidx-security-app-authenticator" }
 androidx-security-identity-credential = { module = "androidx.security:security-identity-credential", version.ref = "androidx-security-identity-credential" }
 androidx-security-state = { module = "androidx.security:security-state", version.ref = "androidx-security-state" }
+androidx-security-state-provider = { module = "androidx.security:security-state-provider", version.ref = "androidx-security-state-provider" }
 androidx-sharetarget = { module = "androidx.sharetarget:sharetarget", version.ref = "androidx-sharetarget" }
 androidx-slice-core = { module = "androidx.slice:slice-core", version.ref = "androidx-slice" }
 androidx-slice-builders-ktx = { module = "androidx.slice:slice-builders-ktx", version.ref = "androidx-slice-builders" }
@@ -1059,6 +1114,8 @@ androidx-test-services-storage = { module = "androidx.test.services:storage", ve
 androidx-test-services-test-services = { module = "androidx.test.services:test-services", version.ref = "androidx-test-services" }
 androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "androidx-test-uiautomator" }
 androidx-test-uiautomator-shell = { module = "androidx.test.uiautomator:uiautomator-shell", version.ref = "androidx-test-uiautomator-shell" }
+androidx-text = { module = "androidx.text:text", version.ref = "androidx-text" }
+androidx-text-vertical = { module = "androidx.text:text-vertical", version.ref = "androidx-text" }
 androidx-textclassifier = { module = "androidx.textclassifier:textclassifier", version.ref = "androidx-textclassifier" }
 androidx-tracing = { module = "androidx.tracing:tracing-ktx", version.ref = "androidx-tracing" }
 androidx-transition-ktx = { module = "androidx.transition:transition-ktx", version.ref = "androidx-transition" }

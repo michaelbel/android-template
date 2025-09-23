@@ -1,4 +1,4 @@
-@file:Suppress("unused", "ObsoleteSdkInt", "RestrictedApi")
+@file:Suppress("unused", "ObsoleteSdkInt", "RestrictedApi", "DEPRECATION")
 
 package org.michaelbel.core.ktx
 
@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
@@ -90,46 +91,20 @@ inline val Context.versionCode: Long?
         null
     }
 
-inline val screenWidth: Int
-    @Composable get() {
-        val configuration = LocalConfiguration.current
-        return configuration.screenWidthDp
-    }
+inline val screenWidthPx: Int
+    @Composable get() = LocalWindowInfo.current.containerSize.width
 
-inline val screenHeight: Int
-    @Composable get() {
-        val configuration = LocalConfiguration.current
-        return configuration.screenWidthDp
-    }
+inline val screenHeightPx: Int
+    @Composable get() = LocalWindowInfo.current.containerSize.height
 
 inline val screenWidthDp: Dp
-    @Composable get() {
-        val configuration = LocalConfiguration.current
-        return configuration.screenWidthDp.dp
-    }
+    @Composable get() = with(LocalDensity.current) { screenWidthPx.toDp() }
 
 inline val screenHeightDp: Dp
-    @Composable get() {
-        val configuration = LocalConfiguration.current
-        return configuration.screenWidthDp.dp
-    }
-
-inline val screenWidthPx: Float
-    @Composable get() {
-        val density = LocalDensity.current
-        val screenWidthPx = with(density) { screenWidthDp.toPx() }
-        return screenWidthPx
-    }
-
-inline val screenHeightPx: Float
-    @Composable get() {
-        val density = LocalDensity.current
-        val screenHeightPx = with(density) { screenHeightDp.toPx() }
-        return screenHeightPx
-    }
+    @Composable get() = with(LocalDensity.current) { screenHeightPx.toDp() }
 
 inline val aspectRatio: Float
-    @Composable get() = screenWidthPx / screenHeightPx
+    @Composable get() = (screenWidthPx / screenHeightPx).toFloat()
 
 inline val isPortrait: Boolean
     @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_PORTRAIT
@@ -138,10 +113,10 @@ inline val isLandscape: Boolean
     @Composable get() = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
 
 inline val isTabletPortrait: Boolean
-    @Composable get() = !isFoldable() && isPortrait && screenWidth >= 600
+    @Composable get() = !isFoldable() && isPortrait && screenWidthPx >= 600
 
 inline val isTabletLandscape: Boolean
-    @Composable get() = !isFoldable() && isLandscape && screenWidth >= 1200
+    @Composable get() = !isFoldable() && isLandscape && screenWidthPx >= 1200
 
 inline val isDesktop: Boolean
     @Composable get() {

@@ -1,4 +1,3 @@
-
 import java.io.FileInputStream
 import java.nio.charset.StandardCharsets
 import java.util.Properties
@@ -122,7 +121,7 @@ base {
 
 dependencies {
     implementation(projects.core)
-    api(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.material3.windowsize)
     ksp(libs.androidx.room.compiler)
 }

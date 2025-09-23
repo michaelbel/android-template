@@ -11,6 +11,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven(url = "https://developer.huawei.com/repo/")
     }
 }
 dependencyResolutionManagement {
@@ -18,6 +19,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://developer.huawei.com/repo/")
     }
 }
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
