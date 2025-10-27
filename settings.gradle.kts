@@ -1,5 +1,4 @@
 @file:Suppress("UnstableApiUsage")
-
 pluginManagement {
     repositories {
         google {
@@ -23,7 +22,6 @@ dependencyResolutionManagement {
     }
 }
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 rootProject.name = "android-template" // fixme Replace with your own app’s name
 include(
     ":mobile",

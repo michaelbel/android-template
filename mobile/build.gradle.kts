@@ -103,6 +103,7 @@ android {
     productFlavors {
         create("free") {
             dimension = "version"
+            isDefault = true
         }
         create("paid") {
             dimension = "version"
@@ -123,6 +124,7 @@ dependencies {
     implementation(projects.core)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.material3.windowsize)
+    implementation(libs.androidx.compose.material.icons.extended)
     ksp(libs.androidx.room.compiler)
 }
 
