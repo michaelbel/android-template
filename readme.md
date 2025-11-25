@@ -6,14 +6,14 @@ Android App Template
 
 This Android app template provides a foundation for quickly starting development across Mobile, Wear, TV, and Auto platforms. It includes pre-configured dependencies, code samples, and project structure, simplifying the creation and setup of new applications. The template helps reduce configuration time and allows developers to focus on implementing functionality, ensuring a smooth start.
 
-[![android-phone](https://img.shields.io/badge/phone-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-foldable](https://img.shields.io/badge/foldable-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-tablet](https://img.shields.io/badge/tablet-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-desktop](https://img.shields.io/badge/desktop-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-wear](https://img.shields.io/badge/wear-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-tv](https://img.shields.io/badge/tv-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-auto](https://img.shields.io/badge/auto-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
-[![android-xr](https://img.shields.io/badge/xr-000000.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-phone](https://img.shields.io/badge/phone-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-foldable](https://img.shields.io/badge/foldable-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-tablet](https://img.shields.io/badge/tablet-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-desktop](https://img.shields.io/badge/desktop-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-wear](https://img.shields.io/badge/wear-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-tv](https://img.shields.io/badge/tv-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-auto](https://img.shields.io/badge/auto-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
+[![android-xr](https://img.shields.io/badge/xr-2F2F2F.svg?style=for-the-badge&logo=android&logoColor=white)](https://github.com/michaelbel/android-template)
 
 **Phone (portrait)**
 <div>
