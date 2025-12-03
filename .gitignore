@@ -1,17 +1,10 @@
-# Kotlin
+/.github/keystore_release.jks
+/.github/keystore.properties
 .kotlin
-
-# Gradle
 .gradle
+.idea
 build
 build-cache
 generated
-
-# Idea
-.idea
-
-/.github/keystore_release.jks
-/.github/keystore.properties
-
 local.properties
 releaseNotes.txt
