@@ -156,6 +156,8 @@ google-material-compose-theme-adapter = "1.2.1"
 
 google-firebase-abt = "23.0.1"
 google-firebase-ads = "23.6.0"
+google-firebase-admin = "9.7.1"
+google-firebase-ai = "17.8.0"
 google-firebase-analytics = "22.5.0"
 google-firebase-analytics-impl = "16.3.0"
 google-firebase-analytics-ktx = "1.0.0"
@@ -732,6 +734,8 @@ google-protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-li
 google-firebase-abt = { module = "com.google.firebase:firebase-abt", version.ref = "google-firebase-abt" }
 google-firebase-ads = { module = "com.google.firebase:firebase-ads", version.ref = "google-firebase-ads" }
 google-firebase-ads-lite = { module = "com.google.firebase:firebase-ads-lite", version.ref = "google-firebase-ads" }
+google-firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "google-firebase-admin" }
+google-firebase-ai = { module = "com.google.firebase:firebase-ai", version.ref = "google-firebase-ai" }
 google-firebase-analytics-impl = { module = "com.google.firebase:firebase-analytics-impl", version.ref = "google-firebase-analytics-impl" }
 google-firebase-analytics-impl-license = { module = "com.google.firebase:firebase-analytics-impl-license", version.ref = "google-firebase-license" }
 google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "google-firebase-analytics" }
