@@ -25,7 +25,6 @@ android {
         resValues = true
         shaders = false
         aidl = false
-        renderScript = false
         buildConfig = true
         compose = true
     }
