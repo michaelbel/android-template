@@ -4,7 +4,6 @@ import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.ksp)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.compose)
 }
@@ -105,8 +104,6 @@ dependencies {
     implementation(libs.androidx.xr.compose.material3)
     implementation(libs.androidx.xr.runtime)
     implementation(libs.androidx.xr.scenecore)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
 }
 
 tasks.register("printVersion") {

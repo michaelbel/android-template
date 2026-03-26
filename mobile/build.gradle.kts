@@ -4,7 +4,6 @@ import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.ksp)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.parcelize)
@@ -121,10 +120,7 @@ base {
 
 dependencies {
     implementation(projects.shared)
-    implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.material3.windowsize)
-    implementation(libs.androidx.compose.material.icons.extended)
-    ksp(libs.androidx.room.compiler)
 }
 
 tasks.register("printVersion") {

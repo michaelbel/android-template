@@ -28,7 +28,7 @@ google-ar-core = "1.53.0"
 google-ar-impress = "0.0.12"
 google-ar-sceneform = "1.17.1"
 
-google-filament = "1.69.5"
+google-filament = "1.70.2"
 google-filament-gltfio-android-lite = "1.23.1"
 google-filament-filamat-android-lite = "1.44.0"
 google-filament-filamat-utils-android-lite = "1.20.5"
@@ -348,7 +348,7 @@ androidx-lint = "30.0.1"
 androidx-lint-gradle = "1.0.0-alpha05"
 androidx-loader = "1.1.0"
 androidx-localbroadcastmanager = "1.1.0"
-androidx-media3 = "1.9.3"
+androidx-media3 = "1.10.0"
 androidx-mediarouter = "1.8.1"
 androidx-metrics = "1.0.0"
 androidx-navigation = "2.9.7"
@@ -427,11 +427,12 @@ androidx-xr = "1.0.0-alpha16"
 androidx-xr-projected = "1.0.0-alpha06"
 
 detekt = "1.23.8"
+detekt-rules = "1.1.0"
 kode-detekt-rules-compose = "1.4.0"
 twitter-compose-rules-detekt = "0.0.26"
 nlopez-compose-rules-detekt = "0.5.6"
 vk-vkompose-detekt = "0.6.1"
-ktor = "3.4.1"
+ktor = "3.4.2"
 okio = "3.17.0"
 okhttp = "5.3.2"
 retrofit = "3.0.0"
@@ -457,10 +458,10 @@ kaspresso = "1.6.0"
 mockk = "1.14.9"
 turbine = "1.2.1"
 barista = "4.3.0"
-kotest = "6.1.9"
+kotest = "6.1.10"
 tensorflow-lite = "2.17.0"
-jetbrains-dokka = "2.1.0"
-android-compose-screenshot = "0.0.1-alpha13"
+jetbrains-dokka = "2.2.0"
+android-compose-screenshot = "0.0.1-alpha14"
 
 androidx-compose-bom = "2026.03.01"
 androidx-compose-bom-beta = "2026.03.01"
@@ -1319,6 +1320,7 @@ kode-detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version.r
 twitter-compose-rules-detekt = { module = "com.twitter.compose.rules:detekt", version.ref = "twitter-compose-rules-detekt" }
 nlopez-compose-rules-detekt = { module = "io.nlopez.compose.rules:detekt", version.ref = "nlopez-compose-rules-detekt" }
 vk-vkompose-detekt = { module = "com.vk.vkompose:detekt", version.ref = "vk-vkompose-detekt" }
+detekt-rules = { module = "io.github.michaelbel:detekt-rules", version.ref = "detekt-rules" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

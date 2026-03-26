@@ -38,7 +38,7 @@ import com.google.android.horologist.compose.layout.ScalingLazyColumnState
 import com.google.android.horologist.compose.layout.ScreenScaffold
 import com.google.android.horologist.compose.layout.rememberResponsiveColumnState
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.template.room.AppEntity
+import org.michaelbel.shared.room.AppEntity
 import org.michaelbel.template.ui.AppTheme
 
 @Composable

@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.MainActivityContent
 
@@ -14,6 +17,14 @@ class MainActivity: ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent { AppTheme { MainActivityContent() } }
+        setContent {
+            val viewModel: MainViewModel = koinViewModel()
+            val dynamicColorsEnabled by viewModel.dynamicColorsEnabled.collectAsStateWithLifecycle()
+            AppTheme(
+                dynamicColors = dynamicColorsEnabled
+            ) {
+                MainActivityContent()
+            }
+        }
     }
 }

@@ -25,9 +25,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
@@ -121,7 +121,7 @@ fun MainActivityContent(
                                     onClick = { selectedTabRoute = TabNavigation.Home },
                                     icon = {
                                         Icon(
-                                            imageVector = Icons.Outlined.Home,
+                                            imageVector = Icons.Filled.Home,
                                             contentDescription = null
                                         )
                                     },
@@ -153,7 +153,7 @@ fun MainActivityContent(
                                     onClick = { selectedTabRoute = TabNavigation.About },
                                     icon = {
                                         Icon(
-                                            imageVector = Icons.Outlined.Info,
+                                            imageVector = Icons.Filled.Info,
                                             contentDescription = null
                                         )
                                     },
@@ -205,7 +205,7 @@ fun MainActivityContent(
                                         onClick = { selectedTabRoute = TabNavigation.Home },
                                         icon = {
                                             Icon(
-                                                imageVector = Icons.Outlined.Home,
+                                                imageVector = Icons.Filled.Home,
                                                 contentDescription = null
                                             )
                                         }
@@ -216,7 +216,7 @@ fun MainActivityContent(
                                         onClick = { selectedTabRoute = TabNavigation.Settings },
                                         icon = {
                                             Icon(
-                                                imageVector = Icons.Outlined.Settings,
+                                                imageVector = Icons.Filled.Settings,
                                                 contentDescription = null
                                             )
                                         }
@@ -227,7 +227,7 @@ fun MainActivityContent(
                                         onClick = { selectedTabRoute = TabNavigation.About },
                                         icon = {
                                             Icon(
-                                                imageVector = Icons.Outlined.Info,
+                                                imageVector = Icons.Filled.Info,
                                                 contentDescription = null
                                             )
                                         }
@@ -270,7 +270,7 @@ fun MainActivityContent(
                                                 contentColor = MaterialTheme.colorScheme.onTertiaryContainer
                                             ) {
                                                 Icon(
-                                                    imageVector = Icons.Default.Edit,
+                                                    imageVector = Icons.Filled.Edit,
                                                     contentDescription = null,
                                                     modifier = Modifier.size(24.dp)
                                                 )
@@ -293,7 +293,7 @@ fun MainActivityContent(
                                                 onClick = { selectedTabRoute = TabNavigation.Home },
                                                 icon = {
                                                     Icon(
-                                                        imageVector = Icons.Outlined.Home,
+                                                        imageVector = Icons.Filled.Home,
                                                         contentDescription = null
                                                     )
                                                 },
@@ -309,7 +309,7 @@ fun MainActivityContent(
                                                 onClick = { selectedTabRoute = TabNavigation.Settings },
                                                 icon = {
                                                     Icon(
-                                                        imageVector = Icons.Outlined.Settings,
+                                                        imageVector = Icons.Filled.Settings,
                                                         contentDescription = null
                                                     )
                                                 },
@@ -325,7 +325,7 @@ fun MainActivityContent(
                                                 onClick = { selectedTabRoute = TabNavigation.About },
                                                 icon = {
                                                     Icon(
-                                                        imageVector = Icons.Outlined.Info,
+                                                        imageVector = Icons.Filled.Info,
                                                         contentDescription = null
                                                     )
                                                 },
@@ -369,7 +369,7 @@ fun MainActivityContent(
                                 contentColor = MaterialTheme.colorScheme.onTertiaryContainer
                             ) {
                                 Icon(
-                                    imageVector = Icons.Outlined.Edit,
+                                    imageVector = Icons.Filled.Edit,
                                     contentDescription = null
                                 )
 

@@ -96,6 +96,7 @@ This Android app template provides a foundation for quickly starting development
     - [x] DataStore
     - [x] Repository
     - [x] Interactor
+    - [x] Shared data/domain layer in `shared`
 
 ## Configure
 * In the current `readme.md` file, update the project name, badges, description, and screenshot.

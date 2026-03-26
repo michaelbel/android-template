@@ -1,8 +1,15 @@
 package org.michaelbel.template
 
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import org.michaelbel.shared.interactor.AppInteractor
 import org.michaelbel.shared.viewmodel.BaseViewModel
-import org.michaelbel.template.interactor.AppInteractor
 
 class MainViewModel(
-    private val appInteractor: AppInteractor
-): BaseViewModel()
+    appInteractor: AppInteractor
+): BaseViewModel() {
+
+    val dynamicColorsEnabled: StateFlow<Boolean> = appInteractor.dynamicColorsFlow
+        .stateIn(scope = this, started = SharingStarted.WhileSubscribed(5_000), initialValue = false)
+}

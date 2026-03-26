@@ -14,7 +14,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.michaelbel.template.core" // fixme Replace with your own namespace
+    namespace = "org.michaelbel.template.shared" // fixme Replace with your own namespace
     compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
@@ -38,6 +38,7 @@ dependencies {
     api(libs.androidx.compose.foundation)
     api(libs.androidx.compose.foundation.layout)
     api(libs.androidx.compose.material)
+    api(libs.androidx.compose.material.icons.extended)
     api(libs.androidx.compose.material3)
     api(libs.androidx.compose.material3.adaptive)
     api(libs.androidx.compose.material3.adaptive.layout)
@@ -52,17 +53,21 @@ dependencies {
     api(libs.androidx.lifecycle.viewmodel.compose)
     api(libs.androidx.navigation.compose)
     api(libs.androidx.paging.compose)
+    api(libs.androidx.room.ktx)
     api(libs.androidx.window)
+    api(libs.koin.android)
     api(libs.koin.androidx.compose)
     api(libs.ktor.client.okhttp)
     api(libs.ktor.serialization.kotlinx.json)
     api(libs.ktor.client.content.negotiation)
     api(libs.okhttp.logging.interceptor)
     api(libs.coil.compose)
+    ksp(libs.androidx.room.compiler)
     debugApi(libs.chucker.library)
     releaseApi(libs.chucker.library.no.op)
     detektPlugins(libs.kode.detekt.rules.compose)
     detektPlugins(libs.twitter.compose.rules.detekt)
     detektPlugins(libs.nlopez.compose.rules.detekt)
     detektPlugins(libs.vk.vkompose.detekt)
+    detektPlugins(libs.detekt.rules)
 }

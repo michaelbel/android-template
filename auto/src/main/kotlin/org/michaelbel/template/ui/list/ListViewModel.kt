@@ -5,8 +5,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.shared.viewmodel.BaseViewModel
-import org.michaelbel.template.interactor.AppInteractor
-import org.michaelbel.template.room.AppEntity
+import org.michaelbel.shared.interactor.AppInteractor
+import org.michaelbel.shared.room.AppEntity
 
 class ListViewModel(
     private val appInteractor: AppInteractor
