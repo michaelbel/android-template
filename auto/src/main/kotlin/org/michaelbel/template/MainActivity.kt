@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import org.michaelbel.core.ktx.updateAttributes
+import org.michaelbel.shared.ktx.updateAttributes
 import org.michaelbel.template.ui.AppTheme
 import org.michaelbel.template.ui.MainActivityContent
 

@@ -4,7 +4,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import org.michaelbel.core.viewmodel.BaseViewModel
+import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.template.interactor.AppInteractor
 import org.michaelbel.template.room.AppEntity
 

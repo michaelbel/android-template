@@ -74,9 +74,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.isDesktop
-import org.michaelbel.core.ktx.isTabletPortrait
-import org.michaelbel.core.ktx.navigationSuiteType
+import org.michaelbel.shared.ktx.isDesktop
+import org.michaelbel.shared.ktx.isTabletPortrait
+import org.michaelbel.shared.ktx.navigationSuiteType
 import org.michaelbel.template.MainViewModel
 import org.michaelbel.template.ui.about.AboutScreen
 import org.michaelbel.template.ui.details.DetailsScreen

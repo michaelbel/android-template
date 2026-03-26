@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
-import org.michaelbel.core.viewmodel.BaseViewModel
+import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.template.interactor.AppInteractor
 import org.michaelbel.template.room.AppEntity
 

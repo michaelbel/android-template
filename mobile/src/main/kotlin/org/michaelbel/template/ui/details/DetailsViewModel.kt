@@ -4,8 +4,8 @@ import androidx.lifecycle.SavedStateHandle
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
-import org.michaelbel.core.ktx.require
-import org.michaelbel.core.viewmodel.BaseViewModel
+import org.michaelbel.shared.ktx.require
+import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.template.interactor.AppInteractor
 import org.michaelbel.template.room.AppEntity
 

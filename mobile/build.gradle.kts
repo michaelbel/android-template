@@ -120,7 +120,7 @@ base {
 }
 
 dependencies {
-    implementation(projects.core)
+    implementation(projects.shared)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.material3.windowsize)
     implementation(libs.androidx.compose.material.icons.extended)

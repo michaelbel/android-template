@@ -99,7 +99,7 @@ base {
 }
 
 dependencies {
-    implementation(projects.core)
+    implementation(projects.shared)
     implementation(libs.androidx.tv.material)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)

@@ -31,8 +31,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.isPortrait
-import org.michaelbel.core.ktx.isTabletPortrait
+import org.michaelbel.shared.ktx.isPortrait
+import org.michaelbel.shared.ktx.isTabletPortrait
 
 @Composable
 fun DetailsScreen(

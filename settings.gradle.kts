@@ -32,5 +32,5 @@ include(
     ":tv",
     ":auto",
     ":xr",
-    ":core"
+    ":shared"
 )

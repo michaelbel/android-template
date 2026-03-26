@@ -10,6 +10,11 @@ data class AppEntity(
     val picture: String
 ) {
     companion object {
-        val Empty = AppEntity(id = 0, name = "", description = "", picture = "")
+        val Empty = AppEntity(
+            id = 0,
+            name = "",
+            description = "",
+            picture = ""
+        )
     }
 }

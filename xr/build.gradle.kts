@@ -99,7 +99,7 @@ base {
 }
 
 dependencies {
-    implementation(projects.core)
+    implementation(projects.shared)
     implementation(libs.androidx.xr.arcore)
     implementation(libs.androidx.xr.compose)
     implementation(libs.androidx.xr.compose.material3)

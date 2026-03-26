@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.isTabletLandscape
+import org.michaelbel.shared.ktx.isTabletLandscape
 
 @Composable
 fun DetailsScreen2(

@@ -2,7 +2,7 @@ package org.michaelbel.template.interactor
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
-import org.michaelbel.core.dispatchers.AppDispatchers
+import org.michaelbel.shared.dispatchers.AppDispatchers
 import org.michaelbel.template.repository.AppRepository
 import org.michaelbel.template.room.AppEntity
 

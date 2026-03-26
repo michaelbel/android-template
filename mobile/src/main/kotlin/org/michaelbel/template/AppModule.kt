@@ -18,7 +18,7 @@ import okio.Path.Companion.toPath
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
-import org.michaelbel.core.dispatchers.di.dispatchersKoinModule
+import org.michaelbel.shared.dispatchers.di.dispatchersKoinModule
 import org.michaelbel.template.datastore.AppPreferences
 import org.michaelbel.template.interactor.AppInteractor
 import org.michaelbel.template.ktor.AppService

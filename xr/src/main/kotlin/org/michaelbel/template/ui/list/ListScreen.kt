@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
-import org.michaelbel.core.ktx.isTabletPortrait
+import org.michaelbel.shared.ktx.isTabletPortrait
 import org.michaelbel.template.room.AppEntity
 import org.michaelbel.template.ui.AppTheme
 
