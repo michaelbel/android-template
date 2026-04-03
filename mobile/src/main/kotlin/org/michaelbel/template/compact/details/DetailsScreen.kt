@@ -55,7 +55,9 @@ fun DetailsScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = state.entity.name
+                        text = state.entity.name,
+                        overflow = TextOverflow.Ellipsis,
+                        maxLines = 2
                     )
                 },
                 navigationIcon = {
