@@ -5,8 +5,8 @@ package org.michaelbel.template.compact.main
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
@@ -16,7 +16,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -29,12 +30,24 @@ import org.michaelbel.template.ui.TabNavigation
 fun MainScreen(
     onNavigateToDetails: (Int) -> Unit
 ) {
-    var selectedTabIndex by rememberSaveable { mutableIntStateOf(0) }
-    val selectedTabRoute: TabNavigation = when (selectedTabIndex) {
-        1 -> TabNavigation.Settings
-        2 -> TabNavigation.About
-        else -> TabNavigation.Home
-    }
+    var selectedTab by rememberSaveable(
+        stateSaver = Saver(
+            save = { tab: TabNavigation ->
+                when (tab) {
+                    TabNavigation.Home -> 0
+                    TabNavigation.Settings -> 1
+                    TabNavigation.About -> 2
+                }
+            },
+            restore = { index: Int ->
+                when (index) {
+                    1 -> TabNavigation.Settings
+                    2 -> TabNavigation.About
+                    else -> TabNavigation.Home
+                }
+            }
+        )
+    ) { mutableStateOf(TabNavigation.Home) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -43,27 +56,54 @@ fun MainScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 NavigationBarItem(
-                    selected = selectedTabRoute == TabNavigation.Home,
-                    onClick = { selectedTabIndex = 0 },
-                    icon = { Icon(imageVector = Icons.Filled.Home, contentDescription = null) },
-                    label = { Text(text = "Home") }
+                    selected = selectedTab == TabNavigation.Home,
+                    onClick = { selectedTab = TabNavigation.Home },
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Home,
+                            contentDescription = null
+                        )
+                    },
+                    label = {
+                        Text(
+                            text = "Home"
+                        )
+                    }
                 )
                 NavigationBarItem(
-                    selected = selectedTabRoute == TabNavigation.Settings,
-                    onClick = { selectedTabIndex = 1 },
-                    icon = { Icon(imageVector = Icons.Outlined.Settings, contentDescription = null) },
-                    label = { Text(text = "Settings") }
+                    selected = selectedTab == TabNavigation.Settings,
+                    onClick = { selectedTab = TabNavigation.Settings },
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Settings,
+                            contentDescription = null
+                        )
+                    },
+                    label = {
+                        Text(
+                            text = "Settings"
+                        )
+                    }
                 )
                 NavigationBarItem(
-                    selected = selectedTabRoute == TabNavigation.About,
-                    onClick = { selectedTabIndex = 2 },
-                    icon = { Icon(imageVector = Icons.Filled.Info, contentDescription = null) },
-                    label = { Text(text = "About") }
+                    selected = selectedTab == TabNavigation.About,
+                    onClick = { selectedTab = TabNavigation.About },
+                    icon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Info,
+                            contentDescription = null
+                        )
+                    },
+                    label = {
+                        Text(
+                            text = "About"
+                        )
+                    }
                 )
             }
         }
     ) { innerPadding ->
-        when (selectedTabRoute) {
+        when (selectedTab) {
             TabNavigation.Home -> {
                 HomeScreen(
                     bottomPadding = innerPadding.calculateBottomPadding(),
