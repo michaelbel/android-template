@@ -2,7 +2,6 @@
 
 package org.michaelbel.template.compact.main
 
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -21,8 +20,8 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import org.michaelbel.template.compact.main.about.AboutScreen
 import org.michaelbel.template.ui.TabNavigation
-import org.michaelbel.template.ui.about.AboutScreen
 import org.michaelbel.template.ui.list.ListScreen
 import org.michaelbel.template.ui.settings.SettingsScreen
 
@@ -62,14 +61,16 @@ fun MainScreen(
                     label = { Text(text = "About") }
                 )
             }
-        },
-        contentWindowInsets = WindowInsets(0, 0, 0, 0)
+        }
     ) { innerPadding ->
         when (selectedTabRoute) {
             TabNavigation.Home -> ListScreen(onClick = {})
             TabNavigation.Settings -> SettingsScreen()
-            TabNavigation.About -> AboutScreen()
+            TabNavigation.About -> {
+                AboutScreen(
+                    bottomPadding = innerPadding.calculateBottomPadding()
+                )
+            }
         }
-        innerPadding.toString()
     }
 }
