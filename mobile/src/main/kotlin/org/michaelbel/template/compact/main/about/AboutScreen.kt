@@ -69,7 +69,7 @@ fun AboutScreen(
                         .fillMaxWidth()
                         .clip(topListItemShape)
                         .clickable { uriHandler.openUri("https://github.com/michaelbel") },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.inversePrimary),
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
                             text = "GitHub",
@@ -101,7 +101,7 @@ fun AboutScreen(
                         .fillMaxWidth()
                         .clip(bottomListItemShape)
                         .clickable { uriHandler.openUri("https://t.me/android_career") },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.inversePrimary),
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
                             text = "Telegram",

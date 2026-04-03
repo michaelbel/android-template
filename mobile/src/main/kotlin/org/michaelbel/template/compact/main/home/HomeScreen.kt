@@ -1,75 +1,70 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.template.ui.list
+package org.michaelbel.template.compact.main.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.calculateEndPadding
-import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.template.ui.list.ListViewModel
 import org.michaelbel.template.ui.list.ui.BoarCard
 
 @Composable
-fun ListScreen(
-    onClick: (Int) -> Unit,
-    modifier: Modifier = Modifier,
-    bottomContentPadding: Dp = 0.dp,
+fun HomeScreen(
+    bottomPadding: Dp,
+    onNavigateToDetails: (Int) -> Unit,
     viewModel: ListViewModel = koinViewModel()
 ) {
     val state by viewModel.stateFlow.collectAsStateWithLifecycle()
-
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
-        modifier = modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        text = "Android Template"
+                        text = "Compact"
                     )
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
+                ),
+                scrollBehavior = scrollBehavior
             )
-        },
-        contentWindowInsets = WindowInsets(0, 0, 0, 0)
+        }
     ) { innerPadding ->
-        val layoutDirection = LocalLayoutDirection.current
-
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(1),
+        LazyColumn(
             modifier = Modifier
-                .padding(
-                    start = innerPadding.calculateStartPadding(layoutDirection).plus(8.dp),
-                    top = innerPadding.calculateTopPadding(),
-                    end = innerPadding.calculateEndPadding(layoutDirection).plus(8.dp),
-                    bottom = 0.dp
-                )
+                .padding(innerPadding)
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            contentPadding = PaddingValues(bottom = bottomContentPadding)
+            contentPadding = PaddingValues(start = 16.dp, top = 16.dp, end = 16.dp, bottom = bottomPadding),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(
                 items = state.entities
             ) { entity ->
                 BoarCard(
                     entity = entity,
-                    onClick = onClick
+                    onClick = onNavigateToDetails
                 )
             }
         }

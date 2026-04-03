@@ -22,7 +22,7 @@ import org.michaelbel.shared.room.BoarEntity
 import org.michaelbel.template.ui.AppTheme
 
 @Composable
-fun ListElement(
+fun BoarCard(
     entity: BoarEntity,
     onClick: (Int) -> Unit
 ) {
@@ -39,7 +39,7 @@ fun ListElement(
         ) {
             AsyncImage(
                 model = entity.picture,
-                contentDescription = "Image",
+                contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -60,9 +60,9 @@ fun ListElement(
 
 @Preview
 @Composable
-private fun ListElementPreview() {
+private fun BoarCardPreview() {
     AppTheme {
-        ListElement(
+        BoarCard(
             entity = BoarEntity(
                 boarId = 0,
                 name = "Африканский бородавочник",

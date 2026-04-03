@@ -71,7 +71,7 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
                         .clickable { viewModel.dispatch(SettingsIntent.ToggleDynamicColors) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.inversePrimary),
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
                             text = "Dynamic Colors",
