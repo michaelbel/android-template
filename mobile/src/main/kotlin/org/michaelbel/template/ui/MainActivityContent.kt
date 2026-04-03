@@ -6,19 +6,16 @@ import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.displayCutout
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
-import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import org.michaelbel.template.navigation.DetailsRoute
 import org.michaelbel.template.navigation.HomeRoute
 import org.michaelbel.template.ui.details.DetailsScreen
@@ -36,9 +33,7 @@ fun MainActivityContent() {
 
     NavDisplay(
         backStack = backStack,
-        modifier = Modifier
-            .windowInsetsPadding(WindowInsets.displayCutout)
-            .fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         onBack = { backStack.removeLastOrNull() },
         popTransitionSpec = { fadeIn() togetherWith fadeOut() using SizeTransform(clip = false) },
         predictivePopTransitionSpec = { fadeIn() togetherWith fadeOut() using SizeTransform(clip = false) },
