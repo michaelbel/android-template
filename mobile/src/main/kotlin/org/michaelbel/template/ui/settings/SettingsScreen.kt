@@ -32,16 +32,16 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.shared.icons.Github
 import org.michaelbel.shared.middleLargeIncreasedListItemShape
+import org.michaelbel.template.ui.settings.intent.SettingsIntent
 
 @Composable
 fun SettingsScreen(
-    modifier: Modifier = Modifier,
     viewModel: SettingsViewModel = koinViewModel()
 ) {
-    val dynamicColorsEnabled by viewModel.dynamicColorsEnabled.collectAsStateWithLifecycle()
+    val state by viewModel.stateFlow.collectAsStateWithLifecycle()
 
     Scaffold(
-        modifier = modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
                 title = {
@@ -69,7 +69,7 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp)
                         .clip(middleLargeIncreasedListItemShape)
-                        .clickable { viewModel.toggleDynamicColors() },
+                        .clickable { viewModel.dispatch(SettingsIntent.ToggleDynamicColors) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.inversePrimary),
                     headlineContent = {
                         Text(
@@ -92,7 +92,7 @@ fun SettingsScreen(
                     },
                     trailingContent = {
                         Switch(
-                            checked = dynamicColorsEnabled,
+                            checked = state.dynamicColorsEnabled,
                             onCheckedChange = null
                         )
                     }

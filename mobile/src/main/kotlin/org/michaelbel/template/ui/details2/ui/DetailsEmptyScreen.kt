@@ -1,4 +1,4 @@
-package org.michaelbel.template.ui.details2.empty
+package org.michaelbel.template.ui.details2.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,12 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun DetailsEmptyScreen(
-    modifier: Modifier = Modifier
-) {
-
+fun DetailsEmptyScreen() {
     Scaffold(
-        modifier = modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) { innerPadding ->
         Column(
             modifier = Modifier

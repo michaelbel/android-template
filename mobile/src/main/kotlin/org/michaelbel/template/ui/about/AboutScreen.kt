@@ -34,11 +34,9 @@ import org.michaelbel.shared.icons.Telegram
 import org.michaelbel.shared.topListItemShape
 
 @Composable
-fun AboutScreen(
-    modifier: Modifier = Modifier
-) {
+fun AboutScreen() {
     Scaffold(
-        modifier = modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
                 title = {

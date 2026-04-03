@@ -19,9 +19,9 @@ class MainActivity: ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val viewModel: MainViewModel = koinViewModel()
-            val dynamicColorsEnabled by viewModel.dynamicColorsEnabled.collectAsStateWithLifecycle()
+            val state by viewModel.stateFlow.collectAsStateWithLifecycle()
             AppTheme(
-                dynamicColors = dynamicColorsEnabled
+                dynamicColors = state.dynamicColorsEnabled
             ) {
                 MainActivityContent()
             }

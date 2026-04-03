@@ -1,8 +1,8 @@
-package org.michaelbel.shared.dispatchers.impl
+package org.michaelbel.shared.coroutines.impl
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import org.michaelbel.shared.dispatchers.AppDispatchers
+import org.michaelbel.shared.coroutines.AppDispatchers
 
 internal class AppDispatchersImpl: AppDispatchers {
 

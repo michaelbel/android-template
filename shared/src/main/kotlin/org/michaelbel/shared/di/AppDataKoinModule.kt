@@ -16,7 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import org.michaelbel.shared.datastore.di.dataStoreKoinModule
-import org.michaelbel.shared.dispatchers.di.dispatchersKoinModule
+import org.michaelbel.shared.coroutines.di.dispatchersKoinModule
 import org.michaelbel.shared.interactor.AppInteractor
 import org.michaelbel.shared.ktor.AppService
 import org.michaelbel.shared.repository.AppRepository

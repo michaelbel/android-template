@@ -1,4 +1,4 @@
-package org.michaelbel.shared.dispatchers
+package org.michaelbel.shared.coroutines
 
 import kotlinx.coroutines.CoroutineDispatcher
 

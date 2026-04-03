@@ -4,25 +4,36 @@ package org.michaelbel.template.ui.details2
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.stateIn
-import org.michaelbel.shared.viewmodel.BaseViewModel
+import kotlinx.coroutines.launch
 import org.michaelbel.shared.interactor.AppInteractor
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.mvi.Event
+import org.michaelbel.shared.mvi.MviViewModel
+import org.michaelbel.template.ui.details2.intent.Details2Intent
+import org.michaelbel.template.ui.details2.model.Details2Model
 
 class DetailsViewModel2(
-    appInteractor: AppInteractor
-): BaseViewModel() {
+    private val appInteractor: AppInteractor
+): MviViewModel<Details2Intent, Details2Model, Event>(Details2Model()) {
 
-    var idFlow = MutableStateFlow(0)
+    private val idFlow = MutableStateFlow(0)
 
-    val appEntity: StateFlow<AppEntity> = idFlow.flatMapLatest {
-        appInteractor.entityFlow(it)
-    }.stateIn(
-        scope = this,
-        started = SharingStarted.Lazily,
-        initialValue = AppEntity.Empty
-    )
+    init {
+        dispatch(Details2Intent.CollectData)
+        dispatch(Details2Intent.CollectData)
+    }
+
+    override fun dispatch(intent: Details2Intent) {
+        when (intent) {
+            is Details2Intent.CollectData -> {
+                launch {
+                    idFlow.flatMapLatest { appInteractor.entityFlow(it) }.collectLatest { entity ->
+                        reduce { it.copy(appEntity = entity) }
+                    }
+                }
+            }
+            is Details2Intent.SetId -> idFlow.value = intent.id
+        }
+    }
 }

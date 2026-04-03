@@ -1,20 +1,31 @@
 package org.michaelbel.template.ui.settings
 
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.shared.interactor.AppInteractor
+import org.michaelbel.shared.mvi.Event
+import org.michaelbel.shared.mvi.MviViewModel
+import org.michaelbel.template.ui.settings.intent.SettingsIntent
+import org.michaelbel.template.ui.settings.model.SettingsModel
 
 class SettingsViewModel(
     private val appInteractor: AppInteractor
-): BaseViewModel() {
+): MviViewModel<SettingsIntent, SettingsModel, Event>(SettingsModel()) {
 
-    val dynamicColorsEnabled: StateFlow<Boolean> = appInteractor.dynamicColorsFlow
-        .stateIn(scope = this, started = SharingStarted.WhileSubscribed(5_000), initialValue = false)
+    init {
+        dispatch(SettingsIntent.CollectDynamicColors)
+    }
 
-    fun toggleDynamicColors() {
-        launch { appInteractor.setDynamicColors(!dynamicColorsEnabled.value) }
+    override fun dispatch(intent: SettingsIntent) {
+        when (intent) {
+            is SettingsIntent.CollectDynamicColors -> {
+                launch {
+                    appInteractor.dynamicColorsFlow.collectLatest { enabled ->
+                        reduce { it.copy(dynamicColorsEnabled = enabled) }
+                    }
+                }
+            }
+            is SettingsIntent.ToggleDynamicColors -> launch { appInteractor.setDynamicColors(!stateFlow.value.dynamicColorsEnabled) }
+        }
     }
 }

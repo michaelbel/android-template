@@ -18,24 +18,25 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.shared.ktx.isTabletLandscape
+import org.michaelbel.template.ui.details2.intent.Details2Intent
 
 @Composable
 fun DetailsScreen2(
     id: Int,
-    modifier: Modifier = Modifier,
     viewModel: DetailsViewModel2 = koinViewModel()
 ) {
-    val appEntity by viewModel.appEntity.collectAsStateWithLifecycle()
+    val state by viewModel.stateFlow.collectAsStateWithLifecycle()
+    val appEntity = state.appEntity
 
     LaunchedEffect(id) {
-        viewModel.idFlow.value = id
+        viewModel.dispatch(Details2Intent.SetId(id))
     }
 
     Scaffold(
-        modifier = modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) { innerPadding ->
         LazyColumn(
-            modifier = modifier
+            modifier = Modifier
                 .padding(innerPadding)
                 .padding(end = 16.dp)
                 .fillMaxSize()
