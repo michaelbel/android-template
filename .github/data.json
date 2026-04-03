@@ -1,32 +1,86 @@
 [
   {
     "id": 1,
-    "name": "European wild boar",
-    "description": "The European wild boar (Sus scrofa) is a large, robust animal native to forests across Europe. It has coarse, dark grey or brown fur, strong tusks, and a muscular build. Wild boars are omnivorous, feeding on roots, acorns, fruits, and small animals. They are highly adaptable and known for their strength and resilience.",
-    "picture": "https://i.ibb.co/ZmrM0rH/europe-boar.webp"
+    "name": "Европейский кабан",
+    "description": "Европейский кабан — крупное и мощное животное, широко распространённое в лесах Европы. У него плотное телосложение, жёсткая буро-серая щетина, длинная морда и хорошо развитые клыки. Этот кабан всеяден: питается корнями, желудями, ягодами, насекомыми и мелкими животными. Он отлично приспосабливается к разным условиям и славится выносливостью.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar1.png"
   },
   {
     "id": 2,
-    "name": "Siberian wild boar",
-    "description": "The Siberian wild boar (Sus scrofa sibiricus) is a large and robust subspecies adapted to the harsh climates of Siberia. It has thick, dark fur with dense undercoat for insulation, powerful tusks, and a muscular build. Known for its resilience, it thrives in snowy forests and survives extreme cold, feeding on roots, acorns, and small animals.",
-    "picture": "https://i.ibb.co/QffjPmL/siberian-boar.webp"
+    "name": "Сибирский кабан",
+    "description": "Сибирский кабан — крупный подвид дикого кабана, приспособленный к суровому климату Сибири. Его отличают густая тёмная щетина, плотный подшёрсток и крепкое мускулистое тело, защищающее от морозов. Он обитает в лесах и зарослях у водоёмов, питается корнями, орехами, падалью и мелкой добычей. Известен высокой выносливостью и способностью переживать снежные зимы.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar2.png"
   },
   {
     "id": 3,
-    "name": "Central Asian wild boar",
-    "description": "The Central Asian wild boar (Sus scrofa nigripes) is a subspecies of wild boar native to Central Asia, including Kazakhstan, Uzbekistan, and surrounding regions. It has a lighter build compared to its Siberian relatives, with shorter fur and well-developed tusks. Adapted to arid and semi-arid environments, it feeds on roots, plants, and small animals, displaying remarkable endurance in harsh conditions.",
-    "picture": "https://i.ibb.co/xfBHnH7/central-asian-boar.webp"
+    "name": "Среднеазиатский кабан",
+    "description": "Среднеазиатский кабан обитает в Казахстане, Узбекистане, Таджикистане и соседних регионах. По сравнению с северными формами он выглядит легче, имеет более короткую шерсть и лучше переносит жаркий климат. Населяет тугайные леса, тростниковые заросли и долины рек. Питается корнями, плодами, побегами и мелкими животными, отличаясь осторожностью и хорошей приспособляемостью.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar3.png"
   },
   {
     "id": 4,
-    "name": "Indian wild boar.",
-    "description": "The Indian wild boar (Sus scrofa cristatus) is a subspecies of wild pig native to South Asia. It has a robust body, dark gray to black coloration, and a distinctive mane of coarse hair along its back. Found in forests, grasslands, and agricultural areas, it is known for its adaptability and plays a key role in the ecosystem as a forager.",
-    "picture": "https://i.ibb.co/SNdTNcW/Indian-wild-boar.webp"
+    "name": "Индийский кабан",
+    "description": "Индийский кабан — подвид дикого кабана, распространённый в Южной Азии. У него крепкое тело, тёмная окраска и заметная грива из жёсткой щетины вдоль спины. Он встречается в лесах, саваннах, на сельскохозяйственных землях и у водоёмов. Питается корнями, клубнями, плодами, злаками и мелкими животными. Этот кабан отличается живучестью и быстро адаптируется к соседству с человеком.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar4.png"
   },
   {
     "id": 5,
-    "name": "Pygmy hog",
-    "description": "The pygmy hog (Porcula salvania) is the smallest and rarest wild pig, found in the grasslands of northeastern India and Nepal. It is critically endangered, with a compact body, dark brown coloration, and short legs, adapted to dense vegetation.",
-    "picture": "https://i.ibb.co/kBmgqJg/pygmy-hog.webp"
+    "name": "Карликовая свинья",
+    "description": "Карликовая свинья — самый маленький представитель диких свиней в мире. Она обитает в густых высокотравных лугах северо-восточной Индии и крайне редко встречается в природе. У неё компактное тело, короткие ноги и тёмно-бурая шерсть, помогающая скрываться в зарослях. Питается травой, корнями, семенами и мелкими беспозвоночными. Вид считается редким и нуждается в охране.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar5.png"
+  },
+  {
+    "id": 6,
+    "name": "Бородатая свинья",
+    "description": "Бородатая свинья обитает на Борнео, Суматре и соседних островах Юго-Восточной Азии. Её легко узнать по удлинённой морде, стройному телу и характерной щетинистой «бороде» на морде. Она населяет тропические леса, мангры и болотистые районы, часто совершая дальние переходы в поисках пищи. Питается плодами, корнями, семенами и мелкими животными, играя важную роль в лесных экосистемах.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar6.png"
+  },
+  {
+    "id": 7,
+    "name": "Филиппинская бородавчатая свинья",
+    "description": "Филиппинская бородавчатая свинья — редкий дикий вид, обитающий на островах Филиппин. У самцов на морде развиваются характерные кожные наросты, из-за которых животное получило своё название. Тело покрыто жёсткой тёмной щетиной, а вдоль спины проходит заметный гребень. Эта свинья живёт в лесах, питается корнями, фруктами и беспозвоночными. Вид страдает от утраты среды обитания и охоты.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar7.png"
+  },
+  {
+    "id": 8,
+    "name": "Висайская бородавчатая свинья",
+    "description": "Висайская бородавчатая свинья — один из самых редких видов диких свиней, встречающийся только на нескольких островах Висайской группы на Филиппинах. У неё тёмное тело, густая щетина и выразительный хохолок, особенно заметный у самцов в брачный период. Обитает в тропических лесах и питается плодами, корнями, клубнями и мелкими беспозвоночными. Вид находится под серьёзной угрозой исчезновения.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar8.png"
+  },
+  {
+    "id": 9,
+    "name": "Кистеухая свинья",
+    "description": "Кистеухая свинья — яркий и легко узнаваемый вид из лесов Центральной и Западной Африки. Её отличают рыжевато-красная окраска, контрастная чёрно-белая морда и длинные кисточки на ушах. Это подвижное и сильное животное обитает в густых лесах, на болотах и у рек. Питается плодами, корнями, яйцами, насекомыми и мелкими позвоночными. Вид известен осторожностью и ночной активностью.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar9.png"
+  },
+  {
+    "id": 10,
+    "name": "Кустарниковая свинья",
+    "description": "Кустарниковая свинья распространена в Африке южнее Сахары и предпочитает густые заросли, леса и влажные районы у воды. Это крепкое животное с тёмной щетиной, мощной головой и хорошо развитыми клыками. Она ведёт преимущественно ночной образ жизни и скрытно передвигается по плотной растительности. Питается корнями, плодами, насекомыми и мелкими животными, проявляя высокую осторожность.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar10.png"
+  },
+  {
+    "id": 11,
+    "name": "Гигантская лесная свинья",
+    "description": "Гигантская лесная свинья — крупнейший представитель семейства свиньевых, обитающий в тропических лесах Центральной Африки. У неё массивное тело, широкая голова, тёмная кожа и редкая грубая щетина. Несмотря на внушительные размеры, она держится скрытно и обычно избегает людей. Питается травой, корнями, плодами и другой растительной пищей. Этот вид особенно хорошо приспособлен к жизни в густом лесу.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar11.png"
+  },
+  {
+    "id": 12,
+    "name": "Бабирусса",
+    "description": "Бабирусса — необычная дикая свинья с индонезийских островов, известная своими длинными изогнутыми клыками, особенно у самцов. Верхние клыки могут расти вверх, пробивая кожу морды и образуя характерный силуэт. Тело у бабируссы сравнительно лёгкое, с редкой щетиной и длинными ногами. Она живёт в тропических лесах и у рек, питается плодами, листьями, корнями и упавшими семенами.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar12.png"
+  },
+  {
+    "id": 13,
+    "name": "Африканский бородавочник",
+    "description": "Африканский бородавочник — крупная дикая свинья, обитающая в саваннах и редколесьях Африки. Его легко узнать по большой голове, изогнутым клыкам и характерным кожным наростам на морде, из-за которых он и получил своё название. У него короткая щетина, длинные ноги и крепкое телосложение. Питается травой, корнями, клубнями и другой растительной пищей, хорошо приспособлен к жизни в жарком климате.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar13.png"
+  },
+  {
+    "id": 14,
+    "name": "Пустынный бородавочник",
+    "description": "Пустынный бородавочник — редкий вид диких свиней, обитающий в засушливых районах Восточной Африки. Он отличается крупной головой, мощными изогнутыми клыками и характерными кожными наростами на морде. Его тело покрыто редкой жёсткой щетиной, а длинные ноги помогают быстро передвигаться по открытой местности. Питается травой, корнями и клубнями, хорошо приспособлен к жизни в условиях жары и нехватки воды.",
+    "picture": "https://raw.githubusercontent.com/michaelbel/android-template/develop/.github/data/boar14.png"
   }
 ]
