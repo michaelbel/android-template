@@ -2,6 +2,7 @@
 
 package org.michaelbel.template.ui.details
 
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
@@ -35,15 +36,15 @@ import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.michaelbel.shared.ktx.isPortrait
-import org.michaelbel.template.navigation.DetailsRoute
-import org.michaelbel.template.ui.details.intent.DetailsIntent
+import org.michaelbel.template.AppRoute
 
 @Composable
 fun DetailsScreen(
-    route: DetailsRoute,
+    route: AppRoute.Details,
     viewModel: DetailsViewModel = koinViewModel { parametersOf(route) }
 ) {
     val state by viewModel.stateFlow.collectAsStateWithLifecycle()
+    val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -56,7 +57,7 @@ fun DetailsScreen(
                 },
                 navigationIcon = {
                     IconButton(
-                        onClick = { viewModel.dispatch(DetailsIntent.NavigateBack) }
+                        onClick = { backDispatcher?.onBackPressed() }
                     ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Outlined.ArrowBack,

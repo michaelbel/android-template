@@ -13,23 +13,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
-import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import kotlinx.coroutines.launch
 import org.michaelbel.shared.ktx.ObserveAsEvents
-import org.michaelbel.template.navigation.BackRoute
-import org.michaelbel.template.navigation.DetailsRoute
-import org.michaelbel.template.navigation.HomeRoute
+import org.michaelbel.template.AppRoute
 import org.michaelbel.template.ui.details.DetailsScreen
 import org.michaelbel.template.ui.home.HomeScreen
 import org.michaelbel.template.ui.home.ReplyNavigationContentPosition
 
 @Composable
 fun MainActivityContent() {
-    val backStack = rememberNavBackStack(HomeRoute)
+    val backStack = rememberNavBackStack(AppRoute.Home)
     val scope = rememberCoroutineScope()
     val adaptiveInfo = currentWindowAdaptiveInfo()
     val navContentPosition = when {
@@ -48,30 +45,19 @@ fun MainActivityContent() {
             rememberViewModelStoreNavEntryDecorator()
         ),
         entryProvider = entryProvider {
-            entry<HomeRoute> {
+            entry< AppRoute.Home> {
                 HomeScreen(
                     navContentPosition = navContentPosition,
-                    onNavigateToDetails = { id -> scope.launch { MainEventManager.send(DetailsRoute(id)) } }
+                    onNavigateToDetails = { id -> scope.launch { MainNavigator.forward(AppRoute.Details(id)) } }
                 )
             }
-            entry<DetailsRoute> { route -> DetailsScreen(route) }
+            entry< AppRoute.Details> { route -> DetailsScreen(route) }
         }
     )
 
     ObserveAsEvents(
-        flow = MainEventManager.eventFlow
+        flow = MainNavigator.eventFlow
     ) { event ->
-        when (event) {
-            is NavKey -> {
-                when (event) {
-                    is BackRoute -> {
-                        if (backStack.size > 1) {
-                            backStack.removeLastOrNull()
-                        }
-                    }
-                    else -> backStack.add(event)
-                }
-            }
-        }
+        backStack.add(event)
     }
 }
