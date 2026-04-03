@@ -12,6 +12,7 @@ import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -46,9 +47,11 @@ fun MainScreen(
         )
     ) { mutableStateOf(TabNavigation.Home) }
     val adaptiveInfo = currentWindowAdaptiveInfo()
+    val navigationSuiteType = NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(adaptiveInfo)
+    val isNavigationRail = navigationSuiteType == NavigationSuiteType.NavigationRail
 
     NavigationSuiteScaffold(
-        layoutType = NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(adaptiveInfo),
+        layoutType = navigationSuiteType,
         navigationSuiteItems = {
             item(
                 selected = selectedTab == TabNavigation.Home,
@@ -102,11 +105,20 @@ fun MainScreen(
         when (selectedTab) {
             TabNavigation.Home -> {
                 HomeScreen(
+                    isNavigationRail = isNavigationRail,
                     onNavigateToDetails = onNavigateToDetails
                 )
             }
-            TabNavigation.Settings -> SettingsScreen()
-            TabNavigation.About -> AboutScreen()
+            TabNavigation.Settings -> {
+                SettingsScreen(
+                    isNavigationRail = isNavigationRail
+                )
+            }
+            TabNavigation.About -> {
+                AboutScreen(
+                    isNavigationRail = isNavigationRail
+                )
+            }
         }
     }
 }
