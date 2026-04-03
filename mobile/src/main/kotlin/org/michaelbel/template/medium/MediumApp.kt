@@ -13,8 +13,8 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.template.AppRoute
-import org.michaelbel.template.compact.details.DetailsScreen
-import org.michaelbel.template.compact.main.MainScreen
+import org.michaelbel.template.medium.details.DetailsScreen
+import org.michaelbel.template.medium.main.MainScreen
 
 @Composable
 fun MediumApp() {
