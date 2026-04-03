@@ -10,12 +10,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
+import kotlinx.coroutines.launch
+import org.michaelbel.shared.ktx.ObserveAsEvents
+import org.michaelbel.template.navigation.BackRoute
 import org.michaelbel.template.navigation.DetailsRoute
 import org.michaelbel.template.navigation.HomeRoute
 import org.michaelbel.template.ui.details.DetailsScreen
@@ -25,6 +30,7 @@ import org.michaelbel.template.ui.home.ReplyNavigationContentPosition
 @Composable
 fun MainActivityContent() {
     val backStack = rememberNavBackStack(HomeRoute)
+    val scope = rememberCoroutineScope()
     val adaptiveInfo = currentWindowAdaptiveInfo()
     val navContentPosition = when {
         adaptiveInfo.windowSizeClass.isHeightAtLeastBreakpoint(480) -> ReplyNavigationContentPosition.CENTER
@@ -45,15 +51,27 @@ fun MainActivityContent() {
             entry<HomeRoute> {
                 HomeScreen(
                     navContentPosition = navContentPosition,
-                    onNavigateToDetails = { id -> backStack.add(DetailsRoute(id)) }
+                    onNavigateToDetails = { id -> scope.launch { MainEventManager.send(DetailsRoute(id)) } }
                 )
             }
-            entry<DetailsRoute> { route ->
-                DetailsScreen(
-                    route = route,
-                    navigateBack = { backStack.removeLastOrNull() }
-                )
-            }
+            entry<DetailsRoute> { route -> DetailsScreen(route) }
         }
     )
+
+    ObserveAsEvents(
+        flow = MainEventManager.eventFlow
+    ) { event ->
+        when (event) {
+            is NavKey -> {
+                when (event) {
+                    is BackRoute -> {
+                        if (backStack.size > 1) {
+                            backStack.removeLastOrNull()
+                        }
+                    }
+                    else -> backStack.add(event)
+                }
+            }
+        }
+    }
 }

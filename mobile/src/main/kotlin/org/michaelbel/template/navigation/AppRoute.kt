@@ -11,3 +11,6 @@ data object HomeRoute: AppRoute()
 
 @Serializable
 data class DetailsRoute(val id: Int): AppRoute()
+
+@Serializable
+data object BackRoute: NavKey

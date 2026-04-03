@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.displayCutout
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -37,11 +36,11 @@ import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 import org.michaelbel.shared.ktx.isPortrait
 import org.michaelbel.template.navigation.DetailsRoute
+import org.michaelbel.template.ui.details.intent.DetailsIntent
 
 @Composable
 fun DetailsScreen(
     route: DetailsRoute,
-    navigateBack: () -> Unit,
     viewModel: DetailsViewModel = koinViewModel { parametersOf(route) }
 ) {
     val state by viewModel.stateFlow.collectAsStateWithLifecycle()
@@ -57,7 +56,7 @@ fun DetailsScreen(
                 },
                 navigationIcon = {
                     IconButton(
-                        onClick = navigateBack
+                        onClick = { viewModel.dispatch(DetailsIntent.NavigateBack) }
                     ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
