@@ -64,7 +64,11 @@ fun DetailsScreen(
                             contentDescription = null
                         )
                     }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
+                ),
+                scrollBehavior = scrollBehavior
             )
         }
     ) { innerPadding ->
