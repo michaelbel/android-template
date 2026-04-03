@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package org.michaelbel.template.ui
+package org.michaelbel.template
 
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn

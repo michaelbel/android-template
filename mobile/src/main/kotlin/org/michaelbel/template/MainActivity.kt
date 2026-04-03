@@ -9,7 +9,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.template.ui.AppTheme
-import org.michaelbel.template.ui.MainActivityContent
 
 class MainActivity: ComponentActivity() {
 
