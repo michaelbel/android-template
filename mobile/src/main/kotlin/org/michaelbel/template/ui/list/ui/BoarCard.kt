@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import org.michaelbel.shared.middleLargeIncreasedListItemShape
 import org.michaelbel.shared.room.BoarEntity
 import org.michaelbel.template.ui.AppTheme
 
@@ -30,7 +31,7 @@ fun BoarCard(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight(),
-        shape = RoundedCornerShape(16.dp)
+        shape = middleLargeIncreasedListItemShape
     ) {
         Column(
             modifier = Modifier

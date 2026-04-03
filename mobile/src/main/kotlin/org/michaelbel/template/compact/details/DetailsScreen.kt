@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,6 +31,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
+import org.michaelbel.shared.middleLargeIncreasedListItemShape
 import org.michaelbel.template.AppRoute
 import org.michaelbel.template.ui.details.DetailsViewModel
 
@@ -78,7 +78,7 @@ fun DetailsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .aspectRatio(16F / 9F)
-                        .clip(RoundedCornerShape(16.dp)),
+                        .clip(middleLargeIncreasedListItemShape),
                     contentScale = ContentScale.Crop
                 )
             }
