@@ -65,7 +65,7 @@ fun HomeScreen(
                 start = 16.dp,
                 top = 16.dp,
                 end = 16.dp,
-                bottom = if (isNavigationRail) navBarBottom else 16.dp
+                bottom = if (isNavigationRail) navBarBottom else 8.dp
             ),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
