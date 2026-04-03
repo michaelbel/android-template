@@ -68,7 +68,12 @@ fun SettingsScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            contentPadding = PaddingValues(start = 16.dp, top = 16.dp, end = 16.dp, bottom = if (isNavigationRail) navBarBottom else 16.dp)
+            contentPadding = PaddingValues(
+                start = 16.dp,
+                top = 16.dp,
+                end = 16.dp,
+                bottom = if (isNavigationRail) navBarBottom else 16.dp
+            )
         ) {
             item {
                 ListItem(
