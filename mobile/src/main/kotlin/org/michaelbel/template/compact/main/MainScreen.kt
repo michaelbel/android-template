@@ -21,9 +21,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import org.michaelbel.template.compact.main.about.AboutScreen
+import org.michaelbel.template.compact.main.settings.SettingsScreen
 import org.michaelbel.template.ui.TabNavigation
 import org.michaelbel.template.ui.list.ListScreen
-import org.michaelbel.template.ui.settings.SettingsScreen
 
 @Composable
 fun MainScreen(
@@ -65,7 +65,11 @@ fun MainScreen(
     ) { innerPadding ->
         when (selectedTabRoute) {
             TabNavigation.Home -> ListScreen(onClick = {})
-            TabNavigation.Settings -> SettingsScreen()
+            TabNavigation.Settings -> {
+                SettingsScreen(
+                    bottomPadding = innerPadding.calculateBottomPadding()
+                )
+            }
             TabNavigation.About -> {
                 AboutScreen(
                     bottomPadding = innerPadding.calculateBottomPadding()
