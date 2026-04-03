@@ -42,6 +42,7 @@ fun DetailsScreen(
 ) {
     val state by viewModel.stateFlow.collectAsStateWithLifecycle()
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
