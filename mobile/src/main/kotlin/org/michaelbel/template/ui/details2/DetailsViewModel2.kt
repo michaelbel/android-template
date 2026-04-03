@@ -28,7 +28,7 @@ class DetailsViewModel2(
         when (intent) {
             is Details2Intent.CollectData -> {
                 launch {
-                    idFlow.flatMapLatest { appInteractor.entityFlow(it) }.collectLatest { entity ->
+                    idFlow.flatMapLatest { appInteractor.boarEntityFlow(it) }.collectLatest { entity ->
                         reduce { it.copy(appEntity = entity) }
                     }
                 }

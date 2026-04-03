@@ -11,19 +11,19 @@ import org.michaelbel.template.ui.details.model.DetailsModel
 
 class DetailsViewModel(
     private val route: AppRoute.Details,
-    private val appInteractor: AppInteractor
+    private val interactor: AppInteractor
 ): MviViewModel<DetailsIntent, DetailsModel, Event>(DetailsModel()) {
 
     init {
-        dispatch(DetailsIntent.CollectData)
+        dispatch(DetailsIntent.CollectBoarEntity)
     }
 
     override fun dispatch(intent: DetailsIntent) {
         when (intent) {
-            is DetailsIntent.CollectData -> {
+            is DetailsIntent.CollectBoarEntity -> {
                 launch {
-                    appInteractor.entityFlow(route.boarId).collectLatest { entity ->
-                        reduce { it.copy(appEntity = entity) }
+                    interactor.boarEntityFlow(route.boarId).collectLatest { entity ->
+                        reduce { it.copy(entity = entity) }
                     }
                 }
             }

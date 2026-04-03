@@ -19,7 +19,6 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import kotlinx.coroutines.launch
 import org.michaelbel.shared.ktx.ObserveAsEvents
-import org.michaelbel.template.AppRoute
 import org.michaelbel.template.ui.details.DetailsScreen
 import org.michaelbel.template.ui.home.HomeScreen
 import org.michaelbel.template.ui.home.ReplyNavigationContentPosition
@@ -45,13 +44,13 @@ fun MainActivityContent() {
             rememberViewModelStoreNavEntryDecorator()
         ),
         entryProvider = entryProvider {
-            entry< AppRoute.Home> {
+            entry<AppRoute.Home> {
                 HomeScreen(
                     navContentPosition = navContentPosition,
                     onNavigateToDetails = { id -> scope.launch { MainNavigator.forward(AppRoute.Details(id)) } }
                 )
             }
-            entry< AppRoute.Details> { route -> DetailsScreen(route) }
+            entry<AppRoute.Details> { route -> DetailsScreen(route) }
         }
     )
 

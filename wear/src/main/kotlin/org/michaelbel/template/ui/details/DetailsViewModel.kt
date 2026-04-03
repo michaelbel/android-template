@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.stateIn
 import org.michaelbel.shared.ktx.require
 import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.shared.interactor.AppInteractor
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.room.BoarEntity
 
 class DetailsViewModel(
     savedStateHandle: SavedStateHandle,
@@ -16,10 +16,10 @@ class DetailsViewModel(
 
     private val id: Int = savedStateHandle.require("id")
 
-    val appEntity: StateFlow<AppEntity> = appInteractor.entityFlow(id)
+    val appEntity: StateFlow<BoarEntity> = appInteractor.boarEntityFlow(id)
         .stateIn(
             scope = this,
             started = SharingStarted.Lazily,
-            initialValue = AppEntity.Empty
+            initialValue = BoarEntity.Empty
         )
 }

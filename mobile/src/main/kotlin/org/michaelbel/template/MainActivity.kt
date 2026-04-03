@@ -8,6 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
+import org.michaelbel.template.compact.CompactApp
 import org.michaelbel.template.ui.AppTheme
 
 class MainActivity: ComponentActivity() {
@@ -22,7 +23,8 @@ class MainActivity: ComponentActivity() {
             AppTheme(
                 dynamicColors = state.dynamicColorsEnabled
             ) {
-                MainActivityContent()
+                //MainActivityContent()
+                CompactApp()
             }
         }
     }

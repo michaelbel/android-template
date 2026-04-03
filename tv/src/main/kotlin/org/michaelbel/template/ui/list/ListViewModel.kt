@@ -6,13 +6,13 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.shared.interactor.AppInteractor
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.room.BoarEntity
 
 class ListViewModel(
     private val appInteractor: AppInteractor
 ): BaseViewModel() {
 
-    val appEntities: StateFlow<List<AppEntity>> = appInteractor.entitiesFlow
+    val appEntities: StateFlow<List<BoarEntity>> = appInteractor.entitiesFlow
         .stateIn(
             scope = this,
             started = SharingStarted.Lazily,

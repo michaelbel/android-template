@@ -4,17 +4,17 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import org.michaelbel.shared.coroutines.AppDispatchers
 import org.michaelbel.shared.repository.AppRepository
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.room.BoarEntity
 
 class AppInteractor(
     private val appDispatchers: AppDispatchers,
     private val appRepository: AppRepository
 ) {
-    val entitiesFlow: Flow<List<AppEntity>> = appRepository.entitiesFlow
+    val entitiesFlow: Flow<List<BoarEntity>> = appRepository.entitiesFlow
     val dynamicColorsFlow: Flow<Boolean> = appRepository.dynamicColorsFlow
 
-    fun entityFlow(id: Int): Flow<AppEntity> {
-        return appRepository.entityFlow(id)
+    fun boarEntityFlow(boarId: Int): Flow<BoarEntity> {
+        return appRepository.boarEntityFlow(boarId)
     }
 
     suspend fun loadDataResponse() {

@@ -18,12 +18,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.room.BoarEntity
 import org.michaelbel.template.ui.AppTheme
 
 @Composable
 fun ListElement(
-    entity: AppEntity,
+    entity: BoarEntity,
     onClick: (Int) -> Unit
 ) {
     Card(
@@ -34,7 +34,7 @@ fun ListElement(
     ) {
         Column(
             modifier = Modifier
-                .clickable { onClick(entity.id) }
+                .clickable { onClick(entity.boarId) }
                 .fillMaxWidth()
         ) {
             AsyncImage(
@@ -63,8 +63,8 @@ fun ListElement(
 private fun ListElementPreview() {
     AppTheme {
         ListElement(
-            entity = AppEntity(
-                id = 0,
+            entity = BoarEntity(
+                boarId = 0,
                 name = "Африканский бородавочник",
                 description = "",
                 picture = ""

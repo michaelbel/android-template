@@ -52,7 +52,7 @@ fun DetailsScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = state.appEntity.name
+                        text = state.entity.name
                     )
                 },
                 navigationIcon = {
@@ -76,7 +76,7 @@ fun DetailsScreen(
                         .fillMaxSize()
                 ) {
                     AsyncImage(
-                        model = state.appEntity.picture,
+                        model = state.entity.picture,
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
@@ -87,7 +87,7 @@ fun DetailsScreen(
                     )
 
                     Text(
-                        text = state.appEntity.description,
+                        text = state.entity.description,
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                         style = MaterialTheme.typography.bodyLarge.copy(color = MaterialTheme.colorScheme.onSurface, fontSize = 18.sp)
                     )
@@ -101,7 +101,7 @@ fun DetailsScreen(
                         .fillMaxSize()
                 ) {
                     AsyncImage(
-                        model = state.appEntity.picture,
+                        model = state.entity.picture,
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
@@ -117,7 +117,7 @@ fun DetailsScreen(
                             .verticalScroll(rememberScrollState())
                     ) {
                         Text(
-                            text = state.appEntity.description,
+                            text = state.entity.description,
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onSurface,
                             modifier = Modifier.padding(horizontal = 16.dp)

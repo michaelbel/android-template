@@ -20,7 +20,7 @@ import org.michaelbel.shared.coroutines.di.dispatchersKoinModule
 import org.michaelbel.shared.interactor.AppInteractor
 import org.michaelbel.shared.ktor.AppService
 import org.michaelbel.shared.repository.AppRepository
-import org.michaelbel.shared.room.AppDao
+import org.michaelbel.shared.room.BoarDao
 import org.michaelbel.shared.room.AppDatabase
 
 val appDataKoinModule = module {
@@ -28,7 +28,7 @@ val appDataKoinModule = module {
         dispatchersKoinModule,
         dataStoreKoinModule
     )
-    single<AppDao> {
+    single<BoarDao> {
         val appDatabase = AppDatabase.getInstance(androidContext())
         appDatabase.appDao()
     }

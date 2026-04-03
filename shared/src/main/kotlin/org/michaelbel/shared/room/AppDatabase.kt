@@ -6,16 +6,16 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [AppEntity::class],
+    entities = [BoarEntity::class],
     version = AppDatabase.DATABASE_VERSION,
     exportSchema = false
 )
 abstract class AppDatabase: RoomDatabase() {
 
-    abstract fun appDao(): AppDao
+    abstract fun appDao(): BoarDao
 
     companion object {
-        private const val DATABASE_NAME = "app.db"
+        private const val DATABASE_NAME = "boars.db"
         const val DATABASE_VERSION = 1
 
         @Volatile

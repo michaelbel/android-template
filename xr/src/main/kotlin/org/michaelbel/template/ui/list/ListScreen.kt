@@ -37,7 +37,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.shared.ktx.isTabletPortrait
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.room.BoarEntity
 import org.michaelbel.template.ui.AppTheme
 
 @Composable
@@ -87,7 +87,7 @@ fun ListScreen(
 
 @Composable
 fun ListElement(
-    entity: AppEntity,
+    entity: BoarEntity,
     onCLick: (Int) -> Unit
 ) {
     Card(
@@ -131,7 +131,7 @@ fun ListElement(
 private fun ListElementPreview() {
     AppTheme {
         ListElement(
-            entity = AppEntity(0, "", "", ""),
+            entity = BoarEntity(0, "", "", ""),
             onCLick = {}
         )
     }

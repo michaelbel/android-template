@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import org.michaelbel.shared.viewmodel.BaseViewModel
 import org.michaelbel.shared.interactor.AppInteractor
-import org.michaelbel.shared.room.AppEntity
+import org.michaelbel.shared.room.BoarEntity
 
 class DetailsViewModel2(
     appInteractor: AppInteractor
@@ -18,11 +18,11 @@ class DetailsViewModel2(
 
     var idFlow = MutableStateFlow(0)
 
-    val appEntity: StateFlow<AppEntity> = idFlow.flatMapLatest {
-        appInteractor.entityFlow(it)
+    val appEntity: StateFlow<BoarEntity> = idFlow.flatMapLatest {
+        appInteractor.boarEntityFlow(it)
     }.stateIn(
         scope = this,
         started = SharingStarted.Lazily,
-        initialValue = AppEntity.Empty
+        initialValue = BoarEntity.Empty
     )
 }
