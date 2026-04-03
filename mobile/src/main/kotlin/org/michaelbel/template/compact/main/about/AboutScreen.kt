@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import org.michaelbel.shared.bottomListItemShape
@@ -36,6 +37,7 @@ fun AboutScreen(
     bottomPadding: Dp
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val uriHandler = LocalUriHandler.current
 
     Scaffold(
         modifier = Modifier
@@ -66,7 +68,7 @@ fun AboutScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(topListItemShape)
-                        .clickable {},
+                        .clickable { uriHandler.openUri("https://github.com/michaelbel") },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.inversePrimary),
                     headlineContent = {
                         Text(
@@ -98,7 +100,7 @@ fun AboutScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(bottomListItemShape)
-                        .clickable {},
+                        .clickable { uriHandler.openUri("https://t.me/android_career") },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.inversePrimary),
                     headlineContent = {
                         Text(
