@@ -30,10 +30,7 @@ fun ListElement(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight(),
-        shape = RoundedCornerShape(16.dp),
-        /*colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
-        )*/
+        shape = RoundedCornerShape(16.dp)
     ) {
         Column(
             modifier = Modifier
