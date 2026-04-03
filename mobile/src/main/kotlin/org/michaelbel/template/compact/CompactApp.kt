@@ -14,8 +14,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.template.AppRoute
 import org.michaelbel.template.compact.details.DetailsScreen
-import org.michaelbel.template.ui.home.HomeScreen
-import org.michaelbel.template.ui.home.ReplyNavigationContentPosition
+import org.michaelbel.template.compact.main.MainScreen
 
 @Composable
 fun CompactApp() {
@@ -32,9 +31,8 @@ fun CompactApp() {
         ),
         entryProvider = entryProvider {
             entry<AppRoute.Home> {
-                HomeScreen(
-                    navContentPosition = ReplyNavigationContentPosition.TOP,
-                    onNavigateToDetails = { id -> backStack.add(AppRoute.Details(id)) }
+                MainScreen(
+                    onNavigateToDetails = { boarId -> backStack.add(AppRoute.Details(boarId)) }
                 )
             }
             entry<AppRoute.Details> { route -> DetailsScreen(route) }
