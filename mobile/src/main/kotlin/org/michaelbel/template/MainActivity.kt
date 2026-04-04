@@ -9,6 +9,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.template.step1_Scaffold_BottomBar.Step1App
+import org.michaelbel.template.step2_NavigationSuiteScaffold_BottomBar.Step2App
 import org.michaelbel.template.ui.AppTheme
 
 class MainActivity: ComponentActivity() {
@@ -23,9 +24,10 @@ class MainActivity: ComponentActivity() {
             AppTheme(
                 dynamicColors = state.dynamicColorsEnabled
             ) {
-                val index = 0
+                val index = 1
                 when (index) {
                     0 -> Step1App()
+                    1 -> Step2App()
                 }
             }
         }
