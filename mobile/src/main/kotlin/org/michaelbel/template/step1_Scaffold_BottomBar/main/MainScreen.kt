@@ -70,6 +70,7 @@ fun MainScreen(
                         )
                     }
                 )
+
                 NavigationBarItem(
                     selected = selectedTab == TabNavigation.Settings,
                     onClick = { selectedTab = TabNavigation.Settings },
