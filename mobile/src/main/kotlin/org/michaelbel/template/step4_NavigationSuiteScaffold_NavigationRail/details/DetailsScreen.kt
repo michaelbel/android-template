@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.template.medium.details
+package org.michaelbel.template.step4_NavigationSuiteScaffold_NavigationRail.details
 
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.layout.PaddingValues

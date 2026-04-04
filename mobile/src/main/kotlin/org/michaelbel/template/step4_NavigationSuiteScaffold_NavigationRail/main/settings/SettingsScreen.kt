@@ -1,15 +1,13 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package org.michaelbel.template.medium.main.about
+package org.michaelbel.template.step4_NavigationSuiteScaffold_NavigationRail.main.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,39 +18,41 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.ScaffoldDefaults
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import org.michaelbel.shared.bottomListItemShape
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.shared.icons.Github
-import org.michaelbel.shared.icons.Telegram
-import org.michaelbel.shared.topListItemShape
+import org.michaelbel.shared.middleLargeIncreasedListItemShape
+import org.michaelbel.template.ui.settings.SettingsViewModel
+import org.michaelbel.template.ui.settings.intent.SettingsIntent
 
 @Composable
-fun AboutScreen(
-    isNavigationRail: Boolean
+fun SettingsScreen(
+    isNavigationRail: Boolean,
+    viewModel: SettingsViewModel = koinViewModel()
 ) {
+    val state by viewModel.stateFlow.collectAsStateWithLifecycle()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val uriHandler = LocalUriHandler.current
     val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
 
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
             .nestedScroll(scrollBehavior.nestedScrollConnection),
-        contentWindowInsets = if (isNavigationRail) WindowInsets(0) else ScaffoldDefaults.contentWindowInsets,
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        text = "About"
+                        text = "Settings"
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -60,7 +60,8 @@ fun AboutScreen(
                 ),
                 scrollBehavior = scrollBehavior
             )
-        }
+        },
+        contentWindowInsets = WindowInsets(0, 0, 0, 0)
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier
@@ -77,18 +78,18 @@ fun AboutScreen(
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(topListItemShape)
-                        .clickable { uriHandler.openUri("https://github.com/michaelbel") },
+                        .clip(middleLargeIncreasedListItemShape)
+                        .clickable { viewModel.dispatch(SettingsIntent.ToggleDynamicColors) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "GitHub",
+                            text = "Dynamic Colors",
                             style = MaterialTheme.typography.titleLarge
                         )
                     },
                     supportingContent = {
                         Text(
-                            text = "View the Repository",
+                            text = "Apply colors from Wallpaper",
                             style = MaterialTheme.typography.bodyMedium
                         )
                     },
@@ -97,37 +98,11 @@ fun AboutScreen(
                             imageVector = Github,
                             contentDescription = null
                         )
-                    }
-                )
-            }
-            item {
-                Spacer(
-                    modifier = Modifier.height(2.dp)
-                )
-            }
-            item {
-                ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(bottomListItemShape)
-                        .clickable { uriHandler.openUri("https://t.me/android_career") },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = {
-                        Text(
-                            text = "Telegram",
-                            style = MaterialTheme.typography.titleLarge
-                        )
                     },
-                    supportingContent = {
-                        Text(
-                            text = "Subscribe to Channel",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    },
-                    leadingContent = {
-                        Icon(
-                            imageVector = Telegram,
-                            contentDescription = null
+                    trailingContent = {
+                        Switch(
+                            checked = state.dynamicColorsEnabled,
+                            onCheckedChange = null
                         )
                     }
                 )

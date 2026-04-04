@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package org.michaelbel.template.medium.main
+package org.michaelbel.template.step4_NavigationSuiteScaffold_NavigationRail.main
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Home
@@ -19,9 +19,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import org.michaelbel.template.medium.main.about.AboutScreen
-import org.michaelbel.template.medium.main.home.HomeScreen
-import org.michaelbel.template.medium.main.settings.SettingsScreen
+import org.michaelbel.template.step4_NavigationSuiteScaffold_NavigationRail.main.about.AboutScreen
+import org.michaelbel.template.step4_NavigationSuiteScaffold_NavigationRail.main.home.HomeScreen
+import org.michaelbel.template.step4_NavigationSuiteScaffold_NavigationRail.main.settings.SettingsScreen
 import org.michaelbel.template.ui.TabNavigation
 
 @Composable
@@ -46,9 +46,10 @@ fun MainScreen(
             }
         )
     ) { mutableStateOf(TabNavigation.Home) }
-    val adaptiveInfo = currentWindowAdaptiveInfo()
-    val navigationSuiteType = NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(adaptiveInfo)
-    val isNavigationRail = navigationSuiteType == NavigationSuiteType.NavigationRail
+
+    val windowAdaptiveInfo = currentWindowAdaptiveInfo()
+    val navigationSuiteType = NavigationSuiteScaffoldDefaults.navigationSuiteType(windowAdaptiveInfo)
+    val isNavigationRail = navigationSuiteType == NavigationSuiteType.WideNavigationRailCollapsed
 
     NavigationSuiteScaffold(
         layoutType = navigationSuiteType,
