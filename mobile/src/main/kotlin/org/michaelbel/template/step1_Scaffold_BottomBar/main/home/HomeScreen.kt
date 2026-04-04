@@ -42,7 +42,7 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Compact"
+                        text = "Home"
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
