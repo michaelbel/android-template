@@ -10,6 +10,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
 import org.michaelbel.template.step1_Scaffold_BottomBar.Step1App
 import org.michaelbel.template.step2_NavigationSuiteScaffold_BottomBar.Step2App
+import org.michaelbel.template.step3_NavigationSuiteScaffold_BottomBar.Step3App
 import org.michaelbel.template.ui.AppTheme
 
 class MainActivity: ComponentActivity() {
@@ -24,10 +25,11 @@ class MainActivity: ComponentActivity() {
             AppTheme(
                 dynamicColors = state.dynamicColorsEnabled
             ) {
-                val index = 1
+                val index = 2
                 when (index) {
                     0 -> Step1App()
                     1 -> Step2App()
+                    2 -> Step3App()
                 }
             }
         }
