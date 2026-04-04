@@ -86,6 +86,7 @@ fun MainScreen(
                         )
                     }
                 )
+
                 NavigationBarItem(
                     selected = selectedTab == TabNavigation.About,
                     onClick = { selectedTab = TabNavigation.About },
