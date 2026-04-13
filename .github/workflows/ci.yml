@@ -13,9 +13,6 @@ concurrency:
   group: environment-${{ github.ref }}
   cancel-in-progress: false
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   job-common:
     runs-on: ubuntu-24.04
@@ -42,18 +39,18 @@ jobs:
       SHORT_SHA: ${{ needs.job-common.outputs.SHORT_SHA }}
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # клонирует репозиторий с историей коммитов
       
       - name: setup jdk 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
 
       - name: cache gradle dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '/gradle-wrapper.properties') }}
@@ -61,7 +58,7 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: cache gradle wrapper
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
@@ -71,7 +68,7 @@ jobs:
 
       - name: decode keystore file
         id: decode_keystore_file
-        uses: timheuer/base64-to-file@v1
+        uses: timheuer/base64-to-file@v1.2
         with:
           fileName: 'keystore_release.jks'
           encodedString: ${{ secrets.KEYSTORE_FILE }}
@@ -91,7 +88,7 @@ jobs:
         run: ./gradlew mobile:bundleRelease
 
       - name: upload artifacts to outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: mobile-build-${{ github.run_id }}
           path: |
@@ -240,18 +237,18 @@ jobs:
       SHORT_SHA: ${{ needs.job-common.outputs.SHORT_SHA }}
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # клонирует репозиторий с историей коммитов
 
       - name: setup jdk 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
 
       - name: cache gradle dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '/gradle-wrapper.properties') }}
@@ -259,7 +256,7 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: cache gradle wrapper
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
@@ -269,7 +266,7 @@ jobs:
 
       - name: decode keystore file
         id: decode_keystore_file
-        uses: timheuer/base64-to-file@v1
+        uses: timheuer/base64-to-file@v1.2
         with:
           fileName: 'keystore_release.jks'
           encodedString: ${{ secrets.KEYSTORE_FILE }}
@@ -287,7 +284,7 @@ jobs:
         run: ./gradlew wear:bundleRelease
 
       - name: upload artifacts to outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: wear-build-${{ github.run_id }}
           path: |
@@ -377,18 +374,18 @@ jobs:
       SHORT_SHA: ${{ needs.job-common.outputs.SHORT_SHA }}
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # клонирует репозиторий с историей коммитов
 
       - name: setup jdk 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
 
       - name: cache gradle dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '/gradle-wrapper.properties') }}
@@ -396,7 +393,7 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: cache gradle wrapper
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
@@ -406,7 +403,7 @@ jobs:
 
       - name: decode keystore file
         id: decode_keystore_file
-        uses: timheuer/base64-to-file@v1
+        uses: timheuer/base64-to-file@v1.2
         with:
           fileName: 'keystore_release.jks'
           encodedString: ${{ secrets.KEYSTORE_FILE }}
@@ -424,7 +421,7 @@ jobs:
         run: ./gradlew tv:bundleRelease
 
       - name: upload artifacts to outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: tv-build-${{ github.run_id }}
           path: |
@@ -514,18 +511,18 @@ jobs:
       SHORT_SHA: ${{ needs.job-common.outputs.SHORT_SHA }}
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: setup jdk 21
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
 
       - name: cache gradle dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('/*.gradle*', '/gradle-wrapper.properties') }}
@@ -533,7 +530,7 @@ jobs:
             gradle-${{ runner.os }}-
 
       - name: cache gradle wrapper
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.gradle/wrapper
           key: gradle-wrapper-${{ runner.os }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
@@ -543,7 +540,7 @@ jobs:
 
       - name: decode keystore file
         id: decode_keystore_file
-        uses: timheuer/base64-to-file@v1
+        uses: timheuer/base64-to-file@v1.2
         with:
           fileName: 'keystore_release.jks'
           encodedString: ${{ secrets.KEYSTORE_FILE }}
@@ -561,7 +558,7 @@ jobs:
         run: ./gradlew auto:bundleRelease
 
       - name: upload artifacts to outputs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: auto-build-${{ github.run_id }}
           path: |
