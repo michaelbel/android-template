@@ -21,11 +21,13 @@ class SettingsViewModel(
             is SettingsIntent.CollectDynamicColors -> {
                 launch {
                     appInteractor.dynamicColorsFlow.collectLatest { enabled ->
-                        reduce { it.copy(dynamicColorsEnabled = enabled) }
+                        reduce { it.copy(dynamicColors = enabled) }
                     }
                 }
             }
-            is SettingsIntent.ToggleDynamicColors -> launch { appInteractor.setDynamicColors(!stateFlow.value.dynamicColorsEnabled) }
+            is SettingsIntent.ToggleDynamicColors -> {
+                launch { appInteractor.setDynamicColors(!stateFlow.value.dynamicColors) }
+            }
         }
     }
 }

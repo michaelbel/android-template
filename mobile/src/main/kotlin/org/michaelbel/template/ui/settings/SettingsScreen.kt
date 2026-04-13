@@ -80,7 +80,7 @@ fun SettingsScreen(
                     },
                     trailingContent = {
                         Switch(
-                            checked = state.dynamicColorsEnabled,
+                            checked = state.dynamicColors,
                             onCheckedChange = null
                         )
                     }
