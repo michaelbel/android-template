@@ -3,6 +3,7 @@
 .kotlin
 .gradle
 .idea
+.claude
 build
 build-cache
 generated
