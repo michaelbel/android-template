@@ -1,11 +1,11 @@
-/.github/keystore_release.jks
-/.github/keystore.properties
-.kotlin
+.claude
 .gradle
 .idea
-.claude
+!.idea/icon.svg
+.kotlin
 build
 build-cache
 generated
+/.github/keystore.properties
+/.github/keystore_release.jks
 local.properties
-releaseNotes.txt
