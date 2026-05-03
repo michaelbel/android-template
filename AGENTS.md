@@ -1,5 +1,3 @@
-This repository contains shared instructions for contributors.
+# Repository Guidelines
 
-- Follow existing coding standards and conventions found in each module.
-- Run relevant tests for any changed modules before committing.
-- Update documentation when behavior changes.
+- Never commit unrelated files together – stage files selectively and make one focused commit per logical change with a clear, specific message
