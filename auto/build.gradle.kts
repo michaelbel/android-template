@@ -1,5 +1,4 @@
 import java.io.FileInputStream
-import java.nio.charset.StandardCharsets
 import java.util.Properties
 
 plugins {
@@ -9,17 +8,9 @@ plugins {
 }
 
 private val gitCommitsCount: Int by lazy {
-    try {
-        val isWindows = System.getProperty("os.name").contains("Windows", ignoreCase = true)
-        val processBuilder = when {
-            isWindows -> ProcessBuilder("cmd", "/c", "git", "rev-list", "--count", "HEAD")
-            else -> ProcessBuilder("git", "rev-list", "--count", "HEAD")
-        }
-        processBuilder.redirectErrorStream(true)
-        processBuilder.start().inputStream.bufferedReader(StandardCharsets.UTF_8).readLine().trim().toInt()
-    } catch (_: Exception) {
-        1
-    }
+    ProcessBuilder("git", "rev-list", "--count", "HEAD")
+        .redirectErrorStream(true)
+        .start().inputStream.bufferedReader().readLine().trim().toInt()
 }
 
 kotlin {
