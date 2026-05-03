@@ -1,6 +1,6 @@
 .claude
 .gradle
-.idea
+.idea/*
 !.idea/icon.svg
 .kotlin
 build
