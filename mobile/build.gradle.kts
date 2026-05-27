@@ -102,7 +102,7 @@ android {
 }
 
 base {
-    archivesName.set("Mobile-Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // fixme Replace with your own app's name
+    archivesName.set("Template-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // fixme Replace with your own app's name
 }
 
 dependencies {
