@@ -941,7 +941,6 @@ androidx-core-i18n = { module = "androidx.core:core-i18n", version.ref = "androi
 androidx-core-telecom = { module = "androidx.core:core-telecom", version.ref = "androidx-core-telecom" }
 androidx-core-uwb = { module = "androidx.core.uwb:uwb", version.ref = "androidx-core-uwb" }
 androidx-core-viewtree = { module = "androidx.core:core-viewtree", version.ref = "androidx-core-viewtree" }
-#noinspection CredentialDependency
 androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "androidx-credentials" }
 androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "androidx-credentials" }
 androidx-credentials-e2ee = { module = "androidx.credentials:credentials-e2ee", version.ref = "androidx-credentials-e2ee" }
