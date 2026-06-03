@@ -11,7 +11,7 @@ kotlinx-datetime = "0.8.0"
 kotlinx-serialization = "1.11.0"
 kotlinx-io = "0.1.16"
 kotlinx-collections = "0.4.0"
-kotlinx-atomicfu = "0.32.1"
+kotlinx-atomicfu = "0.33.0"
 kotlinx-binary-compatibility = "0.18.1"
 
 google-ksp = "2.3.9"
