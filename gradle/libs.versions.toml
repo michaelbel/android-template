@@ -22,7 +22,7 @@ google-horologist = "0.7.15"
 google-zxing = "3.5.4"
 google-ai-generativeai = "0.9.0"
 google-ai-edge = "0.0.1-exp02"
-google-protobuf = "4.35.0"
+google-protobuf = "4.35.1"
 
 google-ar-core = "1.54.0"
 google-ar-impress = "0.0.14"
