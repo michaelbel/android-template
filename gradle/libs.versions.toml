@@ -16,7 +16,7 @@ kotlinx-binary-compatibility = "0.18.1"
 
 google-ksp = "2.3.9"
 google-hilt = "2.60"
-google-services = "4.4.4"
+google-services = "4.5.0"
 google-gson = "2.14.0"
 google-horologist = "0.7.15"
 google-zxing = "3.5.4"
