@@ -250,7 +250,7 @@ hms-site = "6.2.0.301"
 hms-scan = "2.13.0.303"
 hms-stats = "6.13.0.303"
 hms-network-grs = "8.0.1.313"
-huawei-security = "2.0.0.300"
+huawei-security = "2.0.0.301"
 
 androidx-activity = "1.13.0"
 androidx-ads = "1.0.0-alpha05"
