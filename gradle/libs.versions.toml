@@ -28,7 +28,7 @@ google-ar-core = "1.54.0"
 google-ar-impress = "0.0.14"
 google-ar-sceneform = "1.17.1"
 
-google-filament = "1.72.0"
+google-filament = "1.73.0"
 google-filament-gltfio-android-lite = "1.23.1"
 google-filament-filamat-android-lite = "1.44.0"
 google-filament-filamat-utils-android-lite = "1.20.5"
