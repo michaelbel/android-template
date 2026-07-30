@@ -115,7 +115,7 @@ fun ListElement(
     ) {
         Row(
             modifier = Modifier
-                .clickable { onCLick(entity.id) }
+                .clickable { onCLick(entity.boarId) }
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {

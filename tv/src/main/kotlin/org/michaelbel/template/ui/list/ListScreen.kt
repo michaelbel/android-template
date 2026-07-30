@@ -101,7 +101,7 @@ fun ListElement(
     ) {
         Column(
             modifier = Modifier
-                .clickable { onCLick(entity.id) }
+                .clickable { onCLick(entity.boarId) }
                 .fillMaxWidth()
         ) {
             AsyncImage(
