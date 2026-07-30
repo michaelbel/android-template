@@ -461,7 +461,7 @@ barista = "4.3.0"
 kotest = "6.2.3"
 tensorflow-lite = "2.17.0"
 jetbrains-dokka = "2.2.0"
-android-compose-screenshot = "0.0.1-alpha15"
+android-compose-screenshot = "0.0.1-alpha16"
 
 androidx-compose-bom = "2026.06.01"
 androidx-compose-bom-beta = "2026.06.01"
