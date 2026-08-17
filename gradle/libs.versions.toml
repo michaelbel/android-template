@@ -14,7 +14,7 @@ kotlinx-collections = "0.5.1"
 kotlinx-atomicfu = "0.33.0"
 kotlinx-binary-compatibility = "0.18.1"
 
-google-ksp = "2.3.10"
+google-ksp = "2.3.11"
 google-hilt = "2.60.1"
 google-services = "4.5.0"
 google-gson = "2.14.0"
