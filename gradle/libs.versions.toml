@@ -249,7 +249,7 @@ hms-location = "6.4.0.300"
 hms-site = "6.2.0.301"
 hms-scan = "2.15.0.301"
 hms-stats = "6.13.0.303"
-hms-network-grs = "8.0.1.320"
+hms-network-grs = "8.0.1.324"
 huawei-security = "2.0.0.302"
 
 androidx-activity = "1.13.0"
