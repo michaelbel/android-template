@@ -464,7 +464,7 @@ jetbrains-dokka = "2.2.0"
 android-compose-screenshot = "0.0.1-alpha16"
 
 androidx-compose-bom = "2026.08.00"
-androidx-compose-bom-beta = "2026.07.01"
+androidx-compose-bom-beta = "2026.08.00"
 androidx-compose-bom-alpha = "2026.07.01"
 google-firebase-bom = "34.16.0"
 kotlin-bom = "2.3.21"
