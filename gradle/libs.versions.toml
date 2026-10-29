@@ -154,7 +154,7 @@ google-play-review = "2.0.2"
 google-material = "1.14.0"
 google-material-compose-theme-adapter = "1.2.1"
 
-google-firebase-abt = "23.0.1"
+google-firebase-abt = "24.0.0"
 google-firebase-ads = "23.6.0"
 google-firebase-admin = "9.7.1"
 google-firebase-ai = "17.17.0"
