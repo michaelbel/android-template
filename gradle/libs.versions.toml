@@ -10,6 +10,7 @@ kotlinx-coroutines = "1.11.0"
 kotlinx-datetime = "0.8.0"
 kotlinx-serialization = "1.12.0"
 kotlinx-io = "0.1.16"
+kotlinx-io-core = "0.9.1"
 kotlinx-collections = "0.5.2"
 kotlinx-atomicfu = "0.33.0"
 kotlinx-binary-compatibility = "0.18.2"
@@ -19,6 +20,7 @@ google-hilt = "2.60.1"
 google-services = "4.5.0"
 google-gson = "2.15.0"
 google-horologist = "0.7.15"
+google-horologist-auth-ui-material3 = "0.8.4-alpha"
 google-zxing = "3.5.4"
 google-ai-generativeai = "0.9.0"
 google-ai-edge = "0.0.1-exp02"
@@ -36,13 +38,30 @@ google-filament-android-full = "1.4.5"
 google-filament-android-debug = "1.42.2"
 
 google-mlkit-text-recognition = "16.0.1"
+google-mlkit-acceleration = "16.0.0-beta2"
 google-mlkit-face-detection = "16.1.7"
 google-mlkit-face-mesh-detection = "16.0.0-beta3"
+google-mlkit-genai-agent = "1.0.0-alpha1"
+google-mlkit-genai-common = "1.0.0-beta5"
+google-mlkit-genai-embedding = "1.0.0-alpha1"
+google-mlkit-genai-image-description = "1.0.0-beta1"
+google-mlkit-genai-prompt = "1.0.0-beta5"
+google-mlkit-genai-proofreading = "1.0.0-beta1"
+google-mlkit-genai-rewriting = "1.0.0-beta1"
+google-mlkit-genai-schema = "1.0.0-alpha2"
+google-mlkit-genai-schema-compiler = "1.0.0-alpha2"
+google-mlkit-genai-speech-recognition = "1.0.0-alpha2"
+google-mlkit-genai-speech-translation = "1.0.0-alpha1"
+google-mlkit-genai-summarization = "1.0.0-beta1"
+google-mlkit-genai-text-to-speech = "1.0.0-alpha1"
 google-mlkit-pose-detection = "18.0.0-beta5"
 google-mlkit-segmentation-selfie = "16.0.0-beta6"
 google-mlkit-barcode-scanning = "17.3.0"
+google-mlkit-camera = "16.0.0-beta3"
+google-mlkit-common = "18.11.0"
 google-mlkit-image-labeling = "17.0.9"
 google-mlkit-image-labeling-custom = "17.0.3"
+google-mlkit-image-labeling-automl = "16.2.1"
 google-mlkit-object-detection = "17.0.2"
 google-mlkit-linkfirebase = "17.0.0"
 google-mlkit-digital-ink-recognition = "19.0.0"
@@ -61,6 +80,8 @@ google-gms-play-services-analytics-impl = "18.2.0"
 google-gms-play-services-appindex = "16.2.0"
 google-gms-play-services-appinvite = "18.0.0"
 google-gms-play-services-license = "12.0.1"
+google-gms-play-services-litert = "17.0.0"
+google-gms-play-services-litert-compatibility = "17.0.0"
 google-gms-play-services-appsearch = "16.0.1"
 google-gms-play-services-appset = "16.1.0"
 google-gms-play-services-appstate = "8.4.0"
@@ -75,6 +96,8 @@ google-gms-play-services-base = "18.11.1"
 google-gms-play-services-base-testing = "16.2.0"
 google-gms-play-services-basement = "18.12.0"
 google-gms-play-services-cast = "23.0.0"
+google-gms-play-services-cam-feature-combo-query = "16.0.0-beta01"
+google-gms-play-services-camera-low-light-boost = "16.0.1-beta09"
 google-gms-play-services-cast-tv = "21.1.1"
 google-gms-play-services-clearcut = "17.0.0"
 google-gms-play-services-cloud-messaging = "17.4.0"
@@ -86,20 +109,27 @@ google-gms-play-services-deviceperformance = "16.1.0"
 google-gms-play-services-drive = "17.0.0"
 google-gms-play-services-dtdi = "1.0.0"
 google-gms-play-services-fitness = "21.3.0"
+google-gms-play-services-fido = "21.3.1"
 google-gms-play-services-flags = "18.1.0"
+google-gms-play-services-fraudprotect = "16.0.1"
 google-gms-play-services-games = "25.0.0"
 google-gms-play-services-games-v2 = "22.1.0"
 google-gms-play-services-games-v2-native-c = "22.1.0"
 google-gms-play-services-gass = "20.0.0"
 google-gms-play-services-gcm = "17.0.0"
+google-gms-play-services-geocoder = "16.0.0"
 google-gms-play-services-gni-native-c = "1.0.0"
 google-gms-play-services-home = "16.0.0"
 google-gms-play-services-identity = "18.1.0"
 google-gms-play-services-identity-credentials = "1.0.0"
 google-gms-play-services-iid = "17.0.0"
+google-gms-play-services-instantapps = "18.2.0"
 google-gms-play-services-location = "21.4.0"
 google-gms-play-services-maps = "20.1.0"
+google-gms-play-services-maps3d = "16.0.1"
 google-gms-play-services-measurement = "24.0.0"
+google-gms-play-services-media-effect-enhancement = "16.0.0-beta09"
+google-gms-play-services-media-effect-studiosound = "16.0.0-beta03"
 google-gms-play-services-mlkit-barcode-scanning = "18.3.1"
 google-gms-play-services-mlkit-document-scanner = "16.0.0"
 google-gms-play-services-mlkit-face-detection = "17.1.0"
@@ -126,7 +156,9 @@ google-gms-play-services-places-placereport = "1.0.0"
 google-gms-play-services-plus = "17.0.0"
 google-gms-play-services-recaptcha = "17.1.0"
 google-gms-play-services-recaptchabase = "16.1.0"
+google-gms-play-services-remotegestures = "16.0.0"
 google-gms-play-services-safetynet = "18.1.0"
+google-gms-play-services-safebrowsing = "16.0.0"
 google-gms-play-services-stats = "17.1.0"
 google-gms-play-services-streamprotect = "16.1.0"
 google-gms-play-services-tagmanager = "18.3.0"
@@ -138,6 +170,7 @@ google-gms-play-services-tflite-impl = "16.6.0"
 google-gms-play-services-tflite-java = "16.5.0"
 google-gms-play-services-tflite-support = "16.5.0"
 google-gms-play-services-threadnetwork = "16.3.0"
+google-gms-play-services-time = "16.0.1"
 google-gms-play-services-vision = "20.1.3"
 google-gms-play-services-vision-common = "19.1.3"
 google-gms-play-services-vision-face-contour-internal = "16.1.0"
@@ -147,8 +180,11 @@ google-gms-play-services-wallet = "20.0.0"
 google-gms-play-services-wearable = "20.0.1"
 
 google-play-app-update = "2.1.0"
+google-play-ai-delivery = "0.2.0-beta01"
 google-play-asset-delivery = "2.3.0"
+google-play-core-common = "2.0.4"
 google-play-feature-delivery = "2.1.0"
+google-play-integrity = "1.6.0"
 google-play-review = "2.0.2"
 
 google-material = "1.14.0"
@@ -158,35 +194,48 @@ google-firebase-abt = "24.0.0"
 google-firebase-ads = "23.6.0"
 google-firebase-admin = "9.7.1"
 google-firebase-ai = "18.1.0"
+google-firebase-ai-ksp-processor = "17.0.0"
+google-firebase-ai-ondevice = "16.0.0-beta07"
+google-firebase-ai-ondevice-interop = "16.0.0-beta07"
 google-firebase-analytics = "22.5.0"
 google-firebase-analytics-impl = "16.3.0"
 google-firebase-analytics-ktx = "1.0.0"
+google-firebase-analytics-main = "24.0.0"
 google-firebase-annotations = "18.0.0"
 google-firebase-appcheck = "20.0.0"
 google-firebase-appcheck-interop = "18.0.0"
+google-firebase-appcheck-main = "20.0.0"
+google-firebase-appcheck-recaptcha = "20.0.0"
 google-firebase-appcheck-safetynet = "16.1.2"
 google-firebase-appdistribution = "5.3.1"
 google-firebase-appdistribution-api = "1.0.0"
 google-firebase-appdistribution-api-ktx = "1.0.0"
+google-firebase-appdistribution-api-main = "16.0.0-beta21"
 google-firebase-appdistribution-ktx = "1.0.0"
+google-firebase-appdistribution-main = "16.0.0-beta21"
 google-firebase-appindexing = "20.0.0"
 google-firebase-auth = "23.2.1"
 google-firebase-auth-common = "9.8.0"
 google-firebase-auth-impl = "16.1.0"
 google-firebase-auth-interop = "20.0.0"
+google-firebase-auth-main = "25.0.0"
 google-firebase-common = "21.0.0"
+google-firebase-common-main = "23.0.0"
 google-firebase-components = "20.0.0"
 google-firebase-config = "22.1.2"
 google-firebase-config-interop = "17.0.0"
 google-firebase-config-ktx = "1.0.0"
+google-firebase-config-main = "24.0.1"
 google-firebase-core = "21.1.1"
 google-firebase-crash = "16.2.1"
 google-firebase-crashlytics-plugin = "3.0.8"
 google-firebase-crashlytics = "21.0.1"
 google-firebase-crashlytics-ktx = "1.0.0"
+google-firebase-crashlytics-main = "21.0.1"
 google-firebase-database = "21.0.0"
 google-firebase-database-collection = "19.0.0"
 google-firebase-database-connection = "16.0.2"
+google-firebase-database-main = "23.0.0"
 google-firebase-dataconnect = "18.0.1"
 google-firebase-datatransport = "21.0.0"
 google-firebase-dynamic-links = "22.1.0"
@@ -195,21 +244,28 @@ google-firebase-encoders = "18.0.0"
 google-firebase-encoders-json = "19.0.0"
 google-firebase-encoders-proto = "17.0.0"
 google-firebase-firestore = "25.1.4"
+google-firebase-firestore-main = "27.1.0"
 google-firebase-functions = "21.2.1"
+google-firebase-functions-main = "23.0.0"
 google-firebase-iid = "21.1.0"
 google-firebase-iid-interop = "17.1.0"
 google-firebase-inappmessaging = "21.0.2"
+google-firebase-inappmessaging-display = "23.0.0"
+google-firebase-inappmessaging-main = "23.0.0"
 google-firebase-installations = "18.0.0"
 google-firebase-installations-interop = "18.0.0"
+google-firebase-installations-main = "20.0.0"
 google-firebase-invites = "17.0.0"
 google-firebase-measurement-connector = "24.0.0"
 google-firebase-measurement-connector-impl = "17.0.5"
 google-firebase-messaging = "24.1.2"
 google-firebase-messaging-directboot = "26.0.1"
 google-firebase-messaging-ktx = "1.0.0"
+google-firebase-messaging-main = "26.0.1"
 google-firebase-ml-common = "22.1.2"
 google-firebase-ml-model-interpreter = "22.0.4"
 google-firebase-ml-modeldownloader = "25.0.1"
+google-firebase-ml-modeldownloader-main = "26.1.1"
 google-firebase-ml-natural-language = "22.0.1"
 google-firebase-ml-natural-language-language-id-model = "20.0.8"
 google-firebase-ml-natural-language-smart-reply = "18.0.8"
@@ -224,10 +280,15 @@ google-firebase-ml-vision-image-label-model = "20.0.2"
 google-firebase-ml-vision-internal-vkp = "17.0.2"
 google-firebase-ml-vision-object-detection-model = "19.0.6"
 google-firebase-perf = "21.0.5"
+google-firebase-perf-main = "23.0.1"
 google-firebase-plugins = "2.0.0"
+google-firebase-pnv = "17.0.0"
+google-firebase-protolite-well-known-types = "19.0.0"
 google-firebase-sessions = "4.0.1"
 google-firebase-storage = "21.0.2"
 google-firebase-storage-common = "17.0.0"
+google-firebase-storage-main = "23.0.0"
+google-firebase-testlab-instr-lib = "0.2"
 google-firebase-vertexai = "16.5.0"
 google-firebase-license = "12.0.1"
 
@@ -265,11 +326,13 @@ androidx-autofill = "1.3.0"
 androidx-baselineprofile = "1.5.0"
 androidx-benchmark = "1.5.0"
 androidx-biometric = "1.2.0-alpha05"
+androidx-biometric-compose = "1.4.0-alpha07"
 androidx-bluetooth = "1.0.0-alpha02"
 androidx-browser = "1.10.0"
 androidx-car-app = "1.7.0"
 androidx-camera = "1.6.2"
 androidx-camera-compose = "1.6.2"
+androidx-camera-feature-combination-query = "1.5.0-alpha06"
 androidx-camera-viewfinder = "1.4.0-alpha07"
 androidx-camera-viewfinder-compose = "1.0.0-alpha02"
 androidx-cardview = "1.0.0"
@@ -282,11 +345,16 @@ androidx-compose-material = "1.12.1"
 androidx-compose-material-icons = "1.7.8"
 androidx-compose-material3 = "1.5.0-beta02"
 androidx-compose-material3-adaptive = "1.3.0"
+androidx-compose-material3-a2ui = "1.0.0-alpha02"
+androidx-compose-material3-adaptive-render-strategy = "1.1.0-alpha04"
 androidx-compose-material3-window-size = "1.4.0"
 androidx-compose-remote = "1.0.0-alpha22"
+androidx-compose-remote-creation-expression = "1.0.0-alpha22"
 androidx-concurrent = "1.3.0"
+androidx-concurrent-main = "1.4.0-alpha01"
 androidx-constraintlayout = "2.2.2"
 androidx-constraintlayout-compose = "1.1.2"
+androidx-constraintlayout-core = "1.1.2"
 androidx-contentpager = "1.0.0"
 androidx-coordinatorlayout = "1.3.0"
 androidx-core = "1.19.1"
@@ -309,6 +377,7 @@ androidx-cursoradapter = "1.0.0"
 androidx-customview = "1.2.0"
 androidx-customview-poolingcontainer = "1.1.0"
 androidx-datastore = "1.3.0"
+androidx-datastore-tink = "1.3.0"
 androidx-documentfile = "1.1.0"
 androidx-draganddrop = "1.0.0"
 androidx-drawerlayout = "1.2.0"
@@ -332,6 +401,7 @@ androidx-graphics-shapes = "1.1.0"
 androidx-gridlayout = "1.1.0"
 androidx-health = "1.1.0"
 androidx-health-connect = "1.1.0"
+androidx-health-services-client = "1.1.0"
 androidx-heifwriter = "1.1.0"
 androidx-hilt = "1.4.0"
 androidx-hilt-lifecycle = "1.4.0"
@@ -349,6 +419,7 @@ androidx-lint-gradle = "1.0.0"
 androidx-loader = "1.2.0"
 androidx-localbroadcastmanager = "1.1.0"
 androidx-media3 = "1.11.1"
+androidx-media3-effect-play-services = "1.12.0-alpha02"
 androidx-mediarouter = "1.8.1"
 androidx-metrics = "1.0.0"
 androidx-navigation = "2.10.2"
@@ -360,6 +431,7 @@ androidx-pdf = "1.0.0-beta01"
 androidx-percentlayout = "1.0.0"
 androidx-preference = "1.2.1"
 androidx-photopicker = "1.0.0-alpha02"
+androidx-photopicker-activity = "1.0.0-alpha03"
 androidx-print = "1.1.0"
 androidx-profileinstaller = "1.4.1"
 androidx-recommendation = "1.0.0"
@@ -398,6 +470,7 @@ androidx-test-uiautomator-shell = "2.4.0"
 androidx-text = "1.0.0-beta03"
 androidx-textclassifier = "1.0.0-alpha04"
 androidx-tracing = "2.0.5"
+androidx-tracing-perfetto = "1.0.1"
 androidx-transition = "1.7.2"
 androidx-tv = "1.1.0"
 androidx-tv-foundation = "1.0.0"
@@ -418,13 +491,24 @@ androidx-wear-compose-material3 = "1.7.1"
 androidx-wear-protolayout = "1.4.2"
 androidx-wear-tiles = "1.6.2"
 androidx-wear-watchface = "1.3.0"
+androidx-wear-watchface-watchface = "1.2.1"
+androidx-wear-watchface-watchface-push = "1.3.0-alpha07"
 androidx-webgpu = "1.0.0-alpha06"
 androidx-webkit = "1.18.0"
 androidx-window = "1.5.1"
 androidx-window-extensions-core = "1.0.0"
 androidx-work = "2.12.0"
+androidx-work-analytics = "2.12.0"
 androidx-xr = "1.0.0"
 androidx-xr-projected = "1.0.0-alpha14"
+androidx-xr-arcore = "1.0.0"
+androidx-xr-arcore-guava = "1.0.0-alpha13"
+androidx-xr-arcore-projected = "1.0.0-alpha14"
+androidx-xr-runtime = "1.0.0"
+androidx-xr-runtime-guava = "1.0.0-alpha05"
+androidx-xr-runtime-rxjava3 = "1.0.0-alpha13"
+androidx-xr-scenecore = "1.0.0"
+androidx-xr-scenecore-guava = "1.0.0-alpha14"
 
 detekt = "1.23.8"
 detekt-rules = "1.3.0"
@@ -432,22 +516,18 @@ kode-detekt-rules-compose = "2.1.2"
 twitter-compose-rules-detekt = "0.0.26"
 nlopez-compose-rules-detekt = "0.6.8"
 vk-vkompose-detekt = "0.6.1"
-ktor = "3.6.0"
+ktor = "3.6.1"
 okio = "3.18.2"
 okhttp = "5.5.1"
-retrofit = "3.0.0"
 chucker = "4.3.1"
-moshi = "1.15.2"
-rxjava3 = "3.1.12"
-rxjava3-rxkotlin = "3.0.1"
-rxjava3-rxandroid = "3.0.2"
 timber = "5.0.1"
 coil = "2.7.0"
 coil3 = "3.6.3"
 cicerone = "7.1"
 lottie = "6.7.1"
-vbpd = "2.0.4"
+epoxy = "5.2.1"
 leakcanary = "2.14"
+leakcanary-android-test = "3.0-alpha-9"
 kotlin-inject = "0.9.0"
 koin = "4.2.2"
 koin-annotations = "4.2.2"
@@ -460,6 +540,8 @@ turbine = "1.2.1"
 barista = "4.3.0"
 kotest = "6.2.6"
 tensorflow-lite = "2.17.0"
+tensorflow-lite-hexagon = "2.16.1"
+tensorflow-lite-support = "0.5.0"
 jetbrains-dokka = "2.2.0"
 android-compose-screenshot = "0.0.1-alpha16"
 
@@ -469,11 +551,18 @@ androidx-compose-bom-alpha = "2026.10.01"
 google-firebase-bom = "35.1.0"
 kotlin-bom = "2.3.21"
 kotlinx-coroutines-bom = "1.11.0"
+kotlinx-serialization-bom = "1.12.0"
 okhttp-bom = "5.5.1"
+okio-bom = "3.18.2"
 koin-bom = "4.2.2"
 koin-annotations-bom = "2.3.1"
 junit-bom = "6.1.3"
 mockito-bom = "5.24.0"
+coil-bom = "2.7.0"
+coil3-bom = "3.6.3"
+google-protobuf-bom = "4.36.2"
+kotest-bom = "6.2.6"
+ktor-bom = "3.6.1"
 
 [libraries]
 #region bom
@@ -483,32 +572,53 @@ androidx-compose-bom-alpha = { module = "androidx.compose:compose-bom-alpha", ve
 google-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "google-firebase-bom" }
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin-bom" }
 kotlinx-coroutines-bom = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-bom", version.ref = "kotlinx-coroutines-bom" }
+kotlinx-serialization-bom = { module = "org.jetbrains.kotlinx:kotlinx-serialization-bom", version.ref = "kotlinx-serialization-bom" }
 okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp-bom" }
+okio-bom = { module = "com.squareup.okio:okio-bom", version.ref = "okio-bom" }
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
 koin-annotations-bom = { module = "io.insert-koin:koin-annotations-bom", version.ref = "koin-annotations-bom" }
 junit-bom = { module = "org.junit:junit-bom", version.ref = "junit-bom" }
 mockito-bom = { module = "org.mockito:mockito-bom", version.ref = "mockito-bom" }
+google-protobuf-bom = { module = "com.google.protobuf:protobuf-bom", version.ref = "google-protobuf-bom" }
+coil-bom = { module = "io.coil-kt:coil-bom", version.ref = "coil-bom" }
+coil3-bom = { module = "io.coil-kt.coil3:coil-bom", version.ref = "coil3-bom" }
+ktor-bom = { module = "io.ktor:ktor-bom", version.ref = "ktor-bom" }
+kotest-bom = { module = "io.kotest:kotest-bom", version.ref = "kotest-bom" }
 #endregion
 #region kotlin
+kotlin-parcelize-runtime = { module = "org.jetbrains.kotlin:kotlin-parcelize-runtime", version.ref = "kotlin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-guava = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-guava", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-reactive = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactive", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-rx2 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-rx3 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-rx3", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json-io = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-io", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json-okio = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-okio", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-cbor = { module = "org.jetbrains.kotlinx:kotlinx-serialization-cbor", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-properties = { module = "org.jetbrains.kotlinx:kotlinx-serialization-properties", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-hocon = { module = "org.jetbrains.kotlinx:kotlinx-serialization-hocon", version.ref = "kotlinx-serialization" }
 kotlinx-io = { module = "org.jetbrains.kotlinx:kotlinx-io", version.ref = "kotlinx-io" }
+kotlinx-io-bytestring = { module = "org.jetbrains.kotlinx:kotlinx-io-bytestring", version.ref = "kotlinx-io-core" }
+kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinx-io-core" }
+kotlinx-io-okio = { module = "org.jetbrains.kotlinx:kotlinx-io-okio", version.ref = "kotlinx-io-core" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections" }
 kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "kotlinx-atomicfu" }
 #endregion
 #region google-play-services
 google-gms-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "google-gms-play-services-ads" }
+google-gms-play-services-ads-api = { module = "com.google.android.gms:play-services-ads-api", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-base = { module = "com.google.android.gms:play-services-ads-base", version.ref = "google-gms-play-services-ads" }
 google-gms-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "google-gms-play-services-ads-identifier" }
 google-gms-play-services-ads-license = { module = "com.google.android.gms:play-services-ads-license", version.ref = "google-gms-play-services-ads" }
@@ -542,6 +652,8 @@ google-gms-play-services-base-license = { module = "com.google.android.gms:play-
 google-gms-play-services-base-testing = { module = "com.google.android.gms:play-services-base-testing", version.ref = "google-gms-play-services-base-testing" }
 google-gms-play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "google-gms-play-services-basement" }
 google-gms-play-services-basement-license = { module = "com.google.android.gms:play-services-basement-license", version.ref = "google-gms-play-services-license" }
+google-gms-play-services-cam-feature-combo-query = { module = "com.google.android.gms:play-services-cam-feature-combo-query", version.ref = "google-gms-play-services-cam-feature-combo-query" }
+google-gms-play-services-camera-low-light-boost = { module = "com.google.android.gms:play-services-camera-low-light-boost", version.ref = "google-gms-play-services-camera-low-light-boost" }
 google-gms-play-services-cast = { module = "com.google.android.gms:play-services-cast", version.ref = "google-gms-play-services-cast" }
 google-gms-play-services-cast-framework = { module = "com.google.android.gms:play-services-cast-framework", version.ref = "google-gms-play-services-cast" }
 google-gms-play-services-cast-framework-license = { module = "com.google.android.gms:play-services-cast-framework-license", version.ref = "google-gms-play-services-license" }
@@ -557,10 +669,12 @@ google-gms-play-services-deviceperformance = { module = "com.google.android.gms:
 google-gms-play-services-drive = { module = "com.google.android.gms:play-services-drive", version.ref = "google-gms-play-services-drive" }
 google-gms-play-services-drive-license = { module = "com.google.android.gms:play-services-drive-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-dtdi = { module = "com.google.android.gms:play-services-dtdi", version.ref = "google-gms-play-services-dtdi" }
+google-gms-play-services-fido = { module = "com.google.android.gms:play-services-fido", version.ref = "google-gms-play-services-fido" }
 google-gms-play-services-fido-license = { module = "com.google.android.gms:play-services-fido-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-fitness = { module = "com.google.android.gms:play-services-fitness", version.ref = "google-gms-play-services-fitness" }
 google-gms-play-services-fitness-license = { module = "com.google.android.gms:play-services-fitness-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-flags = { module = "com.google.android.gms:play-services-flags", version.ref = "google-gms-play-services-flags" }
+google-gms-play-services-fraudprotect = { module = "com.google.android.gms:play-services-fraudprotect", version.ref = "google-gms-play-services-fraudprotect" }
 google-gms-play-services-games = { module = "com.google.android.gms:play-services-games", version.ref = "google-gms-play-services-games" }
 google-gms-play-services-games-license = { module = "com.google.android.gms:play-services-games-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-games-v2 = { module = "com.google.android.gms:play-services-games-v2", version.ref = "google-gms-play-services-games-v2" }
@@ -569,6 +683,7 @@ google-gms-play-services-gass = { module = "com.google.android.gms:play-services
 google-gms-play-services-gass-license = { module = "com.google.android.gms:play-services-gass-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-gcm = { module = "com.google.android.gms:play-services-gcm", version.ref = "google-gms-play-services-gcm" }
 google-gms-play-services-gcm-license = { module = "com.google.android.gms:play-services-gcm-license", version.ref = "google-gms-play-services-license" }
+google-gms-play-services-geocoder = { module = "com.google.android.gms:play-services-geocoder", version.ref = "google-gms-play-services-geocoder" }
 google-gms-play-services-gni-native-c = { module = "com.google.android.gms:play-services-gni-native-c", version.ref = "google-gms-play-services-gni-native-c" }
 google-gms-play-services-home = { module = "com.google.android.gms:play-services-home", version.ref = "google-gms-play-services-home" }
 google-gms-play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "google-gms-play-services-identity" }
@@ -576,17 +691,23 @@ google-gms-play-services-identity-credentials = { module = "com.google.android.g
 google-gms-play-services-identity-license = { module = "com.google.android.gms:play-services-identity-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-iid = { module = "com.google.android.gms:play-services-iid", version.ref = "google-gms-play-services-iid" }
 google-gms-play-services-iid-license = { module = "com.google.android.gms:play-services-iid-license", version.ref = "google-gms-play-services-license" }
+google-gms-play-services-instantapps = { module = "com.google.android.gms:play-services-instantapps", version.ref = "google-gms-play-services-instantapps" }
 google-gms-play-services-instantapps-license = { module = "com.google.android.gms:play-services-instantapps-license", version.ref = "google-gms-play-services-license" }
+google-gms-play-services-litert = { module = "com.google.android.gms:play-services-litert", version.ref = "google-gms-play-services-litert" }
+google-gms-play-services-litert-compatibility = { module = "com.google.android.gms:play-services-litert-compatibility", version.ref = "google-gms-play-services-litert-compatibility" }
 google-gms-play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-gms-play-services-location" }
 google-gms-play-services-location-license = { module = "com.google.android.gms:play-services-location-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "google-gms-play-services-maps" }
 google-gms-play-services-maps-license = { module = "com.google.android.gms:play-services-maps-license", version.ref = "google-gms-play-services-license" }
+google-gms-play-services-maps3d = { module = "com.google.android.gms:play-services-maps3d", version.ref = "google-gms-play-services-maps3d" }
 google-gms-play-services-measurement = { module = "com.google.android.gms:play-services-measurement", version.ref = "google-gms-play-services-measurement" }
 google-gms-play-services-measurement-api = { module = "com.google.android.gms:play-services-measurement-api", version.ref = "google-gms-play-services-measurement" }
 google-gms-play-services-measurement-base = { module = "com.google.android.gms:play-services-measurement-base", version.ref = "google-gms-play-services-measurement" }
 google-gms-play-services-measurement-impl = { module = "com.google.android.gms:play-services-measurement-impl", version.ref = "google-gms-play-services-measurement" }
 google-gms-play-services-measurement-sdk = { module = "com.google.android.gms:play-services-measurement-sdk", version.ref = "google-gms-play-services-measurement" }
 google-gms-play-services-measurement-sdk-api = { module = "com.google.android.gms:play-services-measurement-sdk-api", version.ref = "google-gms-play-services-measurement" }
+google-gms-play-services-media-effect-enhancement = { module = "com.google.android.gms:play-services-media-effect-enhancement", version.ref = "google-gms-play-services-media-effect-enhancement" }
+google-gms-play-services-media-effect-studiosound = { module = "com.google.android.gms:play-services-media-effect-studiosound", version.ref = "google-gms-play-services-media-effect-studiosound" }
 google-gms-play-services-mlkit-barcode-scanning = { module = "com.google.android.gms:play-services-mlkit-barcode-scanning", version.ref = "google-gms-play-services-mlkit-barcode-scanning" }
 google-gms-play-services-mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "google-gms-play-services-mlkit-document-scanner" }
 google-gms-play-services-mlkit-face-detection = { module = "com.google.android.gms:play-services-mlkit-face-detection", version.ref = "google-gms-play-services-mlkit-face-detection" }
@@ -618,6 +739,8 @@ google-gms-play-services-plus = { module = "com.google.android.gms:play-services
 google-gms-play-services-plus-license = { module = "com.google.android.gms:play-services-plus-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-recaptcha = { module = "com.google.android.gms:play-services-recaptcha", version.ref = "google-gms-play-services-recaptcha" }
 google-gms-play-services-recaptchabase = { module = "com.google.android.gms:play-services-recaptchabase", version.ref = "google-gms-play-services-recaptchabase" }
+google-gms-play-services-remotegestures = { module = "com.google.android.gms:play-services-remotegestures", version.ref = "google-gms-play-services-remotegestures" }
+google-gms-play-services-safebrowsing = { module = "com.google.android.gms:play-services-safebrowsing", version.ref = "google-gms-play-services-safebrowsing" }
 google-gms-play-services-safetynet = { module = "com.google.android.gms:play-services-safetynet", version.ref = "google-gms-play-services-safetynet" }
 google-gms-play-services-safetynet-license = { module = "com.google.android.gms:play-services-safetynet-license", version.ref = "google-gms-play-services-license" }
 google-gms-play-services-stats = { module = "com.google.android.gms:play-services-stats", version.ref = "google-gms-play-services-stats" }
@@ -637,6 +760,7 @@ google-gms-play-services-tflite-impl = { module = "com.google.android.gms:play-s
 google-gms-play-services-tflite-java = { module = "com.google.android.gms:play-services-tflite-java", version.ref = "google-gms-play-services-tflite-java" }
 google-gms-play-services-tflite-support = { module = "com.google.android.gms:play-services-tflite-support", version.ref = "google-gms-play-services-tflite-support" }
 google-gms-play-services-threadnetwork = { module = "com.google.android.gms:play-services-threadnetwork", version.ref = "google-gms-play-services-threadnetwork" }
+google-gms-play-services-time = { module = "com.google.android.gms:play-services-time", version.ref = "google-gms-play-services-time" }
 google-gms-play-services-vision = { module = "com.google.android.gms:play-services-vision", version.ref = "google-gms-play-services-vision" }
 google-gms-play-services-vision-common = { module = "com.google.android.gms:play-services-vision-common", version.ref = "google-gms-play-services-vision-common" }
 google-gms-play-services-vision-common-license = { module = "com.google.android.gms:play-services-vision-common-license", version.ref = "google-gms-play-services-license" }
@@ -650,23 +774,61 @@ google-gms-play-services-wearable = { module = "com.google.android.gms:play-serv
 google-gms-play-services-wearable-license = { module = "com.google.android.gms:play-services-wearable-license", version.ref = "google-gms-play-services-license" }
 #endregion
 #region google-play
+google-play-ai-delivery = { module = "com.google.android.play:ai-delivery", version.ref = "google-play-ai-delivery" }
+google-play-app-update = { module = "com.google.android.play:app-update", version.ref = "google-play-app-update" }
 google-play-app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "google-play-app-update" }
+google-play-asset-delivery = { module = "com.google.android.play:asset-delivery", version.ref = "google-play-asset-delivery" }
 google-play-asset-delivery-ktx = { module = "com.google.android.play:asset-delivery-ktx", version.ref = "google-play-asset-delivery" }
+google-play-core-common = { module = "com.google.android.play:core-common", version.ref = "google-play-core-common" }
+google-play-feature-delivery = { module = "com.google.android.play:feature-delivery", version.ref = "google-play-feature-delivery" }
 google-play-feature-delivery-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "google-play-feature-delivery" }
+google-play-integrity = { module = "com.google.android.play:integrity", version.ref = "google-play-integrity" }
+google-play-review = { module = "com.google.android.play:review", version.ref = "google-play-review" }
 google-play-review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "google-play-review" }
 #endregion
 #region google horologist
+google-horologist-ai-ui = { module = "com.google.android.horologist:horologist-ai-ui", version.ref = "google-horologist" }
+google-horologist-annotations = { module = "com.google.android.horologist:horologist-annotations", version.ref = "google-horologist" }
+google-horologist-audio = { module = "com.google.android.horologist:horologist-audio", version.ref = "google-horologist" }
 google-horologist-audio-ui = { module = "com.google.android.horologist:horologist-audio-ui", version.ref = "google-horologist" }
+google-horologist-audio-ui-material3 = { module = "com.google.android.horologist:horologist-audio-ui-material3", version.ref = "google-horologist" }
+google-horologist-audio-ui-model = { module = "com.google.android.horologist:horologist-audio-ui-model", version.ref = "google-horologist" }
+google-horologist-auth-composables = { module = "com.google.android.horologist:horologist-auth-composables", version.ref = "google-horologist" }
+google-horologist-auth-composables-material3 = { module = "com.google.android.horologist:horologist-auth-composables-material3", version.ref = "google-horologist-auth-ui-material3" }
+google-horologist-auth-data = { module = "com.google.android.horologist:horologist-auth-data", version.ref = "google-horologist" }
+google-horologist-auth-data-phone = { module = "com.google.android.horologist:horologist-auth-data-phone", version.ref = "google-horologist" }
+google-horologist-auth-ui = { module = "com.google.android.horologist:horologist-auth-ui", version.ref = "google-horologist" }
+google-horologist-auth-ui-material3 = { module = "com.google.android.horologist:horologist-auth-ui-material3", version.ref = "google-horologist-auth-ui-material3" }
 google-horologist-composables = { module = "com.google.android.horologist:horologist-composables", version.ref = "google-horologist" }
 google-horologist-compose-layout = { module = "com.google.android.horologist:horologist-compose-layout", version.ref = "google-horologist" }
 google-horologist-compose-material = { module = "com.google.android.horologist:horologist-compose-material", version.ref = "google-horologist" }
 google-horologist-compose-tools = { module = "com.google.android.horologist:horologist-compose-tools", version.ref = "google-horologist" }
+google-horologist-datalayer = { module = "com.google.android.horologist:horologist-datalayer", version.ref = "google-horologist" }
+google-horologist-datalayer-grpc = { module = "com.google.android.horologist:horologist-datalayer-grpc", version.ref = "google-horologist" }
+google-horologist-datalayer-phone = { module = "com.google.android.horologist:horologist-datalayer-phone", version.ref = "google-horologist" }
+google-horologist-datalayer-phone-ui = { module = "com.google.android.horologist:horologist-datalayer-phone-ui", version.ref = "google-horologist" }
+google-horologist-datalayer-watch = { module = "com.google.android.horologist:horologist-datalayer-watch", version.ref = "google-horologist" }
+google-horologist-health-composables = { module = "com.google.android.horologist:horologist-health-composables", version.ref = "google-horologist" }
+google-horologist-health-service = { module = "com.google.android.horologist:horologist-health-service", version.ref = "google-horologist" }
+google-horologist-images-base = { module = "com.google.android.horologist:horologist-images-base", version.ref = "google-horologist" }
 google-horologist-images-coil = { module = "com.google.android.horologist:horologist-images-coil", version.ref = "google-horologist" }
+google-horologist-media = { module = "com.google.android.horologist:horologist-media", version.ref = "google-horologist" }
 google-horologist-media-data = { module = "com.google.android.horologist:horologist-media-data", version.ref = "google-horologist" }
 google-horologist-media-ui = { module = "com.google.android.horologist:horologist-media-ui", version.ref = "google-horologist" }
+google-horologist-media-ui-material3 = { module = "com.google.android.horologist:horologist-media-ui-material3", version.ref = "google-horologist" }
+google-horologist-media-ui-model = { module = "com.google.android.horologist:horologist-media-ui-model", version.ref = "google-horologist" }
+google-horologist-media3-backend = { module = "com.google.android.horologist:horologist-media3-backend", version.ref = "google-horologist" }
+google-horologist-media3-logging = { module = "com.google.android.horologist:horologist-media3-logging", version.ref = "google-horologist" }
+google-horologist-media3-outputswitcher = { module = "com.google.android.horologist:horologist-media3-outputswitcher", version.ref = "google-horologist" }
+google-horologist-network-awareness = { module = "com.google.android.horologist:horologist-network-awareness", version.ref = "google-horologist" }
+google-horologist-network-awareness-db = { module = "com.google.android.horologist:horologist-network-awareness-db", version.ref = "google-horologist" }
+google-horologist-network-awareness-okhttp = { module = "com.google.android.horologist:horologist-network-awareness-okhttp", version.ref = "google-horologist" }
+google-horologist-network-awareness-ui = { module = "com.google.android.horologist:horologist-network-awareness-ui", version.ref = "google-horologist" }
 google-horologist-roboscreenshots = { module = "com.google.android.horologist:horologist-roboscreenshots", version.ref = "google-horologist" }
+google-horologist-tiles = { module = "com.google.android.horologist:horologist-tiles", version.ref = "google-horologist" }
 #endregion
 #region google mlkit
+google-mlkit-acceleration = { module = "com.google.mlkit:acceleration", version.ref = "google-mlkit-acceleration" }
 google-mlkit-text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "google-mlkit-text-recognition" }
 google-mlkit-text-recognition-chinese = { module = "com.google.mlkit:text-recognition-chinese", version.ref = "google-mlkit-text-recognition" }
 google-mlkit-text-recognition-devanagari = { module = "com.google.mlkit:text-recognition-devanagari", version.ref = "google-mlkit-text-recognition" }
@@ -674,11 +836,27 @@ google-mlkit-text-recognition-japanese = { module = "com.google.mlkit:text-recog
 google-mlkit-text-recognition-korean = { module = "com.google.mlkit:text-recognition-korean", version.ref = "google-mlkit-text-recognition" }
 google-mlkit-face-detection = { module = "com.google.mlkit:face-detection", version.ref = "google-mlkit-face-detection" }
 google-mlkit-face-mesh-detection = { module = "com.google.mlkit:face-mesh-detection", version.ref = "google-mlkit-face-mesh-detection" }
+google-mlkit-genai-agent = { module = "com.google.mlkit:genai-agent", version.ref = "google-mlkit-genai-agent" }
+google-mlkit-genai-common = { module = "com.google.mlkit:genai-common", version.ref = "google-mlkit-genai-common" }
+google-mlkit-genai-embedding = { module = "com.google.mlkit:genai-embedding", version.ref = "google-mlkit-genai-embedding" }
+google-mlkit-genai-image-description = { module = "com.google.mlkit:genai-image-description", version.ref = "google-mlkit-genai-image-description" }
+google-mlkit-genai-prompt = { module = "com.google.mlkit:genai-prompt", version.ref = "google-mlkit-genai-prompt" }
+google-mlkit-genai-proofreading = { module = "com.google.mlkit:genai-proofreading", version.ref = "google-mlkit-genai-proofreading" }
+google-mlkit-genai-rewriting = { module = "com.google.mlkit:genai-rewriting", version.ref = "google-mlkit-genai-rewriting" }
+google-mlkit-genai-schema = { module = "com.google.mlkit:genai-schema", version.ref = "google-mlkit-genai-schema" }
+google-mlkit-genai-schema-compiler = { module = "com.google.mlkit:genai-schema-compiler", version.ref = "google-mlkit-genai-schema-compiler" }
+google-mlkit-genai-speech-recognition = { module = "com.google.mlkit:genai-speech-recognition", version.ref = "google-mlkit-genai-speech-recognition" }
+google-mlkit-genai-speech-translation = { module = "com.google.mlkit:genai-speech-translation", version.ref = "google-mlkit-genai-speech-translation" }
+google-mlkit-genai-summarization = { module = "com.google.mlkit:genai-summarization", version.ref = "google-mlkit-genai-summarization" }
+google-mlkit-genai-text-to-speech = { module = "com.google.mlkit:genai-text-to-speech", version.ref = "google-mlkit-genai-text-to-speech" }
 google-mlkit-pose-detection = { module = "com.google.mlkit:pose-detection", version.ref = "google-mlkit-pose-detection" }
 google-mlkit-pose-detection-accurate = { module = "com.google.mlkit:pose-detection-accurate", version.ref = "google-mlkit-pose-detection" }
 google-mlkit-segmentation-selfie = { module = "com.google.mlkit:segmentation-selfie", version.ref = "google-mlkit-segmentation-selfie" }
 google-mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "google-mlkit-barcode-scanning" }
+google-mlkit-camera = { module = "com.google.mlkit:camera", version.ref = "google-mlkit-camera" }
+google-mlkit-common = { module = "com.google.mlkit:common", version.ref = "google-mlkit-common" }
 google-mlkit-image-labeling = { module = "com.google.mlkit:image-labeling", version.ref = "google-mlkit-image-labeling" }
+google-mlkit-image-labeling-automl = { module = "com.google.mlkit:image-labeling-automl", version.ref = "google-mlkit-image-labeling-automl" }
 google-mlkit-image-labeling-custom = { module = "com.google.mlkit:image-labeling-custom", version.ref = "google-mlkit-image-labeling-custom" }
 google-mlkit-object-detection = { module = "com.google.mlkit:object-detection", version.ref = "google-mlkit-object-detection" }
 google-mlkit-object-detection-custom = { module = "com.google.mlkit:object-detection-custom", version.ref = "google-mlkit-object-detection" }
@@ -717,12 +895,24 @@ google-ai-generativeai = { module = "com.google.ai.client.generativeai:generativ
 google-ai-edge = { module = "com.google.ai.edge.aicore:aicore", version.ref = "google-ai-edge" }
 #endregion
 #region google-hilt
+google-dagger = { module = "com.google.dagger:dagger", version.ref = "google-hilt" }
+google-dagger-android = { module = "com.google.dagger:dagger-android", version.ref = "google-hilt" }
+google-dagger-android-processor = { module = "com.google.dagger:dagger-android-processor", version.ref = "google-hilt" }
+google-dagger-android-support = { module = "com.google.dagger:dagger-android-support", version.ref = "google-hilt" }
+google-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "google-hilt" }
+google-dagger-producers = { module = "com.google.dagger:dagger-producers", version.ref = "google-hilt" }
 google-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "google-hilt" }
+google-hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "google-hilt" }
 google-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "google-hilt" }
+google-hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "google-hilt" }
 #endregion
 #region google
 google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
 google-zxing = { module = "com.google.zxing:core", version.ref = "google-zxing" }
+google-protobuf-java = { module = "com.google.protobuf:protobuf-java", version.ref = "google-protobuf" }
+google-protobuf-java-util = { module = "com.google.protobuf:protobuf-java-util", version.ref = "google-protobuf" }
+google-protobuf-javalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "google-protobuf" }
+google-protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "google-protobuf" }
 google-protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "google-protobuf" }
 #endregion
 #region firebase
@@ -731,41 +921,54 @@ google-firebase-ads = { module = "com.google.firebase:firebase-ads", version.ref
 google-firebase-ads-lite = { module = "com.google.firebase:firebase-ads-lite", version.ref = "google-firebase-ads" }
 google-firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "google-firebase-admin" }
 google-firebase-ai = { module = "com.google.firebase:firebase-ai", version.ref = "google-firebase-ai" }
+google-firebase-ai-ksp-processor = { module = "com.google.firebase:firebase-ai-ksp-processor", version.ref = "google-firebase-ai-ksp-processor" }
+google-firebase-ai-ondevice = { module = "com.google.firebase:firebase-ai-ondevice", version.ref = "google-firebase-ai-ondevice" }
+google-firebase-ai-ondevice-interop = { module = "com.google.firebase:firebase-ai-ondevice-interop", version.ref = "google-firebase-ai-ondevice-interop" }
+google-firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "google-firebase-analytics-main" }
 google-firebase-analytics-impl = { module = "com.google.firebase:firebase-analytics-impl", version.ref = "google-firebase-analytics-impl" }
 google-firebase-analytics-impl-license = { module = "com.google.firebase:firebase-analytics-impl-license", version.ref = "google-firebase-license" }
 google-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version.ref = "google-firebase-analytics" }
 google-firebase-analytics-license = { module = "com.google.firebase:firebase-analytics-license", version.ref = "google-firebase-license" }
 google-firebase-annotations = { module = "com.google.firebase:firebase-annotations", version.ref = "google-firebase-annotations" }
+google-firebase-appcheck = { module = "com.google.firebase:firebase-appcheck", version.ref = "google-firebase-appcheck-main" }
 google-firebase-appcheck-debug = { module = "com.google.firebase:firebase-appcheck-debug", version.ref = "google-firebase-appcheck" }
 google-firebase-appcheck-debug-testing = { module = "com.google.firebase:firebase-appcheck-debug-testing", version.ref = "google-firebase-appcheck" }
 google-firebase-appcheck-interop = { module = "com.google.firebase:firebase-appcheck-interop", version.ref = "google-firebase-appcheck-interop" }
 google-firebase-appcheck-ktx = { module = "com.google.firebase:firebase-appcheck-ktx", version.ref = "google-firebase-appcheck" }
 google-firebase-appcheck-playintegrity = { module = "com.google.firebase:firebase-appcheck-playintegrity", version.ref = "google-firebase-appcheck" }
+google-firebase-appcheck-recaptcha = { module = "com.google.firebase:firebase-appcheck-recaptcha", version.ref = "google-firebase-appcheck-recaptcha" }
 google-firebase-appcheck-safetynet = { module = "com.google.firebase:firebase-appcheck-safetynet", version.ref = "google-firebase-appcheck-safetynet" }
+google-firebase-appdistribution = { module = "com.google.firebase:firebase-appdistribution", version.ref = "google-firebase-appdistribution-main" }
+google-firebase-appdistribution-api = { module = "com.google.firebase:firebase-appdistribution-api", version.ref = "google-firebase-appdistribution-api-main" }
 google-firebase-appdistribution-api-ktx = { module = "com.google.firebase:firebase-appdistribution-api-ktx", version.ref = "google-firebase-appdistribution-api-ktx" }
 google-firebase-appdistribution-gradle = { module = "com.google.firebase:firebase-appdistribution-gradle", version.ref = "google-firebase-appdistribution" }
 google-firebase-appdistribution-ktx = { module = "com.google.firebase:firebase-appdistribution-ktx", version.ref = "google-firebase-appdistribution-ktx" }
 google-firebase-appindexing = { module = "com.google.firebase:firebase-appindexing", version.ref = "google-firebase-appindexing" }
 google-firebase-appindexing-license = { module = "com.google.firebase:firebase-appindexing-license", version.ref = "google-firebase-license" }
+google-firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "google-firebase-auth-main" }
 google-firebase-auth-common = { module = "com.google.firebase:firebase-auth-common", version.ref = "google-firebase-auth-common" }
 google-firebase-auth-impl = { module = "com.google.firebase:firebase-auth-impl", version.ref = "google-firebase-auth-impl" }
 google-firebase-auth-interop = { module = "com.google.firebase:firebase-auth-interop", version.ref = "google-firebase-auth-interop" }
 google-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version.ref = "google-firebase-auth" }
 google-firebase-auth-license = { module = "com.google.firebase:firebase-auth-license", version.ref = "google-firebase-license" }
 google-firebase-auth-module = { module = "com.google.firebase:firebase-auth-module", version.ref = "google-firebase-auth-common" }
+google-firebase-common = { module = "com.google.firebase:firebase-common", version.ref = "google-firebase-common-main" }
 google-firebase-common-ktx = { module = "com.google.firebase:firebase-common-ktx", version.ref = "google-firebase-common" }
 google-firebase-common-license = { module = "com.google.firebase:firebase-common-license", version.ref = "google-firebase-license" }
 google-firebase-components = { module = "com.google.firebase:firebase-components", version.ref = "google-firebase-components" }
+google-firebase-config = { module = "com.google.firebase:firebase-config", version.ref = "google-firebase-config-main" }
 google-firebase-config-interop = { module = "com.google.firebase:firebase-config-interop", version.ref = "google-firebase-config-interop" }
 google-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx", version.ref = "google-firebase-config" }
 google-firebase-config-license = { module = "com.google.firebase:firebase-config-license", version.ref = "google-firebase-license" }
 google-firebase-core = { module = "com.google.firebase:firebase-core", version.ref = "google-firebase-core" }
 google-firebase-crash = { module = "com.google.firebase:firebase-crash", version.ref = "google-firebase-crash" }
 google-firebase-crash-license = { module = "com.google.firebase:firebase-crash-license", version.ref = "google-firebase-license" }
+google-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics", version.ref = "google-firebase-crashlytics-main" }
 google-firebase-crashlytics-buildtools = { module = "com.google.firebase:firebase-crashlytics-buildtools", version.ref = "google-firebase-crashlytics-plugin" }
 google-firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "google-firebase-crashlytics-plugin" }
 google-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx", version.ref = "google-firebase-crashlytics" }
 google-firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk", version.ref = "google-firebase-crashlytics" }
+google-firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "google-firebase-database-main" }
 google-firebase-database-collection = { module = "com.google.firebase:firebase-database-collection", version.ref = "google-firebase-database-collection" }
 google-firebase-database-connection = { module = "com.google.firebase:firebase-database-connection", version.ref = "google-firebase-database-connection" }
 google-firebase-database-connection-license = { module = "com.google.firebase:firebase-database-connection-license", version.ref = "google-firebase-license" }
@@ -779,24 +982,31 @@ google-firebase-dynamic-module-support = { module = "com.google.firebase:firebas
 google-firebase-encoders = { module = "com.google.firebase:firebase-encoders", version.ref = "google-firebase-encoders" }
 google-firebase-encoders-json = { module = "com.google.firebase:firebase-encoders-json", version.ref = "google-firebase-encoders-json" }
 google-firebase-encoders-proto = { module = "com.google.firebase:firebase-encoders-proto", version.ref = "google-firebase-encoders-proto" }
+google-firebase-firestore = { module = "com.google.firebase:firebase-firestore", version.ref = "google-firebase-firestore-main" }
 google-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "google-firebase-firestore" }
+google-firebase-functions = { module = "com.google.firebase:firebase-functions", version.ref = "google-firebase-functions-main" }
 google-firebase-functions-ktx = { module = "com.google.firebase:firebase-functions-ktx", version.ref = "google-firebase-functions" }
 google-firebase-functions-license = { module = "com.google.firebase:firebase-functions-license", version.ref = "google-firebase-license" }
 google-firebase-iid = { module = "com.google.firebase:firebase-iid", version.ref = "google-firebase-iid" }
 google-firebase-iid-interop = { module = "com.google.firebase:firebase-iid-interop", version.ref = "google-firebase-iid-interop" }
 google-firebase-iid-license = { module = "com.google.firebase:firebase-iid-license", version.ref = "google-firebase-license" }
+google-firebase-inappmessaging = { module = "com.google.firebase:firebase-inappmessaging", version.ref = "google-firebase-inappmessaging-main" }
+google-firebase-inappmessaging-display = { module = "com.google.firebase:firebase-inappmessaging-display", version.ref = "google-firebase-inappmessaging-display" }
 google-firebase-inappmessaging-display-ktx = { module = "com.google.firebase:firebase-inappmessaging-display-ktx", version.ref = "google-firebase-inappmessaging" }
 google-firebase-inappmessaging-ktx = { module = "com.google.firebase:firebase-inappmessaging-ktx", version.ref = "google-firebase-inappmessaging" }
+google-firebase-installations = { module = "com.google.firebase:firebase-installations", version.ref = "google-firebase-installations-main" }
 google-firebase-installations-interop = { module = "com.google.firebase:firebase-installations-interop", version.ref = "google-firebase-installations-interop" }
 google-firebase-installations-ktx = { module = "com.google.firebase:firebase-installations-ktx", version.ref = "google-firebase-installations" }
 google-firebase-invites = { module = "com.google.firebase:firebase-invites", version.ref = "google-firebase-invites" }
 google-firebase-measurement-connector = { module = "com.google.firebase:firebase-measurement-connector", version.ref = "google-firebase-measurement-connector" }
 google-firebase-measurement-connector-impl = { module = "com.google.firebase:firebase-measurement-connector-impl", version.ref = "google-firebase-measurement-connector-impl" }
+google-firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "google-firebase-messaging-main" }
 google-firebase-messaging-directboot = { module = "com.google.firebase:firebase-messaging-directboot", version.ref = "google-firebase-messaging-directboot" }
 google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx", version.ref = "google-firebase-messaging" }
 google-firebase-messaging-license = { module = "com.google.firebase:firebase-messaging-license", version.ref = "google-firebase-license" }
 google-firebase-ml-common = { module = "com.google.firebase:firebase-ml-common", version.ref = "google-firebase-ml-common" }
 google-firebase-ml-model-interpreter = { module = "com.google.firebase:firebase-ml-model-interpreter", version.ref = "google-firebase-ml-model-interpreter" }
+google-firebase-ml-modeldownloader = { module = "com.google.firebase:firebase-ml-modeldownloader", version.ref = "google-firebase-ml-modeldownloader-main" }
 google-firebase-ml-modeldownloader-ktx = { module = "com.google.firebase:firebase-ml-modeldownloader-ktx", version.ref = "google-firebase-ml-modeldownloader" }
 google-firebase-ml-natural-language = { module = "com.google.firebase:firebase-ml-natural-language", version.ref = "google-firebase-ml-natural-language" }
 google-firebase-ml-natural-language-language-id-model = { module = "com.google.firebase:firebase-ml-natural-language-language-id-model", version.ref = "google-firebase-ml-natural-language-language-id-model" }
@@ -811,14 +1021,19 @@ google-firebase-ml-vision-face-model = { module = "com.google.firebase:firebase-
 google-firebase-ml-vision-image-label-model = { module = "com.google.firebase:firebase-ml-vision-image-label-model", version.ref = "google-firebase-ml-vision-image-label-model" }
 google-firebase-ml-vision-internal-vkp = { module = "com.google.firebase:firebase-ml-vision-internal-vkp", version.ref = "google-firebase-ml-vision-internal-vkp" }
 google-firebase-ml-vision-objectdetection-model = { module = "com.google.firebase:firebase-ml-vision-object-detection-model", version.ref = "google-firebase-ml-vision-object-detection-model" }
+google-firebase-perf = { module = "com.google.firebase:firebase-perf", version.ref = "google-firebase-perf-main" }
 google-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx", version.ref = "google-firebase-perf" }
 google-firebase-perf-license = { module = "com.google.firebase:firebase-perf-license", version.ref = "google-firebase-license" }
 google-firebase-plugins = { module = "com.google.firebase:firebase-plugins", version.ref = "google-firebase-plugins" }
+google-firebase-pnv = { module = "com.google.firebase:firebase-pnv", version.ref = "google-firebase-pnv" }
+google-firebase-protolite-well-known-types = { module = "com.google.firebase:protolite-well-known-types", version.ref = "google-firebase-protolite-well-known-types" }
 google-firebase-sessions = { module = "com.google.firebase:firebase-sessions", version.ref = "google-firebase-sessions" }
+google-firebase-storage = { module = "com.google.firebase:firebase-storage", version.ref = "google-firebase-storage-main" }
 google-firebase-storage-common = { module = "com.google.firebase:firebase-storage-common", version.ref = "google-firebase-storage-common" }
 google-firebase-storage-common-license = { module = "com.google.firebase:firebase-storage-common-license", version.ref = "google-firebase-license" }
 google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx", version.ref = "google-firebase-storage" }
 google-firebase-storage-license = { module = "com.google.firebase:firebase-storage-license", version.ref = "google-firebase-license" }
+google-firebase-testlab-instr-lib = { module = "com.google.firebase:testlab-instr-lib", version.ref = "google-firebase-testlab-instr-lib" }
 google-firebase-vertexai = { module = "com.google.firebase:firebase-vertexai", version.ref = "google-firebase-vertexai" }
 #endregion
 #region huawei
@@ -853,9 +1068,11 @@ huawei-security-ssl = { module = "com.huawei.android.hms:security-ssl", version.
 huawei-security-encrypt = { module = "com.huawei.android.hms:security-encrypt", version.ref = "huawei-security" }
 #endregion
 #region androidx
+androidx-activity = { module = "androidx.activity:activity", version.ref = "androidx-activity" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-ads-identifier = { module = "androidx.ads:ads-identifier", version.ref = "androidx-ads" }
+androidx-ads-identifier-common = { module = "androidx.ads:ads-identifier-common", version.ref = "androidx-ads" }
 androidx-ads-identifier-provider = { module = "androidx.ads:ads-identifier-provider", version.ref = "androidx-ads" }
 androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidx-annotation" }
 androidx-annotation-experimental = { module = "androidx.annotation:annotation-experimental", version.ref = "androidx-annotation-experimental" }
@@ -863,73 +1080,124 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 androidx-appcompat-resources = { module = "androidx.appcompat:appcompat-resources", version.ref = "androidx-appcompat" }
 androidx-appfunctions = { module = "androidx.appfunctions:appfunctions", version.ref = "androidx-appfunctions" }
 androidx-appfunctions-service = { module = "androidx.appfunctions:appfunctions-service", version.ref = "androidx-appfunctions" }
+androidx-appfunctions-testing = { module = "androidx.appfunctions:appfunctions-testing", version.ref = "androidx-appfunctions" }
 androidx-appfunctions-compiler = { module = "androidx.appfunctions:appfunctions-compiler", version.ref = "androidx-appfunctions" }
 androidx-appsearch = { module = "androidx.appsearch:appsearch", version.ref = "androidx-appsearch" }
+androidx-appsearch-builtin-types = { module = "androidx.appsearch:appsearch-builtin-types", version.ref = "androidx-appsearch" }
 androidx-appsearch-compiler = { module = "androidx.appsearch:appsearch-compiler", version.ref = "androidx-appsearch" }
+androidx-appsearch-debug-view = { module = "androidx.appsearch:appsearch-debug-view", version.ref = "androidx-appsearch" }
+androidx-appsearch-external-protobuf = { module = "androidx.appsearch:appsearch-external-protobuf", version.ref = "androidx-appsearch" }
+androidx-appsearch-ktx = { module = "androidx.appsearch:appsearch-ktx", version.ref = "androidx-appsearch" }
 androidx-appsearch-local-storage = { module = "androidx.appsearch:appsearch-local-storage", version.ref = "androidx-appsearch" }
 androidx-appsearch-platform-storage = { module = "androidx.appsearch:appsearch-platform-storage", version.ref = "androidx-appsearch" }
+androidx-appsearch-play-services-storage = { module = "androidx.appsearch:appsearch-play-services-storage", version.ref = "androidx-appsearch" }
 androidx-arch-core-common = { module = "androidx.arch.core:core-common", version.ref = "androidx-arch-core" }
 androidx-arch-core-runtime = { module = "androidx.arch.core:core-runtime", version.ref = "androidx-arch-core" }
 androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidx-arch-core" }
 androidx-asynclayoutinflater = { module = "androidx.asynclayoutinflater:asynclayoutinflater", version.ref = "androidx-asynclayoutinflater" }
+androidx-asynclayoutinflater-appcompat = { module = "androidx.asynclayoutinflater:asynclayoutinflater-appcompat", version.ref = "androidx-asynclayoutinflater" }
 androidx-autofill = { module = "androidx.autofill:autofill", version.ref = "androidx-autofill" }
+androidx-benchmark-common = { module = "androidx.benchmark:benchmark-common", version.ref = "androidx-benchmark" }
 androidx-benchmark-junit4 = { module = "androidx.benchmark:benchmark-junit4", version.ref = "androidx-benchmark" }
+androidx-benchmark-macro = { module = "androidx.benchmark:benchmark-macro", version.ref = "androidx-benchmark" }
 androidx-benchmark-macro-junit4 = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "androidx-benchmark" }
+androidx-benchmark-traceprocessor = { module = "androidx.benchmark:benchmark-traceprocessor", version.ref = "androidx-benchmark" }
+androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "androidx-biometric" }
+androidx-biometric-compose = { module = "androidx.biometric:biometric-compose", version.ref = "androidx-biometric-compose" }
 androidx-biometric-ktx = { module = "androidx.biometric:biometric-ktx", version.ref = "androidx-biometric" }
 androidx-bluetooth = { module = "androidx.bluetooth:bluetooth", version.ref = "androidx-bluetooth" }
 androidx-bluetooth-testing = { module = "androidx.bluetooth:bluetooth-testing", version.ref = "androidx-bluetooth" }
 androidx-browser = { module = "androidx.browser:browser", version.ref = "androidx-browser" }
 androidx-car-app = { module = "androidx.car.app:app", version.ref = "androidx-car-app" }
 androidx-car-app-automotive = { module = "androidx.car.app:app-automotive", version.ref = "androidx-car-app" }
+androidx-car-app-projected = { module = "androidx.car.app:app-projected", version.ref = "androidx-car-app" }
 androidx-car-app-testing = { module = "androidx.car.app:app-testing", version.ref = "androidx-car-app" }
 androidx-camera-compose = { module = "androidx.camera:camera-compose", version.ref = "androidx-camera-compose" }
 androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "androidx-camera" }
 androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "androidx-camera" }
+androidx-camera-camera2-pipe = { module = "androidx.camera:camera-camera2-pipe", version.ref = "androidx-camera" }
 androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "androidx-camera" }
 androidx-camera-video = { module = "androidx.camera:camera-video", version.ref = "androidx-camera" }
 androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "androidx-camera" }
 androidx-camera-mlkit-vision = { module = "androidx.camera:camera-mlkit-vision", version.ref = "androidx-camera" }
 androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "androidx-camera" }
+androidx-camera-feature-combination-query = { module = "androidx.camera:camera-feature-combination-query", version.ref = "androidx-camera-feature-combination-query" }
+androidx-camera-feature-combination-query-play-services = { module = "androidx.camera:camera-feature-combination-query-play-services", version.ref = "androidx-camera-feature-combination-query" }
 androidx-camera-effects = { module = "androidx.camera:camera-effects", version.ref = "androidx-camera" }
 androidx-camera-viewfinder = { module = "androidx.camera:camera-viewfinder", version.ref = "androidx-camera-viewfinder" }
 androidx-camera-viewfinder-core = { module = "androidx.camera:camera-viewfinder-core", version.ref = "androidx-camera-viewfinder" }
 androidx-camera-viewfinder-compose = { module = "androidx.camera:camera-viewfinder-compose", version.ref = "androidx-camera-viewfinder-compose" }
 androidx-collection = { module = "androidx.collection:collection", version.ref = "androidx-collection" }
+androidx-collection-ktx = { module = "androidx.collection:collection-ktx", version.ref = "androidx-collection" }
 androidx-compose-animation = { module = "androidx.compose.animation:animation", version.ref = "androidx-compose-animation" }
+androidx-compose-animation-core = { module = "androidx.compose.animation:animation-core", version.ref = "androidx-compose-animation" }
+androidx-compose-animation-graphics = { module = "androidx.compose.animation:animation-graphics", version.ref = "androidx-compose-animation" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose-foundation" }
 androidx-compose-foundation-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "androidx-compose-foundation" }
 androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx-compose-material" }
+androidx-compose-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "androidx-compose-material-icons" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-compose-material-icons" }
+androidx-compose-material-navigation = { module = "androidx.compose.material:material-navigation", version.ref = "androidx-compose-material" }
+androidx-compose-material-ripple = { module = "androidx.compose.material:material-ripple", version.ref = "androidx-compose-material" }
 androidx-compose-material3 = { module = "androidx.compose.material3:material3-android", version.ref = "androidx-compose-material3" }
+androidx-compose-material3-a2ui = { module = "androidx.compose.material3:material3-a2ui", version.ref = "androidx-compose-material3-a2ui" }
 androidx-compose-material3-adaptive = { module = "androidx.compose.material3.adaptive:adaptive", version.ref = "androidx-compose-material3-adaptive" }
 androidx-compose-material3-adaptive-layout = { module = "androidx.compose.material3.adaptive:adaptive-layout", version.ref = "androidx-compose-material3-adaptive" }
 androidx-compose-material3-adaptive-navigation = { module = "androidx.compose.material3.adaptive:adaptive-navigation", version.ref = "androidx-compose-material3-adaptive" }
+androidx-compose-material3-adaptive-navigation3 = { module = "androidx.compose.material3.adaptive:adaptive-navigation3", version.ref = "androidx-compose-material3-adaptive" }
+androidx-compose-material3-adaptive-render-strategy = { module = "androidx.compose.material3.adaptive:adaptive-render-strategy", version.ref = "androidx-compose-material3-adaptive-render-strategy" }
 androidx-compose-material3-adaptive-navigation-suite = { module = "androidx.compose.material3:material3-adaptive-navigation-suite", version.ref = "androidx-compose-material3" }
 androidx-compose-material3-windowsize = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "androidx-compose-material3-window-size" }
 androidx-compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "androidx-compose-runtime" }
+androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "androidx-compose-runtime" }
+androidx-compose-runtime-retain = { module = "androidx.compose.runtime:runtime-retain", version.ref = "androidx-compose-runtime" }
+androidx-compose-runtime-rxjava2 = { module = "androidx.compose.runtime:runtime-rxjava2", version.ref = "androidx-compose-runtime" }
+androidx-compose-runtime-rxjava3 = { module = "androidx.compose.runtime:runtime-rxjava3", version.ref = "androidx-compose-runtime" }
+androidx-compose-runtime-saveable = { module = "androidx.compose.runtime:runtime-saveable", version.ref = "androidx-compose-runtime" }
+androidx-compose-runtime-tracing = { module = "androidx.compose.runtime:runtime-tracing", version.ref = "androidx-compose-runtime" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-geometry = { module = "androidx.compose.ui:ui-geometry", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-test = { module = "androidx.compose.ui:ui-test", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-test-accessibility = { module = "androidx.compose.ui:ui-test-accessibility", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-tooling-data = { module = "androidx.compose.ui:ui-tooling-data", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-unit = { module = "androidx.compose.ui:ui-unit", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-test-junit4-accessibility = { module = "androidx.compose.ui:ui-test-junit4-accessibility", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-text = { module = "androidx.compose.ui:ui-text", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-text-google-fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding", version.ref = "androidx-compose-ui" }
 androidx-compose-remote-core = { module = "androidx.compose.remote:remote-core", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-creation = { module = "androidx.compose.remote:remote-creation", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-creation-core = { module = "androidx.compose.remote:remote-creation-core", version.ref = "androidx-compose-remote" }
+androidx-compose-remote-creation-expression = { module = "androidx.compose.remote:remote-creation-expression", version.ref = "androidx-compose-remote-creation-expression" }
 androidx-compose-remote-creation-android = { module = "androidx.compose.remote:remote-creation-android", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-creation-jvm = { module = "androidx.compose.remote:remote-creation-jvm", version.ref = "androidx-compose-remote" }
+androidx-compose-remote-player-compose = { module = "androidx.compose.remote:remote-player-compose", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-creation-compose = { module = "androidx.compose.remote:remote-creation-compose", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-player-core = { module = "androidx.compose.remote:remote-player-core", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-player-view = { module = "androidx.compose.remote:remote-player-view", version.ref = "androidx-compose-remote" }
+androidx-compose-remote-testing = { module = "androidx.compose.remote:remote-testing", version.ref = "androidx-compose-remote" }
 androidx-compose-remote-tooling-preview = { module = "androidx.compose.remote:remote-tooling-preview", version.ref = "androidx-compose-remote" }
+androidx-concurrent = { module = "androidx.concurrent:concurrent", version.ref = "androidx-concurrent-main" }
+androidx-concurrent-futures = { module = "androidx.concurrent:concurrent-futures", version.ref = "androidx-concurrent" }
 androidx-concurrent-futures-ktx = { module = "androidx.concurrent:concurrent-futures-ktx", version.ref = "androidx-concurrent" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidx-constraintlayout-compose" }
+androidx-constraintlayout-core = { module = "androidx.constraintlayout:constraintlayout-core", version.ref = "androidx-constraintlayout-core" }
 androidx-contentpager = { module = "androidx.contentpager:contentpager", version.ref = "androidx-contentpager" }
+androidx-core = { module = "androidx.core:core", version.ref = "androidx-core" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-core-animation = { module = "androidx.core:core-animation", version.ref = "androidx-core-animation" }
 androidx-core-animation-testing = { module = "androidx.core:core-animation-testing", version.ref = "androidx-core-animation" }
 androidx-core-backported-fixes = { module = "androidx.core:core-backported-fixes", version.ref = "androidx-core-backported" }
 androidx-core-google-shortcuts = { module = "androidx.core:core-google-shortcuts", version.ref = "androidx-core-google-shortcuts" }
 androidx-core-performance = { module = "androidx.core:core-performance", version.ref = "androidx-core-performance" }
+androidx-core-performance-play-services = { module = "androidx.core:core-performance-play-services", version.ref = "androidx-core-performance" }
+androidx-core-performance-testing = { module = "androidx.core:core-performance-testing", version.ref = "androidx-core-performance" }
 androidx-core-pip = { module = "androidx.core:core-pip", version.ref = "androidx-core-pip" }
 androidx-core-remoteviews = { module = "androidx.core:core-remoteviews", version.ref = "androidx-core-remoteviews" }
 androidx-core-role = { module = "androidx.core:core-role", version.ref = "androidx-core-role" }
@@ -939,7 +1207,9 @@ androidx-core-location-altitude-external-protobuf = { module = "androidx.core:co
 androidx-core-location-altitude-proto = { module = "androidx.core:core-location-altitude-proto", version.ref = "androidx-core-location" }
 androidx-core-i18n = { module = "androidx.core:core-i18n", version.ref = "androidx-core-i18n" }
 androidx-core-telecom = { module = "androidx.core:core-telecom", version.ref = "androidx-core-telecom" }
+androidx-core-testing = { module = "androidx.core:core-testing", version.ref = "androidx-core" }
 androidx-core-uwb = { module = "androidx.core.uwb:uwb", version.ref = "androidx-core-uwb" }
+androidx-core-uwb-rxjava3 = { module = "androidx.core.uwb:uwb-rxjava3", version.ref = "androidx-core-uwb" }
 androidx-core-viewtree = { module = "androidx.core:core-viewtree", version.ref = "androidx-core-viewtree" }
 androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "androidx-credentials" }
 androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "androidx-credentials" }
@@ -947,8 +1217,16 @@ androidx-credentials-e2ee = { module = "androidx.credentials:credentials-e2ee", 
 androidx-cursoradapter = { module = "androidx.cursoradapter:cursoradapter", version.ref = "androidx-cursoradapter" }
 androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "androidx-datastore" }
 androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "androidx-datastore" }
+androidx-datastore-guava = { module = "androidx.datastore:datastore-guava", version.ref = "androidx-datastore" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-datastore" }
 androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "androidx-datastore" }
+androidx-datastore-preferences-external-protobuf = { module = "androidx.datastore:datastore-preferences-external-protobuf", version.ref = "androidx-datastore" }
+androidx-datastore-preferences-proto = { module = "androidx.datastore:datastore-preferences-proto", version.ref = "androidx-datastore" }
+androidx-datastore-preferences-rxjava2 = { module = "androidx.datastore:datastore-preferences-rxjava2", version.ref = "androidx-datastore" }
+androidx-datastore-preferences-rxjava3 = { module = "androidx.datastore:datastore-preferences-rxjava3", version.ref = "androidx-datastore" }
+androidx-datastore-rxjava2 = { module = "androidx.datastore:datastore-rxjava2", version.ref = "androidx-datastore" }
+androidx-datastore-rxjava3 = { module = "androidx.datastore:datastore-rxjava3", version.ref = "androidx-datastore" }
+androidx-datastore-tink = { module = "androidx.datastore:datastore-tink", version.ref = "androidx-datastore-tink" }
 androidx-documentfile = { module = "androidx.documentfile:documentfile", version.ref = "androidx-documentfile" }
 androidx-enterprise-feedback = { module = "androidx.enterprise:enterprise-feedback", version.ref = "androidx-enterprise" }
 androidx-enterprise-feedback-testing = { module = "androidx.enterprise:enterprise-feedback-testing", version.ref = "androidx-enterprise" }
@@ -962,6 +1240,7 @@ androidx-games-text-input = { module = "androidx.games:games-text-input", versio
 androidx-glance = { module = "androidx.glance:glance", version.ref = "androidx-glance" }
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "androidx-glance" }
 androidx-glance-appwidget-external-protobuf = { module = "androidx.glance:glance-appwidget-external-protobuf", version.ref = "androidx-glance" }
+androidx-glance-appwidget-multiprocess = { module = "androidx.glance:glance-appwidget-multiprocess", version.ref = "androidx-glance" }
 androidx-glance-appwidget-preview = { module = "androidx.glance:glance-appwidget-preview", version.ref = "androidx-glance" }
 androidx-glance-appwidget-proto = { module = "androidx.glance:glance-appwidget-proto", version.ref = "androidx-glance" }
 androidx-glance-appwidget-testing = { module = "androidx.glance:glance-appwidget-testing", version.ref = "androidx-glance" }
@@ -974,20 +1253,29 @@ androidx-graphics-core = { module = "androidx.graphics:graphics-core", version.r
 androidx-graphics-path = { module = "androidx.graphics:graphics-path", version.ref = "androidx-graphics-path" }
 androidx-graphics-shapes = { module = "androidx.graphics:graphics-shapes", version.ref = "androidx-graphics-shapes" }
 androidx-health-services-client = { module = "androidx.health:health-services-client", version.ref = "androidx-health" }
+androidx-health-services-client-external-protobuf = { module = "androidx.health:health-services-client-external-protobuf", version.ref = "androidx-health-services-client" }
+androidx-health-services-client-proto = { module = "androidx.health:health-services-client-proto", version.ref = "androidx-health-services-client" }
 androidx-health-connect-client = { module = "androidx.health.connect:connect-client", version.ref = "androidx-health-connect" }
+androidx-health-connect-client-external-protobuf = { module = "androidx.health.connect:connect-client-external-protobuf", version.ref = "androidx-health-connect" }
+androidx-health-connect-client-proto = { module = "androidx.health.connect:connect-client-proto", version.ref = "androidx-health-connect" }
 androidx-heifwriter = { module = "androidx.heifwriter:heifwriter", version.ref = "androidx-heifwriter" }
 androidx-hilt-common = { module = "androidx.hilt:hilt-common", version.ref = "androidx-hilt" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx-hilt" }
 androidx-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "androidx-hilt-lifecycle" }
+androidx-hilt-lifecycle-viewmodel-compose = { module = "androidx.hilt:hilt-lifecycle-viewmodel-compose", version.ref = "androidx-hilt-lifecycle" }
 androidx-hilt-navigation = { module = "androidx.hilt:hilt-navigation", version.ref = "androidx-hilt" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidx-hilt" }
 androidx-hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "androidx-hilt" }
 androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "androidx-hilt" }
 androidx-ink-authoring = { module = "androidx.ink:ink-authoring", version.ref = "androidx-ink" }
+androidx-ink-authoring-compose = { module = "androidx.ink:ink-authoring-compose", version.ref = "androidx-ink" }
 androidx-ink-brush = { module = "androidx.ink:ink-brush", version.ref = "androidx-ink" }
+androidx-ink-brush-compose = { module = "androidx.ink:ink-brush-compose", version.ref = "androidx-ink" }
 androidx-ink-geometry = { module = "androidx.ink:ink-geometry", version.ref = "androidx-ink" }
+androidx-ink-geometry-compose = { module = "androidx.ink:ink-geometry-compose", version.ref = "androidx-ink" }
 androidx-ink-nativeloader = { module = "androidx.ink:ink-nativeloader", version.ref = "androidx-ink" }
 androidx-ink-rendering = { module = "androidx.ink:ink-rendering", version.ref = "androidx-ink" }
+androidx-ink-storage = { module = "androidx.ink:ink-storage", version.ref = "androidx-ink" }
 androidx-ink-strokes = { module = "androidx.ink:ink-strokes", version.ref = "androidx-ink" }
 androidx-input-motionprediction = { module = "androidx.input:input-motionprediction", version.ref = "androidx-input" }
 androidx-javascriptengine = { module = "androidx.javascriptengine:javascriptengine", version.ref = "androidx-javascriptengine" }
@@ -996,16 +1284,27 @@ androidx-leanback-preference = { module = "androidx.leanback:leanback-preference
 androidx-leanback-paging = { module = "androidx.leanback:leanback-paging", version.ref = "androidx-leanback-paging" }
 androidx-leanback-grid = { module = "androidx.leanback:leanback-grid", version.ref = "androidx-leanback-grid" }
 androidx-leanback-tab = { module = "androidx.leanback:leanback-tab", version.ref = "androidx-leanback-tab" }
+androidx-lifecycle-common = { module = "androidx.lifecycle:lifecycle-common", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-compiler = { module = "androidx.lifecycle:lifecycle-compiler", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata-core = { module = "androidx.lifecycle:lifecycle-livedata-core", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-livedata-core-ktx = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-testing = { module = "androidx.lifecycle:lifecycle-viewmodel-testing", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-service = { module = "androidx.lifecycle:lifecycle-service", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-reactivestreams = { module = "androidx.lifecycle:lifecycle-reactivestreams", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-reactivestreams-ktx = { module = "androidx.lifecycle:lifecycle-reactivestreams-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-testing = { module = "androidx.lifecycle:lifecycle-runtime-testing", version.ref = "androidx-lifecycle" }
 androidx-lint-checks = { module = "androidx.lint:lint-checks", version.ref = "androidx-lint" }
 androidx-lint-api = { module = "androidx.lint:lint-api", version.ref = "androidx-lint" }
 androidx-lint-core = { module = "androidx.lint:lint-core", version.ref = "androidx-lint" }
@@ -1014,15 +1313,19 @@ androidx-lint-gradle = { module = "androidx.lint:lint-gradle", version.ref = "an
 androidx-localbroadcastmanager = { module = "androidx.localbroadcastmanager:localbroadcastmanager", version.ref = "androidx-localbroadcastmanager" }
 androidx-media3-cast = { module = "androidx.media3:media3-cast", version.ref = "androidx-media3" }
 androidx-media3-common = { module = "androidx.media3:media3-common", version.ref = "androidx-media3" }
+androidx-media3-common-ktx = { module = "androidx.media3:media3-common-ktx", version.ref = "androidx-media3" }
 androidx-media3-container = { module = "androidx.media3:media3-container", version.ref = "androidx-media3" }
 androidx-media3-database = { module = "androidx.media3:media3-database", version.ref = "androidx-media3" }
 androidx-media3-datasource = { module = "androidx.media3:media3-datasource", version.ref = "androidx-media3" }
 androidx-media3-datasource-cronet = { module = "androidx.media3:media3-datasource-cronet", version.ref = "androidx-media3" }
+androidx-media3-datasource-ktor = { module = "androidx.media3:media3-datasource-ktor", version.ref = "androidx-media3" }
 androidx-media3-datasource-okhttp = { module = "androidx.media3:media3-datasource-okhttp", version.ref = "androidx-media3" }
 androidx-media3-datasource-rtmp = { module = "androidx.media3:media3-datasource-rtmp", version.ref = "androidx-media3" }
 androidx-media3-decoder = { module = "androidx.media3:media3-decoder", version.ref = "androidx-media3" }
 androidx-media3-decoder-av1 = { module = "androidx.media3:media3-decoder-av1", version.ref = "androidx-media3" }
 androidx-media3-effect = { module = "androidx.media3:media3-effect", version.ref = "androidx-media3" }
+androidx-media3-effect-lottie = { module = "androidx.media3:media3-effect-lottie", version.ref = "androidx-media3" }
+androidx-media3-effect-play-services = { module = "androidx.media3:media3-effect-play-services", version.ref = "androidx-media3-effect-play-services" }
 androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "androidx-media3" }
 androidx-media3-exoplayer-dash = { module = "androidx.media3:media3-exoplayer-dash", version.ref = "androidx-media3" }
 androidx-media3-exoplayer-hls = { module = "androidx.media3:media3-exoplayer-hls", version.ref = "androidx-media3" }
@@ -1033,6 +1336,7 @@ androidx-media3-exoplayer-smoothstreaming = { module = "androidx.media3:media3-e
 androidx-media3-exoplayer-workmanager = { module = "androidx.media3:media3-exoplayer-workmanager", version.ref = "androidx-media3" }
 androidx-media3-extractor = { module = "androidx.media3:media3-extractor", version.ref = "androidx-media3" }
 androidx-media3-inspector = { module = "androidx.media3:media3-inspector", version.ref = "androidx-media3" }
+androidx-media3-inspector-frame = { module = "androidx.media3:media3-inspector-frame", version.ref = "androidx-media3" }
 androidx-media3-muxer = { module = "androidx.media3:media3-muxer", version.ref = "androidx-media3" }
 androidx-media3-ui = { module = "androidx.media3:media3-ui", version.ref = "androidx-media3" }
 androidx-media3-ui-compose = { module = "androidx.media3:media3-ui-compose", version.ref = "androidx-media3" }
@@ -1043,50 +1347,90 @@ androidx-media3-test-utils = { module = "androidx.media3:media3-test-utils", ver
 androidx-media3-test-utils-robolectric = { module = "androidx.media3:media3-test-utils-robolectric", version.ref = "androidx-media3" }
 androidx-media3-transformer = { module = "androidx.media3:media3-transformer", version.ref = "androidx-media3" }
 androidx-mediarouter = { module = "androidx.mediarouter:mediarouter", version.ref = "androidx-mediarouter" }
+androidx-mediarouter-testing = { module = "androidx.mediarouter:mediarouter-testing", version.ref = "androidx-mediarouter" }
 androidx-metrics = { module = "androidx.metrics:metrics-performance", version.ref = "androidx-metrics" }
 androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "androidx-navigation3" }
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "androidx-navigation3" }
 androidx-navigationevent = { module = "androidx.navigationevent:navigationevent", version.ref = "androidx-navigationevent" }
+androidx-navigationevent-compose = { module = "androidx.navigationevent:navigationevent-compose", version.ref = "androidx-navigationevent" }
+androidx-navigationevent-testing = { module = "androidx.navigationevent:navigationevent-testing", version.ref = "androidx-navigationevent" }
+androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "androidx-paging" }
 androidx-paging-rxjava2 = { module = "androidx.paging:paging-rxjava2", version.ref = "androidx-paging" }
+androidx-paging-rxjava2-ktx = { module = "androidx.paging:paging-rxjava2-ktx", version.ref = "androidx-paging" }
 androidx-paging-rxjava3 = { module = "androidx.paging:paging-rxjava3", version.ref = "androidx-paging" }
+androidx-paging-testing = { module = "androidx.paging:paging-testing", version.ref = "androidx-paging" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "androidx-paging" }
+androidx-paging-guava = { module = "androidx.paging:paging-guava", version.ref = "androidx-paging" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "androidx-paging" }
 androidx-paging-common-ktx = { module = "androidx.paging:paging-common-ktx", version.ref = "androidx-paging" }
 androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "androidx-paging" }
+androidx-palette = { module = "androidx.palette:palette", version.ref = "androidx-palette" }
 androidx-palette-ktx = { module = "androidx.palette:palette-ktx", version.ref = "androidx-palette" }
+androidx-pdf-compose = { module = "androidx.pdf:pdf-compose", version.ref = "androidx-pdf" }
+androidx-pdf-core = { module = "androidx.pdf:pdf-core", version.ref = "androidx-pdf" }
+androidx-pdf-document-service = { module = "androidx.pdf:pdf-document-service", version.ref = "androidx-pdf" }
+androidx-pdf-ink = { module = "androidx.pdf:pdf-ink", version.ref = "androidx-pdf" }
+androidx-pdf-ocr-play-services = { module = "androidx.pdf:pdf-ocr-play-services", version.ref = "androidx-pdf" }
 androidx-pdf-viewer = { module = "androidx.pdf:pdf-viewer", version.ref = "androidx-pdf" }
 androidx-pdf-viewer-fragment = { module = "androidx.pdf:pdf-viewer-fragment", version.ref = "androidx-pdf" }
 androidx-photopicker = { module = "androidx.photopicker:photopicker", version.ref = "androidx-photopicker" }
+androidx-photopicker-activity = { module = "androidx.photopicker:photopicker-activity", version.ref = "androidx-photopicker-activity" }
 androidx-photopicker-compose = { module = "androidx.photopicker:photopicker-compose", version.ref = "androidx-photopicker" }
+androidx-photopicker-embedded = { module = "androidx.photopicker:photopicker-embedded", version.ref = "androidx-photopicker-activity" }
+androidx-photopicker-embedded-compose = { module = "androidx.photopicker:photopicker-embedded-compose", version.ref = "androidx-photopicker-activity" }
+androidx-photopicker-embedded-testing = { module = "androidx.photopicker:photopicker-embedded-testing", version.ref = "androidx-photopicker-activity" }
+androidx-photopicker-testing = { module = "androidx.photopicker:photopicker-testing", version.ref = "androidx-photopicker" }
 androidx-print = { module = "androidx.print:print", version.ref = "androidx-print" }
 androidx-profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "androidx-profileinstaller" }
 androidx-recommendation = { module = "androidx.recommendation:recommendation", version.ref = "androidx-recommendation" }
 androidx-remotecallback = { module = "androidx.remotecallback:remotecallback", version.ref = "androidx-remotecallback" }
+androidx-remotecallback-processor = { module = "androidx.remotecallback:remotecallback-processor", version.ref = "androidx-remotecallback" }
 androidx-resourceinspection-annotation = { module = "androidx.resourceinspection:resourceinspection-annotation", version.ref = "androidx-resourceinspection" }
+androidx-resourceinspection-processor = { module = "androidx.resourceinspection:resourceinspection-processor", version.ref = "androidx-resourceinspection" }
+androidx-room-common = { module = "androidx.room:room-common", version.ref = "androidx-room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
+androidx-room-rxjava2 = { module = "androidx.room:room-rxjava2", version.ref = "androidx-room" }
+androidx-room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
+androidx-room-guava = { module = "androidx.room:room-guava", version.ref = "androidx-room" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "androidx-room" }
+androidx-room-paging-guava = { module = "androidx.room:room-paging-guava", version.ref = "androidx-room" }
+androidx-room-paging-rxjava2 = { module = "androidx.room:room-paging-rxjava2", version.ref = "androidx-room" }
+androidx-room-paging-rxjava3 = { module = "androidx.room:room-paging-rxjava3", version.ref = "androidx-room" }
 androidx-room-sqlite-wrapper = { module = "androidx.room:room-sqlite-wrapper", version.ref = "androidx-room" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room" }
+androidx-savedstate = { module = "androidx.savedstate:savedstate", version.ref = "androidx-savedstate" }
+androidx-savedstate-compose = { module = "androidx.savedstate:savedstate-compose", version.ref = "androidx-savedstate" }
 androidx-savedstate-ktx = { module = "androidx.savedstate:savedstate-ktx", version.ref = "androidx-savedstate" }
+androidx-savedstate-testing = { module = "androidx.savedstate:savedstate-testing", version.ref = "androidx-savedstate" }
 androidx-security-crypto-ktx = { module = "androidx.security:security-crypto-ktx", version.ref = "androidx-security-crypto" }
 androidx-security-app-authenticator = { module = "androidx.security:security-app-authenticator", version.ref = "androidx-security-app-authenticator" }
 androidx-security-app-authenticator-testing = { module = "androidx.security:security-app-authenticator-testing", version.ref = "androidx-security-app-authenticator" }
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "androidx-security-crypto" }
 androidx-security-identity-credential = { module = "androidx.security:security-identity-credential", version.ref = "androidx-security-identity-credential" }
 androidx-security-state = { module = "androidx.security:security-state", version.ref = "androidx-security-state" }
 androidx-security-state-provider = { module = "androidx.security:security-state-provider", version.ref = "androidx-security-state-provider" }
 androidx-sharetarget = { module = "androidx.sharetarget:sharetarget", version.ref = "androidx-sharetarget" }
+androidx-slice-builders = { module = "androidx.slice:slice-builders", version.ref = "androidx-slice" }
 androidx-slice-core = { module = "androidx.slice:slice-core", version.ref = "androidx-slice" }
 androidx-slice-builders-ktx = { module = "androidx.slice:slice-builders-ktx", version.ref = "androidx-slice-builders" }
 androidx-slice-view = { module = "androidx.slice:slice-view", version.ref = "androidx-slice" }
+androidx-sqlite = { module = "androidx.sqlite:sqlite", version.ref = "androidx-sqlite" }
+androidx-sqlite-async = { module = "androidx.sqlite:sqlite-async", version.ref = "androidx-sqlite" }
+androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "androidx-sqlite" }
 androidx-sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "androidx-sqlite" }
 androidx-sqlite-framework = { module = "androidx.sqlite:sqlite-framework", version.ref = "androidx-sqlite" }
 androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "androidx-startup" }
 androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidx-test-core" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
 androidx-test-espresso-idling-resource = { module = "androidx.test.espresso:espresso-idling-resource", version.ref = "androidx-test-espresso" }
+androidx-test-espresso-intents = { module = "androidx.test.espresso:espresso-intents", version.ref = "androidx-test-espresso" }
+androidx-test-espresso-remote = { module = "androidx.test.espresso:espresso-remote", version.ref = "androidx-test-espresso" }
 androidx-espresso-test-espresso-contrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "androidx-test-espresso" }
+androidx-test-espresso-accessibility = { module = "androidx.test.espresso:espresso-accessibility", version.ref = "androidx-test-espresso" }
 androidx-test-espresso-device = { module = "androidx.test.espresso:espresso-device", version.ref = "androidx-test-espresso-device" }
+androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-ext-junit" }
 androidx-test-ext-junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidx-test-ext-junit" }
 androidx-test-ext-junit-gtest = { module = "androidx.test.ext:junit-gtest", version.ref = "androidx-test-ext-junit-gtest" }
 androidx-test-ext-truth = { module = "androidx.test.ext:truth", version.ref = "androidx-test-ext-truth" }
@@ -1094,6 +1438,7 @@ androidx-test-runner = { module = "androidx.test:runner", version.ref = "android
 androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidx-test-rules" }
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "androidx-test-orchestrator" }
 androidx-test-annotation = { module = "androidx.test:annotation", version.ref = "androidx-test-annotation" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidx-test-core" }
 androidx-test-monitor = { module = "androidx.test:monitor", version.ref = "androidx-test-monitor" }
 androidx-test-services-storage = { module = "androidx.test.services:storage", version.ref = "androidx-test-services" }
 androidx-test-services-test-services = { module = "androidx.test.services:test-services", version.ref = "androidx-test-services" }
@@ -1101,8 +1446,14 @@ androidx-test-uiautomator = { module = "androidx.test.uiautomator:uiautomator", 
 androidx-test-uiautomator-shell = { module = "androidx.test.uiautomator:uiautomator-shell", version.ref = "androidx-test-uiautomator-shell" }
 androidx-text = { module = "androidx.text:text", version.ref = "androidx-text" }
 androidx-text-vertical = { module = "androidx.text:text-vertical", version.ref = "androidx-text" }
+androidx-text-vertical-compose = { module = "androidx.text:text-vertical-compose", version.ref = "androidx-text" }
 androidx-textclassifier = { module = "androidx.textclassifier:textclassifier", version.ref = "androidx-textclassifier" }
 androidx-tracing = { module = "androidx.tracing:tracing-ktx", version.ref = "androidx-tracing" }
+androidx-tracing-perfetto = { module = "androidx.tracing:tracing-perfetto", version.ref = "androidx-tracing-perfetto" }
+androidx-tracing-perfetto-binary = { module = "androidx.tracing:tracing-perfetto-binary", version.ref = "androidx-tracing-perfetto" }
+androidx-tracing-perfetto-handshake = { module = "androidx.tracing:tracing-perfetto-handshake", version.ref = "androidx-tracing-perfetto" }
+androidx-tracing-tracing = { module = "androidx.tracing:tracing", version.ref = "androidx-tracing" }
+androidx-tracing-wire = { module = "androidx.tracing:tracing-wire", version.ref = "androidx-tracing" }
 androidx-tv-foundation = { module = "androidx.tv:tv-foundation", version.ref = "androidx-tv-foundation" }
 androidx-tv-material = { module = "androidx.tv:tv-material", version.ref = "androidx-tv" }
 androidx-tvprovider = { module = "androidx.tvprovider:tvprovider", version.ref = "androidx-tvprovider" }
@@ -1131,6 +1482,7 @@ androidx-wear-compose-material = { module = "androidx.wear.compose:compose-mater
 androidx-wear-compose-material-core = { module = "androidx.wear.compose:compose-material-core", version.ref = "androidx-wear-compose" }
 androidx-wear-compose-material3 = { module = "androidx.wear.compose:compose-material3", version.ref = "androidx-wear-compose-material3" }
 androidx-wear-compose-navigation = { module = "androidx.wear.compose:compose-navigation", version.ref = "androidx-wear-compose" }
+androidx-wear-compose-navigation3 = { module = "androidx.wear.compose:compose-navigation3", version.ref = "androidx-wear-compose" }
 androidx-wear-compose-ui-tooling = { module = "androidx.wear.compose:compose-ui-tooling", version.ref = "androidx-wear-compose" }
 androidx-wear-protolayout = { module = "androidx.wear.protolayout:protolayout", version.ref = "androidx-wear-protolayout" }
 androidx-wear-protolayout-expression = { module = "androidx.wear.protolayout:protolayout-expression", version.ref = "androidx-wear-protolayout" }
@@ -1138,8 +1490,10 @@ androidx-wear-protolayout-expression-pipeline = { module = "androidx.wear.protol
 androidx-wear-protolayout-external-protobuf = { module = "androidx.wear.protolayout:protolayout-external-protobuf", version.ref = "androidx-wear-protolayout" }
 androidx-wear-protolayout-material = { module = "androidx.wear.protolayout:protolayout-material", version.ref = "androidx-wear-protolayout" }
 androidx-wear-protolayout-material-core = { module = "androidx.wear.protolayout:protolayout-material-core", version.ref = "androidx-wear-protolayout" }
+androidx-wear-protolayout-material3 = { module = "androidx.wear.protolayout:protolayout-material3", version.ref = "androidx-wear-protolayout" }
 androidx-wear-protolayout-proto = { module = "androidx.wear.protolayout:protolayout-proto", version.ref = "androidx-wear-protolayout" }
 androidx-wear-protolayout-renderer = { module = "androidx.wear.protolayout:protolayout-renderer", version.ref = "androidx-wear-protolayout" }
+androidx-wear-protolayout-testing = { module = "androidx.wear.protolayout:protolayout-testing", version.ref = "androidx-wear-protolayout" }
 androidx-wear-tiles-tiles = { module = "androidx.wear.tiles:tiles", version.ref = "androidx-wear-tiles" }
 androidx-wear-tiles-tiles-material = { module = "androidx.wear.tiles:tiles-material", version.ref = "androidx-wear-tiles" }
 androidx-wear-tiles-tiles-proto = { module = "androidx.wear.tiles:tiles-proto", version.ref = "androidx-wear-tiles" }
@@ -1149,31 +1503,61 @@ androidx-wear-tiles-tiles-tooling = { module = "androidx.wear.tiles:tiles-toolin
 androidx-wear-tiles-tiles-tooling-preview = { module = "androidx.wear.tiles:tiles-tooling-preview", version.ref = "androidx-wear-tiles" }
 androidx-wear-watchface-watchface = { module = "androidx.wear.watchface:watchface", version.ref = "androidx-wear-watchface" }
 androidx-wear-watchface-watchface-client = { module = "androidx.wear.watchface:watchface-client", version.ref = "androidx-wear-watchface" }
+androidx-wear-watchface-watchface-client-guava = { module = "androidx.wear.watchface:watchface-client-guava", version.ref = "androidx-wear-watchface-watchface" }
 androidx-wear-watchface-complications = { module = "androidx.wear.watchface:watchface-complications", version.ref = "androidx-wear-watchface" }
 androidx-wear-watchface-complications-data = { module = "androidx.wear.watchface:watchface-complications-data", version.ref = "androidx-wear-watchface" }
+androidx-wear-watchface-complications-data-source = { module = "androidx.wear.watchface:watchface-complications-data-source", version.ref = "androidx-wear-watchface" }
 androidx-wear-watchface-complications-data-source-ktx = { module = "androidx.wear.watchface:watchface-complications-data-source-ktx", version.ref = "androidx-wear-watchface" }
 androidx-wear-watchface-watchface-complications-rendering = { module = "androidx.wear.watchface:watchface-complications-rendering", version.ref = "androidx-wear-watchface" }
 androidx-wear-watchface-watchface-data = { module = "androidx.wear.watchface:watchface-data", version.ref = "androidx-wear-watchface" }
 androidx-wear-watchface-watchface-editor = { module = "androidx.wear.watchface:watchface-editor", version.ref = "androidx-wear-watchface" }
+androidx-wear-watchface-watchface-editor-guava = { module = "androidx.wear.watchface:watchface-editor-guava", version.ref = "androidx-wear-watchface-watchface" }
+androidx-wear-watchface-watchface-guava = { module = "androidx.wear.watchface:watchface-guava", version.ref = "androidx-wear-watchface-watchface" }
+androidx-wear-watchface-watchface-push = { module = "androidx.wear.watchface:watchface-push", version.ref = "androidx-wear-watchface-watchface-push" }
 androidx-wear-watchface-watchface-style = { module = "androidx.wear.watchface:watchface-style", version.ref = "androidx-wear-watchface" }
 androidx-webgpu = { module = "androidx.webgpu:webgpu", version.ref = "androidx-webgpu" }
 androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "androidx-webkit" }
 androidx-window = { module = "androidx.window:window", version.ref = "androidx-window" }
 androidx-window-core = { module = "androidx.window:window-core", version.ref = "androidx-window" }
+androidx-window-java = { module = "androidx.window:window-java", version.ref = "androidx-window" }
+androidx-window-rxjava2 = { module = "androidx.window:window-rxjava2", version.ref = "androidx-window" }
+androidx-window-rxjava3 = { module = "androidx.window:window-rxjava3", version.ref = "androidx-window" }
 androidx-window-testing = { module = "androidx.window:window-testing", version.ref = "androidx-window" }
 androidx-window-extensions-core = { module = "androidx.window.extensions.core:core", version.ref = "androidx-window-extensions-core" }
+androidx-work-analytics = { module = "androidx.work:work-analytics", version.ref = "androidx-work-analytics" }
 androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "androidx-work" }
 androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work" }
+androidx-work-rxjava2 = { module = "androidx.work:work-rxjava2", version.ref = "androidx-work" }
+androidx-work-rxjava3 = { module = "androidx.work:work-rxjava3", version.ref = "androidx-work" }
 androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "androidx-work" }
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "androidx-work" }
 androidx-work-gcm = { module = "androidx.work:work-gcm", version.ref = "androidx-work" }
 androidx-xr-arcore = { module = "androidx.xr.arcore:arcore", version.ref = "androidx-xr" }
+androidx-xr-arcore-guava = { module = "androidx.xr.arcore:arcore-guava", version.ref = "androidx-xr-arcore-guava" }
+androidx-xr-arcore-openxr = { module = "androidx.xr.arcore:arcore-openxr", version.ref = "androidx-xr-arcore" }
+androidx-xr-arcore-play-services = { module = "androidx.xr.arcore:arcore-play-services", version.ref = "androidx-xr-arcore" }
+androidx-xr-arcore-projected = { module = "androidx.xr.arcore:arcore-projected", version.ref = "androidx-xr-arcore-projected" }
+androidx-xr-arcore-runtime = { module = "androidx.xr.arcore:arcore-runtime", version.ref = "androidx-xr-arcore" }
+androidx-xr-arcore-rxjava3 = { module = "androidx.xr.arcore:arcore-rxjava3", version.ref = "androidx-xr-arcore-guava" }
+androidx-xr-arcore-testing = { module = "androidx.xr.arcore:arcore-testing", version.ref = "androidx-xr-arcore" }
 androidx-xr-compose = { module = "androidx.xr.compose:compose", version.ref = "androidx-xr" }
 androidx-xr-compose-testing = { module = "androidx.xr.compose:compose-testing", version.ref = "androidx-xr" }
 androidx-xr-compose-material3 = { module = "androidx.xr.compose.material3:material3", version.ref = "androidx-xr" }
 androidx-xr-projected = { module = "androidx.xr.projected:projected", version.ref = "androidx-xr-projected" }
+androidx-xr-projected-binding = { module = "androidx.xr.projected:projected-binding", version.ref = "androidx-xr-projected" }
+androidx-xr-projected-testing = { module = "androidx.xr.projected:projected-testing", version.ref = "androidx-xr-projected" }
 androidx-xr-runtime = { module = "androidx.xr.runtime:runtime", version.ref = "androidx-xr" }
+androidx-xr-runtime-guava = { module = "androidx.xr.runtime:runtime-guava", version.ref = "androidx-xr-runtime-guava" }
+androidx-xr-runtime-interfaces = { module = "androidx.xr.runtime:runtime-interfaces", version.ref = "androidx-xr-runtime" }
+androidx-xr-runtime-manifest = { module = "androidx.xr.runtime:runtime-manifest", version.ref = "androidx-xr-runtime" }
+androidx-xr-runtime-openxr = { module = "androidx.xr.runtime:runtime-openxr", version.ref = "androidx-xr-runtime" }
+androidx-xr-runtime-rxjava3 = { module = "androidx.xr.runtime:runtime-rxjava3", version.ref = "androidx-xr-runtime-rxjava3" }
 androidx-xr-runtime-testing = { module = "androidx.xr.runtime:runtime-testing", version.ref = "androidx-xr" }
 androidx-xr-scenecore = { module = "androidx.xr.scenecore:scenecore", version.ref = "androidx-xr" }
+androidx-xr-scenecore-guava = { module = "androidx.xr.scenecore:scenecore-guava", version.ref = "androidx-xr-scenecore-guava" }
+androidx-xr-scenecore-runtime = { module = "androidx.xr.scenecore:scenecore-runtime", version.ref = "androidx-xr-scenecore" }
+androidx-xr-scenecore-spatial-core = { module = "androidx.xr.scenecore:scenecore-spatial-core", version.ref = "androidx-xr-scenecore" }
+androidx-xr-scenecore-spatial-rendering = { module = "androidx.xr.scenecore:scenecore-spatial-rendering", version.ref = "androidx-xr-scenecore" }
 androidx-xr-scenecore-testing = { module = "androidx.xr.scenecore:scenecore-testing", version.ref = "androidx-xr" }
 #endregion
 #region view-based
@@ -1189,33 +1573,45 @@ androidx-customview-poolingcontainer = { module = "androidx.customview:customvie
 androidx-draganddrop = { module = "androidx.draganddrop:draganddrop", version.ref = "androidx-draganddrop" }
 androidx-drawerlayout = { module = "androidx.drawerlayout:drawerlayout", version.ref = "androidx-drawerlayout" }
 androidx-dynamicanimation = { module = "androidx.dynamicanimation:dynamicanimation", version.ref = "androidx-dynamicanimation" }
+androidx-dynamicanimation-ktx = { module = "androidx.dynamicanimation:dynamicanimation-ktx", version.ref = "androidx-dynamicanimation" }
 androidx-emoji = { module = "androidx.emoji:emoji", version.ref = "androidx-emoji" }
 androidx-emoji-appcompat = { module = "androidx.emoji:emoji-appcompat", version.ref = "androidx-emoji" }
 androidx-emoji-bundled = { module = "androidx.emoji:emoji-bundled", version.ref = "androidx-emoji" }
 androidx-emoji2 = { module = "androidx.emoji2:emoji2", version.ref = "androidx-emoji2" }
+androidx-emoji2-bundled = { module = "androidx.emoji2:emoji2-bundled", version.ref = "androidx-emoji2" }
 androidx-emoji2-views = { module = "androidx.emoji2:emoji2-views", version.ref = "androidx-emoji2" }
+androidx-emoji2-views-helper = { module = "androidx.emoji2:emoji2-views-helper", version.ref = "androidx-emoji2" }
 androidx-emoji2-emojipicker = { module = "androidx.emoji2:emoji2-emojipicker", version.ref = "androidx-emoji2" }
+androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "androidx-fragment" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment" }
 androidx-fragment-compose = { module = "androidx.fragment:fragment-compose", version.ref = "androidx-fragment" }
 androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "androidx-fragment" }
+androidx-fragment-testing-manifest = { module = "androidx.fragment:fragment-testing-manifest", version.ref = "androidx-fragment" }
 androidx-gridlayout = { module = "androidx.gridlayout:gridlayout", version.ref = "androidx-gridlayout" }
 androidx-interpolator = { module = "androidx.interpolator:interpolator", version.ref = "androidx-interpolator" }
 androidx-loader-loader = { module = "androidx.loader:loader", version.ref = "androidx-loader" }
 androidx-loader-loader-testing = { module = "androidx.loader:loader-testing", version.ref = "androidx-loader" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-runtime = { module = "androidx.navigation:navigation-runtime", version.ref = "androidx-navigation" }
 androidx-navigation-fragment-compose = { module = "androidx.navigation:navigation-fragment-compose", version.ref = "androidx-navigation" }
 androidx-navigation-runtime-ktx = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-common = { module = "androidx.navigation:navigation-common", version.ref = "androidx-navigation" }
+androidx-navigation-common-ktx = { module = "androidx.navigation:navigation-common-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "androidx-navigation" }
+androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "androidx-navigation" }
 androidx-navigation-dynamic-features-fragment = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "androidx-navigation" }
+androidx-navigation-dynamic-features-runtime = { module = "androidx.navigation:navigation-dynamic-features-runtime", version.ref = "androidx-navigation" }
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "androidx-navigation" }
 androidx-percentlayout = { module = "androidx.percentlayout:percentlayout", version.ref = "androidx-percentlayout" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "androidx-preference" }
 androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidx-preference" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidx-recyclerview" }
 androidx-recyclerview-selection = { module = "androidx.recyclerview:recyclerview-selection", version.ref = "androidx-recyclerview-selection" }
 androidx-slidingpanelayout = { module = "androidx.slidingpanelayout:slidingpanelayout", version.ref = "androidx-slidingpanelayout" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "androidx-swiperefreshlayout" }
+androidx-transition = { module = "androidx.transition:transition", version.ref = "androidx-transition" }
 androidx-transition-ktx = { module = "androidx.transition:transition-ktx", version.ref = "androidx-transition" }
 androidx-vectordrawable = { module = "androidx.vectordrawable:vectordrawable", version.ref = "androidx-vectordrawable" }
 androidx-vectordrawable-animated = { module = "androidx.vectordrawable:vectordrawable-animated", version.ref = "androidx-vectordrawable" }
@@ -1225,38 +1621,78 @@ androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref =
 #endregion
 #region ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-encoding = { module = "io.ktor:ktor-client-encoding", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref = "ktor" }
+ktor-client-websockets = { module = "io.ktor:ktor-client-websockets", version.ref = "ktor" }
+ktor-events = { module = "io.ktor:ktor-events", version.ref = "ktor" }
+ktor-http = { module = "io.ktor:ktor-http", version.ref = "ktor" }
+ktor-io = { module = "io.ktor:ktor-io", version.ref = "ktor" }
+ktor-network = { module = "io.ktor:ktor-network", version.ref = "ktor" }
+ktor-network-tls = { module = "io.ktor:ktor-network-tls", version.ref = "ktor" }
+ktor-resources = { module = "io.ktor:ktor-resources", version.ref = "ktor" }
+ktor-serialization = { module = "io.ktor:ktor-serialization", version.ref = "ktor" }
+ktor-serialization-gson = { module = "io.ktor:ktor-serialization-gson", version.ref = "ktor" }
+ktor-serialization-jackson = { module = "io.ktor:ktor-serialization-jackson", version.ref = "ktor" }
+ktor-serialization-kotlinx = { module = "io.ktor:ktor-serialization-kotlinx", version.ref = "ktor" }
+ktor-serialization-kotlinx-cbor = { module = "io.ktor:ktor-serialization-kotlinx-cbor", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-call-id = { module = "io.ktor:ktor-client-call-id", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-serialization-kotlinx-protobuf = { module = "io.ktor:ktor-serialization-kotlinx-protobuf", version.ref = "ktor" }
+ktor-serialization-kotlinx-xml = { module = "io.ktor:ktor-serialization-kotlinx-xml", version.ref = "ktor" }
+ktor-sse = { module = "io.ktor:ktor-sse", version.ref = "ktor" }
+ktor-utils = { module = "io.ktor:ktor-utils", version.ref = "ktor" }
+ktor-websocket-serialization = { module = "io.ktor:ktor-websocket-serialization", version.ref = "ktor" }
+ktor-websockets = { module = "io.ktor:ktor-websockets", version.ref = "ktor" }
 #endregion
 #region okhttp
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-brotli = { module = "com.squareup.okhttp3:okhttp-brotli", version.ref = "okhttp" }
+okhttp-coroutines = { module = "com.squareup.okhttp3:okhttp-coroutines", version.ref = "okhttp" }
+okhttp-dnsoverhttps = { module = "com.squareup.okhttp3:okhttp-dnsoverhttps", version.ref = "okhttp" }
+okhttp-java-net-cookiejar = { module = "com.squareup.okhttp3:okhttp-java-net-cookiejar", version.ref = "okhttp" }
 okhttp-mockwebserver = { module = "com.squareup.okhttp3:okhttp-mockwebserver", version.ref = "okhttp" }
+okhttp-mockwebserver3 = { module = "com.squareup.okhttp3:mockwebserver3", version.ref = "okhttp" }
+okhttp-mockwebserver3-junit4 = { module = "com.squareup.okhttp3:mockwebserver3-junit4", version.ref = "okhttp" }
+okhttp-mockwebserver3-junit5 = { module = "com.squareup.okhttp3:mockwebserver3-junit5", version.ref = "okhttp" }
+okhttp-sse = { module = "com.squareup.okhttp3:okhttp-sse", version.ref = "okhttp" }
+okhttp-tls = { module = "com.squareup.okhttp3:okhttp-tls", version.ref = "okhttp" }
+okhttp-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection", version.ref = "okhttp" }
+okhttp-zstd = { module = "com.squareup.okhttp3:okhttp-zstd", version.ref = "okhttp" }
 okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
-#endregion
-#region moshi
-moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
-moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
-moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 #endregion
 #region chucker
 chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 chucker-library-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
 #endregion
-#region rxjava3
-rxjava3 = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava3" }
-rxjava3-rxkotlin = { module = "io.reactivex.rxjava3:rxkotlin", version.ref = "rxjava3-rxkotlin" }
-rxjava3-rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxjava3-rxandroid" }
-#endregion
 #region koin
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-android-compat = { module = "io.insert-koin:koin-android-compat", version.ref = "koin" }
+koin-android-test = { module = "io.insert-koin:koin-android-test", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-androidx-compose-navigation = { module = "io.insert-koin:koin-androidx-compose-navigation", version.ref = "koin" }
+koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation", version.ref = "koin" }
+koin-androidx-startup = { module = "io.insert-koin:koin-androidx-startup", version.ref = "koin" }
 koin-androidx-workmanager = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
+koin-compose-navigation3 = { module = "io.insert-koin:koin-compose-navigation3", version.ref = "koin" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+koin-compose-viewmodel-navigation = { module = "io.insert-koin:koin-compose-viewmodel-navigation", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-core-annotations = { module = "io.insert-koin:koin-core-annotations", version.ref = "koin" }
+koin-core-coroutines = { module = "io.insert-koin:koin-core-coroutines", version.ref = "koin" }
+koin-core-viewmodel = { module = "io.insert-koin:koin-core-viewmodel", version.ref = "koin" }
+koin-dagger-bridge = { module = "io.insert-koin:koin-dagger-bridge", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+koin-test-coroutines = { module = "io.insert-koin:koin-test-coroutines", version.ref = "koin" }
 koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
+koin-test-junit5 = { module = "io.insert-koin:koin-test-junit5", version.ref = "koin" }
 #endregion
 #region koin-annotations
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
@@ -1266,54 +1702,109 @@ koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref =
 kotlin-inject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime", version.ref = "kotlin-inject" }
 kotlin-inject-compiler-ksp = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlin-inject" }
 #endregion
-#region vbpd
-vbpd = { module = "dev.androidbroadcast.vbpd:vbpd", version.ref = "vbpd" }
-vbpd-reflection = { module = "dev.androidbroadcast.vbpd:vbpd-reflection", version.ref = "vbpd" }
-#endregion
 #region mockk
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
+mockk-bdd = { module = "io.mockk:mockk-bdd", version.ref = "mockk" }
+mockk-context-parameters = { module = "io.mockk:mockk-context-parameters", version.ref = "mockk" }
 mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockk" }
 #endregion
 #region kotest
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-runner-junit6 = { module = "io.kotest:kotest-runner-junit6", version.ref = "kotest" }
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-assertions-json = { module = "io.kotest:kotest-assertions-json", version.ref = "kotest" }
+kotest-assertions-kotlinx-datetime = { module = "io.kotest:kotest-assertions-kotlinx-datetime", version.ref = "kotest" }
+kotest-assertions-ktor = { module = "io.kotest:kotest-assertions-ktor", version.ref = "kotest" }
+kotest-assertions-table = { module = "io.kotest:kotest-assertions-table", version.ref = "kotest" }
+kotest-extensions-junit5 = { module = "io.kotest:kotest-extensions-junit5", version.ref = "kotest" }
+kotest-extensions-koin = { module = "io.kotest:kotest-extensions-koin", version.ref = "kotest" }
+kotest-extensions-now = { module = "io.kotest:kotest-extensions-now", version.ref = "kotest" }
+kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+kotest-property-datetime = { module = "io.kotest:kotest-property-datetime", version.ref = "kotest" }
+kotest-property-permutations = { module = "io.kotest:kotest-property-permutations", version.ref = "kotest" }
+kotest-runner-junit4 = { module = "io.kotest:kotest-runner-junit4", version.ref = "kotest" }
 #endregion
 #region kaspresso
 kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso" }
 kaspresso-allure-support = { module = "com.kaspersky.android-components:kaspresso-allure-support", version.ref = "kaspresso" }
 kaspresso-compose-support = { module = "com.kaspersky.android-components:kaspresso-compose-support", version.ref = "kaspresso" }
 #endregion
-#region retrofit
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
-retrofit-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "retrofit" }
-retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
-retrofit-converter-protobuf = { module = "com.squareup.retrofit2:converter-protobuf", version.ref = "retrofit" }
-retrofit-converter-wire = { module = "com.squareup.retrofit2:converter-wire", version.ref = "retrofit" }
-retrofit-converter-simplexml = { module = "com.squareup.retrofit2:converter-simplexml", version.ref = "retrofit" }
-retrofit-converter-jaxb = { module = "com.squareup.retrofit2:converter-jaxb", version.ref = "retrofit" }
-retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
-retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
-#endregion
 #region coil
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+coil-base = { module = "io.coil-kt:coil-base", version.ref = "coil" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coil-compose-base = { module = "io.coil-kt:coil-compose-base", version.ref = "coil" }
+coil-gif = { module = "io.coil-kt:coil-gif", version.ref = "coil" }
+coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
+coil-test = { module = "io.coil-kt:coil-test", version.ref = "coil" }
+coil-video = { module = "io.coil-kt:coil-video", version.ref = "coil" }
+coil3 = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
+coil3-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil3-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
 coil3-compose-http = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil3" }
+coil3-core = { module = "io.coil-kt.coil3:coil-core", version.ref = "coil3" }
 coil3-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coil3" }
+coil3-network-cache-control = { module = "io.coil-kt.coil3:coil-network-cache-control", version.ref = "coil3" }
+coil3-network-core = { module = "io.coil-kt.coil3:coil-network-core", version.ref = "coil3" }
+coil3-network-ktor2 = { module = "io.coil-kt.coil3:coil-network-ktor2", version.ref = "coil3" }
+coil3-network-ktor3 = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil3" }
+coil3-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coil3" }
+coil3-test = { module = "io.coil-kt.coil3:coil-test", version.ref = "coil3" }
+coil3-video = { module = "io.coil-kt.coil3:coil-video", version.ref = "coil3" }
 #endregion
 
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
+okio-assetfilesystem = { module = "com.squareup.okio:okio-assetfilesystem", version.ref = "okio" }
+okio-fakefilesystem = { module = "com.squareup.okio:okio-fakefilesystem", version.ref = "okio" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 cicerone = { module = "com.github.terrakok:cicerone", version.ref = "cicerone" }
+epoxy = { module = "com.airbnb.android:epoxy", version.ref = "epoxy" }
+epoxy-annotations = { module = "com.airbnb.android:epoxy-annotations", version.ref = "epoxy" }
+epoxy-compose = { module = "com.airbnb.android:epoxy-compose", version.ref = "epoxy" }
+epoxy-databinding = { module = "com.airbnb.android:epoxy-databinding", version.ref = "epoxy" }
+epoxy-glide-preloading = { module = "com.airbnb.android:epoxy-glide-preloading", version.ref = "epoxy" }
+epoxy-modelfactory = { module = "com.airbnb.android:epoxy-modelfactory", version.ref = "epoxy" }
+epoxy-paging3 = { module = "com.airbnb.android:epoxy-paging3", version.ref = "epoxy" }
+epoxy-processor = { module = "com.airbnb.android:epoxy-processor", version.ref = "epoxy" }
+epoxy-viewbinder = { module = "com.airbnb.android:epoxy-viewbinder", version.ref = "epoxy" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie" }
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+leakcanary-android-core = { module = "com.squareup.leakcanary:leakcanary-android-core", version.ref = "leakcanary" }
+leakcanary-android-instrumentation = { module = "com.squareup.leakcanary:leakcanary-android-instrumentation", version.ref = "leakcanary" }
+leakcanary-android-process = { module = "com.squareup.leakcanary:leakcanary-android-process", version.ref = "leakcanary" }
+leakcanary-android-release = { module = "com.squareup.leakcanary:leakcanary-android-release", version.ref = "leakcanary" }
+leakcanary-android-startup = { module = "com.squareup.leakcanary:leakcanary-android-startup", version.ref = "leakcanary" }
+leakcanary-android-test = { module = "com.squareup.leakcanary:leakcanary-android-test", version.ref = "leakcanary-android-test" }
+leakcanary-android-uiautomator = { module = "com.squareup.leakcanary:leakcanary-android-uiautomator", version.ref = "leakcanary-android-test" }
+leakcanary-android-utils = { module = "com.squareup.leakcanary:leakcanary-android-utils", version.ref = "leakcanary" }
+leakcanary-object-watcher-android = { module = "com.squareup.leakcanary:leakcanary-object-watcher-android", version.ref = "leakcanary" }
+leakcanary-object-watcher-android-androidx = { module = "com.squareup.leakcanary:leakcanary-object-watcher-android-androidx", version.ref = "leakcanary" }
+leakcanary-object-watcher-android-core = { module = "com.squareup.leakcanary:leakcanary-object-watcher-android-core", version.ref = "leakcanary" }
+leakcanary-object-watcher-android-startup = { module = "com.squareup.leakcanary:leakcanary-object-watcher-android-startup", version.ref = "leakcanary" }
+leakcanary-object-watcher-android-support-fragments = { module = "com.squareup.leakcanary:leakcanary-object-watcher-android-support-fragments", version.ref = "leakcanary" }
+leakcanary-plumber-android = { module = "com.squareup.leakcanary:plumber-android", version.ref = "leakcanary" }
+leakcanary-plumber-android-core = { module = "com.squareup.leakcanary:plumber-android-core", version.ref = "leakcanary" }
+leakcanary-plumber-android-startup = { module = "com.squareup.leakcanary:plumber-android-startup", version.ref = "leakcanary" }
 junit = { module = "junit:junit", version.ref = "junit" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+robolectric-annotations = { module = "org.robolectric:annotations", version.ref = "robolectric" }
 mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockito" }
+mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+mockito-subclass = { module = "org.mockito:mockito-subclass", version.ref = "mockito" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 barista = { module = "com.adevinta.android:barista", version.ref = "barista" }
 tensorflow-lite = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflow-lite" }
+tensorflow-lite-api = { module = "org.tensorflow:tensorflow-lite-api", version.ref = "tensorflow-lite" }
+tensorflow-lite-gpu = { module = "org.tensorflow:tensorflow-lite-gpu", version.ref = "tensorflow-lite" }
+tensorflow-lite-gpu-api = { module = "org.tensorflow:tensorflow-lite-gpu-api", version.ref = "tensorflow-lite" }
+tensorflow-lite-hexagon = { module = "org.tensorflow:tensorflow-lite-hexagon", version.ref = "tensorflow-lite-hexagon" }
+tensorflow-lite-select-tf-ops = { module = "org.tensorflow:tensorflow-lite-select-tf-ops", version.ref = "tensorflow-lite-hexagon" }
+tensorflow-lite-support = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorflow-lite-support" }
+tensorflow-lite-support-api = { module = "org.tensorflow:tensorflow-lite-support-api", version.ref = "tensorflow-lite-support" }
 jetbrains-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "jetbrains-dokka" }
 kode-detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version.ref = "kode-detekt-rules-compose" }
 twitter-compose-rules-detekt = { module = "com.twitter.compose.rules:detekt", version.ref = "twitter-compose-rules-detekt" }
