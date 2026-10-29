@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
-
 package org.michaelbel.template
 
 import androidx.compose.animation.SizeTransform
@@ -7,7 +5,6 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
