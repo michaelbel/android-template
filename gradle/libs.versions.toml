@@ -25,7 +25,7 @@ google-ai-edge = "0.0.1-exp02"
 google-protobuf = "4.36.2"
 
 google-ar-core = "1.57.0"
-google-ar-impress = "0.0.14"
+google-ar-impress = "1.0.0"
 google-ar-sceneform = "1.17.1"
 
 google-filament = "1.76.1"
