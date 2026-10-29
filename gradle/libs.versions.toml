@@ -424,7 +424,7 @@ androidx-window = "1.5.1"
 androidx-window-extensions-core = "1.0.0"
 androidx-work = "2.12.0"
 androidx-xr = "1.0.0"
-androidx-xr-projected = "1.0.0-alpha12"
+androidx-xr-projected = "1.0.0-alpha14"
 
 detekt = "1.23.8"
 detekt-rules = "1.3.0"
